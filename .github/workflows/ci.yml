@@ -46,7 +46,7 @@ jobs:
         run: dotnet test Source/HeroHourSimulation/tests/HeroHourSimulation.Tests.fsproj --configuration Release --no-build --collect:"XPlat Code Coverage" --logger "trx;LogFileName=test_results.trx"
 
       - name: Upload test results
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         if: always()
         with:
           name: dotnet-test-results
@@ -54,7 +54,7 @@ jobs:
           retention-days: 7
 
       - name: Upload coverage
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         if: always()
         with:
           name: dotnet-coverage
@@ -88,7 +88,7 @@ jobs:
           & "$env:UE5_ROOT/Engine/Build/BatchFiles/Build.bat" HeroHourEditor Win64 Development -project="HeroHour.uproject" -waitmutex -clean
 
       - name: Upload build artifacts
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         if: always()
         with:
           name: ue5-build
@@ -131,7 +131,7 @@ jobs:
           & "$env:UE5_ROOT/Engine/Binaries/Win64/UnrealEditor-Cmd.exe" HeroHour.uproject -run=AutomationTests -unattended -nullrhi -log
 
       - name: Upload test results
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         if: always()
         with:
           name: ue5-test-results
