@@ -37,19 +37,19 @@
 *.docx filter=lfs diff=lfs merge=lfs -text
 *.pdf filter=lfs diff=lfs merge=lfs -text
 
-# Exceptions - don't track these specific concept files in LFS
-!Art/Concepts/Factions/UI_Inferface_Concept.png
-!Art/Concepts/Factions/UI_Concept.png
-!Art/Concepts/Factions/Concept_Video.mp4
-!Art/Concepts/Factions/Concept_Video2.mp4
-!Art/Concepts/Factions/Concept_Video3.mp4
-!Art/Concepts/Factions/Concept_Video4.mp4
-!Art/Concepts/Factions/Concept_Video5.mp4
-!Art/Concepts/Factions/Concept_Video6.mp4
-!Art/Concepts/Factions/Concept_Video7.mp4
-!Art/Concepts/Factions/Concept_Video8.mp4
-!Art/Concepts/Factions/Concept_Video9.mp4
-!Art/Concepts/Factions/Concept_Video10.mp4
+# Explicit LFS tracking for specific concept art files (also covered by *.png/*.mp4 rules)
+Art/Concepts/Factions/UI_Inferface_Concept.png filter=lfs diff=lfs merge=lfs -text
+Art/Concepts/Factions/UI_Concept.png filter=lfs diff=lfs merge=lfs -text
+Art/Concepts/Factions/Concept_Video.mp4 filter=lfs diff=lfs merge=lfs -text
+Art/Concepts/Factions/Concept_Video2.mp4 filter=lfs diff=lfs merge=lfs -text
+Art/Concepts/Factions/Concept_Video3.mp4 filter=lfs diff=lfs merge=lfs -text
+Art/Concepts/Factions/Concept_Video4.mp4 filter=lfs diff=lfs merge=lfs -text
+Art/Concepts/Factions/Concept_Video5.mp4 filter=lfs diff=lfs merge=lfs -text
+Art/Concepts/Factions/Concept_Video6.mp4 filter=lfs diff=lfs merge=lfs -text
+Art/Concepts/Factions/Concept_Video7.mp4 filter=lfs diff=lfs merge=lfs -text
+Art/Concepts/Factions/Concept_Video8.mp4 filter=lfs diff=lfs merge=lfs -text
+Art/Concepts/Factions/Concept_Video9.mp4 filter=lfs diff=lfs merge=lfs -text
+Art/Concepts/Factions/Concept_Video10.mp4 filter=lfs diff=lfs merge=lfs -text
 
 # Text files - ensure LF line endings
 *.cs text eol=lf
