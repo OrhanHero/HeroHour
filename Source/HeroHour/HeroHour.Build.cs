@@ -1,5 +1,5 @@
 // HeroHour.Build.cs
-// UE5 Module Build Configuration
+// UE5 Module Build Configuration with Epic Online Services (EOS) Integration
 
 using UnrealBuildTool;
 
@@ -32,7 +32,11 @@ public class HeroHour : ModuleRules
             "NetCore",
             "ReplicationGraph",
             "Json",
-            "JsonUtilities"
+            "JsonUtilities",
+            // Online Subsystem & EOS
+            "OnlineSubsystem",
+            "OnlineSubsystemUtils",
+            "OnlineSubsystemEOS"
         });
 
         PrivateDependencyModuleNames.AddRange(new string[]
@@ -45,7 +49,13 @@ public class HeroHour : ModuleRules
             "RenderCore",
             "RHI",
             "Projects",
-            "DeveloperSettings"
+            "DeveloperSettings",
+            // Networking
+            "NetCore",
+            "PacketHandler",
+            // Online Subsystem EOS (private for implementation details)
+            "OnlineSubsystemEOS",
+            "OnlineSubsystem"
         });
 
         // F# Integration
@@ -63,7 +73,8 @@ public class HeroHour : ModuleRules
             ModuleDirectory + "/Public/AI",
             ModuleDirectory + "/Public/Network",
             ModuleDirectory + "/Public/Data",
-            ModuleDirectory + "/Public/UI"
+            ModuleDirectory + "/Public/UI",
+            ModuleDirectory + "/Public/Online"
         });
 
         // C++ Standard
@@ -78,5 +89,8 @@ public class HeroHour : ModuleRules
         PublicDefinitions.Add("WITH_GAMEPLAY_ABILITIES=1");
         PublicDefinitions.Add("WITH_MASS_ENTITY=1");
         PublicDefinitions.Add("WITH_STATE_TREE=1");
+        // EOS Definitions
+        PublicDefinitions.Add("WITH_EOS=1");
+        PublicDefinitions.Add("EOS_SDK_VERSION=1.16");
     }
 }

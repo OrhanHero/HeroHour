@@ -105,6 +105,7 @@ UE5 acts purely as visualization/audio interface. It receives position/state dat
 | **AI** | UE5 State Trees, Behavior Trees, EQS | Commander AI, unit AI, tactical planning |
 | **Data** | UE5 Data Assets + JSON Config | Data-driven design, modding support |
 | **Build** | Unreal Build Tool + dotnet CLI + Paket | Unified build pipeline |
+| **Online Services** | **Epic Online Services (EOS)** | Auth, Friends, Sessions, Matchmaking, Leaderboards, Achievements, Cloud Saves |
 
 ---
 
@@ -307,6 +308,50 @@ Each faction has **exactly ONE superweapon** and **exactly ONE super-agent** (he
 </video>
 
 *Concept video 10: Complete HeroHour vision and roadmap (HD version)*
+
+---
+
+## 🌐 Epic Online Services (EOS) Integration
+
+**Organization:** HERO (`hero-c31fffa8`)  
+**Product:** HERO HOUR (`9069f4f0eda147c9a341ea081b5e9803`)
+
+### Features Enabled
+- **Authentication**: EOS Auth (Account Portal) + EOS Connect (Device ID, Epic, Steam)
+- **Friends & Presence**: Cross-platform friends list, rich presence
+- **Sessions & Lobbies**: Create/join matches, skill-based matchmaking
+- **Leaderboards**: Global & ranked leaderboards with metadata
+- **Achievements**: 50+ faction-specific achievements
+- **Player Stats**: Combat, economy, superweapon usage stats
+- **Cloud Saves**: Player data, replays, custom maps (100MB/user)
+
+### Configuration
+```ini
+; Source/HeroHour/Config/DefaultEngine.ini (committed)
+[OnlineSubsystemEOS]
+ProductId=9069f4f0eda147c9a341ea081b5e9803
+SandboxId=hero-hour-dev
+DeploymentId=hero-hour-dev
+ClientId=xyza7891HEROGameClient
+; ClientSecret & EncryptionKey via ENV VARS (NEVER commit!)
+```
+
+```ini
+; Source/HeroHour/Config/DefaultEngine.Local.ini (gitignored - copy from template)
+[OnlineSubsystemEOS]
+ClientSecret=your_client_secret_here
+EncryptionKey=your_encryption_key_here
+```
+
+### Quick Start for Developers
+1. Copy `DefaultEngine.Local.ini.template` → `DefaultEngine.Local.ini`
+2. Add `EOS_CLIENT_SECRET` & `EOS_ENCRYPTION_KEY` to environment variables
+3. Build & run — EOS initializes automatically via `UHeroHourEOSSubsystem`
+
+### Documentation
+- [EOS Integration Guide](docs/technical/EOS_INTEGRATION.md)
+- [Quickstart for New Devs](docs/technical/EOS_QUICKSTART.md)
+- [Epic Dev Portal](https://dev.epicgames.com/portal/org/hero-c31fffa8)
 
 ---
 
@@ -605,6 +650,8 @@ gh pr create --title "feat(simulation): Hero ability cooldown system" --body "..
 | **Combat School Design** | `docs/gdd/COMBAT_SCHOOL.md` | ✅ Complete |
 | **Weather System** | `docs/gdd/WEATHER_SYSTEM.md` | ✅ Complete |
 | **Urban Warfare** | `docs/gdd/URBAN_WARFARE.md` | ✅ Complete |
+| **EOS Integration Guide** | `docs/technical/EOS_INTEGRATION.md` | ✅ Complete |
+| **EOS Quickstart** | `docs/technical/EOS_QUICKSTART.md` | ✅ Complete |
 | **Technical Architecture** | `docs/architecture/TECHNICAL_ARCHITECTURE.md` | 📝 In Progress |
 | **API Reference** | `docs/api/` | 📝 Planned |
 | **Production Pipeline** | `docs/production/PIPELINE.md` | 📝 Planned |

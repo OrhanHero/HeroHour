@@ -130,6 +130,13 @@ secrets.json
 *.cert
 *.pfx
 *.p12
+*.secret
+
+# EOS Local Config (contains secrets)
+*DefaultEngine.Local.ini
+*DefaultGame.Local.ini
+*DefaultEngine.Local.ini.template
+*DefaultGame.Local.ini.template
 
 # Claude settings (contains API keys)
 .claude/settings.json
