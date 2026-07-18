@@ -21,15 +21,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **English source localization** (en/Game.po) with 300+ strings
 - **Weather System technical specification** with F# stat modifiers
 - **Urban Warfare & Civilian Infrastructure design docs**
+- **Superweapons & Super-Agents matrix** for all 10 factions (1 superweapon + 1 super-agent per faction)
+- **In-Game Map Editor design** (UE5.8 runtime editor with AoD wave designer)
+- **AoD (Art of Defense) Infrastructure** — deterministic F# wave spawning system with intelligent routing
+- **Faction Concept Art** — `Art/Concepts/Factions/Factions_Core_ConceptArt.png` (all 10 factions + superweapons/super-agents)
+- **Documentation**: SUPERWEAPONS.md, SUPER_AGENTS.md, MAP_EDITOR.md, AOD_INFRASTRUCTURE.md
 
 ### Changed
-- N/A
+- **Pivoted to pure multiplayer competitive architecture** — removed singleplayer campaigns, Generals Challenge, Combat School moved to post-match analytics
+- Updated FRACTIONS_OVERVIEW.md with superweapon & super-agent details per faction
+- Updated README.md with superweapon/super-agent matrix, concept art, map editor & AoD infrastructure
 
 ### Deprecated
 - N/A
 
 ### Removed
-- N/A
+- Singleplayer campaign references (Generals Challenge mode)
+- PvE content planning
 
 ### Fixed
 - N/A

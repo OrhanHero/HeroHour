@@ -1,6 +1,6 @@
 # HeroHour - AAA RTS Game
 
-> **Command & Conquer: Generals Zero Hour** inspired Real-Time Strategy game built with **Unreal Engine 5.8**, **F# (Fable 5)**, and **.NET 8**
+> **Command & Conquer: Generals Zero Hour** inspired Real-Time Strategy game built with **Unreal Engine 5.8**, **F# (Fable 5)**, and **.NET 8** — **Pure Multiplayer Competitive Architecture**
 
 [![Build Status](https://img.shields.io/badge/build-passing-brightgreen)]()
 [![UE5.8](https://img.shields.io/badge/Unreal%20Engine-5.8-0E1128?logo=unrealengine)]()
@@ -12,9 +12,7 @@
 
 ## 🎮 Project Overview
 
-**HeroHour** is not merely a nostalgic tribute to the golden age of RTS — it is a deliberate technological and gameplay evolution of the genre. Inspired by the unmatched tactical dynamics and asymmetric warfare of *Command & Conquer: Generals - Zero Hour*, HeroHour sets new AAA production standards for modern PC gamers.
-
-The project rejects post-launch feature additions — all architectural depth, all **10 geopolitical factions**, and modern simulation tools are core from Day 1.
+**HeroHour** is a pure multiplayer competitive RTS — no singleplayer campaigns, no PvE content. All development resources flow into **E-Sports balance**, **deterministic lockstep netcode**, and **community-driven features**. Inspired by the unmatched tactical dynamics and asymmetric warfare of *Command & Conquer: Generals - Zero Hour*, HeroHour sets new AAA production standards for modern competitive RTS.
 
 ### Three Pillars of Design
 
@@ -27,12 +25,12 @@ The project rejects post-launch feature additions — all architectural depth, a
 ### Key Differentiators
 
 - **Massive Scale**: 1000+ units simultaneously
-- **Smart AI**: Commander AI with strategic planning and adaptation (UE5 State Trees)
+- **E-Sports Balance**: Every unit, upgrade, and ability designed for competitive play
+- **Deterministic Lockstep Netcode**: Zero desync, client-side prediction for responsiveness
 - **Data-Driven**: All gameplay balanced through data assets, no recompilation needed
 - **Modular Design**: Features independently developed and updated
-- **Cross-Platform Ready**: Built with scalability in mind
-- **Deep Modding**: Full mod support through data assets
-- **10 Asymmetric World Powers**: Each with unique tech trees, economies, and playstyles
+- **Community-First**: In-game Map Editor, AoD infrastructure, full mod support
+- **10 Asymmetric World Powers**: Each with unique tech trees, economies, superweapons, and super-agents
 
 ---
 
@@ -67,6 +65,8 @@ The technological breakthrough lies in strict separation between deterministic s
 │  │  │ - Combat Resolution (Projectile Physics)            │ │ │
 │  │  │ - AI Decision Making (State Trees)                  │ │ │
 │  │  │ - Resource Management                               │ │ │
+│  │  │ - AoD Wave Manager (Deterministic Spawning)         │ │ │
+│  │  │ - Superweapon / Super-Agent Manager                  │ │ │
 │  │  └──────────────────────────────────────────────────────┘ │ │
 │  │  ┌──────────────────────────────────────────────────────┐ │ │
 │  │  │ Data Management                                     │ │ │
@@ -83,7 +83,7 @@ The technological breakthrough lies in strict separation between deterministic s
 ```
 
 ### F# Simulation Layer (Fable 5 / .NET 8)
-The entire game state — exact coordinates of all units, HP values, projectile trajectories, macro-economic transactions, and Commander AI decision trees — lives in F#. Immutability guarantees each tick produces an exact successor state. This ensures:
+The entire game state — exact coordinates of all units, HP values, projectile trajectories, macro-economic transactions, Commander AI decision trees, **AoD wave states**, **superweapon cooldowns**, **super-agent instances** — lives in F#. Immutability guarantees each tick produces an exact successor state. This ensures:
 - **Absolute cheat-proofing**
 - **Perfect replays** (store only initial seed + input history)
 - **Deterministic multiplayer** without desync
@@ -96,7 +96,7 @@ UE5 acts purely as visualization/audio interface. It receives position/state dat
 | Layer | Technology | Purpose |
 |-------|------------|---------|
 | **Rendering** | Unreal Engine 5.8 | Nanite, Lumen, Niagara VFX, World Partition, Mass Entity |
-| **Simulation** | F# 8 / Fable 5 | Core game logic, economy, combat, AI decisions |
+| **Simulation** | F# 8 / Fable 5 | Core game logic, economy, combat, AI, AoD waves, superweapons |
 | **Runtime** | .NET 8 | High-performance managed runtime |
 | **Scripting** | C++ / Blueprints | UE5 gameplay framework, GAS, UI, UFSharpBridge |
 | **Networking** | Deterministic Lockstep + Prediction | Zero desync, client-side prediction for responsiveness |
@@ -106,141 +106,116 @@ UE5 acts purely as visualization/audio interface. It receives position/state dat
 
 ---
 
-## 🌍 The 10 Asymmetric World Powers
+## 🌍 The 10 Asymmetric World Powers — Superweapons & Super-Agents
 
-Each faction has a completely independent technology bundle, individual economic model, and custom Commander sub-classes.
+Each faction has **exactly ONE superweapon** and **exactly ONE super-agent** (hero unit, max 1 per player on field).
 
-### 1. 🇺🇸 United States — Technological Dominance & Air Superiority
-*High-tech precision, stealth operations, absolute air control. Expensive units requiring precise micro, highest survivability.*
-
-| Type | Unit / Structure | Description |
-|------|------------------|-------------|
-| **Special Unit** | **Specter Gunship II** | Massive air support ship; orbits sector permanently, auto-attacks with 105mm howitzer + 25mm gatling |
-| **Special Unit** | **Microwave Stryker** | Heavy wheeled vehicle; emits high-frequency microwave field — disables building power, cooks infantry in cover |
-| **Structure** | **Satellite Uplink Command** | Orbital control center; global scan (20s fog reveal), permanent stealth detection radius |
-| **Upgrade** | **Hellfire Missiles** | Drones/Jets gain laser-guided Hellfires — armor penetration, bonus vs heavy armor |
-| **Upgrade** | **Advanced Chemical Suits** | 100% immunity to bio-toxins & radioactive fallout |
-
-### 2. 🇨🇳 China — Iron Mass & Cyber Warfare
-*Sheer production power, massive tank swarms, flamethrower weapons, state-organized cyber espionage. Swarm Bonus: attack/speed bonuses in groups.*
-
-| Type | Unit / Structure | Description |
-|------|------------------|-------------|
-| **Special Unit** | **Hacker Elite** | Stealth while stationary; hacks enemy vehicles (disable) or supply lines (credit siphon) |
-| **Special Unit** | **Overlord Flame-Tank** | Monumental heavy tank; dual napalm projectors — burns defensive lines in seconds, leaves burning ground |
-| **Structure** | **China Internet Center** | Massive bunker; garrison up to 8 Hackers for global cyber-mining (massive passive income) |
-| **Upgrade** | **Napalm Uplink** | All tank shells & artillery gain napalm component — burning inferno areas on impact |
-
-### 3. 🏴‍☠️ HERO — Die Ultimative Hybrid-Armee (Technologieraub & Schrott-Recycling)
-*Verzichtet vollständig auf klassische Energieversorgung. Basiert auf Mobilität, Guerilla, Täuschung und aktivem Technologieraub.*
-
-| Type | Unit / Structure | Description |
-|------|------------------|-------------|
-| **Special Unit** | **HERO Combat Cycle** | Extrem agiles Motorrad. Besetzbar mit **jeder Infanterie des Spiels**. US Laser-Trooper → High-Speed Laser-Fahrzeug; Chinesischer Hacker → Mobile Cyber-Störplattform. |
-| **Special Unit** | **Prototype Hijacker** | Permanent getarnte Spezialeinheit. Kapert feindliche Fahrzeuge. Besonderheit: Kapt er er ein Spezialfahrzeug (z. B. indischen Railgun-Panzer), wird die Technologie analysiert und dauerhaft in HERO-Fabriken freigeschaltet. |
-| **Special Unit** | **Chimeran Overlord** | Schwerer Hybrid-Panzer. Nutzt erbeutetes russisches Fahrgestell, kombiniert mit modifizierter US-Mikrowellenkanone im Turm. |
-| **Structure** | **Schwarzmarkt-Hub** | Generiert im F#-Wirtschaftssystem dauerhaft illegale Credits und spiegelt gleichzeitig die Tech-Bäume aller im Spiel anwesenden Feinde, wodurch HERO Zugriff auf deren Upgrades erhält. |
-| **Upgrade** | **Hellfire Anthrax** | Tränkt alle biologischen Toxin-Waffen mit US-Hellfire-Brandbeschleunigern. Erzeugt eine giftige, brennende Wolke, die Infanterie zerfrisst und Panzerungen schmilzt. |
-
-### 4. 🇹🇷 Türkiye — Autonomous Drone Dominance & Mobile Fortresses
-*Modern networked unmanned warfare + highly mobile mechanized divisions.*
-
-| Type | Unit / Structure | Description |
-|------|------------------|-------------|
-| **Special Unit** | **Bayraktar Swarm Drone** | Remote-operated high-end drone; swarm AI, precision missiles, marks targets for artillery (2x range) |
-| **Special Unit** | **Altay-M MBT** | Main battle tank; **Fortress Mode** — digs in, +80% armor, switches to heavy kinetic cannon with massive range |
-| **Upgrade** | **Active Protection System (APS)** | All heavy vehicles get computer-controlled interception — destroys first incoming explosive projectile, 15s cooldown |
-
-### 5. 🇮🇷 Iran — Ballistic Armor & Fortress Doctrine
-*Territory lockdown + long-range ballistic rocket barrages for psychological/physical attrition.*
-
-| Type | Unit / Structure | Description |
-|------|------------------|-------------|
-| **Special Unit** | **Fateh Mobile Launcher** | Massive tracked rocket vehicle; manual anchoring required; fires heavy SRBMs devastating base areas |
-| **Structure** | **Underground Silo** | Deep-earth missile bunker; **immune to all conventional attacks (including superweapons)** while closed; opens only 3s during launch |
-| **Upgrade** | **Bunker Reinforcement** | +50% structure HP on all defenses; garrisoned infantry fire ATGMs with increased velocity |
-
-### 6. 🇵🇰 Pakistan — Asymmetric Counterstrike & EMP Ambushes
-*Terrain geometry mastery, concealed ambushes, EMP neutralization, lightning needle strikes.*
-
-| Type | Unit / Structure | Description |
-|------|------------------|-------------|
-| **Special Unit** | **EMP Commando** | Elite sabotage; invisible in Fog of War; places EMP charges on buildings or throws EMP grenades — disables entire tank columns for 12s |
-| **Structure** | **Hidden Training Camp** | Barracks with permanent radar-jamming field; units invisible on enemy minimap until first shot |
-| **Upgrade** | **Guerrilla Regeneration** | Units auto-regenerate HP rapidly while in Fog of War outside enemy LOS |
-
-### 7. 🇮🇳 India — Technological Mass & Railgun Prototypes
-*Gigantic advanced arms industry + breakthrough lab/software research. Mechanized excellence + kinetic high-energy weapons.*
-
-| Type | Unit / Structure | Description |
-|------|------------------|-------------|
-| **Special Unit** | **Arjun Mk-III** | Tech showcase tank; **experimental Railgun** — projectile penetrates multiple vehicles in line, ignores physical armor |
-| **Structure** | **SDRF Tech Center** | Advanced IT/research complex; **-25% cost & research time for all global upgrades**, detects enemy cyber attacks instantly |
-| **Upgrade** | **Composite Reactive Armor** | Intelligent armor reducing explosive damage (artillery/rockets) by flat 40% |
-
-### 8. 🇯🇵 Japan — Precise Mecha Robotics & Quantum Networks
-*Almost no tracked vehicles — bipedal mechas, sci-fi energy weapons, autonomous shields. Extreme mobility.*
-
-| Type | Unit / Structure | Description |
-|------|------------------|-------------|
-| **Special Unit** | **Tetsujin Walker** | Agile bipedal combat mech; hydraulically optimized joints — **jumps cliffs, rivers, rough terrain** for devastating flanking |
-| **Structure** | **Quantum Core** | Revolutionary power source; **5x output of standard plant** on minimal footprint; explodes in massive plasma shockwave when destroyed |
-| **Upgrade** | **Plasma Shield Harmonizer** | All mechs gain blue plasma hull; absorbs fixed damage, fully regenerates after 6s without damage |
-
-### 9. 🇰🇷 South Korea — K-Cyber Network & Subsonic Stealth Air Force
-*Information warfare mastery + surgical air strikes with extreme-speed jets. Enemy fights blind; SK Commander sees everything.*
-
-| Type | Unit / Structure | Description |
-|------|------------------|-------------|
-| **Special Unit** | **KF-X Black Shark** | Futuristic supersonic stealth bomber; **radar-invisible** until bomb release; then visible briefly, accelerates to Mach 2 to escape AA |
-| **Structure** | **K-Sat Relay Center** | High-res satellite center; enables **Cyber Blackout** — blinds enemy radar & minimap completely for 30s |
-| **Upgrade** | **Smart-Predictive Munition** | All projectiles use pre-calculation algorithm — **guaranteed 100% hit rate on moving targets** (especially fast aircraft/bikes) |
-
-### 10. 🇷🇺 Russian Federation — Heavy Armor Industry & Thermobaric Devastation
-*Raw violence, massive steel tracks, Tesla energy, ruthless thermobaric weapons. Highest structure HP in game.*
-
-| Type | Unit / Structure | Description |
-|------|------------------|-------------|
-| **Special Unit** | **T-14 Armata Overlord** | Colossal dual-main-gun tank; **auto AA flak on turret** — autonomous defense vs air & ground |
-| **Special Unit** | **Tesla Trooper** | Heavy infantry in exoskeleton; chain lightning jumps between vehicles, slows mechanical units |
-| **Structure** | **Giga-Fabrik** | Massive arms forge; **only building producing two vehicles simultaneously in same queue** |
-| **Upgrade** | **Thermobaric Warheads** | Rocket artillery (TOS-2) gets thermobaric ammo — massive heatwave eliminates infantry instantly, burns ground 10s |
+| Faction | Superweapon | Super-Agent |
+|---------|-------------|-------------|
+| 🇺🇸 **USA** | **Chrono-Laser-Phalanx** — Orbital laser array with temporal targeting; strikes anywhere on map with zero travel time, deletes structures/units in 300m radius | **Specter Prime** — Stealth spectral gunship; phases through terrain, deploys temporal decoys, executes surgical strikes |
+| 🇨🇳 **China** | **Nuke-Silicon-Kollaps** — Tactical nuke + EMP pulse hybrid; vaporizes center, EMP rings disable all electronics in 2km for 45s | **Lotus X** — Cyber-commando; hacks enemy production globally, converts units to Chinese control temporarily |
+| 🏴‍☠️ **HERO** | **Singularitäts-Schrottkanone** — Fires compressed scrap singularity; pulls all units/structures in 500m, crushes them, converts mass to credits | **Nexus Core** — Shapeshifter; copies any enemy unit's abilities, hijacks tech tree access dynamically |
+| 🇷🇺 **Russia** | **Tesla-Giga-Spule** — Massive Tesla coil tower; chain-lightning arcs across entire map, prioritizes high-value targets | **Omega Boris** — Tesla-exoskeleton titan; projects shielding aura, overloads enemy vehicles on proximity |
+| 🇮🇷 **Iran** | **Sejjil-III Giga-Silo** — Ballistic missile with kinetic penetrators + delayed radiation cloud; denies area for 3 minutes | **Commander Shahin** — Fortress commander; deploys instant bunkers, calls precision strikes, regenerates structures |
+| 🇹🇷 **Türkiye** | **TAF-Anka Global Strike** — Swarm of 500 micro-drones from orbit; surgical strikes on all enemy production simultaneously | **Kaan** — Drone carrier hero; commands personal swarm, marks targets for artillery multiplication |
+| 🇵🇰 **Pakistan** | **Giga-EMP-Kaskade** — Atmospheric EMP burst; global electronics shutdown for 60s, friendly units hardened | **Guerilla Shadow** — Phasing infiltrator; places EMP traps, converts enemy structures to neutral |
+| 🇮🇳 **India** | **Agni-V Plasmabrenner** — Railgun-fired plasma slug from orbit; penetrates crust, creates volcanic vent denying region | **Akash** — Mecha-avatar; railgun arm, quantum shield, calls orbital strikes |
+| 🇯🇵 **Japan** | **Mecha-Giga-Wave** — Resonance pulse from Quantum Cores; shatters all mechanical units in hemisphere, heals friendly mechas | **Shinobi 2.0** — Quantum ninja; teleports, phases, executes multi-target assassinations in single tick |
+| 🇰🇷 **South Korea** | **K-Sat Cyber-Strahl** — Satellite beam; rewrites enemy unit AI to friendly for 30s, reveals all stealth | **Viper** — Cyber-assassin; hacks superweapons, redirects strikes, disables enemy super-agents |
 
 ---
 
-## ⚡ Core Gameplay Features
+### Faction Tactical Units Concept Art
 
-### Combat School (Tactical Post-Mission Analysis)
-Deep F# simulation-layer analytics tool. Logs every action (clicks, hotkeys, build-order timings, resource efficiency). Post-match visualization in UE5 UI:
-- **Geographic loss heatmap**
-- **APM curve**
-- **AI-generated suggestions**: *"2nd depot 45s late → 20% tank production delay"*
+![HeroHour Tactical Units](Art/Concepts/Factions/Factions_Tactical_Units_ConceptArt.png)
 
-### Generals Challenge Mode (Ultimate Campaign)
-Singleplayer centerpiece. Choose 1 of 10 factions → face 9 hyper-specialized AI Generals (UE5 State Trees). Each General uses extreme faction alignment (e.g., US Laser General, **HERO Toxin General**). AI dynamically analyzes player counters and adapts routes. Defeating a General unlocks them for Multiplayer + unique profile medals.
+*All 10 factions' tactical combat units — infantry, vehicles, aircraft, structures with silhouettes for instant recognition*
 
-### Dynamic Weather Simulation (Direct Gameplay Impact)
-Full UE5 physical particle simulation — weather decisively affects tactics:
+---
 
-| Weather | Effect |
-|---------|--------|
-| **Heavy Rain** | Cools air; **-30% laser damage/range** (USA, Japan) — light scatters in water droplets |
-| **Massive Sandstorms** | **-70% sight range** for all units/towers; radar systems fail completely — perfect for **HERO** ambushes / Pakistan EMP |
-| **Heavy Snowfall** | Ground freezes; **tracked vehicles (Russia, China) -25% speed/grip**; light mechas (Japan) unaffected |
+### Faction Concept Art
 
-### Neutral Elements & Urban Warfare
-Maps are living, tactically usable civilian environments, not empty arenas.
+![HeroHour Faction Concepts](Art/Concepts/Factions/Factions_Core_ConceptArt.png)
 
-#### Civilian Infrastructure & Capture Mechanics
-- **Civilian vehicles** (cars, buses, tractors) in urban areas — **HERO** can garrison infantry to instantly convert into **improvised SVBIEDs** or **mobile militia gun platforms**
-- **Large urban buildings** (skyscrapers, malls) — garrison up to 20 infantry → **hard-to-crack fortresses at strategic chokepoints**
+*All 10 factions with their Superweapons & Super-Agents visualized*
 
-#### Capturable High-Tech Structures (via Engineers)
-| Structure | Benefit |
-|-----------|---------|
-| **Civilian Oil Refinery** | Continuous reliable Credit stream in F# economy |
-| **Civilian Major Hospital** | Map-wide passive healing field; all injured infantry auto-heal over time when not in combat |
-| **Intelligence Outpost** | Hacks enemy frequencies; every 90s reveals exact build/production queue of all enemies |
+---
+
+## 🗺️ In-Game Map Editor & AoD Infrastructure
+
+### Runtime Map Editor (UE5.8)
+Integrated directly into the game client — no external tools required.
+
+**Features:**
+- **Terrain Sculpting**: Heightmap painting, erosion simulation, biome blending
+- **Civilian Infrastructure Placement**: Drag-drop cities, roads, capturable structures
+- **AoD Wave Designer**: Visual node-graph for wave composition, scaling rules, attack routes
+- **Playtest Instant**: One-click "Test Wave" spawns simulation in-editor
+- **Publishing**: One-click workshop upload with versioning, tags, ratings
+- **Multiplayer Co-Editing**: Real-time collaborative editing via lockstep sync
+
+**Technical Implementation:**
+- UE5 Editor Utility Widgets + Slate for UI
+- Runtime landscape editing via `ULandscapeSubsystem`
+- Data Assets for all map objects (versioned, diffable)
+- Blueprint-exposable editor functions for community extensions
+
+### AoD (Art of Defense) Wave System — F# Deterministic Core
+
+The **mathematical infrastructure** for cooperative survival maps. Fully deterministic, runs in F# simulation layer.
+
+**Core Concepts:**
+- **Wave Definition**: `SpawnWave` — wave ID, unit type list, scaling factor (player count), spawn interval, formation
+- **Wave Manager State**: Current wave, timer to next wave, remaining AI units on field, difficulty scaling curve
+- **Intelligent Routing**: A* + flow-field hybrid computes dynamic attack paths avoiding player defenses
+- **Scaling Formula**: `UnitCount = BaseCount * (1 + (PlayerCount - 1) * 0.65) * WaveDifficultyMultiplier`
+- **Adaptive AI**: Analyzes player build patterns, targets weakest economic sector, flanks static defenses
+
+**F# Types (Source/HeroHourSimulation/src/AoD/):**
+```fsharp
+type SpawnWave = {
+    WaveId: int
+    UnitTypes: UnitTypeId list
+    BaseCount: int
+    ScalingFactor: float
+    SpawnInterval: float
+    Formation: FormationType
+    AttackRoute: RouteId
+}
+
+type WaveManagerState = {
+    CurrentWave: int
+    TimerToNextWave: float
+    RemainingAIUnits: int
+    DifficultyCurve: DifficultySettings
+    ActiveWaves: SpawnWave list
+}
+```
+
+**Network Sync**: Wave timer and spawn events replicated via deterministic lockstep — zero bandwidth overhead, perfect sync.
+
+---
+
+## ⚡ Core Multiplayer Features
+
+### Deterministic Lockstep Netcode
+- **60 TPS Fixed Timestep**: All clients simulate identical state
+- **Input Delay Masking**: Client-side prediction for movement/abilities
+- **Rollback**: Frame-perfect reconciliation on desync (theoretical — F# immutability prevents)
+- **Bandwidth**: ~2 KB/s per player (inputs only)
+
+### Combat School (Post-Match Analytics)
+Deep F# simulation-layer analytics. Logs every action. Post-match UI in UE5:
+- Geographic loss heatmap
+- APM curve with percentile comparison
+- Build-order efficiency vs optimal
+- AI-generated suggestions: *"2nd War Factory 45s late → 20% tank delay"*
+
+### Community Features
+- **In-Game Tournament Bracket**: Automated Swiss/DE brackets, streaming integration
+- **Replay Exchange**: Deterministic replays = instant sharing, frame-perfect seeking
+- **Map Workshop**: Editor publishing, ratings, curated map pools per season
+- **Clan System**: Shared resources, clan wars, custom lobbies
 
 ---
 
@@ -262,10 +237,13 @@ HeroHour/
 │   └── extensions.json
 ├── docs/                       # Documentation
 │   ├── gdd/                    # Game Design Documents
-│   │   ├── HERO_HOUR_GDD.md           # Full GDD from Ultimate Spec
-│   │   ├── FRACTIONS_OVERVIEW.md      # 10 Factions deep-dive
+│   │   ├── HERO_HOUR_GDD.md           # Full GDD
+│   │   ├── FRACTIONS_OVERVIEW.md      # 10 Factions + Superweapons/Agents
+│   │   ├── SUPERWEAPONS.md            # Superweapon design specs
+│   │   ├── SUPER_AGENTS.md            # Super-agent design specs
+│   │   ├── MAP_EDITOR.md              # In-game editor design
+│   │   ├── AOD_INFRASTRUCTURE.md      # AoD wave system design
 │   │   ├── COMBAT_SCHOOL.md           # Analytics system design
-│   │   ├── GENERALS_CHALLENGE.md      # Campaign mode design
 │   │   ├── WEATHER_SYSTEM.md          # Dynamic weather mechanics
 │   │   └── URBAN_WARFARE.md           # Civilian infrastructure design
 │   ├── architecture/           # Technical Architecture
@@ -281,7 +259,8 @@ HeroHour/
 │   │   │   ├── AI/             # Commander AI, State Trees
 │   │   │   ├── Network/        # Deterministic networking
 │   │   │   ├── Data/           # Faction data assets
-│   │   │   └── UI/             # Combat School, Generals Challenge UI
+│   │   │   ├── UI/             # Combat School, Map Editor UI
+│   │   │   └── AoD/            # AoD wave UI components
 │   │   └── Private/
 │   ├── HeroHourSimulation/     # F# Simulation Layer (.NET 8)
 │   │   ├── HeroHourSimulation.fsproj
@@ -295,9 +274,12 @@ HeroHour/
 │   │   │   ├── Data/           # DataLoader, FactionDataAssets
 │   │   │   ├── Weather/        # WeatherSimulation, WeatherEffects
 │   │   │   ├── Urban/          # CivilianInfrastructure, CaptureMechanics
+│   │   │   ├── AoD/            # AoDTypes, WaveManager, SpawnSystem
+│   │   │   ├── Superweapons/   # SuperWeaponTypes, SuperWeaponManager
+│   │   │   ├── SuperAgents/    # HeroTypes, SuperAgentManager
 │   │   │   └── Events/         # EventBus, CombatSchoolLogger
 │   │   └── tests/              # Expecto unit tests
-│   ├── HeroHourEditor/         # Editor extensions (Faction editors, Weather tool)
+│   ├── HeroHourEditor/         # Editor extensions (Map Editor, Faction editors)
 │   └── HeroHourGame/           # Game-specific code
 │       ├── Config/
 │       │   ├── DefaultEngine.ini
@@ -310,36 +292,15 @@ HeroHour/
 │   └── tools/                  # DataAssetGenerator, ModTooling, PerformanceProfiler
 ├── Content/                    # UE5 Content (LFS)
 │   ├── Blueprints/
-│   ├── DataAssets/             # 10 Faction DataAssets, Weather DataAssets
-│   ├── Maps/                   # Urban maps with civilian infrastructure
+│   ├── DataAssets/             # 10 Faction DataAssets, Superweapon DataAssets, Hero DataAssets
+│   ├── Maps/                   # Competitive maps, AoD maps
 │   ├── Materials/
-│   ├── Niagara/                # Faction VFX, Weather VFX
-│   └── UI/                     # Combat School, Generals Challenge widgets
+│   ├── Niagara/                # Faction VFX, Weather VFX, Superweapon VFX
+│   └── UI/                     # Combat School, Map Editor, Tournament UI
 ├── Art/                        # Source art assets
-│   ├── Concepts/
-│   ├── Characters/
-│   ├── Buildings/
-│   ├── Environments/
-│   ├── VFX/
-│   └── UI/
 ├── Audio/                      # Audio assets
-│   ├── Music/
-│   ├── SFX/
-│   ├── Voice/
-│   └── MetaSounds/
 ├── Localization/               # 7 Languages
-│   ├── en/                     # English (source)
-│   ├── de/                     # German
-│   ├── fr/                     # French
-│   ├── es/                     # Spanish
-│   ├── tr/                     # Turkish
-│   ├── ja/                     # Japanese
-│   └── ko/                     # Korean
 ├── Tests/                      # Test projects
-│   ├── Unit/
-│   ├── Integration/
-│   ├── E2E/
-│   └── Performance/
 ├── HeroHour.uproject           # UE5 Project file
 ├── HeroHour.sln                # Solution file
 ├── Directory.Build.props       # MSBuild properties
@@ -458,6 +419,7 @@ gh pr create --title "feat(simulation): Hero ability cooldown system" --body "..
 | **E2E** | Unreal Automation | Gameplay loops |
 | **Performance** | UE Insights + custom | Regression < 5% |
 | **Network** | Custom replication test | Determinism |
+| **AoD Wave Tests** | Expecto | Wave scaling, routing, sync |
 
 ---
 
@@ -466,9 +428,12 @@ gh pr create --title "feat(simulation): Hero ability cooldown system" --body "..
 | Document | Location | Status |
 |----------|----------|--------|
 | **Game Design Document** | `docs/gdd/HERO_HOUR_GDD.md` | ✅ Complete |
-| **Factions Overview** | `docs/gdd/FRACTIONS_OVERVIEW.md` | ✅ Complete |
+| **Factions Overview + Superweapons/Agents** | `docs/gdd/FRACTIONS_OVERVIEW.md` | ✅ Complete |
+| **Superweapons Design** | `docs/gdd/SUPERWEAPONS.md` | ✅ Complete |
+| **Super-Agents Design** | `docs/gdd/SUPER_AGENTS.md` | ✅ Complete |
+| **Map Editor Design** | `docs/gdd/MAP_EDITOR.md` | ✅ Complete |
+| **AoD Infrastructure** | `docs/gdd/AOD_INFRASTRUCTURE.md` | ✅ Complete |
 | **Combat School Design** | `docs/gdd/COMBAT_SCHOOL.md` | ✅ Complete |
-| **Generals Challenge** | `docs/gdd/GENERALS_CHALLENGE.md` | ✅ Complete |
 | **Weather System** | `docs/gdd/WEATHER_SYSTEM.md` | ✅ Complete |
 | **Urban Warfare** | `docs/gdd/URBAN_WARFARE.md` | ✅ Complete |
 | **Technical Architecture** | `docs/architecture/TECHNICAL_ARCHITECTURE.md` | 📝 In Progress |
@@ -521,4 +486,4 @@ This project is licensed under the MIT License - see [LICENSE](LICENSE) for deta
 
 ---
 
-*HeroHour — Where Strategy Meets Spectacle* ⚔️
+*HeroHour — Pure Multiplayer Competitive RTS. Where Strategy Meets Spectacle.* ⚔️
