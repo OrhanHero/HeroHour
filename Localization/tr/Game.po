@@ -1,0 +1,146 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: HeroHour\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-07-18 15:30+0200\n"
+"PO-Revision-Date: 2025-07-18 15:30+0200\n"
+"Last-Translator: HeroHour Team\n"
+"Language-Team: Turkish\n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: Main Menu
+msgid "Play"
+msgstr "Oyna"
+
+msgid "Multiplayer"
+msgstr "Çoklu Oyuncu"
+
+msgid "Campaign"
+msgstr "Kampanya"
+
+msgid "Skirmish"
+msgstr "Serbest Oyun"
+
+msgid "Settings"
+msgstr "Ayarlar"
+
+msgid "Exit"
+msgstr "Çıkış"
+
+#: Factions
+msgid "USA"
+msgstr "ABD"
+
+msgid "China"
+msgstr "Çin"
+
+msgid "GLA"
+msgstr "GLA"
+
+#: Resources
+msgid "Credits"
+msgstr "Krediler"
+
+msgid "Energy"
+msgstr "Enerji"
+
+msgid "Tech Points"
+msgstr "Teknoloji Puanları"
+
+#: UI
+msgid "Build"
+msgstr "Yap"
+
+msgid "Train"
+msgstr "Eğit"
+
+msgid "Research"
+msgstr "Araştır"
+
+msgid "Select Units"
+msgstr "Üniteleri Seç"
+
+msgid "Attack"
+msgstr "Saldır"
+
+msgid "Move"
+msgstr "Hareket Et"
+
+msgid "Stop"
+msgstr "Dur"
+
+msgid "Guard"
+msgstr "Koru"
+
+msgid "Patrol"
+msgstr "Devriye"
+
+#: Gameplay
+msgid "Victory"
+msgstr "Zafer"
+
+msgid "Defeat"
+msgstr "Mağlubiyet"
+
+msgid "Draw"
+msgstr "Berabere"
+
+msgid "Game Paused"
+msgstr "Oyun Duraklatıldı"
+
+msgid "Game Speed"
+msgstr "Oyun Hızı"
+
+#: Units
+msgid "Infantry"
+msgstr "Piyade"
+
+msgid "Vehicle"
+msgstr "Araç"
+
+msgid "Aircraft"
+msgstr "Hava Aracı"
+
+msgid "Structure"
+msgstr "Yapı"
+
+msgid "Hero"
+msgstr "Kahraman"
+
+#: Settings
+msgid "Graphics"
+msgstr "Grafik"
+
+msgid "Audio"
+msgstr "Ses"
+
+msgid "Controls"
+msgstr "Kontroller"
+
+msgid "Language"
+msgstr "Dil"
+
+msgid "Resolution"
+msgstr "Çözünürlük"
+
+msgid "Fullscreen"
+msgstr "Tam Ekran"
+
+msgid "VSync"
+msgstr "Dikey Senkronizasyon"
+
+msgid "Master Volume"
+msgstr "Ana Ses"
+
+msgid "Music Volume"
+msgstr "Müzik Ses"
+
+msgid "SFX Volume"
+msgstr "Efekt Ses"
+
+msgid "Voice Volume"
+msgstr "Sesli Konuşma"

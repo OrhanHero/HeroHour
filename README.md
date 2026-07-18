@@ -166,6 +166,7 @@ HeroHour/
 │   ├── de/                     # German
 │   ├── fr/                     # French
 │   ├── es/                     # Spanish
+│   ├── tr/                     # Turkish
 │   ├── ja/                     # Japanese
 │   └── ko/                     # Korean
 ├── Tests/                      # Test projects
