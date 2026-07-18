@@ -151,6 +151,7 @@ Each faction has **exactly ONE superweapon** and **exactly ONE super-agent** (he
 | **Superweapons Matrix** | ![Superweapons](Art/Concepts/Factions/SUPERWEAPONS.png) |
 | **Super-Agents Matrix** | ![SP Agents](Art/Concepts/Factions/SP_Agent_Concept.png) |
 | **Superweapons Detail** | ![SP Weapons](Art/Concepts/Factions/SP_Weapon_Concept.png) |
+| **UI / HUD Concept** | ![UI Concept](Art/Concepts/Factions/UI_Concept.png) |
 
 ---
 
@@ -186,6 +187,17 @@ Each faction has **exactly ONE superweapon** and **exactly ONE super-agent** (he
 ![Map Concept](Art/Concepts/Factions/Map_Concept.png)
 
 *Strategic map layout concepts for competitive and AoD modes*
+
+---
+
+### Concept Video
+
+<video controls width="800">
+  <source src="Art/Concepts/Factions/HeroHour_Concept_Video.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+*HeroHour concept video showcasing gameplay, factions, superweapons, and super-agents in action*
 
 ---
 
