@@ -308,25 +308,6 @@ Each faction has **exactly ONE superweapon** and **exactly ONE super-agent** (he
 
 ---
 
-### UI Concept Art
-
-| Concept | Image |
-|---------|-------|
-| **UI Concept 1** | ![UI_1](Art/Concepts/Factions/UI_1.png) |
-| **UI Concept 2** | ![UI_2](Art/Concepts/Factions/UI_2.png) |
-| **UI Concept 3** | ![UI_3](Art/Concepts/Factions/UI_3.png) |
-| **UI Concept 4** | ![UI_4](Art/Concepts/Factions/UI_4.png) |
-| **UI Concept 5** | ![UI_5](Art/Concepts/Factions/UI_5.png) |
-| **UI Concept 6** | ![UI_6](Art/Concepts/Factions/UI_6.png) |
-| **UI Concept 7** | ![UI_7](Art/Concepts/Factions/UI_7.png) |
-| **UI Concept 8** | ![UI_8](Art/Concepts/Factions/UI_8.png) |
-| **UI Concept 9** | ![UI_9](Art/Concepts/Factions/UI_9.png) |
-| **UI Concept 10** | ![UI_10](Art/Concepts/Factions/UI_10.png) |
-
-*10 UI/Interface concept iterations exploring HUD layouts, faction-specific UI themes, and competitive RTS information density*
-
----
-
 ## 🗺️ In-Game Map Editor & AoD Infrastructure
 
 ### Runtime Map Editor (UE5.8)
