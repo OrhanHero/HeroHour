@@ -117,7 +117,7 @@ jobs:
           install-engine: true
 
       - name: Download build artifacts
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: ue5-build
           path: .

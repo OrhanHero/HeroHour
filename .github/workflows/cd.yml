@@ -121,7 +121,7 @@ jobs:
     environment: staging
     steps:
       - name: Download package
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: HeroHour-${{ needs.build-release.outputs.version }}-Win64-Shipping
           path: staging-package
@@ -152,7 +152,7 @@ jobs:
     environment: production
     steps:
       - name: Download package
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v8
         with:
           name: HeroHour-${{ needs.build-release.outputs.version }}-Win64-Shipping
           path: production-package
