@@ -1,0 +1,82 @@
+name: Nightly Build
+
+on:
+  schedule:
+    # Run at 02:00 UTC daily
+    - cron: '0 2 * * *'
+  workflow_dispatch:
+    inputs:
+      target:
+        description: 'Build target'
+        required: true
+        default: 'Development'
+        type: choice
+        options:
+          - Development
+          - Shipping
+
+jobs:
+  nightly-build:
+    name: Nightly Build (${{ github.event.inputs.target || 'Development' }})
+    runs-on: windows-latest
+    timeout-minutes: 120
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+          fetch-depth: 0
+
+      - name: Setup UE5
+        uses: peter-evans/setup-unreal-engine@v2
+        with:
+          version: '5.8'
+          install-engine: true
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Restore dependencies
+        run: |
+          dotnet tool restore
+          paket restore
+
+      - name: Build F# Simulation
+        run: dotnet build Source/HeroHourSimulation/HeroHourSimulation.fsproj --configuration ${{ github.event.inputs.target || 'Development' }}
+
+      - name: Generate Project Files
+        run: |
+          & "$env:UE5_ROOT/Engine/Build/BatchFiles/GenerateProjectFiles.bat" -project="HeroHour.uproject" -game -engine
+
+      - name: Build UE5
+        run: |
+          & "$env:UE5_ROOT/Engine/Build/BatchFiles/Build.bat" HeroHourEditor Win64 ${{ github.event.inputs.target || 'Development' }} -project="HeroHour.uproject" -waitmutex
+
+      - name: Run Unit Tests
+        run: |
+          dotnet test Source/HeroHourSimulation/tests/HeroHourSimulation.Tests.fsproj --configuration ${{ github.event.inputs.target || 'Development' }} --logger "trx;LogFileName=test-results.trx"
+
+      - name: Upload test results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: nightly-test-results-${{ github.run_number }}
+          path: "**/test-results.trx"
+          retention-days: 7
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: nightly-build-${{ github.run_number }}
+          path: |
+            Binaries/
+            Source/HeroHourSimulation/bin/
+          retention-days: 3
+
+      - name: Notify on failure
+        if: failure()
+        run: |
+          echo "Nightly build failed!"
+          # Add notification: Discord, Slack, email

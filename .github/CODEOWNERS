@@ -1,0 +1,74 @@
+# HeroHour Code Owners
+# These owners will be requested for review when someone opens a PR modifying matching files.
+
+# Global - Tech leads required for all PRs
+* @heroHour/tech-leads
+
+# F# Simulation Layer
+/Source/HeroHourSimulation/ @heroHour/simulation @heroHour/tech-leads
+
+# UE5 Core Module
+/Source/HeroHour/Public/Simulation/ @heroHour/simulation @heroHour/tech-leads
+/Source/HeroHour/Private/Simulation/ @heroHour/simulation @heroHour/tech-leads
+
+# Rendering & Graphics
+/Source/HeroHour/Public/Rendering/ @heroHour/rendering @heroHour/tech-leads
+/Source/HeroHour/Private/Rendering/ @heroHour/rendering @heroHour/tech-leads
+/Source/HeroHour/Public/Niagara/ @heroHour/rendering @heroHour/tech-leads
+
+# Gameplay Ability System
+/Source/HeroHour/Public/GameplayAbility/ @heroHour/gameplay @heroHour/tech-leads
+/Source/HeroHour/Private/GameplayAbility/ @heroHour/gameplay @heroHour/tech-leads
+
+# AI Systems
+/Source/HeroHour/Public/AI/ @heroHour/ai @heroHour/tech-leads
+/Source/HeroHour/Private/AI/ @heroHour/ai @heroHour/tech-leads
+/Source/HeroHourSimulation/src/AI/ @heroHour/ai @heroHour/simulation
+
+# Networking
+/Source/HeroHour/Public/Network/ @heroHour/network @heroHour/tech-leads
+/Source/HeroHour/Private/Network/ @heroHour/network @heroHour/tech-leads
+
+# Data Assets
+/Source/HeroHour/Public/Data/ @heroHour/gameplay @heroHour/tools
+/Source/HeroHour/Private/Data/ @heroHour/gameplay @heroHour/tools
+/Source/HeroHourSimulation/src/Data/ @heroHour/gameplay @heroHour/simulation
+
+# UI Systems
+/Source/HeroHour/Public/UI/ @heroHour/gameplay @heroHour/tools
+/Source/HeroHour/Private/UI/ @heroHour/gameplay @heroHour/tools
+
+# Editor Extensions
+/Source/HeroHourEditor/ @heroHour/tools @heroHour/tech-leads
+
+# Game Module
+/Source/HeroHourGame/ @heroHour/gameplay @heroHour/tech-leads
+
+# Build Scripts
+/Scripts/build/ @heroHour/devops @heroHour/tech-leads
+/Scripts/ci/ @heroHour/devops
+/Source/HeroHour.Build.cs @heroHour/devops @heroHour/tech-leads
+/Source/HeroHourSimulation/HeroHourSimulation.fsproj @heroHour/simulation @heroHour/devops
+
+# CI/CD
+/.github/workflows/ @heroHour/devops @heroHour/tech-leads
+/.github/dependabot.yml @heroHour/devops
+
+# Configuration
+/*.ini @heroHour/gameplay @heroHour/tech-leads
+/*.json @heroHour/devops
+/*.xml @heroHour/devops
+/global.json @heroHour/simulation @heroHour/devops
+/paket.dependencies @heroHour/simulation @heroHour/devops
+
+# Documentation
+/docs/ @heroHour/tech-leads
+
+# Content (requires LFS)
+/Content/ @heroHour/gameplay @heroHour/rendering @heroHour/tools
+/Art/ @heroHour/gameplay
+/Audio/ @heroHour/gameplay
+
+# Tests
+/Tests/ @heroHour/qa @heroHour/tech-leads
+/Source/HeroHourSimulation/tests/ @heroHour/simulation @heroHour/qa

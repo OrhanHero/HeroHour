@@ -1,0 +1,203 @@
+# HeroHour CD Pipeline
+
+name: CD
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Target environment'
+        required: true
+        type: choice
+        options:
+          - staging
+          - production
+      version:
+        description: 'Version tag (e.g., v1.0.0)'
+        required: true
+        type: string
+
+env:
+  UE5_VERSION: '5.8'
+  SOLUTION: 'HeroHour.sln'
+
+jobs:
+  # Build Release
+  build-release:
+    name: Build Release
+    runs-on: windows-latest
+    timeout-minutes: 90
+    outputs:
+      version: ${{ steps.extract_version.outputs.version }}
+      build_path: ${{ steps.package.outputs.build_path }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+          fetch-depth: 0
+
+      - name: Extract version
+        id: extract_version
+        run: |
+          if ("${{ github.event_name }}" -eq "push") {
+            $tag = "${{ github.ref_name }}"
+          } else {
+            $tag = "${{ github.event.inputs.version }}"
+          }
+          $version = $tag.TrimStart('v')
+          echo "version=$version" >> $env:GITHUB_OUTPUT
+
+      - name: Setup UE5
+        uses: peter-evans/setup-unreal-engine@v2
+        with:
+          version: ${{ env.UE5_VERSION }}
+          install-engine: true
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Restore .NET dependencies
+        run: |
+          dotnet tool restore
+          paket restore
+
+      - name: Build F# Simulation (Release)
+        run: dotnet build Source/HeroHourSimulation/HeroHourSimulation.fsproj --configuration Release
+
+      - name: Generate Project Files
+        run: |
+          & "$env:UE5_ROOT/Engine/Build/BatchFiles/GenerateProjectFiles.bat" -project="HeroHour.uproject" -game -engine
+
+      - name: Build UE5 Shipping
+        run: |
+          & "$env:UE5_ROOT/Engine/Build/BatchFiles/Build.bat" HeroHourEditor Win64 Shipping -project="HeroHour.uproject" -waitmutex -clean
+
+      - name: Build UE5 Game (Shipping)
+        run: |
+          & "$env:UE5_ROOT/Engine/Build/BatchFiles/Build.bat" HeroHour Win64 Shipping -project="HeroHour.uproject" -waitmutex
+
+      - name: Package Game
+        id: package
+        run: |
+          $version = "${{ steps.extract_version.outputs.version }}"
+          $outputDir = "Package/HeroHour-$version-Win64-Shipping"
+
+          & "$env:UE5_ROOT/Engine/Build/BatchFiles/RunUAT.bat" BuildCookRun `
+            -project="HeroHour.uproject" `
+            -platform=Win64 `
+            -clientconfig=Shipping `
+            -serverconfig=Shipping `
+            -build `
+            -cook `
+            -pak `
+            -archive `
+            -archivedirectory="$outputDir" `
+            -ue4exe="$env:UE5_ROOT/Engine/Binaries/Win64/UnrealEditor-Cmd.exe" `
+            -compressed `
+            -utf8output
+
+          echo "build_path=$outputDir" >> $env:GITHUB_OUTPUT
+
+      - name: Upload package artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: HeroHour-${{ steps.extract_version.outputs.version }}-Win64-Shipping
+          path: Package/HeroHour-${{ steps.extract_version.outputs.version }}-Win64-Shipping/
+          retention-days: 30
+
+  # Deploy to Staging
+  deploy-staging:
+    name: Deploy to Staging
+    needs: build-release
+    if: github.event_name == 'push' || github.event.inputs.environment == 'staging'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    environment: staging
+    steps:
+      - name: Download package
+        uses: actions/download-artifact@v4
+        with:
+          name: HeroHour-${{ needs.build-release.outputs.version }}-Win64-Shipping
+          path: staging-package
+
+      - name: Deploy to staging server
+        run: |
+          echo "Deploying to staging..."
+          # Add your staging deployment logic here
+          # Example: scp, rsync, or API call to deployment service
+
+      - name: Run smoke tests
+        run: |
+          echo "Running staging smoke tests..."
+          # Add automated smoke tests
+
+      - name: Notify deployment
+        if: always()
+        run: |
+          echo "Staging deployment ${{ job.status }} for v${{ needs.build-release.outputs.version }}"
+
+  # Deploy to Production
+  deploy-production:
+    name: Deploy to Production
+    needs: [build-release, deploy-staging]
+    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v')
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    environment: production
+    steps:
+      - name: Download package
+        uses: actions/download-artifact@v4
+        with:
+          name: HeroHour-${{ needs.build-release.outputs.version }}-Win64-Shipping
+          path: production-package
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ needs.build-release.outputs.version }}
+          name: HeroHour v${{ needs.build-release.outputs.version }}
+          body_path: CHANGELOG.md
+          files: |
+            production-package/**/*
+          draft: false
+          prerelease: ${{ contains(needs.build-release.outputs.version, '-') }}
+
+      - name: Deploy to production
+        run: |
+          echo "Deploying to production..."
+          # Add your production deployment logic here
+          # Example: Steam, Epic Games Store, custom launcher
+
+      - name: Notify production deployment
+        if: always()
+        run: |
+          echo "Production deployment ${{ job.status }} for v${{ needs.build-release.outputs.version }}"
+          # Add notification: Discord, Slack, email, etc.
+
+  # Post-release
+  post-release:
+    name: Post-Release Tasks
+    needs: deploy-production
+    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Update latest release tag
+        run: |
+          git tag -f latest v${{ needs.build-release.outputs.version }}
+          git push -f origin latest
+
+      - name: Create next development version
+        run: |
+          # Automatically create next patch version branch if needed
+          echo "Release v${{ needs.build-release.outputs.version }} completed"
+
+      - name: Notify team
+        run: |
+          echo "Release v${{ needs.build-release.outputs.version }} is live!"
+          # Add team notification

@@ -1,0 +1,94 @@
+name: CodeQL Analysis
+
+on:
+  push:
+    branches: [main, 'release/**']
+  pull_request:
+    branches: [main, 'release/**']
+  schedule:
+    - cron: '0 6 * * 1'  # Weekly on Monday 06:00 UTC
+
+jobs:
+  analyze:
+    name: CodeQL Analysis
+    runs-on: windows-latest
+    timeout-minutes: 60
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
+
+    strategy:
+      fail-fast: false
+      matrix:
+        language: ['csharp', 'cpp']
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+          fetch-depth: 0
+
+      - name: Initialize CodeQL
+        uses: github/codeql-action/init@v3
+        with:
+          languages: ${{ matrix.language }}
+          queries: +security-extended,+security-and-quality
+
+      - name: Setup .NET
+        if: matrix.language == 'csharp'
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Restore .NET
+        if: matrix.language == 'csharp'
+        run: |
+          dotnet tool restore
+          paket restore
+          dotnet restore Source/HeroHourSimulation/HeroHourSimulation.fsproj
+
+      - name: Build F# Project
+        if: matrix.language == 'csharp'
+        run: dotnet build Source/HeroHourSimulation/HeroHourSimulation.fsproj --configuration Release --no-restore
+
+      - name: Setup UE5 for C++
+        if: matrix.language == 'cpp'
+        uses: peter-evans/setup-unreal-engine@v2
+        with:
+          version: '5.8'
+          install-engine: true
+
+      - name: Generate UE5 Project Files
+        if: matrix.language == 'cpp'
+        run: |
+          & "$env:UE5_ROOT/Engine/Build/BatchFiles/GenerateProjectFiles.bat" -project="HeroHour.uproject" -game -engine
+
+      - name: Build UE5 Project
+        if: matrix.language == 'cpp'
+        run: |
+          & "$env:UE5_ROOT/Engine/Build/BatchFiles/Build.bat" HeroHourEditor Win64 Development -project="HeroHour.uproject" -waitmutex
+
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v3
+        with:
+          category: "/language:${{ matrix.language }}"
+          upload: true
+
+  # Dependency scanning
+  dependency-review:
+    name: Dependency Review
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Review Dependencies
+        uses: actions/dependency-review-action@v4
+        with:
+          config-file: '.github/dependency-review-config.yml'
+          fail-on-severity: high

@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <LangVersion>preview</LangVersion>
+    <Nullable>enable</Nullable>
+    <IsPackable>false</IsPackable>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="Core/TypesTests.fs" />
+    <Compile Include="Core/SimulationTests.fs" />
+    <Compile Include="Economy/EconomyTests.fs" />
+    <Compile Include="Combat/CombatTests.fs" />
+    <Compile Include="AI/AITests.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\HeroHourSimulation.fsproj" />
+    <PackageReference Include="Expecto" Version="12.0.0" />
+    <PackageReference Include="FsCheck.Expecto" Version="0.4.0" />
+    <PackageReference Include="Expecto.FsCheck" Version="12.0.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.9.0" />
+  </ItemGroup>
+
+</Project>

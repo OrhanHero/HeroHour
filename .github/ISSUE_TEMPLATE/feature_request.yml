@@ -1,0 +1,94 @@
+name: Feature Request
+description: Suggest a new feature or enhancement
+title: "[Feature] "
+labels: ["feature", "triage"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for suggesting a new feature! Please provide as much detail as possible.
+
+  - type: input
+    id: title
+    attributes:
+      label: Feature Title
+      description: A clear, concise title
+      placeholder: "e.g., Add Hero Commander progression system"
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem Statement
+      description: What problem does this solve? What user need does it address?
+      placeholder: "Currently players cannot customize their Commander's playstyle..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed Solution
+      description: Describe your ideal solution
+      placeholder: "Implement a skill tree system with 3 branches: Offense, Defense, Economy..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered
+      description: What other approaches did you consider?
+      placeholder: "Considered per-unit upgrades but that doesn't fit Commander identity..."
+
+  - type: dropdown
+    id: component
+    attributes:
+      label: Primary Component
+      options:
+        - simulation
+        - rendering
+        - gameplay-ability
+        - ai
+        - network
+        - data
+        - ui
+        - audio
+        - build
+        - tooling
+        - other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: scope
+    attributes:
+      label: Estimated Scope
+      options:
+        - Small (1-3 days)
+        - Medium (1-2 weeks)
+        - Large (2-4 weeks)
+        - Epic (1+ months)
+    validations:
+      required: true
+
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies
+      description: Other teams, systems, or external factors
+      placeholder: "Requires new data asset types from Data team, UI designs from UX..."
+
+  - type: checkboxes
+    id: acceptance
+    attributes:
+      label: Acceptance Criteria
+      options:
+        - label: "Feature is data-driven (configurable via data assets)"
+        - label: "Works in multiplayer (replication tested)"
+        - label: "AI can use/respond to feature"
+        - label: "Modding support considered"
+        - label: "Performance impact assessed"
+        - label: "Documentation updated"

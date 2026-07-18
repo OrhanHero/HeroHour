@@ -1,0 +1,207 @@
+# HeroHour .gitignore
+# Unreal Engine 5
+[Bb]inaries/
+[Bb]uild/
+[Dd]erivedDataCache/
+[Ii]ntermediate/
+[Ss]aved/
+*.VC.db
+*.opensdf
+*.sdf
+*.suo
+*.user
+*.orig
+*.swp
+*.swo
+*~
+*.log
+*.dmp
+*.uproject
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+*.DS_Store
+*.pdb
+*.idb
+*.ilk
+*.exp
+*.lib
+*.obj
+*.o
+*.a
+*.so
+*.dylib
+*.ncb
+*.sbr
+*.tlog
+*.aps
+*.ncb
+*.suo
+*.user
+*.vs/
+.vscode/
+*.code-workspace
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# F# / .NET
+bin/
+obj/
+packages/
+*.nupkg
+*.snupkg
+.nuget/
+project.lock.json
+project.fragment.lock.json
+artifacts/
+*.userprefs
+*.csproj.user
+*.fsproj.user
+*.vbproj.user
+*.vcxproj.user
+*.vcxproj.filters
+paket-files/
+paket.lock
+.fake/
+
+# Build outputs
+*.exe
+*.dll
+*.pdb
+*.mdb
+*.dll.mdb
+*.so
+*.dylib
+
+# IDE
+.idea/
+*.iml
+*.iws
+*.ipr
+*.sln.docstates
+*.suo
+.tmp/
+*.tmp
+
+# OS
+*.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# Logs
+*.log
+logs/
+*.txt~
+
+# Coverage
+coverage/
+*.coverage
+*.cobertura.xml
+coverage.json
+
+# Test results
+TestResults/
+*.trx
+*.xml
+
+# Local config
+*.local
+*.local.config
+*.local.json
+*.local.yaml
+*.local.yml
+
+# Secrets
+*.env
+*.env.local
+*.env.*.local
+secrets.json
+*.pem
+*.key
+*.cert
+*.pfx
+*.p12
+
+# Claude settings (contains API keys)
+.claude/settings.json
+.claude/settings.local.json
+
+# Node.js (if used for tooling)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnp
+.pnp.js
+
+# Python (if used for tooling)
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.venv/
+venv/
+ENV/
+
+# UE5 specific
+/Plugins/
+/Source/ThirdParty/
+*.aps
+*.ncb
+*.opensdf
+*.sdf
+*.suo
+*.tlog
+*.user
+*.vcxproj.user
+*.vs/
+.vs/
+.vscode/
+*.code-workspace
+
+# Content (handled by LFS)
+# /Content/
+
+# Intermediate build files
+/Intermediate/
+/Saved/
+/DerivedDataCache/
+/Build/
+
+# Package outputs
+/Package/
+/Dist/
+
+# Rider
+.idea/
+*.sln.iml
+
+# VS Code (keep settings but ignore workspace)
+# .vscode/*   <-- Commented out to allow VS Code config in repo
+# !.vscode/settings.json
+# !.vscode/extensions.json
+# !.vscode/launch.json
+# !.vscode/tasks.json
+
+# JetBrains
+*.iml
+
+# Vim
+*.swp
+*.swo
+*~
+
+# EditorConfig (keep in repo for consistent formatting)
+# .editorconfig

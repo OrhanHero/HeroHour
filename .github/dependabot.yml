@@ -1,0 +1,58 @@
+version: 2
+updates:
+  # .NET dependencies (F# simulation layer)
+  - package-ecosystem: "nuget"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "06:00"
+    open-pull-requests-limit: 10
+    labels:
+      - "dependencies"
+      - "nuget"
+    commit-message:
+      prefix: "chore(deps):"
+      include: "scope"
+    groups:
+      fsharp-core:
+        patterns:
+          - "FSharp.*"
+          - "Fable.*"
+        update-types:
+          - "minor"
+          - "patch"
+      dotnet-runtime:
+        patterns:
+          - "Microsoft.NET.*"
+          - "System.*"
+        update-types:
+          - "patch"
+
+  # GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "06:00"
+    open-pull-requests-limit: 5
+    labels:
+      - "dependencies"
+      - "github-actions"
+    commit-message:
+      prefix: "ci(deps):"
+
+  # Docker (if used for tooling)
+  - package-ecosystem: "docker"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "06:00"
+    open-pull-requests-limit: 5
+    labels:
+      - "dependencies"
+      - "docker"
+    commit-message:
+      prefix: "chore(deps):"
