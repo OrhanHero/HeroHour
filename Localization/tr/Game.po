@@ -31,15 +31,79 @@ msgstr "Ayarlar"
 msgid "Exit"
 msgstr "Çıkış"
 
-#: Factions
-msgid "USA"
-msgstr "ABD"
+msgid "Generals Challenge"
+msgstr "General Zorluk Modu"
 
-msgid "China"
+msgid "Combat School"
+msgstr "Savaş Okulu"
+
+msgid "Load Game"
+msgstr "Oyun Yükle"
+
+msgid "New Game"
+msgstr "Yeni Oyun"
+
+#: Factions (10 Asimetrik Dünya Gücü)
+msgid "Faction_USA"
+msgstr "Birleşik Devletler"
+
+msgid "Faction_China"
 msgstr "Çin"
 
-msgid "GLA"
+msgid "Faction_GLA"
 msgstr "GLA"
+
+msgid "Faction_Turkiye"
+msgstr "Türkiye"
+
+msgid "Faction_Iran"
+msgstr "İran"
+
+msgid "Faction_Pakistan"
+msgstr "Pakistan"
+
+msgid "Faction_India"
+msgstr "Hindistan"
+
+msgid "Faction_Japan"
+msgstr "Japonya"
+
+msgid "Faction_SouthKorea"
+msgstr "Güney Kore"
+
+msgid "Faction_Russia"
+msgstr "Rusya Federasyonu"
+
+#: Faction Descriptions
+msgid "FactionDesc_USA"
+msgstr "İleri teknoloji ve hava üstünlüğü. Hassas isabet, gizlilik ve drone savaşçılığı."
+
+msgid "FactionDesc_China"
+msgstr "Kitle üretimi ve topçu doktrini. Baskın sayılar ve alan engelleme."
+
+msgid "FactionDesc_GLA"
+msgstr "Gerilla taktiği ve aldatmaca. Toksin ağları, intihar üniteleri ve pusu stratejileri."
+
+msgid "FactionDesc_Turkiye"
+msgstr "Otonom drone hakimiyeti ve mobil kaleler. Bayraktar sürüleri ve Altay tankları."
+
+msgid "FactionDesc_Iran"
+msgstr "Balistik zırh ve kale doktrini. Yeraltı siloları ve uzun menzilli roket fırtınaları."
+
+msgid "FactionDesc_Pakistan"
+msgstr "Asimetrik karşı saldırı ve EMP pusu. Gizli eğitim kampları ve gerilla rejenerasyonu."
+
+msgid "FactionDesc_India"
+msgstr "Teknolojik kitle ve raylı silah prototipleri. SDRF teknoloji merkezi ve kompozit reaktif zırh."
+
+msgid "FactionDesc_Japan"
+msgstr "Kesin meka robotik ve kuantum ağlar. Tetsujin yürüyenler ve plazma kalkanları."
+
+msgid "FactionDesc_SouthKorea"
+msgstr "K-Siber ağ ve alt sesli gizli hava kuvveti. KF-X Kara Köpekler ve uydu aktarımı."
+
+msgid "FactionDesc_Russia"
+msgstr "Ağır zırh sanayisi ve termobarik tahrip. T-14 Armata Overlord ve Giga-Fabrik."
 
 #: Resources
 msgid "Credits"
@@ -51,7 +115,13 @@ msgstr "Enerji"
 msgid "Tech Points"
 msgstr "Teknoloji Puanları"
 
-#: UI
+msgid "Population"
+msgstr "Nüfus"
+
+msgid "Supply"
+msgstr "Tedarik"
+
+#: UI - Commands
 msgid "Build"
 msgstr "Yap"
 
@@ -60,6 +130,9 @@ msgstr "Eğit"
 
 msgid "Research"
 msgstr "Araştır"
+
+msgid "Upgrade"
+msgstr "Yükselt"
 
 msgid "Select Units"
 msgstr "Üniteleri Seç"
@@ -79,7 +152,50 @@ msgstr "Koru"
 msgid "Patrol"
 msgstr "Devriye"
 
-#: Gameplay
+msgid "Hold Position"
+msgstr "Pozisyonu Koru"
+
+msgid "Attack Move"
+msgstr "Saldırarak İlerle"
+
+msgid "Rally Point"
+msgstr "Toplanma Noktası"
+
+msgid "Sell"
+msgstr "Sat"
+
+msgid "Repair"
+msgstr "Onar"
+
+msgid "Capture"
+msgstr "Ele Geçir"
+
+msgid "Load"
+msgstr "Yükle"
+
+msgid "Unload"
+msgstr "İndir"
+
+#: UI - Unit Types
+msgid "Infantry"
+msgstr "Piyade"
+
+msgid "Vehicle"
+msgstr "Araç"
+
+msgid "Aircraft"
+msgstr "Hava Aracı"
+
+msgid "Structure"
+msgstr "Yapı"
+
+msgid "Hero"
+msgstr "Kahraman"
+
+msgid "Commander"
+msgstr "Komutan"
+
+#: UI - Gameplay
 msgid "Victory"
 msgstr "Zafer"
 
@@ -95,21 +211,14 @@ msgstr "Oyun Duraklatıldı"
 msgid "Game Speed"
 msgstr "Oyun Hızı"
 
-#: Units
-msgid "Infantry"
-msgstr "Piyade"
+msgid "Fog of War"
+msgstr "Savaş Sisliğinde"
 
-msgid "Vehicle"
-msgstr "Araç"
+msgid "Radar Jammed"
+msgstr "Radar Bozuldu"
 
-msgid "Aircraft"
-msgstr "Hava Aracı"
-
-msgid "Structure"
-msgstr "Yapı"
-
-msgid "Hero"
-msgstr "Kahraman"
+msgid "Cyber Blackout"
+msgstr "Siber Karanlık"
 
 #: Settings
 msgid "Graphics"
@@ -144,3 +253,221 @@ msgstr "Efekt Ses"
 
 msgid "Voice Volume"
 msgstr "Sesli Konuşma"
+
+msgid "Mouse Sensitivity"
+msgstr "Fare Hassasiyeti"
+
+msgid "Hotkeys"
+msgstr "Kısayollar"
+
+msgid "Reset to Default"
+msgstr "Varsayılana Sıfırla"
+
+#: Upgrades & Abilities (Faction Specific)
+msgid "Upgrade_HellfireAnthrax"
+msgstr "Hellfire Anthrax"
+
+msgid "Upgrade_APS"
+msgstr "Aktif Koruma Sistemi"
+
+msgid "Upgrade_BunkerReinforcement"
+msgstr "Bunker Güçlendirme"
+
+msgid "Upgrade_GuerillaRegeneration"
+msgstr "Gerilla Rejenerasyonu"
+
+msgid "Upgrade_CompositeArmor"
+msgstr "Kompozit Reaktif Zırh"
+
+msgid "Upgrade_PlasmaShield"
+msgstr "Plazma Kalkan Harmonikörü"
+
+msgid "Upgrade_SmartMunition"
+msgstr "Akıllı Tahmin Edici Mühimmat"
+
+msgid "Upgrade_Thermobaric"
+msgstr "Termobarik Başlıklar"
+
+msgid "Ability_BayraktarSwarm"
+msgstr "Bayraktar Sürü Drone"
+
+msgid "Ability_AltayFortress"
+msgstr "Altay Kale Modu"
+
+msgid "Ability_FatehLauncher"
+msgstr "Fateh Mobil Fırlatıcı"
+
+msgid "Ability_UndergroundSilo"
+msgstr "Yeraltı Silosu"
+
+msgid "Ability_EMPCommando"
+msgstr "EMP Komando"
+
+msgid "Ability_HiddenCamp"
+msgstr "Gizli Eğitim Kampı"
+
+msgid "Ability_ArjunRailgun"
+msgstr "Arjun Mk-III Raylı Silah"
+
+msgid "Ability_SDRFTechCenter"
+msgstr "SDRF Teknoloji Merkezi"
+
+msgid "Ability_TetsujinWalker"
+msgstr "Tetsujin Yürüyen"
+
+msgid "Ability_QuantumCore"
+msgstr "Kuantum Çekirdek"
+
+msgid "Ability_KFXBlackShark"
+msgstr "KF-X Kara Köpek"
+
+msgid "Ability_KSatRelay"
+msgstr "K-Uydu Aktarım Merkezi"
+
+msgid "Ability_T14Armata"
+msgstr "T-14 Armata Overlord"
+
+msgid "Ability_TeslaTrooper"
+msgstr "Tesla Piyadesi"
+
+msgid "Ability_GigaFactory"
+msgstr "Giga-Fabrik"
+
+msgid "Ability_BlackMarket"
+msgstr "Kara Pazar Merkezi"
+
+#: Combat School
+msgid "CombatSchool_Title"
+msgstr "Savaş Okulu"
+
+msgid "CombatSchool_APM"
+msgstr "APM (Dakika Başına Eylem)"
+
+msgid "CombatSchool_BuildOrder"
+msgstr "Yapım Sırası Verimliliği"
+
+msgid "CombatSchool_ResourceEfficiency"
+msgstr "Kaynak Verimliliği"
+
+msgid "CombatSchool_Heatmap"
+msgstr "Kayıp Isı Haritası"
+
+msgid "CombatSchool_AISuggestions"
+msgstr "Yapay Zeka Önerileri"
+
+#: Generals Challenge
+msgid "GeneralsChallenge_Title"
+msgstr "General Zorluk Modu"
+
+msgid "GeneralsChallenge_SelectGeneral"
+msgstr "Generalınızı Seçin"
+
+msgid "GeneralsChallenge_DefeatAll"
+msgstr "Tüm 10 Generali Yenin"
+
+msgid "GeneralsChallenge_BossGeneral"
+msgstr "Baş General: Supremo Komutan"
+
+#: Tooltips
+msgid "Tooltip_BuildQueue"
+msgstr "Üretim Kuyruğu"
+
+msgid "Tooltip_ResearchTree"
+msgstr "Teknoloji Ağacı"
+
+msgid "Tooltip_UnitVeterancy"
+msgstr "Uzmanlık: Deneyimle istatistikler artar"
+
+msgid "Tooltip_FogOfWar"
+msgstr "Keşfedilmemiş alanlar gizlidir. Keşif üniteleriyle görünür."
+
+msgid "Tooltip_CyberBlackout"
+msgstr "Düşman radar ve minimapini 30 saniye devre dışı bırakır"
+
+msgid "Tooltip_PlasmaShield"
+msgstr "Hasarı emar, 6 saniye hasar almadan tam yenilenir"
+
+#: Multiplayer
+msgid "Lobby_WaitingForPlayers"
+msgstr "Oyuncular bekleniyor..."
+
+msgid "Lobby_Ready"
+msgstr "Hazır"
+
+msgid "Lobby_NotReady"
+msgstr "Hazır Değil"
+
+msgid "Lobby_StartGame"
+msgstr "Oyunu Başlat"
+
+msgid "Lobby_Map"
+msgstr "Harita"
+
+msgid "Lobby_GameMode"
+msgstr "Oyun Modu"
+
+msgid "Lobby_VictoryCondition"
+msgstr "Zafer Koşulu"
+
+msgid "Lobby_StartingResources"
+msgstr "Başlangıç Kaynakları"
+
+msgid "Lobby_PopulationCap"
+msgstr "Nüfus Sınırı"
+
+msgid "Lobby_FogOfWar"
+msgstr "Savaş Sisliğinde"
+
+msgid "Lobby_Teams"
+msgstr "Takımlar"
+
+msgid "Lobby_Observers"
+msgstr "Gözlemciler"
+
+msgid "Connection_Lost"
+msgstr "Bağlantı kesildi"
+
+msgid "Connection_Reconnecting"
+msgstr "Yeniden bağlanıyor..."
+
+msgid "Desync_Detected"
+msgstr "Senkronizasyon kaybı tespit edildi - Oyun duraklatılacak"
+
+#: Chat
+msgid "Chat_All"
+msgstr "Tümü"
+
+msgid "Chat_Team"
+msgstr "Takım"
+
+msgid "Chat_Observer"
+msgstr "Gözlemciler"
+
+msgid "Chat_Whisper"
+msgstr "Fısıltı"
+
+#: Accessibility
+msgid "Accessibility_Colorblind"
+msgstr "Renk Körlüğü Modu"
+
+msgid "Accessibility_HighContrast"
+msgstr "Yüksek Kontrast"
+
+msgid "Accessibility_ScreenReader"
+msgstr "Ekran Okuyucu Desteği"
+
+msgid "Accessibility_FontSize"
+msgstr "Yazı Tipi Boyutu"
+
+#: Credits
+msgid "Credits_DevelopedBy"
+msgstr "HeroHour Ekibi Tarafından Geliştirildi"
+
+msgid "Credits_Engine"
+msgstr "Unreal Engine 5.8 ile Güçlendirildi"
+
+msgid "Credits_Simulation"
+msgstr ".NET 8 Üzerinde F# Simülasyon Katmanı"
+
+msgid "Credits_SpecialThanks"
+msgstr "Topluluğa Özel Teşekkürler"

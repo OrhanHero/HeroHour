@@ -1,0 +1,473 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: HeroHour\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-07-18 15:30+0200\n"
+"PO-Revision-Date: 2025-07-18 15:30+0200\n"
+"Last-Translator: HeroHour Team\n"
+"Language-Team: English\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: Main Menu
+msgid "Play"
+msgstr "Play"
+
+msgid "Multiplayer"
+msgstr "Multiplayer"
+
+msgid "Campaign"
+msgstr "Campaign"
+
+msgid "Skirmish"
+msgstr "Skirmish"
+
+msgid "Settings"
+msgstr "Settings"
+
+msgid "Exit"
+msgstr "Exit"
+
+msgid "Generals Challenge"
+msgstr "Generals Challenge"
+
+msgid "Combat School"
+msgstr "Combat School"
+
+msgid "Load Game"
+msgstr "Load Game"
+
+msgid "New Game"
+msgstr "New Game"
+
+#: Factions (10 Asymmetric World Powers)
+msgid "Faction_USA"
+msgstr "United States"
+
+msgid "Faction_China"
+msgstr "China"
+
+msgid "Faction_GLA"
+msgstr "GLA"
+
+msgid "Faction_Turkiye"
+msgstr "Türkiye"
+
+msgid "Faction_Iran"
+msgstr "Iran"
+
+msgid "Faction_Pakistan"
+msgstr "Pakistan"
+
+msgid "Faction_India"
+msgstr "India"
+
+msgid "Faction_Japan"
+msgstr "Japan"
+
+msgid "Faction_SouthKorea"
+msgstr "South Korea"
+
+msgid "Faction_Russia"
+msgstr "Russian Federation"
+
+#: Faction Descriptions
+msgid "FactionDesc_USA"
+msgstr "Advanced technology and air superiority. Precision strikes, stealth, and drone warfare."
+
+msgid "FactionDesc_China"
+msgstr "Mass production and artillery doctrine. Overwhelming numbers and area denial."
+
+msgid "FactionDesc_GLA"
+msgstr "Guerrilla tactics and subterfuge. Toxin networks, suicide units, and ambushes."
+
+msgid "FactionDesc_Turkiye"
+msgstr "Autonomous drone dominance and mobile fortresses. Bayraktar swarms and Altay tanks."
+
+msgid "FactionDesc_Iran"
+msgstr "Ballistic armor and fortress doctrine. Underground silos and long-range rocket barrages."
+
+msgid "FactionDesc_Pakistan"
+msgstr "Asymmetric counterstrike and EMP ambushes. Stealth training camps and guerrilla regeneration."
+
+msgid "FactionDesc_India"
+msgstr "Technological mass and railgun prototypes. SDRF tech center and composite reactive armor."
+
+msgid "FactionDesc_Japan"
+msgstr "Precise mecha robotics and quantum networks. Tetsujin walkers and plasma shields."
+
+msgid "FactionDesc_SouthKorea"
+msgstr "K-Cyber network and subsonic stealth air force. KF-X Black Sharks and satellite relay."
+
+msgid "FactionDesc_Russia"
+msgstr "Heavy armor industry and thermobaric devastation. T-14 Armata Overlord and Giga-Factory."
+
+#: Resources
+msgid "Credits"
+msgstr "Credits"
+
+msgid "Energy"
+msgstr "Energy"
+
+msgid "Tech Points"
+msgstr "Tech Points"
+
+msgid "Population"
+msgstr "Population"
+
+msgid "Supply"
+msgstr "Supply"
+
+#: UI - Commands
+msgid "Build"
+msgstr "Build"
+
+msgid "Train"
+msgstr "Train"
+
+msgid "Research"
+msgstr "Research"
+
+msgid "Upgrade"
+msgstr "Upgrade"
+
+msgid "Select Units"
+msgstr "Select Units"
+
+msgid "Attack"
+msgstr "Attack"
+
+msgid "Move"
+msgstr "Move"
+
+msgid "Stop"
+msgstr "Stop"
+
+msgid "Guard"
+msgstr "Guard"
+
+msgid "Patrol"
+msgstr "Patrol"
+
+msgid "Hold Position"
+msgstr "Hold Position"
+
+msgid "Attack Move"
+msgstr "Attack Move"
+
+msgid "Rally Point"
+msgstr "Rally Point"
+
+msgid "Sell"
+msgstr "Sell"
+
+msgid "Repair"
+msgstr "Repair"
+
+msgid "Capture"
+msgstr "Capture"
+
+msgid "Load"
+msgstr "Load"
+
+msgid "Unload"
+msgstr "Unload"
+
+#: UI - Unit Types
+msgid "Infantry"
+msgstr "Infantry"
+
+msgid "Vehicle"
+msgstr "Vehicle"
+
+msgid "Aircraft"
+msgstr "Aircraft"
+
+msgid "Structure"
+msgstr "Structure"
+
+msgid "Hero"
+msgstr "Hero"
+
+msgid "Commander"
+msgstr "Commander"
+
+#: UI - Gameplay
+msgid "Victory"
+msgstr "Victory"
+
+msgid "Defeat"
+msgstr "Defeat"
+
+msgid "Draw"
+msgstr "Draw"
+
+msgid "Game Paused"
+msgstr "Game Paused"
+
+msgid "Game Speed"
+msgstr "Game Speed"
+
+msgid "Fog of War"
+msgstr "Fog of War"
+
+msgid "Radar Jammed"
+msgstr "Radar Jammed"
+
+msgid "Cyber Blackout"
+msgstr "Cyber Blackout"
+
+#: Settings
+msgid "Graphics"
+msgstr "Graphics"
+
+msgid "Audio"
+msgstr "Audio"
+
+msgid "Controls"
+msgstr "Controls"
+
+msgid "Language"
+msgstr "Language"
+
+msgid "Resolution"
+msgstr "Resolution"
+
+msgid "Fullscreen"
+msgstr "Fullscreen"
+
+msgid "VSync"
+msgstr "VSync"
+
+msgid "Master Volume"
+msgstr "Master Volume"
+
+msgid "Music Volume"
+msgstr "Music Volume"
+
+msgid "SFX Volume"
+msgstr "SFX Volume"
+
+msgid "Voice Volume"
+msgstr "Voice Volume"
+
+msgid "Mouse Sensitivity"
+msgstr "Mouse Sensitivity"
+
+msgid "Hotkeys"
+msgstr "Hotkeys"
+
+msgid "Reset to Default"
+msgstr "Reset to Default"
+
+#: Upgrades & Abilities (Faction Specific)
+msgid "Upgrade_HellfireAnthrax"
+msgstr "Hellfire Anthrax"
+
+msgid "Upgrade_APS"
+msgstr "Active Protection System"
+
+msgid "Upgrade_BunkerReinforcement"
+msgstr "Bunker Reinforcement"
+
+msgid "Upgrade_GuerillaRegeneration"
+msgstr "Guerilla Regeneration"
+
+msgid "Upgrade_CompositeArmor"
+msgstr "Composite Reactive Armor"
+
+msgid "Upgrade_PlasmaShield"
+msgstr "Plasma Shield Harmonizer"
+
+msgid "Upgrade_SmartMunition"
+msgstr "Smart-Predictive Munition"
+
+msgid "Upgrade_Thermobaric"
+msgstr "Thermobaric Warheads"
+
+msgid "Ability_BayraktarSwarm"
+msgstr "Bayraktar Swarm Drone"
+
+msgid "Ability_AltayFortress"
+msgstr "Altay Fortress Mode"
+
+msgid "Ability_FatehLauncher"
+msgstr "Fateh Mobile Launcher"
+
+msgid "Ability_UndergroundSilo"
+msgstr "Underground Silo"
+
+msgid "Ability_EMPCommando"
+msgstr "EMP Commando"
+
+msgid "Ability_HiddenCamp"
+msgstr "Hidden Training Camp"
+
+msgid "Ability_ArjunRailgun"
+msgstr "Arjun Mk-III Railgun"
+
+msgid "Ability_SDRFTechCenter"
+msgstr "SDRF Tech Center"
+
+msgid "Ability_TetsujinWalker"
+msgstr "Tetsujin Walker"
+
+msgid "Ability_QuantumCore"
+msgstr "Quantum Core"
+
+msgid "Ability_KFXBlackShark"
+msgstr "KF-X Black Shark"
+
+msgid "Ability_KSatRelay"
+msgstr "K-Sat Relay Center"
+
+msgid "Ability_T14Armata"
+msgstr "T-14 Armata Overlord"
+
+msgid "Ability_TeslaTrooper"
+msgstr "Tesla Trooper"
+
+msgid "Ability_GigaFactory"
+msgstr "Giga-Factory"
+
+msgid "Ability_BlackMarket"
+msgstr "Black Market Hub"
+
+#: Combat School
+msgid "CombatSchool_Title"
+msgstr "Combat School"
+
+msgid "CombatSchool_APM"
+msgstr "APM (Actions per Minute)"
+
+msgid "CombatSchool_BuildOrder"
+msgstr "Build Order Efficiency"
+
+msgid "CombatSchool_ResourceEfficiency"
+msgstr "Resource Efficiency"
+
+msgid "CombatSchool_Heatmap"
+msgstr "Loss Heatmap"
+
+msgid "CombatSchool_AISuggestions"
+msgstr "AI Recommendations"
+
+#: Generals Challenge
+msgid "GeneralsChallenge_Title"
+msgstr "Generals Challenge"
+
+msgid "GeneralsChallenge_SelectGeneral"
+msgstr "Select Your General"
+
+msgid "GeneralsChallenge_DefeatAll"
+msgstr "Defeat All 10 Generals"
+
+msgid "GeneralsChallenge_BossGeneral"
+msgstr "Boss General: Supreme Commander"
+
+#: Tooltips
+msgid "Tooltip_BuildQueue"
+msgstr "Production Queue"
+
+msgid "Tooltip_ResearchTree"
+msgstr "Technology Tree"
+
+msgid "Tooltip_UnitVeterancy"
+msgstr "Veterancy: Increases stats with experience"
+
+msgid "Tooltip_FogOfWar"
+msgstr "Unexplored areas are hidden. Use scouts to reveal."
+
+msgid "Tooltip_CyberBlackout"
+msgstr "Disables enemy radar and minimap for 30 seconds"
+
+msgid "Tooltip_PlasmaShield"
+msgstr "Absorbs damage, regenerates after 6s without taking damage"
+
+#: Multiplayer
+msgid "Lobby_WaitingForPlayers"
+msgstr "Waiting for players..."
+
+msgid "Lobby_Ready"
+msgstr "Ready"
+
+msgid "Lobby_NotReady"
+msgstr "Not Ready"
+
+msgid "Lobby_StartGame"
+msgstr "Start Game"
+
+msgid "Lobby_Map"
+msgstr "Map"
+
+msgid "Lobby_GameMode"
+msgstr "Game Mode"
+
+msgid "Lobby_VictoryCondition"
+msgstr "Victory Condition"
+
+msgid "Lobby_StartingResources"
+msgstr "Starting Resources"
+
+msgid "Lobby_PopulationCap"
+msgstr "Population Cap"
+
+msgid "Lobby_FogOfWar"
+msgstr "Fog of War"
+
+msgid "Lobby_Teams"
+msgstr "Teams"
+
+msgid "Lobby_Observers"
+msgstr "Observers"
+
+msgid "Connection_Lost"
+msgstr "Connection lost"
+
+msgid "Connection_Reconnecting"
+msgstr "Reconnecting..."
+
+msgid "Desync_Detected"
+msgstr "Desync detected - Game will pause"
+
+#: Chat
+msgid "Chat_All"
+msgstr "All"
+
+msgid "Chat_Team"
+msgstr "Team"
+
+msgid "Chat_Observer"
+msgstr "Observers"
+
+msgid "Chat_Whisper"
+msgstr "Whisper"
+
+#: Accessibility
+msgid "Accessibility_Colorblind"
+msgstr "Colorblind Mode"
+
+msgid "Accessibility_HighContrast"
+msgstr "High Contrast"
+
+msgid "Accessibility_ScreenReader"
+msgstr "Screen Reader Support"
+
+msgid "Accessibility_FontSize"
+msgstr "Font Size"
+
+#: Credits
+msgid "Credits_DevelopedBy"
+msgstr "Developed by HeroHour Team"
+
+msgid "Credits_Engine"
+msgstr "Powered by Unreal Engine 5.8"
+
+msgid "Credits_Simulation"
+msgstr "F# Simulation Layer on .NET 8"
+
+msgid "Credits_SpecialThanks"
+msgstr "Special Thanks to the Community"
