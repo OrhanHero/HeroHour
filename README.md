@@ -1,5 +1,7 @@
 # HeroHour - AAA RTS Game
 
+![HeroHour Cover](Art/Concepts/Factions/HERO%20HOUR%20COVER.png)
+
 > **Command & Conquer: Generals Zero Hour** inspired Real-Time Strategy game built with **Unreal Engine 5.8**, **F# (Fable 5)**, and **.NET 8** — **Pure Multiplayer Competitive Architecture**
 
 [![Build Status](https://img.shields.io/badge/build-passing-brightgreen)]()
