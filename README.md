@@ -155,6 +155,23 @@ Each faction has **exactly ONE superweapon** and **exactly ONE super-agent** (he
 
 ---
 
+### UI Concept Art
+
+| Concept | Image |
+|---------|-------|
+| **UI Concept 1** | ![UI 1](Art/Concepts/Factions/UI_1.png) |
+| **UI Concept 2** | ![UI 2](Art/Concepts/Factions/UI_2.png) |
+| **UI Concept 3** | ![UI 3](Art/Concepts/Factions/UI_3.png) |
+| **UI Concept 4** | ![UI 4](Art/Concepts/Factions/UI_4.png) |
+| **UI Concept 5** | ![UI 5](Art/Concepts/Factions/UI_5.png) |
+| **UI Concept 6** | ![UI 6](Art/Concepts/Factions/UI_6.png) |
+| **UI Concept 7** | ![UI 7](Art/Concepts/Factions/UI_7.png) |
+| **UI Concept 8** | ![UI 8](Art/Concepts/Factions/UI_8.png) |
+| **UI Concept 9** | ![UI 9](Art/Concepts/Factions/UI_9.png) |
+| **UI Concept 10** | ![UI 10](Art/Concepts/Factions/UI_10.png) |
+
+---
+
 ### Unit Archetype Concept Art
 
 | Archetype | Image |
@@ -256,7 +273,7 @@ Each faction has **exactly ONE superweapon** and **exactly ONE super-agent** (he
 ---
 
 <video controls width="800">
-  <source src="Art/Concepts/Factions/Concept_Video7.mp4" type="video/mp4">
+  <source src="Art/Concepts/Factions/Concept_Video8.mp4" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
@@ -269,7 +286,7 @@ Each faction has **exactly ONE superweapon** and **exactly ONE super-agent** (he
   Your browser does not support the video tag.
 </video>
 
-*Concept video 9: Weather system and dynamic battlefield*
+*Concept video 8: Superweapons and super-agents in action*
 
 ---
 
@@ -278,7 +295,35 @@ Each faction has **exactly ONE superweapon** and **exactly ONE super-agent** (he
   Your browser does not support the video tag.
 </video>
 
-*Concept video 10: Complete HeroHour vision and roadmap*
+*Concept video 9: Complete HeroHour vision and roadmap*
+
+---
+
+<video controls width="800">
+  <source src="Art/Concepts/Factions/Concept_Video10.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+*Concept video 10: Complete HeroHour vision and roadmap (HD version)*
+
+---
+
+### UI Concept Art
+
+| Concept | Image |
+|---------|-------|
+| **UI Concept 1** | ![UI_1](Art/Concepts/Factions/UI_1.png) |
+| **UI Concept 2** | ![UI_2](Art/Concepts/Factions/UI_2.png) |
+| **UI Concept 3** | ![UI_3](Art/Concepts/Factions/UI_3.png) |
+| **UI Concept 4** | ![UI_4](Art/Concepts/Factions/UI_4.png) |
+| **UI Concept 5** | ![UI_5](Art/Concepts/Factions/UI_5.png) |
+| **UI Concept 6** | ![UI_6](Art/Concepts/Factions/UI_6.png) |
+| **UI Concept 7** | ![UI_7](Art/Concepts/Factions/UI_7.png) |
+| **UI Concept 8** | ![UI_8](Art/Concepts/Factions/UI_8.png) |
+| **UI Concept 9** | ![UI_9](Art/Concepts/Factions/UI_9.png) |
+| **UI Concept 10** | ![UI_10](Art/Concepts/Factions/UI_10.png) |
+
+*10 UI/Interface concept iterations exploring HUD layouts, faction-specific UI themes, and competitive RTS information density*
 
 ---
 
