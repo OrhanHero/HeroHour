@@ -125,6 +125,46 @@ Each faction has **exactly ONE superweapon** and **exactly ONE super-agent** (he
 
 ---
 
+### Faction Visual Overview
+
+| Faction | Showcase |
+|---------|----------|
+| 🇺🇸 **USA** | ![USA](Art/Concepts/Factions/USA.png) |
+| 🇨🇳 **China** | ![China](Art/Concepts/Factions/China.png) |
+| 🏴‍☠️ **HERO** | ![HERO](Art/Concepts/Factions/HERO.png) |
+| 🇹🇷 **Türkiye** | ![Türkiye](Art/Concepts/Factions/Türkiye.png) |
+| 🇮🇷 **Iran** | ![Iran](Art/Concepts/Factions/Iran.png) |
+| 🇵🇰 **Pakistan** | ![Pakistan](Art/Concepts/Factions/Pakistan.png) |
+| 🇮🇳 **India** | ![Indien](Art/Concepts/Factions/Indien.png) |
+| 🇯🇵 **Japan** | ![Japan](Art/Concepts/Factions/Japan.png) |
+| 🇰🇷 **South Korea** | ![Südkorea](Art/Concepts/Factions/Südkorea.png) |
+| 🇷🇺 **Russia** | ![Russland](Art/Concepts/Factions/Russland.png) |
+
+---
+
+### Core Concept Art
+
+| Concept | Image |
+|---------|-------|
+| **Main Game Concept** | ![HERO HOUR Concept](Art/Concepts/Factions/HERO%20HOUR_Concept.png) |
+| **All Factions Overview** | ![Concept Army](Art/Concepts/Factions/Concept_Army.png) |
+| **Superweapons Matrix** | ![Superweapons](Art/Concepts/Factions/SUPERWEAPONS.png) |
+| **Super-Agents Matrix** | ![SP Agents](Art/Concepts/Factions/SP_Agent_Concept.png) |
+| **Superweapons Detail** | ![SP Weapons](Art/Concepts/Factions/SP_Weapon_Concept.png) |
+
+---
+
+### Unit Archetype Concept Art
+
+| Archetype | Image |
+|-----------|-------|
+| **Infantry Units** | ![Infantry](Art/Concepts/Factions/Infantry_Unit_Concept.png) |
+| **Land Vehicles** | ![Land](Art/Concepts/Factions/Land_Unit_Concept.png) |
+| **Air Units** | ![Air](Art/Concepts/Factions/Air_Unit_Concept.png) |
+| **Mixed Formations** | ![Mix](Art/Concepts/Factions/Mix_Unit_Concept.png) |
+
+---
+
 ### Faction Tactical Units Concept Art
 
 ![HeroHour Tactical Units](Art/Concepts/Factions/Factions_Tactical_Units_ConceptArt.png)
@@ -138,6 +178,14 @@ Each faction has **exactly ONE superweapon** and **exactly ONE super-agent** (he
 ![HeroHour Faction Concepts](Art/Concepts/Factions/Factions_Core_ConceptArt.png)
 
 *All 10 factions with their Superweapons & Super-Agents visualized*
+
+---
+
+### Map Concept Art
+
+![Map Concept](Art/Concepts/Factions/Map_Concept.png)
+
+*Strategic map layout concepts for competitive and AoD modes*
 
 ---
 
