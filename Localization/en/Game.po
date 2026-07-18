@@ -50,8 +50,8 @@ msgstr "United States"
 msgid "Faction_China"
 msgstr "China"
 
-msgid "Faction_GLA"
-msgstr "GLA"
+msgid "Faction_HERO"
+msgstr "HERO"
 
 msgid "Faction_Turkiye"
 msgstr "Türkiye"
@@ -81,8 +81,8 @@ msgstr "Advanced technology and air superiority. Precision strikes, stealth, and
 msgid "FactionDesc_China"
 msgstr "Mass production and artillery doctrine. Overwhelming numbers and area denial."
 
-msgid "FactionDesc_GLA"
-msgstr "Guerrilla tactics and subterfuge. Toxin networks, suicide units, and ambushes."
+msgid "FactionDesc_HERO"
+msgstr "Hybrid tech-theft army. No power grid, high mobility, vehicle hijacking unlocks enemy tech."
 
 msgid "FactionDesc_Turkiye"
 msgstr "Autonomous drone dominance and mobile fortresses. Bayraktar swarms and Altay tanks."

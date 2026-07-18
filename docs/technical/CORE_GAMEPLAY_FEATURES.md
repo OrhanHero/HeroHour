@@ -63,7 +63,7 @@ Weather is not cosmetic — it **modifies unit stats and abilities in real-time*
 | Weather | Mechanics | Affected Factions |
 |---------|-----------|-------------------|
 | **Heavy Rain** | -30% damage & range for **laser weapons** (light scattering in droplets) | 🇺🇸 USA, 🇯🇵 Japan |
-| **Massive Sandstorm** | -70% vision range for all units/towers; **radar completely disabled** | Favors: 🏴‍☠️ GLA, 🇵🇰 Pakistan |
+| **Massive Sandstorm** | -70% vision range for all units/towers; **radar completely disabled** | Favors: **HERO**, 🇵🇰 Pakistan |
 | **Heavy Snowfall** | Ground freezes; **tracked vehicles -25% speed/turn rate**; mechas unaffected | Favors: 🇯🇵 Japan |
 
 ### Implementation
@@ -81,7 +81,7 @@ Maps are **living tactical environments**, not empty arenas.
 
 | Element | Description | Faction Interaction |
 |---------|-------------|---------------------|
-| **Civilian Vehicles** (Cars, Buses, Tractors) | Parked in urban zones | 🏴‍☠️ **GLA/HERO**: Garrison infantry → instant improvised VBIED or mobile militia gun platform |
+| **Civilian Vehicles** (Cars, Buses, Tractors) | Parked in urban zones | **HERO**: Garrison infantry → instant improvised VBIED or mobile militia gun platform |
 | **Skyscrapers / Malls** | Up to 20 infantry garrison | Becomes fortified strongpoint at chokepoints; destructible floors create vertical combat |
 
 ### 5.2 Capturable High-Tech Structures (Engineer Capture)

@@ -131,15 +131,16 @@ Each faction has a completely independent technology bundle, individual economic
 | **Structure** | **China Internet Center** | Massive bunker; garrison up to 8 Hackers for global cyber-mining (massive passive income) |
 | **Upgrade** | **Napalm Uplink** | All tank shells & artillery gain napalm component — burning inferno areas on impact |
 
-### 3. 🏴‍☠️ GLA (Global Liberation Army) — Guerrilla & Toxin Networks
-*Asymmetric warfare, toxin networks, suicide units, ambushes, scavenging. No conventional power grid.*
+### 3. 🏴‍☠️ HERO — Die Ultimative Hybrid-Armee (Technologieraub & Schrott-Recycling)
+*Verzichtet vollständig auf klassische Energieversorgung. Basiert auf Mobilität, Guerilla, Täuschung und aktivem Technologieraub.*
 
 | Type | Unit / Structure | Description |
 |------|------------------|-------------|
-| **Special Unit** | **Toxin Tractor** | Fast technical; sprays persistent toxin clouds, denies area |
-| **Special Unit** | **Bomb Truck** | Disguised civilian vehicle; massive suicide explosion on detonation |
-| **Structure** | **Arms Dealer** | Produces all ground units; upgradeable to Black Market |
-| **Upgrade** | **Anthrax Beta** | Toxin weapons gain persistent damage over time + armor corrosion |
+| **Special Unit** | **HERO Combat Cycle** | Extrem agiles Motorrad. Besetzbar mit **jeder Infanterie des Spiels**. US Laser-Trooper → High-Speed Laser-Fahrzeug; Chinesischer Hacker → Mobile Cyber-Störplattform. |
+| **Special Unit** | **Prototype Hijacker** | Permanent getarnte Spezialeinheit. Kapert feindliche Fahrzeuge. Besonderheit: Kapt er er ein Spezialfahrzeug (z. B. indischen Railgun-Panzer), wird die Technologie analysiert und dauerhaft in HERO-Fabriken freigeschaltet. |
+| **Special Unit** | **Chimeran Overlord** | Schwerer Hybrid-Panzer. Nutzt erbeutetes russisches Fahrgestell, kombiniert mit modifizierter US-Mikrowellenkanone im Turm. |
+| **Structure** | **Schwarzmarkt-Hub** | Generiert im F#-Wirtschaftssystem dauerhaft illegale Credits und spiegelt gleichzeitig die Tech-Bäume aller im Spiel anwesenden Feinde, wodurch HERO Zugriff auf deren Upgrades erhält. |
+| **Upgrade** | **Hellfire Anthrax** | Tränkt alle biologischen Toxin-Waffen mit US-Hellfire-Brandbeschleunigern. Erzeugt eine giftige, brennende Wolke, die Infanterie zerfrisst und Panzerungen schmilzt. |
 
 ### 4. 🇹🇷 Türkiye — Autonomous Drone Dominance & Mobile Fortresses
 *Modern networked unmanned warfare + highly mobile mechanized divisions.*
@@ -216,7 +217,7 @@ Deep F# simulation-layer analytics tool. Logs every action (clicks, hotkeys, bui
 - **AI-generated suggestions**: *"2nd depot 45s late → 20% tank production delay"*
 
 ### Generals Challenge Mode (Ultimate Campaign)
-Singleplayer centerpiece. Choose 1 of 10 factions → face 9 hyper-specialized AI Generals (UE5 State Trees). Each General uses extreme faction alignment (e.g., US Laser General, GLA Toxin General). AI dynamically analyzes player counters and adapts routes. Defeating a General unlocks them for Multiplayer + unique profile medals.
+Singleplayer centerpiece. Choose 1 of 10 factions → face 9 hyper-specialized AI Generals (UE5 State Trees). Each General uses extreme faction alignment (e.g., US Laser General, **HERO Toxin General**). AI dynamically analyzes player counters and adapts routes. Defeating a General unlocks them for Multiplayer + unique profile medals.
 
 ### Dynamic Weather Simulation (Direct Gameplay Impact)
 Full UE5 physical particle simulation — weather decisively affects tactics:
@@ -224,14 +225,14 @@ Full UE5 physical particle simulation — weather decisively affects tactics:
 | Weather | Effect |
 |---------|--------|
 | **Heavy Rain** | Cools air; **-30% laser damage/range** (USA, Japan) — light scatters in water droplets |
-| **Massive Sandstorms** | **-70% sight range** for all units/towers; radar systems fail completely — perfect for GLA ambushes / Pakistan EMP |
+| **Massive Sandstorms** | **-70% sight range** for all units/towers; radar systems fail completely — perfect for **HERO** ambushes / Pakistan EMP |
 | **Heavy Snowfall** | Ground freezes; **tracked vehicles (Russia, China) -25% speed/grip**; light mechas (Japan) unaffected |
 
 ### Neutral Elements & Urban Warfare
 Maps are living, tactically usable civilian environments, not empty arenas.
 
 #### Civilian Infrastructure & Capture Mechanics
-- **Civilian vehicles** (cars, buses, tractors) in urban areas — **GLA/HERO** can garrison infantry to instantly convert into **improvised SVBIEDs** or **mobile militia gun platforms**
+- **Civilian vehicles** (cars, buses, tractors) in urban areas — **HERO** can garrison infantry to instantly convert into **improvised SVBIEDs** or **mobile militia gun platforms**
 - **Large urban buildings** (skyscrapers, malls) — garrison up to 20 infantry → **hard-to-crack fortresses at strategic chokepoints**
 
 #### Capturable High-Tech Structures (via Engineers)

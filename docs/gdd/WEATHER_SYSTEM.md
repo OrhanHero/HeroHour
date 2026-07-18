@@ -29,8 +29,8 @@ Every weather state applies deterministic, simulation-layer stat modifiers. No v
 ### Favored (Gain Advantage)
 | Weather | Favored Factions | Why |
 |---------|-----------------|-----|
-| **Rain** | GLA, Pakistan, Iran | No laser units; toxin/EMP/ballistic unaffected |
-| **Sandstorm** | GLA, Pakistan, Türkiye | Stealth + FoW synergy; Bayraktar marks for artillery |
+| **Rain** | HERO, Pakistan, Iran | No laser units; toxin/EMP/ballistic unaffected |
+| **Sandstorm** | HERO, Pakistan, Türkiye | Stealth + FoW synergy; Bayraktar marks for artillery |
 | **Snow** | Japan, South Korea, USA | Mechas/air unaffected; microwave/energy weapons work |
 
 ### Disfavored (Suffer Penalty)

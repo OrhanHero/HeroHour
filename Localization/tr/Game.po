@@ -50,8 +50,8 @@ msgstr "Birleşik Devletler"
 msgid "Faction_China"
 msgstr "Çin"
 
-msgid "Faction_GLA"
-msgstr "GLA"
+msgid "Faction_HERO"
+msgstr "HERO"
 
 msgid "Faction_Turkiye"
 msgstr "Türkiye"
@@ -81,8 +81,8 @@ msgstr "İleri teknoloji ve hava üstünlüğü. Hassas isabet, gizlilik ve dron
 msgid "FactionDesc_China"
 msgstr "Kitle üretimi ve topçu doktrini. Baskın sayılar ve alan engelleme."
 
-msgid "FactionDesc_GLA"
-msgstr "Gerilla taktiği ve aldatmaca. Toksin ağları, intihar üniteleri ve pusu stratejileri."
+msgid "FactionDesc_HERO"
+msgstr "Hibrit teknoloji hırsızlığı ordusu. Enerji şebekesi yok, yüksek mobilite, araç kapma ile düşman teknolojisi açılır."
 
 msgid "FactionDesc_Turkiye"
 msgstr "Otonom drone hakimiyeti ve mobil kaleler. Bayraktar sürüleri ve Altay tankları."

@@ -14,7 +14,7 @@ Maps are **living tactical environments** with dynamic civilian elements that ca
 
 ### Civilian Vehicles
 
-| Vehicle Type | Spawn Context | Health | GLA/HERO Interaction |
+| Vehicle Type | Spawn Context | Health | **HERO** Interaction |
 |--------------|---------------|--------|----------------------|
 | **Sedan** | Residential streets, parking lots | 150 | Garrison 1 infantry → **Improvised VBIED** (suicide, 800 dmg, 5m radius) |
 | **Bus** | Bus stops, highways | 400 | Garrison 4 infantry → **Mobile Militia Platform** (4 gun ports, 360° fire) |
@@ -38,7 +38,7 @@ type VehicleConversion =
 ```
 
 ### Conversion Mechanics
-1. **GLA/HERO only** — Other factions cannot interact
+1. **HERO only** — Other factions cannot interact
 2. **Infantry garrison** — Right-click vehicle with selected infantry
 3. **Instant conversion** — No build time, vehicle model swaps
 4. **Permanent** — Cannot be reverted; vehicle becomes hostile to all
@@ -152,7 +152,7 @@ type UrbanEvent =
 
 | Element | Risk | Mitigation |
 |---------|------|------------|
-| **VBIED spam** | High | GLA/HERO only; requires infantry investment; 30s cooldown per vehicle |
+| **VBIED spam** | High | **HERO only**; requires infantry investment; 30s cooldown per vehicle |
 | **Building camping** | Medium | Floors destructible; artillery/flamethrowers clear garrisons |
 | **Refinery snowball** | High | Single capture point; contested; destroyable; 5min respawn |
 | **Hospital heal** | Low | Only out-of-combat; 5s delay; infantry only |

@@ -15,14 +15,14 @@ Civilian infrastructure provides emergent gameplay opportunities and faction-spe
 ## 5.1 Civilian Infrastructure & Capture Mechanics
 
 ### Civilian Vehicles (Dynamic Props)
-| Vehicle Type | Locations | Capacity | GLA/HERO Conversion |
+| Vehicle Type | Locations | Capacity | **HERO** Conversion |
 |--------------|-----------|----------|---------------------|
 | **Sedan/SUV** | Residential, Roads | 2 infantry | SVBIED (high damage, small radius) |
 | **Bus** | Urban centers, Highways | 8 infantry | Mobile Militia Platform (4 gun ports) |
 | **Tractor/Trailer** | Industrial, Rural | 4 infantry | Ammo Carrier (supplies nearby) |
 | **Fuel Tanker** | Highways, Depots | — | Rolling Bomb (massive fire AoE) |
 
-### Conversion Mechanics (GLA / HERO Only)
+### Conversion Mechanics (HERO Only)
 ```
 1. Infantry approaches civilian vehicle (interaction radius: 3m)
 2. "Capture" command → garrison animation (2s)
@@ -99,8 +99,8 @@ Neutral structures capturable by **Engineer-type units** (all factions). Capture
 
 ## 5.4 Faction-Specific Urban Mechanics
 
-### GLA / HERO — Civilian Vehicle Conversion
-- Only factions with **"Improvised Warfare"** doctrine
+### HERO — Civilian Vehicle Conversion
+- Only faction with **"Improvised Warfare"** doctrine
 - Conversion speed: 2s base, 1s with "Scavenger" upgrade
 - Converted vehicles retain civilian collision (can't crush infantry)
 
@@ -197,7 +197,7 @@ let spawnCivilianTraffic (map: MapData) : unit =
 ## Testing Checklist
 
 - [ ] Civilian vehicles spawn on roads, follow traffic rules
-- [ ] GLA/HERO can convert all 4 vehicle types
+- [ ] **HERO** can convert all 4 vehicle types
 - [ ] Converted vehicles have correct weapons by infantry type
 - [ ] All 5 building types garrison correctly (limits, fireports)
 - [ ] Building destruction kills garrisoned units

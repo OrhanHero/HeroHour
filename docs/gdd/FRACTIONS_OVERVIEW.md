@@ -22,7 +22,7 @@ This document provides a quick-reference for all 10 factions, their signature un
 |---------|---------------|---------------|-------------------|------------|
 | 🇺🇸 **USA** | Tech/Air Superiority | High-cost, high-efficiency | Precision strikes, stealth | High |
 | 🇨🇳 **China** | Mass/Artillery | Low-cost, high-volume | Swarm bonus (group buffs) | Medium |
-| 🏴‍☠️ **GLA** | Guerrilla/Toxin | Scavenging, no power grid | Ambush, suicide units | High |
+| 🏴‍☠️ **HERO** | Hybrid/Tech Theft | No energy, scrap recycling | Vehicle hijacking, tech unlocking | High |
 | 🇹🇷 **Türkiye** | Drone/Mobile Fortress | Balanced, drone-heavy | Fortress Mode, APS | Medium |
 | 🇮🇷 **Iran** | Ballistic/Fortress | Slow, high-HP structures | Invulnerable silos | Medium |
 | 🇵🇰 **Pakistan** | Asymmetric/EMP | Stealth, ambush | Fog of War regeneration | High |
@@ -74,23 +74,24 @@ This document provides a quick-reference for all 10 factions, their signature un
 
 ---
 
-## 🏴‍☠️ GLA — Guerrilla Tactics & Subterfuge
+## 🏴‍☠️ HERO — Die Ultimative Hybrid-Armee (Technologieraub & Schrott-Recycling)
 
-**Playstyle**: Asymmetric warfare, toxin networks, suicide units, ambushes, scavenging. No conventional power grid.
+Die HERO-Fraktion ist ein hochgradig experimentelles Bündnis, das vollständig auf eine klassische Energieversorgung verzichtet. Ihre gesamte Struktur basiert auf Mobilität, Guerilla-Taktiken, Täuschung und dem aktiven Diebstahl gegnerischer Technologien direkt auf dem Schlachtfeld.
 
 ### Signature Units
 | Unit | Role | Key Ability |
 |------|------|-------------|
-| **Toxin Tractor** | Fast Anti-Infantry | Sprays persistent toxin clouds, area denial |
-| **Bomb Truck** | Suicide Demolition | Disguised civilian vehicle; massive explosion on detonation |
+| **HERO Combat Cycle** | Extremely Agile Motorcycle | Can be occupied by **any infantry unit** in the game. Place a US Laser Trooper → High-Speed Laser Vehicle; place a Chinese Hacker → Mobile Cyber Disruption Platform. |
+| **Prototype Hijacker** | Permanently Stealthed Special Unit | Hijacks enemy vehicles. Special: Capturing a special vehicle (e.g., Indian Railgun Tank) analyzes the tech and **permanently unlocks it in HERO factories**. |
+| **Chimeran Overlord** | Heavy Hybrid Tank | Uses captured Russian tank chassis, combined with modified US Microwave Cannon in turret. |
 
 ### Signature Structure
 | Structure | Function |
 |-----------|----------|
-| **Arms Dealer** | Produces all ground units; upgradeable to Black Market |
+| **Black Market Hub** | Generates permanent illegal credits in F# economy; mirrors tech trees of all enemies present, granting HERO access to their upgrades. |
 
 ### Core Upgrade
-- **Anthrax Beta** — Toxin weapons gain persistent DoT + armor corrosion
+- **Hellfire Anthrax** — Drenches all bio-toxin weapons with US Hellfire accelerants. Creates a toxic, burning cloud that melts infantry AND melts vehicle armor.
 
 ---
 
@@ -229,14 +230,14 @@ This document provides a quick-reference for all 10 factions, their signature un
 ### Weather Synergies
 | Weather | Favors | Hinders |
 |---------|--------|---------|
-| **Heavy Rain** | GLA, Pakistan | USA (Laser -30%), Japan (Laser -30%) |
-| **Sandstorm** | GLA, Pakistan | All radar/visual units |
+| **Heavy Rain** | HERO, Pakistan, Iran | USA (Laser -30%), Japan (Laser -30%) |
+| **Sandstorm** | HERO, Pakistan, Türkiye | All radar/visual units |
 | **Snow** | Japan (Mechas) | Russia, China (Tracked -25% speed) |
 
 ### Counterplay Triangle (Examples)
 - **USA Stealth** → Countered by **SK K-Sat** (Cyber Blackout reveals all) / **China Hackers** (detect stealth)
 - **Russia Heavy Armor** → Countered by **India Railgun** (ignores armor) / **USA Hellfire** (armor pen)
-- **GLA Toxins** → Countered by **USA Chemical Suits** (100% immunity) / **Iran Bunkers** (garrisoned ATGMs)
+- **HERO Tech Theft** → Countered by **USA Chemical Suits** (100% immunity to stolen toxins) / **Iran Bunkers** (garrisoned ATGMs)
 - **Pakistan EMP** → Countered by **Japan Plasma Shields** (regenerate) / **SK Smart Munitions** (hit anyway)
 
 ---
@@ -247,7 +248,7 @@ This document provides a quick-reference for all 10 factions, their signature un
 |---------|-------------|------------------|-----------|---------|--------------|
 | USA | ✅ Planned | 📝 In Progress | 📝 Planned | 📝 Planned | ✅ EN/TR |
 | China | ✅ Planned | 📝 Planned | 📝 Planned | 📝 Planned | ✅ EN/TR |
-| GLA | ✅ Planned | 📝 Planned | 📝 Planned | 📝 Planned | ✅ EN/TR |
+| HERO | ✅ Planned | 📝 Planned | 📝 Planned | 📝 Planned | ✅ EN/TR |
 | Türkiye | ✅ Planned | 📝 Planned | 📝 Planned | 📝 Planned | ✅ EN/TR |
 | Iran | ✅ Planned | 📝 Planned | 📝 Planned | 📝 Planned | ✅ EN/TR |
 | Pakistan | ✅ Planned | 📝 Planned | 📝 Planned | 📝 Planned | ✅ EN/TR |

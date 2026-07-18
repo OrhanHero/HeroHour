@@ -14,7 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - EditorConfig for consistent formatting
 - Git LFS configuration for binary assets
 - .gitignore for UE5, F#, .NET projects
-- **10 Asymmetric World Powers complete design** (USA, China, GLA, Türkiye, Iran, Pakistan, India, Japan, South Korea, Russia)
+- **10 Asymmetric World Powers complete design** (USA, China, **HERO**, Türkiye, Iran, Pakistan, India, Japan, South Korea, Russia)
 - **Faction deep-dive documentation** with signature units, structures, and upgrades
 - **Core Gameplay Features**: Combat School, Generals Challenge, Dynamic Weather, Urban Warfare
 - **Turkish localization** (tr/Game.po) with 200+ strings
