@@ -16,7 +16,6 @@
 *~
 *.log
 *.dmp
-*.uproject
 *.sln
 *.vcxproj
 *.vcxproj.filters
@@ -163,7 +162,6 @@ venv/
 ENV/
 
 # UE5 specific
-/Plugins/
 /Source/ThirdParty/
 *.aps
 *.ncb
@@ -180,6 +178,14 @@ ENV/
 
 # Content (handled by LFS)
 # /Content/
+
+# Large free third-party asset packs (installed via Fab, not committed —
+# re-download for free instead of bloating the repo / LFS quota):
+# City Sample Buildings (~15GB), Crowd (~6GB), Vehicles (~7.5GB), MetaRoad CitySample Pack (~4GB)
+/Content/CitySampleBuildings/
+/Content/CitySampleCrowd/
+/Content/CitySampleVehicles/
+/Content/UnrealDrive_CitySample/
 
 # Intermediate build files
 /Intermediate/

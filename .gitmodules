@@ -1,0 +1,3 @@
+[submodule "Plugins/VibeUE"]
+	path = Plugins/VibeUE
+	url = https://github.com/kevinpbuckley/VibeUE.git
