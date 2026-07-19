@@ -67,6 +67,34 @@
 		{
 			"Name": "MetasoundExperimental",
 			"Enabled": true
+		},
+		{
+			"Name": "WatabouBridge",
+			"Enabled": true
+		},
+		{
+			"Name": "SandboxedEditing",
+			"Enabled": true
+		},
+		{
+			"Name": "WaveFunctionCollapse",
+			"Enabled": true
+		},
+		{
+			"Name": "FastGeoStreaming",
+			"Enabled": true
+		},
+		{
+			"Name": "CodeEditor",
+			"Enabled": true
+		},
+		{
+			"Name": "MeshTerrainMode",
+			"Enabled": true
+		},
+		{
+			"Name": "PCGMeshPartitionInterop",
+			"Enabled": true
 		}
 	]
 }

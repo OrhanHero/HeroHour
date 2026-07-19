@@ -218,3 +218,25 @@ ENV/
 
 # EditorConfig (keep in repo for consistent formatting)
 # .editorconfig
+
+# --- HeroHour project-specific: large third-party Fab asset packs ---
+# Only the folders we actually authored/curated are tracked under Content/;
+# everything else (large Fab marketplace packs pulled in for prototyping)
+# is excluded to stay within the GitHub LFS free-tier quota.
+/Content/*
+!/Content/Characters/
+!/Content/Cursor/
+!/Content/LevelPrototyping/
+!/Content/Materials/
+!/Content/Megapack/
+!/Content/ParagonWraith/
+!/Content/TopDown/
+!/Content/__ExternalActors__/
+!/Content/__ExternalObjects__/
+
+# Stray marketing/preview images extracted alongside Fab packs
+/Clouds_and_Skies.png
+/Construction_VOL1.png
+/DefectPropsVol1.png
+/EPMasterMaterials.png
+/Ultimate StampIT Collection for UE.pdf

@@ -225,4 +225,43 @@ When asked to rebuild / relaunch / test, use the project script — not manual `
 - **Commit at milestones** if the project is a git repo, so a bad experiment reverts cleanly.
 - **Living gotchas:** when you solve a real problem, append a one-line gotcha+fix to this file so the
   next session doesn't relearn it.
+
+**Gotchas (this project):**
+- **No engine toolsets registered here.** `unreal.ToolsetRegistry.get_all_toolset_json_schemas()`
+  returns only 31 toolsets in this build, all VibeUE-native (`VibeUE.*`, `ToolsetRegistry.AgentSkillToolset`) —
+  `EditorToolset.EditorAppToolset` (and thus `CaptureViewport`/`StartPIE`/etc.) is **not present**.
+  `call_tool`/`execute_tool` against it fails with "Toolset not found". Until this project's VibeUE
+  build registers Epic's engine toolsets, there is no way to self-capture a screenshot — verification
+  of visible changes (landscape, materials, districts) depends on the user looking in-editor and
+  sharing a screenshot. Don't re-attempt CaptureViewport as a "maybe it works now" check more than once
+  per session.
+- **`LandscapeService.set_weights_in_region` over the FULL vertex grid (505×505) has, at least once,
+  left the heightmap reading back as all-zero on a subsequent round-trip** even though isolated
+  repro attempts (same calls, same size, real slope-derived arrays, in-script and cross-round-trip)
+  came back clean every time — root cause not pinned down (possibly a rare edit-layer merge race on
+  `save_dirty_packages` under Nanite/World Partition). Heights are deterministic from the same
+  `create_ridge`/`create_mountain`/`create_spline_from_points`/`apply_noise`/`apply_erosion` seeds, so
+  recovery is just re-running that exact sculpt sequence — not a cause for panic. **Always call
+  `analyze_terrain(name, 0,0,0)` right after any full-grid `set_weights_in_region` batch** (and again
+  after the next `save_dirty_packages`) before reporting success; if `max_height`/`min_height` both
+  read `0.0`, re-run the sculpt and re-verify before touching layers again.
+- **`FoliageService.scatter_foliage`/`scatter_foliage_rect`/`scatter_foliage_on_layer` crashed the
+  embedded Python interpreter outright** (access violation 0xC0000005, unrecoverable in-process —
+  required a full editor restart). The in-editor error dialog pinned the cause: an `ensure()` failure
+  on `InLevel->GetWorld()->GetSubsystem<UActorPartitionSubsystem>()->IsLevelPartition()` — the
+  subsystem pointer is null in this project's level, and the Foliage service dereferences it
+  unconditionally when placing instances (presumably to find/create the per-cell
+  `InstancedFoliageActor`). **Do not call any `FoliageService` scatter/add function in this project.**
+  For scattered vegetation/props, spawn plain `StaticMeshActor`s directly via
+  `EditorActorSubsystem.spawn_actor_from_object` at randomized positions instead (the same method
+  used for every building/prop placement all session) — slower per-instance than real foliage but
+  crash-free. Sculpting/painting/spline tools were unaffected; this is scoped to `FoliageService`.
+- **`sculpt_at_location` and the landscape-spline pipeline (`create_spline_from_points` with
+  raise/lower_terrain + `apply_splines_to_landscape`) had zero effect on a landscape created via
+  `import_heightmap`**, even though both work fine on a landscape sculpted from scratch with
+  `create_landscape`. Confirmed via `analyze_terrain` before/after being byte-identical across
+  multiple attempts. `create_mountain`/`create_valley`/`create_ridge`/`create_plateau`/`create_crater`
+  (the "semantic terrain feature" family) **worked correctly on the same imported landscape** — use
+  those instead of `sculpt_at_location`/splines for any post-import terrain edits (e.g. carving a
+  river: walk a point list and call `create_valley` at each one, rather than a spline).
 <!-- END VibeUE -->
