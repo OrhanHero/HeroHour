@@ -165,7 +165,7 @@ jobs:
           find Source -name "*.h" -o -name "*.cpp" | xargs clang-format-15 --dry-run --Werror
 
       - name: Check Markdown linting
-        uses: DavidAnson/markdownlint-cli2-action@v17
+        uses: DavidAnson/markdownlint-cli2-action@v24
         with:
           config: '.markdownlint.json'
 
