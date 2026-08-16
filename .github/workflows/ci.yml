@@ -1,0 +1,242 @@
+# HeroHour CI Pipeline
+
+name: CI
+
+on:
+  push:
+    branches: [main, release/**]
+  pull_request:
+    branches: [main, release/**]
+  workflow_dispatch:
+
+env:
+  DOTNET_VERSION: '8.0.x'
+  UE5_VERSION: '5.8'
+  SOLUTION: 'HeroHour.sln'
+
+jobs:
+  # .NET / F# Build & Test
+  dotnet-build-test:
+    name: .NET Build & Test
+    runs-on: windows-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+          fetch-depth: 0
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+          cache: true
+
+      - name: Setup Paket
+        run: dotnet tool restore
+
+      - name: Restore dependencies
+        run: paket restore
+
+      - name: Build F# Simulation
+        run: dotnet build Source/HeroHourSimulation/HeroHourSimulation.fsproj --configuration Release --no-restore
+
+      - name: Run F# Unit Tests
+        run: dotnet test Source/HeroHourSimulation/tests/HeroHourSimulation.Tests.fsproj --configuration Release --no-build --collect:"XPlat Code Coverage" --logger "trx;LogFileName=test_results.trx"
+
+      - name: Upload test results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: dotnet-test-results
+          path: '**/test_results.trx'
+          retention-days: 7
+
+      - name: Upload coverage
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: dotnet-coverage
+          path: '**/coverage.cobertura.xml'
+          retention-days: 7
+
+  # UE5 C++ Build
+  ue5-build:
+    name: UE5 Build
+    runs-on: windows-latest
+    timeout-minutes: 60
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+          fetch-depth: 0
+
+      - name: Setup UE5
+        uses: peter-evans/setup-unreal-engine@v2
+        with:
+          version: ${{ env.UE5_VERSION }}
+          install-engine: true
+
+      - name: Generate Project Files
+        run: |
+          & "$env:UE5_ROOT/Engine/Build/BatchFiles/GenerateProjectFiles.bat" -project="HeroHour.uproject" -game -engine
+
+      - name: Build UE5 Project
+        run: |
+          & "$env:UE5_ROOT/Engine/Build/BatchFiles/Build.bat" HeroHourEditor Win64 Development -project="HeroHour.uproject" -waitmutex -clean
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ue5-build
+          path: |
+            Binaries/
+            Intermediate/
+          retention-days: 3
+
+  # UE5 Editor Tests (requires UE5 installed)
+  ue5-tests:
+    name: UE5 Editor Tests
+    runs-on: windows-latest
+    timeout-minutes: 45
+    needs: ue5-build
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+          fetch-depth: 0
+
+      - name: Setup UE5
+        uses: peter-evans/setup-unreal-engine@v2
+        with:
+          version: ${{ env.UE5_VERSION }}
+          install-engine: true
+
+      - name: Download build artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: ue5-build
+          path: .
+
+      - name: Run UE5 Unit Tests
+        run: |
+          & "$env:UE5_ROOT/Engine/Binaries/Win64/UnrealEditor-Cmd.exe" HeroHour.uproject -run=UnitTests -unattended -nullrhi -log
+
+      - name: Run UE5 Automation Tests
+        run: |
+          & "$env:UE5_ROOT/Engine/Binaries/Win64/UnrealEditor-Cmd.exe" HeroHour.uproject -run=AutomationTests -unattended -nullrhi -log
+
+      - name: Upload test results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: ue5-test-results
+          path: Saved/Logs/*.log
+          retention-days: 7
+
+  # Code Quality & Linting
+  lint:
+    name: Code Quality
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+
+      - name: Run dotnet format
+        run: dotnet format --verify-no-changes --verbosity detailed
+
+      - name: Install clang-format
+        run: sudo apt-get update && sudo apt-get install -y clang-format-15
+
+      - name: Check C++ formatting
+        run: |
+          find Source -name "*.h" -o -name "*.cpp" | xargs clang-format-15 --dry-run --Werror
+
+      - name: Check Markdown linting
+        uses: DavidAnson/markdownlint-cli2-action@v17
+        with:
+          config: '.markdownlint.json'
+
+      - name: Check YAML formatting
+        uses: ibiqlik/action-yamllint@v3
+
+  # Security Scanning
+  security:
+    name: Security Scan
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Run CodeQL Analysis
+        uses: github/codeql-action/init@v3
+        with:
+          languages: cpp, csharp
+
+      - name: Perform CodeQL Analysis
+        uses: github/codeql-action/analyze@v3
+        with:
+          category: "/language:cpp"
+          upload: true
+
+      - name: Run Secret Scan
+        uses: trufflesecurity/trufflehog@main
+        with:
+          path: ./
+          base: main
+          head: HEAD
+
+  # Dependency Review
+  dependency-review:
+    name: Dependency Review
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Review Dependencies
+        uses: actions/dependency-review-action@v4
+        with:
+          config-file: '.github/dependency-review-config.yml'
+
+  # Summary
+  ci-summary:
+    name: CI Summary
+    runs-on: ubuntu-latest
+    needs: [dotnet-build-test, ue5-build, ue5-tests, lint, security, dependency-review]
+    if: always()
+    steps:
+      - name: Check job statuses
+        run: |
+          echo "dotnet-build-test: ${{ needs.dotnet-build-test.result }}"
+          echo "ue5-build: ${{ needs.ue5-build.result }}"
+          echo "ue5-tests: ${{ needs.ue5-tests.result }}"
+          echo "lint: ${{ needs.lint.result }}"
+          echo "security: ${{ needs.security.result }}"
+          echo "dependency-review: ${{ needs.dependency-review.result }}"
+
+          if [[ "${{ needs.dotnet-build-test.result }}" != "success" ]] || \
+             [[ "${{ needs.ue5-build.result }}" != "success" ]] || \
+             [[ "${{ needs.ue5-tests.result }}" != "success" ]] || \
+             [[ "${{ needs.lint.result }}" != "success" ]] || \
+             [[ "${{ needs.security.result }}" != "success" ]] || \
+             [[ "${{ needs.dependency-review.result }}" != "success" ]]; then
+            echo "::error::One or more CI jobs failed"
+            exit 1
+          fi

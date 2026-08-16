@@ -1,0 +1,112 @@
+name: Epic
+description: Large feature spanning multiple sprints/issues
+title: "[Epic] "
+labels: ["epic"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Epics represent large bodies of work. Break them down into issues!
+
+  - type: input
+    id: title
+    attributes:
+      label: Epic Title
+      placeholder: "e.g., Hero Commander System"
+    validations:
+      required: true
+
+  - type: textarea
+    id: overview
+    attributes:
+      label: Overview
+      description: High-level description
+      placeholder: "Implement unique Commander heroes per faction with abilities, progression, and strategic impact..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: goals
+    attributes:
+      label: Goals & Definition of Done
+      placeholder: |
+        - [ ] 3 Heroes per faction (USA, China, GLA)
+        - [ ] 4 abilities each (3 basic + 1 ultimate)
+        - [ ] Progression system (XP, levels, unlocks)
+        - [ ] Lobby hero selection
+        - [ ] In-game hero HUD
+        - [ ] AI hero usage
+        - [ ] Balance pass
+      render: markdown
+
+  - type: textarea
+    id: breakdown
+    attributes:
+      label: Issue Breakdown
+      description: Link child issues (create them after epic)
+      placeholder: |
+        - [ ] #101 Hero data architecture
+        - [ ] #102 Hero progression (F#)
+        - [ ] #103 Hero abilities (GAS)
+        - [ ] #104 Hero selection UI
+        - [ ] #105 Hero HUD
+        - [ ] #106 Replication
+        - [ ] #107 AI behavior
+        - [ ] #108 Balance & tuning
+      render: markdown
+
+  - type: dropdown
+    id: milestone
+    attributes:
+      label: Target Milestone
+      options:
+        - M1: Core Simulation (Sprints 1-3)
+        - M2: UE5 Integration (Sprints 4-6)
+        - M3: AI Systems (Sprints 7-9)
+        - M4: Multiplayer (Sprints 10-12)
+        - M5: Gameplay Features (Sprints 13-16)
+        - M6: Polish & Ship (Sprints 17-24)
+        - Backlog
+    validations:
+      required: true
+
+  - type: dropdown
+    id: lead
+    attributes:
+      label: Epic Lead
+      options:
+        - @heroHour/tech-leads
+        - @heroHour/simulation
+        - @heroHour/rendering
+        - @heroHour/gameplay
+        - @heroHour/ai
+        - @heroHour/network
+        - @heroHour/tools
+    validations:
+      required: true
+
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependencies
+      placeholder: "Requires M1 (Core Simulation) completion. GAS framework from M2."
+
+  - type: textarea
+    id: risks
+    attributes:
+      label: Risks & Mitigations
+      placeholder: |
+        | Risk | Likelihood | Impact | Mitigation |
+        |------|------------|--------|------------|
+        | Ability replication complexity | High | High | Prototype in M2 |
+        | Balance affecting competitive | Medium | High | Dedicated balance sprint |
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: Child issues created and linked
+        - label: Added to project board
+        - label: Stakeholders aligned

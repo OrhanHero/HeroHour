@@ -1,0 +1,54 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <LangVersion>preview</LangVersion>
+    <Nullable>enable</Nullable>
+    <WarningsAsErrors>nullable</WarningsAsErrors>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <AssemblyName>HeroHourSimulation</AssemblyName>
+    <RootNamespace>HeroHour.Simulation</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="src/Core/Constants.fs" />
+    <Compile Include="src/Core/Types.fs" />
+    <Compile Include="src/Core/GameState.fs" />
+    <Compile Include="src/Core/GameCommand.fs" />
+    <Compile Include="src/Core/SimulationResult.fs" />
+    <Compile Include="src/Events/GameEvent.fs" />
+    <Compile Include="src/Events/EventBus.fs" />
+    <Compile Include="src/Events/EventHandlers.fs" />
+    <Compile Include="src/Data/DataAssets.fs" />
+    <Compile Include="src/Data/ConfigManager.fs" />
+    <Compile Include="src/Data/DataLoader.fs" />
+    <Compile Include="src/Economy/ResourceTypes.fs" />
+    <Compile Include="src/Economy/ResourceManager.fs" />
+    <Compile Include="src/Economy/EconomySimulator.fs" />
+    <Compile Include="src/Combat/UnitStats.fs" />
+    <Compile Include="src/Combat/DamageCalculator.fs" />
+    <Compile Include="src/Combat/CombatResolver.fs" />
+    <Compile Include="src/Units/UnitManager.fs" />
+    <Compile Include="src/Units/MovementSystem.fs" />
+    <Compile Include="src/Units/FormationSystem.fs" />
+    <Compile Include="src/Buildings/BuildingManager.fs" />
+    <Compile Include="src/Buildings/ProductionQueue.fs" />
+    <Compile Include="src/Buildings/ConstructionSystem.fs" />
+    <Compile Include="src/AI/CommanderAI.fs" />
+    <Compile Include="src/AI/StrategicPlanner.fs" />
+    <Compile Include="src/AI/TacticalPlanner.fs" />
+    <Compile Include="src/AI/EconomyPlanner.fs" />
+    <Compile Include="src/AI/DifficultyScaler.fs" />
+    <Compile Include="src/Simulation.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FSharp.Core" Version="8.0.300" />
+    <PackageReference Include="System.Collections.Immutable" Version="8.0.0" />
+    <PackageReference Include="System.Text.Json" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.0" />
+    <PackageReference Include="FSharp.SystemTextJson" Version="1.0.0" />
+  </ItemGroup>
+
+</Project>

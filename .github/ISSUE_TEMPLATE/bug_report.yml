@@ -1,0 +1,137 @@
+name: Bug Report
+description: Report a bug or unexpected behavior
+title: "[Bug] "
+labels: ["bug", "triage"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug! Please fill out the form below with as much detail as possible.
+
+  - type: input
+    id: title
+    attributes:
+      label: Bug Title
+      description: A clear, concise title describing the bug
+      placeholder: "e.g., Commander AI freezes when resources depleted"
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: A clear description of what the bug is
+      placeholder: "When the Commander AI runs out of credits, it enters an infinite loop in the EconomyPlanner..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to Reproduce
+      description: Numbered steps to reproduce the behavior
+      placeholder: |
+        1. Start a skirmish match as USA
+        2. Build only power plants (no income structures)
+        3. Wait for credits to reach 0
+        4. Observe Commander AI behavior
+      value: |
+        1.
+        2.
+        3.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      description: What should happen instead?
+      placeholder: "AI should switch to defensive strategy and sell non-essential buildings..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual Behavior
+      description: What actually happens?
+      placeholder: "AI gets stuck in EconomyPlanner.TryOptimizeResources() loop..."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: component
+    attributes:
+      label: Affected Component
+      description: Which system is affected?
+      options:
+        - simulation (F# simulation layer)
+        - rendering (UE5 rendering/Nanite/Lumen)
+        - gameplay-ability (GAS abilities/effects)
+        - ai (Commander AI, behavior trees, EQS)
+        - network (replication, prediction, dedicated server)
+        - data (data assets, config, JSON)
+        - ui (UMG, HUD, menus)
+        - audio (MetaSounds, voice, SFX)
+        - build (UBT, dotnet, paket)
+        - ci (GitHub Actions)
+        - other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      description: How critical is this bug?
+      options:
+        - critical (crash, data loss, security)
+        - high (major feature broken, no workaround)
+        - medium (feature partially broken, workaround exists)
+        - low (minor issue, cosmetic)
+        - enhancement (not a bug, but improvement)
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: System information
+      placeholder: |
+        - OS: Windows 11 Pro 23H2
+        - UE5 Version: 5.8.0
+        - .NET SDK: 8.0.400
+        - F# Version: 8.0.300
+        - Branch: main
+        - Commit: a1b2c3d
+      render: markdown
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs & Screenshots
+      description: Paste relevant logs, screenshots, or error messages
+      placeholder: |
+        ```
+        [2025-07-18 14:32:15] [AI] ERROR: Infinite loop detected in EconomyPlanner
+        [2025-07-18 14:32:15] [AI] Stack trace: ...
+        ```
+      render: markdown
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Checklist
+      options:
+        - label: I have searched for existing issues
+          required: true
+        - label: I have provided minimal reproduction steps
+          required: true
+        - label: This is not a duplicate
+          required: true
