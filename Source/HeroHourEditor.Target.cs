@@ -1,12 +1,15 @@
+// Copyright Epic Games, Inc. All Rights Reserved.
+
 using UnrealBuildTool;
+using System.Collections.Generic;
 
 public class HeroHourEditorTarget : TargetRules
 {
-    public HeroHourEditorTarget(TargetInfo target) : base(target)
-    {
-        Type = TargetType.Editor;
-        DefaultBuildSettings = BuildSettingsVersion.V7;
-        IncludeOrderVersion = EngineIncludeOrderVersion.Latest;
-        ExtraModuleNames.Add("HeroHourPrototypeUE");
-    }
+	public HeroHourEditorTarget( TargetInfo Target) : base(Target)
+	{
+		Type = TargetType.Editor;
+		DefaultBuildSettings = BuildSettingsVersion.V7;
+		IncludeOrderVersion = EngineIncludeOrderVersion.Unreal5_8;
+		ExtraModuleNames.Add("HeroHourPrototypeUE");
+	}
 }

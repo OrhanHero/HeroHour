@@ -8,7 +8,7 @@ class UCameraComponent;
 class USceneComponent;
 class USpringArmComponent;
 
-/** Asset-free top-down camera used by the prototype. */
+/** Isometric RTS camera used by the vertical slice. */
 UCLASS()
 class HEROHOURPROTOTYPEUE_API AHHRTSCameraPawn : public APawn
 {
@@ -29,7 +29,7 @@ private:
     TObjectPtr<UCameraComponent> Camera;
 
     UPROPERTY(EditAnywhere, Category = "RTS Camera|Movement")
-    float MoveSpeed = 1800.0f;
+    float MoveSpeed = 8000.0f;
 
     UPROPERTY(EditAnywhere, Category = "RTS Camera|Movement")
     bool bEnableEdgeScroll = false;
@@ -38,11 +38,14 @@ private:
     float EdgeScrollPixels = 16.0f;
 
     UPROPERTY(EditAnywhere, Category = "RTS Camera|Zoom")
-    float ZoomStep = 250.0f;
+    float ZoomStep = 1500.0f;
 
     UPROPERTY(EditAnywhere, Category = "RTS Camera|Zoom")
-    float MinZoom = 700.0f;
+    float MinZoom = 8000.0f;
 
     UPROPERTY(EditAnywhere, Category = "RTS Camera|Zoom")
-    float MaxZoom = 4500.0f;
+    float MaxZoom = 32000.0f;
+
+    UPROPERTY(EditAnywhere, Category = "RTS Camera|Movement")
+    FVector2D CameraBounds = FVector2D(60000.0f, 60000.0f);
 };

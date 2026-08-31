@@ -183,6 +183,9 @@ ENV/
 # through a separate local/team storage workflow when one is introduced.
 /Art/
 /Content/
+/CitySample/
+/Fab Downloads/
+/_LocalBuildBackup/
 *.mp4
 *.mov
 *.mkv

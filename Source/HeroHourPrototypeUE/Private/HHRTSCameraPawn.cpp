@@ -15,12 +15,15 @@ AHHRTSCameraPawn::AHHRTSCameraPawn()
     SpringArm = CreateDefaultSubobject<USpringArmComponent>(TEXT("SpringArm"));
     SpringArm->SetupAttachment(SceneRoot);
     SpringArm->SetUsingAbsoluteRotation(true);
-    SpringArm->SetRelativeRotation(FRotator(-65.0f, 0.0f, 0.0f));
-    SpringArm->TargetArmLength = 3200.0f;
+    // CitySample is authored at real-world city scale. A higher, angled camera
+    // reveals complete blocks and the skyline instead of a single road surface.
+    SpringArm->SetRelativeRotation(FRotator(-58.0f, -45.0f, 0.0f));
+    SpringArm->TargetArmLength = 18000.0f;
     SpringArm->bDoCollisionTest = false;
 
     Camera = CreateDefaultSubobject<UCameraComponent>(TEXT("Camera"));
     Camera->SetupAttachment(SpringArm, USpringArmComponent::SocketName);
+    Camera->FieldOfView = 50.0f;
 }
 
 void AHHRTSCameraPawn::Tick(const float DeltaSeconds)
@@ -59,6 +62,10 @@ void AHHRTSCameraPawn::Tick(const float DeltaSeconds)
     {
         Direction.Normalize();
         AddActorWorldOffset(FVector(Direction.Y, Direction.X, 0.0f) * MoveSpeed * DeltaSeconds, true);
+        FVector Location = GetActorLocation();
+        Location.X = FMath::Clamp(Location.X, -CameraBounds.X, CameraBounds.X);
+        Location.Y = FMath::Clamp(Location.Y, -CameraBounds.Y, CameraBounds.Y);
+        SetActorLocation(Location);
     }
 
     const float Wheel = PC->GetInputAnalogKeyState(EKeys::MouseWheelAxis);
@@ -68,5 +75,14 @@ void AHHRTSCameraPawn::Tick(const float DeltaSeconds)
             SpringArm->TargetArmLength - Wheel * ZoomStep,
             MinZoom,
             MaxZoom);
+    }
+
+    const float RotationInput = (PC->IsInputKeyDown(EKeys::E) ? 1.0f : 0.0f)
+        - (PC->IsInputKeyDown(EKeys::Q) ? 1.0f : 0.0f);
+    if (!FMath::IsNearlyZero(RotationInput))
+    {
+        FRotator Rotation = SpringArm->GetRelativeRotation();
+        Rotation.Yaw += RotationInput * 55.0f * DeltaSeconds;
+        SpringArm->SetRelativeRotation(Rotation);
     }
 }

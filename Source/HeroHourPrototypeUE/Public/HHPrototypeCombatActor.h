@@ -21,7 +21,7 @@ enum class EHHPrototypeUnitRole : uint8
     Air
 };
 
-/** Small, asset-free combatant used only by the vertical slice. */
+/** Prototype combatant with a safe greybox fallback when local Fab assets are absent. */
 UCLASS()
 class HEROHOURPROTOTYPEUE_API AHHPrototypeCombatActor : public AActor
 {
@@ -56,6 +56,15 @@ public:
     UFUNCTION(BlueprintPure, Category="HeroHour|Prototype")
     EHHPrototypeUnitRole GetRole() const { return Role; }
 
+    UFUNCTION(BlueprintPure, Category="HeroHour|Prototype")
+    float GetHealth() const { return Health; }
+
+    UFUNCTION(BlueprintPure, Category="HeroHour|Prototype")
+    float GetMaxHealth() const { return MaxHealth; }
+
+    UFUNCTION(BlueprintPure, Category="HeroHour|Prototype")
+    float GetHealthRatio() const { return MaxHealth > 0.0f ? Health / MaxHealth : 0.0f; }
+
 private:
     UPROPERTY(VisibleAnywhere)
     TObjectPtr<UStaticMeshComponent> Mesh;
@@ -73,7 +82,14 @@ private:
     float AttackRange = 180.0f;
     float AttackInterval = 0.8f;
     float AttackCooldown = 0.0f;
+    float DamageFlashTime = 0.0f;
+    float ShotEffectTime = 0.0f;
+    float VisualRadius = 55.0f;
+    float VisualHeight = 90.0f;
+    FVector LastShotStart = FVector::ZeroVector;
+    FVector LastShotEnd = FVector::ZeroVector;
     bool bHasMoveTarget = false;
     bool bHeadquarters = false;
     bool bSelected = false;
+    bool bUsingGreybox = true;
 };
