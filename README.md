@@ -1,5 +1,10 @@
 # HeroHour - AAA RTS Game
 
+> **Current status: prototype development.** The active scope is one 1v1 map,
+> HERO and USA, and one infantry, vehicle, and air unit per faction. Features
+> described below are the long-term vision unless explicitly marked as
+> implemented. See [Prototype Scope](docs/PROTOTYPE_SCOPE.md).
+
 ![HeroHour Cover](Art/Concepts/Factions/HERO%20HOUR%20COVER.png)
 
 > **Command & Conquer: Generals Zero Hour** inspired Real-Time Strategy game built with **Unreal Engine 5.8**, **F# (Fable 5)**, and **.NET 8** — **Pure Multiplayer Competitive Architecture**

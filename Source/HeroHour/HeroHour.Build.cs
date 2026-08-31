@@ -82,7 +82,6 @@ public class HeroHour : ModuleRules
 
         // Optimization
         bUseUnity = true;
-        bUsePCHFiles = true;
 
         // Definitions
         PublicDefinitions.Add("HEROHOUR_API=DLLEXPORT");

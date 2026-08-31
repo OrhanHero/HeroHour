@@ -178,8 +178,20 @@ ENV/
 .vscode/
 *.code-workspace
 
-# Content (handled by LFS)
-# /Content/
+# Large binary assets stay local. HeroHour does not use Git LFS.
+# Keep source code and lightweight metadata in Git; distribute playable assets
+# through a separate local/team storage workflow when one is introduced.
+/Art/
+/Content/
+*.mp4
+*.mov
+*.mkv
+*.wav
+*.psd
+*.blend
+*.fbx
+*.uasset
+*.umap
 
 # Intermediate build files
 /Intermediate/
@@ -194,6 +206,7 @@ ENV/
 # Rider
 .idea/
 *.sln.iml
+*.slnx
 
 # VS Code (keep settings but ignore workspace)
 # .vscode/*   <-- Commented out to allow VS Code config in repo
