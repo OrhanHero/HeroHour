@@ -4,15 +4,47 @@
 
 > **Command & Conquer: Generals Zero Hour** inspired Real-Time Strategy game built with **Unreal Engine 5.8**, **F# (Fable 5)**, and **.NET 8** — **Pure Multiplayer Competitive Architecture**
 
-[![Build Status](https://img.shields.io/badge/build-passing-brightgreen)]()
-[![UE5.8](https://img.shields.io/badge/Unreal%20Engine-5.8-0E1128?logo=unrealengine)]()
-[![F# 8](https://img.shields.io/badge/F%23-8.0-378BBA?logo=fsharp)]()
+[![Status](https://img.shields.io/badge/status-pre--alpha%20(vision%20%2B%20sim%20core)-orange)]()
+[![Sim Core](https://img.shields.io/badge/F%23%20sim%20core-builds%20%26%20runs-brightgreen?logo=fsharp)]()
 [![.NET 8](https://img.shields.io/badge/.NET-8.0-512BD4?logo=dotnet)]()
 [![License](https://img.shields.io/badge/license-MIT-blue)]()
 
 ---
 
-## 🎮 Project Overview
+## ⚠️ Project Status — Pre-Alpha (Honest Snapshot)
+
+**HeroHour is currently a design vision plus a small, runnable simulation core — not yet a playable game.** This section is the single source of truth for what actually exists. Most of this README below describes the *intended* design; treat it as the target, not the current state. See **[ROADMAP.md](ROADMAP.md)** for the realistic, milestone-by-milestone plan.
+
+### ✅ What exists and works today
+- A **deterministic F# simulation core** that compiles and runs (`Source/HeroHourSimulation`).
+- A **headless console runner** — creates a 2-player match, advances 300 deterministic ticks, runs the economy loop, and verifies determinism (same seed → identical end state).
+- **Passing unit tests** (Expecto).
+- Extensive **design documentation** (`docs/`) and **concept art** (`Art/`).
+- An **EOS C++ subsystem skeleton**.
+
+### ❌ What does NOT exist yet (despite descriptions below)
+- No Unreal Engine project (`.uproject`), no `.sln`, no `paket.dependencies`, no `global.json`.
+- No units, combat, production, pathfinding, or **any rendering/visuals**.
+- No networking / lockstep implementation (design only).
+- No map editor, superweapons, or super-agents **in code**.
+- Only 3 factions exist as a type (`USA | China | GLA`); the "10 world powers" are **design, not code**.
+
+### ▶️ Run what exists
+```bash
+cd Source/HeroHourSimulation/runner
+dotnet run -c Release          # simulate 300 ticks
+dotnet run -c Release -- 600   # simulate 600 ticks
+
+cd ../tests && dotnet run -c Release   # run unit tests
+```
+
+> **A note on scope:** the full AAA vision below (1000+ units, lockstep netcode, 10 asymmetric factions, in-game map editor, e-sports balance) is realistically a multi-year effort for a funded team. The roadmap deliberately cuts this down to a finishable path: **one small thing that works, then grow.**
+
+---
+
+## 🎮 Project Overview (Design Vision — not yet implemented)
+
+> Everything from here down describes the **intended design**. For what is actually built, see the Project Status section above and [ROADMAP.md](ROADMAP.md).
 
 **HeroHour** is a pure multiplayer competitive RTS — no singleplayer campaigns, no PvE content. All development resources flow into **E-Sports balance**, **deterministic lockstep netcode**, and **community-driven features**. Inspired by the unmatched tactical dynamics and asymmetric warfare of *Command & Conquer: Generals - Zero Hour*, HeroHour sets new AAA production standards for modern competitive RTS.
 
@@ -433,7 +465,9 @@ Deep F# simulation-layer analytics. Logs every action. Post-match UI in UE5:
 
 ---
 
-## 📁 Project Structure
+## 📁 Project Structure (Target Layout — mostly not created yet)
+
+> This is the **planned** layout. Today only `Source/HeroHourSimulation/`, `docs/`, `Art/`, `Localization/`, and `.github/ISSUE_TEMPLATE/` actually exist. Folders like `Content/`, `Scripts/`, `Audio/`, `Tests/`, `.vscode/`, `.github/workflows/`, and files like `HeroHour.uproject` / `HeroHour.sln` / `paket.dependencies` / `global.json` are **not present yet**.
 
 ```
 HeroHour/
@@ -547,25 +581,41 @@ HeroHour/
 | **Git LFS** | 3.4+ | Large file storage |
 | **Paket** | 8.0+ | .NET dependency management |
 
-### Installation
+### Run the simulation core (works today)
+
+The only thing you can build and run right now is the F# simulation core. **No Unreal Engine, LFS, or Paket needed** — just the .NET 8 SDK.
 
 ```bash
-# Clone with LFS
+git clone https://github.com/OrhanHero/HeroHour.git
+cd HeroHour/Source/HeroHourSimulation
+
+# Build the simulation library
+dotnet build HeroHourSimulation.fsproj -c Release
+
+# Run the headless simulation runner
+cd runner && dotnet run -c Release
+
+# Run the unit tests
+cd ../tests && dotnet run -c Release
+```
+
+### Installation (full engine — planned, not yet possible)
+
+> The steps below require project files (`HeroHour.uproject`, `paket.dependencies`, build scripts) that **do not exist yet**. They document the intended future workflow. See [ROADMAP.md](ROADMAP.md) → Milestone 2.
+
+```bash
+# (FUTURE) Clone with LFS
 git lfs install
 git clone https://github.com/OrhanHero/HeroHour.git
 cd HeroHour
 git lfs pull
 
-# Install .NET dependencies
+# (FUTURE) Install dependencies
 dotnet restore
-
-# Install Paket dependencies
 paket restore
 
-# Generate UE5 project files
+# (FUTURE) Generate UE5 project files & open
 ./Scripts/build/GenerateProjectFiles.sh
-
-# Open in UE5 Editor
 ./HeroHour.uproject
 ```
 
@@ -594,9 +644,11 @@ gh pr create --title "feat(simulation): Hero ability cooldown system" --body "..
 
 ---
 
-## 🏗 Build System
+## 🏗 Build System (Planned — scripts not created yet)
 
-### Build Commands
+> The build scripts and CI/CD pipeline below are **planned**, not present. The GitHub Actions workflows referenced were removed. What works today is `dotnet build` / `dotnet run` on the F# projects (see "Run the simulation core" above).
+
+### Build Commands (FUTURE)
 
 ```bash
 # Development build
@@ -639,23 +691,24 @@ gh pr create --title "feat(simulation): Hero ability cooldown system" --body "..
 
 ## 📚 Documentation
 
-| Document | Location | Status |
-|----------|----------|--------|
-| **Game Design Document** | `docs/gdd/HERO_HOUR_GDD.md` | ✅ Complete |
-| **Factions Overview + Superweapons/Agents** | `docs/gdd/FRACTIONS_OVERVIEW.md` | ✅ Complete |
-| **Superweapons Design** | `docs/gdd/SUPERWEAPONS.md` | ✅ Complete |
-| **Super-Agents Design** | `docs/gdd/SUPER_AGENTS.md` | ✅ Complete |
-| **Map Editor Design** | `docs/gdd/MAP_EDITOR.md` | ✅ Complete |
-| **AoD Infrastructure** | `docs/gdd/AOD_INFRASTRUCTURE.md` | ✅ Complete |
-| **Combat School Design** | `docs/gdd/COMBAT_SCHOOL.md` | ✅ Complete |
-| **Weather System** | `docs/gdd/WEATHER_SYSTEM.md` | ✅ Complete |
-| **Urban Warfare** | `docs/gdd/URBAN_WARFARE.md` | ✅ Complete |
-| **EOS Integration Guide** | `docs/technical/EOS_INTEGRATION.md` | ✅ Complete |
-| **EOS Quickstart** | `docs/technical/EOS_QUICKSTART.md` | ✅ Complete |
-| **Technical Architecture** | `docs/architecture/TECHNICAL_ARCHITECTURE.md` | 📝 In Progress |
-| **API Reference** | `docs/api/` | 📝 Planned |
-| **Production Pipeline** | `docs/production/PIPELINE.md` | 📝 Planned |
-| **Modding Guide** | `docs/modding/GUIDE.md` | 📝 Planned |
+> "Design doc exists" means the *design* is written — it does **not** mean the feature is implemented. See [ROADMAP.md](ROADMAP.md) for implementation status.
+
+| Document | Location | Design Doc |
+|----------|----------|:----------:|
+| **Roadmap (start here)** | `ROADMAP.md` | ✅ |
+| **Full GDD (text)** | `docs/gdd/HERO_HOUR_GDD_FULL.txt` | ✅ |
+| **Factions Overview + Superweapons/Agents** | `docs/gdd/FRACTIONS_OVERVIEW.md` | ✅ |
+| **Superweapons Design** | `docs/gdd/SUPERWEAPONS.md` | ✅ |
+| **Super-Agents Design** | `docs/gdd/SUPER_AGENTS.md` | ✅ |
+| **Map Editor Design** | `docs/gdd/MAP_EDITOR.md` | ✅ |
+| **Weather System** | `docs/gdd/WEATHER_SYSTEM.md` | ✅ |
+| **Urban Warfare** | `docs/gdd/URBAN_WARFARE.md` | ✅ |
+| **Core Gameplay Features** | `docs/technical/CORE_GAMEPLAY_FEATURES.md` | ✅ |
+| **EOS Integration / Init / Quickstart** | `docs/technical/EOS_*.md` | ✅ |
+| **AoD Infrastructure** | _not written yet_ | ❌ |
+| **Combat School Design** | _not written yet_ | ❌ |
+| **Technical Architecture** | _not written yet_ | ❌ |
+| **API Reference / Production / Modding** | _not written yet_ | ❌ |
 
 ---
 

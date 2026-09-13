@@ -1,16 +1,43 @@
 module HeroHour.Simulation.Core.GameState
 
 open System
+open System.Collections.Generic
 open System.Collections.Immutable
 open HeroHour.Simulation.Core.Types
 open HeroHour.Simulation.Core.Constants
+
+let getPlayerColor (index: int) : PlayerColor =
+    match index % 16 with
+    | 0 -> PlayerColor.Red
+    | 1 -> PlayerColor.Blue
+    | 2 -> PlayerColor.Green
+    | 3 -> PlayerColor.Yellow
+    | 4 -> PlayerColor.Orange
+    | 5 -> PlayerColor.Purple
+    | 6 -> PlayerColor.Cyan
+    | 7 -> PlayerColor.Pink
+    | 8 -> PlayerColor.Brown
+    | 9 -> PlayerColor.Lime
+    | 10 -> PlayerColor.Magenta
+    | 11 -> PlayerColor.Navy
+    | 12 -> PlayerColor.Olive
+    | 13 -> PlayerColor.Maroon
+    | 14 -> PlayerColor.Teal
+    | _ -> PlayerColor.Silver
+
+let createFogOfWar (_playerIDs: System.Collections.Generic.IEnumerable<PlayerID>) : FogOfWarState =
+    let emptyBounds = ImmutableDictionary<PlayerID, Bounds list>.Empty
+    let emptyUnits = ImmutableDictionary<PlayerID, UnitID list>.Empty
+    { VisibleRegions = emptyBounds
+      ExploredRegions = emptyBounds
+      RevealedUnits = emptyUnits }
 
 /// Create a new game state with default settings
 let createGameState (settings: GameSettings) (mapName: string) (seed: int) : GameState =
     let random = System.Random(seed)
     let localPlayerID = PlayerID.New()
 
-    let initialPlayers =
+    let initialPlayers : ImmutableDictionary<PlayerID, PlayerState> =
         settings.AllowedFactions
         |> List.mapi (fun i faction ->
             let playerID = PlayerID.New()
@@ -37,16 +64,17 @@ let createGameState (settings: GameSettings) (mapName: string) (seed: int) : Gam
                 APM = 0.0
                 CustomData = Map.empty
             }
-            playerID, playerState
+            KeyValuePair(playerID, playerState)
         )
-        |> ImmutableDictionary<PlayerID, PlayerState>.ToImmutableDictionary
+        |> ImmutableDictionary.CreateRange
 
-    let fogOfWar = if settings.FogOfWarEnabled then
-        createFogOfWar initialPlayers.Keys
-    else
-        { VisibleRegions = ImmutableDictionary<PlayerID, Bounds list>.Empty
-          ExploredRegions = ImmutableDictionary<PlayerID, Bounds list>.Empty
-          RevealedUnits = ImmutableDictionary<PlayerID, UnitID list>.Empty }
+    let fogOfWar =
+        if settings.FogOfWarEnabled then
+            createFogOfWar initialPlayers.Keys
+        else
+            { VisibleRegions = ImmutableDictionary<PlayerID, Bounds list>.Empty
+              ExploredRegions = ImmutableDictionary<PlayerID, Bounds list>.Empty
+              RevealedUnits = ImmutableDictionary<PlayerID, UnitID list>.Empty }
 
     {
         GameTime = 0.0
@@ -66,32 +94,6 @@ let createGameState (settings: GameSettings) (mapName: string) (seed: int) : Gam
         CustomData = Map.empty
     }
 
-and getPlayerColor (index: int) : PlayerColor =
-    match index % 16 with
-    | 0 -> PlayerColor.Red
-    | 1 -> PlayerColor.Blue
-    | 2 -> PlayerColor.Green
-    | 3 -> PlayerColor.Yellow
-    | 4 -> PlayerColor.Orange
-    | 5 -> PlayerColor.Purple
-    | 6 -> PlayerColor.Cyan
-    | 7 -> PlayerColor.Pink
-    | 8 -> PlayerColor.Brown
-    | 9 -> PlayerColor.Lime
-    | 10 -> PlayerColor.Magenta
-    | 11 -> PlayerColor.Navy
-    | 12 -> PlayerColor.Olive
-    | 13 -> PlayerColor.Maroon
-    | 14 -> PlayerColor.Teal
-    | _ -> PlayerColor.Silver
-
-and createFogOfWar (playerIDs: System.Collections.Generic.IEnumerable<PlayerID>) : FogOfWarState =
-    let emptyBounds = ImmutableDictionary<PlayerID, Bounds list>.Empty
-    let emptyUnits = ImmutableDictionary<PlayerID, UnitID list>.Empty
-    { VisibleRegions = emptyBounds
-      ExploredRegions = emptyBounds
-      RevealedUnits = emptyUnits }
-
 /// Update game state with delta time
 let updateGameTime (state: GameState) (deltaTime: float) : GameState =
     let clampedDelta = min deltaTime MAX_DELTA_TIME
@@ -102,20 +104,20 @@ let updateGameTime (state: GameState) (deltaTime: float) : GameState =
         Tick = state.Tick + 1L }
 
 /// Check victory conditions
-let checkVictory (state: GameState) : PlayerID option =
+let rec checkVictory (state: GameState) : PlayerID option =
     let alivePlayers =
         state.Players
         |> Seq.filter (fun kvp -> not kvp.Value.IsDefeated)
         |> Seq.toList
 
-    match alivePlayers.Length with
-    | 0 -> None // Draw
-    | 1 -> Some winner ->
+    match alivePlayers with
+    | [] -> None // Draw
+    | [ winner ] ->
         if state.Settings.VictoryConditions |> List.contains VictoryCondition.Annihilation then
-            Some winner
+            Some winner.Key
         else
             // Check other conditions
-            checkOtherVictoryConditions state winner
+            checkOtherVictoryConditions state winner.Key
     | _ -> None
 
 and checkOtherVictoryConditions (state: GameState) (winner: PlayerID) : PlayerID option =
@@ -143,7 +145,9 @@ let applyDamageToUnit (state: GameState) (unitID: UnitID) (damage: float) : Game
         |> Seq.tryFind (fun kvp -> kvp.Value.Units.ContainsKey(unitID))
 
     match playerKVP with
-    | Some (playerID, playerState) ->
+    | Some kvp ->
+        let playerID = kvp.Key
+        let playerState = kvp.Value
         let unit = playerState.Units.[unitID]
         let newHealth = max 0.0 (unit.Health - damage)
         let isAlive = newHealth > 0.0
@@ -153,12 +157,13 @@ let applyDamageToUnit (state: GameState) (unitID: UnitID) (damage: float) : Game
         let updatedPlayer = { playerState with Units = updatedUnits }
         let updatedPlayers = state.Players.SetItem(playerID, updatedPlayer)
 
-        let deathEvent = if not isAlive then
-            Some (GameEvent.UnitDied { UnitID = unitID; KillerID = None; Position = unit.Position; Time = state.GameTime })
-        else
-            None
+        let deathEvents =
+            if not isAlive then
+                [ GameEvent.UnitDied { UnitID = unitID; KillerID = None; Position = unit.Position; Time = state.GameTime } ]
+            else
+                []
 
-        { state with Players = updatedPlayers; EventLog = state.EventLog @ deathEvent }
+        { state with Players = updatedPlayers; EventLog = state.EventLog @ deathEvents }
     | None -> state
 
 /// Add resource to player
