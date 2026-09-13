@@ -3,6 +3,9 @@ module HeroHour.Simulation.Core.SimulationResult
 open System
 open HeroHour.Simulation.Core.Types
 
+// NOTE: GameEvent and its data records now live in Types.fs, because
+// GameState.EventLog references them and Types.fs is compiled first.
+
 /// Result of simulation tick
 type SimulationResult = {
     NewState: GameState
@@ -12,57 +15,6 @@ type SimulationResult = {
     NetworkUpdates: NetworkUpdate list
     PerformanceMetrics: PerformanceMetrics
 }
-
-and GameEvent =
-    | UnitCreated of UnitCreatedData
-    | UnitDied of UnitDiedData
-    | UnitDamaged of UnitDamagedData
-    | UnitHealed of UnitHealedData
-    | UnitMoved of UnitMovedData
-    | UnitAttacked of UnitAttackedData
-    | UnitAbilityUsed of UnitAbilityUsedData
-    | BuildingCreated of BuildingCreatedData
-    | BuildingDied of BuildingDiedData
-    | BuildingCompleted of BuildingCompletedData
-    | BuildingProductionStarted of BuildingProductionData
-    | BuildingProductionCompleted of BuildingProductionData
-    | ResourceChanged of ResourceChangedData
-    | TechResearched of TechResearchedData
-    | UpgradeCompleted of UpgradeCompletedData
-    | PlayerDefeated of PlayerDefeatedData
-    | PlayerVictorious of PlayerVictoriousData
-    | ObjectiveCompleted of ObjectiveCompletedData
-    | FogRevealed of FogRevealedData
-    | ChatMessage of ChatMessageData
-    | GamePaused of GamePausedData
-    | GameResumed of GameResumedData
-
-// Event data types
-and UnitCreatedData = { UnitID: UnitID; TypeID: UnitTypeID; Owner: PlayerID; Position: Position; Time: float }
-and UnitDiedData = { UnitID: UnitID; KillerID: UnitID option; Position: Position; Time: float }
-and UnitDamagedData = { UnitID: UnitID; Damage: float; DamageType: DamageType; SourceID: UnitID option; Time: float }
-and UnitHealedData = { UnitID: UnitID; Amount: float; SourceID: UnitID option; Time: float }
-and UnitMovedData = { UnitID: UnitID; From: Position; To: Position; Time: float }
-and UnitAttackedData = { AttackerID: UnitID; TargetID: UnitID; Damage: float; Time: float }
-and UnitAbilityUsedData = { UnitID: UnitID; AbilityID: AbilityID; Target: Target option; Time: float }
-
-and BuildingCreatedData = { BuildingID: BuildingID; TypeID: BuildingTypeID; Owner: PlayerID; Position: Position; Time: float }
-and BuildingDiedData = { BuildingID: BuildingID; KillerID: UnitID option; Position: Position; Time: float }
-and BuildingCompletedData = { BuildingID: BuildingID; Time: float }
-and BuildingProductionData = { BuildingID: BuildingID; UnitTypeID: UnitTypeID; Count: int; Time: float }
-
-and ResourceChangedData = { PlayerID: PlayerID; ResourceType: ResourceType; OldAmount: int; NewAmount: int; Time: float }
-and TechResearchedData = { PlayerID: PlayerID; TechID: TechID; Time: float }
-and UpgradeCompletedData = { PlayerID: PlayerID; BuildingID: BuildingID; UpgradeID: TechID; Time: float }
-
-and PlayerDefeatedData = { PlayerID: PlayerID; VictorID: PlayerID option; Time: float }
-and PlayerVictoriousData = { PlayerID: PlayerID; Time: float }
-
-and ObjectiveCompletedData = { ObjectiveID: string; PlayerID: PlayerID; Time: float }
-and FogRevealedData = { PlayerID: PlayerID; Region: Bounds; Time: float }
-and ChatMessageData = { PlayerID: PlayerID; Message: string; Time: float }
-and GamePausedData = { PlayerID: PlayerID; Time: float }
-and GameResumedData = { PlayerID: PlayerID; Time: float }
 
 /// Visual effects for UE5
 and VisualEffect =
