@@ -16,7 +16,6 @@
 *~
 *.log
 *.dmp
-*.uproject
 *.sln
 *.vcxproj
 *.vcxproj.filters
@@ -71,6 +70,7 @@ paket.lock
 .fake/
 
 # Build outputs
+/Builds/
 *.exe
 *.dll
 *.pdb
@@ -212,3 +212,9 @@ ENV/
 
 # EditorConfig (keep in repo for consistent formatting)
 # .editorconfig
+
+# Local snapshots and Blender autosaves
+/Backups/
+/HeroHour-non-lfs/
+*.blend1
+*.blend2

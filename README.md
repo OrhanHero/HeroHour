@@ -1,4 +1,18 @@
-# HeroHour - AAA RTS Game
+# HeroHour — RTS prototype
+
+## Aktueller ausführbarer Stand
+
+Der lokale Offline-Prototyp läuft mit Unreal Engine 5.8.3 und dem C++-Modul `HeroHourPrototype`: eine HERO-Fraktion, breite CITY HERO-Wüstenkarte mit Fluss und zwei Brücken, Schrottsammler, Depot, Werkstatt und texturierte Panzer, bezahlte Produktionswarteschlangen und ein wirtschaftlich begrenzter Gegner. A*-Navigation berücksichtigt Wasser, Gebäude und Stadtanlagen. Eigene Blender-Modelle und deutsche Kommandopanels sind eingebunden.
+
+Start und verifizierte Builds: [docs/STARTEN.md](docs/STARTEN.md). Steuerung und Grenzen: [docs/PROTOTYP_START.md](docs/PROTOTYP_START.md). Entwicklungsplan: [docs/PROTOTYP_ENTWICKLUNGSPLAN.md](docs/PROTOTYP_ENTWICKLUNGSPLAN.md).
+
+![Tatsächliche CityHero-Prototypansicht](Art/Previews/CityHero-Prototype.png)
+
+**Geprüft im Windows-Paket:** Kampf, Wirtschaft, Navigation sowie drei vollständige simulierte Partien. Die Darstellung ist weiterhin Prototypqualität; [Zielkorrektur und verbleibende Abweichungen](docs/CITYHERO_ZIELKORREKTUR.md) dokumentieren den Vergleich mit den Konzeptbildern.
+
+**Beim Klonen:** Git LFS installieren und `git lfs pull` ausführen. Unreal Engine 5.8.3 und eine C++-Toolchain werden zum lokalen Build benötigt.
+
+Die nachfolgende ursprüngliche Beschreibung ist die langfristige Projektvision. Multiplayer, Lockstep und AAA-Qualität sind im aktuellen Prototyp noch nicht umgesetzt; der historische Build-Badge ist kein CI-Nachweis.
 
 ![HeroHour Cover](Art/Concepts/Factions/HERO%20HOUR%20COVER.png)
 
