@@ -1,14 +1,22 @@
 # HeroHour — RTS prototype
 
+**Übernahme durch einen neuen Account:** zuerst [aktuelle Übergabe](docs/CURRENT_HANDOVER.md) lesen. Der [Tempest-Transformationsplan M1–M4](docs/TEMPEST_TRANSFORMATION_PLAN.md) und das [Arbeitsprotokoll](docs/WORKLOG_2026-10-14.md) unterscheiden geprüfte Änderungen, laufende Integration und offene Ziele.
+
 ## Aktueller ausführbarer Stand
 
-Der lokale Offline-Prototyp läuft mit Unreal Engine 5.8.3 und dem C++-Modul `HeroHourPrototype`: eine HERO-Fraktion, breite CITY HERO-Wüstenkarte mit Fluss und zwei Brücken, Schrottsammler, Depot, Werkstatt und texturierte Panzer, bezahlte Produktionswarteschlangen und ein wirtschaftlich begrenzter Gegner. A*-Navigation berücksichtigt Wasser, Gebäude und Stadtanlagen. Eigene Blender-Modelle und deutsche Kommandopanels sind eingebunden.
+Der lokale Offline-Prototyp läuft mit Unreal Engine 5.8.3 und dem C++-Modul `HeroHourPrototype`: eine HERO-Fraktion, breite CITY HERO-Wüstenkarte mit Fluss und zwei Brücken, eigenem Sammler mit Frontfräse, Raffinerie, Fahrzeugfabrik und gepanzertem Striker, bezahlte Produktionswarteschlangen und ein wirtschaftlich begrenzter Gegner. A*-Navigation berücksichtigt Wasser, Gebäude und Stadtanlagen. Eigene Blender-Modelle und deutsche Kommandopanels sind eingebunden.
 
 Start und verifizierte Builds: [docs/STARTEN.md](docs/STARTEN.md). Steuerung und Grenzen: [docs/PROTOTYP_START.md](docs/PROTOTYP_START.md). Entwicklungsplan: [docs/PROTOTYP_ENTWICKLUNGSPLAN.md](docs/PROTOTYP_ENTWICKLUNGSPLAN.md).
 
-![Tatsächliche CityHero-Prototypansicht](Art/Previews/CityHero-Prototype.png)
+![Tatsächliche aktuelle Paketansicht](Art/Previews/ConceptV3-Battle.png)
 
-**Geprüft im Windows-Paket:** Kampf, Wirtschaft, Navigation sowie drei vollständige simulierte Partien. Die Darstellung ist weiterhin Prototypqualität; [Zielkorrektur und verbleibende Abweichungen](docs/CITYHERO_ZIELKORREKTUR.md) dokumentieren den Vergleich mit den Konzeptbildern.
+**Geprüft im Windows-Paket:** sieben Suiten mit 70 Wirtschafts-, 41 Architektur-, 18 Feldkern-, 17 Kampf-, 15 UI- und 10 Navigationsprüfungen sowie drei vollständigen simulierten Partien. Die Darstellung ist weiterhin Prototypqualität; [Zielkorrektur und verbleibende Abweichungen](docs/CITYHERO_ZIELKORREKTUR.md) dokumentieren den Vergleich mit den Konzeptbildern.
+
+**Referenzanalyse:** [REA-Workflow](docs/research/REA_WORKFLOW.md), [Zero Hour](docs/research/ZeroHour-REA-FirstPass.md) und [Tempest Rising](docs/research/TempestRising-REA-FirstPass.md). REA ist Reverse Engineer Anything und liefert Analysebelege. Der Prototyp enthält manuelle Sammlerbefehle, gebäudebezogene Produktion, Sammelpunkte, Produktionsabbruch und exklusive Ressourcenreservierungen. Acht gespeicherte DataV3-Assets liefern live Kosten, Dauer, HP, Bewegung, Waffenwerte, Meshes, Porträts und Feldraten. Feldreservierungen, opt-in Nachwachsen und Depletion-Emission sind integriert. Mehrzellenfelder, Dockslots, Power, Fog und Fraktionsasymmetrie stehen noch aus.
+
+**Neue 3D-Assets:** [HERO-Konzeptset V2](docs/CONCEPT_ASSETS_V2.md) – eigenes HQ, Fahrzeugfabrik, Raffinerie, gepanzertes Fahrzeug und industrieller Sammler mit Blender-/FBX-Quellen, tatsächlicher Render-Vorschau und Unreal-Integration.
+
+**Nächste Schritte:** [UI, Landschaft, Assetqualität und Partieprüfung](docs/NAECHSTE_ENTWICKLUNGSSCHRITTE.md). TRELLIS.2 ist eine optionale Hilfe für gezielte Qualitätsverbesserungen, keine Voraussetzung für den UI-Umbau.
 
 **Beim Klonen:** Git LFS installieren und `git lfs pull` ausführen. Unreal Engine 5.8.3 und eine C++-Toolchain werden zum lokalen Build benötigt.
 

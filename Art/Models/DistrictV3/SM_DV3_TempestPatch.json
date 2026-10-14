@@ -1,0 +1,76 @@
+{
+  "name": "SM_DV3_TempestPatch",
+  "seed": 982341,
+  "cluster_count": 17,
+  "provenance": "Original procedural geometry; no third-party game assets",
+  "pivot": "ground origin",
+  "uv_mapping": "dominant-plane physical metres",
+  "preview": "C:\\Users\\Hero\\HeroHour\\Saved\\Research\\TempestPatch-QA.png",
+  "validation": "PASS",
+  "vertices": 4735,
+  "triangles": 9110,
+  "dimensions_m": [
+    4.074844479560852,
+    3.52789843082428,
+    0.949795126914978
+  ],
+  "bounds_min_m": [
+    -1.9576464891433716,
+    -1.604992151260376,
+    0.0
+  ],
+  "bounds_max_m": [
+    2.1171979904174805,
+    1.9229062795639038,
+    0.949795126914978
+  ],
+  "materials": [
+    "Gravel",
+    "Sandstone",
+    "TempestEnergy"
+  ],
+  "material_triangles": {
+    "Gravel": 440,
+    "Sandstone": 8058,
+    "TempestEnergy": 612
+  },
+  "closed_islands": 90,
+  "nonmanifold_edges": 0,
+  "inward_or_zero_volume_islands": 0,
+  "degenerate_faces": 0,
+  "uv_finite": true,
+  "fbx_roundtrip": {
+    "vertices": 4735,
+    "triangles": 9110,
+    "dimensions_m": [
+      4.074844479560852,
+      3.5278983116149902,
+      0.949795126914978
+    ],
+    "bounds_min_m": [
+      -1.9576464891433716,
+      -1.604992151260376,
+      0.0
+    ],
+    "bounds_max_m": [
+      2.1171979904174805,
+      1.9229061603546143,
+      0.949795126914978
+    ],
+    "materials": [
+      "Gravel",
+      "Sandstone",
+      "TempestEnergy"
+    ],
+    "material_triangles": {
+      "Gravel": 440,
+      "Sandstone": 8058,
+      "TempestEnergy": 612
+    },
+    "closed_islands": 90,
+    "nonmanifold_edges": 0,
+    "inward_or_zero_volume_islands": 0,
+    "degenerate_faces": 0,
+    "uv_finite": true
+  }
+}

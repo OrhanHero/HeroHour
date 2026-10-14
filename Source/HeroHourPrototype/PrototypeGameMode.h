@@ -8,6 +8,8 @@
 #include "PrototypeEconomyTypes.h"
 #include "PrototypeGameMode.generated.h"
 
+DECLARE_MULTICAST_DELEGATE_TwoParams(FPrototypeResourceDepleted, int32, bool);
+
 UCLASS()
 class HEROHOURPROTOTYPE_API APrototypeUnit : public AActor
 {
@@ -22,18 +24,25 @@ public:
     bool IsStructure() const { return Role == EPrototypeRole::Headquarters || Role == EPrototypeRole::Depot || Role == EPrototypeRole::Factory; }
     bool IsCompleted() const { return ConstructionProgress >= 1.f; }
     float ConstructionProgress = 1.f;
-    float Cargo = 0.f;
+    FVector BaseVisualScale = FVector::OneVector;
+    double Cargo = 0.;
     float HarvestTimer = 0.f;
     int32 HarvestNode = INDEX_NONE;
+    float HarvestRouteCheck = 0.f;
+    bool bHasRallyPoint = false;
+    FVector RallyPoint = FVector::ZeroVector;
     void Select(bool bValue);
     void ReceiveHit(float Damage);
     void OrderMove(const FVector& Position);
+    bool OrderManualMove(const FVector& Position);
+    bool bCollectorManualOrder = false;
     void OrderAttack(APrototypeUnit* Target);
     int32 Team = 0;
     bool bHQ = false;
     bool bSelected = false;
     float Health = 100.f;
     float MaxHealth = 100.f;
+    UPROPERTY() class UHRUnitDefinition* Definition = nullptr;
     FVector Destination;
     UPROPERTY() APrototypeUnit* AttackTarget;
     UPROPERTY() APrototypeUnit* StrategicTarget = nullptr;
@@ -71,6 +80,9 @@ public:
     virtual void BeginPlay() override;
     void ClearSelection();
     void BeginPlacement(EPrototypeRole InRole);
+    APrototypeUnit* GetSelectedProducer() const;
+    void FocusSelection();
+    void PanToWorld(const FVector& Position);
     bool bPlacing = false;
     EPrototypeRole PlacementRole = EPrototypeRole::Factory;
     UPROPERTY() class AStaticMeshActor* PlacementGhost = nullptr;
@@ -79,6 +91,11 @@ public:
     FVector2D DragStart;
 private:
     void AddSelected(APrototypeUnit* Unit);
+    TMap<int32, TArray<TWeakObjectPtr<APrototypeUnit>>> ControlGroups;
+    float LastSelectionClickTime = -1.f;
+    TWeakObjectPtr<APrototypeUnit> LastSelectionClick;
+    int32 LastRecalledGroup = INDEX_NONE;
+    float LastGroupRecallTime = -1.f;
 };
 
 UCLASS()
@@ -86,8 +103,11 @@ class HEROHOURPROTOTYPE_API APrototypeHUD : public AHUD
 {
     GENERATED_BODY()
 public:
+    // -1 follows the selected producer; explicit sidebar tabs override it.
+    int32 ProductionCategory = -1;
     virtual void DrawHUD() override;
     bool HandleClick(const FVector2D& ScreenPosition);
+    bool IsOverInterface(const FVector2D& ScreenPosition) const;
 };
 
 UCLASS()
@@ -102,17 +122,25 @@ public:
     void TrainTank();
     void ResetEconomy();
     void TickEconomy(float DeltaSeconds);
+    void UpdateResourceVisuals();
+    FPrototypeResourceDepleted OnResourceDepletionChanged;
     void TickCollector(APrototypeUnit* Unit, float DeltaSeconds);
+    void ReleaseSalvageReservation(APrototypeUnit* Unit);
     bool BeginBuilding(EPrototypeRole Role, const FVector& Position, int32 Team = 0);
     bool CanPlaceBuilding(EPrototypeRole Role, const FVector& Position, int32 Team = 0) const;
     bool RequestProduction(EPrototypeRole Role, int32 Team = 0);
+    bool RequestProductionAt(APrototypeUnit* Producer, EPrototypeRole Role);
+    bool CancelProduction(APrototypeUnit* Producer);
+    bool SetRallyPoint(APrototypeUnit* Producer, const FVector& Position);
     APrototypeUnit* FindCompletedStructure(int32 Team, EPrototypeRole Role, const FVector& Near = FVector::ZeroVector) const;
     int32 GetQueueCount(const APrototypeUnit* Producer = nullptr, int32 Team = 0) const;
     float GetProductionProgress(const APrototypeUnit* Producer) const;
     static float Footprint(EPrototypeRole Role);
     static float RoleCost(EPrototypeRole Role);
     static float RoleDuration(EPrototypeRole Role);
-    float EnemyCredits = 800.f;
+    static const class UHRUnitDefinition* GetRoleDefinition(EPrototypeRole Role);
+    static const class UHRTempestFieldDefinitionAsset* GetFieldDefinition();
+    double EnemyCredits = 800.;
     float BotDecisionTime = 0.f;
     TArray<FPrototypeSalvage> SalvageNodes;
     TArray<FPrototypeProduction> ProductionQueue;
@@ -124,12 +152,16 @@ public:
     int32 Outcome = 0;
     int32 Wave = 0;
     float MatchTime = 0.f;
-    float Credits = 300.f;
+    double Credits = 300.;
     float NextWave = 30.f;
     FString Feedback;
 private:
+    // Hard references on the game-mode default object keep definitions cooked and alive.
+    UPROPERTY() TArray<TObjectPtr<class UHRUnitDefinition>> RoleDefinitions;
+    UPROPERTY() TObjectPtr<class UHRTempestFieldDefinitionAsset> FieldDefinition;
     bool bTestPassed = true;
     void TestCheck(bool bCondition, const TCHAR* Label);
     void RunCombatTest();
+    void RunUITest();
     void RunMatchTest();
 };

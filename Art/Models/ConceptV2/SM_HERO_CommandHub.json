@@ -1,0 +1,23 @@
+{
+  "name": "SM_HERO_CommandHub",
+  "vertices": 19032,
+  "polygons": 17850,
+  "triangles": 36692,
+  "dimensions_m": [
+    6.888791561126709,
+    6.888791561126709,
+    5.9549994468688965
+  ],
+  "materials": [
+    "Concrete",
+    "Dark",
+    "Armor",
+    "Steel",
+    "Neon",
+    "Glass",
+    "Lamp",
+    "Dust"
+  ],
+  "origin": "ground pivot with runtime Z compensation",
+  "zoffset_m": -1.1
+}

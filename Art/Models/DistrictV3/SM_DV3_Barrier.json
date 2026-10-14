@@ -1,0 +1,29 @@
+{
+  "name": "SM_DV3_Barrier",
+  "dimensions_m": [
+    1.7000000476837158,
+    0.550000011920929,
+    0.9100000858306885
+  ],
+  "triangles": 220,
+  "materials": [
+    "Plaster",
+    "Concrete",
+    "Asphalt",
+    "Glass",
+    "Metal",
+    "Dust",
+    "Paint"
+  ],
+  "pivot": "ground origin",
+  "bounds_min_m": [
+    -0.8500000238418579,
+    -0.2750000059604645,
+    0.0
+  ],
+  "bounds_max_m": [
+    0.8500000238418579,
+    0.2750000059604645,
+    0.9100000858306885
+  ]
+}

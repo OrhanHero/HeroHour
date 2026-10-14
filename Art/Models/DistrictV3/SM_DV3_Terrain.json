@@ -1,0 +1,54 @@
+{
+  "name": "SM_DV3_Terrain",
+  "seed": 314159,
+  "source": "original authored procedural geology",
+  "vertices": 60109,
+  "triangles": 119232,
+  "dimensions_m": [
+    340.0,
+    270.0,
+    37.8237190246582
+  ],
+  "bounds_min_m": [
+    -170.0,
+    -135.0,
+    -3.5680205821990967
+  ],
+  "bounds_max_m": [
+    170.0,
+    135.0,
+    34.255699157714844
+  ],
+  "materials": [
+    "Sand",
+    "Sandstone"
+  ],
+  "material_triangles": {
+    "Sand": 87845,
+    "Sandstone": 31387
+  },
+  "sandstone_min_slope_degrees": 31,
+  "playable_extent_m": [
+    120,
+    90
+  ],
+  "playable_surface_z_m": -0.05,
+  "river_x_range_m": [
+    -37,
+    -23
+  ],
+  "river_surface_z_m": -3.5,
+  "grid_spacing_m": 1.25,
+  "flat_vertex_checks": 26390,
+  "river_vertex_checks": 1595,
+  "uv_scale_m": 1,
+  "uv_coordinates": "physical metres; material controls tile size",
+  "fbx_axes": "X forward, Z up",
+  "fbx_smoothing": "FACE",
+  "origin_m": [
+    0,
+    0,
+    0
+  ],
+  "boundary": "open surface: no artificial extruded board rim"
+}

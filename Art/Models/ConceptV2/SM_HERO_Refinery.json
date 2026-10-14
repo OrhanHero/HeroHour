@@ -1,0 +1,22 @@
+{
+  "name": "SM_HERO_Refinery",
+  "vertices": 17688,
+  "polygons": 16776,
+  "triangles": 34512,
+  "dimensions_m": [
+    3.568791389465332,
+    3.8247151374816895,
+    3.8980000019073486
+  ],
+  "materials": [
+    "Concrete",
+    "Steel",
+    "Dark",
+    "Armor",
+    "Neon",
+    "Lamp",
+    "Team"
+  ],
+  "origin": "ground pivot with runtime Z compensation",
+  "zoffset_m": -0.35
+}

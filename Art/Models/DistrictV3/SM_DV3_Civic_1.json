@@ -1,0 +1,29 @@
+{
+  "name": "SM_DV3_Civic_1",
+  "dimensions_m": [
+    3.9000000953674316,
+    4.092499732971191,
+    15.0
+  ],
+  "triangles": 10224,
+  "materials": [
+    "Plaster",
+    "Concrete",
+    "Asphalt",
+    "Glass",
+    "Metal",
+    "Dust",
+    "Paint"
+  ],
+  "pivot": "ground origin",
+  "bounds_min_m": [
+    -1.9500000476837158,
+    -2.1424999237060547,
+    0.0
+  ],
+  "bounds_max_m": [
+    1.9500000476837158,
+    1.9500000476837158,
+    15.0
+  ]
+}

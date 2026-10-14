@@ -17,12 +17,23 @@
 #include "UnrealClient.h"
 #include "DrawDebugHelpers.h"
 #include "Engine/StaticMeshActor.h"
+#include "RTS/HRProductionQueue.h"
+#include "RTS/HRRTSDefinitions.h"
+
+namespace
+{
+float ConceptStructureScale(EPrototypeRole Role)
+{
+    return Role==EPrototypeRole::Headquarters ? 1.5f : Role==EPrototypeRole::Factory ? 1.7f : Role==EPrototypeRole::Depot ? 1.5f : 1.f;
+}
+}
 
 APrototypeUnit::APrototypeUnit()
 {
     PrimaryActorTick.bCanEverTick = true;
     SetRootComponent(CreateDefaultSubobject<USceneComponent>(TEXT("Root")));
     static ConstructorHelpers::FObjectFinder<UStaticMesh> Cube(TEXT("/Engine/BasicShapes/Cube.Cube"));
+    static ConstructorHelpers::FObjectFinder<UStaticMesh> SelectionPlane(TEXT("/Engine/BasicShapes/Plane.Plane"));
     static ConstructorHelpers::FObjectFinder<UStaticMesh> Technical(TEXT("/Game/HERO/Meshes/SM_HERO_Technical.SM_HERO_Technical"));
     static ConstructorHelpers::FObjectFinder<UMaterialInterface> Material(TEXT("/Game/Prototype/M_Team.M_Team"));
     Mesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Hull"));
@@ -45,8 +56,8 @@ APrototypeUnit::APrototypeUnit()
     Barrel->SetVisibility(false);
     Selection = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Selection"));
     Selection->SetupAttachment(RootComponent);
-    Selection->SetStaticMesh(Cube.Object);
-    Selection->SetRelativeLocation(FVector(0, 0, -28));
+    Selection->SetStaticMesh(SelectionPlane.Succeeded() ? SelectionPlane.Object : Cube.Object);
+    Selection->SetRelativeLocation(FVector(0, 0, -31));
     Selection->SetRelativeScale3D(FVector(3.1f, 2.0f, 0.025f));
     Selection->SetCollisionEnabled(ECollisionEnabled::NoCollision);
     Selection->SetVisibility(false);
@@ -66,6 +77,7 @@ void APrototypeUnit::Configure(int32 InTeam, bool bInHQ)
 void APrototypeUnit::ConfigureRole(EPrototypeRole InRole)
 {
     Role = InRole;
+    Definition = const_cast<UHRUnitDefinition*>(APrototypeGameMode::GetRoleDefinition(Role));
     bHQ = Role == EPrototypeRole::Headquarters;
     const TCHAR* Name = TEXT("SM_HERO_Technical");
     if (bHQ) Name = TEXT("SM_HERO_BlackMarket");
@@ -75,10 +87,27 @@ void APrototypeUnit::ConfigureRole(EPrototypeRole InRole)
     const FString Path = FString::Printf(TEXT("/Game/HERO/Meshes/%s.%s"), Name, Name);
     if (UStaticMesh* Model = LoadObject<UStaticMesh>(nullptr, *Path)) Mesh->SetStaticMesh(Model);
     MaxHealth = bHQ ? 800.f : Role == EPrototypeRole::Factory ? 600.f : Role == EPrototypeRole::Depot ? 400.f : 100.f;
+    if (Definition) MaxHealth = FMath::Max(1.f, Definition->Stats.Health);
     Health = MaxHealth;
     Mesh->SetRelativeRotation(FRotator::ZeroRotator);
     Mesh->SetRelativeScale3D(FVector::OneVector);
-    if (Role == EPrototypeRole::Combat)
+    Mesh->SetRelativeLocation(FVector::ZeroVector);
+    const TCHAR* ConceptName = bHQ ? TEXT("SM_HERO_CommandHub")
+        : Role == EPrototypeRole::Factory ? TEXT("SM_HERO_VehiclePlant")
+        : Role == EPrototypeRole::Depot ? TEXT("SM_HERO_Refinery")
+        : Role == EPrototypeRole::Combat ? TEXT("SM_HERO_Striker") : nullptr;
+    UStaticMesh* ConceptModel = ConceptName ? LoadObject<UStaticMesh>(nullptr,
+        *FString::Printf(TEXT("/Game/HERO/ConceptV2/Meshes/%s.%s"), ConceptName, ConceptName)) : nullptr;
+    if (Definition && !Definition->StaticMesh.IsNull())
+        if (UStaticMesh* AuthoredModel = Definition->StaticMesh.LoadSynchronous()) ConceptModel = AuthoredModel;
+    if (ConceptModel)
+    {
+        Mesh->SetStaticMesh(ConceptModel);
+        const float StructureScale = ConceptStructureScale(Role);
+        Mesh->SetRelativeScale3D(FVector(StructureScale));
+        Mesh->SetRelativeLocation(FVector(0,0,(StructureScale-1.f)*(bHQ?110.f:35.f)));
+    }
+    else if (Role == EPrototypeRole::Combat)
     {
         if (UStaticMesh* Tank = LoadObject<UStaticMesh>(nullptr,TEXT("/Game/LocalAssets/RTSModern/ATV_N1_LOD0.ATV_N1_LOD0")))
         {
@@ -87,7 +116,11 @@ void APrototypeUnit::ConfigureRole(EPrototypeRole InRole)
             Mesh->SetRelativeScale3D(FVector(.65f));
         }
     }
+    BaseVisualScale=Mesh->GetRelativeScale3D();
+    Selection->SetRelativeLocation(FVector(0,0,4.f-GetActorLocation().Z));
     Selection->SetRelativeScale3D(IsStructure() ? FVector(APrototypeGameMode::Footprint(Role)/45.f, APrototypeGameMode::Footprint(Role)/45.f, .025f) : FVector(3.1f,2.f,.025f));
+    if (auto* Ring = LoadObject<UMaterialInterface>(nullptr,TEXT("/Game/HERO/EnvironmentV2/Materials/M_ENV_SelectionRing.M_ENV_SelectionRing"))) Selection->SetMaterial(0,Ring);
+    if (auto* RingMesh = LoadObject<UStaticMesh>(nullptr,TEXT("/Game/HERO/EnvironmentV2/Meshes/SM_ENV_SelectionRing.SM_ENV_SelectionRing"))) Selection->SetStaticMesh(RingMesh);
     for (const FName Slot : {FName(TEXT("Team")), FName(TEXT("Neon"))})
     {
         const int32 Index = Mesh->GetMaterialIndex(Slot);
@@ -131,6 +164,23 @@ void APrototypeUnit::OrderMove(const FVector& Position)
     ScanCooldown = 0.6f;
 }
 
+bool APrototypeUnit::OrderManualMove(const FVector& Position)
+{
+    if (IsStructure() || IsActorBeingDestroyed() || Health <= 0.f) return false;
+    TArray<FVector> Route;
+    const FVector Goal(Position.X,Position.Y,35.f);
+    if (!FPrototypeNavigation::FindWorldPath(GetWorld(),GetActorLocation(),Goal,Route)) return false;
+    if (Role == EPrototypeRole::Collector)
+        if (auto* Mode = GetWorld()->GetAuthGameMode<APrototypeGameMode>()) Mode->ReleaseSalvageReservation(this);
+    OrderMove(Goal);
+    bCollectorManualOrder = Role == EPrototypeRole::Collector;
+    Waypoints = MoveTemp(Route);
+    WaypointIndex = 0;
+    PathGoal = Destination;
+    RepathCooldown = 1.f;
+    return true;
+}
+
 void APrototypeUnit::OrderAttack(APrototypeUnit* Target)
 {
     if (Role != EPrototypeRole::Combat) return;
@@ -151,6 +201,7 @@ void APrototypeUnit::ReceiveHit(float Damage)
     FlashTime = 0.12f;
     if (Health <= 0)
     {
+        Mode->ReleaseSalvageReservation(this);
         if (bHQ) Mode->OnHeadquartersDestroyed(Team);
         DrawDebugSphere(GetWorld(), GetActorLocation(), bHQ ? 220.f : 75.f, 12, FColor::Orange, false, 0.5f, 0, 4.f);
         Destroy();
@@ -170,7 +221,9 @@ void APrototypeUnit::Tick(float DeltaSeconds)
     }
     if (IsStructure())
     {
-        Mesh->SetRelativeScale3D(FVector(1.f,1.f,.15f+.85f*ConstructionProgress));
+        const float HeightFactor=.15f+.85f*ConstructionProgress;
+        Mesh->SetRelativeScale3D(BaseVisualScale*FVector(1.f,1.f,HeightFactor));
+        Mesh->SetRelativeLocation(FVector(0,0,(BaseVisualScale.Z*HeightFactor-1.f)*(bHQ?110.f:35.f)));
         return;
     }
     if (Role == EPrototypeRole::Collector) Mode->TickCollector(this, DeltaSeconds);
@@ -184,29 +237,37 @@ void APrototypeUnit::Tick(float DeltaSeconds)
         ScanCooldown = 0.35f;
         if (!bMoveOrdered && (!AttackTarget || AttackTarget->bHQ))
         {
-            float Nearest = FMath::Square(650.f);
+            float Nearest = TNumericLimits<float>::Max();
             for (TActorIterator<APrototypeUnit> It(GetWorld()); It; ++It)
             {
                 if (It->IsActorBeingDestroyed() || It->Team == Team || It->Health <= 0) continue;
                 if (StrategicTarget && It->bHQ) continue;
                 float Distance = FVector::DistSquared2D(GetActorLocation(), It->GetActorLocation());
-                if (Distance < Nearest) { Nearest = Distance; AttackTarget = *It; }
+                const float ScanRange=It->IsStructure()
+                    ? FMath::Max(650.f,APrototypeGameMode::Footprint(It->Role)+BattlefieldLayout::VehicleRadius+180.f) : 650.f;
+                if (Distance < Nearest && Distance < FMath::Square(ScanRange)) { Nearest = Distance; AttackTarget = *It; }
             }
         }
     }
     if (AttackTarget)
     {
         const FVector Delta = AttackTarget->GetActorLocation() - GetActorLocation();
-        const float Range = AttackTarget->bHQ ? 620.f : 480.f;
+        // Structure fire/approach distances include the footprint so enlarged
+        // buildings can be attacked from reachable ground outside their blocker.
+        const float WeaponRange = Definition ? Definition->Stats.WeaponRangeCm : 480.f;
+        const float Range = AttackTarget->IsStructure()
+            ? FMath::Max(AttackTarget->bHQ ? FMath::Max(620.f, WeaponRange) : WeaponRange,
+                APrototypeGameMode::Footprint(AttackTarget->Role) + BattlefieldLayout::VehicleRadius + 180.f)
+            : WeaponRange;
         SetActorRotation(FRotator(0, Delta.Rotation().Yaw, 0));
         if (Delta.SizeSquared2D() <= FMath::Square(Range))
         {
             if (FireCooldown <= 0)
             {
-                FireCooldown = 1.f;
+                FireCooldown = Definition ? FMath::Max(.01f, Definition->Stats.AttackInterval) : 1.f;
                 DrawDebugLine(GetWorld(), GetActorLocation() + FVector(0, 0, 45),
                     AttackTarget->GetActorLocation() + FVector(0, 0, 45), FColor::Yellow, false, 0.12f, 0, 4.f);
-                AttackTarget->ReceiveHit(20.f);
+                AttackTarget->ReceiveHit(Definition ? Definition->Stats.WeaponDamage : 20.f);
             }
             return;
         }
@@ -220,7 +281,7 @@ void APrototypeUnit::Tick(float DeltaSeconds)
         || (WaypointIndex>=Waypoints.Num() && RepathCooldown<=0.f))
     {
         PathGoal=Destination; WaypointIndex=0; RepathCooldown=1.f;
-        FPrototypeNavigation::FindWorldPath(GetWorld(),GetActorLocation(),Destination,Waypoints);
+        if (!FPrototypeNavigation::FindWorldPath(GetWorld(),GetActorLocation(),Destination,Waypoints)) bCollectorManualOrder=false;
     }
     // Intermediate waypoints allow gentle turns; the final goal must be reached precisely.
     // A 30-unit final tolerance could stop a collector just outside the depot's delivery radius.
@@ -229,7 +290,8 @@ void APrototypeUnit::Tick(float DeltaSeconds)
     if (!Waypoints.IsValidIndex(WaypointIndex)) return;
     const FVector Delta=Waypoints[WaypointIndex]-GetActorLocation();
     const FVector Direction=Delta.GetSafeNormal2D();
-    const FVector Step=Direction*FMath::Min(220.f*DeltaSeconds,Delta.Size2D());
+    const float MoveSpeed = Definition ? FMath::Max(0.f, Definition->Stats.MoveSpeedCm) : 220.f;
+    const FVector Step=Direction*FMath::Min(MoveSpeed*DeltaSeconds,Delta.Size2D());
     const FVector Location=GetActorLocation()+Step;
     if (FPrototypeNavigation::SegmentWorldWalkable(GetWorld(),GetActorLocation(),Location))
     {
@@ -251,13 +313,19 @@ APrototypeController::APrototypeController()
 {
     bShowMouseCursor = true;
     bEnableClickEvents = true;
+    bShouldPerformFullTickWhenPaused = true;
+    PrimaryActorTick.bTickEvenWhenPaused = true;
 }
 
 void APrototypeController::BeginPlay()
 {
     Super::BeginPlay();
-    SetInputMode(FInputModeGameOnly());
-    if (GetPawn()) GetPawn()->SetActorLocation(FVector(-13000.f,-11000.f,18000.f));
+    FInputModeGameAndUI InputMode;
+    InputMode.SetHideCursorDuringCapture(false);
+    InputMode.SetLockMouseToViewportBehavior(EMouseLockMode::DoNotLock);
+    SetInputMode(InputMode);
+    if (GetPawn()) GetPawn()->SetActorLocation(FVector(BattlefieldLayout::PlayerHQX,-1800.f,3300.f));
+    PanToWorld(FVector(BattlefieldLayout::PlayerHQX,0,35));
     SetViewTarget(GetPawn());
 }
 
@@ -282,7 +350,13 @@ void APrototypeController::BeginPlacement(EPrototypeRole InRole)
         auto* Component = PlacementGhost->GetStaticMeshComponent();
         Component->SetMobility(EComponentMobility::Movable);
         const TCHAR* Name = InRole == EPrototypeRole::Factory ? TEXT("SM_HERO_Workshop") : TEXT("SM_HERO_Depot");
-        Component->SetStaticMesh(LoadObject<UStaticMesh>(nullptr,*FString::Printf(TEXT("/Game/HERO/Meshes/%s.%s"),Name,Name)));
+        const TCHAR* ConceptName = InRole == EPrototypeRole::Factory ? TEXT("SM_HERO_VehiclePlant") : TEXT("SM_HERO_Refinery");
+        UStaticMesh* GhostMesh = LoadObject<UStaticMesh>(nullptr,
+            *FString::Printf(TEXT("/Game/HERO/ConceptV2/Meshes/%s.%s"),ConceptName,ConceptName));
+        const bool bConceptMesh=GhostMesh!=nullptr;
+        if (!GhostMesh) GhostMesh = LoadObject<UStaticMesh>(nullptr,*FString::Printf(TEXT("/Game/HERO/Meshes/%s.%s"),Name,Name));
+        Component->SetStaticMesh(GhostMesh);
+        PlacementGhost->SetActorScale3D(FVector(bConceptMesh ? ConceptStructureScale(InRole) : 1.f));
         Component->SetCollisionEnabled(ECollisionEnabled::NoCollision);
         Component->SetCastShadow(false);
         Component->SetVisibility(false);
@@ -291,11 +365,45 @@ void APrototypeController::BeginPlacement(EPrototypeRole InRole)
 
 void APrototypeController::AddSelected(APrototypeUnit* Unit)
 {
-    if (IsValid(Unit) && Unit->Team == 0 && !Unit->bHQ && Unit->Health > 0)
+    if (IsValid(Unit) && !Unit->IsActorBeingDestroyed() && Unit->Team == 0 && Unit->Health > 0)
     {
         Selected.AddUnique(Unit);
         Unit->Select(true);
     }
+}
+
+APrototypeUnit* APrototypeController::GetSelectedProducer() const
+{
+    for (APrototypeUnit* Unit : Selected)
+        if (IsValid(Unit) && !Unit->IsActorBeingDestroyed() && Unit->Health > 0.f && Unit->Team == 0
+            && (Unit->Role == EPrototypeRole::Factory || Unit->Role == EPrototypeRole::Headquarters)) return Unit;
+    return nullptr;
+}
+
+void APrototypeController::FocusSelection()
+{
+    APawn* Camera = GetPawn();
+    const UCameraComponent* View = Camera ? Camera->FindComponentByClass<UCameraComponent>() : nullptr;
+    if (!View) return;
+    FVector Center = FVector::ZeroVector;
+    int32 Count = 0;
+    for (APrototypeUnit* Unit : Selected)
+        if (IsValid(Unit) && !Unit->IsActorBeingDestroyed() && Unit->Health > 0.f) { Center += Unit->GetActorLocation(); ++Count; }
+    if (!Count) return;
+    Center /= Count;
+    PanToWorld(Center);
+}
+
+void APrototypeController::PanToWorld(const FVector& Center)
+{
+    APawn* Camera=GetPawn();
+    const UCameraComponent* View=Camera?Camera->FindComponentByClass<UCameraComponent>():nullptr;
+    if(!View || Center.ContainsNaN()) return;
+    const FVector Forward = View->GetForwardVector();
+    if (Forward.Z >= -.001f) return;
+    const float Distance = (35.f - Camera->GetActorLocation().Z) / Forward.Z;
+    const FVector Position = FVector(Center.X, Center.Y, 35.f) - Forward * Distance;
+    Camera->SetActorLocation(Position);
 }
 
 void APrototypeController::PlayerTick(float DeltaTime)
@@ -303,8 +411,9 @@ void APrototypeController::PlayerTick(float DeltaTime)
     Super::PlayerTick(DeltaTime);
     auto* Mode = GetWorld()->GetAuthGameMode<APrototypeGameMode>();
     if (!Mode) return;
+    if (WasInputKeyJustPressed(EKeys::Pause) || WasInputKeyJustPressed(EKeys::F10)) SetPause(!GetWorld()->IsPaused());
     if (Mode->Outcome != 0 && bPlacing) ClearSelection();
-    Selected.RemoveAll([](APrototypeUnit* Unit) { return !IsValid(Unit); });
+    Selected.RemoveAll([](APrototypeUnit* Unit) { return !IsValid(Unit) || Unit->IsActorBeingDestroyed() || Unit->Health <= 0.f; });
     if (WasInputKeyJustPressed(EKeys::R)) { Mode->ResetMatch(); return; }
     if (APawn* Camera = GetPawn())
     {
@@ -321,8 +430,42 @@ void APrototypeController::PlayerTick(float DeltaTime)
         Camera->SetActorLocation(Location);
     }
     if (Mode->Outcome != 0) return;
-    if (WasInputKeyJustPressed(EKeys::P)) Mode->TrainTank();
-    if (WasInputKeyJustPressed(EKeys::C)) Mode->RequestProduction(EPrototypeRole::Collector);
+    const FKey GroupKeys[] = { EKeys::Zero, EKeys::One, EKeys::Two, EKeys::Three, EKeys::Four,
+        EKeys::Five, EKeys::Six, EKeys::Seven, EKeys::Eight, EKeys::Nine };
+    for (int32 Number = 0; Number < 10; ++Number)
+    {
+        if (!WasInputKeyJustPressed(GroupKeys[Number])) continue;
+        if (IsInputKeyDown(EKeys::LeftControl) || IsInputKeyDown(EKeys::RightControl))
+        {
+            TArray<TWeakObjectPtr<APrototypeUnit>>& Group = ControlGroups.FindOrAdd(Number);
+            Group.Empty();
+            for (APrototypeUnit* Unit : Selected) Group.Add(Unit);
+            Mode->Feedback = FString::Printf(TEXT("Group %d saved: %d selected."), Number, Group.Num());
+        }
+        else
+        {
+            ClearSelection();
+            if (const TArray<TWeakObjectPtr<APrototypeUnit>>* Group = ControlGroups.Find(Number))
+                for (const TWeakObjectPtr<APrototypeUnit>& Unit : *Group) AddSelected(Unit.Get());
+            const float Now = GetWorld()->GetTimeSeconds();
+            if (LastRecalledGroup == Number && Now - LastGroupRecallTime <= .3f) FocusSelection();
+            LastRecalledGroup = Number;
+            LastGroupRecallTime = Now;
+            Mode->Feedback = FString::Printf(TEXT("Group %d selected: %d units."), Number, Selected.Num());
+        }
+    }
+    if (WasInputKeyJustPressed(EKeys::F)) FocusSelection();
+    if (WasInputKeyJustPressed(EKeys::P))
+    {
+        if (APrototypeUnit* Producer = GetSelectedProducer()) Mode->RequestProductionAt(Producer, EPrototypeRole::Combat);
+        else Mode->TrainTank();
+    }
+    if (WasInputKeyJustPressed(EKeys::C))
+    {
+        if (APrototypeUnit* Producer = GetSelectedProducer()) Mode->RequestProductionAt(Producer, EPrototypeRole::Collector);
+        else Mode->RequestProduction(EPrototypeRole::Collector);
+    }
+    if (WasInputKeyJustPressed(EKeys::BackSpace)) Mode->CancelProduction(GetSelectedProducer());
     if (WasInputKeyJustPressed(EKeys::B)) BeginPlacement(EPrototypeRole::Factory);
     if (WasInputKeyJustPressed(EKeys::V)) BeginPlacement(EPrototypeRole::Depot);
     if (WasInputKeyJustPressed(EKeys::Escape)) ClearSelection();
@@ -346,7 +489,7 @@ void APrototypeController::PlayerTick(float DeltaTime)
             const bool Valid = Mode->CanPlaceBuilding(PlacementRole, Position) && Mode->Credits >= APrototypeGameMode::RoleCost(PlacementRole);
             if (IsValid(PlacementGhost))
             {
-                PlacementGhost->SetActorLocation(Position);
+                PlacementGhost->SetActorLocation(Position+FVector(0,0,(PlacementGhost->GetActorScale3D().Z-1.f)*35.f));
                 PlacementGhost->GetStaticMeshComponent()->SetVisibility(true);
             }
             DrawDebugBox(GetWorld(), Position, FVector(Radius,Radius,30), Valid ? FColor::Green : FColor::Red, false, 0.f, 0, 5.f);
@@ -357,8 +500,8 @@ void APrototypeController::PlayerTick(float DeltaTime)
     }
     int32 ViewWidth = 0, ViewHeight = 0;
     GetViewportSize(ViewWidth, ViewHeight);
-    const float HUDScale = FMath::Min(ViewWidth / 1440.f, ViewHeight / 900.f);
-    if (Mouse.Y < 110.f * HUDScale || Mouse.Y > ViewHeight - 216.f * HUDScale)
+    const APrototypeHUD* Interface=Cast<APrototypeHUD>(GetHUD());
+    if (Interface && Interface->IsOverInterface(Mouse))
     {
         if (WasInputKeyJustReleased(EKeys::LeftMouseButton)) bDragging = false;
         return;
@@ -375,8 +518,22 @@ void APrototypeController::PlayerTick(float DeltaTime)
         if (FVector2D::Distance(Mouse, DragStart) < 8.f)
         {
             FHitResult Hit;
-            GetHitResultUnderCursor(ECC_Visibility, false, Hit);
-            AddSelected(Cast<APrototypeUnit>(Hit.GetActor()));
+            GetHitResultUnderCursor(ECC_Visibility, true, Hit);
+            APrototypeUnit* Clicked = Cast<APrototypeUnit>(Hit.GetActor());
+            const float Now = GetWorld()->GetTimeSeconds();
+            const bool bDoubleClick = IsValid(Clicked) && LastSelectionClick.Get() == Clicked
+                && Now - LastSelectionClickTime <= .25f;
+            AddSelected(Clicked);
+            if (bDoubleClick && Clicked->Team == 0 && !Clicked->IsStructure())
+                for (TActorIterator<APrototypeUnit> It(GetWorld()); It; ++It)
+                {
+                    FVector2D Point;
+                    if (It->Role == Clicked->Role && !It->IsStructure() && ProjectWorldLocationToScreen(It->GetActorLocation(), Point)
+                        && Point.X >= 0.f && Point.X <= ViewWidth && Point.Y >= 0.f && Point.Y <= ViewHeight
+                        && (!Interface || !Interface->IsOverInterface(Point))) AddSelected(*It);
+                }
+            LastSelectionClick = Clicked;
+            LastSelectionClickTime = Now;
         }
         else
         {
@@ -385,7 +542,7 @@ void APrototypeController::PlayerTick(float DeltaTime)
             for (TActorIterator<APrototypeUnit> It(GetWorld()); It; ++It)
             {
                 FVector2D Point;
-                if (ProjectWorldLocationToScreen(It->GetActorLocation(), Point)
+                if (!It->IsStructure() && ProjectWorldLocationToScreen(It->GetActorLocation(), Point)
                     && Point.X >= Min.X && Point.X <= Max.X && Point.Y >= Min.Y && Point.Y <= Max.Y) AddSelected(*It);
             }
         }
@@ -393,15 +550,24 @@ void APrototypeController::PlayerTick(float DeltaTime)
     if (WasInputKeyJustPressed(EKeys::RightMouseButton))
     {
         FHitResult Hit;
-        if (GetHitResultUnderCursor(ECC_Visibility, false, Hit))
+        if (GetHitResultUnderCursor(ECC_Visibility, true, Hit))
         {
             auto* Target = Cast<APrototypeUnit>(Hit.GetActor());
             int32 Index = 0;
-            const int32 Columns = FMath::Max(1, FMath::CeilToInt(FMath::Sqrt(static_cast<float>(Selected.Num()))));
+            int32 MobileCount = 0;
+            for (APrototypeUnit* Unit : Selected) if (!Unit->IsStructure()) ++MobileCount;
+            const int32 Columns = FMath::Max(1, FMath::CeilToInt(FMath::Sqrt(static_cast<float>(MobileCount))));
             for (auto* Unit : Selected)
             {
+                if (Unit->IsStructure())
+                {
+                    if (Unit->Role == EPrototypeRole::Factory || Unit->Role == EPrototypeRole::Headquarters)
+                        Mode->SetRallyPoint(Unit, Hit.ImpactPoint);
+                    continue;
+                }
                 if (Target && Target->Team != 0) Unit->OrderAttack(Target);
-                else Unit->OrderMove(Hit.ImpactPoint + FVector((Index / Columns) * 150.f, (Index % Columns - (Columns - 1) * 0.5f) * 150.f, 0));
+                else if (!Unit->OrderManualMove(Hit.ImpactPoint + FVector((Index / Columns) * 150.f, (Index % Columns - (Columns - 1) * 0.5f) * 150.f, 0)))
+                    Mode->Feedback=TEXT("Move rejected: destination blocked or unreachable.");
                 ++Index;
             }
             DrawDebugSphere(GetWorld(), Hit.ImpactPoint + FVector(0, 0, 10), 40, 12, FColor::Green, false, 0.8f, 0, 3.f);
@@ -415,6 +581,26 @@ APrototypeGameMode::APrototypeGameMode()
     DefaultPawnClass = APrototypeCamera::StaticClass();
     PlayerControllerClass = APrototypeController::StaticClass();
     HUDClass = APrototypeHUD::StaticClass();
+    static ConstructorHelpers::FObjectFinder<UHRUnitDefinition> Striker(TEXT("/Game/HERO/DataV3/DA_HR_Striker.DA_HR_Striker"));
+    static ConstructorHelpers::FObjectFinder<UHRUnitDefinition> Harvester(TEXT("/Game/HERO/DataV3/DA_HR_Harvester.DA_HR_Harvester"));
+    static ConstructorHelpers::FObjectFinder<UHRUnitDefinition> Headquarters(TEXT("/Game/HERO/DataV3/DA_HR_CommandHub.DA_HR_CommandHub"));
+    static ConstructorHelpers::FObjectFinder<UHRUnitDefinition> Refinery(TEXT("/Game/HERO/DataV3/DA_HR_Refinery.DA_HR_Refinery"));
+    static ConstructorHelpers::FObjectFinder<UHRUnitDefinition> Factory(TEXT("/Game/HERO/DataV3/DA_HR_VehiclePlant.DA_HR_VehiclePlant"));
+    static ConstructorHelpers::FObjectFinder<UHRTempestFieldDefinitionAsset> ResourceField(TEXT("/Game/HERO/DataV3/DA_HR_TempestField.DA_HR_TempestField"));
+    RoleDefinitions = {Striker.Object, Harvester.Object, Headquarters.Object, Refinery.Object, Factory.Object};
+    FieldDefinition = ResourceField.Object;
+}
+
+const UHRUnitDefinition* APrototypeGameMode::GetRoleDefinition(EPrototypeRole Role)
+{
+    const APrototypeGameMode* Defaults = GetDefault<APrototypeGameMode>();
+    const int32 Index = static_cast<int32>(Role);
+    return Defaults->RoleDefinitions.IsValidIndex(Index) ? Defaults->RoleDefinitions[Index].Get() : nullptr;
+}
+
+const UHRTempestFieldDefinitionAsset* APrototypeGameMode::GetFieldDefinition()
+{
+    return GetDefault<APrototypeGameMode>()->FieldDefinition.Get();
 }
 
 APrototypeUnit* APrototypeGameMode::SpawnUnit(int32 Team, FVector Position, bool bHQ)
@@ -430,8 +616,10 @@ void APrototypeGameMode::ResetMatch()
 {
     if (auto* Controller = Cast<APrototypeController>(GetWorld()->GetFirstPlayerController()))
     {
+        Controller->SetPause(false);
         Controller->ClearSelection();
-        if (Controller->GetPawn()) Controller->GetPawn()->SetActorLocation(FVector(-13000,-11000,18000));
+        if (Controller->GetPawn()) Controller->GetPawn()->SetActorLocation(FVector(BattlefieldLayout::PlayerHQX,-1800.f,3300.f));
+        Controller->PanToWorld(FVector(BattlefieldLayout::PlayerHQX,0,35));
     }
     TArray<APrototypeUnit*> Old;
     for (TActorIterator<APrototypeUnit> It(GetWorld()); It; ++It) Old.Add(*It);
@@ -498,7 +686,7 @@ void APrototypeGameMode::RunCombatTest()
             TestCheck(Retreating->bMoveOrdered && !IsValid(Retreating->AttackTarget)
                 && Retreating->GetActorLocation().X < -6150.f, TEXT("retreat remains protected across hostile acquisition scans"));
             Retreating->OrderMove(PlayerHQ->GetActorLocation());
-            TestCheck(FVector::DistSquared2D(Retreating->Destination, PlayerHQ->GetActorLocation()) >= FMath::Square(439.f)
+            TestCheck(FVector::DistSquared2D(Retreating->Destination, PlayerHQ->GetActorLocation()) >= FMath::Square(Footprint(PlayerHQ->Role)+89.f)
                 && BattlefieldLayout::InBounds(Retreating->Destination), TEXT("move destination avoids HQ footprint inside road corridor"));
             Retreating->Destroy();
             NearbyEnemy->Destroy();
@@ -525,6 +713,17 @@ void APrototypeGameMode::RunCombatTest()
         auto* TestFactory = SpawnUnit(0, FVector(-7400,-1600,35));
         if (TestFactory) TestFactory->ConfigureRole(EPrototypeRole::Factory);
         TestCheck(TestFactory && TestFactory->IsCompleted(), TEXT("combat production fixture factory ready"));
+        FCollisionQueryParams SelectionQuery;
+        SelectionQuery.bTraceComplex = true;
+        FHitResult SelectionHit;
+        const FVector HQPosition = PlayerHQ->GetActorLocation();
+        TestCheck(GetWorld()->LineTraceSingleByChannel(SelectionHit, HQPosition+FVector(0,0,1500),
+            HQPosition-FVector(0,0,200), ECC_Visibility, SelectionQuery) && SelectionHit.GetActor() == PlayerHQ,
+            TEXT("concept headquarters mesh responds to selection ray"));
+        const FVector FactoryPosition = TestFactory ? TestFactory->GetActorLocation() : FVector::ZeroVector;
+        TestCheck(TestFactory && GetWorld()->LineTraceSingleByChannel(SelectionHit, FactoryPosition+FVector(0,0,1000),
+            FactoryPosition-FVector(0,0,200), ECC_Visibility, SelectionQuery) && SelectionHit.GetActor() == TestFactory,
+            TEXT("concept factory mesh responds to selection ray"));
         Credits = 99;
         TrainTank();
         TestCheck(Credits == 99, TEXT("insufficient credits rejected"));
@@ -610,8 +809,21 @@ void APrototypeGameMode::RunMatchTest()
 void APrototypeGameMode::BeginPlay()
 {
     Super::BeginPlay();
+    if (FParse::Param(FCommandLine::Get(),TEXT("PrototypeArchitectureTest")))
+    {
+        RunHRRTSArchitectureSelfTests();
+        GetWorld()->GetFirstPlayerController()->ConsoleCommand(TEXT("quit"));
+        return;
+    }
+    if (FParse::Param(FCommandLine::Get(),TEXT("PrototypeResourceTest")))
+    {
+        RunHRResourceFieldSelfTests(GetWorld());
+        GetWorld()->GetFirstPlayerController()->ConsoleCommand(TEXT("quit"));
+        return;
+    }
     ResetMatch();
     if (FParse::Param(FCommandLine::Get(), TEXT("PrototypeCombatTest"))) RunCombatTest();
+    if (FParse::Param(FCommandLine::Get(), TEXT("PrototypeUITest"))) RunUITest();
     if (FParse::Param(FCommandLine::Get(), TEXT("PrototypeEconomyTest"))) RunEconomyTest();
     if (FParse::Param(FCommandLine::Get(), TEXT("PrototypeMatchTest"))) RunMatchTest();
     if (FParse::Param(FCommandLine::Get(),TEXT("PrototypeNavigationTest")))
@@ -641,12 +853,49 @@ void APrototypeGameMode::BeginPlay()
         UE_LOG(LogTemp,Display,TEXT("NAVIGATION_TEST_RESULT=%s"),Pass ? TEXT("PASS") : TEXT("FAIL"));
         GetWorld()->GetFirstPlayerController()->ConsoleCommand(TEXT("quit"));
     }
-    if (FParse::Param(FCommandLine::Get(), TEXT("PrototypeCapture")))
+    if (FParse::Param(FCommandLine::Get(), TEXT("PrototypeCapture")) || FParse::Param(FCommandLine::Get(),TEXT("PrototypeOverviewCapture")) || FParse::Param(FCommandLine::Get(),TEXT("PrototypeDistrictCapture")) || FParse::Param(FCommandLine::Get(),TEXT("PrototypeHarvesterCapture")))
     {
         FTimerHandle CaptureTimer;
-        GetWorldTimerManager().SetTimer(CaptureTimer, []()
+        GetWorldTimerManager().SetTimer(CaptureTimer, [this]()
         {
-            FScreenshotRequest::RequestScreenshot(FPaths::ProjectSavedDir() / TEXT("Screenshots/Battle.png"), true, false);
+            if (auto* Controller = Cast<APrototypeController>(GetWorld()->GetFirstPlayerController()))
+            {
+                Controller->ClearSelection();
+                if (FParse::Param(FCommandLine::Get(),TEXT("PrototypeHarvesterCapture")))
+                {
+                    for (TActorIterator<APrototypeUnit> It(GetWorld());It;++It)
+                        if (It->Team==0 && It->Role==EPrototypeRole::Collector && It->Health>0.f)
+                        {
+                            Controller->Selected.Add(*It);It->Select(true);
+                            if (APawn* Camera=Controller->GetPawn())
+                            { FVector Position=Camera->GetActorLocation();Position.Z=1800.f;Camera->SetActorLocation(Position); }
+                            Controller->PanToWorld(It->GetActorLocation());break;
+                        }
+                }
+                else if (FParse::Param(FCommandLine::Get(),TEXT("PrototypeOverviewCapture")) || FParse::Param(FCommandLine::Get(),TEXT("PrototypeDistrictCapture")))
+                {
+                    if (APawn* Camera = Controller->GetPawn())
+                    {
+                        const bool bDistrict=FParse::Param(FCommandLine::Get(),TEXT("PrototypeDistrictCapture"));
+                        FVector Position = Camera->GetActorLocation(); Position.Z = bDistrict ? 8000.f : 16000.f;
+                        Camera->SetActorLocation(Position); Controller->PanToWorld(bDistrict ? FVector(-2300,-2500,35) : FVector::ZeroVector);
+                    }
+                }
+                else if (PlayerHQ) { Controller->Selected.Add(PlayerHQ); PlayerHQ->Select(true); }
+            }
+            const TCHAR* Name=FParse::Param(FCommandLine::Get(),TEXT("PrototypeHarvesterCapture")) ? TEXT("Screenshots/Harvester.png") : FParse::Param(FCommandLine::Get(),TEXT("PrototypeDistrictCapture")) ? TEXT("Screenshots/District.png") : FParse::Param(FCommandLine::Get(),TEXT("PrototypeOverviewCapture")) ? TEXT("Screenshots/EnvironmentOverview.png") : TEXT("Screenshots/Battle.png");
+            // Give streaming and occlusion visibility time to settle after moving the camera.
+            FTimerHandle ShutterTimer;
+            GetWorldTimerManager().SetTimer(ShutterTimer,[this,Name]()
+            {
+                FScreenshotRequest::RequestScreenshot(FPaths::ProjectSavedDir() / Name, true, false);
+                if(FParse::Param(FCommandLine::Get(),TEXT("PrototypeCaptureExit")))
+                {
+                    FTimerHandle ExitTimer;
+                    GetWorldTimerManager().SetTimer(ExitTimer,[this]()
+                    { GetWorld()->GetFirstPlayerController()->ConsoleCommand(TEXT("quit")); },2.f,false);
+                }
+            },.8f,false);
         }, 8.f, false);
     }
 }

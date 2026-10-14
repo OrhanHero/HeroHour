@@ -1,0 +1,29 @@
+{
+  "name": "SM_DV3_Lamp",
+  "dimensions_m": [
+    1.034999966621399,
+    0.3499999940395355,
+    4.699999809265137
+  ],
+  "triangles": 220,
+  "materials": [
+    "Plaster",
+    "Concrete",
+    "Asphalt",
+    "Glass",
+    "Metal",
+    "Dust",
+    "Paint"
+  ],
+  "pivot": "ground origin",
+  "bounds_min_m": [
+    -0.17499999701976776,
+    -0.17499999701976776,
+    0.0
+  ],
+  "bounds_max_m": [
+    0.85999995470047,
+    0.17499999701976776,
+    4.699999809265137
+  ]
+}

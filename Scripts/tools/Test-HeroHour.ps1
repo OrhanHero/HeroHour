@@ -1,7 +1,7 @@
 ﻿[CmdletBinding()]
 param(
     [ValidateSet('Editor', 'Packaged')][string]$Mode = 'Editor',
-    [ValidateSet('Combat', 'Economy', 'Navigation', 'Match')][string]$Suite = 'Combat',
+    [ValidateSet('Combat', 'Economy', 'Navigation', 'Match', 'UI', 'Architecture', 'Resource')][string]$Suite = 'Combat',
     [string]$EngineRoot = 'F:\UE\UE_5.8',
     [ValidateRange(10, 600)][int]$TimeoutSeconds = 90
 )
@@ -18,6 +18,10 @@ $logFile = Join-Path $logDirectory ($Suite + 'Test-' + (Get-Date -Format 'yyyyMM
 $resultMarker = $Suite.ToUpperInvariant() + '_TEST_RESULT'
 $testFlag = '-Prototype' + $Suite + 'Test'
 $testArguments = @(('"' + $projectFile + '"'), '/Game/Maps/CityHero', '-game', '-nullrhi', '-unattended', '-nosound', $testFlag, ('-abslog="' + $logFile + '"'))
+if ($Suite -eq 'UI') {
+    # UI interaction requires a real viewport and camera, even for an unattended test.
+    $testArguments = @($testArguments | Where-Object { $_ -ne '-nullrhi' }) + @('-windowed', '-ForceRes', '-ResX=1600', '-ResY=900')
+}
 if ($Mode -eq 'Packaged') { $testArguments = $testArguments | Select-Object -Skip 1 }
 $testProcess = Start-Process -FilePath $executable -ArgumentList $testArguments -WorkingDirectory $projectRoot -WindowStyle Hidden -PassThru
 if (-not $testProcess.WaitForExit($TimeoutSeconds * 1000)) {
@@ -28,5 +32,6 @@ if (-not (Test-Path -LiteralPath $logFile)) { throw "$Suite-Test hat kein Log ge
 $testLog = Get-Content -LiteralPath $logFile -Raw
 if ($testLog -match ($resultMarker + '=FAIL') -or $testLog -notmatch ($resultMarker + '=PASS')) { throw "$Suite-Test ohne PASS-Ergebnis (Exitcode $($testProcess.ExitCode)). Log: $logFile" }
 if ($testLog -match '(?m)^.*(?:SkipPackage|Failed to find object).*\/Game\/(?:HERO|LocalAssets)\/') { throw "Spielassets fehlen im geladenen Spiel. Log: $logFile" }
+if ($testLog -match 'Failed to compile Material|Cooking a material resource.*valid ShaderMap') { throw "Materialfehler im geladenen Spiel. Log: $logFile" }
 if ($testProcess.ExitCode -ne 0) { throw "PASS-Marker vorhanden, Prozess aber fehlerhaft beendet: $($testProcess.ExitCode). Log: $logFile" }
 Write-Host "$resultMarker=PASS. Log: $logFile"

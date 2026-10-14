@@ -29,6 +29,9 @@ if ($Package) {
     & $automationTool BuildCookRun "-project=$projectFile" -noP4 -platform=Win64 -clientconfig=Development -build -cook -map=/Game/Maps/CityHero "-AdditionalCookerOptions=$cookerOptions" -stage -pak -archive "-archivedirectory=$archiveDirectory" -utf8output 2>&1 | Tee-Object -FilePath $packagingLog
     if ($LASTEXITCODE -ne 0) { throw "Windows-Paketierung fehlgeschlagen (Exitcode $LASTEXITCODE). Log: $packagingLog" }
     if ((Get-Content -LiteralPath $packagingLog -Raw) -notmatch 'BUILD SUCCESSFUL') { throw "UAT hat keinen Erfolgsmarker geschrieben. Log: $packagingLog" }
+    if ((Get-Content -LiteralPath $packagingLog -Raw) -match 'Failed to compile Material|Cooking a material resource.*valid ShaderMap') {
+        throw "Paket enthält ein fehlerhaftes Material mit Ersatzdarstellung. Log: $packagingLog"
+    }
     $packagedExecutable = Join-Path $archiveDirectory 'HeroHour.exe'
     if (-not (Test-Path -LiteralPath $packagedExecutable)) { throw "UAT meldete Erfolg, aber das erwartete Spiel fehlt: $packagedExecutable" }
     foreach ($relativePackageFile in @('HeroHour\Binaries\Win64\HeroHour.exe', 'HeroHour\Content\Paks\HeroHour-Windows.pak', 'HeroHour\Content\Paks\HeroHour-Windows.utoc', 'HeroHour\Content\Paks\HeroHour-Windows.ucas')) {

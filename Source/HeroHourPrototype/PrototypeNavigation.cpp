@@ -151,6 +151,10 @@ TArray<FPrototypeNavigationObstacle> FPrototypeNavigation::GetWorldObstacles(UWo
         Obstacle.Radius = APrototypeGameMode::Footprint(It->Role);
         Obstacles.Add(Obstacle);
     }
+    if (const auto* Mode=World->GetAuthGameMode<APrototypeGameMode>())
+        for (const FPrototypeSalvage& Node : Mode->SalvageNodes)
+            if ((Node.Remaining>0.f || Node.Field.GetStyle()==EHREconomyStyle::RegrowingField) && Node.VisualActor.IsValid())
+                Obstacles.Add({Node.VisualActor->GetActorLocation(),250.f});
     return Obstacles;
 }
 
@@ -191,8 +195,8 @@ bool FPrototypeNavigation::RunSelfTests()
     TArray<FPrototypeNavigationObstacle> Obstacles;
     FPrototypeNavigationObstacle Block;
     Block.Position = FVector(3000, 0, 35); Block.Radius = 600.f; Obstacles.Add(Block);
-    Check(FindPath(FVector(1000, 0, 35), FVector(5000, 0, 35), Route, Obstacles) && Route.Num() > 1, TEXT("structure footprint detours on same riverbank"));
-    Previous = FVector(1000, 0, 35); Safe = !Route.IsEmpty();
+    Check(FindPath(FVector(750, 0, 35), FVector(6750, 0, 35), Route, Obstacles) && Route.Num() > 1, TEXT("structure footprint detours on same riverbank"));
+    Previous = FVector(750, 0, 35); Safe = !Route.IsEmpty();
     for (const FVector& Point : Route) { Safe &= SegmentWalkable(Previous, Point, Obstacles); Previous = Point; }
     Check(Safe, TEXT("smoothed route preserves structure clearance"));
     Block.Position = FVector(-3000, 3200, 35); Block.Radius = 1000.f; Obstacles.Empty(); Obstacles.Add(Block);
