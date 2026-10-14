@@ -1,7 +1,7 @@
 ﻿[CmdletBinding()]
 param(
     [ValidateSet('Editor', 'Packaged')][string]$Mode = 'Editor',
-    [ValidateSet('Combat', 'Economy', 'Navigation', 'Match', 'UI', 'Architecture', 'Resource')][string]$Suite = 'Combat',
+    [ValidateSet('Combat', 'Economy', 'Navigation', 'Match', 'UI', 'Architecture', 'Resource', 'Docking')][string]$Suite = 'Combat',
     [string]$EngineRoot = 'F:\UE\UE_5.8',
     [ValidateRange(10, 600)][int]$TimeoutSeconds = 90
 )

@@ -6,6 +6,8 @@
 #include "RTS/HRRTSDefinitions.h"
 #include "Engine/StaticMeshActor.h"
 #include "Components/StaticMeshComponent.h"
+#include <cmath>
+#include <limits>
 
 namespace
 {
@@ -301,6 +303,7 @@ bool APrototypeGameMode::SetRallyPoint(APrototypeUnit* Producer, const FVector& 
 
 void APrototypeGameMode::ResetEconomy()
 {
+    RefineryDocks.Empty();
     ProductionQueue.Empty();
     SalvageNodes.Empty();
     for (int32 Index=0;Index<3;++Index)
@@ -341,9 +344,15 @@ void APrototypeGameMode::ResetEconomy()
     SpawnRole(1, EPrototypeRole::Collector, SalvageNodes[1].Position);
 }
 
-void APrototypeGameMode::ReleaseSalvageReservation(APrototypeUnit* Unit)
+void APrototypeGameMode::ReleaseSalvageReservation(APrototypeUnit* Unit, bool bReleaseDock)
 {
     if (!Unit) return;
+    if (bReleaseDock)
+    {
+        for (auto& Pair : RefineryDocks) Pair.Value.Release(Unit);
+        Unit->DeliveryDepot.Reset();
+        Unit->CollectorState = EPrototypeCollectorState::SeekingField;
+    }
     for (FPrototypeSalvage& Node : SalvageNodes)
     {
         Node.Field.Release(Unit);
@@ -356,7 +365,8 @@ void APrototypeGameMode::ReleaseSalvageReservation(APrototypeUnit* Unit)
 
 void APrototypeGameMode::TickCollector(APrototypeUnit* Unit, float DeltaSeconds)
 {
-    if (Outcome != 0 || !Alive(Unit) || Unit->Role != EPrototypeRole::Collector) return;
+    if (!Alive(Unit) || Unit->Role != EPrototypeRole::Collector) { ReleaseSalvageReservation(Unit); return; }
+    if (Outcome != 0) return;
     for (int32 NodeIndex=0;NodeIndex<SalvageNodes.Num();++NodeIndex)
     {
         FPrototypeSalvage& Node=SalvageNodes[NodeIndex];
@@ -379,39 +389,100 @@ void APrototypeGameMode::TickCollector(APrototypeUnit* Unit, float DeltaSeconds)
             Unit->bCollectorManualOrder = false;
         return;
     }
-    const bool bReturning = Unit->Cargo >= 100.f || (Unit->Cargo > 0.f
-        && (!SalvageNodes.IsValidIndex(Unit->HarvestNode) || SalvageNodes[Unit->HarvestNode].Field.GetHarvestableAmount(0) <= 0.f));
+    const bool bReturning = Unit->Cargo >= 100. || (Unit->Cargo > 0. && !Unit->bRetainedUnloadRemainder
+        && (Unit->DeliveryDepot.IsValid() || !SalvageNodes.IsValidIndex(Unit->HarvestNode)
+            || SalvageNodes[Unit->HarvestNode].Field.GetHarvestableAmount(0) <= 0.f));
     if (bReturning)
     {
-        ReleaseSalvageReservation(Unit);
-        APrototypeUnit* Depot=nullptr;FVector DeliveryPoint;bool bSelectedAlreadyDocked=false;
-        float Nearest=TNumericLimits<float>::Max();
-        for(TActorIterator<APrototypeUnit> It(GetWorld());It;++It)
+        ReleaseSalvageReservation(Unit, false);
+        APrototypeUnit* Depot = Unit->DeliveryDepot.Get();
+        FVector DeliveryPoint = Unit->DockApproach;
+        TArray<FVector> Route;
+        const auto DockReachable = [&](APrototypeUnit* Candidate, const FVector& Point)
         {
-            if(!Alive(*It)||It->Team!=Unit->Team||It->Role!=EPrototypeRole::Depot||!It->IsCompleted())continue;
-            const float Distance=FVector::DistSquared2D(Unit->GetActorLocation(),It->GetActorLocation());
-            FVector Candidate=FVector::ZeroVector;
-            const bool AlreadyDocked=Distance<=FMath::Square(Footprint(It->Role)+100.f)
-                &&FPrototypeNavigation::SegmentWorldWalkable(GetWorld(),Unit->GetActorLocation(),It->GetActorLocation(),*It);
-            if(Distance<Nearest&&(AlreadyDocked||FindDeliveryPoint(this,Unit,*It,Candidate)))
+            return Alive(Candidate) && Candidate->Team == Unit->Team && Candidate->Role == EPrototypeRole::Depot
+                && Candidate->IsCompleted()
+                && FPrototypeNavigation::SegmentWorldWalkable(GetWorld(), Point, Candidate->GetActorLocation(), Candidate)
+                && FPrototypeNavigation::FindWorldPath(GetWorld(), Unit->GetActorLocation(), Point, Route);
+        };
+        if (!DockReachable(Depot, DeliveryPoint))
+        {
+            for (auto& Pair : RefineryDocks) Pair.Value.Release(Unit);
+            Unit->DeliveryDepot.Reset(); Depot = nullptr;
+            float Nearest = TNumericLimits<float>::Max();
+            for (TActorIterator<APrototypeUnit> It(GetWorld()); It; ++It)
             {
-                Depot=*It;DeliveryPoint=AlreadyDocked?Unit->GetActorLocation():Candidate;
-                Nearest=Distance;bSelectedAlreadyDocked=AlreadyDocked;
+                if (!Alive(*It) || It->Team != Unit->Team || It->Role != EPrototypeRole::Depot || !It->IsCompleted()) continue;
+                const float Distance = FVector::DistSquared2D(Unit->GetActorLocation(), It->GetActorLocation());
+                FVector Candidate = FVector::ZeroVector;
+                const bool AlreadyDocked = Distance <= FMath::Square(Footprint(It->Role) + 100.f)
+                    && FPrototypeNavigation::SegmentWorldWalkable(GetWorld(),Unit->GetActorLocation(),It->GetActorLocation(),*It);
+                if (Distance < Nearest && (AlreadyDocked || FindDeliveryPoint(this, Unit, *It, Candidate)))
+                { Depot = *It; DeliveryPoint = AlreadyDocked ? Unit->GetActorLocation() : Candidate; Nearest = Distance; }
             }
+            if (Depot) { Unit->DeliveryDepot = Depot; Unit->DockApproach = DeliveryPoint; }
         }
-        if (!Depot) { Unit->Destination = Unit->GetActorLocation(); return; }
-        if (bSelectedAlreadyDocked)
+        if (!Depot) { Unit->CollectorState = EPrototypeCollectorState::MovingToRefinery; Unit->Destination = Unit->GetActorLocation(); return; }
+        FHRRefineryDocking* Dock = RefineryDocks.Find(Depot);
+        if (!Dock) { FHRRefineryDocking NewDock; NewDock.Reset(Depot, 1, 40.); Dock = &RefineryDocks.Add(Depot, MoveTemp(NewDock)); }
+        Dock->ReleaseInvalid([&](AActor* Actor)
         {
-            Wallet(this, Unit->Team) += Unit->Cargo;
-            Unit->Cargo = 0.f;
-            Unit->HarvestNode = INDEX_NONE;
-            Unit->HarvestTimer = 0.f;
-            Unit->Destination = Unit->GetActorLocation();
-            return;
+            const APrototypeUnit* Owner = Cast<APrototypeUnit>(Actor);
+            return Alive(Owner) && Owner->Role == EPrototypeRole::Collector && !Owner->bCollectorManualOrder
+                && Owner->DeliveryDepot.Get() == Depot && Owner->Cargo > 0.;
+        });
+        Dock->Submit(Unit);
+        if (Dock->IsDocked(Unit) || (Dock->GetNextWaiting() == Unit && Dock->NumDocked() == 0))
+        {
+            const bool bAtDock = FVector::DistSquared2D(Unit->GetActorLocation(), DeliveryPoint) <= FMath::Square(5.f)
+                && FPrototypeNavigation::SegmentWorldWalkable(GetWorld(),Unit->GetActorLocation(),Depot->GetActorLocation(),Depot);
+            if (Dock->IsDocked(Unit) && !bAtDock) { Dock->Release(Unit); Dock->Submit(Unit); }
+            if ((Dock->IsDocked(Unit) && bAtDock) || Dock->TryAcquireNext(Unit, bAtDock))
+            {
+                Unit->CollectorState = EPrototypeCollectorState::Unloading;
+                Unit->Destination = Unit->GetActorLocation(); Unit->bMoveOrdered = false;
+                // The authored rear coupling faces the refinery while unloading.
+                const FVector AwayFromDepot=Unit->GetActorLocation()-Depot->GetActorLocation();
+                if (!AwayFromDepot.IsNearlyZero()) Unit->SetActorRotation(FRotator(0.f,AwayFromDepot.Rotation().Yaw,0.f));
+                const double Delivered = Dock->Unload(Unit, DeltaSeconds, Unit->Cargo, Wallet(this, Unit->Team), ++Unit->UnloadOperation);
+                // A sub-ULP residual is retained in cargo, never rounded into credits or discarded.
+                // Free the scarce dock and merge that residual into the next harvested load.
+                if (Delivered == 0. && Unit->Cargo > 0.
+                    && Unit->Cargo < std::nextafter(Wallet(this,Unit->Team),std::numeric_limits<double>::infinity())-Wallet(this,Unit->Team))
+                {
+                    Dock->Release(Unit); Unit->DeliveryDepot.Reset();
+                    Unit->bRetainedUnloadRemainder=true; Unit->CollectorState=EPrototypeCollectorState::SeekingField;
+                    return;
+                }
+                if (Unit->Cargo <= 0.)
+                { Dock->Release(Unit); Unit->DeliveryDepot.Reset(); Unit->CollectorState = EPrototypeCollectorState::SeekingField; }
+                return;
+            }
+            Unit->CollectorState = EPrototypeCollectorState::MovingToRefinery;
+            Unit->OrderMove(DeliveryPoint); return;
         }
-        Unit->OrderMove(DeliveryPoint);
+        Unit->CollectorState = EPrototypeCollectorState::WaitingForDock;
+        // Distinct, reachable staging points remain outside the refinery footprint and its unload lane.
+        FVector WaitingPoint = Unit->GetActorLocation(); bool bFoundWaiting = false;
+        const float Radius = Footprint(Depot->Role) + 380.f;
+        const float StartAngle = (Unit->GetUniqueID() % 16) * 2.f * PI / 16.f;
+        for (int32 Index = 0; Index < 16 && !bFoundWaiting; ++Index)
+        {
+            const float Angle = StartAngle + Index * 2.f * PI / 16.f;
+            FVector Candidate = Depot->GetActorLocation() + FVector(FMath::Cos(Angle)*Radius,FMath::Sin(Angle)*Radius,0);
+            Candidate.Z = 35.f; bool bOccupied = false;
+            for (TActorIterator<APrototypeUnit> It(GetWorld()); It; ++It)
+                if (*It != Unit && Alive(*It) && !It->IsStructure()
+                    && (FVector::DistSquared2D(It->GetActorLocation(),Candidate)<FMath::Square(180.f)
+                        || (It->DeliveryDepot.Get()==Depot && FVector::DistSquared2D(It->Destination,Candidate)<FMath::Square(180.f)))) bOccupied=true;
+            if (!bOccupied && FPrototypeNavigation::FindWorldPath(GetWorld(),Unit->GetActorLocation(),Candidate,Route))
+            { WaitingPoint=Candidate; bFoundWaiting=true; }
+        }
+        if (bFoundWaiting) Unit->OrderMove(WaitingPoint);
+        else { Unit->Destination=Unit->GetActorLocation(); Unit->bMoveOrdered=false; }
         return;
     }
+    Unit->CollectorState = EPrototypeCollectorState::SeekingField;
     Unit->HarvestRouteCheck -= DeltaSeconds;
     if (SalvageNodes.IsValidIndex(Unit->HarvestNode) && Unit->HarvestRouteCheck <= 0.f)
     {
@@ -419,12 +490,12 @@ void APrototypeGameMode::TickCollector(APrototypeUnit* Unit, float DeltaSeconds)
         const FPrototypeSalvage& Assigned = SalvageNodes[Unit->HarvestNode];
         if (Assigned.Collector.Get() != Unit || !Assigned.Field.HasValidReservation(0,Unit) || Assigned.Field.GetHarvestableAmount(0) <= 0.f
             || !FPrototypeNavigation::FindWorldPath(GetWorld(), Unit->GetActorLocation(), Assigned.Position, Route))
-            ReleaseSalvageReservation(Unit);
+            ReleaseSalvageReservation(Unit, false);
         Unit->HarvestRouteCheck = 0.8f;
     }
     if (!SalvageNodes.IsValidIndex(Unit->HarvestNode) || SalvageNodes[Unit->HarvestNode].Field.GetHarvestableAmount(0) <= 0.f)
     {
-        ReleaseSalvageReservation(Unit);
+        ReleaseSalvageReservation(Unit, false);
         float Nearest = TNumericLimits<float>::Max();
         for (int32 Index = 0; Index < SalvageNodes.Num(); ++Index)
         {
@@ -455,6 +526,7 @@ void APrototypeGameMode::TickCollector(APrototypeUnit* Unit, float DeltaSeconds)
         return;
     }
     Unit->Destination = Unit->GetActorLocation();
+    Unit->CollectorState = EPrototypeCollectorState::Harvesting;
     Unit->HarvestTimer += DeltaSeconds;
     if (Unit->HarvestTimer >= 0.5f)
     {
@@ -462,8 +534,9 @@ void APrototypeGameMode::TickCollector(APrototypeUnit* Unit, float DeltaSeconds)
         Unit->HarvestTimer -= Pulses * 0.5f;
         const float Amount = Node.Field.Harvest(0,Unit,100.f-Unit->Cargo,Pulses*.5f);
         Unit->Cargo += Amount;
+        if (Amount > 0.f) Unit->bRetainedUnloadRemainder=false;
         Node.Remaining=Node.Field.GetAmount(0);
-        if (Unit->Cargo >= 100.f || Node.Field.GetHarvestableAmount(0) <= 0.f) ReleaseSalvageReservation(Unit);
+        if (Unit->Cargo >= 100.f || Node.Field.GetHarvestableAmount(0) <= 0.f) ReleaseSalvageReservation(Unit, false);
         UpdateResourceVisuals();
     }
 }
@@ -497,6 +570,18 @@ void APrototypeGameMode::UpdateResourceVisuals()
 void APrototypeGameMode::TickEconomy(float DeltaSeconds)
 {
     if (Outcome != 0 || DeltaSeconds <= 0.f) return;
+    for (auto It = RefineryDocks.CreateIterator(); It; ++It)
+    {
+        APrototypeUnit* Depot = It.Key().Get();
+        It.Value().ReleaseInvalid([Depot](AActor* Actor)
+        {
+            const APrototypeUnit* Owner = Cast<APrototypeUnit>(Actor);
+            return Alive(Depot) && Depot->Role==EPrototypeRole::Depot && Depot->IsCompleted()
+                && Alive(Owner) && Owner->Role==EPrototypeRole::Collector && !Owner->bCollectorManualOrder
+                && Owner->DeliveryDepot.Get()==Depot && Owner->Team==Depot->Team && Owner->Cargo>0.;
+        });
+        if (!Alive(Depot) || Depot->Role!=EPrototypeRole::Depot) It.RemoveCurrent();
+    }
     MatchTime += DeltaSeconds;
     for(FPrototypeSalvage& Node:SalvageNodes)
     {
@@ -774,12 +859,10 @@ void APrototypeGameMode::RunEconomyTest()
     Check(First->Cargo == 100.f && Third->Cargo == 50.f && SalvageNodes[0].Remaining == 0.f,
         TEXT("successive collectors conserve finite salvage without doubled harvest"));
     APrototypeUnit* DeliveryDepot = FindCompletedStructure(0, EPrototypeRole::Depot);
-    First->SetActorLocation(DeliveryDepot->GetActorLocation());
-    Third->SetActorLocation(DeliveryDepot->GetActorLocation());
-    TickCollector(First, .1f);
-    TickCollector(Third, .1f);
-    TickCollector(First, .1f);
-    TickCollector(Third, .1f);
+    First->SetActorLocation(DeliveryDepot->GetActorLocation()+FVector(-490,0,0));
+    Third->SetActorLocation(DeliveryDepot->GetActorLocation()+FVector(0,-490,0));
+    for (int32 Step=0;Step<100 && (First->Cargo>0. || Third->Cargo>0.);++Step)
+    { TickCollector(First,.1f); TickCollector(Third,.1f); }
     Check(Credits == BeforeReservedDelivery + 150.f && First->Cargo == 0.f && Third->Cargo == 0.f,
         TEXT("two collector deliveries pay exactly the depleted salvage once"));
     SalvageNodes[0].Position = FVector(BattlefieldLayout::RiverX, 0, 35);
@@ -809,9 +892,9 @@ void APrototypeGameMode::RunEconomyTest()
     if (EnemyCollector)
     {
         EnemyCollector->SetActorTickEnabled(false);
-        for (;EnemyDeliveryTicks<500 && EnemyCredits==EnemyCreditsBefore;++EnemyDeliveryTicks) EnemyCollector->Tick(.05f);
+        for (;EnemyDeliveryTicks<500 && (EnemyCredits==EnemyCreditsBefore || EnemyCollector->Cargo>0.);++EnemyDeliveryTicks) EnemyCollector->Tick(.05f);
     }
-    Check(EnemyCollector && EnemyDeliveryTicks<500 && EnemyCredits==EnemyCreditsBefore+100.f
+    Check(EnemyCollector && EnemyDeliveryTicks<500 && (EnemyCredits==EnemyCreditsBefore || EnemyCollector->Cargo>0.)+100.f
         && EnemyCollector->Cargo==0.f && SalvageNodes[1].Remaining==3900.f,
         TEXT("opponent collector reaches local field and delivers real income outside enlarged city footprint"));
     ResetMatch();BotDecisionTime=10000.f;
@@ -830,7 +913,7 @@ void APrototypeGameMode::RunEconomyTest()
         TickCollector(FieldCollector,5);
         Check(FieldCollector->Cargo==30 && SalvageNodes[0].Remaining==20 && FieldCollector->HarvestNode==INDEX_NONE,
             TEXT("live regrowing field preserves seed while depleted harvestable stock releases claim"));
-        for(int32 Step=0;Step<350 && Credits==BeforeSeedDelivery;++Step)FieldCollector->Tick(.05f);
+        for(int32 Step=0;Step<350 && FieldCollector->Cargo>0.;++Step)FieldCollector->Tick(.05f);
         Check(Credits==BeforeSeedDelivery+30 && FieldCollector->Cargo==0,
             TEXT("seed floor triggers partial cargo return and exact delivery instead of stranded collector"));
         TickEconomy(9);
@@ -872,7 +955,7 @@ void APrototypeGameMode::RunEconomyTest()
         Check(ReachableDepot && FVector::DistSquared2D(FieldCollector->Destination,ReachableDepot->GetActorLocation())
             <=FMath::Square(Footprint(ReachableDepot->Role)+100),
             TEXT("collector bypasses nearer water-blocked refinery for reachable delivery approach"));
-        for(int32 Step=0;Step<500 && Credits==BeforeFallback;++Step)FieldCollector->Tick(.05f);
+        for(int32 Step=0;Step<500 && FieldCollector->Cargo>0.;++Step)FieldCollector->Tick(.05f);
         Check(Credits==BeforeFallback+100 && FieldCollector->Cargo==0,
             TEXT("alternate refinery delivery uses real movement and pays loaded cargo once"));
     }
@@ -903,7 +986,7 @@ void APrototypeGameMode::RunEconomyTest()
                 && FPrototypeNavigation::FindWorldPath(GetWorld(),ScreenedStart,FieldCollector->Destination,Detour),
                 TEXT("blocked direct dock segment inside delivery radius preserves cargo and orders reachable detour"));
             int32 DetourTicks=0;
-            for(;DetourTicks<350 && Credits==BeforeScreenedDelivery;++DetourTicks)FieldCollector->Tick(.05f);
+            for(;DetourTicks<350 && FieldCollector->Cargo>0.;++DetourTicks)FieldCollector->Tick(.05f);
             Check(DetourTicks>0 && DetourTicks<350 && Credits==BeforeScreenedDelivery+100 && FieldCollector->Cargo==0
                 && FVector::DistSquared2D(ScreenedStart,FieldCollector->GetActorLocation())>FMath::Square(10.f),
                 TEXT("screened refinery pays once only after real movement reaches an unobstructed unloading side"));
@@ -940,7 +1023,7 @@ void APrototypeGameMode::RunEconomyTest()
                 && FVector::DistSquared2D(FieldCollector->Destination,FarDepot->GetActorLocation())<=FMath::Square(Footprint(FarDepot->Role)+100.f),
                 TEXT("walkable cached dock with lost route cannot hide a reachable alternative refinery"));
             int32 FallbackTicks=0;
-            for(;FallbackTicks<500 && Credits==BeforeCachedFallback;++FallbackTicks)FieldCollector->Tick(.05f);
+            for(;FallbackTicks<500 && FieldCollector->Cargo>0.;++FallbackTicks)FieldCollector->Tick(.05f);
             Check(FallbackTicks>0 && FallbackTicks<500 && Credits==BeforeCachedFallback+100 && FieldCollector->Cargo==0,
                 TEXT("cached dock route invalidation recovers through real alternate refinery delivery"));
         }
@@ -975,7 +1058,7 @@ void APrototypeGameMode::RunEconomyTest()
             TEXT("fractional live field debit preserves existing cargo without rounded resource gain"));
         const FVector FractionalPickup=FieldCollector->GetActorLocation();
         int32 FractionalTravelTicks=0;
-        for(;FractionalTravelTicks<350 && Credits==FractionalWalletBefore;++FractionalTravelTicks)
+        for(;FractionalTravelTicks<350 && FieldCollector->Cargo>0.;++FractionalTravelTicks)
         {
             FieldCollector->Tick(.05f);
             bFractionalBalanceHeld&=FMath::Abs(FractionalBalance()-FractionalBalanceBefore)<=1.e-8;
@@ -1007,6 +1090,52 @@ void APrototypeGameMode::RunEconomyTest()
             TEXT("repeated collector ticks cannot duplicate a fractional dock payment"));
     }
     else Check(false,TEXT("fractional dock collector fixture exists"));
+    ResetMatch(); BotDecisionTime=10000.f;
+    APrototypeUnit* DockDepot=FindCompletedStructure(0,EPrototypeRole::Depot);
+    APrototypeUnit* DockFirst=SpawnUnit(0,DockDepot->GetActorLocation()+FVector(-490,0,0));
+    APrototypeUnit* DockSecond=SpawnUnit(0,DockDepot->GetActorLocation()+FVector(0,-800,0));
+    DockFirst->ConfigureRole(EPrototypeRole::Collector); DockSecond->ConfigureRole(EPrototypeRole::Collector);
+    DockFirst->SetActorTickEnabled(false); DockSecond->SetActorTickEnabled(false);
+    DockFirst->Cargo=100.; DockSecond->Cargo=50.;
+    const double DockWalletBefore=Credits;
+    TickCollector(DockFirst,.5f); TickCollector(DockSecond,.5f);
+    Check(DockFirst->CollectorState==EPrototypeCollectorState::Unloading && DockFirst->Cargo==80.
+        && Credits==DockWalletBefore+20.,TEXT("live dock transfers only authored 40 credits per second"));
+    Check(DockSecond->CollectorState==EPrototypeCollectorState::WaitingForDock && DockSecond->Cargo==50.
+        && FVector::DistSquared2D(DockSecond->Destination,DockDepot->GetActorLocation())>FMath::Square(Footprint(EPrototypeRole::Depot)+100.f),
+        TEXT("second collector waits outside refinery and cannot bypass exclusive FIFO slot"));
+    const double InterruptedCargo=DockFirst->Cargo; const double InterruptedWallet=Credits;
+    Check(DockFirst->OrderManualMove(DockFirst->GetActorLocation()+FVector(-400,0,0)),TEXT("unloading collector accepts reachable manual departure"));
+    TickCollector(DockFirst,.5f);
+    Check(DockFirst->Cargo==InterruptedCargo && Credits==InterruptedWallet && !RefineryDocks.FindChecked(DockDepot).IsDocked(DockFirst),
+        TEXT("manual departure releases dock without discarding cargo or paying further credits"));
+    TickCollector(DockSecond,.1f);
+    DockSecond->SetActorLocation(DockSecond->DockApproach);
+    TickCollector(DockSecond,.5f);
+    Check(DockSecond->CollectorState==EPrototypeCollectorState::Unloading && DockSecond->Cargo==30.,
+        TEXT("FIFO successor acquires reachable freed dock and unloads partial cargo"));
+    DockDepot->ReceiveHit(DockDepot->MaxHealth);
+    const double LostDepotCargo=DockSecond->Cargo; const double LostDepotWallet=Credits;
+    TickCollector(DockSecond,.5f);
+    Check(DockSecond->Cargo==LostDepotCargo && Credits==LostDepotWallet && !DockSecond->DeliveryDepot.IsValid(),
+        TEXT("destroyed refinery stops unload while preserving remaining cargo for rerouting"));
+    APrototypeUnit* RecoveryDepot=SpawnUnit(0,FVector(-8200,1600,35)); RecoveryDepot->ConfigureRole(EPrototypeRole::Depot);
+    TickCollector(DockSecond,.1f);
+    Check(DockSecond->DeliveryDepot.Get()==RecoveryDepot,TEXT("collector reroutes retained cargo to replacement reachable refinery"));
+    DockSecond->SetActorLocation(DockSecond->DockApproach); TickCollector(DockSecond,1.f);
+    Check(DockSecond->Cargo==0. && FMath::Abs(Credits-(DockWalletBefore+70.))<1.e-8,
+        TEXT("interrupted and recovered unload conserves total delivered credits exactly once"));
+    APrototypeUnit* ResidualCollector=SpawnUnit(0,RecoveryDepot->GetActorLocation()+FVector(-490,0,0));
+    ResidualCollector->ConfigureRole(EPrototypeRole::Collector); ResidualCollector->SetActorTickEnabled(false);
+    const double ResidualWallet=Credits;
+    const double ResidualCargo=(std::nextafter(Credits,std::numeric_limits<double>::infinity())-Credits)*.5;
+    ResidualCollector->Cargo=ResidualCargo; TickCollector(ResidualCollector,.5f);
+    Check(ResidualCollector->Cargo==ResidualCargo && Credits==ResidualWallet && ResidualCollector->bRetainedUnloadRemainder
+        && !RefineryDocks.FindChecked(RecoveryDepot).IsDocked(ResidualCollector),
+        TEXT("sub-wallet-ULP remainder preserves cargo and frees dock without creating unrepresentable credits"));
+    TickCollector(ResidualCollector,.1f);
+    Check(ResidualCollector->HarvestNode!=INDEX_NONE && ResidualCollector->Cargo==ResidualCargo && Credits==ResidualWallet,
+        TEXT("retained fractional remainder resumes reachable harvesting instead of repeatedly blocking refinery"));
     ResetMatch();BotDecisionTime=10000.f;
     if(SalvageNodes.IsValidIndex(0))
     {

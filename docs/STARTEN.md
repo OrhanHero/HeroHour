@@ -1,6 +1,6 @@
 # HeroHour starten
 
-Windows-Paket vom14.10.2026,18:03 Berlin, Unreal5.8.3. Alle sieben Suiten PASS; aktuelle Nachweise und Grenzen: [VERIFIED_BUILD.md](VERIFIED_BUILD.md). Neuer Account: zuerst [CURRENT_HANDOVER.md](CURRENT_HANDOVER.md).
+Windows-Paket vom14.10.2026,22:33 Berlin, Unreal5.8.3. Alle acht Suiten PASS; aktuelle Nachweise und Grenzen: [VERIFIED_BUILD.md](VERIFIED_BUILD.md). Neuer Account: zuerst [CURRENT_HANDOVER.md](CURRENT_HANDOVER.md).
 
 Doppelklick auf `HeroHour-Starten.cmd` oder `Builds/Windows/HeroHour.exe`. PowerShell im Projektordner:
 
@@ -14,6 +14,7 @@ Doppelklick auf `HeroHour-Starten.cmd` oder `Builds/Windows/HeroHour.exe`. Power
 .\Scripts\tools\Test-HeroHour.ps1 -Mode Packaged -Suite UI
 .\Scripts\tools\Test-HeroHour.ps1 -Mode Packaged -Suite Architecture
 .\Scripts\tools\Test-HeroHour.ps1 -Mode Packaged -Suite Resource
+.\Scripts\tools\Test-HeroHour.ps1 -Mode Packaged -Suite Docking
 .\Scripts\tools\Capture-HeroHour.ps1 -Mode Packaged -View Harvester
 .\Scripts\tools\Capture-HeroHour.ps1 -Mode Packaged -View Battle
 ```
@@ -32,4 +33,6 @@ Optionales Nachwachsen im tatsächlichen Paket:
 & .\Builds\Windows\HeroHour\Binaries\Win64\HeroHour.exe -PrototypeRegrowingFields -windowed -ResX=1600 -ResY=900
 ```
 
-Standardfelder bleiben finite. Aktive Datenbindung: Kosten, Dauer, HP, Move/Waffe, Mesh, Porträt und Feldraten aus `/Game/HERO/DataV3`. Power/Grid/Fog/Veterancy/Mehrzellenfelder und Dockslots folgen dem [M1–M4-Plan](TEMPEST_TRANSFORMATION_PLAN.md).
+Standardfelder bleiben finite. Aktive Datenbindung: Kosten, Dauer, HP, Move/Waffe, Mesh, Porträt und Feldraten aus `/Game/HERO/DataV3`. Power/Grid/Fog/Veterancy und Mehrzellenfelder folgen dem [M1–M4-Plan](TEMPEST_TRANSFORMATION_PLAN.md).
+
+Docking: FIFO und ein exklusiver Slot je Raffinerie; eigene Entladerate40/s. Restladung bleibt bei Unterbrechung erhalten. HUD zeigt Rückfahrt/Warten/Entladen. Paket und209 Prüfungen plus3 simulierte Partien sind abgenommen; vollständiger Tempest-Umbau bleibt offen.

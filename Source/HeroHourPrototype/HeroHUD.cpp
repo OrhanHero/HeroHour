@@ -229,7 +229,19 @@ void APrototypeHUD::DrawHUD()
     FString Detail=TEXT("SHIFT: AUSWAHL ERWEITERN");
     if(Chosen==1&&Single){
         if(!Single->IsCompleted())Detail=FString::Printf(TEXT("BAU   %d%%"),FMath::RoundToInt(Single->ConstructionProgress*100));
-        else if(Single->Role==EPrototypeRole::Collector)Detail=FString::Printf(TEXT("LADUNG   %.0f / 100 TEMPEST"),Single->Cargo);
+        else if(Single->Role==EPrototypeRole::Collector)
+        {
+            const TCHAR* State=TEXT("FELDSUCHE");
+            switch(Single->CollectorState)
+            {
+            case EPrototypeCollectorState::Harvesting: State=TEXT("ABBAU"); break;
+            case EPrototypeCollectorState::MovingToRefinery: State=TEXT("RUECKFAHRT"); break;
+            case EPrototypeCollectorState::WaitingForDock: State=TEXT("DOCK WARTEN"); break;
+            case EPrototypeCollectorState::Unloading: State=TEXT("ENTLADEN"); break;
+            default: break;
+            }
+            Detail=FString::Printf(TEXT("%.0f / 100 TEMPEST | %s"),Single->Cargo,State);
+        }
         else if(Single->IsStructure())Detail=FString::Printf(TEXT("WARTESCHLANGE   %d / 5"),Mode->GetQueueCount(Single));
         else Detail=TEXT("SCHADEN 20   /   FEUERRATE 1 SEK");
     }

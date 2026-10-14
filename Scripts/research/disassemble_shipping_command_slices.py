@@ -11,7 +11,8 @@ import struct
 import subprocess
 import sys
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parents[2] / 'Saved' / 'Research' / 'rea-next'
+ROOT.mkdir(parents=True, exist_ok=True)
 scan = json.loads((ROOT / 'shipping-command-metadata.json').read_text(encoding='utf-8'))
 target = Path(scan['target'])
 data = target.read_bytes()

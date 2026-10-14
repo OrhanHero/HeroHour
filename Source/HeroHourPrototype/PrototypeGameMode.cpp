@@ -19,6 +19,7 @@
 #include "Engine/StaticMeshActor.h"
 #include "RTS/HRProductionQueue.h"
 #include "RTS/HRRTSDefinitions.h"
+#include "RTS/HRRefineryDocking.h"
 
 namespace
 {
@@ -818,6 +819,12 @@ void APrototypeGameMode::BeginPlay()
     if (FParse::Param(FCommandLine::Get(),TEXT("PrototypeResourceTest")))
     {
         RunHRResourceFieldSelfTests(GetWorld());
+        GetWorld()->GetFirstPlayerController()->ConsoleCommand(TEXT("quit"));
+        return;
+    }
+    if (FParse::Param(FCommandLine::Get(),TEXT("PrototypeDockingTest")))
+    {
+        RunHRRefineryDockingSelfTests(GetWorld());
         GetWorld()->GetFirstPlayerController()->ConsoleCommand(TEXT("quit"));
         return;
     }

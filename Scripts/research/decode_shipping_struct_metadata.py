@@ -8,7 +8,8 @@ import hashlib
 import json
 import struct
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parents[2] / 'Saved' / 'Research' / 'rea-next'
+ROOT.mkdir(parents=True, exist_ok=True)
 scan = json.loads((ROOT / 'shipping-command-metadata.json').read_text(encoding='utf-8'))
 data = Path(scan['target']).read_bytes()
 if hashlib.sha256(data).hexdigest() != scan['sha256']:

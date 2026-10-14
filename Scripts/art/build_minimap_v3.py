@@ -45,9 +45,9 @@ def material_sample(name, tint=(1, 1, 1)):
 
 # The base preserves the muted source material palette. Coarse masks represent
 # ground material variation; they do not imply height or changed navigation.
-gravel_mask = np.clip((smooth_field(241014, 32, 24)-.54)*2.4, 0, 1)[:, :, None]
-dirt_mask = np.clip((smooth_field(241015, 14, 11)-.48)*1.4, 0, 1)[:, :, None]
-tint = (.62, .82, 1.06)
+gravel_mask = np.clip((smooth_field(241014, 12, 9)-.58)*1.0, 0, 1)[:, :, None]
+dirt_mask = np.clip((smooth_field(241015, 6, 5)-.54)*.75, 0, 1)[:, :, None]
+tint = (1.0, .9, .78)
 soil = material_sample("Sand", tint)
 soil = soil*(1-gravel_mask)+material_sample("Gravel", tint)*gravel_mask
 soil = soil*(1-dirt_mask)+material_sample("CompactedDirt", tint)*dirt_mask

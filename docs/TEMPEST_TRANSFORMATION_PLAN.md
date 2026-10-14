@@ -118,3 +118,7 @@ Für uns werden vier Aussagen getrennt protokolliert: (1) welches Originalartefa
 Referenzszenarien: feste Fraktion/Karte/Startcredits, Cheat-Einstellungen aus, ein Sammlerzyklus, Kraftwerkverlust und Wiederherstellung, Bauplatzgrenze, zwei Produktionstypen, Auftrag abbrechen, Ausgang blockieren und freigeben, Sichtkontakt verlieren. Pro Versuch Uhrzeit, Spielversion/Dateihash, Startzustand, Aktion, Ergebnis und Messunsicherheit sichern. Die momentan aktiv vom Nutzer gespielte Tempest-Partie wird nicht durch Agenten gesteuert. Funktionale HeroHour-Tests beweisen keine Tempest-Parität.
 
 Für den nächsten Schritt sind Projekt, Unreal, Referenzinstallation und Konzepte vorhanden. Externe Assetkäufe oder TRELLIS sind keine Voraussetzung. Der Engpass ist die Integration der Systeme und eine konkrete visuelle/spielerische Abnahme.
+
+## Geprüfter Nachtrag22:35: Docking integriert
+
+Acht PaketsuitenPASS, Economy80/Docking28; Logs in VERIFIED_BUILD. Eigene FIFO je Raffinerie, ein exklusiver Dockslot,40/s Entladung, echte Ankunft, unterbrechbare Transfers mit Restcargo-Erhalt und neueSammler-HUD-Zustände. Gemeinsame ULP-Schritte verhindern Credit/Cargo-Rundungsdifferenz; nicht buchbarer Rest wird zur nächsten Ernte mitgenommen. Shipping-REA belegte getrennte Queue-/Slot-/Deposit-Abfragen und HarvesterData, nicht diese konkrete Rate oder Slotzahl. M1 bleibt offen für räumliche Mehrzellenfelder, größere Mehrsammlerabnahme und gezielt pausiertes Entladen. Historische Abschnitte ohne Docking beziehen sich auf frühere Paketstände.

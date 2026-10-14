@@ -8,7 +8,8 @@ import hashlib
 import json
 import struct
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parents[2] / 'Saved' / 'Research' / 'rea-next'
+ROOT.mkdir(parents=True, exist_ok=True)
 TARGET = Path('F:/Tempest-Rising-SteamRIP.com/Tempest Rising/Tempest/Binaries/Win64/Tempest-Win64-Shipping.exe')
 EXPECTED_SHA = 'c81828f4749ae1bbac73106f905a81c3ea1bff9cee7300291c3c390def04be56'
 PATTERNS = ('QueueUnitProductionCommand', 'CancelUnitProduction', 'PayCredits', 'Refund', 'DockState', 'Docking', 'EnterExitRefinery', 'HarvesterRefinery', 'UnitQueue', 'ProductionQueue', 'RefineryDock', 'HarvesterState', 'QueueProduction', 'EnqueueUnit', 'CancelProduction', 'Harvester', 'Refinery', 'SyncCommand_Queue', 'PayCost', 'ProductionRequestHandle', 'ProductionRequest', 'RequestUnit', 'QueueUnit', 'Dequeue', 'UnitProduction', 'ProductionData', 'ProductionProgress', 'ResourceDeposit', 'EHarvester', 'EStructureHarvesterStage', 'ERefineryEventType', 'EQueueAction', 'EGameplayReplicationCommandExecutionEvent', 'EnqueueCmd', 'QueuedDefinition', 'ProductionHandle', 'ConstructionQueue', 'RefundCost')

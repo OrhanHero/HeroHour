@@ -138,9 +138,11 @@ SHIPPING_BYTE_ANCHORING_PASS stage=commands-docking slices=13 ranges=21 bytes=26
 Reproduzieren:
 
 ```powershell
-& 'C:\Users\Hero\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe' 'C:\Users\Hero\HeroHour\Saved\Research\rea-next\disassemble_shipping_command_slices.py'
+& 'C:\Users\Hero\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\python.exe' 'C:\Users\Hero\HeroHour\Scripts\research\disassemble_shipping_command_slices.py'
 ```
 
 Ein abschließender, zusätzlich begrenzter Direktcaller-Pass wurde lokal behalten: `find_shipping_direct_call_candidates.py`/`shipping-direct-call-candidates.json` enthält31 rohe E8-Kandidaten zu drei bereits identifizierten Zielen. Diese Kandidaten sind ausdrücklich noch keine vollständig validierte Callergraph-Abdeckung. Drei ausgewählte Kandidaten wurden anschließend mit `disassemble_shipping_command_slices.py --payment-callers` quellverankert und als `shipping-payment-callers.json`/`PaymentCaller_*.asm.txt` gespeichert. Deren vollständige Gameplay-Zuordnung wurde vor Abschluss dieser Stufe nicht ausformuliert; daraus wird hier kein ursprünglicher Produktions-Bezahlzeitpunkt behauptet. Die13 primären Codebereiche und deren Marker bleiben davon getrennt.
 
 Nächste eigene Abnahme: zwei Sammler an einer Raffinerie, getrennte wartende/entladende Zustände, endliche Unload-Rate, genau einmal gebuchte Cargoabnahme, Slotfreigabe bei Unterbrechung und tatsächliche Abfahrt. Queue-Abnahme getrennt: Zahlungssnapshot, aktiver/wartender Storno, blockierter Spawn, ReadyForPlacement, Produzentenverlust und später Credit-Cap/Overflow. Originalvergleich weiterhin mit endlichen Credits und den vorab festgelegten M1-Runtime-Szenarien. Keine neue UI-Sitzung wurde in diesem Pass begonnen.
+
+Die vier versionierten Prüfer unter Scripts/research wurden erneut erfolgreich ausgeführt; ROOT verweist auf Saved/Research/rea-next. JSON/ASM bleiben dort. Der komplette vierstufige Ablauf steht in Refinery-Docking-Acceptance.md.

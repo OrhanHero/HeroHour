@@ -6,7 +6,10 @@
 #include "GameFramework/Actor.h"
 #include "GameFramework/HUD.h"
 #include "PrototypeEconomyTypes.h"
+#include "RTS/HRRefineryDocking.h"
 #include "PrototypeGameMode.generated.h"
+
+enum class EPrototypeCollectorState : uint8 { SeekingField, Harvesting, MovingToRefinery, WaitingForDock, Unloading };
 
 DECLARE_MULTICAST_DELEGATE_TwoParams(FPrototypeResourceDepleted, int32, bool);
 
@@ -26,6 +29,11 @@ public:
     float ConstructionProgress = 1.f;
     FVector BaseVisualScale = FVector::OneVector;
     double Cargo = 0.;
+    EPrototypeCollectorState CollectorState = EPrototypeCollectorState::SeekingField;
+    TWeakObjectPtr<APrototypeUnit> DeliveryDepot;
+    FVector DockApproach = FVector::ZeroVector;
+    uint64 UnloadOperation = 0;
+    bool bRetainedUnloadRemainder = false;
     float HarvestTimer = 0.f;
     int32 HarvestNode = INDEX_NONE;
     float HarvestRouteCheck = 0.f;
@@ -125,7 +133,8 @@ public:
     void UpdateResourceVisuals();
     FPrototypeResourceDepleted OnResourceDepletionChanged;
     void TickCollector(APrototypeUnit* Unit, float DeltaSeconds);
-    void ReleaseSalvageReservation(APrototypeUnit* Unit);
+    void ReleaseSalvageReservation(APrototypeUnit* Unit, bool bReleaseDock = true);
+    TMap<TWeakObjectPtr<APrototypeUnit>, FHRRefineryDocking> RefineryDocks;
     bool BeginBuilding(EPrototypeRole Role, const FVector& Position, int32 Team = 0);
     bool CanPlaceBuilding(EPrototypeRole Role, const FVector& Position, int32 Team = 0) const;
     bool RequestProduction(EPrototypeRole Role, int32 Team = 0);

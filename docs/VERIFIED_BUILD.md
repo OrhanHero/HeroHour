@@ -1,34 +1,36 @@
 # Nachgewiesener Windows-Build
 
-Stand: 14. Oktober 2026, Unreal 5.8.3, Win64 Development, `/Game/Maps/CityHero`. Paket vom 18:03 Berlin (`CreatedUtc2026-10-14T16:03:36.9731133Z`). UAT `BUILD SUCCESSFUL`, Exitcode0; ausführbare Dateien, Paketcontainer und Materialfehlerprüfung bestanden. Paket lokal unter `Builds/Windows`.
+Aktuell:14.10.2026,22:33 Berlin, Unreal5.8.3, Win64Development, `/Game/Maps/CityHero`. CreatedUtc`2026-10-14T20:33:13.3558656Z`, `Packaging-20261014-223219-417.log`: BUILD SUCCESSFUL/Exit0. Paketcontainer, HERO-Asset-Cook und Materialprüfung bestanden. Paket liegt lokal unter `Builds/Windows`.
 
-| Prüfung im tatsächlichen Paket | Ergebnis | Log unter Saved/Logs |
+| Tatsächliches Paket,22:35 | Ergebnis | Log unter Saved/Logs |
 | --- | --- | --- |
-| Paketierung | PASS | Packaging-20261014-180303-705.log |
-| Kampf und Selektion | 17 PASS | CombatTest-20261014-180732-263.log |
-| Wirtschaft, Produktion, Logistik, Feldvisuals | 70 PASS | EconomyTest-20261014-180732-272.log |
-| Navigation einschließlich echter Brückenfahrt | 10 PASS | NavigationTest-20261014-180732-262.log |
-| Vollständig simulierte Partien | 3/3 PASS, 3 Siege | MatchTest-20261014-180732-262.log |
-| Datenbindung, Queue-/Power-Beispiele | 41 PASS | ArchitectureTest-20261014-180732-284.log |
-| UI mit realer Grafik | 15 PASS | UITest-20261014-180559-868.log |
-| Autoritativer Ressourcenfeldkern | 18 PASS | ResourceTest-20261014-180732-278.log |
+| Combat |17PASS|CombatTest-20261014-223508-941.log|
+| Economy |80PASS|EconomyTest-20261014-223508-935.log|
+| Navigation |10PASS|NavigationTest-20261014-223508-959.log|
+| Match |3/3Siege, sichere Pfade, reale Lieferung|MatchTest-20261014-223508-959.log|
+| UI, echte Grafik |15PASS|UITest-20261014-223508-974.log|
+| Architecture |41PASS|ArchitectureTest-20261014-223508-983.log|
+| Resource |18PASS|ResourceTest-20261014-223508-983.log|
+| Docking |28PASS|DockingTest-20261014-223509-021.log|
 
-Alle sieben Prozesse Exitcode0. Der Testwrapper verlangt Erfolgsmarker und lehnt fehlende HERO-/LocalAssets sowie fehlerhafte Materialien ab. UI läuft mit realem Grafik-Backend, die anderen Suiten mit NullRHI. UI nach ForceRes-Korrektur erneut15PASS: `UITest-20261014-180559-868.log`.
+Alle acht Prozesse Exit0. Testwrapper verlangt PASS und lehnt fehlende HERO-/LocalAssets sowie Materialfehler ab. UI verwendet reales Grafik-Backend mit ForceRes1600×900; andere Suiten NullRHI.
 
-## Tatsächlich enthalten
+## Enthalten und tatsächlich abgenommen
 
-Fünf eigene ConceptV2-Rollenmodelle einschließlich neuem Sammler mit Frontfräse, Tank und Entladekupplung. DistrictV3 mit eigenem Gelände, Stadtmodulen, Straßen, warmem PBR-Wüstenboden, Vegetation und drei ursprünglichen Energieressourcen-Patches. Größere Gebäudemodelle besitzen abgestimmte Navigations-Footprints. ConceptV3-HUD mit Metallrahmen, Glas, fünf Kategorien, echten Porträts, taktischer Karte, Auswahl/Fokus und fünf Auftrags-Slots mit Storno.
+Fünf originale ConceptV2-Meshes samt Porträts; DistrictV3-Gelände/Stadt/Straßen/PBR/Groundcover, warmes Wüstenmaterial und passend gefärbte taktische Karte. ConceptV3-HUD mit Metallrahmen, Glas, Kategorien, Fokus, echten Produktions-/Stornoaktionen. Acht gespeicherte DataV3-Assets sind gekocht; Rollen lesen Kosten, Dauer, HP, Bewegung, Waffenwerte, Mesh und Porträt. Feldraten kommen aus ihrer gespeicherten Definition.
 
-Acht gespeicherte `DataV3`-Assets sind im Paket vorhanden. Rollen lesen Kosten, Bau-/Produktionsdauer, Gesundheit, Bewegung, Waffenwerte, Mesh und UI-Porträt; Feldraten lesen die gespeicherte Definition. Fraktionsroster, rechteckige Grid-Footprints, Schadenstypen, Power-Grid und Fähigkeiten sind noch keine vollständige Live-Migration.
+Autoritativer Ressourcenfeldkern mit exklusiven Claims, optionaler Saatreserve und verzögertem Nachwachsen. Standardfinite; RegrowingFields ist opt-in. Depletion-Wechselevents und CustomPrimitiveData steuern Emission. Erschöpfter regenerierender Boden bleibt sichtbar und für Nav/Bau reserviert; finite Erschöpfung gibt die Fläche frei.
 
-Der Feldkern läuft im echten Sammler-Adapter: exklusive Claims, Saatrest-Rückfahrt, verzögertes opt-in Nachwachsen, reale Lieferung und einmalige Auszahlung. Cargo/Wallet verwenden double. Neue Live-Gates prüfen fraktionale Bilanz (Toleranz1e-8), blockierte Direktzufahrt innerhalb des Lieferradius und nicht mehr erreichbare alte Dockpunkte. Depletion-Wechselevents und Primitive-Daten steuern die eigene Feldemission; erschöpfter regenerierender Boden bleibt sichtbar und für Bau/Nav reserviert, finite Erschöpfung gibt diese Flächen frei.
+Neu: explizite Rückfahrt, FIFO-Warten, ein Dockslot und zeitliche Entladung. **Eigene Regel40/s, keine gemessene Originalrate.** Nur tatsächlicher Slotbesitzer am erreichbaren Anfahrpunkt entlädt. Manuelle Abfahrt, Tod oder Raffinerieverlust lösen Claims; Restcargo bleibt erhalten und kann zur Ersatzraffinerie fahren. Die hintere Kupplung wird zur Raffinerie gedreht; HUD zeigt RUECKFAHRT/DOCK WARTEN/ENTLADEN.
 
-## Grafiknachweise und Grenzen
+Cargo/Wallet sind double. Core nutzt monotone Transaktions-IDs und gemeinsame ULP-Schritte; tatsächlicher Debit und Credit müssen identisch und innerhalb des Budgets sein. Nicht buchbarer Rest bleibt Cargo, gibt den Dockslot frei und wird mit der nächsten Ernte zusammengeführt. Tests prüfen normale/fraktionale Bilanz, große Wallet, Subnormal/NaN/Overflow sowie manuelle Unterbrechung und zerstörte/reparierte Logistik.
 
-`Capture-HeroHour.ps1` rendert das tatsächliche Spiel mit `RenderOffscreen` und `ForceRes`, beendet den eigenen Hilfsprozess und prüft Screenshot-Zeitstempel sowie PNG-Auflösung. Paket-Ausgaben liegen unter `Builds/Windows/HeroHour/Saved/Screenshots`, Editor-Ausgaben unter `Saved/Screenshots`; Vorschauen werden nach `Art/Previews/ConceptV3-*.png` kopiert. Eine frühere Kopflose-Ausgabe888×500 wurde durch den neuen Auflösungsgate verworfen. Die vorher angesehenen District-Bilder dokumentieren die Farbkorrektur, keine1600×900-Abnahme.
+Im ersten Live-Test scheiterten zwei Gates: FIFO-Kopf fuhr trotz belegtem Slot in die Entladelinie;30cm Anfahrtoleranz stoppte Sammler zu früh. Beide echten Abläufe korrigiert, alle80 Wirtschafts-Gates bestehen jetzt. Sie wurden nicht abgeschaltet. Gezielt pausiertes Entladen bleibt zusätzlich offen; bestehende UI-Suite prüft Pausenstopp der Matchzeit.
 
-Aktuelle Paketansichten: Battle2560×1440 (`Capture-Battle-20261014-180559-871.log`) und Harvester1600×900 (`Capture-Harvester-20261014-180559-870.log`), jeweils `CAPTURE_PASS`; tatsächlich geöffnet und visuell geprüft. District1600×900 stammt aus dem geometrisch gleichen Vorgängerpaket (`Capture-District-20261014-180131-299.log`); die letzte Paketänderung betraf UI-Text. Native Bedienung wurde nach ausdrücklicher Fortsetzungsanweisung wieder aufgenommen; der frühere Escape-Abbruch war eine Toolmeldung und wurde vom Nutzer bestritten. Native Beobachtungen des alten Pakets sind getrennte Belege; gerenderte Vorschauen sind keine menschliche Langzeitpartie.
+## Grafik und Grenzen
 
-M1 ist weiter offen: pro sichtbarem Feld derzeit eine autoritative Zelle, keine räumliche Mehrzellen-Ernte und keine reservierten Dockslots/zeitliche Entladung. Standardwirtschaft weiterhin finite; Nachwachsen mit `-PrototypeRegrowingFields`. Kein Live-Stromnetz, Fog of War, zwei asymmetrische Fraktionen, Veterancy oder aktive Fähigkeiten. Kein nachgewiesener Tempest-Nachbau, keine Grafikparität und keine20-Minuten-Performanceabnahme.
+Aktueller tatsächlicher Paket-Render1600×900: [Sammler beim Entladen](../Art/Previews/ConceptV3-Harvester.png), `Capture-Harvester-20261014-223518-464.log`, CAPTURE_PASS, tatsächlich angesehen. Sichtbar860Credits/40Cargo beim laufenden Entladen. `Capture-HeroHour.ps1` prüft frischen Zeitstempel und PNG-Abmessungen, nutzt den korrekten Paket-Saved-Ordner und beendet seinen eigenen Hilfsprozess. Kopflose888×500-Ausgaben wurden verworfen und ForceRes ergänzt. Battle2560×1440 ist die frühere18:03-Ansicht; die neue Sammleransicht zeigt aktuelle Docking-Logik/Minimap.
 
-Reproduzieren: `Build-HeroHour.ps1 -Package`, anschließend `Test-HeroHour.ps1 -Mode Packaged -Suite` mit Combat, Economy, Navigation, Match, UI, Architecture und Resource. Start: `HeroHour-Starten.cmd`. Übergabe: [CURRENT_HANDOVER.md](CURRENT_HANDOVER.md).
+RenderOffscreen ist reale Spielgrafik; keine manuelle20-Minuten-Partie oder Tempest-Grafikparität. M1 bleibt teilweise umgesetzt: je sichtbarem Feld derzeit eine autoritative Zelle, noch keine räumliche Mehrzellen-Ernte. Kein Live-Stromnetz, Fog of War, zwei asymmetrische Fraktionen, Veterancy oder aktive Fähigkeiten. Native Original-Vergleichsszenarien fehlen; REA-Originalbyteprüfung belegt keinen kompilierten Nachbau.
+
+Reproduzieren: `Build-HeroHour.ps1 -Package`, danach `Test-HeroHour.ps1 -Mode Packaged -Suite` für Combat/Economy/Navigation/Match/UI/Architecture/Resource/Docking. Start: `HeroHour-Starten.cmd`. [Übergabe](CURRENT_HANDOVER.md), [Docking-Abnahme](research/Refinery-Docking-Acceptance.md).
