@@ -29,3 +29,7 @@ Eigene FIFO-Dockqueue, exklusiver Slot und zeitliche Entladung sind im neuen Win
 D5 ist teilweise offen: Core-Reset und eingefrorene Weltuhr im UI-Test sind geprüft, ein gezielt aktiv entladender Sammler wurde noch nicht während Pause auf Cargo/Wallet/Slot geprüft. M1 bleibt wegen räumlich mehrerer Feldzellen und Originalvergleich teilweise offen. Neuer RHI-Capture bei diesem Dokumentupdate noch nicht bestätigt. Die älteren Aussagen über fehlende Docking-Stufe und sofortige Entladung sind historische Zwischenstände.
 
 Aktuelle RHI-Abnahme abgeschlossen: Art/Previews/ConceptV3-Harvester.png stammt aus Paket22:33, Capture-Harvester-20261014-223518-464.log.1600×900 durchPNGHeadergatebestätigt, tatsächlichgesehen:860Credits,40Cargo und ENTLADEN; neue warmeMinimap. Battle2560×1440 stammt weiterhin aus18:03. Das tatsächliche Spielrender ist keine manuellePartie/Originalparität.
+
+## Git-Sicherung
+
+Geprüfter Code/Paketstand: Commit `c6b0aa1` auf `codex/prototype-bootstrap`, nach GitHub gepusht und Remote-Hash bestätigt. Autor und Committer: OrhanHero <189524118+OrhanHero@users.noreply.github.com>. Draft-PR: https://github.com/OrhanHero/HeroHour/pull/8. Main wurde nicht zusammengeführt; neuer Account arbeitet auf dieser Branch weiter. GitLFS-Quellen erfolgreich hochgeladen. Vorhandene unbearbeitete `.github/workflows/` und fünf Word-Dateien bleiben lokal untracked. Rohbelege Saved/Research und Windows-Paket Builds/Windows sind lokal und ignored; Rebuild nach Clone gemäß STARTEN.
