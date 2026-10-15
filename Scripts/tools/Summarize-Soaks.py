@@ -11,7 +11,9 @@ created = dt.datetime.fromisoformat(build['CreatedUtc'].replace('Z', '+00:00'))
 source = ROOT / 'Builds/Windows/HeroHour/Saved/Research'
 parser = argparse.ArgumentParser()
 parser.add_argument('--output-dir', type=Path, default=ROOT / 'docs/verification/2026-10-15')
-output = parser.parse_args().output_dir
+parser.add_argument('--workload-note', default='Two concurrent capped instances sharing the GPU; inspect raw logs for other simultaneous workloads. Not isolated maximum-performance or manual-play evidence.')
+args = parser.parse_args()
+output = args.output_dir
 pending = []
 for faction in ('Aegis', 'Ember'):
     reports = []
@@ -44,7 +46,7 @@ exe = ROOT / 'Builds/Windows/HeroHour/Binaries/Win64/HeroHour.exe'
 summary = dict(schema='HeroHour.SoakAcceptance.v1', result='PASS', package=build,
                executable_sha256=hashlib.sha256(exe.read_bytes()).hexdigest(),
                resolution=[1600, 900], frame_cap=60, concurrent_soak_instances=2,
-               limits='Two concurrent capped instances; packaged acceptance workers also ran during the opening minutes. Not isolated maximum-performance or manual-play evidence.',
+               limits=args.workload_note,
                reports=records)
 (output / 'Soak-Acceptance.json').write_text(json.dumps(summary, indent=2)+'\n', encoding='utf-8')
 print(json.dumps(summary, indent=2))

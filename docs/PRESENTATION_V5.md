@@ -1,6 +1,6 @@
 # Presentation V5 – visueller Konzeptpass
 
-Stand: 15.10.2026, Arbeitsstand vor abschließender V5-Paketabnahme. Dieser Pass verbessert die vorhandene CityHero-Szene mit eigenen Assets. Er ist kein Nachweis für die vollständige visuelle Qualität der Konzeptbilder.
+Stand: 15.10.2026, V5-Paketprüfungen und beide Stabilitäts-Dauerläufe abgeschlossen. Dieser Pass verbessert die vorhandene CityHero-Szene mit eigenen Assets. Er ist kein Nachweis für die vollständige visuelle Qualität der Konzeptbilder.
 
 ## Eigene Assets und Herkunft
 
@@ -44,7 +44,7 @@ Die aktuelle eigene A*-Navigation sammelt nur lebende Gebäude vom Typ `APrototy
 
 Das historische Windows-Paket vom **15.10.2026, 13:45 Berlin**, `Packaging-20261015-134515-393.log`, CreatedUtc `2026-10-15T11:45:50.6583192Z`, gehört zur vorausgehenden Gameplay-Abnahme. Die dort dokumentierten 19 Paket-Testläufe und zwei 20-Minuten-Dauerläufe sind **keine V5-Abnahme**. Maßgeblich bleiben deren Build-ID und EXE-Hash in `docs/verification/2026-10-15`.
 
-V5 ist inzwischen paketiert: Szenen-Reload, 19 Paketprüfungen einschließlich UI und Präsentation beider Fraktionen sowie echte Paketaufnahmen sind bestanden. Die aktuellen 20-Minuten-Grafikläufe laufen noch. Nachweise stehen im folgenden Abschnitt und separat im V5-Verzeichnis.
+V5 ist inzwischen paketiert: Szenen-Reload, 19 Paketprüfungen einschließlich UI und Präsentation beider Fraktionen sowie echte Paketaufnahmen sind bestanden. Die aktuellen 20-Minuten-Grafikläufe sind abgeschlossen; beide bestehen die Stabilitätsprüfung, jedoch keine 60-FPS-Leistungsabnahme. Nachweise stehen im folgenden Abschnitt und separat im V5-Verzeichnis.
 
 Die Karte, Brücken, Ressourcenlogik, Gebäuderaster und Kampfsystematik bleiben inhaltlich unverändert. Oberflächen und kleine Dekoration ersetzen weder ein vollständiges Landschafts- und Gebäuderedesign noch eigenständige Fraktionssilhouetten, Fahrzeuganimationen, hochwertige VFX oder professionelle Art-Direction-Abnahme. Das Ziel dieses Passes ist ein sichtbarer, überprüfbarer Schritt zu den Konzepten.
 
@@ -54,7 +54,7 @@ Die Karte, Brücken, Ressourcenlogik, Gebäuderaster und Kampfsystematik bleiben
 
 20 eigene Fraktionsmaterialien, 22 transparente Blender-Porträts (512×512), sechs Detailmeshes und 280 gespeicherte kollisionsfreie Dekorationen sind integriert. [Assetverfahren und Grenzen](PRESENTATION_V5.md).
 
-**19 Paketprüfungen PASS: 488 Aegis- und 115 Ember-Prüfpunkte, zusammen 603, dazu 46 natürliche Match-/Logistikpartien.** [Aktuelle Abnahme](verification/2026-10-15/presentation-v5/Transformation-Checks.json), [neue Paketaufnahmen](verification/2026-10-15/presentation-v5/Captures.json). Beide neuen 20-Minuten-Grafikläufe laufen noch; historische Langzeitergebnisse gelten für ihren damaligen Build.
+**19 Paketprüfungen PASS: 488 Aegis- und 115 Ember-Prüfpunkte, zusammen 603, dazu 46 natürliche Match-/Logistikpartien.** [Aktuelle Abnahme](verification/2026-10-15/presentation-v5/Transformation-Checks.json), [neue Paketaufnahmen](verification/2026-10-15/presentation-v5/Captures.json). **Beide neuen 20-Minuten-Grafikläufe bestanden:** Aegis 1.200,035 Sekunden / 7 vollständige Gefechte, Ember 1.200,016 Sekunden / 8. [Aktuelle Abschlussberichte](verification/2026-10-15/presentation-v5/Soak-Acceptance.json). Mittlere Bildraten 35,859 und 35,776 FPS unter gemeinsamer GPU-Last; neben den beiden Offscreen-Läufen liefen anfangs Paket-/Aufnahmeprüfungen und später ein zusätzliches natives Vollbildspiel. P95 86,774 / 85,806 ms; schlechteste Frames 648,469 / 761,464 ms. Stabilitätsprüfung bestanden, **keine 60-FPS-Leistungsabnahme**. Ein isolierter Profilinglauf bleibt erforderlich.
 
 Paket: `Packaging-20261015-180917-692.log`, CreatedUtc `2026-10-15T16:09:49.5080994Z`. EXE-SHA-256: `54292950892f8e02c55fc615356a9286e42eee52adbdfd3bffaa404c6f08ffc7`.
 
