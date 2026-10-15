@@ -1,6 +1,18 @@
 # Nachgewiesene Windows-Builds
 
-## Presentation V5 – aktueller Build 15.10.2026, 18:09 Berlin
+## Neuester Stand: Konzeptdurchlauf V6, 15.10.2026
+
+**Das Spiel ist weiterhin in Entwicklung und nicht vollständig konzeptgerecht fertiggestellt.** Drei Fachagenten arbeiteten in mehreren parallelen Arbeitswellen; der Hauptagent integrierte und prüfte. Technisches Maximum: vier aktive Agenten einschließlich Hauptagent.
+
+Neu: sechs Canyon-/Ufermeshes mit verbesserten Normalen; vier detaillierte Stadtgebäude an 28 Positionen; drei überarbeitete Militärgebäude mit sechs aktualisierten Porträts; drei zusammengefasste Straßenfinish-Meshes; ruhigere UI und lesbare Kampfwerte. **999 gekippte eigene Kartenobjekte repariert**, darunter alle 64 Wohnhäuser. Die fünf betroffenen alten Python-Importskripte verwenden jetzt ausdrücklich benannte Rotationsparameter. [Umsetzung, Verfahren und Grenzen](CONCEPT_V6.md).
+
+Aktuelles Windows-Paket: **19:35 Berlin**, `Packaging-20261015-193450-794.log`, CreatedUtc `2026-10-15T17:35:27.7561703Z`. **19 Paketprüfungen PASS: 512 Aegis- und 139 Ember-Prüfpunkte, zusammen 651; dazu 46 natürliche Match-/Logistikpartien.** Präsentation umfasst jetzt 100 tatsächliche Asset-/Szenenprüfungen je Lauf. [Aktuelle Nachweise](verification/2026-10-15/concept-v6/Transformation-Checks.json), [Paketaufnahmen](verification/2026-10-15/concept-v6/Captures.json).
+
+Kurze Einzelinstanz-Messung bei 1600×900, Startkamera, ohne Gegnerbot, 60-FPS-Grenze: **55,39 FPS Mittel / P95 29,25 ms**, 1.500 ausgewertete Frames nach 300 Warmup-Frames. Die V5-Vergleichsaufnahme lag bei rund 60 FPS. Das ist keine Leistungsverbesserung und keine neue 20-Minuten-Abnahme. Weitere Profilierung bleibt offen. Die früheren Langzeitberichte gehören zu ihren damaligen Builds.
+
+Unentdeckte Gebäude werden weiterhin normal vom Nebel abgedunkelt. Ein vorgeschlagenes zusätzliches Ausblenden wurde nicht eingebaut: Es würde die vorhandenen Silhouetten/Schatten verändern, und der Nutzen ist noch nicht nachgewiesen. ArtReview-Aufnahmen sind ausdrücklich getrennt vom normalen Spielmodus.
+
+## Historischer Presentation-V5-Build 15.10.2026, 18:09 Berlin
 
 20 eigene Fraktionsmaterialien, 22 transparente Blender-Porträts (512×512), sechs Detailmeshes und 280 gespeicherte kollisionsfreie Dekorationen sind integriert. [Assetverfahren und Grenzen](PRESENTATION_V5.md).
 

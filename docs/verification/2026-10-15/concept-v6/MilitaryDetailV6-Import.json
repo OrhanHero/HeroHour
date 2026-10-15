@@ -1,0 +1,47 @@
+[
+  {
+    "mesh": "/Game/HERO/MilitaryDetailV6/Meshes/SM_MDV6_CommandHub.SM_MDV6_CommandHub",
+    "role": "HQ",
+    "definitions": [
+      {
+        "definition": "/Game/HERO/DataV4/D_Aegis_HQ.D_Aegis_HQ",
+        "previous_mesh": "/Game/HERO/MilitaryDetailV6/Meshes/SM_MDV6_CommandHub.SM_MDV6_CommandHub"
+      },
+      {
+        "definition": "/Game/HERO/DataV4/D_Ember_HQ.D_Ember_HQ",
+        "previous_mesh": "/Game/HERO/MilitaryDetailV6/Meshes/SM_MDV6_CommandHub.SM_MDV6_CommandHub"
+      }
+    ],
+    "source_bounds_preserved": true
+  },
+  {
+    "mesh": "/Game/HERO/MilitaryDetailV6/Meshes/SM_MDV6_VehiclePlant.SM_MDV6_VehiclePlant",
+    "role": "Factory",
+    "definitions": [
+      {
+        "definition": "/Game/HERO/DataV4/D_Aegis_Factory.D_Aegis_Factory",
+        "previous_mesh": "/Game/HERO/ConceptV2/Meshes/SM_HERO_VehiclePlant.SM_HERO_VehiclePlant"
+      },
+      {
+        "definition": "/Game/HERO/DataV4/D_Ember_Factory.D_Ember_Factory",
+        "previous_mesh": "/Game/HERO/ConceptV2/Meshes/SM_HERO_VehiclePlant.SM_HERO_VehiclePlant"
+      }
+    ],
+    "source_bounds_preserved": true
+  },
+  {
+    "mesh": "/Game/HERO/MilitaryDetailV6/Meshes/SM_MDV6_Refinery.SM_MDV6_Refinery",
+    "role": "Depot",
+    "definitions": [
+      {
+        "definition": "/Game/HERO/DataV4/D_Aegis_Depot.D_Aegis_Depot",
+        "previous_mesh": "/Game/HERO/ConceptV2/Meshes/SM_HERO_Refinery.SM_HERO_Refinery"
+      },
+      {
+        "definition": "/Game/HERO/DataV4/D_Ember_Depot.D_Ember_Depot",
+        "previous_mesh": "/Game/HERO/ConceptV2/Meshes/SM_HERO_Refinery.SM_HERO_Refinery"
+      }
+    ],
+    "source_bounds_preserved": true
+  }
+]

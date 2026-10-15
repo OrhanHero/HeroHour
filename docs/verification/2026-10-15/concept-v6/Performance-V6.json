@@ -1,0 +1,19 @@
+{
+  "schema": "HeroHour.FrameProfile.v1",
+  "result": "CAPTURED",
+  "csv": "Profile(20261015_193933).csv",
+  "csv_sha256": "d2502a461072f036b94aaf856157bcf7c5cda9cc2c140449ec512078ddc09971",
+  "executable_sha256": "12abef1aa6adb800c52b43a30876b0a249780a61539f10b92091813c8896e945",
+  "captured_frames": 1800,
+  "discarded_warmup_frames": 300,
+  "measured_frames": 1500,
+  "measured_seconds": 27.078392700000002,
+  "mean_frame_ms": 18.0522618,
+  "mean_fps": 55.39472067705112,
+  "median_frame_ms": 16.68605,
+  "p95_frame_ms": 29.2469,
+  "worst_frame_ms": 31.0057,
+  "frames_over_33ms": 0,
+  "workload": "V6 package; one 1600x900 offscreen instance, NoBot, fixed starting camera, cap60, VSync0. No other HeroHour/editor render instance during this capture.",
+  "limits": "Short fixed-camera capped frame capture. No active combat, full-map stress, long soak, or visual-parity acceptance implied."
+}

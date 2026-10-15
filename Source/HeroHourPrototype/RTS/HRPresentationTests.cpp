@@ -196,6 +196,82 @@ bool RunHRPresentationSelfTests(UWorld* World)
         if(It->ActorHasTag(TEXT("HERO_DecorationV5")))
         { ++DetailCount;bNonBlocking &= It->GetStaticMeshComponent()->GetCollisionEnabled()==ECollisionEnabled::NoCollision; }
     Check(DetailCount>=200 && bNonBlocking,TEXT("authored world details load from the map without adding collision"));
+    // Fixed authored contracts from the V6 manifests, checked after loading the map
+    // so unsaved collision/profile/navigation changes cannot pass in an importer.
+    const TCHAR* CityMeshNames[]={TEXT("SM_CC6_Courtyard"),TEXT("SM_CC6_Office"),TEXT("SM_CC6_Tower"),TEXT("SM_CC6_Service")};
+    const TCHAR* TerrainMeshNames[]={TEXT("SM_CTV6_CanyonSouth"),TEXT("SM_CTV6_CanyonNorth"),TEXT("SM_CTV6_CanyonWest"),TEXT("SM_CTV6_CanyonEast"),TEXT("SM_CTV6_RiverMarginWest"),TEXT("SM_CTV6_RiverMarginEast")};
+    TSet<FString> CityPaths,TerrainPaths;
+    auto CheckV6Mesh=[&](const TCHAR* Folder,const TCHAR* Name,TSet<FString>& Paths)
+    {
+        const FString Path=FString::Printf(TEXT("/Game/HERO/%s/Meshes/%s.%s"),Folder,Name,Name);
+        Paths.Add(Path);
+        UStaticMesh* Mesh=LoadObject<UStaticMesh>(nullptr,*Path);
+        bool bMaterials=Mesh && !Mesh->GetStaticMaterials().IsEmpty();
+        if(Mesh)for(const FStaticMaterial& Slot:Mesh->GetStaticMaterials())bMaterials &= OwnMaterial(Slot.MaterialInterface);
+        Check(Mesh && Mesh->GetBounds().SphereRadius>1.f && bMaterials,
+            *FString::Printf(TEXT("%s V6 authored mesh and own materials load from cooked content"),Name));
+    };
+    for(const TCHAR* Name:CityMeshNames)CheckV6Mesh(TEXT("ConceptCityV6"),Name,CityPaths);
+    for(const TCHAR* Name:TerrainMeshNames)CheckV6Mesh(TEXT("ConceptTerrainV6"),Name,TerrainPaths);
+    int32 CityCount=0,TerrainCount=0,LegacyCityCount=0,HouseCount=0;
+    bool bCityUpright=true,bHousesUpright=true,bHousesAboveGround=true;
+    bool bCityNoCollision=true,bCityNoNavigation=true,bTerrainNoCollision=true,bTerrainNoNavigation=true,bTerrainExact=true;
+    TSet<FString> SeenTerrain;
+    for(TActorIterator<AStaticMeshActor> It(World);It;++It)
+    {
+        UStaticMeshComponent* Component=It->GetStaticMeshComponent();
+        UStaticMesh* Mesh=Component?Component->GetStaticMesh():nullptr;
+        const FString MeshPath=GetPathNameSafe(Mesh);
+        if(Mesh && Mesh->GetName().StartsWith(TEXT("SM_DV3_Civic_")))++LegacyCityCount;
+        if(CityPaths.Contains(MeshPath))
+        {
+            ++CityCount;
+            const FRotator Rotation=It->GetActorRotation();
+            bCityUpright &= FMath::Abs(Rotation.Pitch)<.1f && FMath::Abs(Rotation.Roll)<.1f;
+            bCityNoCollision &= Component->GetCollisionEnabled()==ECollisionEnabled::NoCollision
+                && Component->GetCollisionProfileName()==FName(TEXT("NoCollision"));
+            bCityNoNavigation &= !Component->CanEverAffectNavigation();
+        }
+        if(Mesh && Mesh->GetName()==TEXT("SM_CH_House"))
+        {
+            ++HouseCount;
+            const FRotator Rotation=It->GetActorRotation();
+            const FBox Bounds=Component->Bounds.GetBox();
+            bHousesUpright &= FMath::Abs(Rotation.Pitch)<.1f && FMath::Abs(Rotation.Roll)<.1f;
+            bHousesAboveGround &= Bounds.Min.Z>=It->GetActorLocation().Z-1.f
+                && Bounds.Max.Z>It->GetActorLocation().Z+250.f;
+        }
+        if(It->ActorHasTag(TEXT("HERO_ConceptTerrainV6")))
+        {
+            ++TerrainCount;
+            bTerrainExact &= TerrainPaths.Contains(MeshPath) && !SeenTerrain.Contains(MeshPath);
+            SeenTerrain.Add(MeshPath);
+            bTerrainNoCollision &= Component && Component->GetCollisionEnabled()==ECollisionEnabled::NoCollision
+                && Component->GetCollisionProfileName()==FName(TEXT("NoCollision"));
+            bTerrainNoNavigation &= Component && !Component->CanEverAffectNavigation();
+        }
+    }
+    Check(CityCount==28,TEXT("all 28 authored city actors use exact ConceptCityV6 manifest meshes"));
+    Check(LegacyCityCount==0,TEXT("no legacy civic mesh remains after V6 replacement"));
+    Check(CityCount==28 && bCityUpright,TEXT("all V6 city actors rotate around world up rather than tipping onto facades"));
+    Check(HouseCount==64 && bHousesUpright,TEXT("all 64 West Heights homes stand upright after positional Rotator correction"));
+    Check(HouseCount==64 && bHousesAboveGround,TEXT("all West Heights house world bounds extend above ground rather than below it"));
+    Check(CityCount==28 && bCityNoCollision,TEXT("all V6 city components retain saved NoCollision profile and mode"));
+    Check(CityCount==28 && bCityNoNavigation,TEXT("all V6 city components remain excluded from navigation"));
+    Check(TerrainCount==6 && SeenTerrain.Num()==6 && bTerrainExact,TEXT("exactly six tagged terrain actors each use one distinct authored V6 manifest mesh"));
+    Check(TerrainCount==6 && bTerrainNoCollision,TEXT("all V6 terrain components retain saved NoCollision profile and mode"));
+    Check(TerrainCount==6 && bTerrainNoNavigation,TEXT("all V6 terrain components remain excluded from navigation"));
+    for(const TCHAR* Name:{TEXT("SM_RF6_Yellow"),TEXT("SM_RF6_White"),TEXT("SM_RF6_Dust")})
+    {
+        UStaticMesh* RoadMesh=LoadObject<UStaticMesh>(nullptr,*FString::Printf(TEXT("/Game/HERO/RoadFinishV6/Meshes/%s.%s"),Name,Name));
+        Check(RoadMesh && RoadMesh->GetBounds().SphereRadius>1.f,TEXT("merged V6 road finish mesh loads from actual content"));
+    }
+    int32 RoadCount=0;bool bRoadNonBlocking=true;
+    for(TActorIterator<AStaticMeshActor> It(World);It;++It)
+        if(It->ActorHasTag(TEXT("HERO_RoadFinishV6")))
+        { ++RoadCount;bRoadNonBlocking &= It->GetStaticMeshComponent()->GetCollisionEnabled()==ECollisionEnabled::NoCollision
+            && !It->GetStaticMeshComponent()->CanEverAffectNavigation(); }
+    Check(RoadCount==3 && bRoadNonBlocking,TEXT("three merged road finish actors preserve collision-free navigable streets"));
     for(const TCHAR* Name:{TEXT("A_Impact"),TEXT("A_Rifle"),TEXT("A_Cannon")})
     {
         USoundWave* Sound=LoadObject<USoundWave>(nullptr,*FString::Printf(TEXT("/Game/HERO/EffectsV4/%s.%s"),Name,Name));

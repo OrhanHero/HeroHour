@@ -1,0 +1,205 @@
+{
+  "version": 6,
+  "original_assets": true,
+  "assets": [
+    {
+      "name": "SM_MDV6_CommandHub",
+      "role": "HQ",
+      "source": "Art\\Models\\ConceptV2\\SM_HERO_CommandHub.blend",
+      "source_sha256": "f310a344f4e8480e82eaa37aa0f002bce54ab130931229d6c16ae4eb9bd72e6e",
+      "source_unchanged": true,
+      "source_triangles": 36692,
+      "triangles": 51016,
+      "added_triangles": 14324,
+      "detail_objects": 129,
+      "dimensions_m": [
+        6.888791561126709,
+        6.888791561126709,
+        5.9549994468688965
+      ],
+      "bounds_m": [
+        [
+          -3.4443957805633545,
+          -3.4443957805633545,
+          -1.100000023841858
+        ],
+        [
+          3.4443957805633545,
+          3.4443957805633545,
+          4.854999542236328
+        ]
+      ],
+      "original_bounds_m": [
+        [
+          -3.4443957805633545,
+          -3.4443957805633545,
+          -1.100000023841858
+        ],
+        [
+          3.4443957805633545,
+          3.4443957805633545,
+          4.854999542236328
+        ]
+      ],
+      "materials": [
+        "Concrete",
+        "Dark",
+        "Armor",
+        "Steel",
+        "Neon",
+        "Glass",
+        "Lamp",
+        "Dust"
+      ],
+      "pivot_preserved": true,
+      "fbx_roundtrip": true,
+      "validation": "PASS",
+      "unreal_bounds_m": [
+        [
+          -3.4443957805633545,
+          -3.4443957805633545,
+          -1.100000023841858
+        ],
+        [
+          3.4443957805633545,
+          3.4443957805633545,
+          4.854999542236328
+        ]
+      ],
+      "unreal_axis_transform": "X unchanged, Y negated, Z unchanged"
+    },
+    {
+      "name": "SM_MDV6_VehiclePlant",
+      "role": "Factory",
+      "source": "Art\\Models\\ConceptV2\\SM_HERO_VehiclePlant.blend",
+      "source_sha256": "ebaa8a1c9b79914a276c44795fb0ba994391d05c112e6ce13695b8e2e46f29ed",
+      "source_unchanged": true,
+      "source_triangles": 27080,
+      "triangles": 37956,
+      "added_triangles": 10876,
+      "detail_objects": 101,
+      "dimensions_m": [
+        4.400000095367432,
+        4.051415920257568,
+        3.3299999237060547
+      ],
+      "bounds_m": [
+        [
+          -2.200000047683716,
+          -2.0514159202575684,
+          -0.3500000238418579
+        ],
+        [
+          2.200000047683716,
+          2.0,
+          2.9800000190734863
+        ]
+      ],
+      "original_bounds_m": [
+        [
+          -2.200000047683716,
+          -2.0514159202575684,
+          -0.3500000238418579
+        ],
+        [
+          2.200000047683716,
+          2.0,
+          2.9800000190734863
+        ]
+      ],
+      "materials": [
+        "Concrete",
+        "Dark",
+        "Armor",
+        "Steel",
+        "Neon",
+        "Team",
+        "Lamp",
+        "Dust",
+        "Glass"
+      ],
+      "pivot_preserved": true,
+      "fbx_roundtrip": true,
+      "validation": "PASS",
+      "unreal_bounds_m": [
+        [
+          -2.200000047683716,
+          -2.0,
+          -0.3500000238418579
+        ],
+        [
+          2.200000047683716,
+          2.0514159202575684,
+          2.9800000190734863
+        ]
+      ],
+      "unreal_axis_transform": "X unchanged, Y negated, Z unchanged"
+    },
+    {
+      "name": "SM_MDV6_Refinery",
+      "role": "Depot",
+      "source": "Art\\Models\\ConceptV2\\SM_HERO_Refinery.blend",
+      "source_sha256": "085a3b719df1f0ca151b808e9c360b2531b0f68893cbf9709b38d02b37ec1dca",
+      "source_unchanged": true,
+      "source_triangles": 34512,
+      "triangles": 45188,
+      "added_triangles": 10676,
+      "detail_objects": 77,
+      "dimensions_m": [
+        3.568791389465332,
+        3.8247151374816895,
+        3.8980000019073486
+      ],
+      "bounds_m": [
+        [
+          -1.784395694732666,
+          -2.0403194427490234,
+          -0.3499999940395355
+        ],
+        [
+          1.784395694732666,
+          1.784395694732666,
+          3.5480000972747803
+        ]
+      ],
+      "original_bounds_m": [
+        [
+          -1.784395694732666,
+          -2.0403194427490234,
+          -0.3499999940395355
+        ],
+        [
+          1.784395694732666,
+          1.784395694732666,
+          3.5480000972747803
+        ]
+      ],
+      "materials": [
+        "Concrete",
+        "Steel",
+        "Dark",
+        "Armor",
+        "Neon",
+        "Lamp",
+        "Team",
+        "Glass"
+      ],
+      "pivot_preserved": true,
+      "fbx_roundtrip": true,
+      "validation": "PASS",
+      "unreal_bounds_m": [
+        [
+          -1.784395694732666,
+          -1.784395694732666,
+          -0.3499999940395355
+        ],
+        [
+          1.784395694732666,
+          2.0403194427490234,
+          3.5480000972747803
+        ]
+      ],
+      "unreal_axis_transform": "X unchanged, Y negated, Z unchanged"
+    }
+  ]
+}

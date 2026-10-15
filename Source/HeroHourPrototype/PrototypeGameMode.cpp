@@ -1282,7 +1282,7 @@ void APrototypeGameMode::BeginPlay()
         UE_LOG(LogTemp,Display,TEXT("NAVIGATION_TEST_RESULT=%s"),Pass ? TEXT("PASS") : TEXT("FAIL"));
         GetWorld()->GetFirstPlayerController()->ConsoleCommand(TEXT("quit"));
     }
-    if (FParse::Param(FCommandLine::Get(), TEXT("PrototypeCapture")) || FParse::Param(FCommandLine::Get(),TEXT("PrototypeOverviewCapture")) || FParse::Param(FCommandLine::Get(),TEXT("PrototypeDistrictCapture")) || FParse::Param(FCommandLine::Get(),TEXT("PrototypeHarvesterCapture")))
+    if (FParse::Param(FCommandLine::Get(),TEXT("PrototypeCombatCapture")) || FParse::Param(FCommandLine::Get(), TEXT("PrototypeCapture")) || FParse::Param(FCommandLine::Get(),TEXT("PrototypeOverviewCapture")) || FParse::Param(FCommandLine::Get(),TEXT("PrototypeDistrictCapture")) || FParse::Param(FCommandLine::Get(),TEXT("PrototypeHarvesterCapture")))
     {
         FTimerHandle CaptureTimer;
         GetWorldTimerManager().SetTimer(CaptureTimer, [this]()
@@ -1290,7 +1290,13 @@ void APrototypeGameMode::BeginPlay()
             if (auto* Controller = Cast<APrototypeController>(GetWorld()->GetFirstPlayerController()))
             {
                 Controller->ClearSelection();
-                if (FParse::Param(FCommandLine::Get(),TEXT("PrototypeHarvesterCapture")))
+                if (FParse::Param(FCommandLine::Get(),TEXT("PrototypeCombatCapture")))
+                {
+                    for (TActorIterator<APrototypeUnit> It(GetWorld());It;++It)
+                        if (It->Team==0 && It->Role==EPrototypeRole::Combat && It->Health>0.f)
+                        { Controller->Selected.Add(*It);It->Select(true);break; }
+                }
+                else if (FParse::Param(FCommandLine::Get(),TEXT("PrototypeHarvesterCapture")))
                 {
                     for (TActorIterator<APrototypeUnit> It(GetWorld());It;++It)
                         if (It->Team==0 && It->Role==EPrototypeRole::Collector && It->Health>0.f)
@@ -1312,7 +1318,7 @@ void APrototypeGameMode::BeginPlay()
                 }
                 else if (PlayerHQ) { Controller->Selected.Add(PlayerHQ); PlayerHQ->Select(true); }
             }
-            const TCHAR* Name=FParse::Param(FCommandLine::Get(),TEXT("PrototypeHarvesterCapture")) ? TEXT("Screenshots/Harvester.png") : FParse::Param(FCommandLine::Get(),TEXT("PrototypeDistrictCapture")) ? TEXT("Screenshots/District.png") : FParse::Param(FCommandLine::Get(),TEXT("PrototypeOverviewCapture")) ? TEXT("Screenshots/EnvironmentOverview.png") : TEXT("Screenshots/Battle.png");
+            const TCHAR* Name=FParse::Param(FCommandLine::Get(),TEXT("PrototypeCombatCapture")) ? TEXT("Screenshots/Combat.png") : FParse::Param(FCommandLine::Get(),TEXT("PrototypeHarvesterCapture")) ? TEXT("Screenshots/Harvester.png") : FParse::Param(FCommandLine::Get(),TEXT("PrototypeDistrictCapture")) ? TEXT("Screenshots/District.png") : FParse::Param(FCommandLine::Get(),TEXT("PrototypeOverviewCapture")) ? TEXT("Screenshots/EnvironmentOverview.png") : TEXT("Screenshots/Battle.png");
             // Give streaming and occlusion visibility time to settle after moving the camera.
             FTimerHandle ShutterTimer;
             GetWorldTimerManager().SetTimer(ShutterTimer,[this,Name]()

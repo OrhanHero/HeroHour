@@ -46,55 +46,61 @@
       "role": "HQ",
       "faction": "Aegis",
       "file": "T_HR_Aegis_HQ.png",
-      "source": "Art\\Models\\ConceptV2\\SM_HERO_CommandHub.blend",
-      "source_sha256": "f310a344f4e8480e82eaa37aa0f002bce54ab130931229d6c16ae4eb9bd72e6e",
+      "source": "Art\\Models\\MilitaryDetailV6\\SM_MDV6_CommandHub.blend",
+      "source_sha256": "38eb8783edb3a5a839ca5c15aab191370744295da4b2e9fb2ba0596cb1218383",
       "original_geometry": true,
-      "source_unchanged": true
+      "source_unchanged": true,
+      "file_sha256": "6b66733a6290bccf6528642ef6cffde4cd5278db0d855f28be6807c66a411599"
     },
     {
       "role": "HQ",
       "faction": "Ember",
       "file": "T_HR_Ember_HQ.png",
-      "source": "Art\\Models\\ConceptV2\\SM_HERO_CommandHub.blend",
-      "source_sha256": "f310a344f4e8480e82eaa37aa0f002bce54ab130931229d6c16ae4eb9bd72e6e",
+      "source": "Art\\Models\\MilitaryDetailV6\\SM_MDV6_CommandHub.blend",
+      "source_sha256": "38eb8783edb3a5a839ca5c15aab191370744295da4b2e9fb2ba0596cb1218383",
       "original_geometry": true,
-      "source_unchanged": true
+      "source_unchanged": true,
+      "file_sha256": "8b9b939bf523220804bc00431dfc714aaa96eaa41bab772afb4ac1f5fc30741e"
     },
     {
       "role": "Depot",
       "faction": "Aegis",
       "file": "T_HR_Aegis_Depot.png",
-      "source": "Art\\Models\\ConceptV2\\SM_HERO_Refinery.blend",
-      "source_sha256": "085a3b719df1f0ca151b808e9c360b2531b0f68893cbf9709b38d02b37ec1dca",
+      "source": "Art\\Models\\MilitaryDetailV6\\SM_MDV6_Refinery.blend",
+      "source_sha256": "c6e889c2b50a8fe79e2d25d28b9f1d26deb43d6f3734f0d804ba48f5c7c2ceb0",
       "original_geometry": true,
-      "source_unchanged": true
+      "source_unchanged": true,
+      "file_sha256": "65f740083ea29c46aad40975c5e49726c3c52b624afbf9de5fcf97b341a2dee3"
     },
     {
       "role": "Depot",
       "faction": "Ember",
       "file": "T_HR_Ember_Depot.png",
-      "source": "Art\\Models\\ConceptV2\\SM_HERO_Refinery.blend",
-      "source_sha256": "085a3b719df1f0ca151b808e9c360b2531b0f68893cbf9709b38d02b37ec1dca",
+      "source": "Art\\Models\\MilitaryDetailV6\\SM_MDV6_Refinery.blend",
+      "source_sha256": "c6e889c2b50a8fe79e2d25d28b9f1d26deb43d6f3734f0d804ba48f5c7c2ceb0",
       "original_geometry": true,
-      "source_unchanged": true
+      "source_unchanged": true,
+      "file_sha256": "8920af3754282830714e46885c2e6f002f7be038837d235b36d4bee3b040d48c"
     },
     {
       "role": "Factory",
       "faction": "Aegis",
       "file": "T_HR_Aegis_Factory.png",
-      "source": "Art\\Models\\ConceptV2\\SM_HERO_VehiclePlant.blend",
-      "source_sha256": "ebaa8a1c9b79914a276c44795fb0ba994391d05c112e6ce13695b8e2e46f29ed",
+      "source": "Art\\Models\\MilitaryDetailV6\\SM_MDV6_VehiclePlant.blend",
+      "source_sha256": "d784723b81da34411b87dafb3510025e085a8e25ba95921ad4e6565b56b4e7ed",
       "original_geometry": true,
-      "source_unchanged": true
+      "source_unchanged": true,
+      "file_sha256": "cdcc6b07bb2dc3c8e1c91cf99d718c9bcc80550f9275ee8f2804031159511a3b"
     },
     {
       "role": "Factory",
       "faction": "Ember",
       "file": "T_HR_Ember_Factory.png",
-      "source": "Art\\Models\\ConceptV2\\SM_HERO_VehiclePlant.blend",
-      "source_sha256": "ebaa8a1c9b79914a276c44795fb0ba994391d05c112e6ce13695b8e2e46f29ed",
+      "source": "Art\\Models\\MilitaryDetailV6\\SM_MDV6_VehiclePlant.blend",
+      "source_sha256": "d784723b81da34411b87dafb3510025e085a8e25ba95921ad4e6565b56b4e7ed",
       "original_geometry": true,
-      "source_unchanged": true
+      "source_unchanged": true,
+      "file_sha256": "fa245842398e1b12c9ff50b361d6679a6ccb66db009b1d5f1b027c8701db38a0"
     },
     {
       "role": "PowerPlant",

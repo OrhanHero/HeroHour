@@ -39,13 +39,13 @@ bool RunHRRTSArchitectureSelfTests()
             TEXT("/Game/HERO/ConceptV2/Meshes/SM_HERO_Harvester.SM_HERO_Harvester"),
             TEXT("/Game/HERO/PresentationV5/Portraits/T_HR_Aegis_Collector.T_HR_Aegis_Collector")},
         {EPrototypeRole::Headquarters,TEXT("DA_HR_CommandHub"),TEXT("HQ"),HRRTSTags::Building_CommandHub,true,0,1.f,800.f,
-            TEXT("/Game/HERO/ConceptV2/Meshes/SM_HERO_CommandHub.SM_HERO_CommandHub"),
+            TEXT("/Game/HERO/MilitaryDetailV6/Meshes/SM_MDV6_CommandHub.SM_MDV6_CommandHub"),
             TEXT("/Game/HERO/PresentationV5/Portraits/T_HR_Aegis_HQ.T_HR_Aegis_HQ")},
         {EPrototypeRole::Depot,TEXT("DA_HR_Refinery"),TEXT("Depot"),HRRTSTags::Building_Refinery,true,200,8.f,400.f,
-            TEXT("/Game/HERO/ConceptV2/Meshes/SM_HERO_Refinery.SM_HERO_Refinery"),
+            TEXT("/Game/HERO/MilitaryDetailV6/Meshes/SM_MDV6_Refinery.SM_MDV6_Refinery"),
             TEXT("/Game/HERO/PresentationV5/Portraits/T_HR_Aegis_Depot.T_HR_Aegis_Depot")},
         {EPrototypeRole::Factory,TEXT("DA_HR_VehiclePlant"),TEXT("Factory"),HRRTSTags::Building_VehiclePlant,true,350,12.f,600.f,
-            TEXT("/Game/HERO/ConceptV2/Meshes/SM_HERO_VehiclePlant.SM_HERO_VehiclePlant"),
+            TEXT("/Game/HERO/MilitaryDetailV6/Meshes/SM_MDV6_VehiclePlant.SM_MDV6_VehiclePlant"),
             TEXT("/Game/HERO/PresentationV5/Portraits/T_HR_Aegis_Factory.T_HR_Aegis_Factory")},
     };
     TArray<const UHRUnitDefinition*> SavedRoles;

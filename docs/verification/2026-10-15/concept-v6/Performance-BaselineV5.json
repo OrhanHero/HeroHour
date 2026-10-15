@@ -1,0 +1,19 @@
+{
+  "schema": "HeroHour.FrameProfile.v1",
+  "result": "CAPTURED",
+  "csv": "Profile(20261015_192321).csv",
+  "csv_sha256": "e4fa324c614ef4a8f274dd9c387158fb85606cd4277d0e7f7a1486eede4aff10",
+  "executable_sha256": "54292950892f8e02c55fc615356a9286e42eee52adbdfd3bffaa404c6f08ffc7",
+  "captured_frames": 1800,
+  "discarded_warmup_frames": 300,
+  "measured_frames": 1500,
+  "measured_seconds": 25.0004141,
+  "mean_frame_ms": 16.666942733333332,
+  "mean_fps": 59.9990061764617,
+  "median_frame_ms": 16.6661,
+  "p95_frame_ms": 16.9159,
+  "worst_frame_ms": 23.3532,
+  "frames_over_33ms": 0,
+  "workload": "V5 package; one 1600x900 offscreen instance, NoBot, starting camera, cap60, VSync0. A NullRHI authoring commandlet overlapped the opening seconds; no other graphical game ran.",
+  "limits": "Short fixed-camera capped frame capture. No active combat, full-map stress, long soak, or visual-parity acceptance implied."
+}

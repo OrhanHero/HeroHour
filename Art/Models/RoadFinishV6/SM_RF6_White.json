@@ -1,0 +1,27 @@
+{
+  "name": "SM_RF6_White",
+  "material": "White",
+  "pieces": 1711,
+  "triangles": 20532,
+  "dimensions_m": [
+    238.92999267578125,
+    168.92999267578125,
+    0.004000002518296242
+  ],
+  "expected_ue_bounds_cm": {
+    "min": [
+      -11486.5,
+      -8486.5,
+      3.0
+    ],
+    "max": [
+      12406.5,
+      8406.5,
+      3.4000000000000004
+    ]
+  },
+  "non_manifold_edges": 0,
+  "fbx_roundtrip": true,
+  "validation": "PASS",
+  "pivot": "world origin; source Y reflected to compensate FBX -> Unreal conversion"
+}

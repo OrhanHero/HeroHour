@@ -1,8 +1,9 @@
 [CmdletBinding()]
 param(
     [ValidateSet('Editor', 'Packaged')][string]$Mode = 'Packaged',
-    [ValidateSet('Battle', 'District', 'Overview', 'Harvester')][string]$View = 'Battle',
+    [ValidateSet('Battle', 'District', 'Overview', 'Harvester', 'Combat')][string]$View = 'Battle',
     [ValidateSet('Aegis','Ember')][string]$Faction = 'Aegis',
+    [switch]$ArtReview,
     [int]$Width = 1600,
     [int]$Height = 900,
     [string]$EngineRoot = 'F:\UE\UE_5.8'
@@ -15,12 +16,16 @@ if ($Mode -eq 'Editor') {
     $executable = Join-Path $EngineRoot 'Engine\Binaries\Win64\UnrealEditor-Cmd.exe'
     $arguments = @(('"' + (Join-Path $projectRoot 'HeroHour.uproject') + '"')) + $arguments
 }
-$flag = switch ($View) { 'Battle' { '-PrototypeCapture' } 'District' { '-PrototypeDistrictCapture' } 'Overview' { '-PrototypeOverviewCapture' } 'Harvester' { '-PrototypeHarvesterCapture' } }
-$filename = switch ($View) { 'Battle' { 'Battle.png' } 'District' { 'District.png' } 'Overview' { 'EnvironmentOverview.png' } 'Harvester' { 'Harvester.png' } }
+$flag = switch ($View) { 'Combat' { '-PrototypeCombatCapture' } 'Battle' { '-PrototypeCapture' } 'District' { '-PrototypeDistrictCapture' } 'Overview' { '-PrototypeOverviewCapture' } 'Harvester' { '-PrototypeHarvesterCapture' } }
+$filename = switch ($View) { 'Combat' { 'Combat.png' } 'Battle' { 'Battle.png' } 'District' { 'District.png' } 'Overview' { 'EnvironmentOverview.png' } 'Harvester' { 'Harvester.png' } }
 $stamp = Get-Date -Format 'yyyyMMdd-HHmmss-fff'
 $log = Join-Path $projectRoot "Saved\Logs\Capture-$View-$stamp.log"
 $arguments += @($flag, ('-abslog="' + $log + '"'))
 if ($Faction -eq 'Ember') { $arguments += '-FactionEmber' }
+if ($ArtReview) {
+    if ($View -notin @('District','Overview')) { throw 'ArtReview is restricted to environment District/Overview captures.' }
+    $arguments += '-PrototypeArtReview'
+}
 $startedUtc = [DateTime]::UtcNow
 $process = Start-Process -FilePath $executable -ArgumentList $arguments -WorkingDirectory $projectRoot -WindowStyle Hidden -PassThru
 if (-not $process.WaitForExit(60 * 1000)) {
@@ -38,5 +43,6 @@ if ($imageWidth -ne $Width -or $imageHeight -ne $Height) { throw "Screenshot res
 $contents = Get-Content -LiteralPath $log -Raw
 if ($contents -match 'Failed to compile Material|Cooking a material resource.*valid ShaderMap|Failed to find object.*\/Game\/HERO\/|SkipPackage.*\/Game\/HERO\/') { throw "Capture has missing or failed assets. Log: $log" }
 $preview = Join-Path $projectRoot "Art\Previews\ConceptV3-$View.png"
+if ($ArtReview) { $preview = Join-Path $projectRoot "Art\Previews\ConceptV6-ArtReview-$View.png" }
 Copy-Item -LiteralPath $output -Destination $preview -Force
 Write-Host "CAPTURE_PASS=$preview; Log=$log"

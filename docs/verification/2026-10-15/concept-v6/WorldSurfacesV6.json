@@ -1,0 +1,617 @@
+{
+  "result": "PASS",
+  "materials": [
+    "/Game/HERO/PresentationV6/Materials/M_PV6_DesertGround.M_PV6_DesertGround",
+    "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+  ],
+  "procedural_noise_nodes": 0,
+  "texture_samples_per_material": 4,
+  "changed_components": [
+    [
+      "CITYHERO Desert terrain",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_DesertGround.M_PV6_DesertGround"
+    ],
+    [
+      "Bridge arterial road",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "Bridge arterial road",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "North south road",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "North south road",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "North south road",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "West road",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "East road",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "West road",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "East road",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "West road",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "East road",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "Downtown avenue",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "Downtown avenue",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "Downtown avenue",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "Downtown avenue",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "Downtown avenue",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "Downtown street",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "Downtown street",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "Downtown street",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "Downtown street",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "Downtown street",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "Downtown street",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "Downtown street",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "Downtown street",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "West Heights street",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "West Heights street",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "West Heights street",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "West Heights street",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "West Heights street",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "West Heights lane",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "West Heights lane",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "West Heights lane",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "West Heights lane",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "West Heights lane",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "Stadium parking",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "Airfield runway",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "DV3 SM_DV3_RoadStraight",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "DV3 SM_DV3_RoadStraight",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "DV3 SM_DV3_RoadStraight",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "DV3 SM_DV3_RoadStraight",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "DV3 SM_DV3_RoadStraight",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "DV3 SM_DV3_RoadStraight",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "DV3 SM_DV3_RoadStraight",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "DV3 SM_DV3_RoadStraight",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "DV3 SM_DV3_RoadStraight",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "DV3 SM_DV3_RoadStraight",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "DV3 SM_DV3_RoadStraight",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "DV3 SM_DV3_RoadStraight",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "DV3 SM_DV3_RoadStraight",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "DV3 SM_DV3_RoadStraight",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "DV3 SM_DV3_RoadStraight",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "DV3 SM_DV3_RoadStraight",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "DV3 SM_DV3_RoadStraight",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "DV3 SM_DV3_UrbanStreet",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "DV3 SM_DV3_UrbanStreet",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "DV3 SM_DV3_UrbanStreet",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "DV3 SM_DV3_UrbanStreet",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "DV3 SM_DV3_UrbanStreet",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "DV3 SM_DV3_UrbanStreet",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "DV3 SM_DV3_UrbanStreet",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "DV3 SM_DV3_UrbanStreet",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "DV3 SM_DV3_UrbanStreet",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "DV3 SM_DV3_UrbanStreet",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "DV3 SM_DV3_UrbanStreet",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "DV3 SM_DV3_UrbanStreet",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "DV3 SM_DV3_UrbanStreet",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "DV3 SM_DV3_UrbanStreet",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "DV3 SM_DV3_UrbanStreet",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "DV3 SM_DV3_UrbanStreet",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "DV3 SM_DV3_UrbanStreet",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "DV3 SM_DV3_UrbanStreet",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "DV3 SM_DV3_UrbanStreet",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "DV3 SM_DV3_UrbanStreet",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "DV3 SM_DV3_UrbanStreet",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "DV3 SM_DV3_UrbanStreet",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "DV3 SM_DV3_UrbanStreet",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "DV3 SM_DV3_UrbanStreet",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "DV3 SM_DV3_UrbanStreet",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "DV3 SM_DV3_UrbanStreet",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "DV3 SM_DV3_UrbanStreet",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "DV3 SM_DV3_UrbanStreet",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "DV3 SM_DV3_UrbanStreet",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "DV3 SM_DV3_UrbanStreet",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "DV3 SM_DV3_UrbanStreet",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "DV3 SM_DV3_UrbanStreet",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "DV3 SM_DV3_UrbanStreet",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "DV3 SM_DV3_UrbanStreet",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "DV3 SM_DV3_UrbanStreet",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "DV3 SM_DV3_UrbanStreet",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "DV3 SM_DV3_UrbanStreet",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "DV3 SM_DV3_UrbanStreet",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "DV3 SM_DV3_UrbanStreet",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "DV3 SM_DV3_UrbanStreet",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "DV3 SM_DV3_UrbanStreet",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "DV3 SM_DV3_UrbanStreet",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "DV3 SM_DV3_UrbanStreet",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "DV3 SM_DV3_UrbanStreet",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "DV3 SM_DV3_UrbanStreet",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "DV3 SM_DV3_UrbanStreet",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "DV3 SM_DV3_UrbanStreet",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "DV3 SM_DV3_UrbanStreet",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "DV3 SM_DV3_UrbanStreet",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "DV3 SM_DV3_UrbanStreet",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "DV3 SM_DV3_UrbanStreet",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "DV3 SM_DV3_UrbanStreet",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "DV3 SM_DV3_UrbanStreet",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "DV3 SM_DV3_UrbanStreet",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "DV3 SM_DV3_UrbanStreet",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "DV3 SM_DV3_UrbanStreet",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "DV3 SM_DV3_UrbanStreet",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "DV3 SM_DV3_UrbanStreet",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "DV3 SM_DV3_UrbanStreet",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "DV3 SM_DV3_UrbanStreet",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "DV3 SM_DV3_UrbanStreet",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "DV3 SM_DV3_UrbanStreet",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "DV3 SM_DV3_UrbanStreet",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "DV3 SM_DV3_UrbanStreet",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "DV3 SM_DV3_UrbanStreet",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "DV3 SM_DV3_UrbanStreet",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ],
+    [
+      "DV3 SM_DV3_UrbanStreet",
+      0,
+      "/Game/HERO/PresentationV6/Materials/M_PV6_WeatheredAsphalt.M_PV6_WeatheredAsphalt"
+    ]
+  ],
+  "performance": "Reduced shader work by construction; no measured FPS claim before runtime comparison."
+}

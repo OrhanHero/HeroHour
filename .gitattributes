@@ -80,3 +80,4 @@ Art/Concepts/CityHero/* filter=lfs diff=lfs merge=lfs -text
 Art/Previews/*.png filter=lfs diff=lfs merge=lfs -text
 Art/Previews/FrontlinesV4/*.png filter=lfs diff=lfs merge=lfs -text
 Art/UI/PortraitsV5/*.png filter=lfs diff=lfs merge=lfs -text
+Art/Models/*/*.png filter=lfs diff=lfs merge=lfs -text

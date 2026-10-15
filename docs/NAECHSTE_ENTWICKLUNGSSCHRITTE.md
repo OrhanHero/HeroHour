@@ -1,5 +1,9 @@
 # Weitere Entwicklung nach dem Tempest-Umbau
 
+Aktuell nach V6: Das vollständige Konzeptspiel ist noch nicht erreicht. Priorität haben differenzierte Grundstücke und Wohn-/Industriearchitektur, eine weniger regelmäßige Landschaft und Straßenführung, eigenständige Fraktionssilhouetten, Fahrzeuganimationen sowie gezieltes CPU-/GPU-Profiling und längere manuelle Partien. [Aktueller Stand und verbleibende Lücken](CONCEPT_V6.md). Änderungen der Kartenform müssen Navigation, Ressourcen und Bauflächen gemeinsam erhalten.
+
+Der folgende M1–M4-Abnahmestand ist historisch; seine damaligen Buildnachweise bleiben gültig für jenes Paket.
+
 Stand: 15.10.2026. Der M1–M4-Kern ist implementiert und durch 19 aktuelle Windows-Paketläufe geprüft: 14 Aegis-Suiten und fünf zusätzliche Ember-Läufe, insgesamt 519 Assertion-Prüfungen und 46 natürliche Simulationspartien. Beide 20-Minuten-RHI-Dauerläufe bestanden; ihre sieben beziehungsweise acht vollständigen Gefechte sind separat in [VERIFIED_BUILD.md](VERIFIED_BUILD.md) dokumentiert. Die technische Abnahme des kleinen Offline-Prototyps ist abgeschlossen.
 
 ## 1. Weitere bediente Qualitätsprüfung

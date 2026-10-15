@@ -71,12 +71,12 @@ for actor in ACTORS.get_all_level_actors():
             position=actor.get_actor_location();position.x=-7600;actor.set_actor_location(position,False,False)
             scale=actor.get_actor_scale3d();scale.x=78;actor.set_actor_scale3d(scale)
     if isinstance(actor,unreal.DirectionalLight):
-        actor.set_actor_rotation(unreal.Rotator(-42,-32,0),False)
+        actor.set_actor_rotation(unreal.Rotator(pitch=-42,yaw=-32,roll=0),False)
         actor.light_component.set_editor_property('intensity',5.5)
         actor.light_component.set_editor_property('light_color',unreal.Color(r=255,g=240,b=221,a=255))
     if isinstance(actor,unreal.SkyLight):actor.light_component.set_editor_property('intensity',1.35)
 def prop(name,pos,scale=(1,1,1),yaw=0):
-    a=ACTORS.spawn_actor_from_class(unreal.StaticMeshActor,unreal.Vector(*pos),unreal.Rotator(0,yaw,0))
+    a=ACTORS.spawn_actor_from_class(unreal.StaticMeshActor,unreal.Vector(*pos),unreal.Rotator(pitch=0,yaw=yaw,roll=0))
     a.set_actor_label('ENV2 '+name);a.static_mesh_component.set_static_mesh(meshes[name]);a.set_actor_scale3d(unreal.Vector(*scale))
     a.static_mesh_component.set_collision_enabled(unreal.CollisionEnabled.NO_COLLISION);return a
 for side in ('East','West'):prop('SM_ENV_Bank_'+side,(0,0,0))

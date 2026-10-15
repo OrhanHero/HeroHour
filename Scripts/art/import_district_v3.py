@@ -150,7 +150,7 @@ for actor in ACTORS.get_all_level_actors():
             if key=='Concrete':c.set_material(i,mats['Plaster'])
             elif key in ('Paint','Steel'):c.set_material(i,mats['Concrete' if key=='Paint' else 'Metal'])
 def spawn(name,pos,yaw=0,scale=(1,1,1)):
-    a=ACTORS.spawn_actor_from_class(unreal.StaticMeshActor,unreal.Vector(*pos),unreal.Rotator(0,yaw,0));a.set_actor_label('DV3 '+name)
+    a=ACTORS.spawn_actor_from_class(unreal.StaticMeshActor,unreal.Vector(*pos),unreal.Rotator(pitch=0,yaw=yaw,roll=0));a.set_actor_label('DV3 '+name)
     a.static_mesh_component.set_static_mesh(meshes[name]);a.set_actor_scale3d(unreal.Vector(*scale))
     a.static_mesh_component.set_collision_enabled(unreal.CollisionEnabled.NO_COLLISION);return a
 for col,x in enumerate((1500,3000,4500,6000)):

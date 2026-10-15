@@ -76,7 +76,7 @@ meshes={n:unreal.load_asset(DEST+'/Meshes/SM_PV5_'+n) for n in names}
 assert all(meshes.values()),'Import ground detail kit first'
 placements=[]
 def spawn(name,x,y,z=0,yaw=0,scale=1):
-    a=ACTORS.spawn_actor_from_class(unreal.StaticMeshActor,unreal.Vector(x,y,z),unreal.Rotator(0,yaw,0))
+    a=ACTORS.spawn_actor_from_class(unreal.StaticMeshActor,unreal.Vector(x,y,z),unreal.Rotator(pitch=0,yaw=yaw,roll=0))
     a.set_actor_label('PV5 '+name)
     a.tags=[unreal.Name('HERO_DecorationV5')]
     c=a.static_mesh_component;c.modify();c.set_static_mesh(meshes[name])

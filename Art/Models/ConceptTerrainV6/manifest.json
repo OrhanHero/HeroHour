@@ -1,0 +1,177 @@
+{
+  "version": 6,
+  "original_geometry": true,
+  "units": "metres",
+  "navigation_unchanged": true,
+  "assets": [
+    {
+      "name": "SM_CTV6_CanyonSouth",
+      "triangles": 8640,
+      "vertices": 4525,
+      "bounds_m": [
+        [
+          -170.0,
+          -127.5,
+          -0.15000000596046448
+        ],
+        [
+          170.0,
+          -90.5,
+          30.336872100830078
+        ]
+      ],
+      "dimensions_m": [
+        340.0,
+        37.0,
+        30.48687171936035
+      ],
+      "zone": "border",
+      "validation": "PASS",
+      "fbx_roundtrip": true,
+      "normal_policy": "smooth with sharp splits above 55 degrees",
+      "sharp_edges": 1247,
+      "geometry_sha256": "c83b460045cda3edcd6e68ac2c6397a31a20050ccce981635a3e1efaf632c272"
+    },
+    {
+      "name": "SM_CTV6_CanyonNorth",
+      "triangles": 8640,
+      "vertices": 4525,
+      "bounds_m": [
+        [
+          -170.0,
+          90.5,
+          -0.15000000596046448
+        ],
+        [
+          170.0,
+          127.5,
+          30.271564483642578
+        ]
+      ],
+      "dimensions_m": [
+        340.0,
+        37.0,
+        30.42156410217285
+      ],
+      "zone": "border",
+      "validation": "PASS",
+      "fbx_roundtrip": true,
+      "normal_policy": "smooth with sharp splits above 55 degrees",
+      "sharp_edges": 1364,
+      "geometry_sha256": "e0b57b69384ee69e6354e1d0fa508807623e63dd04b872abd832b8d3949ab8a2"
+    },
+    {
+      "name": "SM_CTV6_CanyonWest",
+      "triangles": 8640,
+      "vertices": 4525,
+      "bounds_m": [
+        [
+          -157.5,
+          -90.0,
+          -0.15000000596046448
+        ],
+        [
+          -120.5,
+          90.0,
+          30.276126861572266
+        ]
+      ],
+      "dimensions_m": [
+        37.0,
+        180.0,
+        30.42612648010254
+      ],
+      "zone": "border",
+      "validation": "PASS",
+      "fbx_roundtrip": true,
+      "normal_policy": "smooth with sharp splits above 55 degrees",
+      "sharp_edges": 1505,
+      "geometry_sha256": "5fbf6f7699e6022e3a565981f292ee73a5402b000eb3a6aa6279ea9935c28d6d"
+    },
+    {
+      "name": "SM_CTV6_CanyonEast",
+      "triangles": 8640,
+      "vertices": 4525,
+      "bounds_m": [
+        [
+          120.5,
+          -90.0,
+          -0.15000000596046448
+        ],
+        [
+          157.5,
+          90.0,
+          30.279388427734375
+        ]
+      ],
+      "dimensions_m": [
+        37.0,
+        180.0,
+        30.42938804626465
+      ],
+      "zone": "border",
+      "validation": "PASS",
+      "fbx_roundtrip": true,
+      "normal_policy": "smooth with sharp splits above 55 degrees",
+      "sharp_edges": 1543,
+      "geometry_sha256": "807229e11a0ccbe37aae14833171f219f6ef3af2684108d7adac6d00da3b1411"
+    },
+    {
+      "name": "SM_CTV6_RiverMarginWest",
+      "triangles": 4896,
+      "vertices": 2750,
+      "bounds_m": [
+        [
+          -36.849998474121094,
+          -89.0,
+          -1.8799999952316284
+        ],
+        [
+          -34.60044479370117,
+          89.0,
+          -0.05999999865889549
+        ]
+      ],
+      "dimensions_m": [
+        2.249553680419922,
+        178.0,
+        1.8200000524520874
+      ],
+      "zone": "river",
+      "validation": "PASS",
+      "fbx_roundtrip": true,
+      "normal_policy": "smooth with sharp splits above 55 degrees",
+      "sharp_edges": 1345,
+      "geometry_sha256": "41e4d0f7c7c1c1bffa60c70cc7f7a1ac066157c6fd4aba5788ba894da7a18701"
+    },
+    {
+      "name": "SM_CTV6_RiverMarginEast",
+      "triangles": 4896,
+      "vertices": 2750,
+      "bounds_m": [
+        [
+          -25.39955711364746,
+          -89.0,
+          -1.8799999952316284
+        ],
+        [
+          -23.149999618530273,
+          89.0,
+          -0.05999999865889549
+        ]
+      ],
+      "dimensions_m": [
+        2.2495574951171875,
+        178.0,
+        1.8200000524520874
+      ],
+      "zone": "river",
+      "validation": "PASS",
+      "fbx_roundtrip": true,
+      "normal_policy": "smooth with sharp splits above 55 degrees",
+      "sharp_edges": 1345,
+      "geometry_sha256": "e4ef0604d156f5dd94f2164c251acc130f12f46948bbd7312559be2ee5526530"
+    }
+  ],
+  "total_triangles": 44352
+}

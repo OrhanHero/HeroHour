@@ -8,6 +8,8 @@
 #include "RTS/HRRTSDefinitions.h"
 #include "InputCoreTypes.h"
 #include "UObject/StrongObjectPtr.h"
+#include "Misc/CommandLine.h"
+#include "Misc/Parse.h"
 
 namespace
 {
@@ -177,6 +179,9 @@ void BeginPrototypeDoctrineTarget(APrototypeHUD* HUD,EHRDoctrine Doctrine)
 void APrototypeHUD::DrawHUD()
 {
     Super::DrawHUD();
+    if (FParse::Param(FCommandLine::Get(),TEXT("PrototypeArtReview"))
+        && (FParse::Param(FCommandLine::Get(),TEXT("PrototypeOverviewCapture"))
+            || FParse::Param(FCommandLine::Get(),TEXT("PrototypeDistrictCapture")))) return;
     auto* Mode=GetWorld()->GetAuthGameMode<APrototypeGameMode>();
     auto* Controller=Cast<APrototypeController>(PlayerOwner);
     if(!Mode||!Controller||!Canvas)return;
@@ -186,7 +191,7 @@ void APrototypeHUD::DrawHUD()
     FString TooltipTitle,TooltipBody,TooltipStats;
     for(auto It=DoctrineAims.CreateIterator();It;++It)if(!It.Key().IsValid())It.RemoveCurrent();
     if(const FDoctrineAim* Aim=DoctrineAims.Find(this);Aim&&(Mode->Outcome!=0||Mode->MatchTime<Aim->StartedAt||Controller->bPlacing))CancelPrototypeDoctrineTarget(this);
-    const FLinearColor Ink(.004f,.007f,.01f,.97f),Metal(.35f,.42f,.46f,.96f),Dark(.019f,.029f,.036f,.98f);
+    const FLinearColor Ink(.006f,.009f,.009f,.95f),Metal(.24f,.29f,.30f,.92f),Dark(.018f,.025f,.026f,.97f);
     const FLinearColor White(.9f,.94f,.96f),Muted(.52f,.61f,.64f),Mint(.39f,.92f,.57f),Cyan(.35f,.85f,.94f),Gold(.98f,.77f,.3f),Red(.96f,.30f,.21f);
     auto Rect=[&](FLinearColor C,float X,float Y,float A,float B){DrawRect(C,X*S,Y*S,A*S,B*S);};
     auto Line=[&](float X,float Y,float A,float B,FLinearColor C,float T=1.f){DrawLine(X*S,Y*S,A*S,B*S,C,T*S);};
@@ -197,50 +202,39 @@ void APrototypeHUD::DrawHUD()
     auto Glyph=[&](int32 Index,float X,float Y,float Size,FLinearColor Tint){
         Texture(InterfaceTexture(TEXT("T_UI_GlyphAtlas_V3")),{X,Y,Size,Size},Tint,(Index%4)*.25f,(Index/4)*.25f,.25f,.25f);
     };
+    // Fine chamfered steel edges follow the concept; no stretched ornamental frame atlas.
     auto NineSlice=[&](UTexture2D* T,FPrototypeHUDRect R,float Corner){
-        if(!T)return;
-        // Atlas corners stay fixed; only the steel rails stretch with the panel.
-        const float X[4]={R.X,R.X+Corner,R.X+R.W-Corner,R.X+R.W};
-        const float Y[4]={R.Y,R.Y+Corner,R.Y+R.H-Corner,R.Y+R.H};
-        const float UV[4]={0,.125f,.875f,1};
-        for(int32 Row=0;Row<3;++Row)for(int32 Column=0;Column<3;++Column)
-            Texture(T,{X[Column],Y[Row],X[Column+1]-X[Column],Y[Row+1]-Y[Row]},FLinearColor::White,
-                UV[Column],UV[Row],UV[Column+1]-UV[Column],UV[Row+1]-UV[Row]);
+        (void)T;
+        const float K=FMath::Min(4.f,Corner);
+        const FLinearColor Edge(.24f,.29f,.30f,.9f),Shade(.025f,.032f,.035f,.95f);
+        Line(R.X+K,R.Y,R.X+R.W-K,R.Y,Edge,.8f);
+        Line(R.X+R.W-K,R.Y,R.X+R.W,R.Y+K,Edge,.8f);
+        Line(R.X+R.W,R.Y+K,R.X+R.W,R.Y+R.H-K,Edge,.8f);
+        Line(R.X+R.W,R.Y+R.H-K,R.X+R.W-K,R.Y+R.H,Shade,.8f);
+        Line(R.X+R.W-K,R.Y+R.H,R.X+K,R.Y+R.H,Shade,.8f);
+        Line(R.X+K,R.Y+R.H,R.X,R.Y+R.H-K,Edge,.8f);
+        Line(R.X,R.Y+R.H-K,R.X,R.Y+K,Edge,.8f);
+        Line(R.X,R.Y+K,R.X+K,R.Y,Edge,.8f);
     };
     auto Frame=[&](FPrototypeHUDRect R,FLinearColor Accent){
-        const float K=12;
-        Rect(FLinearColor(0,0,0,.32f),R.X-4,R.Y+7,R.W+8,R.H);
-        Rect(Ink,R.X+K,R.Y,R.W-2*K,R.H);
-        Rect(Ink,R.X,R.Y+K,R.W,R.H-2*K);
-        Texture(InterfaceTexture(TEXT("T_UI_PanelGlass_V3")),{R.X+10,R.Y+10,R.W-20,R.H-20},FLinearColor(1,1,1,.88f));
-        for(int I=0;I<5;++I){
-            const float X=R.X+I,Y=R.Y+I,A=R.W-2*I,B=R.H-2*I;
-            const FLinearColor C=I==0?FLinearColor(.10f,.14f,.17f):I==1?Metal:I==2?FLinearColor(.66f,.71f,.72f,.8f):I==3?Dark:Metal;
-            Line(X+K,Y,X+A-K,Y,C);Line(X+A-K,Y,X+A,Y+K,C);
-            Line(X+A,Y+K,X+A,Y+B-K,C);Line(X+A,Y+B-K,X+A-K,Y+B,C);
-            Line(X+A-K,Y+B,X+K,Y+B,C);Line(X+K,Y+B,X,Y+B-K,C);
-            Line(X,Y+B-K,X,Y+K,C);Line(X,Y+K,X+K,Y,C);
-        }
-        const bool IsMap=FMath::IsNearlyEqual(R.W,L.MiniMap().W)&&FMath::IsNearlyEqual(R.H,L.MiniMap().H);
-        NineSlice(InterfaceTexture(IsMap?TEXT("T_UI_MinimapFrame_V3"):TEXT("T_UI_Frame_V3")),R,IsMap?25.f:20.f);
-        Texture(InterfaceTexture(TEXT("T_UI_TitlePlate_V3")),{R.X+11,R.Y+8,R.W-22,25},FLinearColor(1,1,1,.55f));
-        Line(R.X+14,R.Y+34,R.X+R.W-14,R.Y+34,FLinearColor(.20f,.27f,.30f,.8f),.6f);
-        Line(R.X+11,R.Y+39,R.X+11,R.Y+R.H-17,Accent,.6f);
-        Rect(Accent,R.X+15,R.Y+11,3,16);
-        for(float X:{R.X+7,R.X+R.W-10})for(float Y:{R.Y+9,R.Y+R.H-12}){
-            Rect(FLinearColor(0,0,0,.8f),X-1,Y,5,5);Rect(Metal,X,Y,3,3);Line(X,Y+1,X+3,Y+1,Ink,.6f);
-        }
+        Rect(FLinearColor(0,0,0,.24f),R.X+2,R.Y+4,R.W,R.H);
+        Rect(Ink,R.X,R.Y,R.W,R.H);
+        Rect(FLinearColor(.024f,.031f,.032f,.96f),R.X+1,R.Y+1,R.W-2,31);
+        NineSlice(nullptr,R,4);
+        Line(R.X+7,R.Y+34,R.X+R.W-7,R.Y+34,FLinearColor(.18f,.22f,.23f,.8f),.7f);
+        // Small status marker keeps the chrome neutral and reserves color for state.
+        Rect(Accent,R.X+12,R.Y+12,2,12);
     };
     auto Bar=[&](float X,float Y,float A,float Ratio,FLinearColor C){Rect(Ink,X-1,Y-1,A+2,7);Rect(Dark,X,Y,A,5);Rect(C,X,Y,A*FMath::Clamp(Ratio,0.f,1.f),5);Line(X,Y,X+A*FMath::Clamp(Ratio,0.f,1.f),Y,FLinearColor(.85f,.95f,1,.5f),.6f);Line(X,Y+6,X+A,Y+6,Metal,.5f);};
     auto Image=[&](EPrototypeRole R,float X,float Y,float A,float B,float Alpha=1.f,int32 Team=0){
         if(UTexture2D* T=Portrait(R,Team))DrawTexture(T,X*S,Y*S,A*S,B*S,0,0,1,1,FLinearColor(1,1,1,Alpha),BLEND_Translucent);
         else Glyph(static_cast<int32>(R)%16,X+A*.22f,Y+B*.12f,FMath::Min(A,B)*.6f,FLinearColor(.35f,.85f,.94f,Alpha));
     };
-    int32 Allies=0,Enemies=0,Collectors=0,Chosen=0;float Health=0,Maximum=0,ArmyHealth=0,ArmyMaximum=0;
+    int32 Allies=0,Enemies=0,Collectors=0,Infantry=0,Chosen=0;float Health=0,Maximum=0;
     APrototypeUnit* Single=nullptr;
     for(TActorIterator<APrototypeUnit> It(GetWorld());It;++It){
         if(It->Health<=0||It->IsActorBeingDestroyed())continue;
-        if(!It->IsStructure()){if(It->Team==0){++Allies;ArmyHealth+=It->Health;ArmyMaximum+=It->MaxHealth;}else if(Mode->CanTeamSee(0,*It))++Enemies;}
+        if(!It->IsStructure()){if(It->Team==0){++Allies;if(It->Role==EPrototypeRole::Infantry)++Infantry;}else if(Mode->CanTeamSee(0,*It))++Enemies;}
         if(It->Team==0&&It->Role==EPrototypeRole::Collector)++Collectors;
         if(It->bSelected&&It->Team==0){++Chosen;Single=*It;Health+=It->Health;Maximum+=It->MaxHealth;}
     }
@@ -260,12 +254,18 @@ void APrototypeHUD::DrawHUD()
     Text(Mode->HasRadar(0)?TEXT("RADAR ONLINE"):TEXT("RADAR OFFLINE"),Resource.X+382,Resource.Y+68,Mode->HasRadar(0)?Cyan:Muted,.7f);
     const UHRFactionDefinition* PlayerFaction=Mode->GetFactionDefinition(0);
     const auto Army=L.Army();Frame(Army,Mint);Text(TEXT("ARMEE / ")+(PlayerFaction?PlayerFaction->DisplayName.ToString():TEXT("HERO")),Army.X+25,Army.Y+12,White,1.f);
-    Glyph(3,Army.X+21,Army.Y+39,30,White);Glyph(12,Army.X+131,Army.Y+39,30,White);
-    Text(FString::Printf(TEXT("%02d"),Allies-Collectors),Army.X+66,Army.Y+43,White,1.3f);
-    Text(FString::Printf(TEXT("%02d"),Collectors),Army.X+176,Army.Y+43,White,1.3f);
-    Text(TEXT("ZUSTAND"),Army.X+246,Army.Y+40,Muted,.69f);
-    Text(FString::Printf(TEXT("%03d%%"),ArmyMaximum>0?FMath::RoundToInt(100*ArmyHealth/ArmyMaximum):0),Army.X+246,Army.Y+54,Mint,.92f);
-    Bar(Army.X+20,Army.Y+73,95,Allies>0?1:0,Mint);Bar(Army.X+131,Army.Y+73,95,Collectors>0?1:0,Cyan);Bar(Army.X+246,Army.Y+73,83,ArmyMaximum>0?ArmyHealth/ArmyMaximum:0,Mint);
+    Glyph(2,Army.X+20,Army.Y+39,26,Muted);
+    Glyph(3,Army.X+131,Army.Y+39,26,Muted);
+    Glyph(12,Army.X+242,Army.Y+39,26,Muted);
+    Text(FString::Printf(TEXT("%02d"),Infantry),Army.X+58,Army.Y+40,White,1.2f);
+    Text(FString::Printf(TEXT("%02d"),Allies-Collectors-Infantry),Army.X+169,Army.Y+40,White,1.2f);
+    Text(FString::Printf(TEXT("%02d"),Collectors),Army.X+280,Army.Y+40,White,1.2f);
+    Text(TEXT("INFANTERIE"),Army.X+20,Army.Y+62,Muted,.58f);
+    Text(TEXT("FAHRZEUGE"),Army.X+131,Army.Y+62,Muted,.58f);
+    Text(TEXT("SAMMLER"),Army.X+242,Army.Y+62,Muted,.58f);
+    Bar(Army.X+20,Army.Y+77,87,Infantry>0?1:0,Mint);
+    Bar(Army.X+131,Army.Y+77,87,Allies-Collectors-Infantry>0?1:0,Cyan);
+    Bar(Army.X+242,Army.Y+77,87,Collectors>0?1:0,Gold);
     const auto Mission=L.Mission();Frame(Mission,Red);Text(TEXT("COMMANDER / CITY HERO"),Mission.X+25,Mission.Y+12,White,1.03f);
     const int32 Seconds=FMath::FloorToInt(Mode->MatchTime);
     Text(FString::Printf(TEXT("%02d:%02d"),Seconds/60,Seconds%60),Mission.X+22,Mission.Y+41,Cyan,1.85f);
@@ -332,7 +332,7 @@ void APrototypeHUD::DrawHUD()
     const auto Selection=L.Selection();Frame(Selection,Cyan);Text(TEXT("AUSGEWÄHLTES OBJEKT"),Selection.X+25,Selection.Y+12,White,1.04f);
     const FPrototypeHUDRect PortraitRect{Selection.X+18,Selection.Y+43,150,163};
     Rect(FLinearColor(.03f,.065f,.08f),PortraitRect.X,PortraitRect.Y,PortraitRect.W,PortraitRect.H);
-    for(int32 I=0;I<6;++I)Line(PortraitRect.X,PortraitRect.Y+I*28,PortraitRect.X+PortraitRect.W,PortraitRect.Y+I*28,FLinearColor(.18f,.4f,.46f,.16f),.5f);
+    Rect(FLinearColor(.018f,.028f,.031f),PortraitRect.X+1,PortraitRect.Y+1,PortraitRect.W-2,PortraitRect.H-2);
     if(Chosen>0&&Single)Image(Single->Role,PortraitRect.X,PortraitRect.Y+1,PortraitRect.W,PortraitRect.W,1.f,Single->Team);
     else {Glyph(0,Selection.X+48,Selection.Y+77,88,Cyan);Text(TEXT("HERO KOMMANDO"),Selection.X+30,Selection.Y+181,Muted,.77f);}
     NineSlice(InterfaceTexture(TEXT("T_UI_Frame_V3")),PortraitRect,10);
@@ -367,7 +367,7 @@ void APrototypeHUD::DrawHUD()
         else if(Single->IsStructure())Detail=FString::Printf(TEXT("WARTESCHLANGE   %d / 5"),Mode->GetQueueCount(Single));
         else Detail=FString::Printf(TEXT("SCHADEN %.0f  REICHW. %.1fm  RANG %d"),Single->GetEffectiveDamage(),Single->GetEffectiveRange()/100.f,Single->CombatState.Rank);
     }
-    Text(Detail,Selection.X+182,Selection.Y+126,Gold,.78f);
+    if(!(Chosen==1&&Single&&Single->IsCombatant()))Text(Detail,Selection.X+182,Selection.Y+126,Gold,.78f);
     if(Chosen==1&&Single&&Single->IsStructure())
     {
         Bar(Selection.X+182,Selection.Y+149,369,Single->IsCompleted()?Mode->GetProductionProgress(Single):Single->ConstructionProgress,Gold);
@@ -375,10 +375,18 @@ void APrototypeHUD::DrawHUD()
     }
     else if(Chosen==1&&Single&&Single->IsCombatant())
     {
-        Text(FString::Printf(TEXT("PANZERUNG x%.2f   TEMPO %.1fm/s   XP %.0f"),Single->GetEffectiveArmor(),Single->GetEffectiveSpeed()/100.f,Single->CombatState.Experience),Selection.X+182,Selection.Y+149,Muted,.69f);
-        const FString Status=Single->CombatState.IsSuppressed()?TEXT("UNTERDRÜCKT / TEMPO 45%"):Single->CombatState.bDeployed?TEXT("STATIONÄR ENTFALTET"):Single->IsInCover()?TEXT("IN DECKUNG / -30% SCHADEN"):TEXT("KEINE DECKUNG");
-        Text(Status,Selection.X+182,Selection.Y+170,Single->CombatState.IsSuppressed()?Red:Single->IsInCover()?Mint:Muted,.71f);
-        if(Single->Role==EPrototypeRole::Infantry)Bar(Selection.X+182,Selection.Y+184,225,Single->CombatState.Suppression/100.f,Single->CombatState.IsSuppressed()?Red:Gold);
+        Text(TEXT("SCHADEN"),Selection.X+182,Selection.Y+126,Muted,.69f);
+        Text(FString::Printf(TEXT("%.0f"),Single->GetEffectiveDamage()),Selection.X+262,Selection.Y+125,White,.86f);
+        Text(TEXT("REICHWEITE"),Selection.X+345,Selection.Y+126,Muted,.69f);
+        Text(FString::Printf(TEXT("%.1f m"),Single->GetEffectiveRange()/100.f),Selection.X+457,Selection.Y+125,White,.86f);
+        Text(TEXT("PANZERUNG"),Selection.X+182,Selection.Y+145,Muted,.69f);
+        Text(FString::Printf(TEXT("x%.2f"),Single->GetEffectiveArmor()),Selection.X+277,Selection.Y+144,White,.86f);
+        Text(TEXT("TEMPO"),Selection.X+345,Selection.Y+145,Muted,.69f);
+        Text(FString::Printf(TEXT("%.1f m/s"),Single->GetEffectiveSpeed()/100.f),Selection.X+431,Selection.Y+144,White,.86f);
+        Text(FString::Printf(TEXT("RANG %d / XP %.0f"),Single->CombatState.Rank,Single->CombatState.Experience),Selection.X+182,Selection.Y+164,Gold,.71f);
+        const FString Status=Single->CombatState.IsSuppressed()?TEXT("UNTERDRUECKT"):Single->CombatState.bDeployed?TEXT("STATIONAER ENTFALTET"):Single->IsInCover()?TEXT("IN DECKUNG / -30% SCHADEN"):TEXT("KEINE DECKUNG");
+        Text(Status,Selection.X+182,Selection.Y+181,Single->CombatState.IsSuppressed()?Red:Single->IsInCover()?Mint:Muted,.65f);
+        if(Single->Role==EPrototypeRole::Infantry)Bar(Selection.X+182,Selection.Y+192,225,Single->CombatState.Suppression/100.f,Single->CombatState.IsSuppressed()?Red:Gold);
     }
     const auto Focus=L.Focus();Rect(Chosen>0?FLinearColor(.055f,.14f,.18f):Dark,Focus.X,Focus.Y,Focus.W,Focus.H);
     NineSlice(InterfaceTexture(TEXT("T_UI_Frame_V3")),Focus,8);Glyph(15,Focus.X+8,Focus.Y+7,26,Chosen>0?Cyan:Muted);
@@ -434,7 +442,7 @@ void APrototypeHUD::DrawHUD()
     const TCHAR* TabNames[5]={TEXT("BASIS"),TEXT("ABWEHR"),TEXT("INF."),TEXT("FAHRZ."),TEXT("SPEZIAL")};
     for(int32 Index=0;Index<5;++Index){const auto Tab=L.ProductionTab(Index);const bool Enabled=CategoryHasContent(Index),Selected=Index==Category;
         Rect(Selected?FLinearColor(.045f,.15f,.19f,.97f):Dark,Tab.X,Tab.Y,Tab.W,Tab.H);
-        Glyph(Index,Tab.X+25,Tab.Y+2,25,Enabled?(Selected?Cyan:White):FLinearColor(.29f,.35f,.38f,.55f));
+        Glyph(Index,Tab.X+25,Tab.Y+3,24,Enabled?(Selected?Cyan:Muted):FLinearColor(.29f,.35f,.38f,.55f));
         Text(TabNames[Index],Tab.X+8,Tab.Y+28,Enabled?(Selected?Cyan:Muted):FLinearColor(.3f,.36f,.38f),.62f);
         Line(Tab.X,Tab.Y+Tab.H,Tab.X+Tab.W,Tab.Y+Tab.H,Selected?Cyan:Metal,Selected?2.f:.6f);
         if(!Enabled){Rect(Ink,Tab.X+59,Tab.Y+7,7,8);Line(Tab.X+60,Tab.Y+6,Tab.X+65,Tab.Y+6,Muted,.7f);}
@@ -474,8 +482,8 @@ void APrototypeHUD::DrawHUD()
                 &&Mode->IsUnitOperational(RequiredProducer)&&Mode->GetQueueCount(RequiredProducer)<5;
         }
         const bool Hover=T.Contains(Mouse);Rect(Hover&&Available?FLinearColor(.055f,.14f,.18f,.97f):Dark,T.X,T.Y,T.W,T.H);
-        for(int32 Stripe=0;Stripe<3;++Stripe)Line(T.X+5,T.Y+12+Stripe*16,T.X+T.W-5,T.Y+12+Stripe*16,FLinearColor(.22f,.35f,.40f,.12f),.5f);
-        Image(R,T.X+24,T.Y-1,92,72,Available?1.f:.3f);
+        Rect(FLinearColor(.027f,.038f,.041f,.9f),T.X+1,T.Y+1,T.W-2,51);
+        Image(R,T.X+28,T.Y-3,104,78,Available?1.f:.38f);
         Rect(Ink,T.X+4,T.Y+53,T.W-8,22);Line(T.X+6,T.Y+53,T.X+T.W-6,T.Y+53,Metal,.6f);
         NineSlice(InterfaceTexture(TEXT("T_UI_Frame_V3")),T,10);
         const TCHAR* Key=R==EPrototypeRole::Depot?TEXT("V"):R==EPrototypeRole::Factory?TEXT("B"):R==EPrototypeRole::Combat?TEXT("P"):R==EPrototypeRole::Collector?TEXT("C"):TEXT("");

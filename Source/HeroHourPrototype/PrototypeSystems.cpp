@@ -12,6 +12,8 @@
 #include "Materials/MaterialInterface.h"
 #include "Misc/ScopeExit.h"
 #include "DrawDebugHelpers.h"
+#include "Misc/CommandLine.h"
+#include "Misc/Parse.h"
 #include <limits>
 
 namespace
@@ -40,6 +42,11 @@ double& TeamWallet(APrototypeGameMode* Mode, int32 Team)
 
 void UpdateFogPresentation(APrototypeGameMode* Mode)
 {
+    // Environment-review captures expose authored art only. Simulation visibility,
+    // enemy targeting and all normal gameplay captures retain the actual fog.
+    if (FParse::Param(FCommandLine::Get(),TEXT("PrototypeArtReview"))
+        && (FParse::Param(FCommandLine::Get(),TEXT("PrototypeOverviewCapture"))
+            || FParse::Param(FCommandLine::Get(),TEXT("PrototypeDistrictCapture")))) return;
     const int32 Width = Mode->Visibility.GetWidth(), Height = Mode->Visibility.GetHeight();
     if (Width <= 0 || Height <= 0 || !Mode->GetWorld()) return;
     if (!Mode->FogTexture || Mode->FogTexture->GetSizeX() != Width || Mode->FogTexture->GetSizeY() != Height)

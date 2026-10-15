@@ -1,0 +1,189 @@
+{
+  "assets": [
+    {
+      "name": "SM_RF6_Yellow",
+      "material": "Yellow",
+      "pieces": 257,
+      "triangles": 3084,
+      "dimensions_m": [
+        237.0,
+        169.5,
+        0.004000002518296242
+      ],
+      "expected_ue_bounds_cm": {
+        "min": [
+          -11515.0,
+          -8515.0,
+          3.0
+        ],
+        "max": [
+          12185.0,
+          8435.0,
+          3.4000000000000004
+        ]
+      },
+      "non_manifold_edges": 0,
+      "fbx_roundtrip": true,
+      "validation": "PASS",
+      "pivot": "world origin; source Y reflected to compensate FBX -> Unreal conversion"
+    },
+    {
+      "name": "SM_RF6_White",
+      "material": "White",
+      "pieces": 1711,
+      "triangles": 20532,
+      "dimensions_m": [
+        238.92999267578125,
+        168.92999267578125,
+        0.004000002518296242
+      ],
+      "expected_ue_bounds_cm": {
+        "min": [
+          -11486.5,
+          -8486.5,
+          3.0
+        ],
+        "max": [
+          12406.5,
+          8406.5,
+          3.4000000000000004
+        ]
+      },
+      "non_manifold_edges": 0,
+      "fbx_roundtrip": true,
+      "validation": "PASS",
+      "pivot": "world origin; source Y reflected to compensate FBX -> Unreal conversion"
+    },
+    {
+      "name": "SM_RF6_Dust",
+      "material": "Dust",
+      "pieces": 1711,
+      "triangles": 20532,
+      "dimensions_m": [
+        238.92999267578125,
+        168.92999267578125,
+        0.007999999448657036
+      ],
+      "expected_ue_bounds_cm": {
+        "min": [
+          -11486.5,
+          -8486.5,
+          0.1
+        ],
+        "max": [
+          12406.5,
+          8406.5,
+          0.9000000000000001
+        ]
+      },
+      "non_manifold_edges": 0,
+      "fbx_roundtrip": true,
+      "validation": "PASS",
+      "pivot": "world origin; source Y reflected to compensate FBX -> Unreal conversion"
+    }
+  ],
+  "roads": [
+    {
+      "label": "North south road",
+      "x": -50.0,
+      "y": 0.0,
+      "z": 0.02,
+      "hx": 2.75,
+      "hy": 85.0,
+      "axis": 1
+    },
+    {
+      "label": "North south road",
+      "x": 0.0,
+      "y": 0.0,
+      "z": 0.02,
+      "hx": 2.75,
+      "hy": 85.0,
+      "axis": 1
+    },
+    {
+      "label": "North south road",
+      "x": 75.0,
+      "y": 0.0,
+      "z": 0.02,
+      "hx": 2.75,
+      "hy": 85.0,
+      "axis": 1
+    },
+    {
+      "label": "West road",
+      "x": -76.0,
+      "y": -60.0,
+      "z": 0.02,
+      "hx": 39.0,
+      "hy": 2.25,
+      "axis": 0
+    },
+    {
+      "label": "East road",
+      "x": 51.0,
+      "y": -60.0,
+      "z": 0.02,
+      "hx": 74.0,
+      "hy": 2.25,
+      "axis": 0
+    },
+    {
+      "label": "West road",
+      "x": -76.0,
+      "y": 0.0,
+      "z": 0.02,
+      "hx": 39.0,
+      "hy": 2.25,
+      "axis": 0
+    },
+    {
+      "label": "East road",
+      "x": 51.0,
+      "y": 0.0,
+      "z": 0.02,
+      "hx": 74.0,
+      "hy": 2.25,
+      "axis": 0
+    },
+    {
+      "label": "West road",
+      "x": -76.0,
+      "y": 60.0,
+      "z": 0.02,
+      "hx": 39.0,
+      "hy": 2.25,
+      "axis": 0
+    },
+    {
+      "label": "East road",
+      "x": 51.0,
+      "y": 60.0,
+      "z": 0.02,
+      "hx": 74.0,
+      "hy": 2.25,
+      "axis": 0
+    }
+  ],
+  "audit_sha256": "01314a7cb3031764a9b5d560dd0da2365eaa30f27cede2cbaca8c1d24b9d6882",
+  "excluded_detail_rectangles": 92,
+  "unchanged": "road slabs, collision, navigation, all city actors",
+  "bridges": "not embellished; original paint and detailed southern arterial retained",
+  "materials": {
+    "Yellow": [
+      0.48,
+      0.4,
+      0.16
+    ],
+    "White": [
+      0.58,
+      0.58,
+      0.51
+    ],
+    "Dust": [
+      0.4,
+      0.29,
+      0.17
+    ]
+  }
+}

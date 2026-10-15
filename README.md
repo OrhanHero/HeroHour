@@ -2,6 +2,8 @@
 
 Ein spielbarer Offline-Prototyp mit C&C-Bedienung und Tempest-orientierter Wirtschaft, Basisbau und Gefechtsmechanik. Unreal Engine **5.8.3**, aktives C++-Modul **HeroHourPrototype**, Karte **CityHero**.
 
+**Noch keine fertige Konzeptumsetzung.** Aktuell ist V6 mit neuen Canyonwänden, aufrechter Innenstadt/Wohnsiedlung, detaillierteren Militärgebäuden, Straßenfinish und überarbeiteter UI integriert. **19 Paketprüfungen bestehen mit 651 Prüfpunkten und 46 natürlichen Simulationspartien.** Grafikleistung, weitere Weltdetails und eigenständige Fraktionsgestaltung bleiben offen. [V6-Stand](docs/CONCEPT_V6.md), [Nachweise](docs/verification/2026-10-15/concept-v6/Transformation-Checks.json).
+
 **Account-Übergabe:** [CURRENT_HANDOVER](docs/CURRENT_HANDOVER.md). [Geprüftes Windows-Paket](docs/VERIFIED_BUILD.md), [Transformationsplan M1–M4](docs/TEMPEST_TRANSFORMATION_PLAN.md), [Arbeitsprotokoll](docs/WORKLOG_2026-10-15.md).
 
 ## Spielen
@@ -22,7 +24,7 @@ Ein spielbarer Offline-Prototyp mit C&C-Bedienung und Tempest-orientierter Wirts
 
 ## Abnahme und Grenzen
 
-## Presentation V5 – aktueller Build 15.10.2026, 18:09 Berlin
+## Historischer Presentation-V5-Build 15.10.2026, 18:09 Berlin
 
 20 eigene Fraktionsmaterialien, 22 transparente Blender-Porträts (512×512), sechs Detailmeshes und 280 gespeicherte kollisionsfreie Dekorationen sind integriert. [Assetverfahren und Grenzen](docs/PRESENTATION_V5.md).
 
@@ -40,6 +42,6 @@ REA bedeutet **Reverse Engineer Anything** und liefert nachvollziehbare Referenz
 
 Aktuelle tatsächliche Paketaufnahme (1600×900):
 
-![HeroHour – Aegis Presentation V5](Art/Previews/PresentationV5-Aegis.png)
+![HeroHour – Aegis V6](Art/Previews/ConceptV6-Aegis.png)
 
-[Bildnachweise und Grenzen](docs/verification/2026-10-15/presentation-v5/Captures.json).
+[Bildnachweise und Grenzen](docs/verification/2026-10-15/concept-v6/Captures.json).
