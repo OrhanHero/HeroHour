@@ -1,6 +1,6 @@
 # Weitere Entwicklung nach dem Tempest-Umbau
 
-Aktuell nach V6: Das vollständige Konzeptspiel ist noch nicht erreicht. Priorität haben differenzierte Grundstücke und Wohn-/Industriearchitektur, eine weniger regelmäßige Landschaft und Straßenführung, eigenständige Fraktionssilhouetten, Fahrzeuganimationen sowie gezieltes CPU-/GPU-Profiling und längere manuelle Partien. [Aktueller Stand und verbleibende Lücken](CONCEPT_V6.md). Änderungen der Kartenform müssen Navigation, Ressourcen und Bauflächen gemeinsam erhalten.
+Aktuell nach V7: Vier neue Referenzmodelle und die kompakte UI sind integriert; das vollständige Konzeptspiel ist weiter nicht erreicht. Nächste Priorität hat eine zusammenhängende Basisumgebung mit gebrauchten Vorplätzen, Randfelsen und eigener Vegetations-/Schotterkomposition, danach der übrige Fraktionsroster und sichtbare Sammler-/Fahrzeuganimationen. REA liefert dafür belegte Architekturhinweise, keine übernommenen fertigen Tempest-Assets. Änderungen müssen Navigation, Ressourcen und Bauflächen erhalten. [V7-Stand](REFERENCE_V7.md), [REA-Anwendungen](research/Tempest-REA-V7.md).
 
 Der folgende M1–M4-Abnahmestand ist historisch; seine damaligen Buildnachweise bleiben gültig für jenes Paket.
 

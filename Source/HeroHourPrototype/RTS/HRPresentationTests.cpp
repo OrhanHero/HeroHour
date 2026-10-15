@@ -7,6 +7,7 @@
 #include "Components/StaticMeshComponent.h"
 #include "Materials/MaterialInterface.h"
 #include "Materials/Material.h"
+#include "Materials/MaterialInstanceDynamic.h"
 #include "Sound/SoundWave.h"
 #include "HRRTSDefinitions.h"
 #include "Engine/Texture2D.h"
@@ -182,6 +183,162 @@ bool RunHRPresentationSelfTests(UWorld* World)
             *FString::Printf(TEXT("team %d role %d loads its own faction portrait at full UI resolution"),Team,RoleIndex));
         if(Unit) Unit->Destroy();
     }
+    // Validate the rendered faction identity and transformed geometry, not just
+    // the soft references: role configuration can otherwise silently substitute
+    // a fallback, apply the wrong faction, or leave a scaled asset underground.
+    struct FReferenceFixture
+    {
+        int32 Faction;
+        EPrototypeRole Role;
+        const TCHAR* Mesh;
+        const TCHAR* Surface;
+        int32 AtlasSize;
+    };
+    const FReferenceFixture ReferenceFixtures[]={
+        {0,EPrototypeRole::Headquarters,TEXT("SM_RV7_AegisHQ"),TEXT("Aegis_HQ"),2048},
+        {0,EPrototypeRole::Combat,TEXT("SM_HR_Aegis_APC8"),TEXT("Aegis_APC8"),1024},
+        {1,EPrototypeRole::Headquarters,TEXT("SM_RV7_EmberHQ"),TEXT("Ember_HQ"),2048},
+        {1,EPrototypeRole::Combat,TEXT("SM_HR_Ember_APC8"),TEXT("Ember_APC8"),1024}};
+    const int32 AegisTeam=Mode && Mode->GetFactionIndex(0)==0?0:1;
+    TSet<UStaticMesh*> ReferenceGeometry;
+    for(const FReferenceFixture& Fixture:ReferenceFixtures)
+    {
+        const EPrototypeRole Role=Fixture.Role;
+        const bool bHeadquarters=Role==EPrototypeRole::Headquarters;
+        const FVector Position(-14000.f,-12000.f,bHeadquarters?110.f:35.f);
+        const int32 Team=Fixture.Faction==0?AegisTeam:1-AegisTeam;
+        APrototypeUnit* Unit=Mode?Mode->SpawnUnit(Team,Position,bHeadquarters):nullptr;
+        UStaticMeshComponent* Hull=Unit?Unit->FindComponentByClass<UStaticMeshComponent>():nullptr;
+        UStaticMesh* Mesh=Hull?Hull->GetStaticMesh():nullptr;
+        const FString MeshPath=FString::Printf(TEXT("/Game/HERO/ReferenceV7/Meshes/%s.%s"),Fixture.Mesh,Fixture.Mesh);
+        Check(Unit && Unit->Role==Role && Hull && Hull->IsVisible() && Mesh
+            && Mesh->GetPathName()==MeshPath && Unit->Definition
+            && Unit->Definition->StaticMesh.LoadSynchronous()==Mesh && !ReferenceGeometry.Contains(Mesh),
+            *FString::Printf(TEXT("%s displays its exact saved V7 mesh with geometry distinct from the other reference units"),Fixture.Surface));
+        if(Mesh)ReferenceGeometry.Add(Mesh);
+        const FBox GroundBounds=Mesh && Hull
+            ?Mesh->GetBoundingBox().TransformBy(Hull->GetComponentTransform()):FBox(ForceInit);
+        UE_LOG(LogTemp,Display,TEXT("PRESENTATION_REFERENCE_BOUNDS role=%s min=%s max=%s"),
+            Fixture.Surface,*GroundBounds.Min.ToString(),*GroundBounds.Max.ToString());
+        Check(GroundBounds.IsValid && FMath::Abs(GroundBounds.Min.Z)<1.f
+            && GroundBounds.GetSize().Z>(bHeadquarters?650.f:170.f),
+            *FString::Printf(TEXT("%s final component transform puts the authored base on world ground"),Fixture.Surface));
+        const FVector Size=GroundBounds.GetSize();
+        Check(GroundBounds.IsValid && (bHeadquarters
+            ?Size.X>900.f && Size.Y>900.f && Size.X<=2.f*APrototypeGameMode::Footprint(Role)
+                && Size.Y<=2.f*APrototypeGameMode::Footprint(Role)
+            :Size.X>330.f && Size.X<410.f && Size.Y>170.f && Size.Y<210.f),
+            *FString::Printf(TEXT("%s keeps the intended RTS scale and placement envelope"),Fixture.Surface));
+        const FString MaterialName=FString(TEXT("M_RV7_Baked_"))+Fixture.Surface;
+        const FString MaterialPath=TEXT("/Game/HERO/ReferenceV7/Materials/")+MaterialName+TEXT(".")+MaterialName;
+        bool bSavedAtlas=Mesh && Hull && Hull->GetNumMaterials()>0;
+        bool bNeutralTint=bSavedAtlas;
+        UMaterialInterface* Atlas=Mesh?Mesh->GetMaterial(0):nullptr;
+        for(int32 Slot=0;Hull && Mesh && Slot<Hull->GetNumMaterials();++Slot)
+        {
+            UMaterialInterface* Saved=Mesh->GetMaterial(Slot);
+            UMaterialInterface* Actual=Hull->GetMaterial(Slot);
+            bSavedAtlas &= Saved && Saved->GetPathName()==MaterialPath && Actual
+                && Actual->GetMaterial()==Saved->GetMaterial();
+            FLinearColor Tint=FLinearColor::Black;
+            bNeutralTint &= Actual && Actual->GetVectorParameterValue(FHashedMaterialParameterInfo(TEXT("Tint")),Tint)
+                && Tint.Equals(FLinearColor::White,.001f);
+        }
+        Check(bSavedAtlas && bNeutralTint,
+            *FString::Printf(TEXT("%s keeps its own baked atlas in every live slot with neutral tint rather than a second faction recolor"),Fixture.Surface));
+        for(const TCHAR* Channel:{TEXT("Albedo"),TEXT("ORM"),TEXT("EmissionMask")})
+        {
+            const FString TextureName=FString::Printf(TEXT("T_RV7_%s_%s"),Fixture.Surface,Channel);
+            const FString TexturePath=TEXT("/Game/HERO/ReferenceV7/Textures/")+TextureName+TEXT(".")+TextureName;
+            UTexture* Parameter=nullptr;
+            const bool bParameter=Atlas && Atlas->GetTextureParameterValue(FHashedMaterialParameterInfo(Channel),Parameter);
+            UTexture2D* Texture=Cast<UTexture2D>(Parameter);
+            bool bLiveBinding=Hull && Hull->GetNumMaterials()>0;
+            for(int32 Slot=0;Hull && Slot<Hull->GetNumMaterials();++Slot)
+            {
+                UTexture* LiveTexture=nullptr;
+                UMaterialInterface* LiveMaterial=Hull->GetMaterial(Slot);
+                bLiveBinding &= LiveMaterial
+                    && LiveMaterial->GetTextureParameterValue(FHashedMaterialParameterInfo(Channel),LiveTexture)
+                    && LiveTexture==Texture;
+            }
+#if WITH_EDITOR
+            if(Texture)
+            {
+                TArray<UObject*> Textures{Texture};
+                FAssetCompilingManager::Get().FinishCompilationForObjects(Textures);
+            }
+#endif
+            bool bResolution=Texture && Texture->GetSizeX()==Fixture.AtlasSize && Texture->GetSizeY()==Fixture.AtlasSize;
+#if WITH_EDITOR
+            if(Texture && !FApp::CanEverRender())
+                bResolution=Texture->Source.IsValid()
+                    && Texture->GetImportedSize()==FIntPoint(Fixture.AtlasSize,Fixture.AtlasSize)
+                    && Texture->Source.GetSizeX()==Fixture.AtlasSize && Texture->Source.GetSizeY()==Fixture.AtlasSize;
+#endif
+            const bool bAlbedo=FCString::Strcmp(Channel,TEXT("Albedo"))==0;
+            UE_LOG(LogTemp,Display,TEXT("PRESENTATION_REFERENCE_TEXTURE model=%s parameter=%s actual=%s expected=%s dimensions=%dx%d"),
+                Fixture.Surface,Channel,*GetPathNameSafe(Texture),*TexturePath,Texture?Texture->GetSizeX():0,Texture?Texture->GetSizeY():0);
+            Check(bParameter && bLiveBinding && Texture && Texture->GetPathName()==TexturePath && bResolution
+                && Texture->SRGB==bAlbedo && Texture->CompressionSettings==(bAlbedo?TC_Default:TC_Masks),
+                *FString::Printf(TEXT("%s %s is bound to its exact cooked atlas with correct resolution and color space"),Fixture.Surface,Channel));
+        }
+        const int32 TeamSlot=Hull?Hull->GetMaterialIndex(TEXT("Team")):INDEX_NONE;
+        UMaterialInterface* TeamSurface=TeamSlot!=INDEX_NONE?Hull->GetMaterial(TeamSlot):nullptr;
+        FLinearColor RestTint=FLinearColor::Black,HitTint=FLinearColor::Black,RestoredTint=FLinearColor::Black;
+        const bool bRest=TeamSurface && TeamSurface->GetVectorParameterValue(FHashedMaterialParameterInfo(TEXT("Tint")),RestTint);
+        const float HealthBefore=Unit?Unit->Health:0.f;
+        if(Unit){Unit->ReceiveHit(1.f);Unit->Tick(.03f);}
+        const bool bHit=TeamSurface && TeamSurface->GetVectorParameterValue(FHashedMaterialParameterInfo(TEXT("Tint")),HitTint);
+        Check(Unit && FMath::IsNearlyEqual(Unit->Health,HealthBefore-1.f,.001f) && bRest && bHit
+            && !HitTint.Equals(RestTint,.001f),
+            *FString::Printf(TEXT("%s actual damage tick visibly flashes its baked team surface"),Fixture.Surface));
+        if(Unit)Unit->Tick(.2f);
+        Check(TeamSurface && bRest && TeamSurface->GetVectorParameterValue(FHashedMaterialParameterInfo(TEXT("Tint")),RestoredTint)
+            && RestTint.Equals(FLinearColor::White,.001f) && RestoredTint.Equals(RestTint,.001f),
+            *FString::Printf(TEXT("%s damage flash expires to its original neutral atlas tint"),Fixture.Surface));
+        if(Unit)Unit->Destroy();
+    }
+    // Exercise the common legacy surface path independently of the four baked
+    // models. Team index is resolved from the selected faction, not hardcoded.
+    APrototypeUnit* EmberDepot=Mode?Mode->SpawnUnit(1-AegisTeam,FVector(-14000.f,-12000.f,35.f)):nullptr;
+    if(EmberDepot)EmberDepot->ConfigureRole(EPrototypeRole::Depot);
+    UStaticMeshComponent* DepotHull=EmberDepot?EmberDepot->FindComponentByClass<UStaticMeshComponent>():nullptr;
+    const FName MarkerNames[]={FName(TEXT("Team")),FName(TEXT("Neon"))};
+    const FLinearColor MarkerColors[]={FLinearColor(.025f,.32f,.13f),FLinearColor(.025f,.70f,.28f)};
+    UMaterialInterface* DepotMarkers[2]={nullptr,nullptr};
+    bool bLegacyMarkers=EmberDepot && EmberDepot->Role==EPrototypeRole::Depot
+        && Mode->GetFactionIndex(EmberDepot->Team)==1
+        && EmberDepot->Definition==Mode->GetRoleDefinition(EPrototypeRole::Depot,EmberDepot->Team);
+    for(int32 Index=0;Index<2;++Index)
+    {
+        const int32 Slot=DepotHull?DepotHull->GetMaterialIndex(MarkerNames[Index]):INDEX_NONE;
+        DepotMarkers[Index]=Slot!=INDEX_NONE?DepotHull->GetMaterial(Slot):nullptr;
+        FLinearColor Tint=FLinearColor::Black;
+        bLegacyMarkers &= Cast<UMaterialInstanceDynamic>(DepotMarkers[Index])
+            && DepotMarkers[Index]->GetVectorParameterValue(FHashedMaterialParameterInfo(TEXT("Tint")),Tint)
+            && Tint.Equals(MarkerColors[Index],.001f);
+    }
+    Check(bLegacyMarkers,TEXT("legacy Ember refinery resolves the selected faction and preserves its green Team and Neon markers"));
+    const float DepotHealth=EmberDepot?EmberDepot->Health:0.f;
+    if(EmberDepot){EmberDepot->ReceiveHit(1.f);EmberDepot->Tick(.03f);}
+    FLinearColor FlashTint=FLinearColor::Black,NeonDuringHit=FLinearColor::Black;
+    const bool bLegacyFlash=EmberDepot && FMath::IsNearlyEqual(EmberDepot->Health,DepotHealth-1.f,.001f)
+        && DepotMarkers[0] && DepotMarkers[0]->GetVectorParameterValue(FHashedMaterialParameterInfo(TEXT("Tint")),FlashTint)
+        && !FlashTint.Equals(MarkerColors[0],.001f)
+        && DepotMarkers[1] && DepotMarkers[1]->GetVectorParameterValue(FHashedMaterialParameterInfo(TEXT("Tint")),NeonDuringHit)
+        && NeonDuringHit.Equals(MarkerColors[1],.001f);
+    if(EmberDepot)EmberDepot->Tick(.2f);
+    bool bLegacyRestore=bLegacyMarkers && bLegacyFlash;
+    for(int32 Index=0;Index<2;++Index)
+    {
+        FLinearColor Tint=FLinearColor::Black;
+        bLegacyRestore &= DepotMarkers[Index]
+            && DepotMarkers[Index]->GetVectorParameterValue(FHashedMaterialParameterInfo(TEXT("Tint")),Tint)
+            && Tint.Equals(MarkerColors[Index],.001f);
+    }
+    Check(bLegacyRestore,TEXT("legacy Ember refinery damage flash restores green Team tint while Neon remains its authored green"));
+    if(EmberDepot)EmberDepot->Destroy();
     for(const TCHAR* Name:{TEXT("RockCluster"),TEXT("DryScrub"),TEXT("CurbStrip"),TEXT("LowBarrier"),TEXT("SupplyCrates"),TEXT("PipeBundle")})
     {
         const FString DetailAsset=FString::Printf(TEXT("SM_PV5_%s"),Name);

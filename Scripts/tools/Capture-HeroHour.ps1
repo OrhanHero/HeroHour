@@ -4,6 +4,7 @@ param(
     [ValidateSet('Battle', 'District', 'Overview', 'Harvester', 'Combat')][string]$View = 'Battle',
     [ValidateSet('Aegis','Ember')][string]$Faction = 'Aegis',
     [switch]$ArtReview,
+    [switch]$CloseUp,
     [int]$Width = 1600,
     [int]$Height = 900,
     [string]$EngineRoot = 'F:\UE\UE_5.8'
@@ -22,6 +23,10 @@ $stamp = Get-Date -Format 'yyyyMMdd-HHmmss-fff'
 $log = Join-Path $projectRoot "Saved\Logs\Capture-$View-$stamp.log"
 $arguments += @($flag, ('-abslog="' + $log + '"'))
 if ($Faction -eq 'Ember') { $arguments += '-FactionEmber' }
+if ($CloseUp) {
+    if ($View -notin @('Battle','Combat')) { throw 'CloseUp requires Battle or Combat.' }
+    $arguments += '-PrototypeCaptureCloseUp'
+}
 if ($ArtReview) {
     if ($View -notin @('District','Overview')) { throw 'ArtReview is restricted to environment District/Overview captures.' }
     $arguments += '-PrototypeArtReview'

@@ -2,7 +2,7 @@
 
 Ein spielbarer Offline-Prototyp mit C&C-Bedienung und Tempest-orientierter Wirtschaft, Basisbau und Gefechtsmechanik. Unreal Engine **5.8.3**, aktives C++-Modul **HeroHourPrototype**, Karte **CityHero**.
 
-**Noch keine fertige Konzeptumsetzung.** Aktuell ist V6 mit neuen Canyonwänden, aufrechter Innenstadt/Wohnsiedlung, detaillierteren Militärgebäuden, Straßenfinish und überarbeiteter UI integriert. **19 Paketprüfungen bestehen mit 651 Prüfpunkten und 46 natürlichen Simulationspartien.** Grafikleistung, weitere Weltdetails und eigenständige Fraktionsgestaltung bleiben offen. [V6-Stand](docs/CONCEPT_V6.md), [Nachweise](docs/verification/2026-10-15/concept-v6/Transformation-Checks.json).
+**Noch keine fertige Konzeptumsetzung.** V7 integriert vier neue HQ-/Acht-Rad-Modelle, eigene gebackene Oberflächen, passende Porträts und eine kompakte fünfspaltige UI. **19 frische Paketläufe bestehen mit 769 Prüfpunkten und 46 natürlichen Simulationspartien.** Umfeld, übriger Roster und Animation bleiben deutlich hinter den Konzepten. [V7-Stand](docs/REFERENCE_V7.md), [Prüfungen](docs/verification/2026-10-16/reference-v7/Transformation-Checks.json), [REA-Forschung](docs/research/Tempest-REA-V7.md).
 
 **Account-Übergabe:** [CURRENT_HANDOVER](docs/CURRENT_HANDOVER.md). [Geprüftes Windows-Paket](docs/VERIFIED_BUILD.md), [Transformationsplan M1–M4](docs/TEMPEST_TRANSFORMATION_PLAN.md), [Arbeitsprotokoll](docs/WORKLOG_2026-10-15.md).
 

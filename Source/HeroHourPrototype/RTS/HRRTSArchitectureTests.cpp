@@ -33,13 +33,13 @@ bool RunHRRTSArchitectureSelfTests()
     };
     const FRoleAssetFixture RoleFixtures[] = {
         {EPrototypeRole::Combat,TEXT("DA_HR_Striker"),TEXT("Combat"),HRRTSTags::Unit_Striker,false,100,5.f,100.f,
-            TEXT("/Game/HERO/ConceptV2/Meshes/SM_HERO_Striker.SM_HERO_Striker"),
+            TEXT("/Game/HERO/ReferenceV7/Meshes/SM_HR_Aegis_APC8.SM_HR_Aegis_APC8"),
             TEXT("/Game/HERO/PresentationV5/Portraits/T_HR_Aegis_Combat.T_HR_Aegis_Combat")},
         {EPrototypeRole::Collector,TEXT("DA_HR_Harvester"),TEXT("Collector"),HRRTSTags::Unit_Harvester,false,150,6.f,100.f,
             TEXT("/Game/HERO/ConceptV2/Meshes/SM_HERO_Harvester.SM_HERO_Harvester"),
             TEXT("/Game/HERO/PresentationV5/Portraits/T_HR_Aegis_Collector.T_HR_Aegis_Collector")},
         {EPrototypeRole::Headquarters,TEXT("DA_HR_CommandHub"),TEXT("HQ"),HRRTSTags::Building_CommandHub,true,0,1.f,800.f,
-            TEXT("/Game/HERO/MilitaryDetailV6/Meshes/SM_MDV6_CommandHub.SM_MDV6_CommandHub"),
+            TEXT("/Game/HERO/ReferenceV7/Meshes/SM_RV7_AegisHQ.SM_RV7_AegisHQ"),
             TEXT("/Game/HERO/PresentationV5/Portraits/T_HR_Aegis_HQ.T_HR_Aegis_HQ")},
         {EPrototypeRole::Depot,TEXT("DA_HR_Refinery"),TEXT("Depot"),HRRTSTags::Building_Refinery,true,200,8.f,400.f,
             TEXT("/Game/HERO/MilitaryDetailV6/Meshes/SM_MDV6_Refinery.SM_MDV6_Refinery"),

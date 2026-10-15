@@ -16,7 +16,10 @@ if (-not (Test-Path -LiteralPath $executable)) { throw "Unreal-Testwerkzeug fehl
 if ($Mode -eq 'Editor' -and -not (Test-Path -LiteralPath (Join-Path $projectRoot 'Binaries\Win64\UnrealEditor-HeroHourPrototype.dll'))) { throw 'Editor-Modul fehlt. Zuerst Build-HeroHour.ps1 ausführen.' }
 $logDirectory = Join-Path $projectRoot 'Saved\Logs'
 New-Item -ItemType Directory -Path $logDirectory -Force | Out-Null
-$logFile = Join-Path $logDirectory ($Suite + 'Test-' + (Get-Date -Format 'yyyyMMdd-HHmmss-fff') + '.log')
+# Two faction tests can start in the same millisecond. Give each process its
+# own evidence file so a parallel run cannot overwrite another result.
+$runId = [guid]::NewGuid().ToString('N').Substring(0,8)
+$logFile = Join-Path $logDirectory ($Suite + 'Test-' + $Faction + '-' + (Get-Date -Format 'yyyyMMdd-HHmmss-fff') + '-' + $runId + '.log')
 $resultMarker = $Suite.ToUpperInvariant() + '_TEST_RESULT'
 if ($Suite -eq 'LogisticsStress') { $resultMarker = 'LOGISTICS_STRESS_TEST_RESULT' }
 $testFlag = '-Prototype' + $Suite + 'Test'

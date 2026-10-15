@@ -1,0 +1,89 @@
+{
+  "kind": "Original mesh-local UV0 atlases",
+  "models": [
+    {
+      "key": "Aegis_APC8",
+      "mesh": "/Game/HERO/ReferenceV7/Meshes/SM_HR_Aegis_APC8.SM_HR_Aegis_APC8",
+      "material": "/Game/HERO/ReferenceV7/Materials/M_RV7_Baked_Aegis_APC8.M_RV7_Baked_Aegis_APC8",
+      "slot_count": 7,
+      "uv_channel": 0,
+      "Tint": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "textures": {
+        "Albedo": "/Game/HERO/ReferenceV7/Textures/T_RV7_Aegis_APC8_Albedo.T_RV7_Aegis_APC8_Albedo",
+        "ORM": "/Game/HERO/ReferenceV7/Textures/T_RV7_Aegis_APC8_ORM.T_RV7_Aegis_APC8_ORM",
+        "EmissionMask": "/Game/HERO/ReferenceV7/Textures/T_RV7_Aegis_APC8_EmissionMask.T_RV7_Aegis_APC8_EmissionMask"
+      },
+      "source_sha256": "37cc497e5fb8ef421c2448d233f793840cd1c818771e8db3d9a5db5dfdc50ba9",
+      "definition_unchanged": true,
+      "emission_policy": "Only separately baked Neon/Lamp mask; no full surface emission"
+    },
+    {
+      "key": "Aegis_HQ",
+      "mesh": "/Game/HERO/ReferenceV7/Meshes/SM_RV7_AegisHQ.SM_RV7_AegisHQ",
+      "material": "/Game/HERO/ReferenceV7/Materials/M_RV7_Baked_Aegis_HQ.M_RV7_Baked_Aegis_HQ",
+      "slot_count": 8,
+      "uv_channel": 0,
+      "Tint": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "textures": {
+        "Albedo": "/Game/HERO/ReferenceV7/Textures/T_RV7_Aegis_HQ_Albedo.T_RV7_Aegis_HQ_Albedo",
+        "ORM": "/Game/HERO/ReferenceV7/Textures/T_RV7_Aegis_HQ_ORM.T_RV7_Aegis_HQ_ORM",
+        "EmissionMask": "/Game/HERO/ReferenceV7/Textures/T_RV7_Aegis_HQ_EmissionMask.T_RV7_Aegis_HQ_EmissionMask"
+      },
+      "source_sha256": "973f90ed737ef3867c535a47072b32be8648aece760651903505d8e246996195",
+      "definition_unchanged": true,
+      "emission_policy": "Only separately baked Neon/Lamp mask; no full surface emission"
+    },
+    {
+      "key": "Ember_APC8",
+      "mesh": "/Game/HERO/ReferenceV7/Meshes/SM_HR_Ember_APC8.SM_HR_Ember_APC8",
+      "material": "/Game/HERO/ReferenceV7/Materials/M_RV7_Baked_Ember_APC8.M_RV7_Baked_Ember_APC8",
+      "slot_count": 8,
+      "uv_channel": 0,
+      "Tint": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "textures": {
+        "Albedo": "/Game/HERO/ReferenceV7/Textures/T_RV7_Ember_APC8_Albedo.T_RV7_Ember_APC8_Albedo",
+        "ORM": "/Game/HERO/ReferenceV7/Textures/T_RV7_Ember_APC8_ORM.T_RV7_Ember_APC8_ORM",
+        "EmissionMask": "/Game/HERO/ReferenceV7/Textures/T_RV7_Ember_APC8_EmissionMask.T_RV7_Ember_APC8_EmissionMask"
+      },
+      "source_sha256": "42184c2a716f9bd4ed870a99e611d3bcb5ae5a480e5e5676be425ed0b5d0a478",
+      "definition_unchanged": true,
+      "emission_policy": "Only separately baked Neon/Lamp mask; no full surface emission"
+    },
+    {
+      "key": "Ember_HQ",
+      "mesh": "/Game/HERO/ReferenceV7/Meshes/SM_RV7_EmberHQ.SM_RV7_EmberHQ",
+      "material": "/Game/HERO/ReferenceV7/Materials/M_RV7_Baked_Ember_HQ.M_RV7_Baked_Ember_HQ",
+      "slot_count": 9,
+      "uv_channel": 0,
+      "Tint": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "textures": {
+        "Albedo": "/Game/HERO/ReferenceV7/Textures/T_RV7_Ember_HQ_Albedo.T_RV7_Ember_HQ_Albedo",
+        "ORM": "/Game/HERO/ReferenceV7/Textures/T_RV7_Ember_HQ_ORM.T_RV7_Ember_HQ_ORM",
+        "EmissionMask": "/Game/HERO/ReferenceV7/Textures/T_RV7_Ember_HQ_EmissionMask.T_RV7_Ember_HQ_EmissionMask"
+      },
+      "source_sha256": "cebc1d11ca05814f5fcd1f3b2bde0573eb747a830efe07d98d5988c7ec6e4b7a",
+      "definition_unchanged": true,
+      "emission_policy": "Only separately baked Neon/Lamp mask; no full surface emission"
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "mesh": "/Game/HERO/ReferenceV7/Meshes/SM_HR_Aegis_APC8.SM_HR_Aegis_APC8",
+  "dimensions_cm": [
+    370.8999938964844,
+    187.92506408691406,
+    203.1420135498047
+  ],
+  "pivot_min_z": -35.0,
+  "definition": "/Game/HERO/DataV4/D_Aegis_Combat.D_Aegis_Combat",
+  "changed_property": "static_mesh",
+  "stats_and_icon_unchanged": true
+}

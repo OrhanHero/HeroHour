@@ -56,6 +56,28 @@ void APrototypeGameMode::RunUITest()
                 TEXT("base category routes to construction cards"));
             Check(HUD->HandleClick(Center(L.ProductionTile(1,0)))&&Controller->bPlacing&&Controller->PlacementRole==EPrototypeRole::Factory&&Mode->Credits==Before,
                 TEXT("factory card starts real placement without paying before a valid site"));
+            // Every authored building card occupies the same compact five-column row.
+            const EPrototypeRole ExpectedBuildings[]={EPrototypeRole::Depot,EPrototypeRole::Factory,EPrototypeRole::PowerPlant,EPrototypeRole::Barracks,EPrototypeRole::Radar};
+            for(int32 Card=0;Card<5;++Card)
+            {
+                Controller->ClearSelection();
+                const bool Clicked=HUD->HandleClick(Center(L.ProductionCard(Card)));
+                Check(Clicked&&Controller->bPlacing&&Controller->PlacementRole==ExpectedBuildings[Card]&&Mode->Credits==Before,
+                    *FString::Printf(TEXT("five-column building card %d starts correct placement without charging"),Card));
+            }
+            auto Overlaps=[](const FPrototypeHUDRect& A,const FPrototypeHUDRect& B){return A.X<B.X+B.W&&A.X+A.W>B.X&&A.Y<B.Y+B.H&&A.Y+A.H>B.Y;};
+            for(const FIntPoint Resolution:{FIntPoint(1600,900),FIntPoint(1920,1080),FIntPoint(1280,720)})
+            {
+                const FPrototypeHUDLayout Layout(Resolution.X,Resolution.Y);
+                bool GeometrySafe=!Overlaps(Layout.Resource(),Layout.Army())&&!Overlaps(Layout.Resource(),Layout.Mission())&&!Overlaps(Layout.Army(),Layout.Mission());
+                const auto Panel=Layout.Production();
+                for(int32 Card=0;Card<5;++Card){const auto Tile=Layout.ProductionCard(Card);
+                    GeometrySafe&=Tile.X>=Panel.X&&Tile.Y>=Panel.Y&&Tile.X+Tile.W<=Panel.X+Panel.W&&Tile.Y+Tile.H<=Panel.Y+Panel.H;
+                    GeometrySafe&=FMath::IsNearlyEqual(Tile.Y,Layout.ProductionCard(0).Y)&&!Overlaps(Tile,Layout.QueueSlot(0))&&!Overlaps(Tile,Layout.Cancel());
+                    for(int32 Other=Card+1;Other<5;++Other)GeometrySafe&=!Overlaps(Tile,Layout.ProductionCard(Other));
+                }
+                Check(GeometrySafe,*FString::Printf(TEXT("five-column cards and top panels do not overlap at %dx%d"),Resolution.X,Resolution.Y));
+            }
             Controller->ClearSelection();
             Check(HUD->IsOverInterface(Center(L.Production()))&&HUD->IsOverInterface(Center(L.Selection()))
                 &&!HUD->IsOverInterface(FVector2D(Width*.5f,Height*.4f)),
@@ -78,6 +100,41 @@ void APrototypeGameMode::RunUITest()
             for(int32 Category=0;Category<5;++Category)
                 Check(HUD->HandleClick(Center(L.ProductionTab(Category)))&&HUD->ProductionCategory==Category,
                     *FString::Printf(TEXT("functional production category %d receives actual click"),Category));
+            // Controlled UI fixture: exercise actual target selection and terrain-click confirmation,
+            // not a direct commander mutation masquerading as a mouse command.
+            Controller->ClearSelection();
+            const FHRCommanderState SavedCommander=Mode->Commander[0];
+            const FVector2D TargetScreen(Width*.5f,Height*.4f);FVector RayOrigin,RayDirection;
+            const bool GroundRay=Controller->DeprojectScreenPositionToWorld(TargetScreen.X,TargetScreen.Y,RayOrigin,RayDirection)&&RayDirection.Z<-.001f;
+            Check(GroundRay,TEXT("commander target fixture deprojects a genuine battlefield click"));
+            if(GroundRay)
+            {
+                const FVector Ground=RayOrigin+RayDirection*((35.f-RayOrigin.Z)/RayDirection.Z);
+                for(int32 Source=0;Source<2;++Source)for(int32 Card=0;Card<2;++Card)
+                {
+                    CancelPrototypeDoctrineTarget(HUD);
+                    HUD->HandleClick(Center(L.ProductionTab(4)));
+                    const EHRDoctrine Doctrine=GetFactionIndex(0)==0?(Card==0?EHRDoctrine::RepairPulse:EHRDoctrine::PrecisionStrike):(Card==0?EHRDoctrine::Scorch:EHRDoctrine::Overdrive);
+                    const float Cost=FHRCommanderState::Cost(Doctrine);const float WalletBefore=Mode->Credits;
+                    const FVector2D Button=Center(Source==0?L.ProductionCard(Card):L.DoctrineCard(Card));
+                    Mode->Commander[0].Points=Cost-1.f;Mode->Commander[0].GlobalCooldown=0.f;
+                    const bool Refused=HUD->HandleClick(Button);
+                    Check(Refused&&!HasPrototypeDoctrineTarget(HUD)&&Mode->Commander[0].Points==Cost-1.f&&Mode->Credits==WalletBefore,
+                        *FString::Printf(TEXT("doctrine source %d card %d refuses insufficient points without charging"),Source,Card));
+                    auto* Friendly=Mode->SpawnUnit(0,Ground);auto* Enemy=Mode->SpawnUnit(1,Ground+FVector(50,0,0));
+                    if(Friendly)Friendly->Health=FMath::Max(1.f,Friendly->MaxHealth-50.f);
+                    Mode->UpdateVisibility();Mode->Commander[0].Points=100.f;Mode->Commander[0].GlobalCooldown=0.f;
+                    const bool Armed=HUD->HandleClick(Button);
+                    Check(Armed&&HasPrototypeDoctrineTarget(HUD)&&Mode->Commander[0].Points==100.f&&Mode->Credits==WalletBefore,
+                        *FString::Printf(TEXT("doctrine source %d card %d arms public targeting without premature payment"),Source,Card));
+                    const bool Confirmed=HUD->HandleClick(TargetScreen);
+                    Check(Confirmed&&!HasPrototypeDoctrineTarget(HUD)&&FMath::IsNearlyEqual(Mode->Commander[0].Points,100.f-Cost)&&Mode->Commander[0].GlobalCooldown>0.f&&Mode->Credits==WalletBefore,
+                        *FString::Printf(TEXT("doctrine source %d card %d terrain confirmation pays exact point cost only"),Source,Card));
+                    CancelPrototypeDoctrineTarget(HUD);
+                    if(IsValid(Friendly))Friendly->Destroy();if(IsValid(Enemy))Enemy->Destroy();
+                }
+            }
+            Mode->Commander[0]=SavedCommander;
             auto* Infantry=Mode->SpawnUnit(0,FVector(-10400,-1400,35));if(Infantry)Infantry->ConfigureRole(EPrototypeRole::Infantry);
             if(Infantry)
             {

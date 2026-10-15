@@ -22,24 +22,27 @@ struct FPrototypeHUDLayout
     float S, W, H;
     FPrototypeHUDLayout(float Width, float Height)
         : S(FMath::Max(.01f,FMath::Min(Width/1672.f,Height/941.f))), W(Width/S), H(Height/S) {}
-    FPrototypeHUDRect Resource() const { return {12,8,520,94}; }
-    FPrototypeHUDRect Army() const { return {W*.5f-175,10,350,86}; }
-    FPrototypeHUDRect Mission() const { return {W-340,12,328,114}; }
+    FPrototypeHUDRect Resource() const { return {12,8,560,60}; }
+    FPrototypeHUDRect Army() const { return {W*.5f-160,10,320,80}; }
+    FPrototypeHUDRect Mission() const { return {W-340,12,328,168}; }
     FPrototypeHUDRect MiniMap() const { return {12,H-352,310,330}; }
     FPrototypeHUDRect Selection() const { return {W*.5f-285,H-296,570,274}; }
-    FPrototypeHUDRect Production() const { return {W-438,H-522,426,500}; }
+    FPrototypeHUDRect Production() const { return {W-438,H-362,426,340}; }
     FPrototypeHUDRect Events() const { return {12,H-460,310,94}; }
     FPrototypeHUDRect Placement() const { return {W*.5f-260,118,520,58}; }
     FPrototypeHUDRect ProductionTile(int32 Column, int32 Row) const
     {
-        const auto P=Production();return {P.X+18+Column*198,P.Y+106+Row*86,192,78};
+        const auto P=Production();return {P.X+16+Column*80,P.Y+106+Row*100,74,94};
     }
+    static constexpr int32 ProductionColumns=5;
+    FPrototypeHUDRect ProductionCard(int32 Card) const { return ProductionTile(Card%ProductionColumns,Card/ProductionColumns); }
+    FPrototypeHUDRect DoctrineCard(int32 Card) const { const auto P=Mission();return {P.X+15+Card*151,P.Y+54,145,78}; }
     FPrototypeHUDRect ProductionTab(int32 Category) const
     {
         const auto P=Production();return {P.X+18+Category*78,P.Y+39,74,40};
     }
-    FPrototypeHUDRect QueueSlot(int32 Slot) const { const auto P=Production();return {P.X+20+Slot*76,P.Y+382,68,40}; }
-    FPrototypeHUDRect Cancel() const { const auto P=Production();return {P.X+18,P.Y+438,390,28}; }
+    FPrototypeHUDRect QueueSlot(int32 Slot) const { const auto P=Production();return {P.X+20+Slot*76,P.Y+238,68,40}; }
+    FPrototypeHUDRect Cancel() const { const auto P=Production();return {P.X+18,P.Y+286,390,28}; }
     FPrototypeHUDRect Focus() const { const auto P=Selection();return {P.X+429,P.Y+168,122,40}; }
     FPrototypeHUDRect Ability(int32 Index) const { const auto P=Selection();return {P.X+182+Index*123,P.Y+218,114,40}; }
     FPrototypeHUDRect PowerToggle() const { return Ability(0); }

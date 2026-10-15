@@ -1,0 +1,88 @@
+{
+  "name": "SM_RV7_EmberHQ",
+  "vertices": 14280,
+  "polygons": 13904,
+  "triangles": 27472,
+  "dimensions_m": [
+    7.5,
+    7.599999904632568,
+    5.989999771118164
+  ],
+  "materials": [
+    "Concrete",
+    "Dark",
+    "Armor",
+    "Steel",
+    "Team",
+    "Neon",
+    "Lamp",
+    "Glass",
+    "Dust"
+  ],
+  "origin": "ground pivot with runtime Z compensation",
+  "zoffset_m": -1.1,
+  "provenance": "Original procedural HeroHour geometry; supplied concept reference only; no extracted game assets",
+  "reference": "Codex-Bild 1. Sept. 2026, 01_22_20.png, left graphite faction HQ",
+  "validation": "PASS",
+  "bounds_m": [
+    [
+      -3.75,
+      3.75
+    ],
+    [
+      -3.799999952316284,
+      3.799999952316284
+    ],
+    [
+      -1.100000023841858,
+      4.889999866485596
+    ]
+  ],
+  "fbx_roundtrip_bounds_m": [
+    [
+      -3.750000476837158,
+      3.750000476837158
+    ],
+    [
+      -3.8000004291534424,
+      3.8000004291534424
+    ],
+    [
+      -1.100000023841858,
+      4.889999866485596
+    ]
+  ],
+  "fbx_roundtrip_pass": true,
+  "fbx_sha256": "6e1ed18280673a943f5b83b24bd37c4f6be375d9e3eb583c1bb37be5f3ab3a15",
+  "unreal_expected_bounds_cm": [
+    [
+      -375.0,
+      375.0
+    ],
+    [
+      -379.9999952316284,
+      379.9999952316284
+    ],
+    [
+      -110.00000238418579,
+      488.99998664855957
+    ]
+  ],
+  "runtime_scale": 1.5,
+  "runtime_actor_z_cm": 110,
+  "runtime_relative_z_cm": 55,
+  "runtime_ground_z_cm": -3.5762786865234375e-06,
+  "blender_entrance_front_normal": [
+    0,
+    1,
+    0
+  ],
+  "unreal_entrance_front_normal": [
+    0,
+    -1,
+    0
+  ],
+  "design": "Sloping faceted portal hall; fitted mechanical armor fields; low asymmetric service wings; low eight-sided command crown and two slim antenna blades; no circular fortress core or roof dish",
+  "color_decision": "Graphite armor and green Team/Neon follow left concept; enemy health bars and gameplay identification remain unchanged",
+  "limits": "Static joined geometry; no moving antenna, destruction stages, unique grime atlas, authored LOD chain or traversable interior"
+}

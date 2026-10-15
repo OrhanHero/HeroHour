@@ -1,6 +1,18 @@
-# Aktuelle Übergabe – 15.10.2026
+# Aktuelle Übergabe – 16.10.2026
 
-## Neuester Stand: Konzeptdurchlauf V6, 15.10.2026
+## Neuester Stand: Referenzdurchlauf V7, 16.10.2026, 00:34 Berlin
+
+**Das gesamte Spiel ist noch nicht konzeptgerecht fertig.** Vier neue eigenständige Referenzmodelle ersetzen HQ und Kampffahrzeug beider Fraktionen: weißblauer facettierter Aegis-Turm mit schrägen Panzerstützen, sandfarbener Acht-Rad-Panzer, graphitgrüner Ember-Portalbau und eigener dunkler Acht-Rad-Panzer. Vier eigene UV-Atlanten mit Albedo/ORM/Emissionsmaske und vier dazu passende Porträts sind integriert. Die übrigen neun Ember-Porträts und die Laufzeitmarkierungen des älteren Rosters folgen ebenfalls der grünen Konzeptfarbe. Die erste zu einfache Hausform wurde nach direktem Bildvergleich ersetzt. [Umsetzung und Grenzen](REFERENCE_V7.md).
+
+HUD: kompakte Ressourcenzeile, fünf Produktionsspalten, zwei echte obere Doktrinkarten, gemessene Textbreiten und unverzerrte Porträts. UI-Prüfungen bedienen tatsächliche Karten und Geländeziele. Modellprüfungen testen reale Actor-Geometrie, Bodenauflage, Texturbindungen und Schaden/Flash-Rücksetzung. Gleichzeitige Tests erhalten jetzt eindeutige Logdateien; eine zuvor beobachtete Namenskollision ist behoben.
+
+**Frisches Windows-Paket: 16.10.2026, 00:34 Berlin. 19 Paketläufe PASS mit 571 Aegis- und 198 Ember-Prüfpunkten, zusammen 769; dazu 46 natürliche Match-/Logistikpartien.** CreatedUtc `2026-10-15T22:34:24.1236961Z`, Paketierungslog `Packaging-20261016-003345-296.log`. [Prüfungen](verification/2026-10-16/reference-v7/Transformation-Checks.json), [sechs Paketaufnahmen](verification/2026-10-16/reference-v7/Captures.json), [EXE-/Paketprüfsummen](verification/2026-10-16/reference-v7/Package-Integrity.json). Das lokale Paket liegt unter `Builds/Windows`; es wird nicht in Git hochgeladen.
+
+Der REA-Agent hat neue statische Tempest-Belege für UI-Farben, segmentierte Ressourcenmeshes und Sammler-/Materialmetadaten erarbeitet. Originalbytes sind für einen kleinen Funktionskörper verankert; das beweist weder Originalquelltext noch Shipping-Laufzeitverhalten oder einen vollständigen Klon. [Befunde und Anwendungen](research/Tempest-REA-V7.md). Eigene Oberflächen sind umgesetzt; Sammleranimationen und Ressourcenverbindungen bleiben weitere Arbeit.
+
+**Offen:** Die Basisumgebung und Hintergrundstadt sind weiterhin zu leer und regelmäßig. Der übrige Roster besitzt noch geteilte Modelle. Fahrzeug-/Turmanimation, dicht belegte UVs, zusätzliche Normaldetails, individuelle Beschriftungen, Schäden und manuell gesetzte Boden-/Schmutzdetails fehlen. V7 enthält keine neue 20-Minuten-Dauerabnahme. Vorherige Leistungs- und Dauerberichte gehören zu ihren jeweiligen Builds. Drei Fachagenten und Hauptagent arbeiteten parallel, maximal vier aktive Agenten; keine Behauptung von 15 gleichzeitig laufenden Agenten.
+
+## Historischer Konzeptdurchlauf V6, 15.10.2026
 
 **Das Spiel ist weiterhin in Entwicklung und nicht vollständig konzeptgerecht fertiggestellt.** Drei Fachagenten arbeiteten in mehreren parallelen Arbeitswellen; der Hauptagent integrierte und prüfte. Technisches Maximum: vier aktive Agenten einschließlich Hauptagent.
 

@@ -1,0 +1,349 @@
+{
+  "kind": "Original ReferenceV7 UV baked surfaces",
+  "records": [
+    {
+      "key": "Aegis_APC8",
+      "name": "SM_HR_Aegis_APC8",
+      "faction": "Aegis",
+      "role": "Combat",
+      "source": "Art\\Models\\ReferenceAPCV7\\SM_HR_Aegis_APC8.blend",
+      "source_sha256": "37cc497e5fb8ef421c2448d233f793840cd1c818771e8db3d9a5db5dfdc50ba9",
+      "source_fbx_sha256": "0e9639bb57b711cd28d9f35b6567c3ca22c9aeb6f0cecbd3420c9c1e64313f25",
+      "bake_script_sha256": "0f8e79b0beaf5e40f7410a16da4f0c0f924e9e568d2b24d15e7e69ac42db5cb2",
+      "source_unchanged": true,
+      "uv_channel": 0,
+      "textures": {
+        "Albedo": {
+          "file": "T_RV7_Aegis_APC8_Albedo.png",
+          "sha256": "0bc1b7773353768b466dcc8c9cfd125a7bdd2812713e06f85c2897913746abc2",
+          "size": [
+            1024,
+            1024
+          ],
+          "srgb": true,
+          "min_rgb": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "max_rgb": [
+            0.9294118285179138,
+            0.7803922295570374,
+            0.7137255072593689
+          ]
+        },
+        "ORM": {
+          "file": "T_RV7_Aegis_APC8_ORM.png",
+          "sha256": "d06241cac1ddafe66494f7404ce174a5ff5c4a118a39eaa87f0a04a097f8fdd5",
+          "size": [
+            1024,
+            1024
+          ],
+          "srgb": false,
+          "min_rgb": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "max_rgb": [
+            1.0,
+            0.9686275124549866,
+            0.7803922295570374
+          ]
+        },
+        "EmissionMask": {
+          "file": "T_RV7_Aegis_APC8_EmissionMask.png",
+          "sha256": "494141d8a4b6f0d5b952c0994ee3ec18f3ebd8c0e47e08cd5a16d66af4a26bdc",
+          "size": [
+            1024,
+            1024
+          ],
+          "srgb": false,
+          "min_rgb": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "max_rgb": [
+            0.3490196168422699,
+            0.3490196168422699,
+            0.3490196168422699
+          ]
+        }
+      },
+      "backend": "OPTIX",
+      "atlas_coverage": 0.2403116226196289,
+      "elapsed_seconds": 6.39,
+      "ao_range_covered": [
+        0.011764707043766975,
+        1.0
+      ],
+      "roughness_range_covered": [
+        0.0313725508749485,
+        0.9686275124549866
+      ],
+      "metallic_policy": "Only named Steel surfaces; armor/rubber/concrete/glass/team are dielectric",
+      "provenance": "Original geometry-derived AO/pointiness/position and bounded procedural noise; no game textures",
+      "preview": "Preview_Aegis_APC8.png",
+      "validation": "PASS"
+    },
+    {
+      "key": "Aegis_HQ",
+      "name": "SM_RV7_AegisHQ",
+      "faction": "Aegis",
+      "role": "HQ",
+      "source": "Art\\Models\\ReferenceHQV7\\SM_RV7_AegisHQ.blend",
+      "source_sha256": "973f90ed737ef3867c535a47072b32be8648aece760651903505d8e246996195",
+      "source_fbx_sha256": "178bd2b31d7a64bba77f6c7451ce592c5c4039174d85ec1a432e668facc8b115",
+      "bake_script_sha256": "0f8e79b0beaf5e40f7410a16da4f0c0f924e9e568d2b24d15e7e69ac42db5cb2",
+      "source_unchanged": true,
+      "uv_channel": 0,
+      "textures": {
+        "Albedo": {
+          "file": "T_RV7_Aegis_HQ_Albedo.png",
+          "sha256": "f0818aa8bfd8d28dca58ba9cc2de3e4e5345572d53d4357293eb60e0d79a5f00",
+          "size": [
+            2048,
+            2048
+          ],
+          "srgb": true,
+          "min_rgb": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "max_rgb": [
+            0.8000000715255737,
+            0.8235294818878174,
+            0.9098039865493774
+          ]
+        },
+        "ORM": {
+          "file": "T_RV7_Aegis_HQ_ORM.png",
+          "sha256": "f7d87b06faead6dcaf83d01e1bee350260366a462c98c8c63b7404a8706877fa",
+          "size": [
+            2048,
+            2048
+          ],
+          "srgb": false,
+          "min_rgb": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "max_rgb": [
+            1.0,
+            0.9568628072738647,
+            0.7803922295570374
+          ]
+        },
+        "EmissionMask": {
+          "file": "T_RV7_Aegis_HQ_EmissionMask.png",
+          "sha256": "ed9fdb40ca96d6c977e19a32b70f9c70e622512879245fbb2b41b78fb981ef2f",
+          "size": [
+            2048,
+            2048
+          ],
+          "srgb": false,
+          "min_rgb": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "max_rgb": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        }
+      },
+      "backend": "OPTIX",
+      "atlas_coverage": 0.12284135818481445,
+      "elapsed_seconds": 16.37,
+      "ao_range_covered": [
+        0.011764707043766975,
+        1.0
+      ],
+      "roughness_range_covered": [
+        0.003921568859368563,
+        0.9568628072738647
+      ],
+      "metallic_policy": "Only named Steel surfaces; armor/rubber/concrete/glass/team are dielectric",
+      "provenance": "Original geometry-derived AO/pointiness/position and bounded procedural noise; no game textures",
+      "preview": "Preview_Aegis_HQ.png",
+      "validation": "PASS"
+    },
+    {
+      "key": "Ember_APC8",
+      "name": "SM_HR_Ember_APC8",
+      "faction": "Ember",
+      "role": "Combat",
+      "source": "Art\\Models\\ReferenceEmberAPCV7\\SM_HR_Ember_APC8.blend",
+      "source_sha256": "42184c2a716f9bd4ed870a99e611d3bcb5ae5a480e5e5676be425ed0b5d0a478",
+      "source_fbx_sha256": "9bf58ba12c62d613d006bd679cdc5b04a67813e7660e1fa1a5efa8b331234d3b",
+      "bake_script_sha256": "c9633b70547c50332f8ee1ded0c282bbf4924ed5183d6def27dc787d4603b33a",
+      "source_unchanged": true,
+      "uv_channel": 0,
+      "textures": {
+        "Albedo": {
+          "file": "T_RV7_Ember_APC8_Albedo.png",
+          "sha256": "5338208b30b5337028cb5543139b3d6ed0d3a81df0ea46aa006d417fdaaf7814",
+          "size": [
+            1024,
+            1024
+          ],
+          "srgb": true,
+          "min_rgb": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "max_rgb": [
+            0.9490196704864502,
+            0.8392157554626465,
+            0.5568627715110779
+          ]
+        },
+        "ORM": {
+          "file": "T_RV7_Ember_APC8_ORM.png",
+          "sha256": "48c7c8c4b9e861d040ca056d016840448cd904d42024728de002b85bf5cdfc55",
+          "size": [
+            1024,
+            1024
+          ],
+          "srgb": false,
+          "min_rgb": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "max_rgb": [
+            1.0,
+            0.9843137860298157,
+            0.7803922295570374
+          ]
+        },
+        "EmissionMask": {
+          "file": "T_RV7_Ember_APC8_EmissionMask.png",
+          "sha256": "60c2e7f3495df85bb6dcaa2f2e1e0a934f59b616614f1901f0d4cf4f2f49ca1f",
+          "size": [
+            1024,
+            1024
+          ],
+          "srgb": false,
+          "min_rgb": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "max_rgb": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        }
+      },
+      "backend": "OPTIX",
+      "atlas_coverage": 0.22937583923339844,
+      "elapsed_seconds": 12.26,
+      "ao_range_covered": [
+        0.011764707043766975,
+        1.0
+      ],
+      "roughness_range_covered": [
+        0.011764707043766975,
+        0.9843137860298157
+      ],
+      "metallic_policy": "Only named Steel surfaces; armor/rubber/concrete/glass/team are dielectric",
+      "provenance": "Original geometry-derived AO/pointiness/position and bounded procedural noise; no game textures",
+      "preview": "Preview_Ember_APC8.png",
+      "validation": "PASS"
+    },
+    {
+      "key": "Ember_HQ",
+      "name": "SM_RV7_EmberHQ",
+      "faction": "Ember",
+      "role": "HQ",
+      "source": "Art\\Models\\ReferenceEmberHQV7\\SM_RV7_EmberHQ.blend",
+      "source_sha256": "cebc1d11ca05814f5fcd1f3b2bde0573eb747a830efe07d98d5988c7ec6e4b7a",
+      "source_fbx_sha256": "6e1ed18280673a943f5b83b24bd37c4f6be375d9e3eb583c1bb37be5f3ab3a15",
+      "bake_script_sha256": "c9633b70547c50332f8ee1ded0c282bbf4924ed5183d6def27dc787d4603b33a",
+      "source_unchanged": true,
+      "uv_channel": 0,
+      "textures": {
+        "Albedo": {
+          "file": "T_RV7_Ember_HQ_Albedo.png",
+          "sha256": "9ee2805903ae428c4b7cf9ba8a9c2951b3bbcb39eaa8ec6c1d3386d2a9103716",
+          "size": [
+            2048,
+            2048
+          ],
+          "srgb": true,
+          "min_rgb": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "max_rgb": [
+            0.9411765336990356,
+            0.8588235974311829,
+            0.5686274766921997
+          ]
+        },
+        "ORM": {
+          "file": "T_RV7_Ember_HQ_ORM.png",
+          "sha256": "d0594926a2708049666a0317034f50d51b5ef37802cb0159c3ee4b7f601b0306",
+          "size": [
+            2048,
+            2048
+          ],
+          "srgb": false,
+          "min_rgb": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "max_rgb": [
+            1.0,
+            0.9568628072738647,
+            0.7803922295570374
+          ]
+        },
+        "EmissionMask": {
+          "file": "T_RV7_Ember_HQ_EmissionMask.png",
+          "sha256": "589b9db9507ecf99fab80e4e64844f1cd68777c2ec2a6f2916bfef91ef232eda",
+          "size": [
+            2048,
+            2048
+          ],
+          "srgb": false,
+          "min_rgb": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "max_rgb": [
+            1.0,
+            1.0,
+            1.0
+          ]
+        }
+      },
+      "backend": "OPTIX",
+      "atlas_coverage": 0.20166778564453125,
+      "elapsed_seconds": 10.47,
+      "ao_range_covered": [
+        0.011764707043766975,
+        1.0
+      ],
+      "roughness_range_covered": [
+        0.011764707043766975,
+        0.9568628072738647
+      ],
+      "metallic_policy": "Only named Steel surfaces; armor/rubber/concrete/glass/team are dielectric",
+      "provenance": "Original geometry-derived AO/pointiness/position and bounded procedural noise; no game textures",
+      "preview": "Preview_Ember_HQ.png",
+      "validation": "PASS"
+    }
+  ]
+}

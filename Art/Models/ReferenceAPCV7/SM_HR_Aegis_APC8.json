@@ -1,0 +1,45 @@
+{
+  "name": "SM_HR_Aegis_APC8",
+  "vertices": 10095,
+  "polygons": 9057,
+  "triangles": 18914,
+  "dimensions_m": [
+    3.7089998722076416,
+    1.879250168800354,
+    2.0314199924468994
+  ],
+  "materials": [
+    "Armor",
+    "Rubber",
+    "Dark",
+    "Steel",
+    "Team",
+    "Lamp",
+    "Glass"
+  ],
+  "origin": "ground pivot with runtime Z compensation",
+  "zoffset_m": -0.35,
+  "wheel_count": 8,
+  "authoring_direction": "front +X, wheel axes Y",
+  "reference": "Codex-Bild 1. Sept. 2026, 01_22_20.png, right tan eight-wheel AFV",
+  "pivot": "ground at -0.35 m; actor +35cm places tire tread at ground",
+  "fbx_roundtrip": {
+    "passed": true,
+    "bounds_m": [
+      [
+        -1.78000009059906,
+        1.9290000200271606
+      ],
+      [
+        -0.9396253824234009,
+        0.9396253824234009
+      ],
+      [
+        -0.3499999940395355,
+        1.681420087814331
+      ]
+    ],
+    "mirror_y_checked": true
+  },
+  "validation": "PASS"
+}

@@ -1,0 +1,35 @@
+{
+  "mesh": "/Game/HERO/ReferenceV7/Meshes/SM_HR_Ember_APC8.SM_HR_Ember_APC8",
+  "definition": "/Game/HERO/DataV4/D_Ember_Combat.D_Ember_Combat",
+  "changed_property": "static_mesh",
+  "previous_mesh": "<Object '/Game/HERO/ConceptV2/Meshes/SM_HERO_Striker.SM_HERO_Striker' (0x0000022325579800) Class 'StaticMesh'>",
+  "dimensions_cm": [
+    347.4000244140625,
+    187.800048828125,
+    190.09999084472656
+  ],
+  "pivot_min_z": -35.0,
+  "runtime_scale": 1,
+  "runtime_ground_z_cm": 0.0,
+  "triangles": 20450,
+  "wheel_count": 8,
+  "stats_and_icon_unchanged": true,
+  "concept_surface_materials": {
+    "Team": "/Game/HERO/ReferenceV7/Materials/M_RV7_Ember_TeamGreen.M_RV7_Ember_TeamGreen",
+    "Neon": "/Game/HERO/ReferenceV7/Materials/M_RV7_Ember_NeonGreen.M_RV7_Ember_NeonGreen"
+  },
+  "concept_surface_tints": {
+    "Team": [
+      0.025,
+      0.32,
+      0.13
+    ],
+    "Neon": [
+      0.025,
+      0.7,
+      0.28
+    ]
+  },
+  "gameplay_identification": "Enemy red health bars, rings and UI retained; source concept graphite/green surface identity",
+  "limits": "Static wheels and turret, no LOD or unique baked weathering; matching portrait is managed separately"
+}

@@ -81,6 +81,8 @@ private:
     UPROPERTY() class UStaticMeshComponent* Barrel;
     UPROPERTY() class UStaticMeshComponent* Selection;
     UPROPERTY() class UMaterialInstanceDynamic* TeamMaterial;
+    FLinearColor TeamMaterialRestTint = FLinearColor::White;
+    FLinearColor TeamMaterialFlashTint = FLinearColor::White;
     float FireCooldown = 0.f;
     float ScanCooldown = 0.f;
     float FlashTime = 0.f;

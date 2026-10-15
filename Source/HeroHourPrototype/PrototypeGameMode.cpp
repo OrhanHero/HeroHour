@@ -38,7 +38,7 @@ FLinearColor FactionMarkingColor(int32 Team,bool bEmissive=false)
 {
     const bool bAegis=APrototypeGameMode::GetFactionIndex(Team)==0;
     return bAegis ? (bEmissive?FLinearColor(.025f,.35f,.80f):FLinearColor(.025f,.18f,.48f))
-        : (bEmissive?FLinearColor(.90f,.12f,.025f):FLinearColor(.48f,.045f,.018f));
+        : (bEmissive?FLinearColor(.025f,.70f,.28f):FLinearColor(.025f,.32f,.13f));
 }
 void ApplyFactionSurfaces(UMeshComponent* Component,int32 Team)
 {
@@ -175,9 +175,20 @@ void APrototypeUnit::ConfigureRole(EPrototypeRole InRole)
     {
         const int32 Index = InfantryMesh->IsVisible()?InfantryMesh->GetMaterialIndex(Slot):Mesh->GetMaterialIndex(Slot);
         if (Index == INDEX_NONE) continue;
+        UMaterialInterface* Authored=InfantryMesh->IsVisible()?InfantryMesh->GetMaterial(Index):Mesh->GetMaterial(Index);
+        FLinearColor RestTint=FactionMarkingColor(Team,Slot==FName(TEXT("Neon")));
+        const bool bBaked=Authored && Authored->GetName().StartsWith(TEXT("M_RV7_Baked_"));
+        // V7 concept surfaces author their faction colour in the instance or
+        // atlas. Preserve that colour instead of applying a second team tint.
+        if(Authored && Authored->GetName().StartsWith(TEXT("M_RV7_")))
+            Authored->GetVectorParameterValue(FHashedMaterialParameterInfo(TEXT("Tint")),RestTint);
         UMaterialInstanceDynamic* Material = InfantryMesh->IsVisible()?InfantryMesh->CreateDynamicMaterialInstance(Index):Mesh->CreateDynamicMaterialInstance(Index);
-        if (Material) Material->SetVectorParameterValue(TEXT("Tint"),FactionMarkingColor(Team,Slot==FName(TEXT("Neon"))));
-        if (Slot == FName(TEXT("Team"))) TeamMaterial = Material;
+        if (Material) Material->SetVectorParameterValue(TEXT("Tint"),RestTint);
+        if (Slot == FName(TEXT("Team")))
+        {
+            TeamMaterial=Material;TeamMaterialRestTint=RestTint;
+            TeamMaterialFlashTint=bBaked?RestTint*2.f:FLinearColor::White;
+        }
     }
 }
 
@@ -426,8 +437,7 @@ void APrototypeUnit::Tick(float DeltaSeconds)
     if (FlashTime > 0)
     {
         FlashTime -= DeltaSeconds;
-        if (TeamMaterial) TeamMaterial->SetVectorParameterValue(TEXT("Tint"), FlashTime > 0 ? FLinearColor::White :
-            FactionMarkingColor(Team));
+        if (TeamMaterial) TeamMaterial->SetVectorParameterValue(TEXT("Tint"), FlashTime > 0 ? TeamMaterialFlashTint : TeamMaterialRestTint);
     }
     if (IsStructure())
     {
@@ -1294,7 +1304,16 @@ void APrototypeGameMode::BeginPlay()
                 {
                     for (TActorIterator<APrototypeUnit> It(GetWorld());It;++It)
                         if (It->Team==0 && It->Role==EPrototypeRole::Combat && It->Health>0.f)
-                        { Controller->Selected.Add(*It);It->Select(true);break; }
+                        {
+                            Controller->Selected.Add(*It);It->Select(true);
+                            if(FParse::Param(FCommandLine::Get(),TEXT("PrototypeCaptureCloseUp")))
+                            {
+                                if(APawn* Camera=Controller->GetPawn())
+                                { FVector Position=Camera->GetActorLocation();Position.Z=1300.f;Camera->SetActorLocation(Position); }
+                                Controller->PanToWorld(It->GetActorLocation());
+                            }
+                            break;
+                        }
                 }
                 else if (FParse::Param(FCommandLine::Get(),TEXT("PrototypeHarvesterCapture")))
                 {
@@ -1316,7 +1335,16 @@ void APrototypeGameMode::BeginPlay()
                         Camera->SetActorLocation(Position); Controller->PanToWorld(bDistrict ? FVector(-2300,-2500,35) : FVector::ZeroVector);
                     }
                 }
-                else if (PlayerHQ) { Controller->Selected.Add(PlayerHQ); PlayerHQ->Select(true); }
+                else if (PlayerHQ)
+                {
+                    Controller->Selected.Add(PlayerHQ);PlayerHQ->Select(true);
+                    if(FParse::Param(FCommandLine::Get(),TEXT("PrototypeCaptureCloseUp")))
+                    {
+                        if(APawn* Camera=Controller->GetPawn())
+                        { FVector Position=Camera->GetActorLocation();Position.Z=2500.f;Camera->SetActorLocation(Position); }
+                        Controller->PanToWorld(PlayerHQ->GetActorLocation());
+                    }
+                }
             }
             const TCHAR* Name=FParse::Param(FCommandLine::Get(),TEXT("PrototypeCombatCapture")) ? TEXT("Screenshots/Combat.png") : FParse::Param(FCommandLine::Get(),TEXT("PrototypeHarvesterCapture")) ? TEXT("Screenshots/Harvester.png") : FParse::Param(FCommandLine::Get(),TEXT("PrototypeDistrictCapture")) ? TEXT("Screenshots/District.png") : FParse::Param(FCommandLine::Get(),TEXT("PrototypeOverviewCapture")) ? TEXT("Screenshots/EnvironmentOverview.png") : TEXT("Screenshots/Battle.png");
             // Give streaming and occlusion visibility time to settle after moving the camera.

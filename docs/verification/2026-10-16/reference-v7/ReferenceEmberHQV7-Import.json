@@ -1,0 +1,26 @@
+{
+  "mesh": "/Game/HERO/ReferenceV7/Meshes/SM_RV7_EmberHQ.SM_RV7_EmberHQ",
+  "definition": "/Game/HERO/DataV4/D_Ember_HQ.D_Ember_HQ",
+  "changed_property": "static_mesh",
+  "previous_mesh": "<Object '/Game/HERO/MilitaryDetailV6/Meshes/SM_MDV6_CommandHub.SM_MDV6_CommandHub' (0x00000080039E9800) Class 'StaticMesh'>",
+  "bounds_cm": [
+    [
+      -375.00006103515625,
+      375.00006103515625
+    ],
+    [
+      -380.00006103515625,
+      380.00006103515625
+    ],
+    [
+      -110.0,
+      489.0
+    ]
+  ],
+  "triangles": 27472,
+  "runtime_scale": 1.5,
+  "runtime_ground_z_cm": 0.0,
+  "stats_and_icon_unchanged": true,
+  "color_decision": "Graphite armor and green Team/Neon follow left concept; enemy health bars and gameplay identification remain unchanged",
+  "limits": "Static joined geometry; no moving antenna, destruction stages, unique grime atlas, authored LOD chain or traversable interior"
+}
