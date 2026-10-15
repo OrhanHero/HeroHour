@@ -14,7 +14,7 @@ $buildTool = Join-Path $EngineRoot 'Engine\Build\BatchFiles\Build.bat'
 if (-not (Test-Path -LiteralPath $buildTool)) { throw "Unreal Buildwerkzeug fehlt: $buildTool" }
 if (-not (Test-Path -LiteralPath $projectFile)) { throw "Projekt fehlt: $projectFile" }
 Write-Host 'Editor und Spiel vorher schließen, damit die DLL nicht gesperrt ist.'
-& $buildTool HeroHourEditor Win64 Development "-Project=$projectFile" -WaitMutex -NoHotReloadFromIDE 2>&1 | Tee-Object -FilePath $buildLog
+& $buildTool HeroHourEditor Win64 Development "-Project=$projectFile" -gather -WaitMutex -NoHotReloadFromIDE 2>&1 | Tee-Object -FilePath $buildLog
 if ($LASTEXITCODE -ne 0) { throw "Editor-Build fehlgeschlagen (Exitcode $LASTEXITCODE). Log: $buildLog" }
 if ($Package) {
     $automationTool = Join-Path $EngineRoot 'Engine\Build\BatchFiles\RunUAT.bat'

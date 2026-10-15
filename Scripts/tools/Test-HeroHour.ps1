@@ -1,11 +1,13 @@
 ﻿[CmdletBinding()]
 param(
     [ValidateSet('Editor', 'Packaged')][string]$Mode = 'Editor',
-    [ValidateSet('Combat', 'Economy', 'Navigation', 'Match', 'UI', 'Architecture', 'Resource', 'Docking')][string]$Suite = 'Combat',
+    [ValidateSet('Combat', 'Economy', 'Navigation', 'Match', 'UI', 'Architecture', 'Resource', 'Docking', 'Tactical', 'Visibility', 'Systems', 'FullMatch', 'Presentation', 'LogisticsStress')][string]$Suite = 'Combat',
+    [ValidateSet('Aegis','Ember')][string]$Faction = 'Aegis',
     [string]$EngineRoot = 'F:\UE\UE_5.8',
-    [ValidateRange(10, 600)][int]$TimeoutSeconds = 90
+    [ValidateRange(10, 1800)][int]$TimeoutSeconds = 90
 )
 $ErrorActionPreference = 'Stop'
+if ($Suite -eq 'LogisticsStress' -and -not $PSBoundParameters.ContainsKey('TimeoutSeconds')) { $TimeoutSeconds = 1800 }
 $projectRoot = (Resolve-Path (Join-Path $PSScriptRoot '..\..')).Path
 $projectFile = Join-Path $projectRoot 'HeroHour.uproject'
 $executable = Join-Path $EngineRoot 'Engine\Binaries\Win64\UnrealEditor-Cmd.exe'
@@ -16,8 +18,10 @@ $logDirectory = Join-Path $projectRoot 'Saved\Logs'
 New-Item -ItemType Directory -Path $logDirectory -Force | Out-Null
 $logFile = Join-Path $logDirectory ($Suite + 'Test-' + (Get-Date -Format 'yyyyMMdd-HHmmss-fff') + '.log')
 $resultMarker = $Suite.ToUpperInvariant() + '_TEST_RESULT'
+if ($Suite -eq 'LogisticsStress') { $resultMarker = 'LOGISTICS_STRESS_TEST_RESULT' }
 $testFlag = '-Prototype' + $Suite + 'Test'
 $testArguments = @(('"' + $projectFile + '"'), '/Game/Maps/CityHero', '-game', '-nullrhi', '-unattended', '-nosound', $testFlag, ('-abslog="' + $logFile + '"'))
+if ($Faction -eq 'Ember') { $testArguments += '-FactionEmber' }
 if ($Suite -eq 'UI') {
     # UI interaction requires a real viewport and camera, even for an unattended test.
     $testArguments = @($testArguments | Where-Object { $_ -ne '-nullrhi' }) + @('-windowed', '-ForceRes', '-ResX=1600', '-ResY=900')

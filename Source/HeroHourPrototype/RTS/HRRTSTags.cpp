@@ -9,6 +9,13 @@ namespace HRRTSTags
     UE_DEFINE_GAMEPLAY_TAG(Building_CommandHub,"HeroHour.Building.CommandHub");
     UE_DEFINE_GAMEPLAY_TAG(Building_Refinery,"HeroHour.Building.Refinery");
     UE_DEFINE_GAMEPLAY_TAG(Building_VehiclePlant,"HeroHour.Building.VehiclePlant");
+    UE_DEFINE_GAMEPLAY_TAG(Building_PowerPlant,"HeroHour.Building.PowerPlant");
+    UE_DEFINE_GAMEPLAY_TAG(Building_Barracks,"HeroHour.Building.Barracks");
+    UE_DEFINE_GAMEPLAY_TAG(Building_Radar,"HeroHour.Building.Radar");
+    UE_DEFINE_GAMEPLAY_TAG(Building_Defense,"HeroHour.Building.Defense");
+    UE_DEFINE_GAMEPLAY_TAG(Unit_Infantry,"HeroHour.Unit.Infantry");
+    UE_DEFINE_GAMEPLAY_TAG(Unit_Siege,"HeroHour.Unit.Siege");
+    UE_DEFINE_GAMEPLAY_TAG(Tech_Barracks,"HeroHour.Tech.Barracks");
     UE_DEFINE_GAMEPLAY_TAG(Production_Buildings,"HeroHour.Production.Buildings");
     UE_DEFINE_GAMEPLAY_TAG(Production_Defense,"HeroHour.Production.Defense");
     UE_DEFINE_GAMEPLAY_TAG(Production_Infantry,"HeroHour.Production.Infantry");

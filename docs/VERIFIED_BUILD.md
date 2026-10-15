@@ -1,36 +1,64 @@
 # Nachgewiesener Windows-Build
 
-Aktuell:14.10.2026,22:33 Berlin, Unreal5.8.3, Win64Development, `/Game/Maps/CityHero`. CreatedUtc`2026-10-14T20:33:13.3558656Z`, `Packaging-20261014-223219-417.log`: BUILD SUCCESSFUL/Exit0. Paketcontainer, HERO-Asset-Cook und Materialprüfung bestanden. Paket liegt lokal unter `Builds/Windows`.
+Stand: **15.10.2026, Paket 13:45 Berlin**. Unreal Engine 5.8.3, Win64 Development, Karte /Game/Maps/CityHero. CreatedUtc: 2026-10-15T11:45:50.6583192Z. Packaging-20261015-134515-393.log: erfolgreicher Build; HERO-Assets ausdrücklich gekocht. Das Paket liegt lokal unter Builds/Windows und wird nicht als Binärbuild in Git gespeichert.
 
-| Tatsächliches Paket,22:35 | Ergebnis | Log unter Saved/Logs |
-| --- | --- | --- |
-| Combat |17PASS|CombatTest-20261014-223508-941.log|
-| Economy |80PASS|EconomyTest-20261014-223508-935.log|
-| Navigation |10PASS|NavigationTest-20261014-223508-959.log|
-| Match |3/3Siege, sichere Pfade, reale Lieferung|MatchTest-20261014-223508-959.log|
-| UI, echte Grafik |15PASS|UITest-20261014-223508-974.log|
-| Architecture |41PASS|ArchitectureTest-20261014-223508-983.log|
-| Resource |18PASS|ResourceTest-20261014-223508-983.log|
-| Docking |28PASS|DockingTest-20261014-223509-021.log|
+**19 Paketläufe PASS: 14 Aegis-Läufe mit 446 Assertion-Prüfpunkten und 5 Ember-Läufe mit 73 Assertion-Prüfpunkten. Zusammen 519 Assertions und 46 natürliche Partien:** je Fraktion 3 Match-Partien und 20 LogisticsStress-Partien mit 60-Hz-Simulationsschritten. Match-/Stress-Runden werden nicht zusätzlich als Assertions gezählt. Maschinenlesbarer Nachweis: [Transformation-Checks.json](verification/2026-10-15/Transformation-Checks.json).
 
-Alle acht Prozesse Exit0. Testwrapper verlangt PASS und lehnt fehlende HERO-/LocalAssets sowie Materialfehler ab. UI verwendet reales Grafik-Backend mit ForceRes1600×900; andere Suiten NullRHI.
+SHA-256 der geprüften Spiel-EXE:
 
-## Enthalten und tatsächlich abgenommen
+236b68194a924009475c9c45ced1cb73534ffa22167bd16b026bbfef40d2a6f2
 
-Fünf originale ConceptV2-Meshes samt Porträts; DistrictV3-Gelände/Stadt/Straßen/PBR/Groundcover, warmes Wüstenmaterial und passend gefärbte taktische Karte. ConceptV3-HUD mit Metallrahmen, Glas, Kategorien, Fokus, echten Produktions-/Stornoaktionen. Acht gespeicherte DataV3-Assets sind gekocht; Rollen lesen Kosten, Dauer, HP, Bewegung, Waffenwerte, Mesh und Porträt. Feldraten kommen aus ihrer gespeicherten Definition.
+## Tatsächliche Paketprüfungen
 
-Autoritativer Ressourcenfeldkern mit exklusiven Claims, optionaler Saatreserve und verzögertem Nachwachsen. Standardfinite; RegrowingFields ist opt-in. Depletion-Wechselevents und CustomPrimitiveData steuern Emission. Erschöpfter regenerierender Boden bleibt sichtbar und für Nav/Bau reserviert; finite Erschöpfung gibt die Fläche frei.
+| Suite | Fraktion | Ergebnis | Log unter Saved/Logs |
+|---|---|---|---|
+| Combat | Aegis | 17 Prüfpunkte PASS | CombatTest-20261015-134615-941.log |
+| Economy | Aegis | 102 Prüfpunkte PASS | EconomyTest-20261015-134616-073.log |
+| Navigation | Aegis | 20 Prüfpunkte PASS | NavigationTest-20261015-134616-227.log |
+| Match | Aegis | 3 natürliche Partien PASS | MatchTest-20261015-134616-388.log |
+| UI | Aegis | 22 Prüfpunkte PASS | UITest-20261015-134616-569.log |
+| Architecture | Aegis | 63 Prüfpunkte PASS | ArchitectureTest-20261015-134616-742.log |
+| Resource | Aegis | 18 Prüfpunkte PASS | ResourceTest-20261015-134616-921.log |
+| Docking | Aegis | 28 Prüfpunkte PASS | DockingTest-20261015-134617-130.log |
+| Tactical | Aegis | 46 Prüfpunkte PASS | TacticalTest-20261015-134617-315.log |
+| Visibility | Aegis | 25 Prüfpunkte PASS | VisibilityTest-20261015-134617-519.log |
+| Systems | Aegis | 54 Prüfpunkte PASS | SystemsTest-20261015-134617-733.log |
+| FullMatch | Aegis | 17 Prüfpunkte PASS | FullMatchTest-20261015-134617-955.log |
+| Presentation | Aegis | 34 Prüfpunkte PASS | PresentationTest-20261015-134618-177.log |
+| LogisticsStress | Aegis | 20 natürliche Partien PASS | LogisticsStressTest-20261015-134618-395.log |
+| FullMatch | Ember | 17 Prüfpunkte PASS | FullMatchTest-20261015-134618-601.log |
+| Match | Ember | 3 natürliche Partien PASS | MatchTest-20261015-134618-843.log |
+| UI | Ember | 22 Prüfpunkte PASS | UITest-20261015-134619-154.log |
+| Presentation | Ember | 34 Prüfpunkte PASS | PresentationTest-20261015-134619-419.log |
+| LogisticsStress | Ember | 20 natürliche Partien PASS | LogisticsStressTest-20261015-134619-685.log |
 
-Neu: explizite Rückfahrt, FIFO-Warten, ein Dockslot und zeitliche Entladung. **Eigene Regel40/s, keine gemessene Originalrate.** Nur tatsächlicher Slotbesitzer am erreichbaren Anfahrpunkt entlädt. Manuelle Abfahrt, Tod oder Raffinerieverlust lösen Claims; Restcargo bleibt erhalten und kann zur Ersatzraffinerie fahren. Die hintere Kupplung wird zur Raffinerie gedreht; HUD zeigt RUECKFAHRT/DOCK WARTEN/ENTLADEN.
+Die Testwrapper verlangen PASS und prüfen Prozessabschluss sowie fehlende HERO-Assets und Materialfehler. UI benötigt ein echtes Grafik-Backend; viele numerische und manuell fortgeschriebene Gameplay-Tests verwenden NullRHI. Diese Paketläufe sind von den separaten Echtzeit-Dauerläufen zu unterscheiden.
 
-Cargo/Wallet sind double. Core nutzt monotone Transaktions-IDs und gemeinsame ULP-Schritte; tatsächlicher Debit und Credit müssen identisch und innerhalb des Budgets sein. Nicht buchbarer Rest bleibt Cargo, gibt den Dockslot frei und wird mit der nächsten Ernte zusammengeführt. Tests prüfen normale/fraktionale Bilanz, große Wallet, Subnormal/NaN/Overflow sowie manuelle Unterbrechung und zerstörte/reparierte Logistik.
+## Enthaltener und geprüfter Funktionsumfang
 
-Im ersten Live-Test scheiterten zwei Gates: FIFO-Kopf fuhr trotz belegtem Slot in die Entladelinie;30cm Anfahrtoleranz stoppte Sammler zu früh. Beide echten Abläufe korrigiert, alle80 Wirtschafts-Gates bestehen jetzt. Sie wurden nicht abgeschaltet. Gezielt pausiertes Entladen bleibt zusätzlich offen; bestehende UI-Suite prüft Pausenstopp der Matchzeit.
+- Zwei gespeicherte Fraktionsdefinitionen und elf Rollen: HQ, Raffinerie, Fabrik, Kraftwerk, Kaserne, Radar, Abwehr, Sammler, Striker, Infanterie und Artillerie. Aegis/Ember unterscheiden sich durch Tempo, Panzerung, Waffen und Fähigkeiten.
+- Drei räumliche Ressourcenfelder mit insgesamt 48 Zellen; Nachwachsen ist Standard. Exklusive Zellreservierungen, echte Sammlerfahrt, getrennte Raffinerie-FIFO mit einem Dockslot und zeitliches Entladen. Eigene Rate 40/s, keine gemessene Originalrate. Cargo/Wallet sind double; gleiche darstellbare Buchungsschritte und Operations-IDs verhindern Doppelbuchung beziehungsweise Verlust kleiner Restmengen.
+- Aktive Entladepause und manuelle Raffinerieabschaltung: Tests sichern Cargo, Geld, Operation und Dockzustand beziehungsweise Freigabe und korrekte Wiederaufnahme. Mehrsammler-, blockierte/zerstörte Raffinerie- und Bilanzfälle bleiben Teil der Wirtschafts-/Docking-Suiten.
+- Echtes Strombudget mit voller, niedriger und fehlender Versorgung; manuelles Schalten, Radar-/Abwehrausfall und unabhängiger Kraftwerksbau zur Wiederherstellung. Bezahlter Queue-Fortschritt bleibt erhalten.
+- Sidebar mit fünf Kategorien, Produzenten-FIFOs, Storno, Verkauf und Rally. Rasterplatzierung mit Rotation, verbundenem Bauradius, sofortiger Baustellenbelegung und rechteckiger Navigation. Tests decken mobile Einheiten und Ressourcen an Footprint-Ecken ab.
+- Getrennte Sicht/Erkundung je Team, Welt-Fog-Material, gefilterte Gegneranzeige/Ziele und radarabhängige Minimap. Rauch beeinflusst gegnerische Sicht.
+- Drei Schadensarten und Rüstungsklassen, Veteranenstufen, Infanteriedeckung/-unterdrückung, Granate, Rauch, Artillerie-Deployment und je zwei Commander-Doktrinen. Pause sperrt die autoritativen Aktionen ebenso wie die HUD-Bedienung.
+- Öffentliche Matchbefehle für Spieler und Bot; volle Wirtschafts-/Bau-/Kampfabläufe und Neustart. Natürliche Matchläufe verwenden keine geschenkten Kampfwerte oder unmittelbaren Test-Kills; gezielte isolierte Einzelfixtures sind davon getrennt.
 
-## Grafik und Grenzen
+ConceptV2, DistrictV3 und FrontlinesV4 enthalten eigene Modelle, Materialien, Gelände, Gebäude, UI und Porträts. Eigene prozedurale Audios, Waffen-/Raucheffekte und Infanterie-Skeletal-Mesh mit drei Clips sind im Paket. Die Präsentationsprüfung kontrolliert gespeicherte Paketressourcen und Materialzuordnungen. Ein erfolgreiches Importprotokoll allein wäre dafür nicht ausreichend.
 
-Aktueller tatsächlicher Paket-Render1600×900: [Sammler beim Entladen](../Art/Previews/ConceptV3-Harvester.png), `Capture-Harvester-20261014-223518-464.log`, CAPTURE_PASS, tatsächlich angesehen. Sichtbar860Credits/40Cargo beim laufenden Entladen. `Capture-HeroHour.ps1` prüft frischen Zeitstempel und PNG-Abmessungen, nutzt den korrekten Paket-Saved-Ordner und beendet seinen eigenen Hilfsprozess. Kopflose888×500-Ausgaben wurden verworfen und ForceRes ergänzt. Battle2560×1440 ist die frühere18:03-Ansicht; die neue Sammleransicht zeigt aktuelle Docking-Logik/Minimap.
+## Laufende Dauerprüfung und verbleibende Grenzen
 
-RenderOffscreen ist reale Spielgrafik; keine manuelle20-Minuten-Partie oder Tempest-Grafikparität. M1 bleibt teilweise umgesetzt: je sichtbarem Feld derzeit eine autoritative Zelle, noch keine räumliche Mehrzellen-Ernte. Kein Live-Stromnetz, Fog of War, zwei asymmetrische Fraktionen, Veterancy oder aktive Fähigkeiten. Native Original-Vergleichsszenarien fehlen; REA-Originalbyteprüfung belegt keinen kompilierten Nachbau.
+**Zwei neue 20-Minuten-RHI-Dauerläufe des 13:45-Pakets laufen seit etwa 13:46:45 Berlin (PIDs 12872 und 15172), je ein Fraktionsstart. Kein PASS für diese Läufe ist hier vorweggenommen.** Erst abgeschlossene Berichte dürfen als Nachweis für 1.200 echte Sekunden, wiederholte natürliche Ergebnisse, Logistikfortschritt sowie gemessene Framezeiten/Speicher ergänzt werden. Ein schneller Simulationslauf ersetzt diese Prüfung nicht.
 
-Reproduzieren: `Build-HeroHour.ps1 -Package`, danach `Test-HeroHour.ps1 -Mode Packaged -Suite` für Combat/Economy/Navigation/Match/UI/Architecture/Resource/Docking. Start: `HeroHour-Starten.cmd`. [Übergabe](CURRENT_HANDOVER.md), [Docking-Abnahme](research/Refinery-Docking-Acceptance.md).
+Die Codebasis bleibt ein GameMode-basierter Prototyp mit festem Rollen-/Asset-Registry-Vertrag. Die im ursprünglichen Architekturplan vorgeschlagenen UHR-Subsystemklassen sind nicht als fertige Module eingebaut. Beide Fraktionen teilen viele Meshes; eigene visuelle Fraktionssilhouetten, feinere Oberflächen, umfangreichere Animationen, Balance und bediente Langzeitpartien bleiben Entwicklungsarbeit. Technische Clipprüfung beseitigt nicht automatisch alle Bind-Pose-Warnungen oder ersetzt visuelle Animationsabnahme.
+
+RenderOffscreen-Captures sind reale Spielgrafik, aber kein Nachweis manueller Bedienung oder grafischer Gleichwertigkeit mit Tempest Rising. REA-Originalbyteanker belegen analysierte Originalbereiche, keine bytegleiche Neukompilierung und keine vollständige Original-Verhaltensparität. Originalassets werden nicht in HeroHour übernommen. Kampagne, Multiplayer, Luft-/Marine-Roster und große Techbäume gehören nicht zum aktuellen Umfang.
+
+Reproduzieren: Build-HeroHour.ps1 -Package, dann Test-HeroHour.ps1 -Mode Packaged -Suite mit den Tabellen-Suiten; zusätzliche Ember-Läufe mit -Faction Ember. Start: HeroHour-Starten.cmd beziehungsweise HeroHour-Ember-Starten.cmd. Weitere Anweisungen: [STARTEN.md](STARTEN.md), [Übergabe](CURRENT_HANDOVER.md), [Transformationsplan](TEMPEST_TRANSFORMATION_PLAN.md), [Docking-Abnahme](research/Refinery-Docking-Acceptance.md).
+
+## Historischer Dauerlauffehler und aktuelle Korrektur
+
+Das frühere 09:27-Paket bestand kurze Suiten, scheiterte aber im Aegis-Dauerlauf nach 7 abgeschlossenen Runden; Ember bestand separat mit 8 Runden. Diese Ergebnisse sind historische Nachweise unter [Aegis 09:27 FAIL](verification/2026-10-15/Soak-Aegis-0927-regression.json) und [Ember 09:27 PASS](verification/2026-10-15/Soak-Ember-0927.json), keine Dauerlaufabnahme des aktuellen Pakets.
+
+Eine 10-Hz-Reproduktion bestand 20 Runden, während 60-Hz-Schritte bereits in Runde 1 den Sammler-Stillstand reproduzierten. Die Diagnose zeigte 43 erreichbare positive Zellen und eine erreichbare betriebsfähige Raffinerie; die Enklavenhypothese erklärt diesen Fall nicht. Analytische Segmentabstände gegen Rechtecke/Kreise und das Prüfen der vollständigen Verbindung beim Überspringen eines nahen Wegpunkts beheben den identifizierten Geometriefehler. Navigation prüft jetzt 20 Gates einschließlich drei Eck-/Wegpunktregressionen und zwei Brückenuferfällen. Beide Fraktionen bestanden danach die je 20 natürlichen 60-Hz-Stresspartien des aktuellen Pakets; die unabhängigen Echtzeit-Dauerläufe bleiben dennoch abzuwarten.

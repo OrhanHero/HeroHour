@@ -153,6 +153,10 @@ class HEROHOURPROTOTYPE_API UHRFactionDefinition : public UPrimaryDataAsset
     GENERATED_BODY()
 
 public:
+    UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Faction", meta=(ClampMin="0.1"))
+    float MoveMultiplier = 1.f;
+    UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Faction", meta=(ClampMin="0.1"))
+    float ArmorMultiplier = 1.f;
     UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Identity")
     FGameplayTag FactionId;
 

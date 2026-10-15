@@ -88,3 +88,7 @@ Die gefundene Rundungslücke wurde vor diesem Paket behoben: tatsächlich darges
 | Resource | 18 PASS | `ResourceTest-20261014-223508-983.log` |
 
 M1 bleibt teilweise umgesetzt: mehrere räumliche Erntezellen und vollständiger Originalvergleich fehlen weiterhin. Neue RHI-Captures waren bei diesem Nachtrag noch in Prüfung; hier wird kein neuer Bild-/Klicknachweis behauptet.
+
+## Nachtrag 15.10.2026
+
+Der historische D5-Restpunkt ist geschlossen: EconomyTest-20261015-092832-387.log besteht 102 Prüfungen einschließlich realer aktiver Entladung, Weltpause und manuell abgeschalteter Raffinerie. 48 räumliche Zellen sind jetzt integriert. Die heutigen Nachweise stehen in Transformation-Acceptance-2026-10-15.md; die obigen Tabellen bleiben historische Belege des 14.10. Originalparität bleibt davon getrennt.

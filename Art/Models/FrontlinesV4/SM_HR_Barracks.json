@@ -1,0 +1,43 @@
+{
+  "name": "SM_HR_Barracks",
+  "role": "Barracks",
+  "triangles": 9836,
+  "vertices": 5104,
+  "dimensions_m": [
+    5.0,
+    4.0,
+    3.3
+  ],
+  "min_z_m": -0.35,
+  "runtime_actor_z_cm": 35,
+  "runtime_scale": 1,
+  "materials": [
+    "Concrete",
+    "Dark",
+    "Steel",
+    "Lamp",
+    "Armor",
+    "Neon",
+    "Team"
+  ],
+  "original_geometry": true,
+  "fbx_roundtrip": {
+    "passed": true,
+    "dimensions_m": [
+      5.000000476837158,
+      4.000000953674316,
+      3.3000000417232513
+    ],
+    "min_z_m": -0.3499999940395355,
+    "nonmanifold_edges": 0,
+    "materials": [
+      "Concrete",
+      "Dark",
+      "Steel",
+      "Lamp",
+      "Armor",
+      "Neon",
+      "Team"
+    ]
+  }
+}

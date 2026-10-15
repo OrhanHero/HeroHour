@@ -1,0 +1,35 @@
+{
+  "schema": "HeroHour.Captures.v1",
+  "package": {
+    "CreatedUtc": "2026-10-15T11:45:50.6583192Z",
+    "Configuration": "Development",
+    "Platform": "Windows",
+    "PackagingLog": "C:\\Users\\Hero\\HeroHour\\Saved\\Logs\\Packaging-20261015-134515-393.log",
+    "Map": "/Game/Maps/CityHero",
+    "HeroAssetsExplicitlyCooked": true
+  },
+  "executable_sha256": "236b68194a924009475c9c45ced1cb73534ffa22167bd16b026bbfef40d2a6f2",
+  "captures": [
+    {
+      "faction": "Aegis",
+      "artifact": "Art/Previews/TempestPrototype-Aegis.png",
+      "source": "Builds/Windows/HeroHour/Saved/Screenshots/Soak-Aegis-0120.png",
+      "source_modified_utc": "2026-10-15T11:48:46.188921+00:00",
+      "width": 1600,
+      "height": 900,
+      "sha256": "d7bb5b141c0ebc22709148fb256ac53d9300bb69f21dd6575b8f964b789e2c06",
+      "visually_inspected": true
+    },
+    {
+      "faction": "Ember",
+      "artifact": "Art/Previews/TempestPrototype-Ember.png",
+      "source": "Builds/Windows/HeroHour/Saved/Screenshots/Soak-Ember-0300.png",
+      "source_modified_utc": "2026-10-15T11:51:46.486671+00:00",
+      "width": 1600,
+      "height": 900,
+      "sha256": "02ef8038ec882e2d1d45be6f37a5a15769031d0f74dd75412701d8b1be8d112e",
+      "visually_inspected": true
+    }
+  ],
+  "limits": "Actual unattended RenderOffscreen gameplay captures; not manual-play or Tempest graphical-parity evidence."
+}

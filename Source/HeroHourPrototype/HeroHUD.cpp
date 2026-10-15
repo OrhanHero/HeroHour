@@ -6,6 +6,8 @@
 #include "EngineUtils.h"
 #include "BattlefieldLayout.h"
 #include "RTS/HRRTSDefinitions.h"
+#include "InputCoreTypes.h"
+#include "UObject/StrongObjectPtr.h"
 
 namespace
 {
@@ -13,22 +15,29 @@ FPrototypeHUDRect MapContent(const FPrototypeHUDLayout& L)
 {
     const auto R=L.MiniMap(); return {R.X+20,R.Y+43,R.W-40,(R.W-40)*BattlefieldLayout::ExtentY/BattlefieldLayout::ExtentX};
 }
-FString RoleName(EPrototypeRole R)
+FString RoleName(EPrototypeRole R,int32 Team=0)
 {
-    if (const UHRUnitDefinition* Definition=APrototypeGameMode::GetRoleDefinition(R))
+    if (const UHRUnitDefinition* Definition=APrototypeGameMode::GetRoleDefinition(R,Team))
         return Definition->DisplayName.ToString();
     switch(R) {
     case EPrototypeRole::Headquarters:return TEXT("KOMMANDO-HUB");
     case EPrototypeRole::Factory:return TEXT("FAHRZEUGFABRIK");
     case EPrototypeRole::Depot:return TEXT("RAFFINERIE");
     case EPrototypeRole::Collector:return TEXT("SAMMLER");
+    case EPrototypeRole::PowerPlant:return TEXT("KRAFTWERK");
+    case EPrototypeRole::Barracks:return TEXT("KASERNE");
+    case EPrototypeRole::Radar:return TEXT("RADARZENTRUM");
+    case EPrototypeRole::Defense:return TEXT("WACHTURM");
+    case EPrototypeRole::Infantry:return TEXT("RANGER");
+    case EPrototypeRole::Siege:return TEXT("BELAGERER");
     default:return TEXT("STRIKER / KAMPFFAHRZEUG");
     }
 }
-UTexture2D* Portrait(EPrototypeRole R)
+UTexture2D* Portrait(EPrototypeRole R,int32 Team=0)
 {
-    if (const UHRUnitDefinition* Definition=APrototypeGameMode::GetRoleDefinition(R))
+    if (const UHRUnitDefinition* Definition=APrototypeGameMode::GetRoleDefinition(R,Team))
         if (UTexture2D* Icon=Definition->Icon.LoadSynchronous()) return Icon;
+    if (R>=EPrototypeRole::PowerPlant)return nullptr;
     // LoadObject resolves the same imported package texture on subsequent draws.
     const TCHAR* Path=R==EPrototypeRole::Headquarters?TEXT("/Game/HERO/UI/T_HERO_CommandHub.T_HERO_CommandHub"):
         R==EPrototypeRole::Factory?TEXT("/Game/HERO/UI/T_HERO_VehiclePlant.T_HERO_VehiclePlant"):
@@ -38,27 +47,71 @@ UTexture2D* Portrait(EPrototypeRole R)
 }
 UTexture2D* InterfaceTexture(const TCHAR* Name)
 {
-    static TMap<FName,TWeakObjectPtr<UTexture2D>> Loaded;
+    static TMap<FName,TStrongObjectPtr<UTexture2D>> Loaded;
     const FName Key(Name);
     if(const auto* Cached=Loaded.Find(Key);Cached&&Cached->IsValid())return Cached->Get();
     const FString Path=FString::Printf(TEXT("/Game/HERO/UI/ConceptV3/%s.%s"),Name,Name);
     UTexture2D* Texture=LoadObject<UTexture2D>(nullptr,*Path,nullptr,LOAD_NoWarn);
-    Loaded.Add(Key,Texture);
+    Loaded.Add(Key,TStrongObjectPtr<UTexture2D>(Texture));
     return Texture;
 }
 int32 VisibleCategory(const APrototypeHUD* HUD,const APrototypeUnit* Producer)
 {
     return HUD->ProductionCategory>=0?HUD->ProductionCategory:
-        Producer&&Producer->Role==EPrototypeRole::Factory?3:0;
+        Producer&&Producer->Role==EPrototypeRole::Barracks?2:Producer&&Producer->Role==EPrototypeRole::Factory?3:0;
 }
-bool CategoryHasContent(int32 Category) { return Category==0||Category==3; }
+bool CategoryHasContent(int32 Category) { return Category>=0&&Category<5; }
 bool CategoryRole(int32 Category,int32 Card,EPrototypeRole& Role)
 {
-    if(Card<0||Card>1||!CategoryHasContent(Category))return false;
-    Role=Category==0?(Card==0?EPrototypeRole::Depot:EPrototypeRole::Factory):
-        (Card==0?EPrototypeRole::Combat:EPrototypeRole::Collector);
-    return true;
+    return FPrototypeHUDLayout::CategoryCardRole(Category,Card,Role);
 }
+EPrototypeRole ProducerRole(EPrototypeRole Role)
+{
+    return Role==EPrototypeRole::Infantry?EPrototypeRole::Barracks:
+        Role==EPrototypeRole::Collector?EPrototypeRole::Headquarters:EPrototypeRole::Factory;
+}
+bool SupportsAbility(const APrototypeUnit* Unit,EHRAbility Ability)
+{
+    if(!IsValid(Unit)||Unit->Health<=0.f||Unit->IsActorBeingDestroyed()||Unit->Team!=0)return false;
+    return Ability==EHRAbility::Grenade ? Unit->Role==EPrototypeRole::Infantry:
+        Ability==EHRAbility::Smoke ? APrototypeGameMode::GetFactionIndex(Unit->Team)==0&&Unit->IsCombatant()&&!Unit->IsStructure():
+        Unit->Role==EPrototypeRole::Siege;
+}
+bool HasGrenadeTarget(const APrototypeUnit* Unit,const APrototypeGameMode* Mode)
+{
+    for(TActorIterator<APrototypeUnit> It(Unit->GetWorld());It;++It)
+        if(It->Team!=Unit->Team&&It->Health>0.f&&!It->IsActorBeingDestroyed()&&Mode->CanTeamSee(Unit->Team,*It)
+            &&FVector::DistSquared2D(It->GetActorLocation(),Unit->GetActorLocation())<=FMath::Square(800.f))return true;
+    return false;
+}
+EHRDoctrine PlayerDoctrine(int32 Card)
+{
+    return APrototypeGameMode::GetFactionIndex(0)==0 ? (Card==0?EHRDoctrine::RepairPulse:EHRDoctrine::PrecisionStrike):
+        (Card==0?EHRDoctrine::Scorch:EHRDoctrine::Overdrive);
+}
+FString DoctrineName(EHRDoctrine Doctrine)
+{
+    switch(Doctrine){case EHRDoctrine::RepairPulse:return TEXT("REPARATURIMPULS");case EHRDoctrine::PrecisionStrike:return TEXT("PRÄZISIONSSCHLAG");
+        case EHRDoctrine::Scorch:return TEXT("FLAMMENZONE");default:return TEXT("ÜBERTAKTUNG");}
+}
+FString RoleDescription(EPrototypeRole Role)
+{
+    switch(Role)
+    {
+    case EPrototypeRole::Depot:return TEXT("Sammler entladen im exklusiven Dock. Tempest wird zu Kredits.");
+    case EPrototypeRole::Factory:return TEXT("Produziert Kampffahrzeuge und Belagerer. Eigene FIFO mit fünf Plätzen.");
+    case EPrototypeRole::PowerPlant:return TEXT("Versorgt das Stromnetz. Unterversorgung bremst Bau und Produktion.");
+    case EPrototypeRole::Barracks:return TEXT("Produziert Infanterie mit Granaten, Deckung und Unterdrückung.");
+    case EPrototypeRole::Radar:return TEXT("Aktiviert die taktische Karte bei ausreichender Energie.");
+    case EPrototypeRole::Defense:return TEXT("Automatische Basisabwehr. Bei Unterversorgung deaktiviert.");
+    case EPrototypeRole::Collector:return TEXT("Reserviert eine Tempest-Zelle. 100 Ladung, Raffinerie-FIFO und zeitliches Entladen.");
+    case EPrototypeRole::Infantry:return TEXT("G: Granate auf sichtbare Gegner. Gebäudekanten bieten Deckung.");
+    case EPrototypeRole::Siege:return TEXT("Y: Stationär entfalten. Größere Reichweite und Panzerung, keine Bewegung.");
+    default:return TEXT("Mobiles Kampffahrzeug. T: Rauchwand für AEGIS. Kampferfahrung verbessert Werte.");
+    }
+}
+struct FDoctrineAim { EHRDoctrine Doctrine=EHRDoctrine::RepairPulse;float StartedAt=0.f; };
+TMap<TWeakObjectPtr<APrototypeHUD>,FDoctrineAim> DoctrineAims;
 FString ConstructionNotice(const FString& Message)
 {
     if(Message.Contains(TEXT("Construction unavailable"))) return TEXT("Bau gesperrt: Einsatz beendet.");
@@ -97,6 +150,30 @@ FString FeedbackNotice(APrototypeGameMode* Mode)
 }
 }
 
+void CancelPrototypeDoctrineTarget(APrototypeHUD* HUD)
+{
+    DoctrineAims.Remove(HUD);
+}
+
+bool HasPrototypeDoctrineTarget(const APrototypeHUD* HUD)
+{
+    return DoctrineAims.Contains(const_cast<APrototypeHUD*>(HUD));
+}
+
+void BeginPrototypeDoctrineTarget(APrototypeHUD* HUD,EHRDoctrine Doctrine)
+{
+    if(!IsValid(HUD))return;
+    APrototypeGameMode* Mode=HUD->GetWorld()->GetAuthGameMode<APrototypeGameMode>();
+    if(!Mode||Mode->Outcome!=0||HUD->GetWorld()->IsPaused())return;
+    if(!Mode->Commander[0].CanActivate(Doctrine,APrototypeGameMode::GetFactionIndex(0),true))
+    {Mode->Feedback=TEXT("Doktrin nicht bereit: Befehlspunkte oder globaler Cooldown fehlen.");return;}
+    if(APrototypeController* Controller=Cast<APrototypeController>(HUD->GetOwningPlayerController());Controller&&Controller->bPlacing)
+        Controller->ClearSelection();
+    FDoctrineAim Aim;Aim.Doctrine=Doctrine;Aim.StartedAt=Mode->MatchTime;
+    DoctrineAims.Add(HUD,Aim);
+    Mode->Feedback=DoctrineName(Doctrine)+TEXT(": Ziel im Gelände anklicken. ESC / Rechtsklick bricht ab.");
+}
+
 void APrototypeHUD::DrawHUD()
 {
     Super::DrawHUD();
@@ -105,6 +182,10 @@ void APrototypeHUD::DrawHUD()
     if(!Mode||!Controller||!Canvas)return;
     const FPrototypeHUDLayout L(Canvas->SizeX,Canvas->SizeY);
     const float S=L.S,W=L.W,H=L.H;
+    FVector2D Mouse;Controller->GetMousePosition(Mouse.X,Mouse.Y);Mouse/=S;
+    FString TooltipTitle,TooltipBody,TooltipStats;
+    for(auto It=DoctrineAims.CreateIterator();It;++It)if(!It.Key().IsValid())It.RemoveCurrent();
+    if(const FDoctrineAim* Aim=DoctrineAims.Find(this);Aim&&(Mode->Outcome!=0||Mode->MatchTime<Aim->StartedAt||Controller->bPlacing))CancelPrototypeDoctrineTarget(this);
     const FLinearColor Ink(.004f,.007f,.01f,.97f),Metal(.35f,.42f,.46f,.96f),Dark(.019f,.029f,.036f,.98f);
     const FLinearColor White(.9f,.94f,.96f),Muted(.52f,.61f,.64f),Mint(.39f,.92f,.57f),Cyan(.35f,.85f,.94f),Gold(.98f,.77f,.3f),Red(.96f,.30f,.21f);
     auto Rect=[&](FLinearColor C,float X,float Y,float A,float B){DrawRect(C,X*S,Y*S,A*S,B*S);};
@@ -151,16 +232,17 @@ void APrototypeHUD::DrawHUD()
         }
     };
     auto Bar=[&](float X,float Y,float A,float Ratio,FLinearColor C){Rect(Ink,X-1,Y-1,A+2,7);Rect(Dark,X,Y,A,5);Rect(C,X,Y,A*FMath::Clamp(Ratio,0.f,1.f),5);Line(X,Y,X+A*FMath::Clamp(Ratio,0.f,1.f),Y,FLinearColor(.85f,.95f,1,.5f),.6f);Line(X,Y+6,X+A,Y+6,Metal,.5f);};
-    auto Image=[&](EPrototypeRole R,float X,float Y,float A,float B,float Alpha=1.f){
-        if(UTexture2D* T=Portrait(R))DrawTexture(T,X*S,Y*S,A*S,B*S,0,0,1,1,FLinearColor(1,1,1,Alpha),BLEND_Translucent);
+    auto Image=[&](EPrototypeRole R,float X,float Y,float A,float B,float Alpha=1.f,int32 Team=0){
+        if(UTexture2D* T=Portrait(R,Team))DrawTexture(T,X*S,Y*S,A*S,B*S,0,0,1,1,FLinearColor(1,1,1,Alpha),BLEND_Translucent);
+        else Glyph(static_cast<int32>(R)%16,X+A*.22f,Y+B*.12f,FMath::Min(A,B)*.6f,FLinearColor(.35f,.85f,.94f,Alpha));
     };
     int32 Allies=0,Enemies=0,Collectors=0,Chosen=0;float Health=0,Maximum=0,ArmyHealth=0,ArmyMaximum=0;
     APrototypeUnit* Single=nullptr;
     for(TActorIterator<APrototypeUnit> It(GetWorld());It;++It){
-        if(It->Health<=0)continue;
-        if(!It->IsStructure()){if(It->Team==0){++Allies;ArmyHealth+=It->Health;ArmyMaximum+=It->MaxHealth;}else ++Enemies;}
+        if(It->Health<=0||It->IsActorBeingDestroyed())continue;
+        if(!It->IsStructure()){if(It->Team==0){++Allies;ArmyHealth+=It->Health;ArmyMaximum+=It->MaxHealth;}else if(Mode->CanTeamSee(0,*It))++Enemies;}
         if(It->Team==0&&It->Role==EPrototypeRole::Collector)++Collectors;
-        if(It->bSelected){++Chosen;Single=*It;Health+=It->Health;Maximum+=It->MaxHealth;}
+        if(It->bSelected&&It->Team==0){++Chosen;Single=*It;Health+=It->Health;Maximum+=It->MaxHealth;}
     }
     const auto Resource=L.Resource();Frame(Resource,Cyan);
     Text(TEXT("HERO HOUR"),Resource.X+25,Resource.Y+11,White,1.5f);
@@ -170,17 +252,26 @@ void APrototypeHUD::DrawHUD()
     Line(Resource.X+211,Resource.Y+40,Resource.X+211,Resource.Y+59,Metal);
     Text(FString::Printf(TEXT("ARMEE  %02d / 40"),Allies),Resource.X+226,Resource.Y+44,Cyan,.9f);
     Text(FString::Printf(TEXT("SAMMLER  %02d"),Collectors),Resource.X+378,Resource.Y+44,Mint,.82f);
-    const auto Army=L.Army();Frame(Army,Mint);Text(TEXT("ARMEE / HERO"),Army.X+25,Army.Y+12,White,1.f);
+    const FHRPowerGridState& Power=Mode->PowerGrid[0];
+    const FLinearColor PowerColor=Power.GetState()==EHRPowerState::Online?Mint:Power.GetState()==EHRPowerState::LowPower?Gold:Red;
+    Glyph(13,Resource.X+20,Resource.Y+64,19,PowerColor);
+    Text(FString::Printf(TEXT("ENERGIE  %d / %d"),Power.CurrentPower,Power.RequiredPower),Resource.X+47,Resource.Y+68,PowerColor,.81f);
+    Text(FString::Printf(TEXT("PROD. %d%%"),FMath::RoundToInt(100.f*Mode->GetProductionRate(0))),Resource.X+270,Resource.Y+68,PowerColor,.76f);
+    Text(Mode->HasRadar(0)?TEXT("RADAR ONLINE"):TEXT("RADAR OFFLINE"),Resource.X+382,Resource.Y+68,Mode->HasRadar(0)?Cyan:Muted,.7f);
+    const UHRFactionDefinition* PlayerFaction=Mode->GetFactionDefinition(0);
+    const auto Army=L.Army();Frame(Army,Mint);Text(TEXT("ARMEE / ")+(PlayerFaction?PlayerFaction->DisplayName.ToString():TEXT("HERO")),Army.X+25,Army.Y+12,White,1.f);
     Glyph(3,Army.X+21,Army.Y+39,30,White);Glyph(12,Army.X+131,Army.Y+39,30,White);
     Text(FString::Printf(TEXT("%02d"),Allies-Collectors),Army.X+66,Army.Y+43,White,1.3f);
     Text(FString::Printf(TEXT("%02d"),Collectors),Army.X+176,Army.Y+43,White,1.3f);
     Text(TEXT("ZUSTAND"),Army.X+246,Army.Y+40,Muted,.69f);
     Text(FString::Printf(TEXT("%03d%%"),ArmyMaximum>0?FMath::RoundToInt(100*ArmyHealth/ArmyMaximum):0),Army.X+246,Army.Y+54,Mint,.92f);
     Bar(Army.X+20,Army.Y+73,95,Allies>0?1:0,Mint);Bar(Army.X+131,Army.Y+73,95,Collectors>0?1:0,Cyan);Bar(Army.X+246,Army.Y+73,83,ArmyMaximum>0?ArmyHealth/ArmyMaximum:0,Mint);
-    const auto Mission=L.Mission();Frame(Mission,Red);Text(TEXT("EINSATZ / CITY HERO"),Mission.X+25,Mission.Y+12,White,1.06f);
+    const auto Mission=L.Mission();Frame(Mission,Red);Text(TEXT("COMMANDER / CITY HERO"),Mission.X+25,Mission.Y+12,White,1.03f);
     const int32 Seconds=FMath::FloorToInt(Mode->MatchTime);
     Text(FString::Printf(TEXT("%02d:%02d"),Seconds/60,Seconds%60),Mission.X+22,Mission.Y+41,Cyan,1.85f);
-    Text(FString::Printf(TEXT("%02d FEINDFAHRZEUGE"),Enemies),Mission.X+121,Mission.Y+51,Muted,.8f);
+    Text(FString::Printf(TEXT("BEFEHL  %03d / 100"),FMath::FloorToInt(Mode->Commander[0].Points)),Mission.X+121,Mission.Y+40,Gold,.78f);
+    Text(Mode->Commander[0].GlobalCooldown>0.f?FString::Printf(TEXT("DOKTRIN  %d SEK"),FMath::CeilToInt(Mode->Commander[0].GlobalCooldown)):TEXT("DOKTRIN BEREIT"),Mission.X+121,Mission.Y+58,Cyan,.77f);
+    Text(FString::Printf(TEXT("%02d SICHTKONTAKTE"),Enemies),Mission.X+121,Mission.Y+73,Muted,.67f);
     Text(GetWorld()->IsPaused()?TEXT("PAUSIERT / F10 FORTSETZEN"):Mode->MatchTime<60&&Mode->Outcome==0?FString::Printf(TEXT("ANGRIFF IN %02d SEK"),FMath::CeilToInt(60-Mode->MatchTime)):TEXT("FEINDLICHEN HUB ZERSTÖREN"),Mission.X+22,Mission.Y+87,GetWorld()->IsPaused()?Cyan:Mode->MatchTime<60?Gold:Red,.85f);
 
     const auto Mini=L.MiniMap();Frame(Mini,Cyan);Text(TEXT("TAKTISCHE KARTE"),Mini.X+25,Mini.Y+12,White,1.0f);
@@ -188,6 +279,8 @@ void APrototypeHUD::DrawHUD()
     auto MapX=[&](float X){return MR.X+FMath::Clamp((X+BattlefieldLayout::ExtentX)/(2*BattlefieldLayout::ExtentX),0.f,1.f)*MR.W;};
     auto MapY=[&](float Y){return MR.Y+FMath::Clamp((Y+BattlefieldLayout::ExtentY)/(2*BattlefieldLayout::ExtentY),0.f,1.f)*MR.H;};
     auto Region=[&](float X,float Y,float A,float B,FLinearColor C){Rect(C,MapX(X),MapY(Y),MapX(A)-MapX(X),MapY(B)-MapY(Y));};
+    if(Mode->HasRadar(0))
+    {
     if(UTexture2D* MapBackground=InterfaceTexture(TEXT("T_UI_CityHeroMap_V3")))Texture(MapBackground,MR);
     else
     {
@@ -197,8 +290,21 @@ void APrototypeHUD::DrawHUD()
         for(float Y:{-BattlefieldLayout::BridgeOffsetY,BattlefieldLayout::BridgeOffsetY})Region(BattlefieldLayout::RiverX-BattlefieldLayout::RiverHalfWidth,Y-BattlefieldLayout::BridgeHalfWidth,BattlefieldLayout::RiverX+BattlefieldLayout::RiverHalfWidth,Y+BattlefieldLayout::BridgeHalfWidth,FLinearColor(.48f,.46f,.36f,1));
     }
     for(int I=0;I<8;++I){Line(MR.X+MR.W*I/8,MR.Y,MR.X+MR.W*I/8,MR.Y+MR.H,FLinearColor(.5f,.55f,.4f,.12f),.5f);Line(MR.X,MR.Y+MR.H*I/8,MR.X+MR.W,MR.Y+MR.H*I/8,FLinearColor(.5f,.55f,.4f,.12f),.5f);}
-    for(const auto& Node:Mode->SalvageNodes)if(Node.Remaining>0)Rect(Gold,MapX(Node.Position.X)-2,MapY(Node.Position.Y)-2,4,4);
-    for(TActorIterator<APrototypeUnit> It(GetWorld());It;++It){if(It->Health<=0)continue;const FVector P=It->GetActorLocation();const float D=It->IsStructure()?7:4;
+    if(Mode->FogTexture)Texture(Mode->FogTexture,MR);
+    else if(Mode->Visibility.GetWidth()==0)Rect(FLinearColor::Black,MR.X,MR.Y,MR.W,MR.H);
+    else for(int32 Y=0;Y<Mode->Visibility.GetHeight();++Y)for(int32 X=0;X<Mode->Visibility.GetWidth();++X)
+    {
+        const FVector Center=Mode->Visibility.GetCellCenter(X,Y);const float Half=Mode->Visibility.GetCellSize()*.5f;
+        Region(Center.X-Half,Center.Y-Half,Center.X+Half,Center.Y+Half,FLinearColor(0,0,0,Mode->Visibility.GetFogAlpha(0,Center)));
+    }
+    for(const auto& Node:Mode->SalvageNodes)for(int32 CellIndex=0;CellIndex<Node.Field.Num();++CellIndex)
+    {
+        const FVector Position=Node.CellPosition(CellIndex);if(!Mode->Visibility.IsExplored(0,Position))continue;
+        const bool Visible=Mode->Visibility.IsVisible(0,Position);
+        if(Visible&&Node.Field.GetAmount(CellIndex)<=0.f&&Node.Field.GetStyle()==EHREconomyStyle::FiniteSupply)continue;
+        Rect(Visible?Gold:FLinearColor(.98f,.77f,.3f,.35f),MapX(Position.X)-.8f,MapY(Position.Y)-.8f,1.6f,1.6f);
+    }
+    for(TActorIterator<APrototypeUnit> It(GetWorld());It;++It){if(It->Health<=0||It->IsActorBeingDestroyed()||!Mode->CanTeamSee(0,*It))continue;const FVector P=It->GetActorLocation();const float D=It->IsStructure()?7:4;
         if(It->bSelected)Rect(White,MapX(P.X)-D/2-1,MapY(P.Y)-D/2-1,D+2,D+2);Rect(It->Team==0?Mint:Red,MapX(P.X)-D/2,MapY(P.Y)-D/2,D,D);}
     // Ground intersection of the actual four viewport rays forms the camera footprint.
     FVector2D Corners[4];bool ValidFootprint=true;
@@ -206,26 +312,42 @@ void APrototypeHUD::DrawHUD()
         if(!Controller->DeprojectScreenPositionToWorld(Screen.X,Screen.Y,Origin,Direction)||Direction.Z>=-.001f){ValidFootprint=false;break;}
         const FVector P=Origin+Direction*((35-Origin.Z)/Direction.Z);Corners[I]=FVector2D(MapX(P.X),MapY(P.Y));}
     if(ValidFootprint)for(int I=0;I<4;++I)Line(Corners[I].X,Corners[I].Y,Corners[(I+1)%4].X,Corners[(I+1)%4].Y,Cyan,1.2f);
-    Text(TEXT("KLICK: KAMERA VERSCHIEBEN"),Mini.X+16,Mini.Y+261,Cyan,.75f);
-    Text(TEXT("HERO"),Mini.X+17,Mini.Y+287,Mint,.8f);Text(TEXT("FEIND"),Mini.X+101,Mini.Y+287,Red,.8f);Text(TEXT("TEMPEST"),Mini.X+195,Mini.Y+287,Gold,.8f);
+    }
+    else
+    {
+        Rect(FLinearColor(.008f,.016f,.021f,1),MR.X,MR.Y,MR.W,MR.H);
+        for(int32 Scan=0;Scan<15;++Scan)Line(MR.X+8,MR.Y+10+Scan*12,MR.X+MR.W-8,MR.Y+10+Scan*12,FLinearColor(.08f,.14f,.17f,.35f),.5f);
+        Glyph(14,MR.X+MR.W*.5f-32,MR.Y+41,64,Muted);
+        Text(TEXT("RADAR OFFLINE"),MR.X+60,MR.Y+120,Muted,1.05f);
+        Text(Mode->IsPowered(0)?TEXT("RADARZENTRUM ERRICHTEN"):TEXT("STROMVERSORGUNG HERSTELLEN"),MR.X+25,MR.Y+151,PowerColor,.72f);
+    }
+    Text(Mode->HasRadar(0)?TEXT("KLICK: KAMERA VERSCHIEBEN"):TEXT("RADAR BENÖTIGT EIN AKTIVES STROMNETZ"),Mini.X+16,Mini.Y+261,Mode->HasRadar(0)?Cyan:Muted,.7f);
+    Text(PlayerFaction?PlayerFaction->DisplayName.ToString():TEXT("HERO"),Mini.X+17,Mini.Y+287,Mint,.8f);Text(TEXT("FEIND"),Mini.X+101,Mini.Y+287,Red,.8f);Text(TEXT("TEMPEST"),Mini.X+195,Mini.Y+287,Gold,.8f);
     const float HQRatio=IsValid(Mode->PlayerHQ)?Mode->PlayerHQ->Health/Mode->PlayerHQ->MaxHealth:0;
     Bar(Mini.X+17,Mini.Y+311,276,HQRatio,Mint);
 
     auto* Producer=Controller->GetSelectedProducer();
-    if(Producer&&Producer->bHasRallyPoint){const float X=MapX(Producer->RallyPoint.X),Y=MapY(Producer->RallyPoint.Y);Line(X-5,Y,X+5,Y,Cyan,2);Line(X,Y-5,X,Y+5,Cyan,2);
+    if(Producer&&Producer->bHasRallyPoint){const float X=MapX(Producer->RallyPoint.X),Y=MapY(Producer->RallyPoint.Y);if(Mode->HasRadar(0)){Line(X-5,Y,X+5,Y,Cyan,2);Line(X,Y-5,X,Y+5,Cyan,2);}
         FVector2D P;if(Controller->ProjectWorldLocationToScreen(Producer->RallyPoint+FVector(0,0,100),P)&&!IsOverInterface(P)){Line(P.X/S,P.Y/S-20,P.X/S,P.Y/S+4,Cyan,2);Rect(Cyan,P.X/S+2,P.Y/S-20,15,9);}}
     const auto Selection=L.Selection();Frame(Selection,Cyan);Text(TEXT("AUSGEWÄHLTES OBJEKT"),Selection.X+25,Selection.Y+12,White,1.04f);
     const FPrototypeHUDRect PortraitRect{Selection.X+18,Selection.Y+43,150,163};
     Rect(FLinearColor(.03f,.065f,.08f),PortraitRect.X,PortraitRect.Y,PortraitRect.W,PortraitRect.H);
     for(int32 I=0;I<6;++I)Line(PortraitRect.X,PortraitRect.Y+I*28,PortraitRect.X+PortraitRect.W,PortraitRect.Y+I*28,FLinearColor(.18f,.4f,.46f,.16f),.5f);
-    if(Chosen>0&&Single)Image(Single->Role,Selection.X+17,Selection.Y+44,154,154);
+    if(Chosen>0&&Single)Image(Single->Role,PortraitRect.X,PortraitRect.Y+1,PortraitRect.W,PortraitRect.W,1.f,Single->Team);
     else {Glyph(0,Selection.X+48,Selection.Y+77,88,Cyan);Text(TEXT("HERO KOMMANDO"),Selection.X+30,Selection.Y+181,Muted,.77f);}
     NineSlice(InterfaceTexture(TEXT("T_UI_Frame_V3")),PortraitRect,10);
-    const FString Title=Chosen==1&&Single?RoleName(Single->Role):(Chosen>1?FString::Printf(TEXT("EINSATZGRUPPE / %02d"),Chosen):TEXT("KEINE AUSWAHL"));
+    const FString Title=Chosen==1&&Single?RoleName(Single->Role,Single->Team):(Chosen>1?FString::Printf(TEXT("EINSATZGRUPPE / %02d"),Chosen):TEXT("KEINE AUSWAHL"));
     Text(Title,Selection.X+182,Selection.Y+47,Cyan,1.04f);
-    Text(Chosen==1&&Single?(Single->IsStructure()?TEXT("HERO / BASISGEBÄUDE"):TEXT("HERO / FAHRZEUG")):TEXT("KLICKEN ODER AUSWAHLRAHMEN ZIEHEN"),Selection.X+182,Selection.Y+69,Muted,.8f);
-    Text(FString::Printf(TEXT("ZUSTAND   %.0f / %.0f"),Health,Maximum),Selection.X+182,Selection.Y+96,White,.9f);
-    Bar(Selection.X+182,Selection.Y+119,369,Maximum>0?Health/Maximum:0,Mint);
+    FString UnitFamily=TEXT("KLICKEN ODER AUSWAHLRAHMEN ZIEHEN");
+    if(Chosen==1&&Single)
+    {
+        const UHRFactionDefinition* Faction=Mode->GetFactionDefinition(Single->Team);
+        UnitFamily=(Faction?Faction->DisplayName.ToString():TEXT("HERO"))+TEXT(" / ")+
+            (Single->IsStructure()?TEXT("BASIS"):Single->Role==EPrototypeRole::Infantry?TEXT("INFANTERIE"):TEXT("FAHRZEUG"));
+    }
+    Text(UnitFamily,Selection.X+182,Selection.Y+69,Muted,.75f);
+    Text(FString::Printf(TEXT("ZUSTAND   %.0f / %.0f"),Health,Maximum),Selection.X+182,Selection.Y+89,White,.85f);
+    Bar(Selection.X+182,Selection.Y+112,369,Maximum>0?Health/Maximum:0,Mint);
     FString Detail=TEXT("SHIFT: AUSWAHL ERWEITERN");
     if(Chosen==1&&Single){
         if(!Single->IsCompleted())Detail=FString::Printf(TEXT("BAU   %d%%"),FMath::RoundToInt(Single->ConstructionProgress*100));
@@ -240,24 +362,74 @@ void APrototypeHUD::DrawHUD()
             case EPrototypeCollectorState::Unloading: State=TEXT("ENTLADEN"); break;
             default: break;
             }
-            Detail=FString::Printf(TEXT("%.0f / 100 TEMPEST | %s"),Single->Cargo,State);
+            Detail=FString::Printf(TEXT("%.0f / 100 TEMPEST | %s | ZELLE %d"),Single->Cargo,State,Single->HarvestCell==INDEX_NONE?0:Single->HarvestCell+1);
         }
         else if(Single->IsStructure())Detail=FString::Printf(TEXT("WARTESCHLANGE   %d / 5"),Mode->GetQueueCount(Single));
-        else Detail=TEXT("SCHADEN 20   /   FEUERRATE 1 SEK");
+        else Detail=FString::Printf(TEXT("SCHADEN %.0f  REICHW. %.1fm  RANG %d"),Single->GetEffectiveDamage(),Single->GetEffectiveRange()/100.f,Single->CombatState.Rank);
     }
-    Text(Detail,Selection.X+182,Selection.Y+135,Gold,.88f);
-    if(Chosen==1&&Single&&Single->IsStructure())Bar(Selection.X+182,Selection.Y+155,369,Single->IsCompleted()?Mode->GetProductionProgress(Single):Single->ConstructionProgress,Gold);
+    Text(Detail,Selection.X+182,Selection.Y+126,Gold,.78f);
+    if(Chosen==1&&Single&&Single->IsStructure())
+    {
+        Bar(Selection.X+182,Selection.Y+149,369,Single->IsCompleted()?Mode->GetProductionProgress(Single):Single->ConstructionProgress,Gold);
+        Text(Single->bManuallyPoweredDown?TEXT("MANUELL AUS"):Mode->IsUnitOperational(Single)?TEXT("BETRIEBSBEREIT"):TEXT("STROM / BAU FEHLT"),Selection.X+182,Selection.Y+170,Single->bManuallyPoweredDown?Red:PowerColor,.78f);
+    }
+    else if(Chosen==1&&Single&&Single->IsCombatant())
+    {
+        Text(FString::Printf(TEXT("PANZERUNG x%.2f   TEMPO %.1fm/s   XP %.0f"),Single->GetEffectiveArmor(),Single->GetEffectiveSpeed()/100.f,Single->CombatState.Experience),Selection.X+182,Selection.Y+149,Muted,.69f);
+        const FString Status=Single->CombatState.IsSuppressed()?TEXT("UNTERDRÜCKT / TEMPO 45%"):Single->CombatState.bDeployed?TEXT("STATIONÄR ENTFALTET"):Single->IsInCover()?TEXT("IN DECKUNG / -30% SCHADEN"):TEXT("KEINE DECKUNG");
+        Text(Status,Selection.X+182,Selection.Y+170,Single->CombatState.IsSuppressed()?Red:Single->IsInCover()?Mint:Muted,.71f);
+        if(Single->Role==EPrototypeRole::Infantry)Bar(Selection.X+182,Selection.Y+184,225,Single->CombatState.Suppression/100.f,Single->CombatState.IsSuppressed()?Red:Gold);
+    }
     const auto Focus=L.Focus();Rect(Chosen>0?FLinearColor(.055f,.14f,.18f):Dark,Focus.X,Focus.Y,Focus.W,Focus.H);
     NineSlice(InterfaceTexture(TEXT("T_UI_Frame_V3")),Focus,8);Glyph(15,Focus.X+8,Focus.Y+7,26,Chosen>0?Cyan:Muted);
     Text(TEXT("F / FOKUS"),Focus.X+40,Focus.Y+13,Chosen>0?White:Muted,.84f);
-    Glyph(Producer?9:5,Selection.X+184,Selection.Y+174,22,Cyan);
-    Text(Producer?TEXT("RECHTSKLICK: SAMMELPUNKT"):TEXT("RECHTSKLICK: BEFEHL"),Selection.X+212,Selection.Y+177,Cyan,.73f);
-    Text(TEXT("STRG + 0–9: GRUPPE"),Selection.X+183,Selection.Y+199,Muted,.73f);
+    Text(Producer?TEXT("RECHTSKLICK: SAMMELPUNKT"):TEXT("STRG + 0–9: GRUPPE / RECHTSKLICK: BEFEHL"),Selection.X+183,Selection.Y+199,Muted,.67f);
+    if(Chosen==1&&Single&&Single->IsStructure())
+    {
+        const auto Toggle=L.PowerToggle(),Sell=L.Sell();
+        const bool PowerAvailable=Mode->Outcome==0&&!GetWorld()->IsPaused()&&Single->IsCompleted();
+        const bool SellAvailable=Mode->Outcome==0&&!GetWorld()->IsPaused()&&!Single->bHQ;
+        for(int32 Action=0;Action<2;++Action)
+        {
+            const auto Button=Action==0?Toggle:Sell;const bool Enabled=Action==0?PowerAvailable:SellAvailable;
+            Rect(Enabled?FLinearColor(.055f,.14f,.18f):Dark,Button.X,Button.Y,Button.W,Button.H);NineSlice(InterfaceTexture(TEXT("T_UI_Frame_V3")),Button,8);
+            Glyph(Action==0?13:10,Button.X+7,Button.Y+6,25,Enabled?(Action==0?Cyan:Gold):Muted);
+            Text(Action==0?(Single->bManuallyPoweredDown?TEXT("K / EIN"):TEXT("K / AUS")):TEXT("DEL / VERKAUF"),Button.X+36,Button.Y+13,Enabled?White:Muted,.69f);
+            if(Button.Contains(Mouse))
+            {
+                TooltipTitle=Action==0?TEXT("STROM UMSCHALTEN"):TEXT("GEBÄUDE VERKAUFEN");
+                TooltipBody=Action==0?TEXT("Abgeschaltete Gebäude verbrauchen und liefern keinen Strom. Produktion, Sicht, Radar und Abwehr des Gebäudes ruhen."):
+                    TEXT("50% des Gebäudepreises und sämtliche bezahlten Warteschlangenaufträge werden erstattet. Der Hub kann nicht verkauft werden.");
+                TooltipStats=Action==0?(Single->bManuallyPoweredDown?TEXT("MANUELL ABGESCHALTET"):TEXT("MANUELL EINGESCHALTET")):FString::Printf(TEXT("BASIS-ERSTATTUNG  %.0f KREDITS"),APrototypeGameMode::RoleCost(Single->Role)*.5f);
+            }
+        }
+    }
+    else for(int32 AbilityIndex=0;AbilityIndex<3;++AbilityIndex)
+    {
+        const auto Button=L.Ability(AbilityIndex);const EHRAbility Ability=static_cast<EHRAbility>(AbilityIndex);
+        bool Supported=false,Enabled=false;float Cooldown=TNumericLimits<float>::Max();
+        for(APrototypeUnit* Unit:Controller->Selected)if(SupportsAbility(Unit,Ability))
+        {
+            Supported=true;Cooldown=FMath::Min(Cooldown,Unit->CombatState.GetCooldown(Ability));
+            Enabled|=!GetWorld()->IsPaused()&&Mode->Outcome==0&&Unit->CombatState.CanActivate(Ability,true,Mode->IsUnitOperational(Unit),Ability!=EHRAbility::Grenade||HasGrenadeTarget(Unit,Mode));
+        }
+        Rect(Enabled?FLinearColor(.055f,.14f,.18f):Dark,Button.X,Button.Y,Button.W,Button.H);NineSlice(InterfaceTexture(TEXT("T_UI_Frame_V3")),Button,8);
+        const TCHAR* AbilityNames[]={TEXT("G / GRANATE"),TEXT("T / RAUCH"),TEXT("Y / MODUS")};
+        Glyph(AbilityIndex==0?11:AbilityIndex==1?5:8,Button.X+6,Button.Y+7,23,Enabled?Cyan:Muted);
+        Text(Supported&&Cooldown>0.f?FString::Printf(TEXT("%d SEK"),FMath::CeilToInt(Cooldown)):AbilityNames[AbilityIndex],Button.X+33,Button.Y+13,Enabled?White:Muted,.65f);
+        if(Button.Contains(Mouse))
+        {
+            TooltipTitle=AbilityNames[AbilityIndex];
+            TooltipBody=AbilityIndex==0?TEXT("Infanterie wirft eine Granate auf den nächsten sichtbaren Gegner innerhalb von 8 Metern. Flächenschaden, 12 Sekunden Cooldown."):
+                AbilityIndex==1?TEXT("AEGIS-Kampfeinheiten erzeugen 6 Sekunden Rauch. Gegner verlieren Sicht durch die Wolke, eigene Sicht bleibt frei. 18 Sekunden Cooldown."):
+                TEXT("Belagerer wechseln in den stationären Modus: 1,5-fache Reichweite und Panzerung. Eine Sekunde Umschaltzeit. Bewegung erst nach dem Einklappen.");
+            TooltipStats=!Supported?TEXT("KEINE PASSENDE EINHEIT AUSGEWÄHLT"):Cooldown>0.f?FString::Printf(TEXT("COOLDOWN  %d SEK"),FMath::CeilToInt(Cooldown)):Enabled?TEXT("BEREIT"):TEXT("SICHTBARES ZIEL / BETRIEB ERFORDERLICH");
+        }
+    }
 
     const auto Production=L.Production();Frame(Production,Cyan);Text(TEXT("BAU / PRODUKTION"),Production.X+25,Production.Y+12,White,1.1f);
-    FVector2D Mouse;Controller->GetMousePosition(Mouse.X,Mouse.Y);Mouse/=S;
-    const bool Active=Mode->Outcome==0&&IsValid(Mode->PlayerHQ);
-    const bool Ready=!Producer||Producer->IsCompleted(),Queue=!Producer||Mode->GetQueueCount(Producer)<5;
+    const bool Active=Mode->Outcome==0&&IsValid(Mode->PlayerHQ)&&Mode->PlayerHQ->Health>0.f&&!GetWorld()->IsPaused();
+    const bool Ready=!Producer||Mode->IsUnitOperational(Producer),Queue=!Producer||Mode->GetQueueCount(Producer)<5;
     const int32 Category=VisibleCategory(this,Producer);
     const TCHAR* TabNames[5]={TEXT("BASIS"),TEXT("ABWEHR"),TEXT("INF."),TEXT("FAHRZ."),TEXT("SPEZIAL")};
     for(int32 Index=0;Index<5;++Index){const auto Tab=L.ProductionTab(Index);const bool Enabled=CategoryHasContent(Index),Selected=Index==Category;
@@ -267,40 +439,84 @@ void APrototypeHUD::DrawHUD()
         Line(Tab.X,Tab.Y+Tab.H,Tab.X+Tab.W,Tab.Y+Tab.H,Selected?Cyan:Metal,Selected?2.f:.6f);
         if(!Enabled){Rect(Ink,Tab.X+59,Tab.Y+7,7,8);Line(Tab.X+60,Tab.Y+6,Tab.X+65,Tab.Y+6,Muted,.7f);}
     }
-    FString Context=Producer?RoleName(Producer->Role):TEXT("BASISKOMMANDO");
-    for(int32 Index=0;Index<5;++Index)if(!CategoryHasContent(Index)&&L.ProductionTab(Index).Contains(Mouse))Context=TEXT("KEINE VERFÜGBAREN EINHEITEN IN DIESER KATEGORIE");
+    FString Context=Category==4?FString::Printf(TEXT("%d BEFEHLSPUNKTE / GLOBALER COOLDOWN %.0fs"),FMath::FloorToInt(Mode->Commander[0].Points),Mode->Commander[0].GlobalCooldown):Producer?RoleName(Producer->Role):TEXT("BASISKOMMANDO");
     Text(Context,Production.X+19,Production.Y+88,Muted,.75f);
-    const TCHAR* Keys[2]={Category==0?TEXT("V"):TEXT("P"),Category==0?TEXT("B"):TEXT("C")};
-    for(int I=0;I<2;++I){const auto T=L.ProductionTile(I,0);EPrototypeRole R;if(!CategoryRole(Category,I,R))continue;
+    for(int I=0;I<FPrototypeHUDLayout::CategoryCardCount(Category);++I){const auto T=L.ProductionTile(I%2,I/2);
+        if(Category==4)
+        {
+            const EHRDoctrine Doctrine=PlayerDoctrine(I);const float Cost=FHRCommanderState::Cost(Doctrine);
+            const bool Available=Active&&Mode->Commander[0].CanActivate(Doctrine,APrototypeGameMode::GetFactionIndex(0),true);
+            const bool Hover=T.Contains(Mouse);
+            Rect(Hover&&Available?FLinearColor(.055f,.14f,.18f,.97f):Dark,T.X,T.Y,T.W,T.H);
+            Glyph(I==0?7:11,T.X+19,T.Y+12,41,Available?Cyan:Muted);NineSlice(InterfaceTexture(TEXT("T_UI_Frame_V3")),T,10);
+            Text(I==0?TEXT("Z"):TEXT("X"),T.X+9,T.Y+9,Available?Cyan:Muted,.82f);
+            const FString Label=DoctrineName(Doctrine);
+            Text(Label,T.X+63,T.Y+14,Available?White:Muted,.65f);
+            Text(FString::Printf(TEXT("%.0f PUNKTE"),Cost),T.X+64,T.Y+38,Available?Gold:Muted,.82f);
+            Text(Mode->Commander[0].GlobalCooldown>0.f?FString::Printf(TEXT("%d SEK COOLDOWN"),FMath::CeilToInt(Mode->Commander[0].GlobalCooldown)):TEXT("KLICK / GELÄNDEZIEL WÄHLEN"),T.X+11,T.Y+60,Muted,.57f);
+            if(Hover)
+            {
+                TooltipTitle=Label;TooltipStats=FString::Printf(TEXT("%.0f PUNKTE / 20 SEK GLOBALER COOLDOWN"),Cost);
+                TooltipBody=Doctrine==EHRDoctrine::RepairPulse?TEXT("Heilt eigene beschädigte Einheiten und Gebäude im Zielgebiet. Erst ein gültiger Geländeklick verbraucht Punkte."):
+                    Doctrine==EHRDoctrine::PrecisionStrike?TEXT("Explosiver Präzisionsschlag auf sichtbare Feinde. Ziele im Kriegsnebel werden abgewiesen, ohne Punkte zu verbrauchen."):
+                    Doctrine==EHRDoctrine::Scorch?TEXT("Tempest-Flächenschaden auf sichtbare Gegner. Einen Bereich im Gelände anklicken; Kriegsnebel verbirgt gültige Ziele."):
+                    TEXT("Eigene mobile Kampfeinheiten im Zielgebiet erhalten für acht Sekunden höheren Schaden und höheres Tempo.");
+            }
+            continue;
+        }
+        EPrototypeRole R;if(!CategoryRole(Category,I,R))continue;
         bool Available=Active&&Mode->Credits>=APrototypeGameMode::RoleCost(R);
-        if(Category==3)Available=Available&&Ready&&Queue&&(!Producer||Producer->Role==(R==EPrototypeRole::Combat?EPrototypeRole::Factory:EPrototypeRole::Headquarters))&&Mode->FindCompletedStructure(0,R==EPrototypeRole::Combat?EPrototypeRole::Factory:EPrototypeRole::Headquarters);
+        APrototypeUnit* RequiredProducer=nullptr;
+        if(Category==2||Category==3)
+        {
+            RequiredProducer=Producer?Producer:Mode->FindCompletedStructure(0,ProducerRole(R));
+            Available=Available&&Ready&&Queue&&RequiredProducer&&RequiredProducer->Role==ProducerRole(R)
+                &&Mode->IsUnitOperational(RequiredProducer)&&Mode->GetQueueCount(RequiredProducer)<5;
+        }
         const bool Hover=T.Contains(Mouse);Rect(Hover&&Available?FLinearColor(.055f,.14f,.18f,.97f):Dark,T.X,T.Y,T.W,T.H);
-        for(int32 Stripe=0;Stripe<4;++Stripe)Line(T.X+5,T.Y+16+Stripe*16,T.X+T.W-5,T.Y+16+Stripe*16,FLinearColor(.22f,.35f,.40f,.12f),.5f);
-        Image(R,T.X+45,T.Y-1,102,102,Available?1.f:.3f);
-        Rect(Ink,T.X+4,T.Y+78,T.W-8,27);Line(T.X+6,T.Y+78,T.X+T.W-6,T.Y+78,Metal,.6f);
+        for(int32 Stripe=0;Stripe<3;++Stripe)Line(T.X+5,T.Y+12+Stripe*16,T.X+T.W-5,T.Y+12+Stripe*16,FLinearColor(.22f,.35f,.40f,.12f),.5f);
+        Image(R,T.X+24,T.Y-1,92,72,Available?1.f:.3f);
+        Rect(Ink,T.X+4,T.Y+53,T.W-8,22);Line(T.X+6,T.Y+53,T.X+T.W-6,T.Y+53,Metal,.6f);
         NineSlice(InterfaceTexture(TEXT("T_UI_Frame_V3")),T,10);
-        Rect(Ink,T.X+9,T.Y+9,22,20);Text(Keys[I],T.X+15,T.Y+11,Available?Cyan:Muted,.94f);
-        const FString Label=R==EPrototypeRole::Depot?TEXT("RAFFINERIE"):R==EPrototypeRole::Factory?TEXT("FABRIK"):R==EPrototypeRole::Combat?TEXT("STRIKER"):TEXT("SAMMLER");
-        Text(Label,T.X+11,T.Y+84,Available?White:Muted,.81f);
-        Text(FString::Printf(TEXT("%.0f"),APrototypeGameMode::RoleCost(R)),T.X+135,T.Y+84,Available?Gold:Muted,.97f);
+        const TCHAR* Key=R==EPrototypeRole::Depot?TEXT("V"):R==EPrototypeRole::Factory?TEXT("B"):R==EPrototypeRole::Combat?TEXT("P"):R==EPrototypeRole::Collector?TEXT("C"):TEXT("");
+        if(*Key){Rect(Ink,T.X+9,T.Y+9,22,20);Text(Key,T.X+15,T.Y+11,Available?Cyan:Muted,.86f);}
+        const FString Label=RoleName(R);float LabelScale=.71f,LabelWidth=0.f,LabelHeight=0.f;
+        GetTextSize(Label,LabelWidth,LabelHeight,nullptr,LabelScale*S);
+        if(LabelWidth>122.f*S)LabelScale*=122.f*S/LabelWidth;
+        Text(Label,T.X+11,T.Y+60,Available?White:Muted,LabelScale);
+        Text(FString::Printf(TEXT("%.0f"),APrototypeGameMode::RoleCost(R)),T.X+145,T.Y+58,Available?Gold:Muted,.85f);
         Text(FString::Printf(TEXT("%.0f SEK"),APrototypeGameMode::RoleDuration(R)),T.X+125,T.Y+14,Muted,.70f);
         if(Hover&&Available)Line(T.X+10,T.Y+3,T.X+T.W-10,T.Y+3,Cyan,2.f);
+        if(Hover)
+        {
+            const UHRUnitDefinition* Definition=Mode->GetRoleDefinition(R,0);
+            TooltipTitle=RoleName(R);TooltipBody=RoleDescription(R);
+            TooltipStats=FString::Printf(TEXT("%.0f KREDITS / %.0f SEK%s"),APrototypeGameMode::RoleCost(R),APrototypeGameMode::RoleDuration(R),Available?TEXT(""):TEXT(" / NICHT VERFÜGBAR"));
+            if(const UHRBuildingDefinition* Building=Cast<UHRBuildingDefinition>(Definition))
+                TooltipStats+=FString::Printf(TEXT(" / E +%d -%d"),Building->PowerSupply,Building->PowerDemand);
+            if((Category==2||Category==3)&&(!RequiredProducer||RequiredProducer->Role!=ProducerRole(R)))
+                TooltipBody=RoleName(ProducerRole(R))+TEXT(" auswählen oder errichten. ")+TooltipBody;
+            else if(Mode->Credits<APrototypeGameMode::RoleCost(R))TooltipBody=TEXT("Zu wenig Kredits. Sammler zur Raffinerie zurückkehren lassen. ")+TooltipBody;
+            else if(!Queue)TooltipBody=TEXT("Die Warteschlange des ausgewählten Gebäudes ist voll. ")+TooltipBody;
+        }
     }
     const int32 QueueCount=Producer?Mode->GetQueueCount(Producer):Mode->GetQueueCount();
-    Glyph(14,Production.X+19,Production.Y+230,22,Cyan);
-    Text(FString::Printf(TEXT("WARTESCHLANGE  %02d%s"),QueueCount,Producer?TEXT(" / 5"):TEXT(" GESAMT")),Production.X+49,Production.Y+235,Cyan,.87f);
+    Glyph(14,Production.X+19,Production.Y+359,18,Cyan);
+    Text(FString::Printf(TEXT("WARTESCHLANGE  %02d%s"),QueueCount,Producer?TEXT(" / 5"):TEXT(" GESAMT")),Production.X+49,Production.Y+362,Cyan,.74f);
     int32 Slot=0;
     for(const FPrototypeProduction& Item:Mode->ProductionQueue){if(!Item.Producer.IsValid()||Item.Producer->Team!=0||(Producer&&Item.Producer.Get()!=Producer))continue;
-        const FPrototypeHUDRect QueueSlot{Production.X+20+Slot*76,Production.Y+258,68,40};Rect(Dark,QueueSlot.X,QueueSlot.Y,QueueSlot.W,QueueSlot.H);
+        const FPrototypeHUDRect QueueSlot=L.QueueSlot(Slot);Rect(Dark,QueueSlot.X,QueueSlot.Y,QueueSlot.W,QueueSlot.H);
         Image(Item.Role,QueueSlot.X+13,QueueSlot.Y-1,42,42);NineSlice(InterfaceTexture(TEXT("T_UI_Frame_V3")),QueueSlot,7);
-        if(Slot==0&&Producer)Bar(QueueSlot.X+5,QueueSlot.Y+33,58,Mode->GetProductionProgress(Producer),Gold);
+        if(Slot==0)Bar(QueueSlot.X+5,QueueSlot.Y+33,58,Item.Progress/FMath::Max(.01f,Item.Duration),Gold);
+        if(QueueSlot.Contains(Mouse)){TooltipTitle=RoleName(Item.Role,0);TooltipStats=FString::Printf(TEXT("FORTSCHRITT %.0f%% / BEZAHLT %.0f"),100.f*FMath::Clamp(Item.Progress/FMath::Max(.01f,Item.Duration),0.f,1.f),Item.PaidCost);
+            TooltipBody=TEXT("Aufträge laufen pro Gebäude in Reihenfolge. Die Stornierung entfernt den letzten bezahlten Auftrag und erstattet seinen tatsächlichen Preis.");}
         if(++Slot>=5)break;
     }
-    for(;Slot<5;++Slot){const float X=Production.X+20+Slot*76;Rect(FLinearColor(.009f,.017f,.02f,.7f),X,Production.Y+258,68,40);Line(X,Production.Y+258,X+68,Production.Y+258,FLinearColor(.15f,.22f,.25f),.5f);}
+    for(;Slot<5;++Slot){const auto Empty=L.QueueSlot(Slot);Rect(FLinearColor(.009f,.017f,.02f,.7f),Empty.X,Empty.Y,Empty.W,Empty.H);Line(Empty.X,Empty.Y,Empty.X+Empty.W,Empty.Y,FLinearColor(.15f,.22f,.25f),.5f);}
     const auto Cancel=L.Cancel();Rect(QueueCount>0&&Producer?FLinearColor(.20f,.08f,.06f,.96f):Dark,Cancel.X,Cancel.Y,Cancel.W,Cancel.H);
     Glyph(10,Cancel.X+8,Cancel.Y+5,18,QueueCount>0&&Producer?Red:Muted);
     Text(TEXT("RÜCKTASTE / LETZTEN AUFTRAG STORNIEREN"),Cancel.X+32,Cancel.Y+8,QueueCount>0&&Producer?White:Muted,.75f);
-    Text(Producer?TEXT("RECHTSKLICK IM GELÄNDE: SAMMELPUNKT"):Category==0?TEXT("BAUKARTE WÄHLEN, DANN BAUPLATZ SETZEN"):TEXT("HUB ODER FABRIK FÜR PRODUKTION WÄHLEN"),Production.X+20,Production.Y+350,Muted,.73f);
+    Text(Producer?TEXT("RECHTSKLICK IM GELÄNDE: SAMMELPUNKT"):Category<=1?TEXT("BAUKARTE WÄHLEN / Q DREHT DAS BAURASTER"):Category==4?TEXT("DOKTRIN WÄHLEN, DANN GELÄNDEZIEL SETZEN"):TEXT("PASSENDES PRODUKTIONSGEBÄUDE WÄHLEN"),Production.X+20,Production.Y+480,Muted,.69f);
     const auto Events=L.Events();Frame(Events,Mint);Text(TEXT("EREIGNISSE"),Events.X+25,Events.Y+12,White,.9f);
     FString Notice=FeedbackNotice(Mode);
     // Wrap by measured font width; messages remain within the same panel that owns hit testing.
@@ -310,18 +526,48 @@ void APrototypeHUD::DrawHUD()
         if(TW>(Events.W-40)*S&&!Current.IsEmpty()){Text(Current,Events.X+20,Events.Y+40+Row*16,Gold,.72f);Current=Word;++Row;if(Row>=3)break;}else Current=Candidate;}
     if(Row<3&&!Current.IsEmpty())Text(Current,Events.X+20,Events.Y+40+Row*16,Gold,.72f);
 
-    if(Controller->bPlacing&&Mode->Outcome==0){const auto R=L.Placement();Frame(R,Mint);Text(FString(RoleName(Controller->PlacementRole))+TEXT(" PLATZIEREN"),R.X+25,R.Y+12,Mint,1.f);Text(TEXT("GRÜN: GÜLTIGER BAUPLATZ / ESC: ABBRECHEN"),R.X+20,R.Y+39,White,.82f);}
-    Text(TEXT("WASD KAMERA / MAUSRAD ZOOM / DOPPELKLICK TYP WÄHLEN / F10 PAUSE / R NEUSTART"),W*.5f-295,H-15,Muted,.66f);
+    if(Controller->bPlacing&&Mode->Outcome==0){const auto R=L.Placement();Frame(R,Mint);Text(FString(RoleName(Controller->PlacementRole))+TEXT(" PLATZIEREN"),R.X+25,R.Y+12,Mint,1.f);Text(FString::Printf(TEXT("GRÜN: GÜLTIG / Q: %d° DREHUNG / ESC: ABBRUCH"),Controller->PlacementRotation*90),R.X+20,R.Y+39,White,.8f);}
+    if(const FDoctrineAim* Aim=DoctrineAims.Find(this))
+    {
+        const auto R=L.Placement();Frame(R,Cyan);Text(DoctrineName(Aim->Doctrine)+TEXT(" / ZIEL WÄHLEN"),R.X+25,R.Y+12,Cyan,.94f);
+        Text(TEXT("GELÄNDEKLICK BESTÄTIGT / ESC ODER RECHTSKLICK BRICHT AB"),R.X+20,R.Y+39,White,.68f);
+        if(!IsOverInterface(Mouse*S)){Line(Mouse.X-11,Mouse.Y,Mouse.X+11,Mouse.Y,Cyan,1.5f);Line(Mouse.X,Mouse.Y-11,Mouse.X,Mouse.Y+11,Cyan,1.5f);}
+    }
+    Text(TEXT("WASD KAMERA / MAUSRAD ZOOM / G T Y FÄHIGKEITEN / Z X DOKTRINEN / F10 PAUSE / R NEUSTART"),W*.5f-328,H-15,Muted,.62f);
     for(TActorIterator<APrototypeUnit> It(GetWorld());It;++It){
-        if(It->Health<=0||(!It->bHQ&&!It->bSelected&&It->Health>=It->MaxHealth&&It->IsCompleted()))continue;
+        if(It->Health<=0||It->IsActorBeingDestroyed()||!Mode->CanTeamSee(0,*It)||(!It->bHQ&&!It->bSelected&&It->Health>=It->MaxHealth&&It->IsCompleted()))continue;
         FVector Origin,Extent;It->GetActorBounds(false,Origin,Extent);
         FVector2D P;if(!Controller->ProjectWorldLocationToScreen(FVector(It->GetActorLocation().X,It->GetActorLocation().Y,Origin.Z+Extent.Z+35.f),P)||IsOverInterface(P)||P.Y<0||P.X<0||P.X>Canvas->SizeX||P.Y>Canvas->SizeY)continue;
         const float A=It->IsStructure()?108:46;Rect(Ink,P.X/S-A/2-2,P.Y/S-2,A+4,9);Bar(P.X/S-A/2,P.Y/S,A,It->Health/It->MaxHealth,It->Team==0?Mint:Red);
-        if(It->IsStructure()){Text(FString(It->Team==1?TEXT("FEIND / "):TEXT(""))+RoleName(It->Role),P.X/S-A/2,P.Y/S-17,White,.65f);if(!It->IsCompleted())Bar(P.X/S-A/2,P.Y/S+8,A,It->ConstructionProgress,Gold);}
+        if(It->IsStructure()){Text(FString(It->Team==1?TEXT("FEIND / "):TEXT(""))+RoleName(It->Role,It->Team),P.X/S-A/2,P.Y/S-17,White,.65f);if(!It->IsCompleted())Bar(P.X/S-A/2,P.Y/S+8,A,It->ConstructionProgress,Gold);}
+        else if(It->bSelected&&It->IsCombatant()&&It->CombatState.Rank>0)Text(FString::Printf(TEXT("RANG %d"),It->CombatState.Rank),P.X/S-A/2,P.Y/S-14,Gold,.58f);
     }
     if(Controller->bDragging){FVector2D P;Controller->GetMousePosition(P.X,P.Y);const FVector2D A=Controller->DragStart;
         DrawRect(FLinearColor(.25f,.7f,.5f,.08f),FMath::Min(A.X,P.X),FMath::Min(A.Y,P.Y),FMath::Abs(A.X-P.X),FMath::Abs(A.Y-P.Y));
         DrawLine(A.X,A.Y,P.X,A.Y,Mint,S);DrawLine(P.X,A.Y,P.X,P.Y,Mint,S);DrawLine(P.X,P.Y,A.X,P.Y,Mint,S);DrawLine(A.X,P.Y,A.X,A.Y,Mint,S);}
+    if(!TooltipTitle.IsEmpty()&&!DoctrineAims.Contains(this))
+    {
+        const FPrototypeHUDRect R{Production.X-372,FMath::Clamp(static_cast<float>(Mouse.Y)-195.f,122.f,H-208.f),358,186};
+        Frame(R,Cyan);float TitleScale=.88f,TitleWidth=0.f,TitleHeight=0.f;GetTextSize(TooltipTitle,TitleWidth,TitleHeight,nullptr,TitleScale*S);
+        if(TitleWidth>(R.W-48)*S)TitleScale*=(R.W-48)*S/TitleWidth;
+        Text(TooltipTitle,R.X+25,R.Y+12,White,TitleScale);
+        auto Wrapped=[&](const FString& Message,float Y,FLinearColor Color,float Font,int32 MaximumRows)
+        {
+            TArray<FString> Parts;Message.ParseIntoArray(Parts,TEXT(" "),true);FString Pending;int32 LineIndex=0;
+            for(const FString& Part:Parts)
+            {
+                const FString Candidate=Pending.IsEmpty()?Part:Pending+TEXT(" ")+Part;float TextWidth=0.f,TextHeight=0.f;GetTextSize(Candidate,TextWidth,TextHeight,nullptr,Font*S);
+                if(TextWidth>(R.W-40)*S&&!Pending.IsEmpty())
+                {
+                    Text(Pending,R.X+20,Y+LineIndex*17,Color,Font);Pending=Part;
+                    if(++LineIndex>=MaximumRows)return;
+                }
+                else Pending=Candidate;
+            }
+            if(LineIndex<MaximumRows&&!Pending.IsEmpty())Text(Pending,R.X+20,Y+LineIndex*17,Color,Font);
+        };
+        Wrapped(TooltipStats,R.Y+43,Gold,.68f,2);Wrapped(TooltipBody,R.Y+84,Muted,.73f,5);
+    }
     if(Mode->Outcome!=0){const FPrototypeHUDRect R{W*.5f-260,H*.5f-75,520,150};Frame(R,Mode->Outcome>0?Mint:Red);
         Text(Mode->Outcome>0?TEXT("SEKTOR GESICHERT"):TEXT("HUB VERLOREN"),R.X+26,R.Y+25,Mode->Outcome>0?Mint:Red,2.f);
         Text(Mode->Outcome>0?TEXT("Feindliches Kommando ausgeschaltet."):TEXT("Das HERO-Kommando wurde zerstört."),R.X+26,R.Y+76,White,1.f);Text(TEXT("[ R ] NEUEN EINSATZ STARTEN"),R.X+26,R.Y+115,Cyan,1.f);}
@@ -332,7 +578,7 @@ bool APrototypeHUD::IsOverInterface(const FVector2D& ScreenPosition) const
     auto* Controller=Cast<APrototypeController>(PlayerOwner);if(!Controller)return false;
     int32 X=0,Y=0;Controller->GetViewportSize(X,Y);if(X<=0||Y<=0)return false;
     const FPrototypeHUDLayout L(X,Y);
-    return L.IsOverPanel(ScreenPosition)||(Controller->bPlacing&&L.Placement().Contains(ScreenPosition/L.S));
+    return L.IsOverPanel(ScreenPosition)||((Controller->bPlacing||DoctrineAims.Contains(const_cast<APrototypeHUD*>(this)))&&L.Placement().Contains(ScreenPosition/L.S));
 }
 
 bool APrototypeHUD::HandleClick(const FVector2D& ScreenPosition)
@@ -340,18 +586,54 @@ bool APrototypeHUD::HandleClick(const FVector2D& ScreenPosition)
     auto* Mode=GetWorld()->GetAuthGameMode<APrototypeGameMode>();auto* Controller=Cast<APrototypeController>(PlayerOwner);
     if(!Mode||!Controller)return false;int32 X=0,Y=0;Controller->GetViewportSize(X,Y);if(X<=0||Y<=0)return false;
     const FPrototypeHUDLayout L(X,Y);const FVector2D P=ScreenPosition/L.S;const auto Map=MapContent(L);
-    if(Controller->bPlacing&&L.Placement().Contains(P))return true;
-    if(Map.Contains(P)){Controller->PanToWorld(FVector((P.X-Map.X)/Map.W*2*BattlefieldLayout::ExtentX-BattlefieldLayout::ExtentX,(P.Y-Map.Y)/Map.H*2*BattlefieldLayout::ExtentY-BattlefieldLayout::ExtentY,35));return true;}
+    if((Controller->bPlacing||DoctrineAims.Contains(this))&&L.Placement().Contains(P))return true;
+    if(Map.Contains(P))
+    {
+        if(Mode->HasRadar(0))Controller->PanToWorld(FVector((P.X-Map.X)/Map.W*2*BattlefieldLayout::ExtentX-BattlefieldLayout::ExtentX,(P.Y-Map.Y)/Map.H*2*BattlefieldLayout::ExtentY-BattlefieldLayout::ExtentY,35));
+        return true;
+    }
     if(L.Focus().Contains(P)){Controller->FocusSelection();return true;}
     for(int32 Category=0;Category<5;++Category)if(L.ProductionTab(Category).Contains(P)){
         if(CategoryHasContent(Category))ProductionCategory=Category;
         return true;
     }
-    if(Mode->Outcome==0){
+    if(Mode->Outcome==0&&!GetWorld()->IsPaused()){
+        if(const FDoctrineAim* Aim=DoctrineAims.Find(this);Aim&&!L.IsOverPanel(ScreenPosition))
+        {
+            const EHRDoctrine Doctrine=Aim->Doctrine;FVector Origin,Direction;
+            if(Controller->DeprojectScreenPositionToWorld(ScreenPosition.X,ScreenPosition.Y,Origin,Direction)&&Direction.Z<-.001f)
+            {
+                const FVector Target=Origin+Direction*((35.f-Origin.Z)/Direction.Z);
+                if(Mode->ActivateDoctrine(Doctrine,0,Target))CancelPrototypeDoctrineTarget(this);
+                else Mode->Feedback=TEXT("Doktrin-Ziel ungültig: passenden eigenen Verband oder sichtbare Gegner anklicken. Keine Punkte verbraucht.");
+            }
+            return true;
+        }
+        APrototypeUnit* SelectedStructure=nullptr;
+        if(Controller->Selected.Num()==1)
+        {
+            APrototypeUnit* Unit=Controller->Selected[0];
+            if(IsValid(Unit)&&Unit->Team==0&&Unit->Health>0.f&&!Unit->IsActorBeingDestroyed()&&Unit->IsStructure())SelectedStructure=Unit;
+        }
+        if(SelectedStructure)
+        {
+            if(L.PowerToggle().Contains(P)){CancelPrototypeDoctrineTarget(this);Mode->TogglePower(SelectedStructure);return true;}
+            if(L.Sell().Contains(P)){CancelPrototypeDoctrineTarget(this);Mode->SellBuilding(SelectedStructure);return true;}
+        }
+        else for(int32 AbilityIndex=0;AbilityIndex<3;++AbilityIndex)if(L.Ability(AbilityIndex).Contains(P))
+        {
+            CancelPrototypeDoctrineTarget(this);const EHRAbility Ability=static_cast<EHRAbility>(AbilityIndex);bool Activated=false;
+            const TArray<APrototypeUnit*> SelectionCopy=Controller->Selected;
+            for(APrototypeUnit* Unit:SelectionCopy)if(SupportsAbility(Unit,Ability))Activated|=Unit->TryActivateAbility(Ability);
+            if(!Activated)Mode->Feedback=TEXT("Fähigkeit nicht bereit: Einheitentyp, Cooldown und sichtbare Ziele prüfen.");
+            return true;
+        }
         const int32 Category=VisibleCategory(this,Controller->GetSelectedProducer());
-        for(int Card=0;Card<2;++Card)if(L.ProductionTile(Card,0).Contains(P)){
+        for(int Card=0;Card<FPrototypeHUDLayout::CategoryCardCount(Category);++Card)if(L.ProductionTile(Card%2,Card/2).Contains(P)){
+            if(Category==4){BeginPrototypeDoctrineTarget(this,PlayerDoctrine(Card));return true;}
             EPrototypeRole CardRole;if(!CategoryRole(Category,Card,CardRole))return true;
-            if(Category==0)Controller->BeginPlacement(CardRole);
+            CancelPrototypeDoctrineTarget(this);
+            if(Category==0||Category==1)Controller->BeginPlacement(CardRole);
             else if(auto* Producer=Controller->GetSelectedProducer())Mode->RequestProductionAt(Producer,CardRole);
             else Mode->RequestProduction(CardRole);return true;}
         if(L.Cancel().Contains(P)){if(auto* Producer=Controller->GetSelectedProducer())Mode->CancelProduction(Producer);return true;}

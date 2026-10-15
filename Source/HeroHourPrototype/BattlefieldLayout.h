@@ -64,17 +64,25 @@ struct FPrototypeNavigationObstacle
 {
     FVector Position = FVector::ZeroVector;
     float Radius = 0.f;
+    // Zero preserves radius-only fixtures; buildings use rotated grid half extents.
+    FVector2D HalfExtents = FVector2D::ZeroVector;
 };
 
 class HEROHOURPROTOTYPE_API FPrototypeNavigation
 {
 public:
+    static float StructureApproachRadius(const class APrototypeUnit* Structure, const FVector& Direction, float Clearance = 90.f);
+    static FVector ProjectOutsideStructure(const class APrototypeUnit* Structure, const FVector& Point,
+        const FVector& FallbackDirection, float Clearance = 90.f);
+    // Bounded perimeter search retains all real obstacles; caller caches the accepted goal.
+    static bool FindStructureApproach(class UWorld* World, const class APrototypeUnit* Target,
+        const FVector& Start, float WeaponRange, FVector& OutPoint);
     // Output excludes Start and includes the reachable goal. Water goals are rejected.
     static bool FindPath(const FVector& Start, const FVector& Goal, TArray<FVector>& OutPath,
         const TArray<FPrototypeNavigationObstacle>& Obstacles = {});
     static bool FindWorldPath(class UWorld* World, const FVector& Start, const FVector& Goal,
         TArray<FVector>& OutPath, const class APrototypeUnit* IgnoreStructure = nullptr);
-    // Static city blocks are always included by IsWalkable; this returns dynamic building circles.
+    // Static city blocks are always included by IsWalkable; buildings reserve their rotated grid rectangle.
     static TArray<FPrototypeNavigationObstacle> GetWorldObstacles(class UWorld* World,
         const class APrototypeUnit* IgnoreStructure = nullptr);
     static bool SegmentWorldWalkable(class UWorld* World, const FVector& Start, const FVector& End,

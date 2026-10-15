@@ -1,0 +1,43 @@
+{
+  "name": "SM_HR_Siege",
+  "role": "Siege",
+  "triangles": 19160,
+  "vertices": 9904,
+  "dimensions_m": [
+    3.8,
+    2.2,
+    2.6
+  ],
+  "min_z_m": -0.35,
+  "runtime_actor_z_cm": 35,
+  "runtime_scale": 1,
+  "materials": [
+    "Dark",
+    "Armor",
+    "Rubber",
+    "Steel",
+    "Neon",
+    "Glass",
+    "Lamp"
+  ],
+  "original_geometry": true,
+  "fbx_roundtrip": {
+    "passed": true,
+    "dimensions_m": [
+      3.8000004291534424,
+      2.200000762939453,
+      2.5999999940395355
+    ],
+    "min_z_m": -0.3499999940395355,
+    "nonmanifold_edges": 0,
+    "materials": [
+      "Dark",
+      "Armor",
+      "Rubber",
+      "Steel",
+      "Neon",
+      "Glass",
+      "Lamp"
+    ]
+  }
+}

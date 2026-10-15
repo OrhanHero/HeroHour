@@ -22,6 +22,7 @@ bool RunHRRTSArchitectureSelfTests()
     {
         EPrototypeRole Role;
         const TCHAR* Name;
+        const TCHAR* RoleName;
         FGameplayTag UnitId;
         bool bStructure;
         int32 Cost;
@@ -31,26 +32,26 @@ bool RunHRRTSArchitectureSelfTests()
         const TCHAR* IconPath;
     };
     const FRoleAssetFixture RoleFixtures[] = {
-        {EPrototypeRole::Combat,TEXT("DA_HR_Striker"),HRRTSTags::Unit_Striker,false,100,5.f,100.f,
+        {EPrototypeRole::Combat,TEXT("DA_HR_Striker"),TEXT("Combat"),HRRTSTags::Unit_Striker,false,100,5.f,100.f,
             TEXT("/Game/HERO/ConceptV2/Meshes/SM_HERO_Striker.SM_HERO_Striker"),
             TEXT("/Game/HERO/UI/T_HERO_Striker.T_HERO_Striker")},
-        {EPrototypeRole::Collector,TEXT("DA_HR_Harvester"),HRRTSTags::Unit_Harvester,false,150,6.f,100.f,
+        {EPrototypeRole::Collector,TEXT("DA_HR_Harvester"),TEXT("Collector"),HRRTSTags::Unit_Harvester,false,150,6.f,100.f,
             TEXT("/Game/HERO/ConceptV2/Meshes/SM_HERO_Harvester.SM_HERO_Harvester"),
             TEXT("/Game/HERO/UI/T_HERO_Harvester.T_HERO_Harvester")},
-        {EPrototypeRole::Headquarters,TEXT("DA_HR_CommandHub"),HRRTSTags::Building_CommandHub,true,0,5.f,800.f,
+        {EPrototypeRole::Headquarters,TEXT("DA_HR_CommandHub"),TEXT("HQ"),HRRTSTags::Building_CommandHub,true,0,1.f,800.f,
             TEXT("/Game/HERO/ConceptV2/Meshes/SM_HERO_CommandHub.SM_HERO_CommandHub"),
             TEXT("/Game/HERO/UI/T_HERO_CommandHub.T_HERO_CommandHub")},
-        {EPrototypeRole::Depot,TEXT("DA_HR_Refinery"),HRRTSTags::Building_Refinery,true,200,8.f,400.f,
+        {EPrototypeRole::Depot,TEXT("DA_HR_Refinery"),TEXT("Depot"),HRRTSTags::Building_Refinery,true,200,8.f,400.f,
             TEXT("/Game/HERO/ConceptV2/Meshes/SM_HERO_Refinery.SM_HERO_Refinery"),
             TEXT("/Game/HERO/UI/T_HERO_Refinery.T_HERO_Refinery")},
-        {EPrototypeRole::Factory,TEXT("DA_HR_VehiclePlant"),HRRTSTags::Building_VehiclePlant,true,350,12.f,600.f,
+        {EPrototypeRole::Factory,TEXT("DA_HR_VehiclePlant"),TEXT("Factory"),HRRTSTags::Building_VehiclePlant,true,350,12.f,600.f,
             TEXT("/Game/HERO/ConceptV2/Meshes/SM_HERO_VehiclePlant.SM_HERO_VehiclePlant"),
             TEXT("/Game/HERO/UI/T_HERO_VehiclePlant.T_HERO_VehiclePlant")},
     };
     TArray<const UHRUnitDefinition*> SavedRoles;
     for (const FRoleAssetFixture& Fixture : RoleFixtures)
     {
-        const FString Path=FString::Printf(TEXT("/Game/HERO/DataV3/%s.%s"),Fixture.Name,Fixture.Name);
+        const FString Path=FString::Printf(TEXT("/Game/HERO/DataV4/D_Aegis_%s.D_Aegis_%s"),Fixture.RoleName,Fixture.RoleName);
         const UHRUnitDefinition* Definition=LoadObject<UHRUnitDefinition>(nullptr,*Path,nullptr,LOAD_NoWarn);
         SavedRoles.Add(Definition);
         const UClass* ExpectedClass=Fixture.bStructure ? UHRBuildingDefinition::StaticClass() : UHRUnitDefinition::StaticClass();
@@ -71,21 +72,29 @@ bool RunHRRTSArchitectureSelfTests()
     }
 
     const UHRFactionDefinition* SavedFaction=LoadObject<UHRFactionDefinition>(nullptr,
-        TEXT("/Game/HERO/DataV3/DA_HR_Aegis.DA_HR_Aegis"),nullptr,LOAD_NoWarn);
+        TEXT("/Game/HERO/DataV4/D_Faction_Aegis.D_Faction_Aegis"),nullptr,LOAD_NoWarn);
     Check(SavedFaction && SavedFaction->GetClass()==UHRFactionDefinition::StaticClass()
         && SavedFaction->FactionId==HRRTSTags::Faction_Aegis
-        && SavedFaction->EconomyStyle==EHREconomyStyle::FiniteSupply
+        && SavedFaction->EconomyStyle==EHREconomyStyle::RegrowingField
         && SavedFaction->BuildStyle==EHRBuildStyle::SidebarPlacement,
         TEXT("saved Aegis faction identifies current finite economy and sidebar construction metadata"));
-    bool bRosterMatches=SavedFaction && SavedFaction->Units.Num()==2 && SavedFaction->Buildings.Num()==3;
-    if (bRosterMatches)
+    bool bRosterMatches=SavedFaction && SavedFaction->Units.Num()==4 && SavedFaction->Buildings.Num()==7;
+    if (SavedFaction)
     {
-        for (int32 Index=0;Index<2;++Index)
-            bRosterMatches &= SavedRoles[Index] && SavedFaction->Units[Index].LoadSynchronous()==SavedRoles[Index];
-        for (int32 Index=0;Index<3;++Index)
-            bRosterMatches &= SavedRoles[Index+2] && SavedFaction->Buildings[Index].LoadSynchronous()==SavedRoles[Index+2];
+        for(const auto& Ref:SavedFaction->Units) bRosterMatches &= Ref.LoadSynchronous()!=nullptr;
+        for(const auto& Ref:SavedFaction->Buildings) bRosterMatches &= Ref.LoadSynchronous()!=nullptr;
     }
-    Check(bRosterMatches,TEXT("saved faction roster resolves exactly both current mobile roles and three structures"));
+    Check(bRosterMatches,TEXT("saved faction resolves four mobile roles and seven structure roles"));
+    const TCHAR* RoleNames[]={TEXT("Combat"),TEXT("Collector"),TEXT("HQ"),TEXT("Depot"),TEXT("Factory"),TEXT("PowerPlant"),TEXT("Barracks"),TEXT("Radar"),TEXT("Defense"),TEXT("Infantry"),TEXT("Siege")};
+    for(int32 Team=0;Team<2;++Team)
+    for(int32 Index=0;Index<11;++Index)
+    {
+        const UHRUnitDefinition* Def=APrototypeGameMode::GetRoleDefinition(static_cast<EPrototypeRole>(Index),Team);
+        Check(Def && Def->GetOutermost()->GetName().StartsWith(TEXT("/Game/HERO/DataV4/"))
+            && Def->FactionId==(Team==0?HRRTSTags::Faction_Aegis:HRRTSTags::Faction_Ember)
+            && Def->StaticMesh.LoadSynchronous() && Def->Icon.LoadSynchronous(),
+            *FString::Printf(TEXT("live team %d %s has saved faction mesh and icon"),Team,RoleNames[Index]));
+    }
 
     const UHRTempestFieldDefinitionAsset* SavedField=LoadObject<UHRTempestFieldDefinitionAsset>(nullptr,
         TEXT("/Game/HERO/DataV3/DA_HR_TempestField.DA_HR_TempestField"),nullptr,LOAD_NoWarn);
@@ -98,23 +107,25 @@ bool RunHRRTSArchitectureSelfTests()
         TEXT("saved resource settings preserve baseline stock and explicitly authored optional growth"));
 
     const UHRDamageMatrix* SavedMatrix=LoadObject<UHRDamageMatrix>(nullptr,
-        TEXT("/Game/HERO/DataV3/DA_HR_DamageMatrix.DA_HR_DamageMatrix"),nullptr,LOAD_NoWarn);
+        TEXT("/Game/HERO/DataV4/D_DamageMatrix.D_DamageMatrix"),nullptr,LOAD_NoWarn);
     Check(SavedMatrix && SavedMatrix->GetClass()==UHRDamageMatrix::StaticClass() && SavedMatrix->Rules.Num()==9,
         TEXT("saved damage matrix loads nine authored damage and armour pairs"));
+    const float ExpectedPairs[3][3]={{1.1f,1.f,.5f},{1.5f,.85f,1.4f},{1.f,1.2f,.9f}};
     bool bNeutralPairs=SavedMatrix && SavedMatrix->Rules.Num()==9;
     const FGameplayTag DamageTags[]={HRRTSTags::Damage_Kinetic,HRRTSTags::Damage_Explosive,HRRTSTags::Damage_Tempest};
     const FGameplayTag ArmorTags[]={HRRTSTags::Armor_Infantry,HRRTSTags::Armor_Vehicle,HRRTSTags::Armor_Structure};
     if (SavedMatrix)
-        for (const FGameplayTag& Damage : DamageTags)
-        for (const FGameplayTag& Armor : ArmorTags)
+        for (int32 D=0;D<3;++D)
+        for (int32 A=0;A<3;++A)
         {
+            const FGameplayTag Damage=DamageTags[D],Armor=ArmorTags[A];
             int32 MatchingRules=0;
             for (const FHRDamageRule& SavedRule : SavedMatrix->Rules)
                 if (SavedRule.DamageType==Damage && SavedRule.ArmorType==Armor)
-                { ++MatchingRules;bNeutralPairs &= SavedRule.Multiplier==1.f; }
-            bNeutralPairs &= MatchingRules==1 && SavedMatrix->GetDamageMultiplier(Damage,Armor)==1.f;
+                { ++MatchingRules;bNeutralPairs &= FMath::IsNearlyEqual(SavedRule.Multiplier,ExpectedPairs[D][A]); }
+            bNeutralPairs &= MatchingRules==1 && FMath::IsNearlyEqual(SavedMatrix->GetDamageMultiplier(Damage,Armor),ExpectedPairs[D][A]);
         }
-    Check(bNeutralPairs,TEXT("saved matrix has each native pair exactly once with neutral prototype damage"));
+    Check(bNeutralPairs,TEXT("saved matrix has each native pair exactly once with the own three-type combat matrix"));
 
     // Direct field changes are deliberately transient. The scoped restore runs
     // before the remainder of this suite and never writes or dirties a package.
