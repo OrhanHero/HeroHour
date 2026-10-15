@@ -1,6 +1,6 @@
 # HeroHour transformation acceptance — 2026-10-15
 
-Evidence checkpoint: 2026-10-15, Europe/Berlin. This records the implemented HeroHour prototype and its actual final packaged tests. It does not claim byte parity with Tempest Rising or completion of the long-running performance soaks.
+Evidence checkpoint: 2026-10-15, Europe/Berlin. This records the implemented HeroHour prototype and its actual final packaged tests. It does not claim byte parity or graphical equivalence with Tempest Rising.
 
 ## Packaged acceptance
 
@@ -54,9 +54,11 @@ The six original FrontlinesV4 meshes, three effect materials and three original 
 
 The final UI 22 gates cover the actual interface; these are functional checks, while rendered concept similarity also requires the independently captured screenshots. [HeroHUD.cpp](C:/Users/Hero/HeroHour/Source/HeroHourPrototype/HeroHUD.cpp) and [PrototypeHUDLayout.h](C:/Users/Hero/HeroHour/Source/HeroHourPrototype/PrototypeHUDLayout.h) are the active implementation, not a detached mockup.
 
-## Long-running verification remains pending at this checkpoint
+## Completed long-running verification
 
-Two new 20-minute real-RHI soaks of the 13:45 package started around 13:46:45 Berlin, one per faction (PIDs 12872 and 15172), and are running. They are **not yet PASS** in this document. The main agent must append their exact artifact/log paths, actual elapsed duration, measured performance and result after both processes finish. NullRHI simulation tests and short rendered captures must not be substituted for these measurements.
+Both real-RHI soaks of the 13:45 package completed and returned PASS at approximately 14:06:45 Berlin. Aegis: 1200.009 wall seconds, 7 natural rounds, mean 59.647 FPS, P95 16.7355 ms, worst 285.8052 ms. Ember: 1200.005 seconds, 8 natural rounds, mean 59.620 FPS, P95 16.7517 ms, worst 156.0525 ms. Two instances ran concurrently at 1600x900 with a 60-FPS cap; packaged acceptance workers also ran during the opening minutes. These are not isolated maximum-performance measurements. No collector-stall error was observed in either completed run.
+
+Versioned evidence: [summary](../verification/2026-10-15/Soak-Acceptance.json), [Aegis](../verification/2026-10-15/Soak-Aegis.json), [Ember](../verification/2026-10-15/Soak-Ember.json). Raw local logs: Soak-Aegis-20261015-134643-285.log and Soak-Ember-20261015-134643-406.log.
 
 A successful prototype acceptance does not mean commercial-quality art, campaign content, multiplayer determinism or full Tempest Rising parity. Reverse-engineering observations and original HeroHour design choices remain distinguished in the research documents. No original game models, textures or protected payloads are incorporated by this change.
 
@@ -66,4 +68,4 @@ The earlier package completed both 1,200-second real-RHI runs, but Aegis returne
 
 A pre-fix 10-Hz simulation passed 20 rounds; the 60-Hz reproduction failed in round 1 at 131.579 simulation seconds (Saved/Logs/LogisticsStress-60Hz-BeforeFix-20261015-0955.log). The captured diagnostics showed 43 reachable positive resource cells and a reachable operational refinery, contradicting the disconnected-enclave explanation for this failure.
 
-The correction uses analytic whole-segment distance against rounded rectangle and circle obstacles and permits skipping a nearby intermediate waypoint only when the entire replacement chord is legal. Current Navigation 20 and both 20-round 60-Hz LogisticsStress suites passed in the 13:45 package. That is verified regression coverage; the newly running 20-minute RHI results remain pending independently.
+The correction uses analytic whole-segment distance against rounded rectangle and circle obstacles and permits skipping a nearby intermediate waypoint only when the entire replacement chord is legal. Current Navigation 20 and both 20-round 60-Hz LogisticsStress suites passed in the 13:45 package. That is verified regression coverage; the independently completed 20-minute RHI results above also pass.

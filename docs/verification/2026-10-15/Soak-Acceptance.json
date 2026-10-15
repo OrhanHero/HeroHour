@@ -1,0 +1,48 @@
+{
+  "schema": "HeroHour.SoakAcceptance.v1",
+  "result": "PASS",
+  "package": {
+    "CreatedUtc": "2026-10-15T11:45:50.6583192Z",
+    "Configuration": "Development",
+    "Platform": "Windows",
+    "PackagingLog": "C:\\Users\\Hero\\HeroHour\\Saved\\Logs\\Packaging-20261015-134515-393.log",
+    "Map": "/Game/Maps/CityHero",
+    "HeroAssetsExplicitlyCooked": true
+  },
+  "executable_sha256": "236b68194a924009475c9c45ced1cb73534ffa22167bd16b026bbfef40d2a6f2",
+  "resolution": [
+    1600,
+    900
+  ],
+  "frame_cap": 60,
+  "concurrent_soak_instances": 2,
+  "limits": "Two concurrent capped instances; packaged acceptance workers also ran during the opening minutes. Not isolated maximum-performance or manual-play evidence.",
+  "reports": [
+    {
+      "faction": "Aegis",
+      "source": "Soak-Aegis-20261015-114645-12872.json",
+      "artifact": "Soak-Aegis.json",
+      "sha256": "5c7c738db1af920874725f8d56dd5bdc89f8b854d53860dad75c6a138c1034dd",
+      "elapsed_wall_seconds": 1200.009,
+      "rounds": 7,
+      "mean_fps": 59.647,
+      "p95_frame_ms": 16.7355,
+      "worst_frame_ms": 285.8052,
+      "final_memory_bytes": 1924120576,
+      "peak_memory_bytes": 2082697216
+    },
+    {
+      "faction": "Ember",
+      "source": "Soak-Ember-20261015-114645-15172.json",
+      "artifact": "Soak-Ember.json",
+      "sha256": "44d363b8acf807105826216456b600a1e0649ee81feb792bc2c2fcad700895ca",
+      "elapsed_wall_seconds": 1200.005,
+      "rounds": 8,
+      "mean_fps": 59.62,
+      "p95_frame_ms": 16.7517,
+      "worst_frame_ms": 156.0525,
+      "final_memory_bytes": 1915686912,
+      "peak_memory_bytes": 2094825472
+    }
+  ]
+}

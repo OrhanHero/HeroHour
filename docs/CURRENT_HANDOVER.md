@@ -8,7 +8,9 @@ Der Nutzer autorisiert den vollständigen Tempest-orientierten **Prototypumfang 
 - Aktiv sind `HeroHourPrototype`, Unreal **5.8.3** unter `F:\UE\UE_5.8` und `/Game/Maps/CityHero`. Das alte F#-/Lockstep-Konzept ist kein aktiver Build. [Historische Vision](archive/ORIGINAL_PROJECT_VISION.md).
 - Letztes Windows-Paket: **15.10., 13:45 Berlin**, `Packaging-20261015-134515-393.log`, CreatedUtc `2026-10-15T11:45:50.6583192Z`.
 - **19 Paket-Testläufe PASS:** alle 14 Suiten als Aegis, zusätzlich FullMatch/Match/UI/Presentation/LogisticsStress als Ember. **446 + 73 Assertion-Prüfungen**, außerdem 46 natürliche Partien; davon 40 Logistik-Stressrunden mit 60-Hz-Simulationsschritten. Exakte Logs und EXE-Hash: [Transformation-Checks.json](verification/2026-10-15/Transformation-Checks.json).
-- Zwei echte **20-Minuten-RHI-Dauerläufe laufen bei dieser Zwischenaktualisierung**. Erst vollständige Berichte mit `complete=true`, `real_rhi=true`, `result=PASS` als bestanden werten. Abgebrochene ältere Läufe sind keine Abnahme.
+- **Beide 20-Minuten-RHI-Dauerläufe bestanden:** Aegis 1.200,009 Sekunden / 7 vollständige Gefechte, Ember 1.200,005 Sekunden / 8. [Abschlussberichte](verification/2026-10-15/Soak-Acceptance.json).
+
+Code-/Asset-Commit **be57d0b** ist als OrhanHero auf GitHub. Abschließende Berichte sind unter docs/verification/2026-10-15 versioniert. Eine kurze native Bedienprüfung bestätigte Pause/Fortsetzen, HQ-Auswahl, Sidebar-Radarbau, aktive Minimap, natürliche Niederlage und Neustart. Weitergehende manuelle Balance-/Micro-Partien bleiben Qualitätsarbeit.
 
 ## Was tatsächlich integriert ist
 

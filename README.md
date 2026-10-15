@@ -22,7 +22,7 @@ Ein spielbarer Offline-Prototyp mit C&C-Bedienung und Tempest-orientierter Wirts
 
 ## Abnahme und Grenzen
 
-**19 Paketläufe bestanden:** 14 Aegis-Suiten und fünf zusätzliche Ember-Läufe, insgesamt 519 Assertion-Prüfungen und 46 natürliche Simulationspartien einschließlich 40 Logistik-Stressrunden bei 60-Hz-Schritten. Die [maschinenlesbare Abnahme](docs/verification/2026-10-15/Transformation-Checks.json) verzeichnet ausführbare Datei, Zeit und einzelne Logs. Die 20-Minuten-Grafik-Dauerläufe werden getrennt dokumentiert; ein laufender Versuch ist kein PASS.
+**19 Paketläufe bestanden:** 14 Aegis-Suiten und fünf zusätzliche Ember-Läufe, insgesamt 519 Assertion-Prüfungen und 46 natürliche Simulationspartien einschließlich 40 Logistik-Stressrunden bei 60-Hz-Schritten. Die [maschinenlesbare Abnahme](docs/verification/2026-10-15/Transformation-Checks.json) verzeichnet ausführbare Datei, Zeit und einzelne Logs. **Beide 20-Minuten-Grafik-Dauerläufe bestanden**, mit sieben beziehungsweise acht vollständigen Gefechten. [Abschlussberichte](docs/verification/2026-10-15/Soak-Acceptance.json).
 
 Der Umfang ist ein eigener Prototyp. Assetdetails und Balance bleiben ausbaufähig; beide Fraktionen teilen einen Teil ihrer Modelle. Multiplayer, Kampagne, Luft-/Marine-Roster und die ursprüngliche F#-/Lockstep-Vision sind nicht implementiert. Die [ursprüngliche Projektvision](docs/archive/ORIGINAL_PROJECT_VISION.md) bleibt als Archiv erhalten.
 

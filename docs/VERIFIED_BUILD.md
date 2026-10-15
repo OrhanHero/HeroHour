@@ -47,9 +47,16 @@ Die Testwrapper verlangen PASS und prüfen Prozessabschluss sowie fehlende HERO-
 
 ConceptV2, DistrictV3 und FrontlinesV4 enthalten eigene Modelle, Materialien, Gelände, Gebäude, UI und Porträts. Eigene prozedurale Audios, Waffen-/Raucheffekte und Infanterie-Skeletal-Mesh mit drei Clips sind im Paket. Die Präsentationsprüfung kontrolliert gespeicherte Paketressourcen und Materialzuordnungen. Ein erfolgreiches Importprotokoll allein wäre dafür nicht ausreichend.
 
-## Laufende Dauerprüfung und verbleibende Grenzen
+## Dauerprüfung und verbleibende Grenzen
 
-**Zwei neue 20-Minuten-RHI-Dauerläufe des 13:45-Pakets laufen seit etwa 13:46:45 Berlin (PIDs 12872 und 15172), je ein Fraktionsstart. Kein PASS für diese Läufe ist hier vorweggenommen.** Erst abgeschlossene Berichte dürfen als Nachweis für 1.200 echte Sekunden, wiederholte natürliche Ergebnisse, Logistikfortschritt sowie gemessene Framezeiten/Speicher ergänzt werden. Ein schneller Simulationslauf ersetzt diese Prüfung nicht.
+**Beide neuen 20-Minuten-RHI-Dauerläufe des 13:45-Pakets bestanden.** Sie liefen gleichzeitig von etwa 13:46:45 bis 14:06:45 Berlin bei 1600×900 und 60-FPS-Grenze. In den ersten Minuten liefen zusätzlich die Paketprüfungen. Dies ist keine isolierte Maximalleistungsmessung; einzelne lange Frames bleiben in den Rohdaten sichtbar. Kein erneuter Logistik-Stillstand, keine ungültigen Wallet-/Cargo-Werte und keine fehlenden natürlichen Spielausgänge.
+
+| Fraktion | Echte Sekunden | Gefechte | FPS-Mittel | P95 / schlechtester Frame | Speicher Ende / Peak |
+|---|---:|---:|---:|---|---|
+| Aegis | 1200.009 | 7 | 59.647 | 16.735 / 285.805 ms | 1835.0 / 1986.2 MiB |
+| Ember | 1200.005 | 8 | 59.620 | 16.752 / 156.053 ms | 1826.9 / 1997.8 MiB |
+
+[Zusammenfassung mit EXE-/Berichthashes](verification/2026-10-15/Soak-Acceptance.json), [Aegis-Rohdaten](verification/2026-10-15/Soak-Aegis.json), [Ember-Rohdaten](verification/2026-10-15/Soak-Ember.json). Lokale Logs: Soak-Aegis-20261015-134643-285.log und Soak-Ember-20261015-134643-406.log. Die früheren 09:27-Berichte bleiben ausdrücklich historische Regressionsevidenz.
 
 Die Codebasis bleibt ein GameMode-basierter Prototyp mit festem Rollen-/Asset-Registry-Vertrag. Die im ursprünglichen Architekturplan vorgeschlagenen UHR-Subsystemklassen sind nicht als fertige Module eingebaut. Beide Fraktionen teilen viele Meshes; eigene visuelle Fraktionssilhouetten, feinere Oberflächen, umfangreichere Animationen, Balance und bediente Langzeitpartien bleiben Entwicklungsarbeit. Technische Clipprüfung beseitigt nicht automatisch alle Bind-Pose-Warnungen oder ersetzt visuelle Animationsabnahme.
 
@@ -61,4 +68,4 @@ Reproduzieren: Build-HeroHour.ps1 -Package, dann Test-HeroHour.ps1 -Mode Package
 
 Das frühere 09:27-Paket bestand kurze Suiten, scheiterte aber im Aegis-Dauerlauf nach 7 abgeschlossenen Runden; Ember bestand separat mit 8 Runden. Diese Ergebnisse sind historische Nachweise unter [Aegis 09:27 FAIL](verification/2026-10-15/Soak-Aegis-0927-regression.json) und [Ember 09:27 PASS](verification/2026-10-15/Soak-Ember-0927.json), keine Dauerlaufabnahme des aktuellen Pakets.
 
-Eine 10-Hz-Reproduktion bestand 20 Runden, während 60-Hz-Schritte bereits in Runde 1 den Sammler-Stillstand reproduzierten. Die Diagnose zeigte 43 erreichbare positive Zellen und eine erreichbare betriebsfähige Raffinerie; die Enklavenhypothese erklärt diesen Fall nicht. Analytische Segmentabstände gegen Rechtecke/Kreise und das Prüfen der vollständigen Verbindung beim Überspringen eines nahen Wegpunkts beheben den identifizierten Geometriefehler. Navigation prüft jetzt 20 Gates einschließlich drei Eck-/Wegpunktregressionen und zwei Brückenuferfällen. Beide Fraktionen bestanden danach die je 20 natürlichen 60-Hz-Stresspartien des aktuellen Pakets; die unabhängigen Echtzeit-Dauerläufe bleiben dennoch abzuwarten.
+Eine 10-Hz-Reproduktion bestand 20 Runden, während 60-Hz-Schritte bereits in Runde 1 den Sammler-Stillstand reproduzierten. Die Diagnose zeigte 43 erreichbare positive Zellen und eine erreichbare betriebsfähige Raffinerie; die Enklavenhypothese erklärt diesen Fall nicht. Analytische Segmentabstände gegen Rechtecke/Kreise und das Prüfen der vollständigen Verbindung beim Überspringen eines nahen Wegpunkts beheben den identifizierten Geometriefehler. Navigation prüft jetzt 20 Gates einschließlich drei Eck-/Wegpunktregressionen und zwei Brückenuferfällen. Beide Fraktionen bestanden danach die je 20 natürlichen 60-Hz-Stresspartien des aktuellen Pakets; die unabhängigen Echtzeit-Dauerläufe bestanden ebenfalls, siehe Dauerprüfung oben.

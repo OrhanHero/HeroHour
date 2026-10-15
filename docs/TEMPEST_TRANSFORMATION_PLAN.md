@@ -1,6 +1,6 @@
 # HeroHour: Umbau zu einem RTS nach Tempest-Rising-Vorbild
 
-Stand: **15.10.2026, Paketabnahme 13:45, Dauerprüfung läuft**. Ziel ist ein eigener spielbarer Unreal-Prototyp mit der gewünschten Wirtschafts-, Basisbau- und Kampfdynamik. Die Quellimplementierung umfasst inzwischen M1 bis M4; das bedeutet noch keine abgeschlossene Abnahme. Das aktuelle Windows-Paket besteht 19 Prüfläufe mit 519 Assertion-Prüfungen und 46 natürlichen Simulationspartien; die erneuten 20-Minuten-RHI-Dauerläufe laufen noch. Verbindliche Build- und Übergabebelege stehen in [CURRENT_HANDOVER.md](CURRENT_HANDOVER.md), WORKLOG und VERIFIED_BUILD.
+Stand: **15.10.2026, technische Prototypabnahme abgeschlossen**. Der eigene kleine Offline-Umfang M1–M4 ist integriert und im Windows-Paket geprüft: 19 Läufe, 519 Assertion-Prüfungen, 46 natürliche Simulationspartien sowie zwei bestandene reale 20-Minuten-RHI-Läufe mit weiteren 15 Gefechten. Kurze native Bedienprüfung und betrachtete Paketaufnahmen ergänzen die automatisierten Nachweise. Dies bestätigt keine vollständige Tempest-Rekonstruktion oder grafische Gleichwertigkeit. [Verbindlicher Stand](CURRENT_HANDOVER.md), [Abnahme](VERIFIED_BUILD.md).
 
 Die früheren Aussagen „eine Zelle pro Feld“, „keine Strom-/Sichtsimulation“, „beide Teams teilen Aegis“ und „vier HUD-Aktionen“ beschreiben den historischen Stand vom 14.10. und gelten nicht für die neue Implementierung. Die acht bestandenen Paketsuiten des vorherigen Docking-Pakets ersetzen keine Prüfung des aktuellen Umbaus.
 
@@ -21,7 +21,7 @@ Diese Nachweise verankern analysierte Instruktionen in Originaldateien. Sie bele
 
 `HeroHour.uproject` und seine Targets laden ausschließlich `HeroHourPrototype`. `Source/HeroHour` und der unvollständige F#-Altentwurf bleiben inaktiv. Die ursprünglich vorgeschlagenen Namen `UHRHarvesterComponent`, `UHRPlacementSubsystem`, `UHRTeamEconomyComponent` und `UHRVisibilitySubsystem` sind **keine implementierten Klassen**. Der aktuelle Umbau bindet eigenständige C++-Zustandskerne an den vorhandenen GameMode und die Einheiten. Eine spätere Auslagerung in Components/Subsystems muss diesen geprüften Vertrag bewahren und ist keine Voraussetzung für die erste Spielabnahme.
 
-| Bereich | Aktive Implementierung | Verbleibende Abnahme |
+| Bereich | Aktive Implementierung | Abnahmeszenarien |
 |---|---|---|
 | Felder und Sammler | `FHRResourceField`, `FPrototypeSalvage`, `TickCollector` in `PrototypeEconomy.cpp`; 48 räumliche Zellen, Reservierung und explizite Sammlerzustände | Mehrsammlerbilanz, Pause, blockierte/zerstörte Raffinerie und aktuelle Paketdarstellung erneut prüfen |
 | Raffinerie | `FHRRefineryDocking`: getrennte exklusive FIFO-Docks, zeitliches Entladen, präzise Cargo-/Wallet-Buchung | Alle Docking-Gates gegen Mehrzellenfelder und neue Footprints wiederholen |
@@ -79,9 +79,9 @@ Sicht und Erkundung sind je Team getrennt. Die Welt erhält eine Laufzeit-Fog-Ma
 
 Kinetisch, Explosiv und Tempest treffen Infanterie, Fahrzeuge und Strukturen nach einer gespeicherten Matrix. XP erzeugt drei Veteranenstufen mit getrennten Schadens-, Reichweiten- und Panzerungsboni. Infanterie erhält Deckung an Gebäudekanten und wird durch Treffer unterdrückt. Granate, Rauch und Deployment besitzen geprüfte Commit-/Cooldown-Zustände; Artillerie kann beim Deployment nicht fahren. Aegis-Doktrinen: Reparaturimpuls und Präzisionsschlag; Ember: Flammenzone und Übertaktung. Punkte, Zielvalidierung, Wirkung und globaler Cooldown gehören zur Simulationsautorität.
 
-## 5. Meilensteine und noch erforderliche Abnahme
+## 5. Geprüfte Meilensteine des Prototyps
 
-Die Mechanik- und Paketprüfungen für M1–M4 sind im aktuellen Bericht belegt; die vollständige M4-Langzeitabnahme läuft noch. Vorhandene Funktionen, importierte Assets oder einzelne bestandene Kernprüfungen rechtfertigen keine pauschale Fertigmeldung.
+Die Mechanik-, Paket- und Dauerprüfungen für den kleinen Prototypumfang M1–M4 sind bestanden und im aktuellen Bericht belegt. Vorhandene Funktionen, importierte Assets oder einzelne bestandene Kernprüfungen rechtfertigen keine pauschale Fertigmeldung.
 
 | Meilenstein | Implementierter Arbeitsumfang | Verbindlicher Abschlussnachweis |
 |---|---|---|
@@ -100,4 +100,4 @@ Nach diesem Umfang folgen erst Kampagne, dritte Fraktion, Luft-/Marine-Roster, M
 
 Referenzabläufe bleiben Sammlerzyklus, Kraftwerkverlust/Wiederherstellung, Bauplatzgrenze, parallele Produktion, Storno, blockierter Ausgang und verlorener Sichtkontakt. Jeder Nachweis braucht Version/Hash, Startzustand, Aktion, Ergebnis und Messgrenze. Ein Renderbild belegt keine native Klickprüfung; funktionale HeroHour-Tests belegen keine Tempest-Parität. Die vom Nutzer aktive Tempest-Partie wird nicht ohne seinen Auftrag gesteuert.
 
-Vor der Übergabe sind aktueller Build, Suite-Logs, Paketzeitpunkt, betrachtete Screenshots, Dauerlaufbericht, verbleibende Warnungen und Git-Identität ausdrücklich zu dokumentieren. Nur tatsächlich ausgeführte Prüfungen werden als bestanden eingetragen. Aktuell offene Gesamtabnahme wird nicht als fertiger Tempest-Umbau bezeichnet.
+Vor der Übergabe sind aktueller Build, Suite-Logs, Paketzeitpunkt, betrachtete Screenshots, Dauerlaufbericht, verbleibende Warnungen und Git-Identität ausdrücklich zu dokumentieren. Nur tatsächlich ausgeführte Prüfungen werden als bestanden eingetragen. Die bestandene Prototypabnahme wird nicht mit einer vollständigen kommerziellen Tempest-Rekonstruktion gleichgesetzt.

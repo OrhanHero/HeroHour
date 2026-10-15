@@ -1,12 +1,12 @@
 # Weitere Entwicklung nach dem Tempest-Umbau
 
-Stand: 15.10.2026. Der M1–M4-Kern ist implementiert und durch 19 aktuelle Windows-Paketläufe geprüft: 14 Aegis-Suiten und fünf zusätzliche Ember-Läufe, insgesamt 519 Assertion-Prüfungen und 46 natürliche Simulationspartien. Zwei 20-Minuten-Dauerläufe mit echtem RHI laufen noch; ihr Ergebnis gehört separat in [VERIFIED_BUILD.md](VERIFIED_BUILD.md) und [CURRENT_HANDOVER.md](CURRENT_HANDOVER.md). Die Gesamtabnahme bleibt bis dahin offen.
+Stand: 15.10.2026. Der M1–M4-Kern ist implementiert und durch 19 aktuelle Windows-Paketläufe geprüft: 14 Aegis-Suiten und fünf zusätzliche Ember-Läufe, insgesamt 519 Assertion-Prüfungen und 46 natürliche Simulationspartien. Beide 20-Minuten-RHI-Dauerläufe bestanden; ihre sieben beziehungsweise acht vollständigen Gefechte sind separat in [VERIFIED_BUILD.md](VERIFIED_BUILD.md) dokumentiert. Die technische Abnahme des kleinen Offline-Prototyps ist abgeschlossen.
 
-## 1. Laufende Abnahme abschließen
+## 1. Weitere bediente Qualitätsprüfung
 
-Aktuelle Prüfpunkte: Presentation 34, Economy 102, Systems 54, Architecture 63, Tactical 46, Visibility 25, Combat 17, UI 22, Navigation 15, Resource 18, Docking 28 und FullMatch 17. Natürliche Matchläufe enthalten drei Runden je Fraktionsstart. Maßgeblich sind die zugeordneten Logs und das Paketmanifest; diese Tests beweisen keine Tempest-Originalparität.
+Aktuelle Prüfpunkte: Presentation 34, Economy 102, Systems 54, Architecture 63, Tactical 46, Visibility 25, Combat 17, UI 22, Navigation 20, Resource 18, Docking 28 und FullMatch 17. Natürliche Matchläufe enthalten drei Runden je Fraktionsstart. Maßgeblich sind die zugeordneten Logs und das Paketmanifest; diese Tests beweisen keine Tempest-Originalparität.
 
-Die Dauerläufe müssen je Fraktion 1.200 echte Sekunden erreichen, Framezeiten/Speicher messen, natürliche Spielausgänge wiederholen und festhängende Sammler erkennen. Währenddessen keine Paketdateien durch Build oder Import ersetzen. Schnelle Simulationszeit ersetzt keine reale RHI-Laufzeit. Danach eine bediente Partie mit Sidebar, Rotation, Radarverlust, Fähigkeiten, Doktrinzielwahl, Verkauf/Storno, Pause und Neustart prüfen.
+Die bestandenen Dauerläufe messen je Fraktion 1.200 echte Sekunden und erkennen festhängende Sammler. Eine kurze native Bedienprüfung bestätigte Auswahl, Sidebar-Radarbau mit aktiver Minimap, Pause/Fortsetzen, Niederlage und Neustart. Weitere bediente Partien mit Rotation, Fähigkeiten, Doktrinzielwahl, Verkauf/Storno und kompletter Aufbaufolge dienen dem Qualitäts- und Balancefeinschliff. Für Wiederholungen während laufender Tests keine Paketdateien ersetzen.
 
 ## 2. Visuelle Konzeptnähe
 
