@@ -1,4 +1,16 @@
-# Nachgewiesener Windows-Build
+# Nachgewiesene Windows-Builds
+
+## Presentation V5 – aktueller Build 15.10.2026, 18:09 Berlin
+
+20 eigene Fraktionsmaterialien, 22 transparente Blender-Porträts (512×512), sechs Detailmeshes und 280 gespeicherte kollisionsfreie Dekorationen sind integriert. [Assetverfahren und Grenzen](PRESENTATION_V5.md).
+
+**19 Paketprüfungen PASS: 488 Aegis- und 115 Ember-Prüfpunkte, zusammen 603, dazu 46 natürliche Match-/Logistikpartien.** [Aktuelle Abnahme](verification/2026-10-15/presentation-v5/Transformation-Checks.json), [neue Paketaufnahmen](verification/2026-10-15/presentation-v5/Captures.json). Beide neuen 20-Minuten-Grafikläufe laufen noch; historische Langzeitergebnisse gelten für ihren damaligen Build.
+
+Paket: `Packaging-20261015-180917-692.log`, CreatedUtc `2026-10-15T16:09:49.5080994Z`. EXE-SHA-256: `54292950892f8e02c55fc615356a9286e42eee52adbdfd3bffaa404c6f08ffc7`.
+
+Korrekturen: Dock-Wartewinkel aus räumlicher Ankunft statt UObject-ID; dauerhaft gespeichertes `NoCollision`-Profil; im Editor ohne Rendering Prüfung gültiger importierter Porträtquellen statt nicht erzeugter Plattformdaten. Paketprüfungen verlangen weiterhin 512×512-Laufzeittexturen. Beide Seiten starten jetzt mit gleichen Rollen und 800 Credits, ohne kostenlose Gegnerfabrik (14 Startobjekte). Der unveränderte natürliche Matchtest besteht für beide Fraktionen; versuchte zusätzliche defensive Teststrategien wurden entfernt. Das ist keine statistische Balanceabnahme. Ember-Overdrive-Zielwahl bleibt ein offener Botpunkt.
+
+## Historischer Build 13:45
 
 Stand: **15.10.2026, Paket 13:45 Berlin**. Unreal Engine 5.8.3, Win64 Development, Karte /Game/Maps/CityHero. CreatedUtc: 2026-10-15T11:45:50.6583192Z. Packaging-20261015-134515-393.log: erfolgreicher Build; HERO-Assets ausdrücklich gekocht. Das Paket liegt lokal unter Builds/Windows und wird nicht als Binärbuild in Git gespeichert.
 

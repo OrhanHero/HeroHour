@@ -8,6 +8,14 @@
 #include "Materials/MaterialInterface.h"
 #include "Materials/Material.h"
 #include "Sound/SoundWave.h"
+#include "HRRTSDefinitions.h"
+#include "Engine/Texture2D.h"
+#include "Engine/StaticMeshActor.h"
+#include "EngineUtils.h"
+#include "Misc/App.h"
+#if WITH_EDITOR
+#include "AssetCompilingManager.h"
+#endif
 
 // Real runtime assets and evaluated component poses, also exercised in cooked builds.
 bool RunHRPresentationSelfTests(UWorld* World)
@@ -118,9 +126,10 @@ bool RunHRPresentationSelfTests(UWorld* World)
     for(const TCHAR* Name:{TEXT("M_PP_Fog"),TEXT("M_FX_Smoke"),TEXT("M_FX_Impact")})
         Check(OwnMaterial(LoadObject<UMaterialInterface>(nullptr,*FString::Printf(TEXT("/Game/HERO/EffectsV4/%s.%s"),Name,Name))),
             *FString::Printf(TEXT("%s effect material loads from cooked content"),Name));
+    for(int32 Team=0;Team<2;++Team)
     for(int32 RoleIndex=0;Mode && RoleIndex<static_cast<int32>(EPrototypeRole::Count);++RoleIndex)
     {
-        APrototypeUnit* Unit=Mode->SpawnUnit(0,FVector(-14000,-12000,35));
+        APrototypeUnit* Unit=Mode->SpawnUnit(Team,FVector(-14000,-12000,35));
         if(Unit) Unit->ConfigureRole(static_cast<EPrototypeRole>(RoleIndex));
         bool bSlotsMatch=Unit!=nullptr;
         UStaticMeshComponent* Hull=Unit?Unit->FindComponentByClass<UStaticMeshComponent>():nullptr;
@@ -133,11 +142,60 @@ bool RunHRPresentationSelfTests(UWorld* World)
             UMaterialInterface* Expected=bCharacter?Character->GetSkeletalMeshAsset()->GetMaterials()[Index].MaterialInterface.Get()
                 :Hull->GetStaticMesh()->GetMaterial(Index);
             UMaterialInterface* Actual=bCharacter?Character->GetMaterial(Index):Hull->GetMaterial(Index);
+            if(Expected && Expected->GetName().StartsWith(TEXT("M_CV2_")))
+            {
+                const FString Name=FString::Printf(TEXT("M_HR_%s_%s"),Mode->GetFactionIndex(Team)==0?TEXT("Aegis"):TEXT("Ember"),*Expected->GetName().RightChop(6));
+                Expected=LoadObject<UMaterialInterface>(nullptr,*(TEXT("/Game/HERO/PresentationV5/Materials/")+Name+TEXT(".")+Name));
+            }
             bSlotsMatch &= Actual && Expected && Actual->GetMaterial()==Expected->GetMaterial();
         }
-        Check(bSlotsMatch,*FString::Printf(TEXT("role %d preserves each authored material slot after default vehicle configuration"),RoleIndex));
+        Check(bSlotsMatch,*FString::Printf(TEXT("team %d role %d uses the correct saved faction surface in every authored slot"),Team,RoleIndex));
+        const UHRUnitDefinition* Definition=Unit?Unit->Definition:nullptr;
+        UTexture2D* Portrait=Definition?Definition->Icon.LoadSynchronous():nullptr;
+#if WITH_EDITOR
+        if(Portrait)
+        {
+            TArray<UObject*> PortraitAssets{Portrait};
+            FAssetCompilingManager::Get().FinishCompilationForObjects(PortraitAssets);
+        }
+#endif
+        const FString ExpectedPortrait=Definition?TEXT("T_HR_")+Definition->GetName().RightChop(2):FString();
+        const FString ExpectedPortraitPath=TEXT("/Game/HERO/PresentationV5/Portraits/")+ExpectedPortrait+TEXT(".")+ExpectedPortrait;
+        bool bPortraitResolution=Portrait && Portrait->GetSizeX()==512 && Portrait->GetSizeY()==512;
+#if WITH_EDITOR
+        // NullRHI deliberately skips UTexture2D::PostLoad's platform-data cache
+        // (FApp::CanEverRender is false). No compilation job exists to finish,
+        // so GetSizeX/Y are zero for uncooked editor textures in this mode.
+        // Validate the actual imported source instead; rendered editor and all
+        // cooked runs must still expose the full 512x512 platform texture.
+        if(Portrait && !FApp::CanEverRender())
+        {
+            const FIntPoint ImportedSize=Portrait->GetImportedSize();
+            bPortraitResolution=Portrait->Source.IsValid()
+                && ImportedSize==FIntPoint(512,512)
+                && Portrait->Source.GetSizeX()==512 && Portrait->Source.GetSizeY()==512;
+        }
+#endif
+        UE_LOG(LogTemp,Display,TEXT("PRESENTATION_PORTRAIT actual=%s expected=%s platform=%dx%d can_render=%d"),
+            *GetPathNameSafe(Portrait),*ExpectedPortraitPath,Portrait?Portrait->GetSizeX():0,Portrait?Portrait->GetSizeY():0,FApp::CanEverRender());
+        Check(Portrait && Portrait->GetPathName()==ExpectedPortraitPath && bPortraitResolution,
+            *FString::Printf(TEXT("team %d role %d loads its own faction portrait at full UI resolution"),Team,RoleIndex));
         if(Unit) Unit->Destroy();
     }
+    for(const TCHAR* Name:{TEXT("RockCluster"),TEXT("DryScrub"),TEXT("CurbStrip"),TEXT("LowBarrier"),TEXT("SupplyCrates"),TEXT("PipeBundle")})
+    {
+        const FString DetailAsset=FString::Printf(TEXT("SM_PV5_%s"),Name);
+        UStaticMesh* Mesh=LoadObject<UStaticMesh>(nullptr,*(TEXT("/Game/HERO/PresentationV5/Meshes/")+DetailAsset+TEXT(".")+DetailAsset));
+        Check(Mesh && Mesh->GetBounds().SphereRadius>1.f,*FString::Printf(TEXT("%s original detail mesh is cooked"),*DetailAsset));
+    }
+    for(const TCHAR* Name:{TEXT("M_PV5_DesertGround"),TEXT("M_PV5_WeatheredAsphalt")})
+        Check(OwnMaterial(LoadObject<UMaterialInterface>(nullptr,*FString::Printf(TEXT("/Game/HERO/PresentationV5/Materials/%s.%s"),Name,Name))),
+            *FString::Printf(TEXT("%s world surface is cooked"),Name));
+    int32 DetailCount=0;bool bNonBlocking=true;
+    for(TActorIterator<AStaticMeshActor> It(World);It;++It)
+        if(It->ActorHasTag(TEXT("HERO_DecorationV5")))
+        { ++DetailCount;bNonBlocking &= It->GetStaticMeshComponent()->GetCollisionEnabled()==ECollisionEnabled::NoCollision; }
+    Check(DetailCount>=200 && bNonBlocking,TEXT("authored world details load from the map without adding collision"));
     for(const TCHAR* Name:{TEXT("A_Impact"),TEXT("A_Rifle"),TEXT("A_Cannon")})
     {
         USoundWave* Sound=LoadObject<USoundWave>(nullptr,*FString::Printf(TEXT("/Game/HERO/EffectsV4/%s.%s"),Name,Name));

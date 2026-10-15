@@ -418,7 +418,8 @@ void APrototypeGameMode::ResetEconomy()
     };
     SpawnRole(0, EPrototypeRole::Depot, FVector(-7500, 1600, 35));
     SpawnRole(1, EPrototypeRole::Depot, FVector(7500, 1600, 35));
-    SpawnRole(1, EPrototypeRole::Factory, FVector(7600, -1600, 35));
+    // Both sides buy their first factory from the same 800-credit budget.
+    // A free enemy factory previously imposed a hidden 350-credit/12s handicap.
     SpawnRole(0, EPrototypeRole::PowerPlant, FVector(-9000,-1600,35));
     SpawnRole(1, EPrototypeRole::PowerPlant, FVector(9000,-1600,35));
     for (int32 Index = 0; Index < 3; ++Index) SpawnRole(0, EPrototypeRole::Combat, FVector(-6800, (Index - 1) * 300.f, 35));
@@ -586,7 +587,11 @@ void APrototypeGameMode::TickCollector(APrototypeUnit* Unit, float DeltaSeconds)
         // Distinct, reachable staging points remain outside the refinery footprint and its unload lane.
         FVector WaitingPoint = Unit->GetActorLocation(); bool bFoundWaiting = false;
 
-        const float StartAngle = (Unit->GetUniqueID() % 16) * 2.f * PI / 16.f;
+        // Presentation objects must not alter collector routes through UObject IDs.
+        // Prefer the nearest spatial staging sector, then validate all sixteen slots.
+        const FVector ToCollector=Unit->GetActorLocation()-Depot->GetActorLocation();
+        const float Sector=2.f*PI/16.f;
+        const float StartAngle=FMath::RoundToFloat(FMath::Atan2(ToCollector.Y,ToCollector.X)/Sector)*Sector;
         for (int32 Index = 0; Index < 16 && !bFoundWaiting; ++Index)
         {
             const float Angle = StartAngle + Index * 2.f * PI / 16.f;

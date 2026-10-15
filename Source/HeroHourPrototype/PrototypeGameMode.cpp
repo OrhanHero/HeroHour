@@ -34,6 +34,26 @@ float ConceptStructureScale(EPrototypeRole Role)
 {
     return Role==EPrototypeRole::Headquarters ? 1.5f : Role==EPrototypeRole::Factory ? 1.7f : Role==EPrototypeRole::Depot ? 1.5f : 1.f;
 }
+FLinearColor FactionMarkingColor(int32 Team,bool bEmissive=false)
+{
+    const bool bAegis=APrototypeGameMode::GetFactionIndex(Team)==0;
+    return bAegis ? (bEmissive?FLinearColor(.025f,.35f,.80f):FLinearColor(.025f,.18f,.48f))
+        : (bEmissive?FLinearColor(.90f,.12f,.025f):FLinearColor(.48f,.045f,.018f));
+}
+void ApplyFactionSurfaces(UMeshComponent* Component,int32 Team)
+{
+    const TCHAR* Faction=APrototypeGameMode::GetFactionIndex(Team)==0?TEXT("Aegis"):TEXT("Ember");
+    for(int32 Index=0;Component && Index<Component->GetNumMaterials();++Index)
+    {
+        UMaterialInterface* Original=Component->GetMaterial(Index);
+        if(!Original || !Original->GetName().StartsWith(TEXT("M_CV2_"))) continue;
+        const FString Surface=Original->GetName().RightChop(6);
+        const FString Name=FString::Printf(TEXT("M_HR_%s_%s"),Faction,*Surface);
+        const FString Package=TEXT("/Game/HERO/PresentationV5/Materials/")+Name;
+        if(FPackageName::DoesPackageExist(Package))
+            if(auto* Variant=LoadObject<UMaterialInterface>(nullptr,*(Package+TEXT(".")+Name))) Component->SetMaterial(Index,Variant);
+    }
+}
 }
 
 APrototypeUnit::APrototypeUnit()
@@ -149,12 +169,14 @@ void APrototypeUnit::ConfigureRole(EPrototypeRole InRole)
     Selection->SetRelativeScale3D(IsStructure() ? FVector(APrototypeGameMode::Footprint(Role)/45.f, APrototypeGameMode::Footprint(Role)/45.f, .025f) : FVector(3.1f,2.f,.025f));
     if (auto* Ring = LoadObject<UMaterialInterface>(nullptr,TEXT("/Game/HERO/EnvironmentV2/Materials/M_ENV_SelectionRing.M_ENV_SelectionRing"))) Selection->SetMaterial(0,Ring);
     if (auto* RingMesh = LoadObject<UStaticMesh>(nullptr,TEXT("/Game/HERO/EnvironmentV2/Meshes/SM_ENV_SelectionRing.SM_ENV_SelectionRing"))) Selection->SetStaticMesh(RingMesh);
+    ApplyFactionSurfaces(Mesh,Team);
+    if(InfantryMesh->IsVisible()) ApplyFactionSurfaces(InfantryMesh,Team);
     for (const FName Slot : {FName(TEXT("Team")), FName(TEXT("Neon"))})
     {
         const int32 Index = InfantryMesh->IsVisible()?InfantryMesh->GetMaterialIndex(Slot):Mesh->GetMaterialIndex(Slot);
         if (Index == INDEX_NONE) continue;
         UMaterialInstanceDynamic* Material = InfantryMesh->IsVisible()?InfantryMesh->CreateDynamicMaterialInstance(Index):Mesh->CreateDynamicMaterialInstance(Index);
-        if (Material) Material->SetVectorParameterValue(TEXT("Tint"), Team == 0 ? FLinearColor(.025f,.35f,.17f) : FLinearColor(.65f,.06f,.035f));
+        if (Material) Material->SetVectorParameterValue(TEXT("Tint"),FactionMarkingColor(Team,Slot==FName(TEXT("Neon"))));
         if (Slot == FName(TEXT("Team"))) TeamMaterial = Material;
     }
 }
@@ -405,7 +427,7 @@ void APrototypeUnit::Tick(float DeltaSeconds)
     {
         FlashTime -= DeltaSeconds;
         if (TeamMaterial) TeamMaterial->SetVectorParameterValue(TEXT("Tint"), FlashTime > 0 ? FLinearColor::White :
-            (Team == 0 ? FLinearColor(0.025f, 0.35f, 0.17f) : FLinearColor(0.65f, 0.06f, 0.035f)));
+            FactionMarkingColor(Team));
     }
     if (IsStructure())
     {
@@ -1069,7 +1091,7 @@ void APrototypeGameMode::RunCombatTest()
         TestCheck(Outcome == 0 && Credits == 800 && Wave == 0 && MatchTime == 0, TEXT("restart resets match state"));
         int32 Count = 0;
         for (TActorIterator<APrototypeUnit> It(GetWorld()); It; ++It) ++Count;
-        TestCheck(Count == 15, TEXT("restart removes old army"));
+        TestCheck(Count == 14, TEXT("restart restores equal starting rosters without a free enemy factory"));
         PlayerHQ->ReceiveHit(800);
         TestCheck(Outcome == -1, TEXT("player HQ destruction loses"));
         UE_LOG(LogTemp, Display, TEXT("COMBAT_TEST_RESULT=%s"), bTestPassed ? TEXT("PASS") : TEXT("FAIL"));
@@ -1117,7 +1139,7 @@ void APrototypeGameMode::RunMatchTest()
                     int32 SupportingUnits=0;
                     for (const APrototypeUnit* Unit:Army)
                         SupportingUnits += FVector::DistSquared2D(Unit->GetActorLocation(),It->GetActorLocation())
-                            <= FMath::Square(FMath::Max(900.f,Unit->GetEffectiveRange()));
+                            <= FMath::Square(Unit->GetEffectiveRange()+100.f);
                     if (SupportingUnits==0) continue;
                     const float Score=It->Health/SupportingUnits;
                     if (Score<BestScore) { BestScore=Score; Focus=*It; }
@@ -1125,8 +1147,11 @@ void APrototypeGameMode::RunMatchTest()
                 if (Focus)
                     for (APrototypeUnit* Unit:Army)
                         if (FVector::DistSquared2D(Unit->GetActorLocation(),Focus->GetActorLocation())
-                            <= FMath::Square(FMath::Max(900.f,Unit->GetEffectiveRange())))
-                        { Unit->OrderAttack(Focus); ++FocusOrders; }
+                            <= FMath::Square(Unit->GetEffectiveRange()+100.f))
+                        {
+                            Unit->OrderAttack(Focus); ++FocusOrders;
+                            if(Unit->Role==EPrototypeRole::Infantry) Unit->TryActivateAbility(EHRAbility::Grenade);
+                        }
             }
             TArray<APrototypeUnit*> Snapshot;
             for (TActorIterator<APrototypeUnit> It(GetWorld()); It; ++It)

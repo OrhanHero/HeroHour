@@ -1,0 +1,68 @@
+[
+  {
+    "name": "SM_PV5_RockCluster",
+    "path": "/Game/HERO/PresentationV5/Meshes/SM_PV5_RockCluster.SM_PV5_RockCluster",
+    "dimensions_cm": [
+      228.16018676757812,
+      141.83489990234375,
+      79.01592254638672
+    ],
+    "collision": "no generated collision",
+    "decoration_only": true
+  },
+  {
+    "name": "SM_PV5_DryScrub",
+    "path": "/Game/HERO/PresentationV5/Meshes/SM_PV5_DryScrub.SM_PV5_DryScrub",
+    "dimensions_cm": [
+      94.742431640625,
+      98.16498947143555,
+      41.452519953250885
+    ],
+    "collision": "no generated collision",
+    "decoration_only": true
+  },
+  {
+    "name": "SM_PV5_CurbStrip",
+    "path": "/Game/HERO/PresentationV5/Meshes/SM_PV5_CurbStrip.SM_PV5_CurbStrip",
+    "dimensions_cm": [
+      298.0,
+      26.00004768371582,
+      20.69999885559082
+    ],
+    "collision": "no generated collision",
+    "decoration_only": true
+  },
+  {
+    "name": "SM_PV5_LowBarrier",
+    "path": "/Game/HERO/PresentationV5/Meshes/SM_PV5_LowBarrier.SM_PV5_LowBarrier",
+    "dimensions_cm": [
+      250.00001525878906,
+      65.00003814697266,
+      68.0
+    ],
+    "collision": "no generated collision",
+    "decoration_only": true
+  },
+  {
+    "name": "SM_PV5_SupplyCrates",
+    "path": "/Game/HERO/PresentationV5/Meshes/SM_PV5_SupplyCrates.SM_PV5_SupplyCrates",
+    "dimensions_cm": [
+      165.50001525878906,
+      83.14999008178711,
+      117.20000457763672
+    ],
+    "collision": "no generated collision",
+    "decoration_only": true
+  },
+  {
+    "name": "SM_PV5_PipeBundle",
+    "path": "/Game/HERO/PresentationV5/Meshes/SM_PV5_PipeBundle.SM_PV5_PipeBundle",
+    "dimensions_cm": [
+      201.60001373291016,
+      70.00001907348633,
+      65.0
+    ],
+    "collision": "no generated collision",
+    "decoration_only": true
+  }
+]

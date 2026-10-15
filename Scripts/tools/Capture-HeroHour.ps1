@@ -2,6 +2,7 @@
 param(
     [ValidateSet('Editor', 'Packaged')][string]$Mode = 'Packaged',
     [ValidateSet('Battle', 'District', 'Overview', 'Harvester')][string]$View = 'Battle',
+    [ValidateSet('Aegis','Ember')][string]$Faction = 'Aegis',
     [int]$Width = 1600,
     [int]$Height = 900,
     [string]$EngineRoot = 'F:\UE\UE_5.8'
@@ -19,6 +20,7 @@ $filename = switch ($View) { 'Battle' { 'Battle.png' } 'District' { 'District.pn
 $stamp = Get-Date -Format 'yyyyMMdd-HHmmss-fff'
 $log = Join-Path $projectRoot "Saved\Logs\Capture-$View-$stamp.log"
 $arguments += @($flag, ('-abslog="' + $log + '"'))
+if ($Faction -eq 'Ember') { $arguments += '-FactionEmber' }
 $startedUtc = [DateTime]::UtcNow
 $process = Start-Process -FilePath $executable -ArgumentList $arguments -WorkingDirectory $projectRoot -WindowStyle Hidden -PassThru
 if (-not $process.WaitForExit(60 * 1000)) {

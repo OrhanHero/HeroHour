@@ -22,7 +22,17 @@ Ein spielbarer Offline-Prototyp mit C&C-Bedienung und Tempest-orientierter Wirts
 
 ## Abnahme und Grenzen
 
-**19 Paketläufe bestanden:** 14 Aegis-Suiten und fünf zusätzliche Ember-Läufe, insgesamt 519 Assertion-Prüfungen und 46 natürliche Simulationspartien einschließlich 40 Logistik-Stressrunden bei 60-Hz-Schritten. Die [maschinenlesbare Abnahme](docs/verification/2026-10-15/Transformation-Checks.json) verzeichnet ausführbare Datei, Zeit und einzelne Logs. **Beide 20-Minuten-Grafik-Dauerläufe bestanden**, mit sieben beziehungsweise acht vollständigen Gefechten. [Abschlussberichte](docs/verification/2026-10-15/Soak-Acceptance.json).
+## Presentation V5 – aktueller Build 15.10.2026, 18:09 Berlin
+
+20 eigene Fraktionsmaterialien, 22 transparente Blender-Porträts (512×512), sechs Detailmeshes und 280 gespeicherte kollisionsfreie Dekorationen sind integriert. [Assetverfahren und Grenzen](docs/PRESENTATION_V5.md).
+
+**19 Paketprüfungen PASS: 488 Aegis- und 115 Ember-Prüfpunkte, zusammen 603, dazu 46 natürliche Match-/Logistikpartien.** [Aktuelle Abnahme](docs/verification/2026-10-15/presentation-v5/Transformation-Checks.json), [neue Paketaufnahmen](docs/verification/2026-10-15/presentation-v5/Captures.json). Beide neuen 20-Minuten-Grafikläufe laufen noch; historische Langzeitergebnisse gelten für ihren damaligen Build.
+
+Paket: `Packaging-20261015-180917-692.log`, CreatedUtc `2026-10-15T16:09:49.5080994Z`. EXE-SHA-256: `54292950892f8e02c55fc615356a9286e42eee52adbdfd3bffaa404c6f08ffc7`.
+
+Korrekturen: Dock-Wartewinkel aus räumlicher Ankunft statt UObject-ID; dauerhaft gespeichertes `NoCollision`-Profil; im Editor ohne Rendering Prüfung gültiger importierter Porträtquellen statt nicht erzeugter Plattformdaten. Paketprüfungen verlangen weiterhin 512×512-Laufzeittexturen. Beide Seiten starten jetzt mit gleichen Rollen und 800 Credits, ohne kostenlose Gegnerfabrik (14 Startobjekte). Der unveränderte natürliche Matchtest besteht für beide Fraktionen; versuchte zusätzliche defensive Teststrategien wurden entfernt. Das ist keine statistische Balanceabnahme. Ember-Overdrive-Zielwahl bleibt ein offener Botpunkt.
+
+Historischer Build 13:45: **19 Paketläufe bestanden:** 14 Aegis-Suiten und fünf zusätzliche Ember-Läufe, insgesamt 519 Assertion-Prüfungen und 46 natürliche Simulationspartien einschließlich 40 Logistik-Stressrunden bei 60-Hz-Schritten. Die [maschinenlesbare Abnahme](docs/verification/2026-10-15/Transformation-Checks.json) verzeichnet ausführbare Datei, Zeit und einzelne Logs. **Beide 20-Minuten-Grafik-Dauerläufe bestanden**, mit sieben beziehungsweise acht vollständigen Gefechten. [Abschlussberichte](docs/verification/2026-10-15/Soak-Acceptance.json).
 
 Der Umfang ist ein eigener Prototyp. Assetdetails und Balance bleiben ausbaufähig; beide Fraktionen teilen einen Teil ihrer Modelle. Multiplayer, Kampagne, Luft-/Marine-Roster und die ursprüngliche F#-/Lockstep-Vision sind nicht implementiert. Die [ursprüngliche Projektvision](docs/archive/ORIGINAL_PROJECT_VISION.md) bleibt als Archiv erhalten.
 
@@ -30,6 +40,6 @@ REA bedeutet **Reverse Engineer Anything** und liefert nachvollziehbare Referenz
 
 Aktuelle tatsächliche Paketaufnahme (1600×900):
 
-![HeroHour – Aegis-Paketaufnahme](Art/Previews/TempestPrototype-Aegis.png)
+![HeroHour – Aegis Presentation V5](Art/Previews/PresentationV5-Aegis.png)
 
-[Bildnachweise und Grenzen](docs/verification/2026-10-15/Captures.json).
+[Bildnachweise und Grenzen](docs/verification/2026-10-15/presentation-v5/Captures.json).

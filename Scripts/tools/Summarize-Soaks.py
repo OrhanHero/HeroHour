@@ -3,12 +3,15 @@ from pathlib import Path
 import datetime as dt
 import hashlib
 import json
+import argparse
 
 ROOT = Path(__file__).resolve().parents[2]
 build = json.loads((ROOT / 'Builds/Windows/Build-Info.json').read_text(encoding='utf-8-sig'))
 created = dt.datetime.fromisoformat(build['CreatedUtc'].replace('Z', '+00:00'))
 source = ROOT / 'Builds/Windows/HeroHour/Saved/Research'
-output = ROOT / 'docs/verification/2026-10-15'
+parser = argparse.ArgumentParser()
+parser.add_argument('--output-dir', type=Path, default=ROOT / 'docs/verification/2026-10-15')
+output = parser.parse_args().output_dir
 pending = []
 for faction in ('Aegis', 'Ember'):
     reports = []

@@ -1,0 +1,27 @@
+{
+  "name": "SM_PV5_DryScrub",
+  "seed": 150151,
+  "triangles": 900,
+  "dimensions_m": [
+    0.9474243521690369,
+    0.9816498160362244,
+    0.41452518105506897
+  ],
+  "materials": [
+    "Dust"
+  ],
+  "pivot": "ground origin z=0",
+  "collision": "none",
+  "navigation": "decoration only; does not affect navigation",
+  "non_manifold_edges": 0,
+  "uv_mapping": "dominant plane; 1 UV unit = 1 metre",
+  "fbx_roundtrip": {
+    "passed": true,
+    "dimensions_m": [
+      0.9474243521690369,
+      0.9816498160362244,
+      0.41452518105506897
+    ]
+  },
+  "validation": "PASS"
+}

@@ -4,8 +4,12 @@ import datetime as dt
 import hashlib
 import json
 import re
+import argparse
 
 ROOT = Path(__file__).resolve().parents[2]
+parser = argparse.ArgumentParser()
+parser.add_argument('--output-dir', type=Path, default=ROOT/'docs/verification/2026-10-15')
+args = parser.parse_args()
 build = json.loads((ROOT / 'Builds/Windows/Build-Info.json').read_text(encoding='utf-8-sig'))
 since = dt.datetime.fromisoformat(build['CreatedUtc'].replace('Z', '+00:00')).timestamp()
 suites = ('Combat','Economy','Navigation','Match','UI','Architecture','Resource','Docking',
@@ -36,7 +40,7 @@ report = dict(schema='HeroHour.TransformationChecks.v1', package=build,
     required_suites=len(required), result='PASS',
     aegis_assertion_checks=sum(records[(s,'Aegis')]['checks'] for s in suites),
     tests=[records[key] for key in required])
-output=ROOT/'docs/verification/2026-10-15/Transformation-Checks.json'
+output=args.output_dir/'Transformation-Checks.json'
 output.parent.mkdir(parents=True, exist_ok=True)
 output.write_text(json.dumps(report, indent=2)+'\n', encoding='utf-8')
 print(json.dumps(report, indent=2))
