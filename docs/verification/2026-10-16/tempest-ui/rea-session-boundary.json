@@ -1,0 +1,27 @@
+{
+  "open": false,
+  "analysis_activity": {
+    "status": "not_observed",
+    "providers": []
+  },
+  "capabilities": [
+    {
+      "operation": "capture_native_ui_scenario",
+      "available": false,
+      "reason": "Native macOS utilities require macOS.",
+      "availability_code": "unsupported_host",
+      "effects": {
+        "mutates_artifact": false,
+        "launches_process": true,
+        "may_show_ui": true,
+        "may_access_network": true,
+        "may_write_filesystem": true,
+        "changes_permissions": false,
+        "requires_root": false
+      },
+      "limitations": [
+        "Availability and textual formats depend on the installed macOS/Xcode toolchain."
+      ]
+    }
+  ]
+}

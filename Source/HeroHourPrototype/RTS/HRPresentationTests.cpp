@@ -323,6 +323,82 @@ bool RunHRPresentationSelfTests(UWorld* World)
             *FString::Printf(TEXT("%s damage flash expires to its original neutral atlas tint"),Fixture.Surface));
         if(Unit)Unit->Destroy();
     }
+    // V10 factory uses the selected faction mapping, exact live geometry and
+    // actual material bindings; successful imports alone cannot satisfy this.
+    {
+        APrototypeUnit* Factory=Mode?Mode->SpawnUnit(AegisTeam,FVector(-14000.f,-12000.f,35.f)):nullptr;
+        if(Factory)Factory->ConfigureRole(EPrototypeRole::Factory);
+        UStaticMeshComponent* Hull=Factory?Factory->FindComponentByClass<UStaticMeshComponent>():nullptr;
+        UStaticMesh* Mesh=Hull?Hull->GetStaticMesh():nullptr;
+        Check(Factory && Mode->GetFactionIndex(Factory->Team)==0 && Factory->Role==EPrototypeRole::Factory
+            && Factory->Definition==Mode->GetRoleDefinition(EPrototypeRole::Factory,AegisTeam)
+            && Hull && Hull->IsVisible() && Mesh
+            && Mesh->GetPathName()==TEXT("/Game/HERO/TrellisFactoryV10/Meshes/SM_FV10_AegisFactory.SM_FV10_AegisFactory")
+            && Factory->Definition && Factory->Definition->StaticMesh.LoadSynchronous()==Mesh,
+            TEXT("V10 Aegis factory resolves selected faction and displays exact saved definition mesh"));
+        const FBox Source=Mesh?Mesh->GetBoundingBox():FBox(ForceInit);
+        const FVector SourceSize=Source.GetSize();
+        Check(Source.IsValid && FMath::IsNearlyEqual(Source.Min.Z,-35.f,1.f)
+            && FMath::IsNearlyEqual(SourceSize.X,620.f,1.f)
+            && FMath::IsNearlyEqual(SourceSize.Y,486.845f,1.f)
+            && FMath::IsNearlyEqual(SourceSize.Z,201.627f,1.f),
+            TEXT("V10 factory preserves uniform source proportions and authored minus35cm base"));
+        const FBox Bounds=Mesh && Hull?Source.TransformBy(Hull->GetComponentTransform()):FBox(ForceInit);
+        Check(Bounds.IsValid && FMath::Abs(Bounds.Min.Z)<1.f,
+            TEXT("V10 factory actual component transform grounds its authored base at world zero"));
+        const FVector Size=Bounds.GetSize();
+        Check(Bounds.IsValid && Hull && Hull->GetComponentScale().Equals(FVector(1.7f),.001f)
+            && FMath::IsNearlyEqual(Size.X,1054.f,1.f) && FMath::IsNearlyEqual(Size.Y,827.637f,1.f)
+            && FMath::IsNearlyEqual(Size.Z,342.766f,1.f)
+            && FMath::IsNearlyEqual(2.f*APrototypeGameMode::Footprint(EPrototypeRole::Factory),1080.f,.001f)
+            && Size.X<=1080.f && Size.Y<=1080.f,
+            TEXT("V10 factory live scale and dimensions fit the authoritative 1080cm placement envelope"));
+        UMaterialInterface* Saved=Mesh?Mesh->GetMaterial(0):nullptr;
+        UMaterialInterface* Live=Hull?Hull->GetMaterial(0):nullptr;
+        FLinearColor Rest=FLinearColor::Black;
+        UTexture* FictionalEmission=nullptr;
+        Check(Mesh && Mesh->GetStaticMaterials().Num()==1 && Hull && Hull->GetNumMaterials()==1
+            && Hull->GetMaterialIndex(TEXT("Team"))==0 && Saved
+            && Saved->GetPathName()==TEXT("/Game/HERO/TrellisFactoryV10/Materials/M_FV10_Baked_AegisFactory.M_FV10_Baked_AegisFactory")
+            && Cast<UMaterialInstanceDynamic>(Live) && Live->GetMaterial()==Saved->GetMaterial()
+            && Live->GetVectorParameterValue(FHashedMaterialParameterInfo(TEXT("Tint")),Rest)
+            && Rest.Equals(FLinearColor::White,.001f)
+            && !Saved->GetTextureParameterValue(FHashedMaterialParameterInfo(TEXT("EmissionMask")),FictionalEmission),
+            TEXT("V10 factory live Team material retains exact baked PBR and neutral white Tint without fictional emission"));
+        for(bool bAlbedo:{true,false})
+        {
+            const TCHAR* Parameter=bAlbedo?TEXT("Albedo"):TEXT("MetallicRoughness");
+            const FString Name=bAlbedo?TEXT("T_FV10_AegisFactory_Albedo"):TEXT("T_FV10_AegisFactory_MR");
+            const FString Path=TEXT("/Game/HERO/TrellisFactoryV10/Textures/")+Name+TEXT(".")+Name;
+            UTexture* SavedTexture=nullptr;UTexture* LiveTexture=nullptr;
+            const bool bSaved=Saved && Saved->GetTextureParameterValue(FHashedMaterialParameterInfo(Parameter),SavedTexture);
+            const bool bLive=Live && Live->GetTextureParameterValue(FHashedMaterialParameterInfo(Parameter),LiveTexture);
+            UTexture2D* Texture=Cast<UTexture2D>(SavedTexture);
+#if WITH_EDITOR
+            if(Texture){TArray<UObject*> Textures{Texture};FAssetCompilingManager::Get().FinishCompilationForObjects(Textures);}
+#endif
+            bool bSize=Texture && Texture->GetSizeX()==2048 && Texture->GetSizeY()==2048;
+#if WITH_EDITOR
+            if(Texture && !FApp::CanEverRender())bSize=Texture->Source.IsValid()
+                && Texture->GetImportedSize()==FIntPoint(2048,2048)
+                && Texture->Source.GetSizeX()==2048 && Texture->Source.GetSizeY()==2048;
+#endif
+            Check(bSaved && bLive && Texture && LiveTexture==SavedTexture && Texture->GetPathName()==Path
+                && bSize && Texture->SRGB==bAlbedo && Texture->CompressionSettings==(bAlbedo?TC_Default:TC_Masks),
+                *FString::Printf(TEXT("V10 factory %s resolves exact saved and live 2048 PBR texture with correct color space"),Parameter));
+        }
+        const float Health=Factory?Factory->Health:0.f;
+        if(Factory){Factory->ReceiveHit(1.f);Factory->Tick(.03f);}
+        FLinearColor Flash=FLinearColor::Black,Restored=FLinearColor::Black;
+        Check(Factory && FMath::IsNearlyEqual(Factory->Health,Health-1.f,.001f) && Live
+            && Live->GetVectorParameterValue(FHashedMaterialParameterInfo(TEXT("Tint")),Flash)
+            && !Flash.Equals(Rest,.001f),TEXT("V10 factory real damage visibly flashes its baked Team material"));
+        if(Factory)Factory->Tick(.2f);
+        Check(Live && Rest.Equals(FLinearColor::White,.001f)
+            && Live->GetVectorParameterValue(FHashedMaterialParameterInfo(TEXT("Tint")),Restored)
+            && Restored.Equals(Rest,.001f),TEXT("V10 factory damage flash restores its original neutral atlas Tint"));
+        if(Factory)Factory->Destroy();
+    }
     // Exercise the common legacy surface path independently of the four baked
     // models. Team index is resolved from the selected faction, not hardcoded.
     APrototypeUnit* EmberDepot=Mode?Mode->SpawnUnit(1-AegisTeam,FVector(-14000.f,-12000.f,35.f)):nullptr;

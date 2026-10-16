@@ -43,12 +43,25 @@ void FHRCombatState::AddExperience(float ActualDamage, bool bKilled)
     Rank = Experience >= 500.f ? 3 : Experience >= 250.f ? 2 : Experience >= 100.f ? 1 : 0;
 }
 
+#if defined(_MSC_VER)
+// /fp:fast can narrow explicit double intermediates back to float. Preserve
+// this threshold-sensitive calculation without changing the whole module.
+#pragma float_control(precise,on,push)
+#endif
 void FHRCombatState::AddSuppression(float ActualDamage, float MaxHealth)
 {
     if (!FMath::IsFinite(ActualDamage) || !FMath::IsFinite(MaxHealth) || ActualDamage <= 0.f || MaxHealth <= 0.f) return;
-    Suppression = FMath::Clamp(Suppression + ActualDamage / MaxHealth * 200.f, 0.f, 100.f);
+    // Keep the damage fraction in double precision until the final state write.
+    // Optimized float reciprocal multiplication can turn exactly 20% damage
+    // into 39.999996 suppression and incorrectly miss the >=40 threshold.
+    const double Accumulated=static_cast<double>(Suppression)
+        +static_cast<double>(ActualDamage)/static_cast<double>(MaxHealth)*200.0;
+    Suppression=static_cast<float>(FMath::Clamp(Accumulated,0.0,100.0));
     LastDamageAgo = 0.f;
 }
+#if defined(_MSC_VER)
+#pragma float_control(pop)
+#endif
 
 FHRCombatModifiers FHRCombatState::GetVeterancyModifiers(const UHRUnitDefinition* Definition) const
 {

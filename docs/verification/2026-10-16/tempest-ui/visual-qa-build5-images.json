@@ -1,0 +1,48 @@
+{
+  "images": [
+    {
+      "path": "Art/Previews/TempestUI-Editor-Pause-Aegis-1600.png",
+      "sha256": "d407b38d1a6413baa4c5de850a5b7a8c544e98b01cb1abaafb104d162381e29c",
+      "bytes": 949833,
+      "width": 1600,
+      "height": 900,
+      "fixture": true,
+      "log": "Saved/Logs/Capture-InterfaceFixture-20261016-211425-154.log",
+      "log_sha256": "bdaab2e62e5ddb057ed9d6a0dbdccd426e37184c832bcecf70423c2d8e92603d",
+      "markers": [
+        "[2026.10.16-19.14.39:772][ 42]LogTemp: Display: UI_CAPTURE_FIXTURE state=Pause unnatural_fixture=1 result=PASS radar=1 power_current=210 power_required=90 production_rate=1.00 selected=1 queue=0 credits=828 group1=0 paused=1 outcome=0",
+        "[2026.10.16-19.14.40:896][240]LogCore: Display: Tracing Screenshot \"InterfaceFixture\" taken with size: 1600 x 900"
+      ]
+    },
+    {
+      "path": "Art/Previews/TempestUI-Editor-Victory-Ember-1280.png",
+      "sha256": "37b7efab39988d0fd6b77dfd1f5644ce05a0d32a30bde256180ec3c312c062bc",
+      "bytes": 654821,
+      "width": 1280,
+      "height": 720,
+      "fixture": true,
+      "log": "Saved/Logs/Capture-InterfaceFixture-20261016-211444-288.log",
+      "log_sha256": "75455cd2bf609bfc2a039a28798016ec9e1cff51b60d9696f9de39d5c8000ded",
+      "markers": [
+        "[2026.10.16-19.14.58:720][  8]LogTemp: Display: UI_CAPTURE_FIXTURE state=Victory unnatural_fixture=1 result=PASS radar=1 power_current=210 power_required=90 production_rate=1.00 selected=1 queue=0 credits=848 group1=0 paused=0 outcome=1",
+        "[2026.10.16-19.14.59:855][195]LogCore: Display: Tracing Screenshot \"InterfaceFixture\" taken with size: 1280 x 720"
+      ]
+    },
+    {
+      "path": "Art/Previews/TempestUI-Editor-Tooltip-Ember-1600.png",
+      "sha256": "ef00e6fc6e87182de81b6b487a6458c6777e2ae37ebe00fca0676974ab54d8c2",
+      "bytes": 1534481,
+      "width": 1600,
+      "height": 900,
+      "fixture": true,
+      "log": "Saved/Logs/Capture-InterfaceFixture-20261016-211503-216.log",
+      "log_sha256": "067a703ac439bea23df9e6351b96eb82deab1598bc9235c050496400e02448a1",
+      "markers": [
+        "[2026.10.16-19.15.17:767][989]LogTemp: Display: UI_CAPTURE_FIXTURE state=Tooltip unnatural_fixture=1 result=PASS radar=1 power_current=210 power_required=90 production_rate=1.00 selected=1 queue=0 credits=848 group1=0 paused=0 outcome=0",
+        "[2026.10.16-19.15.18:880][167]LogCore: Display: Tracing Screenshot \"InterfaceFixture\" taken with size: 1600 x 900"
+      ]
+    }
+  ],
+  "inspection": "Allthreefullimagesvisuallyinspected;noframeoverlaporclippedmodaltext;tooltipheightimproved;noimageedits",
+  "previous_tooltip_evidence": "visual-qa-state-images.json contains historical Build4 SHA; same screenshot path superseded by Build5"
+}

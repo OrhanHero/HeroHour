@@ -63,6 +63,22 @@ bool RunHRCombatSelfTests(UWorld* World)
         && Close(Veteran.GetVeterancyModifiers(AuthoredVeteran).Range,1.2f),
         TEXT("saved level data uses highest reached threshold without stacking or relying on order"));
 
+    FHRCombatState BelowThreshold;
+    BelowThreshold.AddSuppression(19.99f,100.f);
+    Check(!BelowThreshold.IsSuppressed()&&BelowThreshold.Suppression<40.f&&Close(BelowThreshold.Suppression,39.98f),
+        TEXT("19.99 percent health damage remains below infantry suppression threshold"));
+    FHRCombatState AboveThreshold;
+    AboveThreshold.AddSuppression(20.01f,100.f);
+    Check(AboveThreshold.IsSuppressed()&&AboveThreshold.Suppression>40.f&&Close(AboveThreshold.Suppression,40.02f),
+        TEXT("20.01 percent health damage exceeds infantry suppression threshold"));
+    FHRCombatState ExtremeSuppression;
+    ExtremeSuppression.AddSuppression(TNumericLimits<float>::Max(),TNumericLimits<float>::Min());
+    Check(FMath::IsFinite(ExtremeSuppression.Suppression)&&ExtremeSuppression.Suppression==100.f&&ExtremeSuppression.IsSuppressed(),
+        TEXT("extreme finite damage fraction clamps to finite maximum suppression"));
+    FHRCombatState CumulativeSuppression;
+    CumulativeSuppression.AddSuppression(10.f,100.f);CumulativeSuppression.AddSuppression(10.f,100.f);
+    Check(CumulativeSuppression.IsSuppressed()&&CumulativeSuppression.Suppression==40.f,
+        TEXT("two ten percent hits reach the same exact suppression boundary"));
     FHRCombatState Suppressed;
     Suppressed.AddSuppression(20.f,100.f);
     Check(Suppressed.IsSuppressed() && Suppressed.Suppression == 40.f, TEXT("20 percent health damage reaches infantry suppression threshold"));

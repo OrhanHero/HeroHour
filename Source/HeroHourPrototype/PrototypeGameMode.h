@@ -117,6 +117,8 @@ public:
     APrototypeUnit* GetSelectedProducer() const;
     void FocusSelection();
     void PanToWorld(const FVector& Position);
+    int32 GetControlGroupCount(int32 Number) const;
+    bool HandleControlGroupClick(int32 Number,bool bStore,bool bExtend);
     bool bPlacing = false;
     EPrototypeRole PlacementRole = EPrototypeRole::Factory;
     int32 PlacementRotation = 0;
@@ -140,6 +142,7 @@ class HEROHOURPROTOTYPE_API APrototypeHUD : public AHUD
 public:
     // -1 follows the selected producer; explicit sidebar tabs override it.
     int32 ProductionCategory = -1;
+    bool bDoctrineView = false;
     virtual void DrawHUD() override;
     bool HandleClick(const FVector2D& ScreenPosition);
     bool IsOverInterface(const FVector2D& ScreenPosition) const;

@@ -5,6 +5,8 @@
 #include "BattlefieldLayout.h"
 #include "RTS/HRRTSDefinitions.h"
 #include "RTS/HRRTSTags.h"
+#include "RTS/ResourceFieldVisualPresenter.h"
+#include "Materials/MaterialInterface.h"
 #include "Engine/StaticMeshActor.h"
 #include "Engine/StaticMesh.h"
 #include "Components/StaticMeshComponent.h"
@@ -355,10 +357,17 @@ void APrototypeGameMode::ResetEconomy()
     RefineryDocks.Empty();
     ProductionQueue.Empty();
     for (FPrototypeSalvage& OldField : SalvageNodes)
+    {
+        if(OldField.FieldPresenter.IsValid())OldField.FieldPresenter->Destroy();
         for (const TWeakObjectPtr<AActor>& Visual : OldField.CellVisuals)
             if (Visual.IsValid()) Visual->Destroy();
+    }
     SalvageNodes.Empty();
     UStaticMesh* PatchMesh=LoadObject<UStaticMesh>(nullptr,TEXT("/Game/HERO/DistrictV3/Meshes/SM_DV3_TempestPatch.SM_DV3_TempestPatch"));
+    UStaticMesh* RootMesh=LoadObject<UStaticMesh>(nullptr,TEXT("/Game/HERO/ReferenceV10/TempestField/SM_TFV10_OrganicRootSegment.SM_TFV10_OrganicRootSegment"));
+    UStaticMesh* PodMesh=LoadObject<UStaticMesh>(nullptr,TEXT("/Game/HERO/ReferenceV10/TempestField/SM_TFV10_SeedPod.SM_TFV10_SeedPod"));
+    UMaterialInterface* RootMaterial=LoadObject<UMaterialInterface>(nullptr,TEXT("/Game/HERO/ReferenceV10/TempestField/M_TFV10_OrganicRoot.M_TFV10_OrganicRoot"));
+    UMaterialInterface* PodMaterial=LoadObject<UMaterialInterface>(nullptr,TEXT("/Game/HERO/ReferenceV10/TempestField/M_TFV10_SeedPod.M_TFV10_SeedPod"));
     // Authored map caches are replaced once by the actual 48 spatial cells.
     for (TActorIterator<AActor> It(GetWorld());It;++It)
         for (int32 Index=0;Index<3;++Index)
@@ -401,6 +410,16 @@ void APrototypeGameMode::ResetEconomy()
             Node.CellVisuals.Add(Visual);
         }
         Node.VisualActor=Node.CellVisuals[0];
+        if(RootMesh && PodMesh && RootMaterial && PodMaterial)
+        {
+            auto* Presenter=GetWorld()->SpawnActor<AResourceFieldVisualPresenter>();
+            if(Presenter)
+            {
+                Presenter->Configure(RootMesh,PodMesh,RootMaterial,PodMaterial);
+                if(Presenter->HasUsableAssets())Node.FieldPresenter=Presenter;
+                else Presenter->Destroy();
+            }
+        }
         Node.RefreshAmount();
         SalvageNodes.Add(MoveTemp(Node));
     }
@@ -684,6 +703,8 @@ void APrototypeGameMode::UpdateResourceVisuals()
     for (int32 Index=0; Index<SalvageNodes.Num(); ++Index)
     {
         FPrototypeSalvage& Node=SalvageNodes[Index];
+        TArray<FResourceFieldVisualSample> PresentationSamples;
+        const bool bPresenterReady=Node.FieldPresenter.IsValid() && Node.FieldPresenter->HasUsableAssets();
         bool bDepleted=true;
         for (int32 CellIndex=0;CellIndex<Node.Field.Num();++CellIndex)
             bDepleted &= Node.Field.GetHarvestableAmount(CellIndex)<=0.f;
@@ -708,6 +729,20 @@ void APrototypeGameMode::UpdateResourceVisuals()
                 const float ProtectedSeed=Node.Field.GetStyle()==EHREconomyStyle::RegrowingField ? Settings.SeedFloor : 0.f;
                 const float UsableCapacity=FMath::Max(0.f,Settings.Capacity-ProtectedSeed);
                 const float Activity=UsableCapacity>0.f ? FMath::Clamp(Node.Field.GetHarvestableAmount(CellIndex)/UsableCapacity,0.f,1.f) : 0.f;
+                // Preserve legacy actor depletion flags/scales and pickup paths;
+                // only the optional old patch renderer is replaced.
+                Patch->GetStaticMeshComponent()->SetVisibility(!bPresenterReady);
+                if(bPresenterReady)
+                {
+                    const FVector Position=Node.CellPosition(CellIndex);
+                    const bool bArtReview=FParse::Param(FCommandLine::Get(),TEXT("PrototypeArtReview"));
+                    FResourceFieldVisualSample Sample;
+                    Sample.CellId=CellIndex;Sample.Position=Position;Sample.Activity=Activity;
+                    Sample.bCurrentlyVisible=bArtReview || Visibility.IsVisible(0,Position);
+                    Sample.bExplored=bArtReview || Visibility.IsExplored(0,Position);
+                    Sample.bFiniteDepleted=bCellDepleted && Node.Field.GetStyle()==EHREconomyStyle::FiniteSupply;
+                    PresentationSamples.Add(Sample);
+                }
                 Patch->GetStaticMeshComponent()->SetCustomPrimitiveDataFloat(0,Activity);
                 // Actual geometry changes in three readable growth stages while
                 // exhausted regrowing cells retain their subdued root bed.
@@ -715,6 +750,7 @@ void APrototypeGameMode::UpdateResourceVisuals()
                 Patch->SetActorScale3D(FVector(.4f,.4f,Height));
             }
         }
+        if(bPresenterReady)Node.FieldPresenter->SubmitSnapshot(PresentationSamples);
     }
 }
 

@@ -1,0 +1,18 @@
+[
+  {
+    "path": "docs/research/TempestUI-VisualQA.md",
+    "sha256": "3a87a22d91199d6682372df0fcc9e16212eae22cebf0944817123ca9c87aa567"
+  },
+  {
+    "path": "docs/verification/2026-10-16/tempest-ui/visual-qa-package-images.json",
+    "sha256": "ee4c1b26850f34e0b5abe86f7ac367acf07b3a730d5066270a760b7f721e2940"
+  },
+  {
+    "path": "docs/verification/2026-10-16/tempest-ui-package/Transformation-Checks.json",
+    "sha256": "1e6fb743f81b06b4a69a71d492da5389ff1943b34f8383ed4275b9b5b607e438"
+  },
+  {
+    "path": "docs/verification/2026-10-16/tempest-ui-package/Captures.json",
+    "sha256": "a284ad7b7a2b0c530beca2867c8d9a943ba6803c59c98116018996e5fc24fa96"
+  }
+]

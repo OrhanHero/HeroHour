@@ -1,0 +1,29 @@
+{
+  "result": "PASS_PENDING_NOT_ACTIVATED",
+  "target": {
+    "role": "Factory",
+    "faction": "Aegis",
+    "file": "T_HR_Aegis_Factory.png",
+    "source": "Art\\Models\\TrellisFactoryV10\\SM_FV10_AegisFactory.blend",
+    "source_sha256": "ff5d5648eea541fd525f9ea116662ba9b6b51aedede0cc3c3eea186a47833793",
+    "original_geometry": true,
+    "ai_assisted_geometry": true,
+    "provenance": "Own concept-conditioned TRELLIS.2 geometry; actual FV10 mesh and PBR atlases; no commercial game art",
+    "source_unchanged": true,
+    "alpha_bounds": [
+      47,
+      134,
+      436,
+      348
+    ],
+    "surface_key": "Aegis_Factory_TrellisV10",
+    "albedo_sha256": "296a8eeaa142afb8c26affcc14996858b3abcba39f84fcf9ebee3c77ed11810b",
+    "file_sha256": "45f772dc793c6fd1402b53ad2a856fe92685f6038db3d21e0d67e8220a85677c",
+    "metallic_roughness_sha256": "9c240c8b5887e50ae3dd9a8ad3a1dcffedcf78a7e270c1f3c068dc3dfb947a57"
+  },
+  "pending_image": "Art\\Models\\TrellisFactoryV10\\Portrait-Pending.png",
+  "active_factory_image_unchanged": true,
+  "whole_active_metadata_unchanged": true,
+  "preserved_image_and_record_count": 21,
+  "source_blend_unchanged": true
+}

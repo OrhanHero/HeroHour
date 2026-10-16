@@ -2,7 +2,7 @@
 
 Ein spielbarer Offline-Prototyp mit C&C-Bedienung und Tempest-orientierter Wirtschaft, Basisbau und Gefechtsmechanik. Unreal Engine **5.8.3**, aktives C++-Modul **HeroHourPrototype**, Karte **CityHero**.
 
-**Noch keine fertige Konzeptumsetzung.** V7 integriert vier neue HQ-/Acht-Rad-Modelle, eigene gebackene Oberflächen, passende Porträts und eine kompakte fünfspaltige UI. **19 frische Paketläufe bestehen mit 769 Prüfpunkten und 46 natürlichen Simulationspartien.** Umfeld, übriger Roster und Animation bleiben deutlich hinter den Konzepten. [V7-Stand](docs/REFERENCE_V7.md), [Prüfungen](docs/verification/2026-10-16/reference-v7/Transformation-Checks.json), [REA-Forschung](docs/research/Tempest-REA-V7.md).
+**Aktuell: Tempest-orientierte UI umgesetzt und paketgeprüft.** Radar oben rechts, hohe dreispaltige Produktionssidebar, vertikale Kategorien, BAUEN-/DOKTRINEN-Reiter, klickbare Kontrollgruppen und Auswahlporträts sowie funktionale Pause-/Ergebnisfenster ersetzen das frühere fünfspaltige Konzeptlayout. **19 Paketläufe mit 911 Einzelprüfungen und 46 natürlichen Match-/Logistikrunden bestehen; beide Fraktionen bestehen bei 1600×900 und 1280×720 jeweils 73 UI-Prüfungen.** Die vollständige Konzeptumsetzung ist noch nicht erreicht. [Aktueller UI-Stand und Grenzen](docs/TEMPEST_UI.md), [REA-UI-Referenz](docs/research/Tempest-UI-REA-Implementation.md), [Paketnachweise](docs/verification/2026-10-16/tempest-ui-package/Transformation-Checks.json).
 
 **Account-Übergabe:** [CURRENT_HANDOVER](docs/CURRENT_HANDOVER.md). [Geprüftes Windows-Paket](docs/VERIFIED_BUILD.md), [Transformationsplan M1–M4](docs/TEMPEST_TRANSFORMATION_PLAN.md), [Arbeitsprotokoll](docs/WORKLOG_2026-10-15.md).
 
@@ -17,7 +17,7 @@ Ein spielbarer Offline-Prototyp mit C&C-Bedienung und Tempest-orientierter Wirts
 - Zwei asymmetrische Fraktionen: robuste Aegis mit Rauch und Reparatur/Präzisionsschlag; schnelle Ember mit Tempest-Schaden, Scorch und Overdrive.
 - Sammler, Striker, Infanterie und Belagerungsfahrzeug; HQ, Kraftwerk, Raffinerie, Fahrzeugfabrik, Kaserne, Radar und Abwehr.
 - Drei Ressourcenfelder mit zusammen **48 räumlichen Zellen**, Nachwachsen, exklusiven Zell- und Dockreservierungen, tatsächlicher Anfahrt und zeitlicher Entladung.
-- Fünf Sidebar-Kategorien, bezahlte Produzentenwarteschlangen, Bauplatzraster mit Rotation und verbundenem Bauradius, Strommangel, manuelle Abschaltung und Verkauf.
+- Vier funktionale Sidebar-Kategorien und eine sichtbar gesperrte Luftwaffenkategorie, separate Doktrinenansicht, bezahlte Produzentenwarteschlangen, Bauplatzraster mit Rotation und verbundenem Bauradius, Strommangel, manuelle Abschaltung und Verkauf.
 - Getrennte Sicht und Erkundung, Weltnebel und Radar-Minimap; Gegneranzeigen, Zielsuche und Befehle berücksichtigen die Sicht.
 - Drei Schadensarten, Rüstungsmatrix, Deckung, Unterdrückung, Veteranenstufen, Granaten, Rauch und Deployment; je zwei Commander-Fähigkeiten.
 - Eigene Blender-Modelle, Infanterie-Rig mit Idle/Walk/Fire, Porträts, Materialien und synthetisierte Effekte/Audiodateien. [Frontlines-V4-Quellen](docs/FRONTLINES_V4.md).
@@ -40,7 +40,7 @@ Der Umfang ist ein eigener Prototyp. Assetdetails und Balance bleiben ausbaufäh
 
 REA bedeutet **Reverse Engineer Anything** und liefert nachvollziehbare Referenzbelege, keine RTS-Laufzeitbibliothek. Original-Byteanker sind von HeroHour-Verhaltenstests getrennt; vollständige Tempest-Rising-Parität ist nicht nachgewiesen. [REA-Workflow und Quellen](docs/research/REA_WORKFLOW.md).
 
-Aktuelle tatsächliche Paketaufnahme (1600×900):
+Historische V6-Paketaufnahme (1600×900; zeigt noch nicht die neue Tempest-UI):
 
 ![HeroHour – Aegis V6](Art/Previews/ConceptV6-Aegis.png)
 

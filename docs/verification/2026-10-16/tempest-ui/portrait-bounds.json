@@ -1,0 +1,699 @@
+{
+  "generator": "Scripts/ui/build_portrait_bounds.py",
+  "metadata_sha256": "5d315377d7feb6e05239dfe86b3be046978cb472d92b3d03a416c8a123d58b8a",
+  "padding_pixels": 6,
+  "alpha_threshold_byte": 3,
+  "header_sha256": "64635da785f7f394854f6cd197c92c85bb1427fb966f1ebc2fd8494962f6800a",
+  "records": [
+    {
+      "texture": "T_HR_Aegis_Barracks",
+      "sha256": "8bbeccccd72fa709d2f73dd788b80b11fc71ba821ff5191bf71740efbb03f63d",
+      "metadata_bottom_left_inclusive": null,
+      "metadata_converted_top_left_exclusive": null,
+      "verified_png_alpha_bounds_top_left_exclusive": [
+        39,
+        113,
+        472,
+        452
+      ],
+      "padded_bounds": [
+        33,
+        107,
+        478,
+        458
+      ],
+      "uv_u0_v0_u1_v1": [
+        0.064453125,
+        0.208984375,
+        0.93359375,
+        0.89453125
+      ],
+      "aspect": 1.2678062678062678
+    },
+    {
+      "texture": "T_HR_Aegis_Collector",
+      "sha256": "f2555efb712b70a71881f43786c8b90d7527a7646a91c9da5316a670caa1f7ad",
+      "metadata_bottom_left_inclusive": null,
+      "metadata_converted_top_left_exclusive": null,
+      "verified_png_alpha_bounds_top_left_exclusive": [
+        71,
+        133,
+        454,
+        410
+      ],
+      "padded_bounds": [
+        65,
+        127,
+        460,
+        416
+      ],
+      "uv_u0_v0_u1_v1": [
+        0.126953125,
+        0.248046875,
+        0.8984375,
+        0.8125
+      ],
+      "aspect": 1.3667820069204153
+    },
+    {
+      "texture": "T_HR_Aegis_Combat",
+      "sha256": "fc661fd6d356d72f2a6eff4495a944157d7f321b335ef1918eb664b3cd6b0c0d",
+      "metadata_bottom_left_inclusive": [
+        56,
+        73,
+        439,
+        379
+      ],
+      "metadata_converted_top_left_exclusive": [
+        56,
+        132,
+        440,
+        439
+      ],
+      "verified_png_alpha_bounds_top_left_exclusive": [
+        56,
+        132,
+        440,
+        439
+      ],
+      "padded_bounds": [
+        50,
+        126,
+        446,
+        445
+      ],
+      "uv_u0_v0_u1_v1": [
+        0.09765625,
+        0.24609375,
+        0.87109375,
+        0.869140625
+      ],
+      "aspect": 1.2413793103448276
+    },
+    {
+      "texture": "T_HR_Aegis_Defense",
+      "sha256": "d99fa1054a719774612774604d787d62ffde5f8df5199407df7cae5489f3c70b",
+      "metadata_bottom_left_inclusive": null,
+      "metadata_converted_top_left_exclusive": null,
+      "verified_png_alpha_bounds_top_left_exclusive": [
+        40,
+        119,
+        470,
+        469
+      ],
+      "padded_bounds": [
+        34,
+        113,
+        476,
+        475
+      ],
+      "uv_u0_v0_u1_v1": [
+        0.06640625,
+        0.220703125,
+        0.9296875,
+        0.927734375
+      ],
+      "aspect": 1.2209944751381216
+    },
+    {
+      "texture": "T_HR_Aegis_Depot",
+      "sha256": "65f740083ea29c46aad40975c5e49726c3c52b624afbf9de5fcf97b341a2dee3",
+      "metadata_bottom_left_inclusive": null,
+      "metadata_converted_top_left_exclusive": null,
+      "verified_png_alpha_bounds_top_left_exclusive": [
+        124,
+        106,
+        405,
+        440
+      ],
+      "padded_bounds": [
+        118,
+        100,
+        411,
+        446
+      ],
+      "uv_u0_v0_u1_v1": [
+        0.23046875,
+        0.1953125,
+        0.802734375,
+        0.87109375
+      ],
+      "aspect": 0.846820809248555
+    },
+    {
+      "texture": "T_HR_Aegis_Factory",
+      "sha256": "45f772dc793c6fd1402b53ad2a856fe92685f6038db3d21e0d67e8220a85677c",
+      "metadata_bottom_left_inclusive": [
+        47,
+        134,
+        436,
+        348
+      ],
+      "metadata_converted_top_left_exclusive": [
+        47,
+        163,
+        437,
+        378
+      ],
+      "verified_png_alpha_bounds_top_left_exclusive": [
+        47,
+        163,
+        437,
+        378
+      ],
+      "padded_bounds": [
+        41,
+        157,
+        443,
+        384
+      ],
+      "uv_u0_v0_u1_v1": [
+        0.080078125,
+        0.306640625,
+        0.865234375,
+        0.75
+      ],
+      "aspect": 1.7709251101321586
+    },
+    {
+      "texture": "T_HR_Aegis_HQ",
+      "sha256": "74624c777f531bba69837bb646127a36b4f785102bd97121089f34670f4e3553",
+      "metadata_bottom_left_inclusive": [
+        67,
+        113,
+        441,
+        374
+      ],
+      "metadata_converted_top_left_exclusive": [
+        67,
+        137,
+        442,
+        399
+      ],
+      "verified_png_alpha_bounds_top_left_exclusive": [
+        67,
+        137,
+        442,
+        399
+      ],
+      "padded_bounds": [
+        61,
+        131,
+        448,
+        405
+      ],
+      "uv_u0_v0_u1_v1": [
+        0.119140625,
+        0.255859375,
+        0.875,
+        0.791015625
+      ],
+      "aspect": 1.4124087591240877
+    },
+    {
+      "texture": "T_HR_Aegis_Infantry",
+      "sha256": "68853d0ce7f12ceff564910f947babb172b0ab0d3a9ee8404416f2248f37f1dd",
+      "metadata_bottom_left_inclusive": null,
+      "metadata_converted_top_left_exclusive": null,
+      "verified_png_alpha_bounds_top_left_exclusive": [
+        166,
+        74,
+        334,
+        432
+      ],
+      "padded_bounds": [
+        160,
+        68,
+        340,
+        438
+      ],
+      "uv_u0_v0_u1_v1": [
+        0.3125,
+        0.1328125,
+        0.6640625,
+        0.85546875
+      ],
+      "aspect": 0.4864864864864865
+    },
+    {
+      "texture": "T_HR_Aegis_PowerPlant",
+      "sha256": "bc0e3cab6628a36cd1839afa468d4ad9aad494a8e35464b1f6c1e85d38daf03d",
+      "metadata_bottom_left_inclusive": null,
+      "metadata_converted_top_left_exclusive": null,
+      "verified_png_alpha_bounds_top_left_exclusive": [
+        68,
+        54,
+        444,
+        471
+      ],
+      "padded_bounds": [
+        62,
+        48,
+        450,
+        477
+      ],
+      "uv_u0_v0_u1_v1": [
+        0.12109375,
+        0.09375,
+        0.87890625,
+        0.931640625
+      ],
+      "aspect": 0.9044289044289044
+    },
+    {
+      "texture": "T_HR_Aegis_Radar",
+      "sha256": "63447142d5dc5e592b3dc9c9133153735963af058b64b4b0c0da813da0ef497a",
+      "metadata_bottom_left_inclusive": null,
+      "metadata_converted_top_left_exclusive": null,
+      "verified_png_alpha_bounds_top_left_exclusive": [
+        104,
+        68,
+        409,
+        471
+      ],
+      "padded_bounds": [
+        98,
+        62,
+        415,
+        477
+      ],
+      "uv_u0_v0_u1_v1": [
+        0.19140625,
+        0.12109375,
+        0.810546875,
+        0.931640625
+      ],
+      "aspect": 0.763855421686747
+    },
+    {
+      "texture": "T_HR_Aegis_Siege",
+      "sha256": "d97268689bff490b3b823959791aa9b24c68899f6f802de7737869ca07768854",
+      "metadata_bottom_left_inclusive": null,
+      "metadata_converted_top_left_exclusive": null,
+      "verified_png_alpha_bounds_top_left_exclusive": [
+        47,
+        97,
+        415,
+        435
+      ],
+      "padded_bounds": [
+        41,
+        91,
+        421,
+        441
+      ],
+      "uv_u0_v0_u1_v1": [
+        0.080078125,
+        0.177734375,
+        0.822265625,
+        0.861328125
+      ],
+      "aspect": 1.0857142857142856
+    },
+    {
+      "texture": "T_HR_Ember_Barracks",
+      "sha256": "12ba84b86f50f812f91301c62e067d1ae2d2098a890624575a1e1468856b9661",
+      "metadata_bottom_left_inclusive": [
+        39,
+        60,
+        471,
+        398
+      ],
+      "metadata_converted_top_left_exclusive": [
+        39,
+        113,
+        472,
+        452
+      ],
+      "verified_png_alpha_bounds_top_left_exclusive": [
+        39,
+        113,
+        472,
+        452
+      ],
+      "padded_bounds": [
+        33,
+        107,
+        478,
+        458
+      ],
+      "uv_u0_v0_u1_v1": [
+        0.064453125,
+        0.208984375,
+        0.93359375,
+        0.89453125
+      ],
+      "aspect": 1.2678062678062678
+    },
+    {
+      "texture": "T_HR_Ember_Collector",
+      "sha256": "72446c6619e4b3618eadc3e4f3bf033547254b50a287e6edab82274d005b7a0f",
+      "metadata_bottom_left_inclusive": [
+        71,
+        102,
+        453,
+        378
+      ],
+      "metadata_converted_top_left_exclusive": [
+        71,
+        133,
+        454,
+        410
+      ],
+      "verified_png_alpha_bounds_top_left_exclusive": [
+        71,
+        133,
+        454,
+        410
+      ],
+      "padded_bounds": [
+        65,
+        127,
+        460,
+        416
+      ],
+      "uv_u0_v0_u1_v1": [
+        0.126953125,
+        0.248046875,
+        0.8984375,
+        0.8125
+      ],
+      "aspect": 1.3667820069204153
+    },
+    {
+      "texture": "T_HR_Ember_Combat",
+      "sha256": "ddaff00fb5a207e4d12c09c5457c25ab9a435e2dc9ea1906e54277f491fe16f1",
+      "metadata_bottom_left_inclusive": [
+        57,
+        68,
+        455,
+        391
+      ],
+      "metadata_converted_top_left_exclusive": [
+        57,
+        120,
+        456,
+        444
+      ],
+      "verified_png_alpha_bounds_top_left_exclusive": [
+        57,
+        120,
+        456,
+        444
+      ],
+      "padded_bounds": [
+        51,
+        114,
+        462,
+        450
+      ],
+      "uv_u0_v0_u1_v1": [
+        0.099609375,
+        0.22265625,
+        0.90234375,
+        0.87890625
+      ],
+      "aspect": 1.2232142857142858
+    },
+    {
+      "texture": "T_HR_Ember_Defense",
+      "sha256": "b4af2ab14f364fa3d5851385c335b444d92aefc1430f70f9ab3d589c4bc05cce",
+      "metadata_bottom_left_inclusive": [
+        40,
+        43,
+        469,
+        392
+      ],
+      "metadata_converted_top_left_exclusive": [
+        40,
+        119,
+        470,
+        469
+      ],
+      "verified_png_alpha_bounds_top_left_exclusive": [
+        40,
+        119,
+        470,
+        469
+      ],
+      "padded_bounds": [
+        34,
+        113,
+        476,
+        475
+      ],
+      "uv_u0_v0_u1_v1": [
+        0.06640625,
+        0.220703125,
+        0.9296875,
+        0.927734375
+      ],
+      "aspect": 1.2209944751381216
+    },
+    {
+      "texture": "T_HR_Ember_Depot",
+      "sha256": "5104acf2563396df9e42fa5c9e0363a22f7729188d092b492b3e5523a68571f2",
+      "metadata_bottom_left_inclusive": [
+        124,
+        72,
+        404,
+        405
+      ],
+      "metadata_converted_top_left_exclusive": [
+        124,
+        106,
+        405,
+        440
+      ],
+      "verified_png_alpha_bounds_top_left_exclusive": [
+        124,
+        106,
+        405,
+        440
+      ],
+      "padded_bounds": [
+        118,
+        100,
+        411,
+        446
+      ],
+      "uv_u0_v0_u1_v1": [
+        0.23046875,
+        0.1953125,
+        0.802734375,
+        0.87109375
+      ],
+      "aspect": 0.846820809248555
+    },
+    {
+      "texture": "T_HR_Ember_Factory",
+      "sha256": "1d3ce2293261ac0a116a18469551e6fb5abf1499cf59da9bde9d546b3e0d5869",
+      "metadata_bottom_left_inclusive": [
+        43,
+        52,
+        470,
+        398
+      ],
+      "metadata_converted_top_left_exclusive": [
+        43,
+        113,
+        471,
+        460
+      ],
+      "verified_png_alpha_bounds_top_left_exclusive": [
+        43,
+        113,
+        471,
+        460
+      ],
+      "padded_bounds": [
+        37,
+        107,
+        477,
+        466
+      ],
+      "uv_u0_v0_u1_v1": [
+        0.072265625,
+        0.208984375,
+        0.931640625,
+        0.91015625
+      ],
+      "aspect": 1.2256267409470751
+    },
+    {
+      "texture": "T_HR_Ember_HQ",
+      "sha256": "0c72a13a935b60d8bba210dc3a93d552f9ce49eec91f559f31f17b5beb745a65",
+      "metadata_bottom_left_inclusive": [
+        47,
+        48,
+        464,
+        391
+      ],
+      "metadata_converted_top_left_exclusive": [
+        47,
+        120,
+        465,
+        464
+      ],
+      "verified_png_alpha_bounds_top_left_exclusive": [
+        47,
+        120,
+        465,
+        464
+      ],
+      "padded_bounds": [
+        41,
+        114,
+        471,
+        470
+      ],
+      "uv_u0_v0_u1_v1": [
+        0.080078125,
+        0.22265625,
+        0.919921875,
+        0.91796875
+      ],
+      "aspect": 1.2078651685393258
+    },
+    {
+      "texture": "T_HR_Ember_Infantry",
+      "sha256": "1e5afe835b468330bd280cc9ed6c4ade7e019a163e993d25771e02356db9d09f",
+      "metadata_bottom_left_inclusive": [
+        166,
+        80,
+        333,
+        437
+      ],
+      "metadata_converted_top_left_exclusive": [
+        166,
+        74,
+        334,
+        432
+      ],
+      "verified_png_alpha_bounds_top_left_exclusive": [
+        166,
+        74,
+        334,
+        432
+      ],
+      "padded_bounds": [
+        160,
+        68,
+        340,
+        438
+      ],
+      "uv_u0_v0_u1_v1": [
+        0.3125,
+        0.1328125,
+        0.6640625,
+        0.85546875
+      ],
+      "aspect": 0.4864864864864865
+    },
+    {
+      "texture": "T_HR_Ember_PowerPlant",
+      "sha256": "cc3788ce1a00e2d8affa8c98f85b5de287d656e5c0c0b8b044dc4e3be93f365f",
+      "metadata_bottom_left_inclusive": [
+        68,
+        41,
+        443,
+        457
+      ],
+      "metadata_converted_top_left_exclusive": [
+        68,
+        54,
+        444,
+        471
+      ],
+      "verified_png_alpha_bounds_top_left_exclusive": [
+        68,
+        54,
+        444,
+        471
+      ],
+      "padded_bounds": [
+        62,
+        48,
+        450,
+        477
+      ],
+      "uv_u0_v0_u1_v1": [
+        0.12109375,
+        0.09375,
+        0.87890625,
+        0.931640625
+      ],
+      "aspect": 0.9044289044289044
+    },
+    {
+      "texture": "T_HR_Ember_Radar",
+      "sha256": "874101f290ee7e53ec97a7920822e08148b86345d1a45cefb34c7c3323ebd324",
+      "metadata_bottom_left_inclusive": [
+        104,
+        41,
+        408,
+        443
+      ],
+      "metadata_converted_top_left_exclusive": [
+        104,
+        68,
+        409,
+        471
+      ],
+      "verified_png_alpha_bounds_top_left_exclusive": [
+        104,
+        68,
+        409,
+        471
+      ],
+      "padded_bounds": [
+        98,
+        62,
+        415,
+        477
+      ],
+      "uv_u0_v0_u1_v1": [
+        0.19140625,
+        0.12109375,
+        0.810546875,
+        0.931640625
+      ],
+      "aspect": 0.763855421686747
+    },
+    {
+      "texture": "T_HR_Ember_Siege",
+      "sha256": "782a9bfe2345f38e849f781f6e7a0c047d82c76eaea1a9c20400b33135bd3f08",
+      "metadata_bottom_left_inclusive": [
+        47,
+        77,
+        414,
+        414
+      ],
+      "metadata_converted_top_left_exclusive": [
+        47,
+        97,
+        415,
+        435
+      ],
+      "verified_png_alpha_bounds_top_left_exclusive": [
+        47,
+        97,
+        415,
+        435
+      ],
+      "padded_bounds": [
+        41,
+        91,
+        421,
+        441
+      ],
+      "uv_u0_v0_u1_v1": [
+        0.080078125,
+        0.177734375,
+        0.822265625,
+        0.861328125
+      ],
+      "aspect": 1.0857142857142856
+    }
+  ]
+}

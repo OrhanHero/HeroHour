@@ -1,0 +1,50 @@
+{
+  "images": [
+    {
+      "path": "Art/Previews/TempestUI-Editor-Radar-Aegis-1600.png",
+      "sha256": "97f86a645ca4f3d702d352b592dfd3d36a9200930ef4f2e90dc5b4785026f89d",
+      "bytes": 1584833,
+      "width": 1600,
+      "height": 900,
+      "format": "PNG",
+      "fixture": true
+    },
+    {
+      "path": "Art/Previews/TempestUI-Editor-LowPower-Aegis-1280.png",
+      "sha256": "37f75848f2a0a10e9bfab4f39f10f60ba7d860eee3ed6a54e15858213a0430e1",
+      "bytes": 1066984,
+      "width": 1280,
+      "height": 720,
+      "format": "PNG",
+      "fixture": true
+    },
+    {
+      "path": "Art/Previews/TempestUI-Editor-Multi-Ember-1280.png",
+      "sha256": "65a37a9d822c7e88cae13113aed1163a8dead13104e5dd006d488da8a49cc0ad",
+      "bytes": 1078063,
+      "width": 1280,
+      "height": 720,
+      "format": "PNG",
+      "fixture": true
+    },
+    {
+      "path": "Art/Previews/TempestUI-Editor-Production-Aegis-1600.png",
+      "sha256": "ad676cb76c7dbbd66b9a64ab2bd4d832867388f640a5147962cd68176d0c5167",
+      "bytes": 1592266,
+      "width": 1600,
+      "height": 900,
+      "format": "PNG",
+      "fixture": true
+    },
+    {
+      "path": "Art/Previews/TempestUI-Editor-Tooltip-Ember-1600.png",
+      "sha256": "4dbc283fb7a1735bbb3622f21f1efac0cbd39c87bf4c2dd64c0e40478e01edd9",
+      "bytes": 1502796,
+      "width": 1600,
+      "height": 900,
+      "format": "PNG",
+      "fixture": true
+    }
+  ],
+  "inspection": "All5fullimagesvisuallyinspected;UI_CAPTURE_FIXTURE unnatural_fixture=1 markerschecked;noimageedits"
+}

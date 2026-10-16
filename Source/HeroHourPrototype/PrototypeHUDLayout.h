@@ -27,28 +27,34 @@ struct FPrototypeHUDLayout
     {
         return FMath::Max(ReferenceScale*S,MinimumTextLinePixels/FMath::Max(1.f,UnscaledFontHeight));
     }
-    FPrototypeHUDRect Resource() const { return {12,8,560,60}; }
-    FPrototypeHUDRect Army() const { return {W*.5f-160,10,320,80}; }
-    FPrototypeHUDRect Mission() const { return {W-340,12,328,168}; }
-    FPrototypeHUDRect MiniMap() const { return {12,H-352,310,330}; }
-    FPrototypeHUDRect Selection() const { return {W*.5f-285,H-296,570,274}; }
-    FPrototypeHUDRect Production() const { return {W-438,H-362,426,340}; }
-    FPrototypeHUDRect Events() const { return {12,H-460,310,94}; }
+    static constexpr float SidebarWidth=264.f;
+    FPrototypeHUDRect Resource() const { return {W-SidebarWidth-454,12,430,46}; }
+    FPrototypeHUDRect Army() const { return {12,12,260,46}; }
+    FPrototypeHUDRect Mission() const { return {W*.5f-62,4,124,46}; }
+    FPrototypeHUDRect MiniMap() const { return {W-SidebarWidth-12,12,SidebarWidth,320}; }
+    FPrototypeHUDRect Selection() const { return {330,H-296,570,274}; }
+    FPrototypeHUDRect Production() const { return {W-SidebarWidth-12,344,SidebarWidth,H-366}; }
+    FPrototypeHUDRect Events() const { return {82,H-210,236,104}; }
     FPrototypeHUDRect Placement() const { return {W*.5f-260,118,520,58}; }
+    FPrototypeHUDRect Menu() const { return {W*.5f-240,H*.5f-124,480,248}; }
+    FPrototypeHUDRect MenuAction(int32 Index) const { const auto P=Menu();return {P.X+30,P.Y+128+Index*50,P.W-60,40}; }
     FPrototypeHUDRect ProductionTile(int32 Column, int32 Row) const
     {
-        const auto P=Production();return {P.X+16+Column*80,P.Y+106+Row*100,74,94};
+        const auto P=Production();return {P.X+12+Column*80,P.Y+202+Row*100,74,94};
     }
-    static constexpr int32 ProductionColumns=5;
+    static constexpr int32 ProductionColumns=3;
     FPrototypeHUDRect ProductionCard(int32 Card) const { return ProductionTile(Card%ProductionColumns,Card/ProductionColumns); }
-    FPrototypeHUDRect DoctrineCard(int32 Card) const { const auto P=Mission();return {P.X+15+Card*151,P.Y+54,145,78}; }
+    FPrototypeHUDRect DoctrineCard(int32 Card) const { return {8,H*.38f+Card*66.f,58,58}; }
+    FPrototypeHUDRect PrimaryTab(int32 Index) const { const auto P=Production();return {P.X+8+Index*124,P.Y+8,120,40}; }
     FPrototypeHUDRect ProductionTab(int32 Category) const
     {
-        const auto P=Production();return {P.X+18+Category*78,P.Y+39,74,40};
+        const auto P=Production();return {P.X+12+Category*48,P.Y+60,46,108};
     }
-    FPrototypeHUDRect QueueSlot(int32 Slot) const { const auto P=Production();return {P.X+20+Slot*76,P.Y+238,68,40}; }
-    FPrototypeHUDRect Cancel() const { const auto P=Production();return {P.X+18,P.Y+286,390,28}; }
+    FPrototypeHUDRect QueueSlot(int32 Slot) const { const auto P=Production();return {P.X+12+Slot*48,P.Y+P.H-92,44,40}; }
+    FPrototypeHUDRect Cancel() const { const auto P=Production();return {P.X+12,P.Y+P.H-43,P.W-24,28}; }
+    FPrototypeHUDRect ControlGroup(int32 Slot) const { return {12+Slot*29.f,H-92,27,70}; }
     FPrototypeHUDRect Focus() const { const auto P=Selection();return {P.X+429,P.Y+168,122,40}; }
+    FPrototypeHUDRect SelectionMember(int32 Index) const { const auto P=Selection();return {P.X+18+(Index%3)*50,P.Y+43+(Index/3)*50,48,48}; }
     FPrototypeHUDRect Ability(int32 Index) const { const auto P=Selection();return {P.X+182+Index*123,P.Y+218,114,40}; }
     FPrototypeHUDRect PowerToggle() const { return Ability(0); }
     FPrototypeHUDRect Sell() const { return Ability(1); }
@@ -68,6 +74,8 @@ struct FPrototypeHUDLayout
     {
         const FVector2D P=Screen/S;
         return Resource().Contains(P)||Army().Contains(P)||Mission().Contains(P)||MiniMap().Contains(P)
-            ||Selection().Contains(P)||Production().Contains(P)||Events().Contains(P);
+            ||Selection().Contains(P)||Production().Contains(P)||Events().Contains(P)
+            ||DoctrineCard(0).Contains(P)||DoctrineCard(1).Contains(P)
+            ||FPrototypeHUDRect{12,H-92,290,70}.Contains(P);
     }
 };

@@ -1,0 +1,69 @@
+{
+  "package": {
+    "CreatedUtc": "2026-10-16T19:36:08.6233213Z",
+    "Configuration": "Development",
+    "Platform": "Windows",
+    "PackagingLog": "C:\\Users\\Hero\\HeroHour\\Saved\\Logs\\Packaging-20261016-213531-028.log",
+    "Map": "/Game/Maps/CityHero",
+    "HeroAssetsExplicitlyCooked": true
+  },
+  "inspection": "Seven packaged captures personally visually inspected; no recorder or game jobs executed by reviewer",
+  "images": [
+    {
+      "path": "Art/Previews/TempestUI-Package-Radar-Aegis-1600.png",
+      "sha256": "b825247b5a94c1fc08868898c049be3ccf6ce3bf6a37427393597f7f0af107ed",
+      "width": 1600,
+      "height": 900,
+      "diagnostic_fixture": true,
+      "visual_inspection": "Personally viewed full image; no major text clipping or overlapping frame visible"
+    },
+    {
+      "path": "Art/Previews/TempestUI-Package-LowPower-Aegis-1280.png",
+      "sha256": "1544ef0d024a68a31f3031cd9d47b0e8490bdc02e247685f9661882638a9fc94",
+      "width": 1280,
+      "height": 720,
+      "diagnostic_fixture": true,
+      "visual_inspection": "Personally viewed full image; no major text clipping or overlapping frame visible"
+    },
+    {
+      "path": "Art/Previews/TempestUI-Package-Multi-Ember-1280.png",
+      "sha256": "50da29c0622aff1f44ef1cb1542ba81cfc74000a0c75ff014c1b847210730a2f",
+      "width": 1280,
+      "height": 720,
+      "diagnostic_fixture": true,
+      "visual_inspection": "Personally viewed full image; no major text clipping or overlapping frame visible"
+    },
+    {
+      "path": "Art/Previews/TempestUI-Package-Production-Aegis-1600.png",
+      "sha256": "996424ee0c4e8add290e1c10e8b2679eb395f6b0791ae7952a8b9b5caa35c7a7",
+      "width": 1600,
+      "height": 900,
+      "diagnostic_fixture": true,
+      "visual_inspection": "Personally viewed full image; no major text clipping or overlapping frame visible"
+    },
+    {
+      "path": "Art/Previews/TempestUI-Package-Tooltip-Ember-1600.png",
+      "sha256": "cba80cecb12ddd07511ff7dd461818b0cd90569b7d7bb1a088a2045fade1e65d",
+      "width": 1600,
+      "height": 900,
+      "diagnostic_fixture": true,
+      "visual_inspection": "Personally viewed full image; no major text clipping or overlapping frame visible"
+    },
+    {
+      "path": "Art/Previews/TempestUI-Package-Pause-Aegis-1600.png",
+      "sha256": "db25f10e3eeae1c6d76324e9acf6cc6afe1fb460f8b967da3f778f048310c4cf",
+      "width": 1600,
+      "height": 900,
+      "diagnostic_fixture": true,
+      "visual_inspection": "Personally viewed full image; no major text clipping or overlapping frame visible"
+    },
+    {
+      "path": "Art/Previews/TempestUI-Package-Victory-Ember-1280.png",
+      "sha256": "b5313d6698aa65224f53392b79be1b42390e86fb7039d422a607e81c2e21630f",
+      "width": 1280,
+      "height": 720,
+      "diagnostic_fixture": true,
+      "visual_inspection": "Personally viewed full image; no major text clipping or overlapping frame visible"
+    }
+  ]
+}

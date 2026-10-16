@@ -8,6 +8,7 @@ param(
     [int]$Width = 1600,
     [int]$Height = 900,
     [ValidateRange(1,40)][int]$DelaySeconds = 8,
+    [ValidateSet('None','Radar','LowPower','Multi','Production','Tooltip','Pause','Victory')][string]$UIState = 'None',
     [string]$EngineRoot = 'F:\UE\UE_5.8'
 )
 $ErrorActionPreference = 'Stop'
@@ -24,6 +25,10 @@ $stamp = Get-Date -Format 'yyyyMMdd-HHmmss-fff'
 $log = Join-Path $projectRoot "Saved\Logs\Capture-$View-$stamp.log"
 $arguments += @($flag, ('-abslog="' + $log + '"'))
 $arguments += "-PrototypeCaptureDelay=$DelaySeconds"
+if ($UIState -ne 'None') {
+    if ($View -ne 'InterfaceFixture') { throw 'UIState requires explicit InterfaceFixture view.' }
+    $arguments += "-PrototypeUIState=$UIState"
+}
 if ($Faction -eq 'Ember') { $arguments += '-FactionEmber' }
 if ($CloseUp) {
     if ($View -notin @('Battle','Combat','Harvester')) { throw 'CloseUp requires Battle, Combat or Harvester.' }
@@ -48,6 +53,7 @@ $imageWidth = [int]$imageHeader[16]*16777216 + [int]$imageHeader[17]*65536 + [in
 $imageHeight = [int]$imageHeader[20]*16777216 + [int]$imageHeader[21]*65536 + [int]$imageHeader[22]*256 + [int]$imageHeader[23]
 if ($imageWidth -ne $Width -or $imageHeight -ne $Height) { throw "Screenshot resolution mismatch: ${imageWidth}x${imageHeight}, expected ${Width}x${Height}" }
 $contents = Get-Content -LiteralPath $log -Raw
+if ($UIState -ne 'None' -and ($contents -match 'UI_CAPTURE_FIXTURE.*result=FAIL' -or $contents -notmatch ('UI_CAPTURE_FIXTURE state=' + $UIState + ' .*result=PASS'))) { throw "UI fixture state not established: $UIState. Log: $log" }
 if ($contents -match 'Failed to compile Material|Cooking a material resource.*valid ShaderMap|Failed to find object.*\/Game\/HERO\/|SkipPackage.*\/Game\/HERO\/') { throw "Capture has missing or failed assets. Log: $log" }
 $preview = Join-Path $projectRoot "Art\Previews\ConceptV3-$View.png"
 if ($ArtReview) { $preview = Join-Path $projectRoot "Art\Previews\ConceptV6-ArtReview-$View.png" }

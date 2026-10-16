@@ -45,7 +45,7 @@ bool RunHRRTSArchitectureSelfTests()
             TEXT("/Game/HERO/MilitaryDetailV6/Meshes/SM_MDV6_Refinery.SM_MDV6_Refinery"),
             TEXT("/Game/HERO/PresentationV5/Portraits/T_HR_Aegis_Depot.T_HR_Aegis_Depot")},
         {EPrototypeRole::Factory,TEXT("DA_HR_VehiclePlant"),TEXT("Factory"),HRRTSTags::Building_VehiclePlant,true,350,12.f,600.f,
-            TEXT("/Game/HERO/MilitaryDetailV6/Meshes/SM_MDV6_VehiclePlant.SM_MDV6_VehiclePlant"),
+            TEXT("/Game/HERO/TrellisFactoryV10/Meshes/SM_FV10_AegisFactory.SM_FV10_AegisFactory"),
             TEXT("/Game/HERO/PresentationV5/Portraits/T_HR_Aegis_Factory.T_HR_Aegis_Factory")},
     };
     TArray<const UHRUnitDefinition*> SavedRoles;

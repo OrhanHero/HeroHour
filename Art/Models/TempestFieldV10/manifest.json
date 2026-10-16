@@ -1,0 +1,48 @@
+{
+  "provenance": "Original mathematically authored organic forms; no copied/extracted Tempest Rising assets",
+  "runtime_contract": "Root X100cm; 3 curved segments per logical edge; Pod origin at ground; NoCollision/noNav set by presenter",
+  "records": [
+    {
+      "name": "SM_TFV10_OrganicRootSegment",
+      "vertices": 72,
+      "triangles": 140,
+      "bounds_m": [
+        [
+          -0.5,
+          0.5
+        ],
+        [
+          -0.07530158758163452,
+          0.07486957311630249
+        ],
+        [
+          -0.029593326151371002,
+          0.05696585029363632
+        ]
+      ],
+      "fbx_sha256": "a0c593908ae90d8dcf5c4d511853496adb0535b9af4619e9a7c35011cf24caf6"
+    },
+    {
+      "name": "SM_TFV10_SeedPod",
+      "vertices": 72,
+      "triangles": 140,
+      "bounds_m": [
+        [
+          -0.20584069192409515,
+          0.2475772649049759
+        ],
+        [
+          -0.18182647228240967,
+          0.18182647228240967
+        ],
+        [
+          0.0,
+          0.8799999952316284
+        ]
+      ],
+      "fbx_sha256": "093d099051430a81f3380b8c8561d6f56097ac0c3c28a0e61d35c0971962943b"
+    }
+  ],
+  "rendered": false,
+  "visual_acceptance": false
+}

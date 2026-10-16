@@ -19,6 +19,8 @@ struct FPrototypeSalvage
     TArray<bool> CellDepleted;
     // First cell alias retained for the HUD and existing visual inspection hooks.
     TWeakObjectPtr<class AActor> VisualActor;
+    // Optional presentation only. Field remains the sole owner of resource stock.
+    TWeakObjectPtr<class AResourceFieldVisualPresenter> FieldPresenter;
     bool bVisualDepleted = false;
 
     FVector CellPosition(int32 CellIndex) const

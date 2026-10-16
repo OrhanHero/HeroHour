@@ -1,0 +1,26 @@
+{
+  "status": "PREPARED_NOT_ACTIVATED",
+  "source_sha256": "d26273577175ed8a556de00d73fe7082dba07d695329f272e0bb6ad2e01151a9",
+  "prepared_mesh": "SM_FV10_AegisFactory",
+  "source_glb_triangles_reported": 699468,
+  "blender_imported_triangles": 699446,
+  "triangle_difference_note": "GLB structural report counts 699468 triangles; Blender imports 699446 polygons. Difference of 22 observed at import; cause not independently proved. No decimation or mesh modifier applied.",
+  "source_unchanged": true,
+  "texture_bytes_unchanged": true,
+  "texture_dimensions_verified": true,
+  "fbx_roundtrip_pass": true,
+  "roundtrip_custom_normals": true,
+  "roundtrip_uv_channels": 1,
+  "runtime_dimensions_cm": [
+    1054.0000486373901,
+    827.6370549201965,
+    342.76554226875305
+  ],
+  "runtime_ground_z_cm": 0.0,
+  "unreal_import_performed": false,
+  "definition_activation_performed": false,
+  "gpu_render_performed_for_preparation": false,
+  "existing_source_views": "Art/Models/TrellisFactoryV9-Candidate/Preview-PBR-{A,B,C}.png",
+  "cpu_log": "Saved/Logs/FactoryV10-Prepare.log",
+  "scripts_compile": true
+}

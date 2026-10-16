@@ -1,5 +1,17 @@
 # Nachgewiesene Windows-Builds
 
+## Neuester geprüfter Stand: Tempest-UI-Paket, 16.10.2026, 21:36 Berlin
+
+CreatedUtc `2026-10-16T19:36:08.6233213Z`, Windows Development, `/Game/Maps/CityHero`, `Packaging-20261016-213531-028.log`. **19 Pflichtläufe PASS, 911 Einzelprüfungen, 46 natürliche Match-/Logistikrunden.** Rundenzahl: nur Match und LogisticsStress, keine künstlichen Combat-/FullMatch-Marker. [Nachweis](verification/2026-10-16/tempest-ui-package/Transformation-Checks.json).
+
+Zusätzlich **UI 1280×720 Aegis und Ember je 73 Prüfungen PASS** sowie **FieldVisual Aegis 14 Prüfungen PASS**. Zusatzläufe sind getrennt von den 911 erfasst. [UI-Zusatznachweis](verification/2026-10-16/tempest-ui-package/UI-1280-Checks.json), [FieldVisual-Zusatznachweis](verification/2026-10-16/tempest-ui-package/FieldVisual-Checks.json). Der finale Paketstand enthält den präzisen Suppression-Grenzwertfix und korrigierte Fabrik-Testreferenz; Pflichtsuiten wurden nach vorherigen Fehlversuchen vollständig neu ausgeführt.
+
+Geprüfte Spiel-EXE SHA-256: `066bd29dfed0b516bac1b1338ae84f1f7957071a4d5f4154d0f1e034cd407478`. [EXE/PAK/UTOC/UCAS-Integrität](verification/2026-10-16/tempest-ui-package/Package-Integrity.json). Das Binärpaket liegt lokal unter `Builds/Windows` und wird nicht in Git hochgeladen.
+
+Neu integriert: Tempest-orientiertes rechtes Radar und dreispaltige hohe Sidebar, Bauen/Doktrinen, fünf vertikale Kategorien, zehn Kontrollgruppen, feinere Stahlrahmen, größere Porträts, Modalrouting und geprüfter Pause-Drag-Reset mit erhaltener Auswahl. V10-Aegis-Fabrik und Ressourcenfeld-Präsentation sind enthalten. [REA-/UI-Ableitung](research/Tempest-UI-REA-Implementation.md), [Bild-QA](research/TempestUI-VisualQA.md).
+
+[Sieben tatsächliche Paketaufnahmen](verification/2026-10-16/tempest-ui-package/Captures.json): Radar, LowPower, Mehrfachauswahl, Produktion, Pause, Sieg und Tooltip. Alle sieben sind deterministische diagnostische Fixtures, keine natürlich erspielten Zustände. Standbilder ersetzen keine Interaktions-/Timingprüfung; FieldVisual allein belegt keine komplette natürliche Regrowth-Präsentation. **Keine vollständige Konzept-/Tempest-Parität, neue Dauerabnahme oder Leistungsfreigabe.** V11-Wohnhaus bleibt pausierter Kandidat, keine 64 Map-Häuser ersetzt. Frühere Abnahmen unten bleiben historisch ihrem jeweiligen Paket zugeordnet.
+
 Nachträge zum V7-Paket: [echte 1280×720-UI-Prüfungen](verification/2026-10-16/reference-v7/UI-1280-Checks.json), [kurze Frame-Aufzeichnung](verification/2026-10-16/reference-v7/Performance-V7.json). Die 1.500 Frames nach Warmup ergeben 60,00 FPS Mittel und P95 17,13 ms bei Startkamera/NoBot/1600×900/60-FPS-Grenze. Kein Kampflast- oder Langzeitnachweis; Profilprozess-Exitcode 777003 trotz normalem Shutdown im Log ist offengelegt. Die früheren Leistungsdaten bleiben historische Messungen ihrer jeweiligen Pakete.
 
 ## Neuester Stand: Referenzdurchlauf V7, 16.10.2026, 00:34 Berlin

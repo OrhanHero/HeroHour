@@ -1,5 +1,7 @@
 #include "PrototypeGameMode.h"
 #include "PrototypeCollectorVisual.h"
+#include "PrototypeUICaptureFixtures.h"
+#include "RTS/ResourceFieldVisualPresenter.h"
 #include "BattlefieldLayout.h"
 #include "Camera/CameraComponent.h"
 #include "Components/StaticMeshComponent.h"
@@ -15,6 +17,7 @@
 #include "Misc/Parse.h"
 #include "Misc/Paths.h"
 #include "TimerManager.h"
+#include "Containers/Ticker.h"
 #include "UnrealClient.h"
 #include "DrawDebugHelpers.h"
 #include "Engine/StaticMeshActor.h"
@@ -178,7 +181,8 @@ void APrototypeUnit::ConfigureRole(EPrototypeRole InRole)
         if (Index == INDEX_NONE) continue;
         UMaterialInterface* Authored=InfantryMesh->IsVisible()?InfantryMesh->GetMaterial(Index):Mesh->GetMaterial(Index);
         FLinearColor RestTint=FactionMarkingColor(Team,Slot==FName(TEXT("Neon")));
-        const bool bHQ9=Authored && Authored->GetName().StartsWith(TEXT("M_HQ9_Baked_"));
+        const bool bHQ9=Authored && (Authored->GetName().StartsWith(TEXT("M_HQ9_Baked_"))
+            || Authored->GetName().StartsWith(TEXT("M_FV10_Baked_")));
         const bool bBaked=Authored && (Authored->GetName().StartsWith(TEXT("M_RV7_Baked_")) || bHQ9);
         // V7 concept surfaces author their faction colour in the instance or
         // atlas. Preserve that colour instead of applying a second team tint.
@@ -676,6 +680,17 @@ void APrototypeController::PlayerTick(float DeltaTime)
     if (Mode->Outcome != 0 && bPlacing) ClearSelection();
     Selected.RemoveAll([](APrototypeUnit* Unit) { return !IsValid(Unit) || Unit->IsActorBeingDestroyed() || Unit->Health <= 0.f; });
     if (WasInputKeyJustPressed(EKeys::R)) { Mode->ResetMatch(); return; }
+    if(Mode->Outcome!=0||GetWorld()->IsPaused())
+    {
+        // A mouse release during a modal must not complete an old world drag.
+        bDragging=false;
+        if(WasInputKeyJustPressed(EKeys::LeftMouseButton))
+        {
+            FVector2D Mouse;
+            if(GetMousePosition(Mouse.X,Mouse.Y))if(auto* HUD=Cast<APrototypeHUD>(GetHUD()))HUD->HandleClick(Mouse);
+        }
+        return;
+    }
     if (APawn* Camera = GetPawn())
     {
         const UCameraComponent* View = Camera->FindComponentByClass<UCameraComponent>();
@@ -696,24 +711,9 @@ void APrototypeController::PlayerTick(float DeltaTime)
     for (int32 Number = 0; Number < 10; ++Number)
     {
         if (!WasInputKeyJustPressed(GroupKeys[Number])) continue;
-        if (IsInputKeyDown(EKeys::LeftControl) || IsInputKeyDown(EKeys::RightControl))
-        {
-            TArray<TWeakObjectPtr<APrototypeUnit>>& Group = ControlGroups.FindOrAdd(Number);
-            Group.Empty();
-            for (APrototypeUnit* Unit : Selected) Group.Add(Unit);
-            Mode->Feedback = FString::Printf(TEXT("Group %d saved: %d selected."), Number, Group.Num());
-        }
-        else
-        {
-            ClearSelection();
-            if (const TArray<TWeakObjectPtr<APrototypeUnit>>* Group = ControlGroups.Find(Number))
-                for (const TWeakObjectPtr<APrototypeUnit>& Unit : *Group) AddSelected(Unit.Get());
-            const float Now = GetWorld()->GetTimeSeconds();
-            if (LastRecalledGroup == Number && Now - LastGroupRecallTime <= .3f) FocusSelection();
-            LastRecalledGroup = Number;
-            LastGroupRecallTime = Now;
-            Mode->Feedback = FString::Printf(TEXT("Group %d selected: %d units."), Number, Selected.Num());
-        }
+        HandleControlGroupClick(Number,
+            IsInputKeyDown(EKeys::LeftControl)||IsInputKeyDown(EKeys::RightControl),
+            IsInputKeyDown(EKeys::LeftShift)||IsInputKeyDown(EKeys::RightShift));
     }
     if (WasInputKeyJustPressed(EKeys::F)) FocusSelection();
     const TArray<APrototypeUnit*> ActionSelection=Selected;
@@ -956,6 +956,7 @@ void APrototypeGameMode::ResetMatch()
     if (auto* Controller = Cast<APrototypeController>(GetWorld()->GetFirstPlayerController()))
     {
         CancelPrototypeDoctrineTarget(Cast<APrototypeHUD>(Controller->GetHUD()));
+        if(auto* HUD=Cast<APrototypeHUD>(Controller->GetHUD())){HUD->bDoctrineView=false;HUD->ProductionCategory=-1;}
         Controller->SetPause(false);
         Controller->ClearSelection();
         if (Controller->GetPawn()) Controller->GetPawn()->SetActorLocation(FVector(BattlefieldLayout::PlayerHQX,-1800.f,3300.f));
@@ -1249,6 +1250,11 @@ void APrototypeGameMode::BeginPlay()
     {
         RunHRVisibilitySelfTests();GetWorld()->GetFirstPlayerController()->ConsoleCommand(TEXT("quit"));return;
     }
+    if (FParse::Param(FCommandLine::Get(),TEXT("PrototypeFieldVisualTest")))
+    {
+        RunHRResourceFieldVisualSelfTests(GetWorld());
+        GetWorld()->GetFirstPlayerController()->ConsoleCommand(TEXT("quit"));return;
+    }
     if (FParse::Param(FCommandLine::Get(),TEXT("PrototypePresentationTest")))
     {
         extern bool RunHRPresentationSelfTests(UWorld*);
@@ -1312,6 +1318,11 @@ void APrototypeGameMode::BeginPlay()
                 Controller->ClearSelection();
                 if (FParse::Param(FCommandLine::Get(),TEXT("PrototypeInterfaceCapture")))
                 {
+                    FString UIState;
+                    FParse::Value(FCommandLine::Get(),TEXT("PrototypeUIState="),UIState);
+                    if(!UIState.IsEmpty())PreparePrototypeUICaptureFixture(this,Controller,UIState);
+                    else
+                    {
                     // Explicit visual QA fixture, separate from normal battle
                     // evidence: show veteran/suppression text and doctrine tiles.
                     APrototypeUnit* Sample=SpawnUnit(0,FVector(BattlefieldLayout::PlayerHQX,-1200.f,35.f));
@@ -1321,8 +1332,9 @@ void APrototypeGameMode::BeginPlay()
                         Sample->CombatState.Rank=2;Sample->CombatState.Suppression=80.f;
                         Sample->SetActorTickEnabled(false);Sample->Select(true);Controller->Selected.Add(Sample);
                     }
-                    if(auto* HUD=Cast<APrototypeHUD>(Controller->GetHUD()))HUD->ProductionCategory=4;
+                    if(auto* HUD=Cast<APrototypeHUD>(Controller->GetHUD()))HUD->bDoctrineView=true;
                     UE_LOG(LogTemp,Display,TEXT("INTERFACE_CAPTURE_FIXTURE extra_infantry=1 rank=2 suppression=80 production_category=4; not a natural match state"));
+                    }
                 }
                 else if (FParse::Param(FCommandLine::Get(),TEXT("PrototypeCombatCapture")))
                 {
@@ -1372,8 +1384,7 @@ void APrototypeGameMode::BeginPlay()
             }
             const TCHAR* Name=FParse::Param(FCommandLine::Get(),TEXT("PrototypeInterfaceCapture")) ? TEXT("Screenshots/InterfaceFixture.png") : FParse::Param(FCommandLine::Get(),TEXT("PrototypeCombatCapture")) ? TEXT("Screenshots/Combat.png") : FParse::Param(FCommandLine::Get(),TEXT("PrototypeHarvesterCapture")) ? TEXT("Screenshots/Harvester.png") : FParse::Param(FCommandLine::Get(),TEXT("PrototypeDistrictCapture")) ? TEXT("Screenshots/District.png") : FParse::Param(FCommandLine::Get(),TEXT("PrototypeOverviewCapture")) ? TEXT("Screenshots/EnvironmentOverview.png") : TEXT("Screenshots/Battle.png");
             // Give streaming and occlusion visibility time to settle after moving the camera.
-            FTimerHandle ShutterTimer;
-            GetWorldTimerManager().SetTimer(ShutterTimer,[this,Name]()
+            FTSTicker::GetCoreTicker().AddTicker(FTickerDelegate::CreateLambda([this,Name](float)
             {
                 if(FParse::Param(FCommandLine::Get(),TEXT("PrototypeHarvesterCapture")))
                     for(TActorIterator<APrototypeUnit> It(GetWorld());It;++It)
@@ -1386,11 +1397,12 @@ void APrototypeGameMode::BeginPlay()
                 FScreenshotRequest::RequestScreenshot(FPaths::ProjectSavedDir() / Name, true, false);
                 if(FParse::Param(FCommandLine::Get(),TEXT("PrototypeCaptureExit")))
                 {
-                    FTimerHandle ExitTimer;
-                    GetWorldTimerManager().SetTimer(ExitTimer,[this]()
-                    { GetWorld()->GetFirstPlayerController()->ConsoleCommand(TEXT("quit")); },2.f,false);
+                    const TWeakObjectPtr<APlayerController> Controller(GetWorld()->GetFirstPlayerController());
+                    FTSTicker::GetCoreTicker().AddTicker(FTickerDelegate::CreateLambda([Controller](float)
+                    { if(Controller.IsValid())Controller->ConsoleCommand(TEXT("quit"));return false; }),2.f);
                 }
-            },.8f,false);
+                return false;
+            }),.8f);
         }, CaptureDelay, false);
     }
 }

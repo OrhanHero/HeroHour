@@ -102,3 +102,5 @@ Art/Models/TrellisHQV9/*.png filter=lfs diff=lfs merge=lfs -text
 Art/Textures/TrellisHQV9/*.png filter=lfs diff=lfs merge=lfs -text
 Art/Models/TrellisFactoryV9-Candidate/*.png filter=lfs diff=lfs merge=lfs -text
 Art/Models/TrellisFactoryV9-Candidate/*.glb filter=lfs diff=lfs merge=lfs -text
+Art/Models/TrellisFactoryV10/*.png filter=lfs diff=lfs merge=lfs -text
+Art/Textures/TrellisFactoryV10/*.png filter=lfs diff=lfs merge=lfs -text

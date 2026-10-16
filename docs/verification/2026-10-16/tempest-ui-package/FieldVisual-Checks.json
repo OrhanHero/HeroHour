@@ -1,0 +1,11 @@
+{
+  "suite": "FieldVisual",
+  "faction": "Aegis",
+  "result": "PASS",
+  "checks": 14,
+  "log": "FieldVisualTest-Aegis-20261016-213957-490-78d29c7e.log",
+  "log_sha256": "ff1c5495a5e748bce4bc4b27c0641f08df8d856655e304b86b1bb62e110e6281",
+  "command_line": "/Game/Maps/CityHero -game -nullrhi -unattended -nosound -PrototypeFieldVisualTest -abslog=C:\\Users\\Hero\\HeroHour\\Saved\\Logs\\FieldVisualTest-Aegis-20261016-213957-490-78d29c7e.log",
+  "log_first_utc": "2026-10-16T19:39:57.788000+00:00",
+  "natural_rounds": []
+}

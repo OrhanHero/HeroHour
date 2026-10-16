@@ -1,0 +1,146 @@
+{
+  "name": "SM_FV10_AegisFactory",
+  "source": "Art\\Models\\TrellisFactoryV9-Candidate\\AegisFactory-Remeshed512-PBR2048_00001_.glb",
+  "source_sha256": "d26273577175ed8a556de00d73fe7082dba07d695329f272e0bb6ad2e01151a9",
+  "source_unchanged": true,
+  "source_bounds_blender_units": [
+    [
+      -0.5020520687103271,
+      -0.3935583233833313,
+      -0.16249418258666992
+    ],
+    [
+      0.5021305680274963,
+      0.3949603736400604,
+      0.1640704870223999
+    ]
+  ],
+  "uniform_scale_m_per_source_unit": 6.174176032510203,
+  "baked_yaw_degrees": 180,
+  "transform_matrix_rows": [
+    [
+      -6.174176216125488,
+      -5.397636186899035e-07,
+      0.0,
+      0.000242334688664414
+    ],
+    [
+      5.397636186899035e-07,
+      -6.174176216125488,
+      0.0,
+      0.004328252747654915
+    ],
+    [
+      0.0,
+      0.0,
+      6.174176216125488,
+      0.6532677412033081
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "bounds_m": [
+    [
+      -3.1000003814697266,
+      3.0999999046325684
+    ],
+    [
+      -2.4342267513275146,
+      2.4342265129089355
+    ],
+    [
+      -0.3500000238418579,
+      1.6662678718566895
+    ]
+  ],
+  "dimensions_m": [
+    6.200000286102295,
+    4.86845326423645,
+    2.0162678956985474
+  ],
+  "zoffset_m": -0.35,
+  "unreal_expected_bounds_cm": [
+    [
+      -310.00003814697266,
+      309.99999046325684
+    ],
+    [
+      -243.42265129089355,
+      243.42267513275146
+    ],
+    [
+      -35.00000238418579,
+      166.62678718566895
+    ]
+  ],
+  "fbx_roundtrip_bounds_m": [
+    [
+      -3.1000001430511475,
+      3.0999996662139893
+    ],
+    [
+      -2.4342265129089355,
+      2.4342262744903564
+    ],
+    [
+      -0.3500000238418579,
+      1.6662678718566895
+    ]
+  ],
+  "fbx_roundtrip_pass": true,
+  "fbx_roundtrip_uv_channels": 1,
+  "fbx_roundtrip_custom_normals": true,
+  "fbx_roundtrip_vertices": 485694,
+  "fbx_roundtrip_triangles": 699446,
+  "fbx_sha256": "2baf8418c5060ed49813aea089b2e301f6597578bb69554b29bcebbf1fc2b6ae",
+  "blend_sha256": "ff5d5648eea541fd525f9ea116662ba9b6b51aedede0cc3c3eea186a47833793",
+  "vertices": 485694,
+  "triangles": 699446,
+  "material_slots": [
+    "Team"
+  ],
+  "uv_channels": 1,
+  "custom_normals_preserved": true,
+  "runtime_scale": 1.7,
+  "runtime_ground_z_cm": 0.0,
+  "blender_front_normal": [
+    0,
+    1,
+    0
+  ],
+  "unreal_front_normal": [
+    0,
+    -1,
+    0
+  ],
+  "textures": {
+    "Albedo": {
+      "file": "Art\\Textures\\TrellisFactoryV10\\T_FV10_AegisFactory_Albedo.png",
+      "sha256": "296a8eeaa142afb8c26affcc14996858b3abcba39f84fcf9ebee3c77ed11810b",
+      "size": [
+        2048,
+        2048
+      ],
+      "srgb": true
+    },
+    "MetallicRoughness": {
+      "file": "Art\\Textures\\TrellisFactoryV10\\T_FV10_AegisFactory_MR.png",
+      "sha256": "9c240c8b5887e50ae3dd9a8ad3a1dcffedcf78a7e270c1f3c068dc3dfb947a57",
+      "size": [
+        2048,
+        2048
+      ],
+      "srgb": false
+    }
+  },
+  "provenance": "Original HeroHour concept-derived generated image + native TRELLIS2 + proven remesh repair; no extracted Tempest art",
+  "limits": [
+    "No new LOD acceptance",
+    "No emissive mask, normalmap or measured AO",
+    "No UnitDefinition, runtime source or map change in preparation"
+  ]
+}

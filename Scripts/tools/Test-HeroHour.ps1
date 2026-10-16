@@ -1,7 +1,7 @@
 ﻿[CmdletBinding()]
 param(
     [ValidateSet('Editor', 'Packaged')][string]$Mode = 'Editor',
-    [ValidateSet('Combat', 'Economy', 'Navigation', 'Match', 'UI', 'Architecture', 'Resource', 'Docking', 'Tactical', 'Visibility', 'Systems', 'FullMatch', 'Presentation', 'LogisticsStress')][string]$Suite = 'Combat',
+    [ValidateSet('Combat', 'Economy', 'Navigation', 'Match', 'UI', 'Architecture', 'Resource', 'Docking', 'Tactical', 'Visibility', 'Systems', 'FullMatch', 'Presentation', 'LogisticsStress', 'FieldVisual')][string]$Suite = 'Combat',
     [ValidateSet('Aegis','Ember')][string]$Faction = 'Aegis',
     [ValidateRange(640,7680)][int]$Width = 1600,
     [ValidateRange(480,4320)][int]$Height = 900,
@@ -24,6 +24,7 @@ $runId = [guid]::NewGuid().ToString('N').Substring(0,8)
 $logFile = Join-Path $logDirectory ($Suite + 'Test-' + $Faction + '-' + (Get-Date -Format 'yyyyMMdd-HHmmss-fff') + '-' + $runId + '.log')
 $resultMarker = $Suite.ToUpperInvariant() + '_TEST_RESULT'
 if ($Suite -eq 'LogisticsStress') { $resultMarker = 'LOGISTICS_STRESS_TEST_RESULT' }
+if ($Suite -eq 'FieldVisual') { $resultMarker = 'FIELD_VISUAL_TEST_RESULT' }
 $testFlag = '-Prototype' + $Suite + 'Test'
 $testArguments = @(('"' + $projectFile + '"'), '/Game/Maps/CityHero', '-game', '-nullrhi', '-unattended', '-nosound', $testFlag, ('-abslog="' + $logFile + '"'))
 if ($Faction -eq 'Ember') { $testArguments += '-FactionEmber' }
