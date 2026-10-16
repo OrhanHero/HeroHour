@@ -1,5 +1,7 @@
 # Aktuelle Übergabe – 16.10.2026
 
+**Neuester Wiederanlaufpunkt: [Limit-Übergabe in CONTINUE_2026-10-16.md](CONTINUE_2026-10-16.md), 19:45 Berlin.** V9 ist als `cce4f50` gepusht. V10-Fabrik/Felder sind lokale Integrationsarbeit mit ersten bestandenen Editorprüfungen, aber noch ohne neue Paketabnahme. Neue Factory-/Live-Testquellen benötigen den nächsten Build. Alle drei Fachagenten meldeten Limits; der systemseitige Goal-Status ist usageLimited. Keine Behauptung weiter laufender Agenten.
+
 ## Neuester geprüfter Paketstand V9 – geprüft 16.10.2026, 19:12 Berlin
 
 **19 Paketläufe PASS, 829 Einzelprüfungen, 46 natürliche Match-/Logistikrunden.** Zwei zusätzliche 1280×720-UI-Läufe beider Fraktionen bestehen je 43 Prüfungen. Paket CreatedUtc `2026-10-16T13:01:35.2574332Z` (15:01 Berlin), Prüfung nach Fortsetzung ab 19:03 Berlin am unveränderten Paket. [Belege](verification/2026-10-16/reference-v9/Transformation-Checks.json), [Paketprüfsummen](verification/2026-10-16/reference-v9/Package-Integrity.json), [direkte Bildabnahme](research/ReferenceV9-PackageVisualQA.md).
