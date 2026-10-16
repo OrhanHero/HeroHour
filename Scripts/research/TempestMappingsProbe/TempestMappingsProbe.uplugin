@@ -1,0 +1,1 @@
+{"FileVersion":3,"Version":1,"VersionName":"1.0","FriendlyName":"HeroHour bounded reflection mappings probe","Category":"Research","EnabledByDefault":false,"CanContainContent":false,"Modules":[{"Name":"TempestMappingsProbe","Type":"Editor","LoadingPhase":"Default"}]}

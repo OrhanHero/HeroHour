@@ -1,0 +1,169 @@
+{
+  "schema": "HeroHour.TempestContainerTransfer.v1",
+  "result": "PASS_BOUNDED_CONTAINER_TRANSFER",
+  "source_read_only_assets": true,
+  "source_project_association_corrected_from": "5.8",
+  "source_project_association_corrected_to": "5.4",
+  "cue4parse_commit": "605672df7a993a90094bad92d30c388d87ae6c1a",
+  "reflection_structs_sha256": "9c8113e82d047e566095b8e4bb1df7445d8af1c49a381fb6d863e7e62bae295f",
+  "reflection_enums_sha256": "08d691ad5ec776e2f7e62ec9b181f1dcab9f661de352a30331fb800a030ad2d4",
+  "artifacts": [
+    {
+      "path": "Saved\\Research\\TempestAssetTransfer\\Container-Probe-02\\Exports\\Tempest\\Content\\Tempest\\Props\\Faction_Containers\\SM_GDF_Container.glb",
+      "bytes": 181808,
+      "sha256": "dcf057b75180a2872d28a11e30454f5600ba120cad7baa9968f14b60a98f6992"
+    },
+    {
+      "path": "Saved\\Research\\TempestAssetTransfer\\Container-Probe-02\\Exports\\Tempest\\Content\\Tempest\\Props\\Faction_Containers\\Materials\\MI_GDF_Container_01.json",
+      "bytes": 4199,
+      "sha256": "0af6d09a0a957fc0193bd561476ff3356010ae5605892b5540ba1b760a7b31d3"
+    },
+    {
+      "path": "Saved\\Research\\TempestAssetTransfer\\Container-Probe-02\\Exports\\Tempest\\Content\\Tempest\\Props\\Faction_Containers\\Textures\\GDF\\T_GDF_Container_C.png",
+      "bytes": 142686,
+      "sha256": "1eba0c27573d0ff6a7cecde1ba44d79f26c8072146e08129252fd6fba4fa7169"
+    },
+    {
+      "path": "Saved\\Research\\TempestAssetTransfer\\Container-Probe-02\\Exports\\Tempest\\Content\\Tempest\\Props\\Faction_Containers\\Textures\\GDF\\T_GDF_Container_D.png",
+      "bytes": 863895,
+      "sha256": "4a2b2d616c17bfd68f7c5b1bc766f246bb5cbd83a1aa889ac975bb1f69977e35"
+    },
+    {
+      "path": "Saved\\Research\\TempestAssetTransfer\\Container-Probe-02\\Exports\\Tempest\\Content\\Tempest\\Props\\Faction_Containers\\Textures\\GDF\\T_GDF_Container_RMO.png",
+      "bytes": 973959,
+      "sha256": "462041329d21f9c7ea0d9d00a193722367b1cc7e7ae792ad810acae5e81047f9"
+    },
+    {
+      "path": "Saved\\Research\\TempestAssetTransfer\\Container-Probe-02\\Exports\\Tempest\\Content\\Tempest\\Props\\Faction_Containers\\Textures\\GDF\\T_GDF_Container_N.png",
+      "bytes": 1278538,
+      "sha256": "0c2bcb1648a70dc56d00421078d12aa54d193c5d6dc6d1e5211f7c8f4fa91334"
+    },
+    {
+      "path": "Saved\\Research\\TempestAssetTransfer\\Container-Probe-02\\Exports\\Tempest\\Content\\Tempest\\MaterialLibrary\\Textures\\T_Grunge_01_M.png",
+      "bytes": 32561171,
+      "sha256": "3c0dbd82c08e223bbbc230434309220d9be07b122946cc6b858a614f9d630ff6"
+    }
+  ],
+  "preview": {
+    "path": "Saved\\Research\\TempestAssetTransfer\\VisualQA\\20261016T234157Z-78e2d938\\Container-OriginalAlbedo-Baseline.png",
+    "sha256": "29c8706cb85f933be807fac5792802a0a6151346766ff23f9d77d9b4eca1b9fe"
+  },
+  "editor_inventory": {
+    "file": "Saved\\Research\\TempestMapTransfer\\Editor54\\tempest-editor-inventory-20261016T234355185979Z.json",
+    "sha256": "f89bd3a371620465fb1bc2ecbb0772a4d1cbcee13fa9b4dca04d3f7838e3a660",
+    "result": "PASS",
+    "actor_count": 8279,
+    "loaded_levels": [
+      {
+        "level_class": "/Script/Engine.Level",
+        "package": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P",
+        "loaded": true,
+        "visible": null,
+        "visibility_limitation": "Loaded level enumeration does not independently establish viewport visibility."
+      },
+      {
+        "level_class": "/Script/Engine.Level",
+        "package": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Nav",
+        "loaded": true,
+        "visible": null,
+        "visibility_limitation": "Loaded level enumeration does not independently establish viewport visibility."
+      },
+      {
+        "level_class": "/Script/Engine.Level",
+        "package": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro",
+        "loaded": true,
+        "visible": null,
+        "visibility_limitation": "Loaded level enumeration does not independently establish viewport visibility."
+      }
+    ],
+    "actor_classes": {
+      "/Script/NavigationSystem.NavMeshBoundsVolume": 1,
+      "/Script/Tempest.WorldBoundsActor": 1,
+      "/Game/Tempest/Blueprints/DayAndNight/BP_DayAndNight.BP_DayAndNight_C": 1,
+      "/Script/Landscape.Landscape": 1,
+      "/Script/NavGrid.SquareNavGrid": 1,
+      "/Script/Tempest.TedNavMesh": 4,
+      "/Script/Engine.RuntimeVirtualTextureVolume": 1,
+      "/Script/Tempest.TedPlayerStart": 4,
+      "/Script/Tempest.TedNavPylon": 1,
+      "/Script/Foliage.InstancedFoliageActor": 1,
+      "/Script/Engine.StaticMeshActor": 7065,
+      "/Script/Engine.DecalActor": 88,
+      "/Script/UnrealEd.GroupActor": 935,
+      "/Script/Engine.TextRenderActor": 22,
+      "/Script/Tempest.FoliageClusterActor": 47,
+      "/Script/Tempest.TempestFieldVolume": 9,
+      "/Script/Tempest.FoliageInteractionManager": 1,
+      "/Script/NavigationSystem.NavModifierVolume": 48,
+      "/Script/Engine.PointLight": 32,
+      "/Script/Engine.SpotLight": 8,
+      "/Script/Niagara.NiagaraActor": 4,
+      "/Script/Engine.PostProcessVolume": 4
+    },
+    "container_instances": 20,
+    "process_exit_code": 1,
+    "limitation": "JSON inventory completed; process also logged three missing airplane textures and TempestFieldVolume ensure !IsRunningCommandlet(). This is not a clean whole-map validation."
+  },
+  "import58": {
+    "schema": "HeroHour.TempestContainerImport58.v1",
+    "engine": "5.8.3-58210709+++UE5+Release-5.8",
+    "project": "C:\\Users\\Hero\\HeroHour\\Saved\\Tests\\TempestTransferProbe58",
+    "source": "C:\\Users\\Hero\\HeroHour\\Saved\\Research\\TempestAssetTransfer\\Container-Probe-02\\Exports\\Tempest\\Content\\Tempest\\Props\\Faction_Containers",
+    "result": "PASS",
+    "imports": [
+      {
+        "source": "C:\\Users\\Hero\\HeroHour\\Saved\\Research\\TempestAssetTransfer\\Container-Probe-02\\Exports\\Tempest\\Content\\Tempest\\Props\\Faction_Containers\\SM_GDF_Container.glb",
+        "objects": [
+          "/Game/TransferProbe/Mesh/SM_GDF_Container/Materials/MI_GDF_Container_01.MI_GDF_Container_01",
+          "/Game/TransferProbe/Mesh/SM_GDF_Container/StaticMeshes/SM_GDF_Container.SM_GDF_Container"
+        ]
+      },
+      {
+        "source": "C:\\Users\\Hero\\HeroHour\\Saved\\Research\\TempestAssetTransfer\\Container-Probe-02\\Exports\\Tempest\\Content\\Tempest\\Props\\Faction_Containers\\Textures\\GDF\\T_GDF_Container_D.png",
+        "objects": [
+          "/Game/TransferProbe/Textures/T_GDF_Container_D.T_GDF_Container_D"
+        ]
+      },
+      {
+        "source": "C:\\Users\\Hero\\HeroHour\\Saved\\Research\\TempestAssetTransfer\\Container-Probe-02\\Exports\\Tempest\\Content\\Tempest\\Props\\Faction_Containers\\Textures\\GDF\\T_GDF_Container_N.png",
+        "objects": [
+          "/Game/TransferProbe/Textures/T_GDF_Container_N.T_GDF_Container_N"
+        ]
+      },
+      {
+        "source": "C:\\Users\\Hero\\HeroHour\\Saved\\Research\\TempestAssetTransfer\\Container-Probe-02\\Exports\\Tempest\\Content\\Tempest\\Props\\Faction_Containers\\Textures\\GDF\\T_GDF_Container_RMO.png",
+        "objects": [
+          "/Game/TransferProbe/Textures/T_GDF_Container_RMO.T_GDF_Container_RMO"
+        ]
+      },
+      {
+        "source": "C:\\Users\\Hero\\HeroHour\\Saved\\Research\\TempestAssetTransfer\\Container-Probe-02\\Exports\\Tempest\\Content\\Tempest\\Props\\Faction_Containers\\Textures\\GDF\\T_GDF_Container_C.png",
+        "objects": [
+          "/Game/TransferProbe/Textures/T_GDF_Container_C.T_GDF_Container_C"
+        ]
+      }
+    ],
+    "limitation": "Isolated geometry/texture import and original-albedo baseline; not the original complete Tempest material graph.",
+    "mesh": "/Game/TransferProbe/Mesh/SM_GDF_Container/StaticMeshes/SM_GDF_Container.SM_GDF_Container",
+    "dimensions_cm": [
+      701.2301635742188,
+      309.3558044433594,
+      299.1515827178955
+    ],
+    "material_slots": 1,
+    "material": "/Game/TransferProbe/Materials/M_Container_OriginalAlbedoBaseline.M_Container_OriginalAlbedoBaseline",
+    "textures": {
+      "D": "/Game/TransferProbe/Textures/T_GDF_Container_D.T_GDF_Container_D",
+      "N": "/Game/TransferProbe/Textures/T_GDF_Container_N.T_GDF_Container_N",
+      "RMO": "/Game/TransferProbe/Textures/T_GDF_Container_RMO.T_GDF_Container_RMO",
+      "C": "/Game/TransferProbe/Textures/T_GDF_Container_C.T_GDF_Container_C"
+    },
+    "dimensions_match_source": true
+  },
+  "limitations": [
+    "One isolated container imported, not the complete map or active HeroHour CityHero.",
+    "GLB/FBX share measured bounds and triangle count but differ in UV/vertex representation.",
+    "Original-albedo Blender baseline; Unreal baseline adds normal map. Full Tempest shader graph not reconstructed.",
+    "Native cooked texture PNG export asserted in ImageCore; successful texture decoding uses CUE4Parse instead."
+  ]
+}

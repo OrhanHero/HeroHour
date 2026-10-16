@@ -50,7 +50,12 @@ def inspect():
             dirty = list(unreal.EditorLoadingAndSavingUtils.get_dirty_content_packages())
             dirty += list(unreal.EditorLoadingAndSavingUtils.get_dirty_map_packages())
             if dirty:
-                raise RuntimeError("Refusing map replacement: loaded dirty packages exist")
+                disposable = os.environ.get("TEMPEST_INSPECTION_DISPOSABLE_COPY", "")
+                current_project = Path(unreal.Paths.get_project_file_path()).resolve()
+                if (not disposable or Path(disposable).resolve() != current_project.parent
+                        or saved not in current_project.parents):
+                    raise RuntimeError("Refusing map replacement: loaded dirty packages exist")
+                report["discarded_startup_dirty_packages_in_owned_copy"] = [ref(p) for p in dirty]
             if not unreal.get_editor_subsystem(unreal.LevelEditorSubsystem).load_level(map_path):
                 raise RuntimeError("Requested map failed to load: " + map_path)
         world = unreal.get_editor_subsystem(unreal.UnrealEditorSubsystem).get_editor_world()
@@ -60,21 +65,23 @@ def inspect():
         package = world.get_path_name().split(".", 1)[0]
         report["world_package"] = package
         registry = unreal.AssetRegistryHelpers.get_asset_registry()
+        registry.search_all_assets(True)
         registry.wait_for_completion()
         options = unreal.AssetRegistryDependencyOptions(
             include_soft_package_references=True, include_hard_package_references=True,
             include_searchable_names=False, include_soft_management_references=False,
             include_hard_management_references=False)
-        report["dependencies"][package] = sorted(str(p) for p in registry.get_dependencies(package, options))
-        streaming = attempt("world.streaming_levels", lambda: world.get_editor_property("streaming_levels"), [])
-        for level in streaming:
-            row = {"streaming_class": ref(level.get_class()),
-                   "package": str(level.get_world_asset_package_name()),
-                   "loaded": bool(level.is_level_loaded()), "visible": bool(level.is_level_visible())}
+        report["dependencies"][package] = sorted(str(p) for p in (registry.get_dependencies(package, options) or []))
+        loaded_levels = unreal.EditorLevelUtils.get_levels(world)
+        for level in loaded_levels:
+            row = {"level_class": ref(level.get_class()),
+                   "package": level.get_path_name().split(".", 1)[0],
+                   "loaded": True, "visible": None,
+                   "visibility_limitation": "Loaded level enumeration does not independently establish viewport visibility."}
             report["levels"].append(row)
             name = row["package"]
             report["dependencies"][name] = attempt("dependencies:" + name,
-                lambda name=name: sorted(str(p) for p in registry.get_dependencies(name, options)), [])
+                lambda name=name: sorted(str(p) for p in (registry.get_dependencies(name, options) or [])), [])
         actors = unreal.get_editor_subsystem(unreal.EditorActorSubsystem).get_all_level_actors()
         for actor in actors:
             row = {"path": ref(actor), "class": ref(actor.get_class()), "label": actor.get_actor_label(),
