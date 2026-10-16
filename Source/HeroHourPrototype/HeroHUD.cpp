@@ -195,13 +195,28 @@ void APrototypeHUD::DrawHUD()
     const FLinearColor White(.9f,.94f,.96f),Muted(.52f,.61f,.64f),Mint(.39f,.92f,.57f),Cyan(.35f,.85f,.94f),Gold(.98f,.77f,.3f),Red(.96f,.30f,.21f);
     auto Rect=[&](FLinearColor C,float X,float Y,float A,float B){DrawRect(C,X*S,Y*S,A*S,B*S);};
     auto Line=[&](float X,float Y,float A,float B,FLinearColor C,float T=1.f){DrawLine(X*S,Y*S,A*S,B*S,C,T*S);};
-    auto Text=[&](const FString& T,float X,float Y,FLinearColor C,float Z=1.f){DrawText(T,FLinearColor(0,0,0,.9f),(X+.7f)*S,(Y+.9f)*S,nullptr,Z*S);DrawText(T,C,X*S,Y*S,nullptr,Z*S);};
+    float FontWidth=0.f,FontHeight=0.f;GetTextSize(TEXT("Ag"),FontWidth,FontHeight,nullptr,1.f);
+    auto FontScale=[&](float Z){return L.TextScale(Z,FontHeight);};
+    auto CompactFont=[&](float Z,float ReferenceHeight){return FMath::Min(FontScale(Z),FMath::Max(L.MinimumTextLinePixels,ReferenceHeight*S)/FMath::Max(1.f,FontHeight))/S;};
+    auto Text=[&](const FString& T,float X,float Y,FLinearColor C,float Z=1.f){DrawText(T,FLinearColor(0,0,0,.9f),(X+.7f)*S,(Y+.9f)*S,nullptr,FontScale(Z));DrawText(T,C,X*S,Y*S,nullptr,FontScale(Z));};
     // Measure the same font and viewport scale used by DrawText. Compact cards
     // keep their full name in the tooltip rather than crossing a neighbour.
     auto FitText=[&](const FString& T,float X,float Y,float Width,FLinearColor C,float Z=1.f){
-        float TW=0.f,TH=0.f;GetTextSize(T,TW,TH,nullptr,Z*S);
-        if(TW>(Width-.7f)*S&&TW>0.f)Z*=(Width-.7f)*S/TW;
-        Text(T,X,Y,C,Z);
+        const float Limit=FMath::Max(1.f,(Width-.7f)*S),MinimumScale=FontScale(0.f);
+        float Scale=FontScale(Z),TW=0.f,TH=0.f;GetTextSize(T,TW,TH,nullptr,Scale);
+        if(TW>Limit&&TW>0.f)Scale=FMath::Max(MinimumScale,Scale*Limit/TW);
+        FString Visible=T;GetTextSize(Visible,TW,TH,nullptr,Scale);
+        if(TW>Limit)
+        {
+            // Preserve the minimum font size. Full object names remain in the
+            // hover tooltip; a narrow label is elided instead of becoming tiny.
+            for(int32 End=T.Len()-1;End>=0;--End)
+            {
+                Visible=T.Left(End)+TEXT("...");GetTextSize(Visible,TW,TH,nullptr,Scale);
+                if(TW<=Limit)break;
+            }
+        }
+        Text(Visible,X,Y,C,Scale/S);
     };
     auto Texture=[&](UTexture2D* T,FPrototypeHUDRect R,FLinearColor Tint=FLinearColor::White,float U=0,float V=0,float UW=1,float VH=1){
         if(T)DrawTexture(T,R.X*S,R.Y*S,R.W*S,R.H*S,U,V,UW,VH,Tint,BLEND_Translucent);
@@ -269,18 +284,18 @@ void APrototypeHUD::DrawHUD()
     const int32 Seconds=FMath::FloorToInt(Mode->MatchTime);
     Text(TEXT("COMMANDER"),Mission.X+25,Mission.Y+12,White,1.f);
     Text(FString::Printf(TEXT("%02d:%02d"),Seconds/60,Seconds%60),Mission.X+245,Mission.Y+12,Muted,.96f);
-    Text(FString::Printf(TEXT("BEFEHLSPUNKTE %03d / 100"),FMath::FloorToInt(Mode->Commander[0].Points)),Mission.X+15,Mission.Y+36,Gold,.75f);
+    Text(FString::Printf(TEXT("BEFEHLSPUNKTE %03d / 100"),FMath::FloorToInt(Mode->Commander[0].Points)),Mission.X+15,Mission.Y+35,Gold,.75f);
     for(int32 Index=0;Index<2;++Index){const auto D=L.DoctrineCard(Index);const EHRDoctrine Doctrine=PlayerDoctrine(Index);
         const bool Available=Mode->Outcome==0&&!GetWorld()->IsPaused()&&Mode->Commander[0].CanActivate(Doctrine,APrototypeGameMode::GetFactionIndex(0),true);
         Rect(Dark,D.X,D.Y,D.W,D.H);NineSlice(nullptr,D,4);
         Glyph(Index==0?7:11,D.X+8,D.Y+8,32,Available?Cyan:Muted);
         Text(Index==0?TEXT("Z"):TEXT("X"),D.X+118,D.Y+8,Available?White:Muted,.8f);
         const FString Name=DoctrineName(Doctrine);
-        FitText(Name,D.X+7,D.Y+43,D.W-14,Available?White:Muted,.72f);
+        FitText(Name,D.X+7,D.Y+42,D.W-14,Available?White:Muted,.72f);
         Text(Mode->Commander[0].GlobalCooldown>0?FString::Printf(TEXT("%d SEK"),FMath::CeilToInt(Mode->Commander[0].GlobalCooldown)):Available?TEXT("BEREIT"):FString::Printf(TEXT("%.0f PUNKTE"),FHRCommanderState::Cost(Doctrine)),D.X+7,D.Y+61,Available?Mint:Gold,.72f);
         if(D.Contains(Mouse)){TooltipTitle=Name;TooltipStats=FString::Printf(TEXT("%.0f PUNKTE / GEMEINSAMER COOLDOWN %.0f SEK"),FHRCommanderState::Cost(Doctrine),Mode->Commander[0].GlobalCooldown);TooltipBody=TEXT("Klicken, danach ein gültiges Ziel im Gelände bestätigen. Punkte werden erst beim gültigen Ziel verbraucht.");}
     }
-    FitText(GetWorld()->IsPaused()?TEXT("PAUSIERT / F10 FORTSETZEN"):Mode->MatchTime<60&&Mode->Outcome==0?FString::Printf(TEXT("ANGRIFF IN %02d SEK"),FMath::CeilToInt(60-Mode->MatchTime)):FString::Printf(TEXT("%02d SICHTKONTAKTE / FEINDLICHEN HUB ZERSTÖREN"),Enemies),Mission.X+15,Mission.Y+143,Mission.W-30,GetWorld()->IsPaused()?Cyan:Gold,.64f);
+    FitText(GetWorld()->IsPaused()?TEXT("PAUSIERT / F10 FORTSETZEN"):Mode->MatchTime<60&&Mode->Outcome==0?FString::Printf(TEXT("ANGRIFF IN %02d SEK"),FMath::CeilToInt(60-Mode->MatchTime)):FString::Printf(TEXT("KONTAKTE %02d / HUB ZERSTÖREN"),Enemies),Mission.X+15,Mission.Y+143,Mission.W-30,GetWorld()->IsPaused()?Cyan:Gold,.76f);
 
     const auto Mini=L.MiniMap();Frame(Mini,Cyan);Text(TEXT("TAKTISCHE KARTE"),Mini.X+25,Mini.Y+12,White,1.0f);
     const auto MR=MapContent(L);
@@ -329,7 +344,7 @@ void APrototypeHUD::DrawHUD()
         Text(TEXT("RADAR OFFLINE"),MR.X+60,MR.Y+120,Muted,1.05f);
         Text(Mode->IsPowered(0)?TEXT("RADARZENTRUM ERRICHTEN"):TEXT("STROMVERSORGUNG HERSTELLEN"),MR.X+25,MR.Y+151,PowerColor,.72f);
     }
-    Text(Mode->HasRadar(0)?TEXT("KLICK: KAMERA VERSCHIEBEN"):TEXT("RADAR BENÖTIGT EIN AKTIVES STROMNETZ"),Mini.X+16,Mini.Y+261,Mode->HasRadar(0)?Cyan:Muted,.7f);
+    FitText(Mode->HasRadar(0)?TEXT("KLICK: KAMERA VERSCHIEBEN"):TEXT("RADAR: STROM + RADARZENTRUM"),Mini.X+16,Mini.Y+261,Mini.W-32,Mode->HasRadar(0)?Cyan:Muted,.78f);
     Text(PlayerFaction?PlayerFaction->DisplayName.ToString():TEXT("HERO"),Mini.X+17,Mini.Y+287,Mint,.8f);Text(TEXT("FEIND"),Mini.X+101,Mini.Y+287,Red,.8f);Text(TEXT("TEMPEST"),Mini.X+195,Mini.Y+287,Gold,.8f);
     const float HQRatio=IsValid(Mode->PlayerHQ)?Mode->PlayerHQ->Health/Mode->PlayerHQ->MaxHealth:0;
     Bar(Mini.X+17,Mini.Y+311,276,HQRatio,Mint);
@@ -344,6 +359,12 @@ void APrototypeHUD::DrawHUD()
     if(Chosen>0&&Single)Image(Single->Role,PortraitRect.X,PortraitRect.Y+1,PortraitRect.W,PortraitRect.W,1.f,Single->Team);
     else {Glyph(0,Selection.X+48,Selection.Y+77,88,Cyan);Text(TEXT("HERO KOMMANDO"),Selection.X+30,Selection.Y+181,Muted,.77f);}
     NineSlice(InterfaceTexture(TEXT("T_UI_Frame_V3")),PortraitRect,10);
+    if(Chosen>0&&Single&&PortraitRect.Contains(Mouse))
+    {
+        TooltipTitle=RoleName(Single->Role,Single->Team);
+        TooltipBody=TEXT("STRG + 0–9: Gruppe speichern. 0–9: Gruppe wählen. SHIFT erweitert die Auswahl. Rechtsklick im Gelände: Befehl; bei Produktionsgebäuden Sammelpunkt.");
+        TooltipStats=TEXT("GRUPPENSTEUERUNG / RECHTSKLICK-BEFEHLE");
+    }
     const FString Title=Chosen==1&&Single?RoleName(Single->Role,Single->Team):(Chosen>1?FString::Printf(TEXT("EINSATZGRUPPE / %02d"),Chosen):TEXT("KEINE AUSWAHL"));
     FitText(Title,Selection.X+182,Selection.Y+47,369,Cyan,1.04f);
     FString UnitFamily=TEXT("KLICKEN ODER AUSWAHLRAHMEN ZIEHEN");
@@ -393,13 +414,12 @@ void APrototypeHUD::DrawHUD()
         Text(FString::Printf(TEXT("%.1f m/s"),Single->GetEffectiveSpeed()/100.f),Selection.X+431,Selection.Y+144,White,.86f);
         Text(FString::Printf(TEXT("RANG %d / XP %.0f"),Single->CombatState.Rank,Single->CombatState.Experience),Selection.X+182,Selection.Y+164,Gold,.71f);
         const FString Status=Single->CombatState.IsSuppressed()?TEXT("UNTERDRÜCKT"):Single->CombatState.bDeployed?TEXT("STATIONÄR ENTFALTET"):Single->IsInCover()?TEXT("IN DECKUNG / -30% SCHADEN"):TEXT("KEINE DECKUNG");
-        Text(Status,Selection.X+182,Selection.Y+181,Single->CombatState.IsSuppressed()?Red:Single->IsInCover()?Mint:Muted,.65f);
-        if(Single->Role==EPrototypeRole::Infantry)Bar(Selection.X+182,Selection.Y+192,225,Single->CombatState.Suppression/100.f,Single->CombatState.IsSuppressed()?Red:Gold);
+        Text(Status,Selection.X+182,Selection.Y+183,Single->CombatState.IsSuppressed()?Red:Single->IsInCover()?Mint:Muted,.65f);
+        if(Single->Role==EPrototypeRole::Infantry)Bar(Selection.X+182,Selection.Y+203,225,Single->CombatState.Suppression/100.f,Single->CombatState.IsSuppressed()?Red:Gold);
     }
     const auto Focus=L.Focus();Rect(Chosen>0?FLinearColor(.055f,.14f,.18f):Dark,Focus.X,Focus.Y,Focus.W,Focus.H);
     NineSlice(InterfaceTexture(TEXT("T_UI_Frame_V3")),Focus,8);Glyph(15,Focus.X+8,Focus.Y+7,26,Chosen>0?Cyan:Muted);
     Text(TEXT("F / FOKUS"),Focus.X+40,Focus.Y+13,Chosen>0?White:Muted,.84f);
-    Text(Producer?TEXT("RECHTSKLICK: SAMMELPUNKT"):TEXT("STRG + 0–9: GRUPPE / RECHTSKLICK: BEFEHL"),Selection.X+183,Selection.Y+199,Muted,.67f);
     if(Chosen==1&&Single&&Single->IsStructure())
     {
         const auto Toggle=L.PowerToggle(),Sell=L.Sell();
@@ -410,7 +430,7 @@ void APrototypeHUD::DrawHUD()
             const auto Button=Action==0?Toggle:Sell;const bool Enabled=Action==0?PowerAvailable:SellAvailable;
             Rect(Enabled?FLinearColor(.055f,.14f,.18f):Dark,Button.X,Button.Y,Button.W,Button.H);NineSlice(InterfaceTexture(TEXT("T_UI_Frame_V3")),Button,8);
             Glyph(Action==0?13:10,Button.X+7,Button.Y+6,25,Enabled?(Action==0?Cyan:Gold):Muted);
-            Text(Action==0?(Single->bManuallyPoweredDown?TEXT("K / EIN"):TEXT("K / AUS")):TEXT("DEL / VERKAUF"),Button.X+36,Button.Y+13,Enabled?White:Muted,.69f);
+            FitText(Action==0?(Single->bManuallyPoweredDown?TEXT("K / EIN"):TEXT("K / AUS")):TEXT("DEL / VERK."),Button.X+36,Button.Y+13,Button.W-42,Enabled?White:Muted,.76f);
             if(Button.Contains(Mouse))
             {
                 TooltipTitle=Action==0?TEXT("STROM UMSCHALTEN"):TEXT("GEBÄUDE VERKAUFEN");
@@ -430,12 +450,12 @@ void APrototypeHUD::DrawHUD()
             Enabled|=!GetWorld()->IsPaused()&&Mode->Outcome==0&&Unit->CombatState.CanActivate(Ability,true,Mode->IsUnitOperational(Unit),Ability!=EHRAbility::Grenade||HasGrenadeTarget(Unit,Mode));
         }
         Rect(Enabled?FLinearColor(.055f,.14f,.18f):Dark,Button.X,Button.Y,Button.W,Button.H);NineSlice(InterfaceTexture(TEXT("T_UI_Frame_V3")),Button,8);
-        const TCHAR* AbilityNames[]={TEXT("G / GRANATE"),TEXT("T / RAUCH"),TEXT("Y / MODUS")};
+        const TCHAR* AbilityNames[]={TEXT("G / WURF"),TEXT("T / RAUCH"),TEXT("Y / MODUS")};
         Glyph(AbilityIndex==0?11:AbilityIndex==1?5:8,Button.X+6,Button.Y+7,23,Enabled?Cyan:Muted);
-        Text(Supported&&Cooldown>0.f?FString::Printf(TEXT("%d SEK"),FMath::CeilToInt(Cooldown)):AbilityNames[AbilityIndex],Button.X+33,Button.Y+13,Enabled?White:Muted,.65f);
+        FitText(Supported&&Cooldown>0.f?FString::Printf(TEXT("%d SEK"),FMath::CeilToInt(Cooldown)):AbilityNames[AbilityIndex],Button.X+33,Button.Y+13,Button.W-39,Enabled?White:Muted,.76f);
         if(Button.Contains(Mouse))
         {
-            TooltipTitle=AbilityNames[AbilityIndex];
+            TooltipTitle=AbilityIndex==0?TEXT("G / GRANATENWURF"):AbilityNames[AbilityIndex];
             TooltipBody=AbilityIndex==0?TEXT("Infanterie wirft eine Granate auf den nächsten sichtbaren Gegner innerhalb von 8 Metern. Flächenschaden, 12 Sekunden Cooldown."):
                 AbilityIndex==1?TEXT("AEGIS-Kampfeinheiten erzeugen 6 Sekunden Rauch. Gegner verlieren Sicht durch die Wolke, eigene Sicht bleibt frei. 18 Sekunden Cooldown."):
                 TEXT("Belagerer wechseln in den stationären Modus: 1,5-fache Reichweite und Panzerung. Eine Sekunde Umschaltzeit. Bewegung erst nach dem Einklappen.");
@@ -450,13 +470,13 @@ void APrototypeHUD::DrawHUD()
     const TCHAR* TabNames[5]={TEXT("BASIS"),TEXT("ABWEHR"),TEXT("INF."),TEXT("FAHRZ."),TEXT("SPEZIAL")};
     for(int32 Index=0;Index<5;++Index){const auto Tab=L.ProductionTab(Index);const bool Enabled=CategoryHasContent(Index),Selected=Index==Category;
         Rect(Selected?FLinearColor(.045f,.15f,.19f,.97f):Dark,Tab.X,Tab.Y,Tab.W,Tab.H);
-        Glyph(Index,Tab.X+25,Tab.Y+3,24,Enabled?(Selected?Cyan:Muted):FLinearColor(.29f,.35f,.38f,.55f));
-        Text(TabNames[Index],Tab.X+8,Tab.Y+28,Enabled?(Selected?Cyan:Muted):FLinearColor(.3f,.36f,.38f),.62f);
+        Glyph(Index,Tab.X+28,Tab.Y+2,18,Enabled?(Selected?Cyan:Muted):FLinearColor(.29f,.35f,.38f,.55f));
+        FitText(TabNames[Index],Tab.X+5,Tab.Y+23,Tab.W-10,Enabled?(Selected?Cyan:Muted):FLinearColor(.3f,.36f,.38f),CompactFont(.78f,14.f));
         Line(Tab.X,Tab.Y+Tab.H,Tab.X+Tab.W,Tab.Y+Tab.H,Selected?Cyan:Metal,Selected?2.f:.6f);
         if(!Enabled){Rect(Ink,Tab.X+59,Tab.Y+7,7,8);Line(Tab.X+60,Tab.Y+6,Tab.X+65,Tab.Y+6,Muted,.7f);}
     }
     FString Context=Category==4?FString::Printf(TEXT("%d BEFEHLSPUNKTE / GLOBALER COOLDOWN %.0fs"),FMath::FloorToInt(Mode->Commander[0].Points),Mode->Commander[0].GlobalCooldown):Producer?RoleName(Producer->Role):TEXT("BASISKOMMANDO");
-    FitText(Context,Production.X+19,Production.Y+88,Production.W-38,Muted,.75f);
+    FitText(Context,Production.X+19,Production.Y+86,Production.W-38,Muted,.75f);
     for(int I=0;I<FPrototypeHUDLayout::CategoryCardCount(Category);++I){const auto T=L.ProductionCard(I);
         if(Category==4)
         {
@@ -467,10 +487,9 @@ void APrototypeHUD::DrawHUD()
             Glyph(I==0?7:11,T.X+18,T.Y+8,36,Available?Cyan:Muted);NineSlice(InterfaceTexture(TEXT("T_UI_Frame_V3")),T,10);
             Text(I==0?TEXT("Z"):TEXT("X"),T.X+9,T.Y+9,Available?Cyan:Muted,.82f);
             const FString Label=DoctrineName(Doctrine);
-            const FString ShortDoctrine=Doctrine==EHRDoctrine::RepairPulse?TEXT("REPARATUR"):Doctrine==EHRDoctrine::PrecisionStrike?TEXT("PRÄZISION"):Doctrine==EHRDoctrine::Scorch?TEXT("BRANDZONE"):TEXT("OVERDRIVE");
-            FitText(ShortDoctrine,T.X+5,T.Y+52,T.W-10,Available?White:Muted,.66f);
-            FitText(FString::Printf(TEXT("%.0f BP"),Cost),T.X+5,T.Y+69,T.W-10,Available?Gold:Muted,.82f);
-            FitText(Mode->Commander[0].GlobalCooldown>0.f?FString::Printf(TEXT("%ds"),FMath::CeilToInt(Mode->Commander[0].GlobalCooldown)):TEXT("ZIEL SETZEN"),T.X+5,T.Y+83,T.W-10,Muted,.58f);
+            const FString ShortDoctrine=Doctrine==EHRDoctrine::RepairPulse?TEXT("REPAR."):Doctrine==EHRDoctrine::PrecisionStrike?TEXT("PRÄZIS."):Doctrine==EHRDoctrine::Scorch?TEXT("BRAND"):TEXT("TEMPO");
+            FitText(ShortDoctrine,T.X+5,T.Y+52,T.W-10,Available?White:Muted,.78f);
+            Text(FString::Printf(TEXT("%.0f BP"),Cost),T.X+5,T.Y+75,Available?Gold:Muted,CompactFont(.92f,14.f));
             if(Hover)
             {
                 TooltipTitle=Label;TooltipStats=FString::Printf(TEXT("%.0f PUNKTE / 20 SEK GLOBALER COOLDOWN"),Cost);
@@ -491,15 +510,15 @@ void APrototypeHUD::DrawHUD()
                 &&Mode->IsUnitOperational(RequiredProducer)&&Mode->GetQueueCount(RequiredProducer)<5;
         }
         const bool Hover=T.Contains(Mouse);Rect(Hover&&Available?FLinearColor(.055f,.14f,.18f,.97f):Dark,T.X,T.Y,T.W,T.H);
-        Rect(FLinearColor(.027f,.038f,.041f,.9f),T.X+1,T.Y+1,T.W-2,62);
-        Image(R,T.X+6,T.Y+1,62,62,Available?1.f:.38f);
-        Rect(Ink,T.X+3,T.Y+63,T.W-6,28);Line(T.X+4,T.Y+63,T.X+T.W-4,T.Y+63,Metal,.6f);
+        Rect(FLinearColor(.027f,.038f,.041f,.9f),T.X+1,T.Y+1,T.W-2,55);
+        Image(R,T.X+10,T.Y+1,54,54,Available?1.f:.38f);
+        Rect(Ink,T.X+3,T.Y+56,T.W-6,36);Line(T.X+4,T.Y+56,T.X+T.W-4,T.Y+56,Metal,.6f);
         NineSlice(InterfaceTexture(TEXT("T_UI_Frame_V3")),T,10);
         const TCHAR* Key=R==EPrototypeRole::Depot?TEXT("V"):R==EPrototypeRole::Factory?TEXT("B"):R==EPrototypeRole::Combat?TEXT("P"):R==EPrototypeRole::Collector?TEXT("C"):TEXT("");
         if(*Key){Rect(Ink,T.X+3,T.Y+3,16,16);Text(Key,T.X+7,T.Y+5,Available?Cyan:Muted,.7f);}
-        const FString Label=R==EPrototypeRole::Depot?TEXT("RAFFIN."):R==EPrototypeRole::Factory?TEXT("FABRIK"):R==EPrototypeRole::PowerPlant?TEXT("KRAFTWERK"):R==EPrototypeRole::Barracks?TEXT("KASERNE"):R==EPrototypeRole::Radar?TEXT("RADAR"):R==EPrototypeRole::Defense?TEXT("ABWEHR"):R==EPrototypeRole::Collector?TEXT("SAMMLER"):R==EPrototypeRole::Infantry?TEXT("INFANTERIE"):R==EPrototypeRole::Siege?TEXT("ARTILLERIE"):TEXT("PANZER");
-        FitText(Label,T.X+5,T.Y+66,T.W-10,Available?White:Muted,.66f);
-        FitText(FString::Printf(TEXT("%.0f"),APrototypeGameMode::RoleCost(R)),T.X+5,T.Y+79,T.W-10,Available?Gold:Muted,.83f);
+        const FString Label=R==EPrototypeRole::Depot?TEXT("RAFFIN."):R==EPrototypeRole::Factory?TEXT("FABRIK"):R==EPrototypeRole::PowerPlant?TEXT("STROM"):R==EPrototypeRole::Barracks?TEXT("KASERNE"):R==EPrototypeRole::Radar?TEXT("RADAR"):R==EPrototypeRole::Defense?TEXT("ABWEHR"):R==EPrototypeRole::Collector?TEXT("SAMMLER"):R==EPrototypeRole::Infantry?TEXT("INFANT."):R==EPrototypeRole::Siege?TEXT("BELAG."):TEXT("PANZER");
+        FitText(Label,T.X+5,T.Y+57,T.W-10,Available?White:Muted,CompactFont(.78f,14.f));
+        Text(FString::Printf(TEXT("%.0f"),APrototypeGameMode::RoleCost(R)),T.X+5,T.Y+76,Available?Gold:Muted,CompactFont(.94f,14.f));
 
         if(Hover&&Available)Line(T.X+10,T.Y+3,T.X+T.W-10,T.Y+3,Cyan,2.f);
         if(Hover)
@@ -531,31 +550,35 @@ void APrototypeHUD::DrawHUD()
     const auto Cancel=L.Cancel();Rect(QueueCount>0&&Producer?FLinearColor(.20f,.08f,.06f,.96f):Dark,Cancel.X,Cancel.Y,Cancel.W,Cancel.H);
     Glyph(10,Cancel.X+8,Cancel.Y+5,18,QueueCount>0&&Producer?Red:Muted);
     FitText(TEXT("RÜCKTASTE / LETZTEN AUFTRAG STORNIEREN"),Cancel.X+32,Cancel.Y+8,Cancel.W-42,QueueCount>0&&Producer?White:Muted,.75f);
-    FitText(Producer?TEXT("RECHTSKLICK IM GELÄNDE: SAMMELPUNKT"):Category<=1?TEXT("BAUKARTE WÄHLEN / Q DREHT DAS BAURASTER"):Category==4?TEXT("DOKTRIN WÄHLEN, DANN GELÄNDEZIEL SETZEN"):TEXT("PASSENDES PRODUKTIONSGEBÄUDE WÄHLEN"),Production.X+20,Production.Y+321,Production.W-40,Muted,.69f);
+    FitText(Producer?TEXT("RECHTSKLICK: SAMMELPUNKT"):Category<=1?TEXT("BAUKARTE / Q: DREHEN"):Category==4?TEXT("DOKTRIN / DANN ZIEL WÄHLEN"):TEXT("PRODUKTIONSGEBÄUDE WÄHLEN"),Production.X+20,Production.Y+321,Production.W-40,Muted,.78f);
     const auto Events=L.Events();Frame(Events,Mint);Text(TEXT("EREIGNISSE"),Events.X+25,Events.Y+12,White,.9f);
     FString Notice=FeedbackNotice(Mode);
     // Wrap by measured font width; messages remain within the same panel that owns hit testing.
     if(Notice.IsEmpty())Notice=TEXT("Sammler versorgen die Basis. Fabrik errichten, Striker produzieren.");
     TArray<FString> Words;Notice.ParseIntoArray(Words,TEXT(" "),true);FString Current;int32 Row=0;
-    for(const FString& Word:Words){FString Candidate=Current.IsEmpty()?Word:Current+TEXT(" ")+Word;float TW=0,TH=0;GetTextSize(Candidate,TW,TH,nullptr,.72f*S);
-        if(TW>(Events.W-40)*S&&!Current.IsEmpty()){Text(Current,Events.X+20,Events.Y+40+Row*16,Gold,.72f);Current=Word;++Row;if(Row>=3)break;}else Current=Candidate;}
-    if(Row<3&&!Current.IsEmpty())Text(Current,Events.X+20,Events.Y+40+Row*16,Gold,.72f);
+    for(const FString& Word:Words){FString Candidate=Current.IsEmpty()?Word:Current+TEXT(" ")+Word;float TW=0,TH=0;GetTextSize(Candidate,TW,TH,nullptr,FontScale(.72f));
+        if(TW>(Events.W-40)*S&&!Current.IsEmpty()){Text(Current,Events.X+20,Events.Y+40+Row*18.5f,Gold,.72f);Current=Word;++Row;if(Row>=3)break;}else Current=Candidate;}
+    if(Row<3&&!Current.IsEmpty())Text(Current,Events.X+20,Events.Y+40+Row*18.5f,Gold,.72f);
 
     if(Controller->bPlacing&&Mode->Outcome==0){const auto R=L.Placement();Frame(R,Mint);Text(FString(RoleName(Controller->PlacementRole))+TEXT(" PLATZIEREN"),R.X+25,R.Y+12,Mint,1.f);Text(FString::Printf(TEXT("GRÜN: GÜLTIG / Q: %d° DREHUNG / ESC: ABBRUCH"),Controller->PlacementRotation*90),R.X+20,R.Y+39,White,.8f);}
     if(const FDoctrineAim* Aim=DoctrineAims.Find(this))
     {
         const auto R=L.Placement();Frame(R,Cyan);Text(DoctrineName(Aim->Doctrine)+TEXT(" / ZIEL WÄHLEN"),R.X+25,R.Y+12,Cyan,.94f);
-        Text(TEXT("GELÄNDEKLICK BESTÄTIGT / ESC ODER RECHTSKLICK BRICHT AB"),R.X+20,R.Y+39,White,.68f);
+        FitText(TEXT("ZIELKLICK: BESTÄTIGEN / ESC ODER RECHTSKLICK: ABBRUCH"),R.X+20,R.Y+39,R.W-40,White,.78f);
         if(!IsOverInterface(Mouse*S)){Line(Mouse.X-11,Mouse.Y,Mouse.X+11,Mouse.Y,Cyan,1.5f);Line(Mouse.X,Mouse.Y-11,Mouse.X,Mouse.Y+11,Cyan,1.5f);}
     }
-    Text(TEXT("WASD KAMERA / MAUSRAD ZOOM / G T Y FÄHIGKEITEN / Z X DOKTRINEN / F10 PAUSE / R NEUSTART"),W*.5f-328,H-15,Muted,.62f);
+    const FString CameraHelp=TEXT("WASD: KAMERA / MAUSRAD: ZOOM / F10: PAUSE");
+    float HelpWidth=0.f,HelpHeight=0.f;GetTextSize(CameraHelp,HelpWidth,HelpHeight,nullptr,FontScale(.78f));
+    const float HelpX=(W-HelpWidth/S)*.5f,HelpY=H-(HelpHeight+2.f)/S;
+    Rect(FLinearColor(.006f,.009f,.009f,.88f),HelpX-6.f/S,HelpY-1.f/S,(HelpWidth+12.f)/S,(HelpHeight+3.f)/S);
+    Text(CameraHelp,HelpX,HelpY,White,.78f);
     for(TActorIterator<APrototypeUnit> It(GetWorld());It;++It){
         if(It->Health<=0||It->IsActorBeingDestroyed()||!Mode->CanTeamSee(0,*It)||(!It->bHQ&&!It->bSelected&&It->Health>=It->MaxHealth&&It->IsCompleted()))continue;
         FVector Origin,Extent;It->GetActorBounds(false,Origin,Extent);
         FVector2D P;if(!Controller->ProjectWorldLocationToScreen(FVector(It->GetActorLocation().X,It->GetActorLocation().Y,Origin.Z+Extent.Z+35.f),P)||IsOverInterface(P)||P.Y<0||P.X<0||P.X>Canvas->SizeX||P.Y>Canvas->SizeY)continue;
         const float A=It->IsStructure()?108:46;Rect(Ink,P.X/S-A/2-2,P.Y/S-2,A+4,9);Bar(P.X/S-A/2,P.Y/S,A,It->Health/It->MaxHealth,It->Team==0?Mint:Red);
-        if(It->IsStructure()){Text(FString(It->Team==1?TEXT("FEIND / "):TEXT(""))+RoleName(It->Role,It->Team),P.X/S-A/2,P.Y/S-17,White,.65f);if(!It->IsCompleted())Bar(P.X/S-A/2,P.Y/S+8,A,It->ConstructionProgress,Gold);}
-        else if(It->bSelected&&It->IsCombatant()&&It->CombatState.Rank>0)Text(FString::Printf(TEXT("RANG %d"),It->CombatState.Rank),P.X/S-A/2,P.Y/S-14,Gold,.58f);
+        if(It->IsStructure()){Text(FString(It->Team==1?TEXT("FEIND / "):TEXT(""))+RoleName(It->Role,It->Team),P.X/S-A/2,P.Y/S-(FontScale(.65f)*FontHeight+4.f)/S,White,.65f);if(!It->IsCompleted())Bar(P.X/S-A/2,P.Y/S+8,A,It->ConstructionProgress,Gold);}
+        else if(It->bSelected&&It->IsCombatant()&&It->CombatState.Rank>0)Text(FString::Printf(TEXT("RANG %d"),It->CombatState.Rank),P.X/S-A/2,P.Y/S-(FontScale(.58f)*FontHeight+4.f)/S,Gold,.58f);
     }
     if(Controller->bDragging){FVector2D P;Controller->GetMousePosition(P.X,P.Y);const FVector2D A=Controller->DragStart;
         DrawRect(FLinearColor(.25f,.7f,.5f,.08f),FMath::Min(A.X,P.X),FMath::Min(A.Y,P.Y),FMath::Abs(A.X-P.X),FMath::Abs(A.Y-P.Y));
@@ -563,23 +586,21 @@ void APrototypeHUD::DrawHUD()
     if(!TooltipTitle.IsEmpty()&&!DoctrineAims.Contains(this))
     {
         const FPrototypeHUDRect R{Production.X-372,FMath::Clamp(static_cast<float>(Mouse.Y)-195.f,122.f,H-208.f),358,186};
-        Frame(R,Cyan);float TitleScale=.88f,TitleWidth=0.f,TitleHeight=0.f;GetTextSize(TooltipTitle,TitleWidth,TitleHeight,nullptr,TitleScale*S);
-        if(TitleWidth>(R.W-48)*S)TitleScale*=(R.W-48)*S/TitleWidth;
-        Text(TooltipTitle,R.X+25,R.Y+12,White,TitleScale);
+        Frame(R,Cyan);FitText(TooltipTitle,R.X+25,R.Y+12,R.W-48,White,.88f);
         auto Wrapped=[&](const FString& Message,float Y,FLinearColor Color,float Font,int32 MaximumRows)
         {
             TArray<FString> Parts;Message.ParseIntoArray(Parts,TEXT(" "),true);FString Pending;int32 LineIndex=0;
             for(const FString& Part:Parts)
             {
-                const FString Candidate=Pending.IsEmpty()?Part:Pending+TEXT(" ")+Part;float TextWidth=0.f,TextHeight=0.f;GetTextSize(Candidate,TextWidth,TextHeight,nullptr,Font*S);
+                const FString Candidate=Pending.IsEmpty()?Part:Pending+TEXT(" ")+Part;float TextWidth=0.f,TextHeight=0.f;GetTextSize(Candidate,TextWidth,TextHeight,nullptr,FontScale(Font));
                 if(TextWidth>(R.W-40)*S&&!Pending.IsEmpty())
                 {
-                    Text(Pending,R.X+20,Y+LineIndex*17,Color,Font);Pending=Part;
+                    Text(Pending,R.X+20,Y+LineIndex*18.5f,Color,Font);Pending=Part;
                     if(++LineIndex>=MaximumRows)return;
                 }
                 else Pending=Candidate;
             }
-            if(LineIndex<MaximumRows&&!Pending.IsEmpty())Text(Pending,R.X+20,Y+LineIndex*17,Color,Font);
+            if(LineIndex<MaximumRows&&!Pending.IsEmpty())Text(Pending,R.X+20,Y+LineIndex*18.5f,Color,Font);
         };
         Wrapped(TooltipStats,R.Y+43,Gold,.68f,2);Wrapped(TooltipBody,R.Y+84,Muted,.73f,5);
     }

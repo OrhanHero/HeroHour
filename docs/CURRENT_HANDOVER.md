@@ -1,5 +1,13 @@
 # Aktuelle Übergabe – 16.10.2026
 
+## Aktueller geprüfter Paketstand V8 – 16.10.2026, 14:03 Berlin
+
+V8 ist integriert und als Windows-Paket geprüft: zwei zusammengefasste Basisbodenmeshes mit Betonfugen, Drainagen, Wartungsmarkierungen und Staubrändern; größere HUD-Schrift bei 1280×720, kurze eindeutige Fähigkeitsbeschriftungen und hinterlegte Kamerahilfe. **19 Paketläufe PASS, 775 einzelne Prüfpunkte; 46 natürliche Match-/Logistikrunden.** Weitere zwei echte UI-Läufe bei 1280×720 bestehen mit jeweils 43 Prüfungen. Die Präsentationsprüfung enthält jetzt je 141 Punkte einschließlich tatsächlicher V8-Map-Actors, Materialbindungen und deaktivierter Kollision/Navigation/Schatten. [Paketbelege](verification/2026-10-16/reference-v8/Transformation-Checks.json), [Aufnahmen](verification/2026-10-16/reference-v8/Captures.json).
+
+TRELLIS.2 läuft lokal, aber der erste HQ-Kandidat ist nach echten Mehransichten ausdrücklich **abgelehnt**: fragmentierte Fassaden und beschädigte Satellitenschüssel. Er ersetzt kein Laufzeitmodell. Strukturprüfung PASS ist keine visuelle Freigabe. [Bildprüfung](research/TrellisHQV8-VisualQA.md), [Ursachenanalyse](research/TrellisHQV8-Diagnosis.md). Ein kontrollierter Zwischenexport-Versuch untersucht die Geometriestufen, ohne aus fehlenden Daten eine Fehlerursache zu erfinden.
+
+**Aktive Folgearbeit, noch kein Bestandteil dieses Pakets:** originales Terrain-/Böschungskit V9; Aufteilung des eigenen Sammlers in echte bewegliche Teilmeshes und eine rein visuelle Arbeits-/Entladesequenz. Drei Fachagenten plus Root, getrennte Dateiownership. Keine neue Vollständigkeits-, Konzeptparitäts- oder Dauerleistungsbehauptung. Das Konzept bleibt besonders bei Weltfülle, übrigen Einheiten und Animationen unerfüllt.
+
 Kurzer Wiederanlaufpunkt nach Limit-/Accountwechsel: [CONTINUE_2026-10-16.md](CONTINUE_2026-10-16.md). Gesicherter V7-Code-/Assetstand: Commit `4904c1f` auf `codex/prototype-bootstrap`, nach GitHub gepusht als OrhanHero.
 
 Fortsetzung am Morgen, 16.10.: Weitere echte V7-UI-Läufe bei 1280×720 bestehen für beide Fraktionen ([Nachweis](verification/2026-10-16/reference-v7/UI-1280-Checks.json)). Kurze Startkamera-Messung mit NoBot/1600×900/60-FPS-Grenze: Mittel 60,00 FPS, P95 17,13 ms, 1.500 ausgewertete Frames nach 300 Warmup; kein Gefechts- oder Dauerleistungsnachweis. Der Prozess lieferte Exitcode 777003 bei laut Log normalem Benchmarking-Shutdown; der Bericht ist deshalb eine Frame-Aufzeichnung, keine zusätzliche PASS-Abnahme ([Messdaten](verification/2026-10-16/reference-v7/Performance-V7.json)). V8 arbeitet derzeit an Basisbodendetails und Schriftlesbarkeit; zusätzlich wird TRELLIS.2 lokal geprüft. Diese Änderungen sind noch nicht als neues Paket abgenommen.

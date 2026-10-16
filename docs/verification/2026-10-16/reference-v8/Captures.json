@@ -1,0 +1,34 @@
+{
+  "package": {
+    "CreatedUtc": "2026-10-16T12:03:42.0102076Z",
+    "Configuration": "Development",
+    "Platform": "Windows",
+    "PackagingLog": "C:\\Users\\Hero\\HeroHour\\Saved\\Logs\\Packaging-20261016-140244-724.log",
+    "Map": "/Game/Maps/CityHero",
+    "HeroAssetsExplicitlyCooked": true
+  },
+  "captures": [
+    {
+      "file": "Art/Previews/ReferenceV8-Package-Aegis-1600.png",
+      "sha256": "f76ee27ee53881d76a69ec3e401f112622cd8ef789f40dafdb454915c5a5f98a",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "source": "packaged game",
+      "diagnostic_fixture": false,
+      "limitation": "Normal startup camera and fog; no concept parity claim."
+    },
+    {
+      "file": "Art/Previews/ReferenceV8-Package-InterfaceFixture-Aegis-1280.png",
+      "sha256": "078dd039e5d2fb0a92e465aa9dc5881123b8ea5963f191b46ea63c2e16815e99",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "source": "packaged game",
+      "diagnostic_fixture": true,
+      "limitation": "Fixture injects selected rank2 suppressed infantry and doctrine tab; not natural battle evidence."
+    }
+  ]
+}

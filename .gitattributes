@@ -89,3 +89,7 @@ Art/Models/ReferenceAPCV7/*.png filter=lfs diff=lfs merge=lfs -text
 Art/Models/ReferenceEmberHQV7/*.png filter=lfs diff=lfs merge=lfs -text
 Art/Models/ReferenceEmberAPCV7/*.png filter=lfs diff=lfs merge=lfs -text
 Art/Textures/ReferenceV7/*.png filter=lfs diff=lfs merge=lfs -text
+Art/Concepts/GeneratedV8/*.png filter=lfs diff=lfs merge=lfs -text
+Art/Models/ReferenceBaseyardV8/*.png filter=lfs diff=lfs merge=lfs -text
+Art/Models/TrellisV8-Candidate/*.png filter=lfs diff=lfs merge=lfs -text
+Art/Models/TrellisV8-Candidate/*.glb filter=lfs diff=lfs merge=lfs -text

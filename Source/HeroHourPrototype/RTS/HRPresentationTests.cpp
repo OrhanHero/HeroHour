@@ -429,6 +429,48 @@ bool RunHRPresentationSelfTests(UWorld* World)
         { ++RoadCount;bRoadNonBlocking &= It->GetStaticMeshComponent()->GetCollisionEnabled()==ECollisionEnabled::NoCollision
             && !It->GetStaticMeshComponent()->CanEverAffectNavigation(); }
     Check(RoadCount==3 && bRoadNonBlocking,TEXT("three merged road finish actors preserve collision-free navigable streets"));
+    // V8 is a saved-map contract: an importer report alone does not establish
+    // that both decorative courtyards survive the final cook with safe flags.
+    const TSet<FString> BaseyardPaths={
+        TEXT("/Game/HERO/ReferenceV8/Baseyard/Meshes/SM_BY8_WestBaseyard.SM_BY8_WestBaseyard"),
+        TEXT("/Game/HERO/ReferenceV8/Baseyard/Meshes/SM_BY8_EastBaseyard.SM_BY8_EastBaseyard")};
+    TSet<FString> BaseyardMaterials;
+    for(const TCHAR* Name:{TEXT("Concrete"),TEXT("ConcreteDark"),TEXT("Metal"),TEXT("Dust"),TEXT("Track"),TEXT("Paint")})
+        BaseyardMaterials.Add(FString::Printf(TEXT("/Game/HERO/ReferenceV8/Baseyard/Materials/MI_BY8_%s.MI_BY8_%s"),Name,Name));
+    int32 BaseyardCount=0;TSet<FString> SeenBaseyards;
+    bool bBaseyardExact=true,bBaseyardNonBlocking=true,bBaseyardMaterials=true;
+    for(TActorIterator<AStaticMeshActor> It(World);It;++It)
+    {
+        UStaticMeshComponent* Component=It->GetStaticMeshComponent();
+        UStaticMesh* Mesh=Component?Component->GetStaticMesh():nullptr;
+        const FString MeshPath=GetPathNameSafe(Mesh);
+        if(!It->ActorHasTag(TEXT("HERO_BaseyardV8")) && !BaseyardPaths.Contains(MeshPath))continue;
+        ++BaseyardCount;
+        bBaseyardExact &= It->ActorHasTag(TEXT("HERO_BaseyardV8")) && BaseyardPaths.Contains(MeshPath)
+            && !SeenBaseyards.Contains(MeshPath);
+        SeenBaseyards.Add(MeshPath);
+        bBaseyardNonBlocking &= Component && !It->GetActorEnableCollision()
+            && Component->GetCollisionEnabled()==ECollisionEnabled::NoCollision
+            && Component->GetCollisionProfileName()==FName(TEXT("NoCollision"))
+            && !Component->CanEverAffectNavigation() && !Component->CastShadow;
+        TSet<FString> SeenMaterials;
+        bool bBindings=Mesh && Component && Mesh->GetStaticMaterials().Num()==6 && Component->GetNumMaterials()==6;
+        if(bBindings)for(int32 Slot=0;Slot<6;++Slot)
+        {
+            UMaterialInterface* Material=Component->GetMaterial(Slot);
+            const FString MaterialPath=GetPathNameSafe(Material);
+            bBindings &= BaseyardMaterials.Contains(MaterialPath) && !SeenMaterials.Contains(MaterialPath)
+                && Mesh->GetStaticMaterials()[Slot].MaterialInterface==Material && OwnMaterial(Material);
+            SeenMaterials.Add(MaterialPath);
+        }
+        bBaseyardMaterials &= bBindings && SeenMaterials.Num()==6;
+    }
+    Check(BaseyardCount==2 && SeenBaseyards.Num()==2 && bBaseyardExact,
+        TEXT("exactly two tagged V8 baseyards each load their distinct authored mesh from the saved map"));
+    Check(BaseyardCount==2 && bBaseyardNonBlocking,
+        TEXT("both V8 baseyards retain disabled actor and component collision, navigation exclusion and no shadows"));
+    Check(BaseyardCount==2 && bBaseyardMaterials,
+        TEXT("both V8 baseyards preserve all six distinct exact saved PBR bindings in their runtime slots"));
     for(const TCHAR* Name:{TEXT("A_Impact"),TEXT("A_Rifle"),TEXT("A_Cannon")})
     {
         USoundWave* Sound=LoadObject<USoundWave>(nullptr,*FString::Printf(TEXT("/Game/HERO/EffectsV4/%s.%s"),Name,Name));

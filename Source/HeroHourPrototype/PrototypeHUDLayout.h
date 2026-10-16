@@ -22,6 +22,11 @@ struct FPrototypeHUDLayout
     float S, W, H;
     FPrototypeHUDLayout(float Width, float Height)
         : S(FMath::Max(.01f,FMath::Min(Width/1672.f,Height/941.f))), W(Width/S), H(Height/S) {}
+    static constexpr float MinimumTextLinePixels=12.f;
+    float TextScale(float ReferenceScale,float UnscaledFontHeight) const
+    {
+        return FMath::Max(ReferenceScale*S,MinimumTextLinePixels/FMath::Max(1.f,UnscaledFontHeight));
+    }
     FPrototypeHUDRect Resource() const { return {12,8,560,60}; }
     FPrototypeHUDRect Army() const { return {W*.5f-160,10,320,80}; }
     FPrototypeHUDRect Mission() const { return {W-340,12,328,168}; }

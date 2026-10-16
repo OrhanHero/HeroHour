@@ -1,0 +1,494 @@
+{
+  "generator": "build_reference_baseyard_v8.py",
+  "seed": 8162406,
+  "assets": [
+    {
+      "name": "SM_BY8_WestBaseyard",
+      "side": "West",
+      "triangles": 13764,
+      "vertices": 8282,
+      "materials": [
+        "Concrete",
+        "ConcreteDark",
+        "Metal",
+        "Dust",
+        "Track",
+        "Paint"
+      ],
+      "pieces": {
+        "concrete_repair_slab": 66,
+        "concrete_crack": 63,
+        "small_repair_patch": 5,
+        "drain_channel": 4,
+        "drain_rim": 8,
+        "drain_crossbar": 95,
+        "maintenance_edge": 3,
+        "maintenance_hatch": 8,
+        "worn_tire_segment": 108,
+        "irregular_dust_drift": 26,
+        "small_stone_chip": 314
+      },
+      "piece_count": 700,
+      "source_bounds_m": [
+        [
+          -14.37429206524103,
+          14.9563953395402
+        ],
+        [
+          -21.473295106489942,
+          20.371913128434255
+        ],
+        [
+          0.0002,
+          0.078
+        ]
+      ],
+      "fbx_roundtrip_bounds_m": [
+        [
+          -14.374289512634277,
+          14.956396102905273
+        ],
+        [
+          -21.473295211791992,
+          20.371915817260742
+        ],
+        [
+          0.00019999999494757503,
+          0.07800000160932541
+        ]
+      ],
+      "fbx_roundtrip_pass": true,
+      "non_manifold_edges": 0,
+      "degenerate_faces": 0,
+      "expected_ue_bounds_cm": [
+        [
+          -1437.4292065241032,
+          1495.63953395402
+        ],
+        [
+          -2037.1913128434255,
+          2147.329510648994
+        ],
+        [
+          0.02,
+          7.8
+        ]
+      ],
+      "actor_location_cm": [
+        -8000,
+        0,
+        0
+      ],
+      "actor_rotation_degrees": [
+        0,
+        0,
+        0
+      ],
+      "actor_scale": [
+        1,
+        1,
+        1
+      ],
+      "maximum_relative_relief_cm": 2.8,
+      "height_convention": "HQ and depot old deck top=5cm; added details <=3cm above their contact surface; exterior stones <=2.8cm",
+      "uv_mapping": "UV0 dominant-plane physical metres, one UV unit per metre",
+      "vertex_alpha": "BY8_EdgeBlend: opaque sand/dust PBR falloff, FBX roundtrip checked",
+      "protected_rejections": 11,
+      "fbx_sha256": "154f01759956e7d145a3c0e6acb978d50c9e355d80208b077dc309bf7f8623a9",
+      "collision": false,
+      "casts_shadow": false,
+      "affects_navigation": false,
+      "validation": "PASS",
+      "provenance": "Original procedural HeroHour ground dressing; own existing PBR texture library; no commercial game assets"
+    },
+    {
+      "name": "SM_BY8_EastBaseyard",
+      "side": "East",
+      "triangles": 11662,
+      "vertices": 7021,
+      "materials": [
+        "Concrete",
+        "ConcreteDark",
+        "Metal",
+        "Dust",
+        "Track",
+        "Paint"
+      ],
+      "pieces": {
+        "concrete_repair_slab": 63,
+        "concrete_crack": 54,
+        "small_repair_patch": 5,
+        "drain_channel": 4,
+        "drain_rim": 8,
+        "drain_crossbar": 95,
+        "maintenance_edge": 3,
+        "maintenance_hatch": 8,
+        "worn_tire_segment": 78,
+        "irregular_dust_drift": 21,
+        "small_stone_chip": 256
+      },
+      "piece_count": 595,
+      "source_bounds_m": [
+        [
+          -14.956187978141367,
+          14.373117112234864
+        ],
+        [
+          -20.727720241593094,
+          20.371572519990288
+        ],
+        [
+          0.0002,
+          0.078
+        ]
+      ],
+      "fbx_roundtrip_bounds_m": [
+        [
+          -14.95618724822998,
+          14.373120307922363
+        ],
+        [
+          -20.727720260620117,
+          20.371570587158203
+        ],
+        [
+          0.00019999999494757503,
+          0.07800000160932541
+        ]
+      ],
+      "fbx_roundtrip_pass": true,
+      "non_manifold_edges": 0,
+      "degenerate_faces": 0,
+      "expected_ue_bounds_cm": [
+        [
+          -1495.6187978141368,
+          1437.3117112234863
+        ],
+        [
+          -2037.1572519990289,
+          2072.7720241593092
+        ],
+        [
+          0.02,
+          7.8
+        ]
+      ],
+      "actor_location_cm": [
+        8000,
+        0,
+        0
+      ],
+      "actor_rotation_degrees": [
+        0,
+        0,
+        0
+      ],
+      "actor_scale": [
+        1,
+        1,
+        1
+      ],
+      "maximum_relative_relief_cm": 2.8,
+      "height_convention": "HQ and depot old deck top=5cm; added details <=3cm above their contact surface; exterior stones <=2.8cm",
+      "uv_mapping": "UV0 dominant-plane physical metres, one UV unit per metre",
+      "vertex_alpha": "BY8_EdgeBlend: opaque sand/dust PBR falloff, FBX roundtrip checked",
+      "protected_rejections": 19,
+      "fbx_sha256": "b957d80a1bf9a70eeea9b9389ead879b63eb41c3c8f8f9e7f834e3188eaec17a",
+      "collision": false,
+      "casts_shadow": false,
+      "affects_navigation": false,
+      "validation": "PASS",
+      "provenance": "Original procedural HeroHour ground dressing; own existing PBR texture library; no commercial game assets"
+    }
+  ],
+  "materials": {
+    "Concrete": {
+      "source": "Concrete",
+      "tint": [
+        0.9,
+        0.88,
+        0.83
+      ],
+      "roughness": 0.93,
+      "metallic": 0.0
+    },
+    "ConcreteDark": {
+      "source": "Concrete",
+      "tint": [
+        0.61,
+        0.61,
+        0.58
+      ],
+      "roughness": 0.95,
+      "metallic": 0.0
+    },
+    "Metal": {
+      "source": "Metal",
+      "tint": [
+        0.68,
+        0.69,
+        0.66
+      ],
+      "roughness": 0.71,
+      "metallic": 0.72
+    },
+    "Dust": {
+      "source": "CompactedDirt",
+      "tint": [
+        1.06,
+        1.01,
+        0.92
+      ],
+      "roughness": 0.97,
+      "metallic": 0.0,
+      "feather_ground": true
+    },
+    "Track": {
+      "source": "Asphalt",
+      "tint": [
+        0.7,
+        0.66,
+        0.58
+      ],
+      "roughness": 0.97,
+      "metallic": 0.0
+    },
+    "Paint": {
+      "source": "Concrete",
+      "tint": [
+        1.03,
+        0.83,
+        0.39
+      ],
+      "roughness": 0.88,
+      "metallic": 0.0
+    }
+  },
+  "cached_layout_audit_sha256": "01314a7cb3031764a9b5d560dd0da2365eaa30f27cede2cbaca8c1d24b9d6882",
+  "source_layout_inputs": [
+    {
+      "label": "DV3 SM_DV3_BaseApron",
+      "mesh": "/Game/HERO/DistrictV3/Meshes/SM_DV3_BaseApron.SM_DV3_BaseApron",
+      "position": [
+        -8000.0,
+        0.0,
+        2.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "local_min": [
+        -900.0001220703125,
+        -900.0001220703125,
+        -9.313225746154785e-08
+      ],
+      "local_max": [
+        900.0001220703125,
+        900.0001220703125,
+        92.5
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "hidden": false,
+      "collision": "<CollisionEnabled.QUERY_AND_PHYSICS: 3>"
+    },
+    {
+      "label": "DV3 SM_DV3_BaseApron",
+      "mesh": "/Game/HERO/DistrictV3/Meshes/SM_DV3_BaseApron.SM_DV3_BaseApron",
+      "position": [
+        8000.0,
+        0.0,
+        2.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "local_min": [
+        -900.0001220703125,
+        -900.0001220703125,
+        -9.313225746154785e-08
+      ],
+      "local_max": [
+        900.0001220703125,
+        900.0001220703125,
+        92.5
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "hidden": false,
+      "collision": "<CollisionEnabled.QUERY_AND_PHYSICS: 3>"
+    },
+    {
+      "label": "DV3 SM_DV3_ServicePad",
+      "mesh": "/Game/HERO/DistrictV3/Meshes/SM_DV3_ServicePad.SM_DV3_ServicePad",
+      "position": [
+        -7500.0,
+        1600.0,
+        1.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "local_min": [
+        -450.00006103515625,
+        -450.00006103515625,
+        0.0
+      ],
+      "local_max": [
+        450.00006103515625,
+        450.00006103515625,
+        14.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "hidden": false,
+      "collision": "<CollisionEnabled.QUERY_AND_PHYSICS: 3>"
+    },
+    {
+      "label": "DV3 SM_DV3_ServicePad",
+      "mesh": "/Game/HERO/DistrictV3/Meshes/SM_DV3_ServicePad.SM_DV3_ServicePad",
+      "position": [
+        7500.0,
+        1600.0,
+        1.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "local_min": [
+        -450.00006103515625,
+        -450.00006103515625,
+        0.0
+      ],
+      "local_max": [
+        450.00006103515625,
+        450.00006103515625,
+        14.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "hidden": false,
+      "collision": "<CollisionEnabled.QUERY_AND_PHYSICS: 3>"
+    },
+    {
+      "label": "DV3 SM_DV3_ServicePad",
+      "mesh": "/Game/HERO/DistrictV3/Meshes/SM_DV3_ServicePad.SM_DV3_ServicePad",
+      "position": [
+        7600.0,
+        -1600.0,
+        1.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "local_min": [
+        -450.00006103515625,
+        -450.00006103515625,
+        0.0
+      ],
+      "local_max": [
+        450.00006103515625,
+        450.00006103515625,
+        14.0
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "hidden": false,
+      "collision": "<CollisionEnabled.QUERY_AND_PHYSICS: 3>"
+    },
+    {
+      "label": "DV3 SM_DV3_BaseApproach",
+      "mesh": "/Game/HERO/DistrictV3/Meshes/SM_DV3_BaseApproach.SM_DV3_BaseApproach",
+      "position": [
+        -8000.0,
+        0.0,
+        2.0
+      ],
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "local_min": [
+        -590.2531127929688,
+        675.822509765625,
+        1.5
+      ],
+      "local_max": [
+        412.49322509765625,
+        3233.169921875,
+        26.499998092651367
+      ],
+      "rotation": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "hidden": false,
+      "collision": "<CollisionEnabled.QUERY_AND_PHYSICS: 3>"
+    }
+  ],
+  "spawn_basis": {
+    "HQ": [
+      [
+        -8000,
+        0
+      ],
+      [
+        8000,
+        0
+      ]
+    ],
+    "Depot": [
+      [
+        -7500,
+        1600
+      ],
+      [
+        7500,
+        1600
+      ]
+    ],
+    "PowerPlant": [
+      [
+        -9000,
+        -1600
+      ],
+      [
+        9000,
+        -1600
+      ]
+    ]
+  },
+  "reference": "User concept 01_22_20 and actual V7 runtime base captures",
+  "intended_actors": 2,
+  "shared_material_instances": 6,
+  "unreal_import_executed": false,
+  "unchanged": "Global roads, existing map actors, C++ navigation, actor footprints, collisions and gameplay",
+  "preview_limits": "Blender mesh renders with actual source HQ/pad context; source HQ palette is not the final V7 runtime atlas; root must inspect current Unreal captures"
+}

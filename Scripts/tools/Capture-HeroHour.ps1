@@ -1,7 +1,7 @@
 [CmdletBinding()]
 param(
     [ValidateSet('Editor', 'Packaged')][string]$Mode = 'Packaged',
-    [ValidateSet('Battle', 'District', 'Overview', 'Harvester', 'Combat')][string]$View = 'Battle',
+    [ValidateSet('Battle', 'District', 'Overview', 'Harvester', 'Combat', 'InterfaceFixture')][string]$View = 'Battle',
     [ValidateSet('Aegis','Ember')][string]$Faction = 'Aegis',
     [switch]$ArtReview,
     [switch]$CloseUp,
@@ -17,8 +17,8 @@ if ($Mode -eq 'Editor') {
     $executable = Join-Path $EngineRoot 'Engine\Binaries\Win64\UnrealEditor-Cmd.exe'
     $arguments = @(('"' + (Join-Path $projectRoot 'HeroHour.uproject') + '"')) + $arguments
 }
-$flag = switch ($View) { 'Combat' { '-PrototypeCombatCapture' } 'Battle' { '-PrototypeCapture' } 'District' { '-PrototypeDistrictCapture' } 'Overview' { '-PrototypeOverviewCapture' } 'Harvester' { '-PrototypeHarvesterCapture' } }
-$filename = switch ($View) { 'Combat' { 'Combat.png' } 'Battle' { 'Battle.png' } 'District' { 'District.png' } 'Overview' { 'EnvironmentOverview.png' } 'Harvester' { 'Harvester.png' } }
+$flag = switch ($View) { 'InterfaceFixture' { '-PrototypeInterfaceCapture' } 'Combat' { '-PrototypeCombatCapture' } 'Battle' { '-PrototypeCapture' } 'District' { '-PrototypeDistrictCapture' } 'Overview' { '-PrototypeOverviewCapture' } 'Harvester' { '-PrototypeHarvesterCapture' } }
+$filename = switch ($View) { 'InterfaceFixture' { 'InterfaceFixture.png' } 'Combat' { 'Combat.png' } 'Battle' { 'Battle.png' } 'District' { 'District.png' } 'Overview' { 'EnvironmentOverview.png' } 'Harvester' { 'Harvester.png' } }
 $stamp = Get-Date -Format 'yyyyMMdd-HHmmss-fff'
 $log = Join-Path $projectRoot "Saved\Logs\Capture-$View-$stamp.log"
 $arguments += @($flag, ('-abslog="' + $log + '"'))

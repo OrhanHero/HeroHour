@@ -1,0 +1,99 @@
+{
+  "name": "SM_BY8_EastBaseyard",
+  "side": "East",
+  "triangles": 11662,
+  "vertices": 7021,
+  "materials": [
+    "Concrete",
+    "ConcreteDark",
+    "Metal",
+    "Dust",
+    "Track",
+    "Paint"
+  ],
+  "pieces": {
+    "concrete_repair_slab": 63,
+    "concrete_crack": 54,
+    "small_repair_patch": 5,
+    "drain_channel": 4,
+    "drain_rim": 8,
+    "drain_crossbar": 95,
+    "maintenance_edge": 3,
+    "maintenance_hatch": 8,
+    "worn_tire_segment": 78,
+    "irregular_dust_drift": 21,
+    "small_stone_chip": 256
+  },
+  "piece_count": 595,
+  "source_bounds_m": [
+    [
+      -14.956187978141367,
+      14.373117112234864
+    ],
+    [
+      -20.727720241593094,
+      20.371572519990288
+    ],
+    [
+      0.0002,
+      0.078
+    ]
+  ],
+  "fbx_roundtrip_bounds_m": [
+    [
+      -14.95618724822998,
+      14.373120307922363
+    ],
+    [
+      -20.727720260620117,
+      20.371570587158203
+    ],
+    [
+      0.00019999999494757503,
+      0.07800000160932541
+    ]
+  ],
+  "fbx_roundtrip_pass": true,
+  "non_manifold_edges": 0,
+  "degenerate_faces": 0,
+  "expected_ue_bounds_cm": [
+    [
+      -1495.6187978141368,
+      1437.3117112234863
+    ],
+    [
+      -2037.1572519990289,
+      2072.7720241593092
+    ],
+    [
+      0.02,
+      7.8
+    ]
+  ],
+  "actor_location_cm": [
+    8000,
+    0,
+    0
+  ],
+  "actor_rotation_degrees": [
+    0,
+    0,
+    0
+  ],
+  "actor_scale": [
+    1,
+    1,
+    1
+  ],
+  "maximum_relative_relief_cm": 2.8,
+  "height_convention": "HQ and depot old deck top=5cm; added details <=3cm above their contact surface; exterior stones <=2.8cm",
+  "uv_mapping": "UV0 dominant-plane physical metres, one UV unit per metre",
+  "vertex_alpha": "BY8_EdgeBlend: opaque sand/dust PBR falloff, FBX roundtrip checked",
+  "protected_rejections": 19,
+  "fbx_sha256": "b957d80a1bf9a70eeea9b9389ead879b63eb41c3c8f8f9e7f834e3188eaec17a",
+  "collision": false,
+  "casts_shadow": false,
+  "affects_navigation": false,
+  "validation": "PASS",
+  "provenance": "Original procedural HeroHour ground dressing; own existing PBR texture library; no commercial game assets"
+}

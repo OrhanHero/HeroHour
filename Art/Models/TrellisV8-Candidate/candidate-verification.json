@@ -1,0 +1,194 @@
+{
+  "status": "PASS",
+  "verified_utc": "2026-10-16T07:35:50.352920+00:00",
+  "prompt_id": "03754b72-3374-40bf-a4ed-e2112d023fa5",
+  "source_kind": "Own single-image generated concept reference; not extracted Tempest Rising geometry",
+  "input_sha256": "c28f14775d447077c6a32b20bddc9a344cab4353b719966c190750f750ed020e",
+  "workflow_sha256": "b92c9e677e3c9226bc0db519e43c89945b49fb09c28eaefff68b73ebd3771225",
+  "glb": {
+    "file": "AegisHQ-Trellis512_00001_.glb",
+    "bytes": 2722472,
+    "sha256": "fb53b1c581598eb06507375ffdaa0424b00b0844597fb5ff2cb11237fcd44f28",
+    "version": 2
+  },
+  "images": [
+    {
+      "index": 0,
+      "file": "AegisHQ-Trellis512-embedded-0.png",
+      "mime_type": "image/png",
+      "bytes": 1185911,
+      "sha256": "b43044e324619a408f25f3f64e7c0da51f9c77861be3d93a7ca9bbb7f8aab18b",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "mode": "RGB",
+      "extrema": [
+        [
+          3,
+          151
+        ],
+        [
+          4,
+          143
+        ],
+        [
+          4,
+          165
+        ]
+      ]
+    },
+    {
+      "index": 1,
+      "file": "AegisHQ-Trellis512-embedded-1.png",
+      "mime_type": "image/png",
+      "bytes": 895738,
+      "sha256": "3b73d91113cc06f23498d893dd9acaa4b16576b2c4a23ade582ca8db1cd53c6f",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "mode": "RGB",
+      "extrema": [
+        [
+          255,
+          255
+        ],
+        [
+          31,
+          252
+        ],
+        [
+          0,
+          243
+        ]
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "index": 0,
+      "name": null,
+      "pbr": {
+        "metallicFactor": 1.0,
+        "roughnessFactor": 1.0,
+        "baseColorFactor": [
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ],
+        "baseColorTexture": {
+          "index": 0,
+          "texCoord": 0
+        },
+        "metallicRoughnessTexture": {
+          "index": 1,
+          "texCoord": 0
+        }
+      },
+      "double_sided": true,
+      "alpha_mode": "OPAQUE"
+    }
+  ],
+  "textures": [
+    {
+      "source": 0,
+      "sampler": 0
+    },
+    {
+      "source": 1,
+      "sampler": 0
+    }
+  ],
+  "primitives": [
+    {
+      "mesh": 0,
+      "primitive": 0,
+      "vertices": 20682,
+      "triangles": 18456,
+      "bounds_min": [
+        -0.5002355575561523,
+        -0.29681873321533203,
+        -0.3948855400085449
+      ],
+      "bounds_max": [
+        0.500052273273468,
+        0.2608356475830078,
+        0.3945208191871643
+      ],
+      "uv_min": [
+        0.0,
+        0.0
+      ],
+      "uv_max": [
+        1.0,
+        1.0
+      ],
+      "material": 0,
+      "normals_exported": false
+    }
+  ],
+  "server_execution_seconds": 26.297,
+  "monitor_elapsed_seconds": 30.67,
+  "observed_gpu_card_peak_mib": 10671,
+  "gpu_sampling_interval_seconds": 5,
+  "memory_measurement_limit": "Total card memory sampled every five seconds, not exact CUDA allocation peak; host RAM peak not measured",
+  "inference_submissions": 1,
+  "retries": 0,
+  "limits": [
+    "Single-view rear/hidden geometry is inferred",
+    "Not Unreal imported, scaled, collision-authored, or visually accepted",
+    "No dedicated normal map, AO map, emissive mask, animation or gameplay sockets",
+    "GLB exports no NORMAL attributes; downstream normals must be calculated"
+  ],
+  "verification_scope": "GLB byte structure, finite geometry/UVs, valid indices, actual embedded texture dimensions and material bindings; not visual acceptance",
+  "model_source_repo": "Comfy-Org/TRELLIS.2",
+  "model_download_verification_sha256": "8c08efcbe64502624e7ab5c1de409f758192d020295fbce218b8a171446a2a80",
+  "model_files": [
+    {
+      "path": "diffusion_models/trellis_2_int8_convrot.safetensors",
+      "destination": "E:\\Comfy-Desktop\\ComfyUI-Shared\\models\\diffusion_models\\trellis_2_int8_convrot.safetensors",
+      "expected_bytes": 5253048192,
+      "expected_sha256": "d01952ad137213f6a868f86b6b877026276f84af5eec23069217475a0bad3a31",
+      "status": "verified-downloaded",
+      "received_bytes": 5253048192,
+      "attempt": 1,
+      "actual_sha256": "d01952ad137213f6a868f86b6b877026276f84af5eec23069217475a0bad3a31"
+    },
+    {
+      "path": "vae/trellis_2_shape_vae_bf16.safetensors",
+      "destination": "E:\\Comfy-Desktop\\ComfyUI-Shared\\models\\vae\\trellis_2_shape_vae_bf16.safetensors",
+      "expected_bytes": 1095844024,
+      "expected_sha256": "de0cb4949a76c59ee5c091a995a69bcc8c51d5aeda939f0c641a50d2a72341f4",
+      "status": "verified-downloaded",
+      "received_bytes": 1095844024,
+      "attempt": 1,
+      "actual_sha256": "de0cb4949a76c59ee5c091a995a69bcc8c51d5aeda939f0c641a50d2a72341f4"
+    },
+    {
+      "path": "vae/trellis_2_texture_vae_bf16.safetensors",
+      "destination": "E:\\Comfy-Desktop\\ComfyUI-Shared\\models\\vae\\trellis_2_texture_vae_bf16.safetensors",
+      "expected_bytes": 948461364,
+      "expected_sha256": "714e5ebf094a610e12a8e3b5175c18a62f37f6ea4218acb6073644456b73ab0e",
+      "status": "verified-downloaded",
+      "received_bytes": 948461364,
+      "attempt": 1,
+      "actual_sha256": "714e5ebf094a610e12a8e3b5175c18a62f37f6ea4218acb6073644456b73ab0e"
+    },
+    {
+      "path": "clip_vision/dino_v3_vit_l.safetensors",
+      "destination": "E:\\Comfy-Desktop\\ComfyUI-Shared\\models\\clip_vision\\dino_v3_vit_l.safetensors",
+      "expected_bytes": 1212559776,
+      "expected_sha256": "5cb785e458de7c460579082418af81f5c62380c181599344bdc60898c63468ee",
+      "status": "verified-downloaded",
+      "received_bytes": 1212559776,
+      "attempt": 1,
+      "actual_sha256": "5cb785e458de7c460579082418af81f5c62380c181599344bdc60898c63468ee"
+    }
+  ],
+  "final_queue": {
+    "queue_running": [],
+    "queue_pending": []
+  }
+}

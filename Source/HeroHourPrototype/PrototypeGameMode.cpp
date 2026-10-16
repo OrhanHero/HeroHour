@@ -1292,7 +1292,7 @@ void APrototypeGameMode::BeginPlay()
         UE_LOG(LogTemp,Display,TEXT("NAVIGATION_TEST_RESULT=%s"),Pass ? TEXT("PASS") : TEXT("FAIL"));
         GetWorld()->GetFirstPlayerController()->ConsoleCommand(TEXT("quit"));
     }
-    if (FParse::Param(FCommandLine::Get(),TEXT("PrototypeCombatCapture")) || FParse::Param(FCommandLine::Get(), TEXT("PrototypeCapture")) || FParse::Param(FCommandLine::Get(),TEXT("PrototypeOverviewCapture")) || FParse::Param(FCommandLine::Get(),TEXT("PrototypeDistrictCapture")) || FParse::Param(FCommandLine::Get(),TEXT("PrototypeHarvesterCapture")))
+    if (FParse::Param(FCommandLine::Get(),TEXT("PrototypeInterfaceCapture")) || FParse::Param(FCommandLine::Get(),TEXT("PrototypeCombatCapture")) || FParse::Param(FCommandLine::Get(), TEXT("PrototypeCapture")) || FParse::Param(FCommandLine::Get(),TEXT("PrototypeOverviewCapture")) || FParse::Param(FCommandLine::Get(),TEXT("PrototypeDistrictCapture")) || FParse::Param(FCommandLine::Get(),TEXT("PrototypeHarvesterCapture")))
     {
         FTimerHandle CaptureTimer;
         GetWorldTimerManager().SetTimer(CaptureTimer, [this]()
@@ -1300,7 +1300,21 @@ void APrototypeGameMode::BeginPlay()
             if (auto* Controller = Cast<APrototypeController>(GetWorld()->GetFirstPlayerController()))
             {
                 Controller->ClearSelection();
-                if (FParse::Param(FCommandLine::Get(),TEXT("PrototypeCombatCapture")))
+                if (FParse::Param(FCommandLine::Get(),TEXT("PrototypeInterfaceCapture")))
+                {
+                    // Explicit visual QA fixture, separate from normal battle
+                    // evidence: show veteran/suppression text and doctrine tiles.
+                    APrototypeUnit* Sample=SpawnUnit(0,FVector(BattlefieldLayout::PlayerHQX,-1200.f,35.f));
+                    if(Sample)
+                    {
+                        Sample->ConfigureRole(EPrototypeRole::Infantry);Sample->Tick(.016f);
+                        Sample->CombatState.Rank=2;Sample->CombatState.Suppression=80.f;
+                        Sample->SetActorTickEnabled(false);Sample->Select(true);Controller->Selected.Add(Sample);
+                    }
+                    if(auto* HUD=Cast<APrototypeHUD>(Controller->GetHUD()))HUD->ProductionCategory=4;
+                    UE_LOG(LogTemp,Display,TEXT("INTERFACE_CAPTURE_FIXTURE extra_infantry=1 rank=2 suppression=80 production_category=4; not a natural match state"));
+                }
+                else if (FParse::Param(FCommandLine::Get(),TEXT("PrototypeCombatCapture")))
                 {
                     for (TActorIterator<APrototypeUnit> It(GetWorld());It;++It)
                         if (It->Team==0 && It->Role==EPrototypeRole::Combat && It->Health>0.f)
@@ -1346,7 +1360,7 @@ void APrototypeGameMode::BeginPlay()
                     }
                 }
             }
-            const TCHAR* Name=FParse::Param(FCommandLine::Get(),TEXT("PrototypeCombatCapture")) ? TEXT("Screenshots/Combat.png") : FParse::Param(FCommandLine::Get(),TEXT("PrototypeHarvesterCapture")) ? TEXT("Screenshots/Harvester.png") : FParse::Param(FCommandLine::Get(),TEXT("PrototypeDistrictCapture")) ? TEXT("Screenshots/District.png") : FParse::Param(FCommandLine::Get(),TEXT("PrototypeOverviewCapture")) ? TEXT("Screenshots/EnvironmentOverview.png") : TEXT("Screenshots/Battle.png");
+            const TCHAR* Name=FParse::Param(FCommandLine::Get(),TEXT("PrototypeInterfaceCapture")) ? TEXT("Screenshots/InterfaceFixture.png") : FParse::Param(FCommandLine::Get(),TEXT("PrototypeCombatCapture")) ? TEXT("Screenshots/Combat.png") : FParse::Param(FCommandLine::Get(),TEXT("PrototypeHarvesterCapture")) ? TEXT("Screenshots/Harvester.png") : FParse::Param(FCommandLine::Get(),TEXT("PrototypeDistrictCapture")) ? TEXT("Screenshots/District.png") : FParse::Param(FCommandLine::Get(),TEXT("PrototypeOverviewCapture")) ? TEXT("Screenshots/EnvironmentOverview.png") : TEXT("Screenshots/Battle.png");
             // Give streaming and occlusion visibility time to settle after moving the camera.
             FTimerHandle ShutterTimer;
             GetWorldTimerManager().SetTimer(ShutterTimer,[this,Name]()

@@ -1,0 +1,18 @@
+{
+  "HeroHour/Binaries/Win64/HeroHour.exe": {
+    "bytes": 332519936,
+    "sha256": "3d9d367166952a874b71ad11019f709c28517a311d959770c395f7f2558f834b"
+  },
+  "HeroHour/Content/Paks/HeroHour-Windows.pak": {
+    "bytes": 10666736,
+    "sha256": "c0942d308ef87272987fcb5dc171a6018c4d27973d715203a806040ec5dda959"
+  },
+  "HeroHour/Content/Paks/HeroHour-Windows.utoc": {
+    "bytes": 205971,
+    "sha256": "2f25c2be0dc9c40894566611e5fd51cf16397155bac892ad148f7ff0d107c57f"
+  },
+  "HeroHour/Content/Paks/HeroHour-Windows.ucas": {
+    "bytes": 181325296,
+    "sha256": "bd503c014c5e76ec9c1c390c5d59327c4076705aa720fc75c87e54e771beeacb"
+  }
+}
