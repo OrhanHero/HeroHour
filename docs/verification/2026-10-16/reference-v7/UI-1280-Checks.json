@@ -1,0 +1,36 @@
+{
+  "package": {
+    "CreatedUtc": "2026-10-15T22:34:24.1236961Z",
+    "Configuration": "Development",
+    "Platform": "Windows",
+    "PackagingLog": "C:\\Users\\Hero\\HeroHour\\Saved\\Logs\\Packaging-20261016-003345-296.log",
+    "Map": "/Game/Maps/CityHero",
+    "HeroAssetsExplicitlyCooked": true
+  },
+  "executable_sha256": "3e15769e38e921c7a8f12d37c5acac73d8e8b14ce356e7de620c2bc9987de7cb",
+  "tests": [
+    {
+      "faction": "Aegis",
+      "viewport": [
+        1280,
+        720
+      ],
+      "result": "PASS",
+      "checks": 43,
+      "log": "UITest-Aegis-20261016-090020-582-5fe169b1.log",
+      "log_sha256": "0419a81a03da039c0f5c06a8b3fba2dd02cb85a8c930172bc8245cb92213d789"
+    },
+    {
+      "faction": "Ember",
+      "viewport": [
+        1280,
+        720
+      ],
+      "result": "PASS",
+      "checks": 43,
+      "log": "UITest-Ember-20261016-085934-519-4b6ff86e.log",
+      "log_sha256": "4c0e0c0aabb548fc476b201f7fee0d223d42dd68908a2b02c9c04fbd8323f535"
+    }
+  ],
+  "limit": "Real 1280x720 viewport clicks; no font readability or concept parity pass implied."
+}

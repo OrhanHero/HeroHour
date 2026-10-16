@@ -3,6 +3,8 @@ param(
     [ValidateSet('Editor', 'Packaged')][string]$Mode = 'Editor',
     [ValidateSet('Combat', 'Economy', 'Navigation', 'Match', 'UI', 'Architecture', 'Resource', 'Docking', 'Tactical', 'Visibility', 'Systems', 'FullMatch', 'Presentation', 'LogisticsStress')][string]$Suite = 'Combat',
     [ValidateSet('Aegis','Ember')][string]$Faction = 'Aegis',
+    [ValidateRange(640,7680)][int]$Width = 1600,
+    [ValidateRange(480,4320)][int]$Height = 900,
     [string]$EngineRoot = 'F:\UE\UE_5.8',
     [ValidateRange(10, 1800)][int]$TimeoutSeconds = 90
 )
@@ -27,7 +29,7 @@ $testArguments = @(('"' + $projectFile + '"'), '/Game/Maps/CityHero', '-game', '
 if ($Faction -eq 'Ember') { $testArguments += '-FactionEmber' }
 if ($Suite -eq 'UI') {
     # UI interaction requires a real viewport and camera, even for an unattended test.
-    $testArguments = @($testArguments | Where-Object { $_ -ne '-nullrhi' }) + @('-windowed', '-ForceRes', '-ResX=1600', '-ResY=900')
+    $testArguments = @($testArguments | Where-Object { $_ -ne '-nullrhi' }) + @('-windowed', '-ForceRes', "-ResX=$Width", "-ResY=$Height")
 }
 if ($Mode -eq 'Packaged') { $testArguments = $testArguments | Select-Object -Skip 1 }
 $testProcess = Start-Process -FilePath $executable -ArgumentList $testArguments -WorkingDirectory $projectRoot -WindowStyle Hidden -PassThru

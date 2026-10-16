@@ -43,6 +43,8 @@ Die frischen Paket-UI-Tests in `Transformation-Checks.json` enthalten **43 besta
 
 Die tatsächlichen automatisierten Klicktests laufen laut `Test-HeroHour.ps1` in einem 1600×900-Viewport. Die Geometrieprüfung anderer Auflösungen ist kein Ersatz für tatsächliche Klicktests bei 1280 oder 1920. Hover-Tooltips, volle Warteschlangen, lange Meldungen, Kampf-/Siegzustände und aktive Commander-Zielwahl sind in diesen sechs Stillbildern nicht dargestellt. Die gesamten 19 Paket-Suites sind separat im Verifikationsbericht dokumentiert; deren Erfolg ist keine automatische visuelle Konzeptabnahme.
 
+Nachtrag des Hauptagenten, 16.10., 09:00 Berlin: Der Testhelfer unterstützt jetzt explizite `-Width`/`-Height` für die UI-Suite. Zusätzliche echte Paketläufe bei 1280×720 bestehen für Aegis und Ember mit jeweils 43 Prüfungen. [Separater Nachweis](../verification/2026-10-16/reference-v7/UI-1280-Checks.json). Das ergänzt den damaligen 1600-Teststand, hebt die oben beschriebene schwache Schriftlesbarkeit aber nicht auf. Ein paralleler PowerShell-Aufruf meldete zunächst einen Runspace-Fehler; Aegis wurde danach separat erfolgreich ausgeführt. Der fehlerhafte Aufruf wird nicht als Testlauf gewertet.
+
 ## Priorisierte Restarbeit
 
 1. Mindestlesbarkeit bei 1280 verbessern, besonders Footer und Karten-/Commander-Kleindruck; echte Klick- und Tooltip-Sitzung bei dieser Auflösung ergänzen.

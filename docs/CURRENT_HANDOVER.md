@@ -2,6 +2,8 @@
 
 Kurzer Wiederanlaufpunkt nach Limit-/Accountwechsel: [CONTINUE_2026-10-16.md](CONTINUE_2026-10-16.md). Gesicherter V7-Code-/Assetstand: Commit `4904c1f` auf `codex/prototype-bootstrap`, nach GitHub gepusht als OrhanHero.
 
+Fortsetzung am Morgen, 16.10.: Weitere echte V7-UI-Läufe bei 1280×720 bestehen für beide Fraktionen ([Nachweis](verification/2026-10-16/reference-v7/UI-1280-Checks.json)). Kurze Startkamera-Messung mit NoBot/1600×900/60-FPS-Grenze: Mittel 60,00 FPS, P95 17,13 ms, 1.500 ausgewertete Frames nach 300 Warmup; kein Gefechts- oder Dauerleistungsnachweis. Der Prozess lieferte Exitcode 777003 bei laut Log normalem Benchmarking-Shutdown; der Bericht ist deshalb eine Frame-Aufzeichnung, keine zusätzliche PASS-Abnahme ([Messdaten](verification/2026-10-16/reference-v7/Performance-V7.json)). V8 arbeitet derzeit an Basisbodendetails und Schriftlesbarkeit; zusätzlich wird TRELLIS.2 lokal geprüft. Diese Änderungen sind noch nicht als neues Paket abgenommen.
+
 ## Neuester Stand: Referenzdurchlauf V7, 16.10.2026, 00:34 Berlin
 
 **Das gesamte Spiel ist noch nicht konzeptgerecht fertig.** Vier neue eigenständige Referenzmodelle ersetzen HQ und Kampffahrzeug beider Fraktionen: weißblauer facettierter Aegis-Turm mit schrägen Panzerstützen, sandfarbener Acht-Rad-Panzer, graphitgrüner Ember-Portalbau und eigener dunkler Acht-Rad-Panzer. Vier eigene UV-Atlanten mit Albedo/ORM/Emissionsmaske und vier dazu passende Porträts sind integriert. Die übrigen neun Ember-Porträts und die Laufzeitmarkierungen des älteren Rosters folgen ebenfalls der grünen Konzeptfarbe. Die erste zu einfache Hausform wurde nach direktem Bildvergleich ersetzt. [Umsetzung und Grenzen](REFERENCE_V7.md).

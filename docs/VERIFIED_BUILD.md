@@ -1,5 +1,7 @@
 # Nachgewiesene Windows-Builds
 
+Nachträge zum V7-Paket: [echte 1280×720-UI-Prüfungen](verification/2026-10-16/reference-v7/UI-1280-Checks.json), [kurze Frame-Aufzeichnung](verification/2026-10-16/reference-v7/Performance-V7.json). Die 1.500 Frames nach Warmup ergeben 60,00 FPS Mittel und P95 17,13 ms bei Startkamera/NoBot/1600×900/60-FPS-Grenze. Kein Kampflast- oder Langzeitnachweis; Profilprozess-Exitcode 777003 trotz normalem Shutdown im Log ist offengelegt. Die früheren Leistungsdaten bleiben historische Messungen ihrer jeweiligen Pakete.
+
 ## Neuester Stand: Referenzdurchlauf V7, 16.10.2026, 00:34 Berlin
 
 **Das gesamte Spiel ist noch nicht konzeptgerecht fertig.** Vier neue eigenständige Referenzmodelle ersetzen HQ und Kampffahrzeug beider Fraktionen: weißblauer facettierter Aegis-Turm mit schrägen Panzerstützen, sandfarbener Acht-Rad-Panzer, graphitgrüner Ember-Portalbau und eigener dunkler Acht-Rad-Panzer. Vier eigene UV-Atlanten mit Albedo/ORM/Emissionsmaske und vier dazu passende Porträts sind integriert. Die übrigen neun Ember-Porträts und die Laufzeitmarkierungen des älteren Rosters folgen ebenfalls der grünen Konzeptfarbe. Die erste zu einfache Hausform wurde nach direktem Bildvergleich ersetzt. [Umsetzung und Grenzen](REFERENCE_V7.md).
