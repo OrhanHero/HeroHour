@@ -1,5 +1,7 @@
 # Aktuelle Übergabe – 16.10.2026
 
+**Neue verbindliche Nutzerkorrektur vom 17.10.2026:** UI-Anordnung aus **C&C Zero Hour**, Gestaltung aus **Tempest Rising**. Die zuletzt implementierte Tempest-Rechtssidebar ist ein getesteter Zwischenstand, aber nicht das gewünschte finale Layout. Zuerst die tatsächlich vorhandene Tempest-Editor-Beispielkarte untersuchen, bevor weitere Umgebung erfunden wird. [Aktuelle Gestaltungsvorgabe und Kartenprüfung](DESIGN_DIRECTION_2026-10-17.md). Der Nutzer möchte diese Grundlage vor weiterer Umsetzung klären.
+
 ## Aktueller Arbeitsstand: Tempest-UI hat volle Priorität
 
 **Neuestes geprüftes Windows-Paket: 16.10.2026, 21:36 Berlin. 19 Pflichtläufe PASS, 911 Einzelprüfungen und 46 natürliche Match-/Logistikrunden.** CreatedUtc `2026-10-16T19:36:08.6233213Z`, `Packaging-20261016-213531-028.log`. Zusätzlich zwei UI-Läufe bei 1280×720 mit je 73 Prüfungen PASS und FieldVisual Aegis mit 14 Prüfungen PASS; Zusatzläufe sind nicht in den 911 enthalten. [Pflichtprüfungen](verification/2026-10-16/tempest-ui-package/Transformation-Checks.json), [UI 1280](verification/2026-10-16/tempest-ui-package/UI-1280-Checks.json), [FieldVisual](verification/2026-10-16/tempest-ui-package/FieldVisual-Checks.json), [Fortsetzung](CONTINUE_2026-10-16.md). V9 in `cce4f50` ist der historische gepushte Stand; neuer Commit/Push folgt separat.
