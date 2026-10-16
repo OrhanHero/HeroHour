@@ -1,0 +1,172 @@
+{
+  "target": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\Tempest\\Binaries\\Win64\\Tempest-Win64-Shipping.exe",
+  "target_sha256": "c81828f4749ae1bbac73106f905a81c3ea1bff9cee7300291c3c390def04be56",
+  "method": "Explicit source-bound PE exception-directory ranges and installed LLVM instruction decoder",
+  "tool": "C:\\Program Files\\Microsoft Visual Studio\\18\\Community\\VC\\Tools\\Llvm\\x64\\bin\\llvm-objdump.exe",
+  "tool_version": [
+    "LLVM (http://llvm.org/):",
+    "  LLVM version 22.1.3"
+  ],
+  "tool_sha256": "7e726d87fe123f10653998a78dc6a15492fb931f1e6de7265df7d923fc81a210",
+  "functions": [
+    {
+      "label": "HarvestRate_NameCodePair_A",
+      "seed_rva": "0x4b92a90",
+      "status": "observed",
+      "seed_is_range_start": true,
+      "range_source": "PE exception directory RUNTIME_FUNCTION plus transitive UNW_FLAG_CHAININFO children",
+      "rva_begin": "0x4b92a90",
+      "rva_end_exclusive": "0x4b92abf",
+      "unwind_info_rva": "0x8ded764",
+      "ranges": [
+        {
+          "rva_begin": "0x4b92a90",
+          "rva_end_exclusive": "0x4b92abf",
+          "unwind_info_rva": "0x8ded764",
+          "file_offset": 79241360,
+          "bytes": 47
+        }
+      ],
+      "file_offset": 79241360,
+      "bytes": 47,
+      "source_bytes_sha256": "b2dffe495b7b58a7574f900462f51b9e021cf0a4f9ec590aa379241cbd1a82b2",
+      "disassembly_bytes_sha256": "b2dffe495b7b58a7574f900462f51b9e021cf0a4f9ec590aa379241cbd1a82b2",
+      "disassembly_bytes_equal": true,
+      "direct_calls": [
+        {
+          "address": "0x144b92aae",
+          "target_va": "0x1413fa480"
+        }
+      ],
+      "assembly_path": "HarvestRate_NameCodePair_A.asm.txt",
+      "assembly_sha256": "0d8a5ef4a6c248b595685287477e96f44376c5f13ee281b0c4de715daf0bef32"
+    },
+    {
+      "label": "HarvestRate_NameCodePair_B",
+      "seed_rva": "0x4b96590",
+      "status": "observed",
+      "seed_is_range_start": true,
+      "range_source": "PE exception directory RUNTIME_FUNCTION plus transitive UNW_FLAG_CHAININFO children",
+      "rva_begin": "0x4b96590",
+      "rva_end_exclusive": "0x4b96613",
+      "unwind_info_rva": "0x8df1b78",
+      "ranges": [
+        {
+          "rva_begin": "0x4b96590",
+          "rva_end_exclusive": "0x4b96613",
+          "unwind_info_rva": "0x8df1b78",
+          "file_offset": 79256464,
+          "bytes": 131
+        }
+      ],
+      "file_offset": 79256464,
+      "bytes": 131,
+      "source_bytes_sha256": "dbdd318dccb917f11a32747b67ba03c339ea4fb578135f796b952cc37a9e6d2e",
+      "disassembly_bytes_sha256": "dbdd318dccb917f11a32747b67ba03c339ea4fb578135f796b952cc37a9e6d2e",
+      "disassembly_bytes_equal": true,
+      "direct_calls": [
+        {
+          "address": "0x144b965ab",
+          "target_va": "0x1413d86a0"
+        },
+        {
+          "address": "0x144b965c2",
+          "target_va": "0x1413e2050"
+        },
+        {
+          "address": "0x144b965e0",
+          "target_va": "0x1413e2080"
+        },
+        {
+          "address": "0x144b965fe",
+          "target_va": "0x1451b11d0"
+        }
+      ],
+      "assembly_path": "HarvestRate_NameCodePair_B.asm.txt",
+      "assembly_sha256": "8f424a20f059b1c118b5c95aefd4b23dd75a045f3ed70fd4616bd7e24df5e2c7"
+    },
+    {
+      "label": "DepositRate_NameCodePair_A",
+      "seed_rva": "0x4b92a30",
+      "status": "observed",
+      "seed_is_range_start": true,
+      "range_source": "PE exception directory RUNTIME_FUNCTION plus transitive UNW_FLAG_CHAININFO children",
+      "rva_begin": "0x4b92a30",
+      "rva_end_exclusive": "0x4b92a5f",
+      "unwind_info_rva": "0x8ded764",
+      "ranges": [
+        {
+          "rva_begin": "0x4b92a30",
+          "rva_end_exclusive": "0x4b92a5f",
+          "unwind_info_rva": "0x8ded764",
+          "file_offset": 79241264,
+          "bytes": 47
+        }
+      ],
+      "file_offset": 79241264,
+      "bytes": 47,
+      "source_bytes_sha256": "dd6c2d096bdb271dbeb3d85b0bd1537925114e78c2be5a21b6ee13655c12a112",
+      "disassembly_bytes_sha256": "dd6c2d096bdb271dbeb3d85b0bd1537925114e78c2be5a21b6ee13655c12a112",
+      "disassembly_bytes_equal": true,
+      "direct_calls": [
+        {
+          "address": "0x144b92a4e",
+          "target_va": "0x1413fa480"
+        }
+      ],
+      "assembly_path": "DepositRate_NameCodePair_A.asm.txt",
+      "assembly_sha256": "5e1f4699f9d9c780853b11cb5aaa61bf7de6cd9b7618b0563b921835c8cd9fcc"
+    },
+    {
+      "label": "DepositRate_NameCodePair_B",
+      "seed_rva": "0x4b96500",
+      "status": "observed",
+      "seed_is_range_start": true,
+      "range_source": "PE exception directory RUNTIME_FUNCTION plus transitive UNW_FLAG_CHAININFO children",
+      "rva_begin": "0x4b96500",
+      "rva_end_exclusive": "0x4b96583",
+      "unwind_info_rva": "0x8df1b78",
+      "ranges": [
+        {
+          "rva_begin": "0x4b96500",
+          "rva_end_exclusive": "0x4b96583",
+          "unwind_info_rva": "0x8df1b78",
+          "file_offset": 79256320,
+          "bytes": 131
+        }
+      ],
+      "file_offset": 79256320,
+      "bytes": 131,
+      "source_bytes_sha256": "70531bc02f6fd6ef0ff35ff3bf3266e4879c03043aea59c8aa71cf72abd2320b",
+      "disassembly_bytes_sha256": "70531bc02f6fd6ef0ff35ff3bf3266e4879c03043aea59c8aa71cf72abd2320b",
+      "disassembly_bytes_equal": true,
+      "direct_calls": [
+        {
+          "address": "0x144b9651b",
+          "target_va": "0x1413d86a0"
+        },
+        {
+          "address": "0x144b96532",
+          "target_va": "0x1413e2050"
+        },
+        {
+          "address": "0x144b96550",
+          "target_va": "0x1413e2080"
+        },
+        {
+          "address": "0x144b9656e",
+          "target_va": "0x1451b11c0"
+        }
+      ],
+      "assembly_path": "DepositRate_NameCodePair_B.asm.txt",
+      "assembly_sha256": "0a42dfa21a780f5f9cc3cef0b0caa9d88808b017d44a67eb63635d7e67a15e35"
+    }
+  ],
+  "limitations": [
+    "Labels are analyst identities derived from metadata pointers/calls, not recovered original symbol names",
+    "Exception-directory ranges may be unwind fragments rather than whole higher-level functions",
+    "External/direct callee semantics are not assumed",
+    "No runtime or recompiled reconstruction matching"
+  ],
+  "passed_byte_anchoring": true
+}

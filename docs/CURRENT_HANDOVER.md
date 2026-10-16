@@ -1,5 +1,7 @@
 # Aktuelle Übergabe – 16.10.2026
 
+Kurzer Wiederanlaufpunkt nach Limit-/Accountwechsel: [CONTINUE_2026-10-16.md](CONTINUE_2026-10-16.md). Gesicherter V7-Code-/Assetstand: Commit `4904c1f` auf `codex/prototype-bootstrap`, nach GitHub gepusht als OrhanHero.
+
 ## Neuester Stand: Referenzdurchlauf V7, 16.10.2026, 00:34 Berlin
 
 **Das gesamte Spiel ist noch nicht konzeptgerecht fertig.** Vier neue eigenständige Referenzmodelle ersetzen HQ und Kampffahrzeug beider Fraktionen: weißblauer facettierter Aegis-Turm mit schrägen Panzerstützen, sandfarbener Acht-Rad-Panzer, graphitgrüner Ember-Portalbau und eigener dunkler Acht-Rad-Panzer. Vier eigene UV-Atlanten mit Albedo/ORM/Emissionsmaske und vier dazu passende Porträts sind integriert. Die übrigen neun Ember-Porträts und die Laufzeitmarkierungen des älteren Rosters folgen ebenfalls der grünen Konzeptfarbe. Die erste zu einfache Hausform wurde nach direktem Bildvergleich ersetzt. [Umsetzung und Grenzen](REFERENCE_V7.md).

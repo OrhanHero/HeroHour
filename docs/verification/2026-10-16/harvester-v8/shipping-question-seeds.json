@@ -1,0 +1,353 @@
+{
+  "target": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\Tempest\\Binaries\\Win64\\Tempest-Win64-Shipping.exe",
+  "sha256": "c81828f4749ae1bbac73106f905a81c3ea1bff9cee7300291c3c390def04be56",
+  "image_base": "0x140000000",
+  "sections": [
+    {
+      "name": ".text",
+      "rva": 4096,
+      "raw_size": 119503872,
+      "raw_start": 1536
+    },
+    {
+      "name": ".rdata",
+      "rva": 119508992,
+      "raw_size": 34979328,
+      "raw_start": 119505408
+    },
+    {
+      "name": ".data",
+      "rva": 154488832,
+      "raw_size": 2070016,
+      "raw_start": 154484736
+    },
+    {
+      "name": ".pdata",
+      "rva": 160829440,
+      "raw_size": 6361600,
+      "raw_start": 156554752
+    },
+    {
+      "name": ".msvcjmc",
+      "rva": 167194624,
+      "raw_size": 512,
+      "raw_start": 162916352
+    },
+    {
+      "name": "_RDATA",
+      "rva": 167198720,
+      "raw_size": 384000,
+      "raw_start": 162916864
+    },
+    {
+      "name": ".rsrc",
+      "rva": 167583744,
+      "raw_size": 104960,
+      "raw_start": 163300864
+    },
+    {
+      "name": ".reloc",
+      "rva": 167690240,
+      "raw_size": 2878464,
+      "raw_start": 163405824
+    },
+    {
+      "name": ".bind",
+      "rva": 170569728,
+      "raw_size": 234056,
+      "raw_start": 166284288
+    }
+  ],
+  "patterns": [
+    {
+      "pattern": "HarvestResource",
+      "limit": 16,
+      "matches": [],
+      "possibly_more": false
+    },
+    {
+      "pattern": "DepositResource",
+      "limit": 16,
+      "matches": [
+        {
+          "text": "Ability_DepositResource",
+          "location": {
+            "file_offset": 135757368,
+            "rva": "0x8178c38"
+          }
+        },
+        {
+          "text": "DepositResourceHandles",
+          "location": {
+            "file_offset": 137223808,
+            "rva": "0x82dec80"
+          }
+        },
+        {
+          "text": "DepositResourceHandles_Key",
+          "location": {
+            "file_offset": 137223832,
+            "rva": "0x82dec98"
+          }
+        }
+      ],
+      "possibly_more": false
+    },
+    {
+      "pattern": "HarvesterState",
+      "limit": 16,
+      "matches": [],
+      "possibly_more": false
+    },
+    {
+      "pattern": "HarvestStarted",
+      "limit": 16,
+      "matches": [],
+      "possibly_more": false
+    },
+    {
+      "pattern": "HarvestStopped",
+      "limit": 16,
+      "matches": [],
+      "possibly_more": false
+    },
+    {
+      "pattern": "HarvestFinished",
+      "limit": 16,
+      "matches": [],
+      "possibly_more": false
+    },
+    {
+      "pattern": "ResourceDepositStarted",
+      "limit": 16,
+      "matches": [
+        {
+          "text": "ERefineryEventType::ResourceDepositStarted",
+          "location": {
+            "file_offset": 137221592,
+            "rva": "0x82de3d8"
+          }
+        }
+      ],
+      "possibly_more": false
+    },
+    {
+      "pattern": "ResourceDepositFinished",
+      "limit": 16,
+      "matches": [
+        {
+          "text": "ERefineryEventType::OnResourceDepositFinished",
+          "location": {
+            "file_offset": 137221640,
+            "rva": "0x82de408"
+          }
+        }
+      ],
+      "possibly_more": false
+    },
+    {
+      "pattern": "HarvesterAligned",
+      "limit": 16,
+      "matches": [
+        {
+          "text": "ERefineryEventType::HarvesterAligned",
+          "location": {
+            "file_offset": 137221688,
+            "rva": "0x82de438"
+          }
+        }
+      ],
+      "possibly_more": false
+    },
+    {
+      "pattern": "RefineryData",
+      "limit": 16,
+      "matches": [],
+      "possibly_more": false
+    },
+    {
+      "pattern": "RefinerySlot",
+      "limit": 16,
+      "matches": [],
+      "possibly_more": false
+    },
+    {
+      "pattern": "DepositTransform",
+      "limit": 16,
+      "matches": [],
+      "possibly_more": false
+    },
+    {
+      "pattern": "UnloadTransform",
+      "limit": 16,
+      "matches": [],
+      "possibly_more": false
+    },
+    {
+      "pattern": "EnterTransform",
+      "limit": 16,
+      "matches": [],
+      "possibly_more": false
+    },
+    {
+      "pattern": "ExitTransform",
+      "limit": 16,
+      "matches": [],
+      "possibly_more": false
+    },
+    {
+      "pattern": "DockTransform",
+      "limit": 16,
+      "matches": [],
+      "possibly_more": false
+    },
+    {
+      "pattern": "AlignTransform",
+      "limit": 16,
+      "matches": [],
+      "possibly_more": false
+    },
+    {
+      "pattern": "ResourceHarvestSpeed",
+      "limit": 16,
+      "matches": [
+        {
+          "text": "ResourceHarvestSpeed",
+          "location": {
+            "file_offset": 135799672,
+            "rva": "0x8183178"
+          }
+        },
+        {
+          "text": "InResourceHarvestSpeed",
+          "location": {
+            "file_offset": 137765328,
+            "rva": "0x8362fd0"
+          }
+        },
+        {
+          "text": "SetResourceHarvestSpeed",
+          "location": {
+            "file_offset": 137765352,
+            "rva": "0x8362fe8"
+          }
+        }
+      ],
+      "possibly_more": false
+    },
+    {
+      "pattern": "ResourceDepositSpeed",
+      "limit": 16,
+      "matches": [
+        {
+          "text": "ResourceDepositSpeed",
+          "location": {
+            "file_offset": 135799696,
+            "rva": "0x8183190"
+          }
+        },
+        {
+          "text": "InResourceDepositSpeed",
+          "location": {
+            "file_offset": 137765152,
+            "rva": "0x8362f20"
+          }
+        },
+        {
+          "text": "SetResourceDepositSpeed",
+          "location": {
+            "file_offset": 137765176,
+            "rva": "0x8362f38"
+          }
+        }
+      ],
+      "possibly_more": false
+    },
+    {
+      "pattern": "AddResourceFrequency",
+      "limit": 16,
+      "matches": [
+        {
+          "text": "AddResourceFrequency",
+          "location": {
+            "file_offset": 135799744,
+            "rva": "0x81831c0"
+          }
+        }
+      ],
+      "possibly_more": false
+    },
+    {
+      "pattern": "MontageJumpToSection",
+      "limit": 16,
+      "matches": [
+        {
+          "text": "MontageJumpToSection",
+          "location": {
+            "file_offset": 132088152,
+            "rva": "0x7df8f58"
+          }
+        },
+        {
+          "text": "ServerCurrentMontageJumpToSectionName",
+          "location": {
+            "file_offset": 132183072,
+            "rva": "0x7e10220"
+          }
+        },
+        {
+          "text": "PlayMontageJumpToSection",
+          "location": {
+            "file_offset": 134733344,
+            "rva": "0x807ec20"
+          }
+        },
+        {
+          "text": "CurrentMontageJumpToSection",
+          "location": {
+            "file_offset": 136411128,
+            "rva": "0x82185f8"
+          }
+        }
+      ],
+      "possibly_more": false
+    },
+    {
+      "pattern": "MontageSetNextSection",
+      "limit": 16,
+      "matches": [
+        {
+          "text": "MontageSetNextSectionName",
+          "location": {
+            "file_offset": 132088560,
+            "rva": "0x7df90f0"
+          }
+        },
+        {
+          "text": "ServerCurrentMontageSetNextSectionName",
+          "location": {
+            "file_offset": 132184288,
+            "rva": "0x7e106e0"
+          }
+        }
+      ],
+      "possibly_more": false
+    },
+    {
+      "pattern": "StopHarvesting",
+      "limit": 16,
+      "matches": [],
+      "possibly_more": false
+    },
+    {
+      "pattern": "StartHarvesting",
+      "limit": 16,
+      "matches": [],
+      "possibly_more": false
+    }
+  ],
+  "limits": [
+    "ASCII only,16 hits per explicit literal. Names/locations are observations, not runtime state transitions.",
+    "No full native auto-analysis, package extraction, patching or execution."
+  ]
+}

@@ -1,0 +1,157 @@
+{
+  "target": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\Tempest\\Binaries\\Win64\\Tempest-Win64-Shipping.exe",
+  "sha256": "c81828f4749ae1bbac73106f905a81c3ea1bff9cee7300291c3c390def04be56",
+  "structs": [
+    {
+      "name": "HarvesterAlignmentData",
+      "name_string_rva": "0x82de278",
+      "descriptor_file_offset": 155756808,
+      "property_array_file_offset": 137221016,
+      "size": 224,
+      "alignment": 16,
+      "properties": [
+        {
+          "name": "Unit",
+          "kind_id": 18,
+          "type_candidate": "Object",
+          "field_offset": 0,
+          "array_dim": 1,
+          "record_rva": "0x82de140",
+          "record_file_offset": 137220928,
+          "tail_pointer_candidate": "0x144b74460",
+          "record_prefix_sha256": "86cffe09ad102b926415ff77e49dea85e5d5bf7636ac7fb735c19671f2e3163d"
+        }
+      ]
+    },
+    {
+      "name": "HarvesterData",
+      "name_string_rva": "0x8183228",
+      "descriptor_file_offset": 155606760,
+      "property_array_file_offset": 135797736,
+      "size": 16,
+      "alignment": 4,
+      "properties": [
+        {
+          "name": "ResourceHarvestSpeed",
+          "kind_id": 3,
+          "type_candidate": "Int32",
+          "field_offset": 0,
+          "array_dim": 1,
+          "record_rva": "0x8182908",
+          "record_file_offset": 135797512,
+          "tail_pointer_candidate": "0x148183190",
+          "record_prefix_sha256": "34da3cc257521e246b37b78b8db749e6a5c553b39125b19bcb3dbf6fd6bd5fc0"
+        },
+        {
+          "name": "ResourceDepositSpeed",
+          "kind_id": 3,
+          "type_candidate": "Int32",
+          "field_offset": 4,
+          "array_dim": 1,
+          "record_rva": "0x8182940",
+          "record_file_offset": 135797568,
+          "tail_pointer_candidate": "0x1481831a8",
+          "record_prefix_sha256": "dc483d10b648554ac1576fb8729bc5ab8ff44ab7821b3f8fd97a8f6a68015798"
+        },
+        {
+          "name": "ResourceMaxCapacity",
+          "kind_id": 3,
+          "type_candidate": "Int32",
+          "field_offset": 8,
+          "array_dim": 1,
+          "record_rva": "0x8182978",
+          "record_file_offset": 135797624,
+          "tail_pointer_candidate": "0x1481831c0",
+          "record_prefix_sha256": "6afd6095e0b3bb91314d0691ba125b2aa6844da468b23a5d43553ebf14562376"
+        },
+        {
+          "name": "AddResourceFrequency",
+          "kind_id": 10,
+          "type_candidate": "Float",
+          "field_offset": 12,
+          "array_dim": 1,
+          "record_rva": "0x81829b0",
+          "record_file_offset": 135797680,
+          "tail_pointer_candidate": "0x148182908",
+          "record_prefix_sha256": "06a99b5b5b0fe0a96046041cfd035e0dbc9d267acdd3d14b42a31f12ce50c911"
+        }
+      ]
+    }
+  ],
+  "descriptor_candidates": [
+    {
+      "name": "HarvesterAlignmentData",
+      "pointer": 155756808,
+      "accepted": true
+    },
+    {
+      "name": "HarvesterData",
+      "pointer": 135885648,
+      "accepted": false,
+      "reason": "Not the validated bounded generated struct descriptor shape"
+    },
+    {
+      "name": "HarvesterData",
+      "pointer": 137205536,
+      "accepted": false,
+      "reason": "Not the validated bounded generated struct descriptor shape"
+    },
+    {
+      "name": "HarvesterData",
+      "pointer": 137302864,
+      "accepted": false,
+      "reason": "Not the validated bounded generated struct descriptor shape"
+    },
+    {
+      "name": "HarvesterData",
+      "pointer": 137765728,
+      "accepted": false,
+      "reason": "Not the validated bounded generated struct descriptor shape"
+    },
+    {
+      "name": "HarvesterData",
+      "pointer": 155606760,
+      "accepted": true
+    }
+  ],
+  "rate_function_candidates": [
+    {
+      "name": "SetResourceHarvestSpeed",
+      "name_rva": "0x8362fe8",
+      "name_code_pairs": [
+        {
+          "name_pointer_file_offset": 137766088,
+          "code_rva_candidate": "0x4b92a90",
+          "code_file_offset": 79241360
+        },
+        {
+          "name_pointer_file_offset": 137799280,
+          "code_rva_candidate": "0x4b96590",
+          "code_file_offset": 79256464
+        }
+      ]
+    },
+    {
+      "name": "SetResourceDepositSpeed",
+      "name_rva": "0x8362f38",
+      "name_code_pairs": [
+        {
+          "name_pointer_file_offset": 137766072,
+          "code_rva_candidate": "0x4b92a30",
+          "code_file_offset": 79241264
+        },
+        {
+          "name_pointer_file_offset": 137799264,
+          "code_rva_candidate": "0x4b96500",
+          "code_file_offset": 79256320
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "Generated static metadata and name/code pairs; no configured gameplay rates or animation execution.",
+    "Type IDs/table offsets corroborate previous same-build decoder; not a blanket ABI claim.",
+    "Struct subtype and bool storage need separate verification.",
+    "Code pairs can include generated constructors and exec wrappers; instruction review required."
+  ]
+}
