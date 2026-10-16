@@ -1,4 +1,5 @@
 #include "../PrototypeGameMode.h"
+#include "../PrototypeCollectorVisual.h"
 #include "Engine/World.h"
 #include "Engine/StaticMesh.h"
 #include "Engine/SkeletalMesh.h"
@@ -8,6 +9,7 @@
 #include "Materials/MaterialInterface.h"
 #include "Materials/Material.h"
 #include "Materials/MaterialInstanceDynamic.h"
+#include "Materials/MaterialInstance.h"
 #include "Sound/SoundWave.h"
 #include "HRRTSDefinitions.h"
 #include "Engine/Texture2D.h"
@@ -195,7 +197,7 @@ bool RunHRPresentationSelfTests(UWorld* World)
         int32 AtlasSize;
     };
     const FReferenceFixture ReferenceFixtures[]={
-        {0,EPrototypeRole::Headquarters,TEXT("SM_RV7_AegisHQ"),TEXT("Aegis_HQ"),2048},
+        {0,EPrototypeRole::Headquarters,TEXT("SM_HQ9_AegisHQ"),TEXT("Aegis_HQ_V9"),2048},
         {0,EPrototypeRole::Combat,TEXT("SM_HR_Aegis_APC8"),TEXT("Aegis_APC8"),1024},
         {1,EPrototypeRole::Headquarters,TEXT("SM_RV7_EmberHQ"),TEXT("Ember_HQ"),2048},
         {1,EPrototypeRole::Combat,TEXT("SM_HR_Ember_APC8"),TEXT("Ember_APC8"),1024}};
@@ -205,16 +207,18 @@ bool RunHRPresentationSelfTests(UWorld* World)
     {
         const EPrototypeRole Role=Fixture.Role;
         const bool bHeadquarters=Role==EPrototypeRole::Headquarters;
+        const bool bHQ9=Fixture.Faction==0 && bHeadquarters;
         const FVector Position(-14000.f,-12000.f,bHeadquarters?110.f:35.f);
         const int32 Team=Fixture.Faction==0?AegisTeam:1-AegisTeam;
         APrototypeUnit* Unit=Mode?Mode->SpawnUnit(Team,Position,bHeadquarters):nullptr;
         UStaticMeshComponent* Hull=Unit?Unit->FindComponentByClass<UStaticMeshComponent>():nullptr;
         UStaticMesh* Mesh=Hull?Hull->GetStaticMesh():nullptr;
-        const FString MeshPath=FString::Printf(TEXT("/Game/HERO/ReferenceV7/Meshes/%s.%s"),Fixture.Mesh,Fixture.Mesh);
+        const FString MeshRoot=bHQ9?TEXT("/Game/HERO/TrellisHQV9/Meshes/"):TEXT("/Game/HERO/ReferenceV7/Meshes/");
+        const FString MeshPath=MeshRoot+Fixture.Mesh+TEXT(".")+Fixture.Mesh;
         Check(Unit && Unit->Role==Role && Hull && Hull->IsVisible() && Mesh
             && Mesh->GetPathName()==MeshPath && Unit->Definition
             && Unit->Definition->StaticMesh.LoadSynchronous()==Mesh && !ReferenceGeometry.Contains(Mesh),
-            *FString::Printf(TEXT("%s displays its exact saved V7 mesh with geometry distinct from the other reference units"),Fixture.Surface));
+            *FString::Printf(TEXT("%s displays its exact saved %s mesh with geometry distinct from the other reference units"),Fixture.Surface,bHQ9?TEXT("V9"):TEXT("V7")));
         if(Mesh)ReferenceGeometry.Add(Mesh);
         const FBox GroundBounds=Mesh && Hull
             ?Mesh->GetBoundingBox().TransformBy(Hull->GetComponentTransform()):FBox(ForceInit);
@@ -224,16 +228,30 @@ bool RunHRPresentationSelfTests(UWorld* World)
             && GroundBounds.GetSize().Z>(bHeadquarters?650.f:170.f),
             *FString::Printf(TEXT("%s final component transform puts the authored base on world ground"),Fixture.Surface));
         const FVector Size=GroundBounds.GetSize();
-        Check(GroundBounds.IsValid && (bHeadquarters
+        const FBox SourceBounds=Mesh?Mesh->GetBoundingBox():FBox(ForceInit);
+        const FVector SourceSize=SourceBounds.GetSize();
+        const bool bHQ9Proportions=!bHQ9 || (SourceBounds.IsValid
+            && FMath::IsNearlyEqual(SourceBounds.Min.Z,-110.f,1.f)
+            && FMath::IsNearlyEqual(SourceSize.X,780.f,1.f)
+            && FMath::IsNearlyEqual(SourceSize.Y,618.186f,1.f)
+            && FMath::IsNearlyEqual(SourceSize.Z,465.962f,1.f));
+        Check(GroundBounds.IsValid && bHQ9Proportions && (bHeadquarters
             ?Size.X>900.f && Size.Y>900.f && Size.X<=2.f*APrototypeGameMode::Footprint(Role)
                 && Size.Y<=2.f*APrototypeGameMode::Footprint(Role)
             :Size.X>330.f && Size.X<410.f && Size.Y>170.f && Size.Y<210.f),
             *FString::Printf(TEXT("%s keeps the intended RTS scale and placement envelope"),Fixture.Surface));
-        const FString MaterialName=FString(TEXT("M_RV7_Baked_"))+Fixture.Surface;
-        const FString MaterialPath=TEXT("/Game/HERO/ReferenceV7/Materials/")+MaterialName+TEXT(".")+MaterialName;
+        const FString MaterialName=bHQ9?TEXT("M_HQ9_Baked_AegisHQ"):FString(TEXT("M_RV7_Baked_"))+Fixture.Surface;
+        const FString MaterialRoot=bHQ9?TEXT("/Game/HERO/TrellisHQV9/Materials/"):TEXT("/Game/HERO/ReferenceV7/Materials/");
+        const FString MaterialPath=MaterialRoot+MaterialName+TEXT(".")+MaterialName;
         bool bSavedAtlas=Mesh && Hull && Hull->GetNumMaterials()>0;
         bool bNeutralTint=bSavedAtlas;
         UMaterialInterface* Atlas=Mesh?Mesh->GetMaterial(0):nullptr;
+        if(bHQ9)
+        {
+            UTexture* FictionalEmission=nullptr;
+            bSavedAtlas &= Atlas && Hull && Hull->GetMaterialIndex(TEXT("Team"))==0
+                && !Atlas->GetTextureParameterValue(FHashedMaterialParameterInfo(TEXT("EmissionMask")),FictionalEmission);
+        }
         for(int32 Slot=0;Hull && Mesh && Slot<Hull->GetNumMaterials();++Slot)
         {
             UMaterialInterface* Saved=Mesh->GetMaterial(Slot);
@@ -246,10 +264,17 @@ bool RunHRPresentationSelfTests(UWorld* World)
         }
         Check(bSavedAtlas && bNeutralTint,
             *FString::Printf(TEXT("%s keeps its own baked atlas in every live slot with neutral tint rather than a second faction recolor"),Fixture.Surface));
-        for(const TCHAR* Channel:{TEXT("Albedo"),TEXT("ORM"),TEXT("EmissionMask")})
+        const TArray<const TCHAR*> Channels=bHQ9
+            ?TArray<const TCHAR*>{TEXT("Albedo"),TEXT("MetallicRoughness")}
+            :TArray<const TCHAR*>{TEXT("Albedo"),TEXT("ORM"),TEXT("EmissionMask")};
+        for(const TCHAR* Channel:Channels)
         {
-            const FString TextureName=FString::Printf(TEXT("T_RV7_%s_%s"),Fixture.Surface,Channel);
-            const FString TexturePath=TEXT("/Game/HERO/ReferenceV7/Textures/")+TextureName+TEXT(".")+TextureName;
+            const bool bAlbedo=FCString::Strcmp(Channel,TEXT("Albedo"))==0;
+            const FString TextureName=bHQ9
+                ?FString(bAlbedo?TEXT("T_HQ9_AegisHQ_Albedo"):TEXT("T_HQ9_AegisHQ_MR"))
+                :FString::Printf(TEXT("T_RV7_%s_%s"),Fixture.Surface,Channel);
+            const FString TextureRoot=bHQ9?TEXT("/Game/HERO/TrellisHQV9/Textures/"):TEXT("/Game/HERO/ReferenceV7/Textures/");
+            const FString TexturePath=TextureRoot+TextureName+TEXT(".")+TextureName;
             UTexture* Parameter=nullptr;
             const bool bParameter=Atlas && Atlas->GetTextureParameterValue(FHashedMaterialParameterInfo(Channel),Parameter);
             UTexture2D* Texture=Cast<UTexture2D>(Parameter);
@@ -276,7 +301,6 @@ bool RunHRPresentationSelfTests(UWorld* World)
                     && Texture->GetImportedSize()==FIntPoint(Fixture.AtlasSize,Fixture.AtlasSize)
                     && Texture->Source.GetSizeX()==Fixture.AtlasSize && Texture->Source.GetSizeY()==Fixture.AtlasSize;
 #endif
-            const bool bAlbedo=FCString::Strcmp(Channel,TEXT("Albedo"))==0;
             UE_LOG(LogTemp,Display,TEXT("PRESENTATION_REFERENCE_TEXTURE model=%s parameter=%s actual=%s expected=%s dimensions=%dx%d"),
                 Fixture.Surface,Channel,*GetPathNameSafe(Texture),*TexturePath,Texture?Texture->GetSizeX():0,Texture?Texture->GetSizeY():0);
             Check(bParameter && bLiveBinding && Texture && Texture->GetPathName()==TexturePath && bResolution
@@ -471,6 +495,188 @@ bool RunHRPresentationSelfTests(UWorld* World)
         TEXT("both V8 baseyards retain disabled actor and component collision, navigation exclusion and no shadows"));
     Check(BaseyardCount==2 && bBaseyardMaterials,
         TEXT("both V8 baseyards preserve all six distinct exact saved PBR bindings in their runtime slots"));
+    // Validate the final saved terrain actors, not just the importer's report.
+    const TSet<FString> TerrainV9Paths={
+        TEXT("/Game/HERO/ReferenceV9/Terrain/Meshes/SM_TRV9_RiverNorth.SM_TRV9_RiverNorth"),
+        TEXT("/Game/HERO/ReferenceV9/Terrain/Meshes/SM_TRV9_RiverSouth.SM_TRV9_RiverSouth"),
+        TEXT("/Game/HERO/ReferenceV9/Terrain/Meshes/SM_TRV9_WestTalus.SM_TRV9_WestTalus"),
+        TEXT("/Game/HERO/ReferenceV9/Terrain/Meshes/SM_TRV9_EastTalus.SM_TRV9_EastTalus")};
+    TSet<FString> TerrainV9Materials;
+    // Dust exists as a shared library material but has no used source faces:
+    // each mesh has these five actual sections, never an invented sixth one.
+    for(const TCHAR* Key:{TEXT("Concrete"),TEXT("ConcreteDark"),TEXT("Metal"),TEXT("Track"),TEXT("Paint")})
+        TerrainV9Materials.Add(FString::Printf(TEXT("/Game/HERO/ReferenceV9/Terrain/Materials/MI_TRV9_%s.MI_TRV9_%s"),Key,Key));
+    const FString TerrainV9Parent=TEXT("/Game/HERO/ReferenceV9/Terrain/Materials/M_TRV9_SurfacePBR.M_TRV9_SurfacePBR");
+    int32 TerrainV9Count=0;TSet<FString> SeenTerrainV9;
+    bool bTerrainV9Exact=true,bTerrainV9SafeBounds=true,bTerrainV9Flags=true,bTerrainV9Bindings=true;
+    for(TActorIterator<AStaticMeshActor> It(World);It;++It)
+    {
+        auto* Component=It->GetStaticMeshComponent();
+        UStaticMesh* Mesh=Component?Component->GetStaticMesh():nullptr;
+        const FString MeshPath=GetPathNameSafe(Mesh);
+        if(!It->ActorHasTag(TEXT("HERO_TerrainV9"))&&!TerrainV9Paths.Contains(MeshPath))continue;
+        ++TerrainV9Count;
+        bTerrainV9Exact &= It->ActorHasTag(TEXT("HERO_TerrainV9"))&&TerrainV9Paths.Contains(MeshPath)&&!SeenTerrainV9.Contains(MeshPath);
+        SeenTerrainV9.Add(MeshPath);
+        if(Component&&Mesh)
+        {
+            const FBox Bounds=Mesh->GetBoundingBox().TransformBy(Component->GetComponentTransform());
+            const bool bRiver=Bounds.Min.X>=-3680.f&&Bounds.Max.X<=-2320.f&&Bounds.Min.Y>=-2140.f&&Bounds.Max.Y<=2140.f;
+            const bool bOutside=Bounds.Max.X<=-12060.f||Bounds.Min.X>=12060.f;
+            bTerrainV9SafeBounds &= Bounds.IsValid&&!Bounds.Min.ContainsNaN()&&!Bounds.Max.ContainsNaN()&&(bRiver||bOutside);
+        }
+        else bTerrainV9SafeBounds=false;
+        bTerrainV9Flags &= Component&&!It->GetActorEnableCollision()&&Component->GetCollisionEnabled()==ECollisionEnabled::NoCollision
+            &&Component->GetCollisionProfileName()==FName(TEXT("NoCollision"))&&!Component->CanEverAffectNavigation()
+            &&!Component->CastShadow&&!Component->bAffectDistanceFieldLighting
+            &&It->GetActorScale3D().Equals(FVector::OneVector,.001f)&&It->GetActorRotation().IsNearlyZero(.001f)
+            &&Component->GetRelativeScale3D().Equals(FVector::OneVector,.001f);
+        bool bBindings=Mesh&&Component&&Mesh->GetStaticMaterials().Num()==5&&Component->GetNumMaterials()==5;
+        TSet<FString> SeenMaterials;
+        if(bBindings)for(int32 Slot=0;Slot<5;++Slot)
+        {
+            auto* Material=Component->GetMaterial(Slot);
+            auto* Instance=Cast<UMaterialInstance>(Material);
+            const FString Path=GetPathNameSafe(Material);
+            bBindings &= TerrainV9Materials.Contains(Path)&&!SeenMaterials.Contains(Path)
+                &&Mesh->GetStaticMaterials()[Slot].MaterialInterface==Material&&OwnMaterial(Material)
+                &&Instance&&GetPathNameSafe(Instance->Parent)==TerrainV9Parent
+                &&GetPathNameSafe(Material?Material->GetMaterial():nullptr)==TerrainV9Parent;
+            SeenMaterials.Add(Path);
+        }
+        bTerrainV9Bindings &= bBindings&&SeenMaterials.Num()==5;
+    }
+    Check(TerrainV9Count==4&&SeenTerrainV9.Num()==4&&bTerrainV9Exact,
+        TEXT("exactly four tagged V9 terrain actors each use a distinct expected saved mesh"));
+    Check(TerrainV9Count==4&&bTerrainV9SafeBounds,
+        TEXT("all V9 terrain world bounds stay inside the river corridor or outside authoritative west east play space"));
+    Check(TerrainV9Count==4&&bTerrainV9Flags,
+        TEXT("all V9 terrain retains identity scale rotation and no actor component collision navigation shadows or distance fields"));
+    Check(TerrainV9Count==4&&bTerrainV9Bindings,
+        TEXT("all V9 terrain preserves five exact distinct used PBR section bindings and their valid saved parent"));
+    // V9 exercises actual registered moving meshes independently of harvesting.
+    // TickVisual may observe these fixture states, but must never advance money,
+    // cargo, reservations or movement as a side effect of presentation.
+    for(int32 Team=0;Mode && Team<2;++Team)
+    {
+        APrototypeUnit* Collector=Mode->SpawnUnit(Team,FVector(-14000,-11000,35));
+        if(Collector){Collector->ConfigureRole(EPrototypeRole::Collector);Collector->SetActorTickEnabled(false);}
+        auto GetParts=[](APrototypeUnit* Unit)
+        {
+            TArray<UStaticMeshComponent*> Result,All;
+            if(Unit)Unit->GetComponents<UStaticMeshComponent>(All);
+            for(auto* Component:All)if(IsValid(Component)&&Component->IsRegistered()&&Component->GetStaticMesh()
+                &&Component->GetStaticMesh()->GetPathName().StartsWith(TEXT("/Game/HERO/HarvesterAnimationV9/Meshes/")))Result.Add(Component);
+            return Result;
+        };
+        auto Parts=GetParts(Collector);
+        auto FindPart=[&](const TCHAR* Key)->UStaticMeshComponent*
+        {
+            const FString Name=FString(TEXT("SM_HA9_"))+Key;
+            for(auto* Part:Parts)if(Part->GetStaticMesh()->GetName()==Name)return Part;
+            return nullptr;
+        };
+        auto* Visual=Collector?Collector->FindComponentByClass<UPrototypeCollectorVisualComponent>():nullptr;
+        auto* Hull=FindPart(TEXT("Base"));auto* Arm=FindPart(TEXT("ArmAssembly"));
+        auto* Drum=FindPart(TEXT("CutterDrum"));auto* Coupler=FindPart(TEXT("RearCoupler"));
+        TSet<FName> Names;
+        for(auto* Part:Parts)Names.Add(Part->GetStaticMesh()->GetFName());
+        Check(Visual&&Visual->HasArticulatedAssets()&&Parts.Num()==11&&Names.Num()==11&&Hull&&Arm&&Drum&&Coupler,
+            *FString::Printf(TEXT("team %d collector installs all eleven distinct authored V9 meshes without fallback or duplication"),Team));
+        bool bSafe=Parts.Num()==11,bMaterials=bSafe;
+        const bool bAegis=Mode->GetFactionIndex(Team)==0;
+        for(auto* Part:Parts)
+        {
+            // The original gameplay hull keeps its existing actor contract;
+            // every newly added decorative part must remain non-interactive.
+            bSafe &= Part==Hull||(Part->GetCollisionEnabled()==ECollisionEnabled::NoCollision&&!Part->CanEverAffectNavigation()
+                &&!Part->GetGenerateOverlapEvents()&&!Part->CastShadow);
+            bMaterials &= Part->GetNumMaterials()>0;
+            for(int32 Slot=0;Slot<Part->GetNumMaterials();++Slot)
+            {
+                const FName SlotName=Part->GetStaticMesh()->GetStaticMaterials()[Slot].MaterialSlotName;
+                const FString MaterialName=FString::Printf(TEXT("M_HR_%s_%s"),bAegis?TEXT("Aegis"):TEXT("Ember"),*SlotName.ToString());
+                auto* Expected=LoadObject<UMaterialInterface>(nullptr,*(TEXT("/Game/HERO/PresentationV5/Materials/")+MaterialName+TEXT(".")+MaterialName));
+                auto* Actual=Part->GetMaterial(Slot);
+                FLinearColor ExpectedTint,ActualTint;
+                bool bTint=Expected&&Expected->GetVectorParameterValue(FHashedMaterialParameterInfo(TEXT("Tint")),ExpectedTint);
+                if(SlotName==FName(TEXT("Team")))ExpectedTint=bAegis?FLinearColor(.025f,.18f,.48f):FLinearColor(.025f,.32f,.13f);
+                if(SlotName==FName(TEXT("Neon")))ExpectedTint=bAegis?FLinearColor(.025f,.35f,.8f):FLinearColor(.025f,.7f,.28f);
+                bMaterials &= OwnMaterial(Actual)&&Expected&&Actual->GetMaterial()==Expected->GetMaterial()&&bTint
+                    &&Actual->GetVectorParameterValue(FHashedMaterialParameterInfo(TEXT("Tint")),ActualTint)&&ActualTint.Equals(ExpectedTint,.001f);
+            }
+        }
+        Check(bSafe,*FString::Printf(TEXT("team %d added collector parts are collision overlap and navigation free"),Team));
+        Check(bMaterials,*FString::Printf(TEXT("team %d all split collector material slots preserve actual faction bindings and tint"),Team));
+        auto* Original=LoadObject<UStaticMesh>(nullptr,TEXT("/Game/HERO/ConceptV2/Meshes/SM_HERO_Harvester.SM_HERO_Harvester"));
+        bool bBounds=false;
+        if(Hull&&Arm&&Drum&&Coupler&&Original)
+        {
+            // Compare exact source assembly pose, before any decorative lift.
+            // Component transforms, not actor aggregate bounds, exclude selection
+            // rings and invisible generic combat parts from this comparison.
+            Arm->SetRelativeRotation(FRotator::ZeroRotator);Drum->SetRelativeRotation(FRotator::ZeroRotator);
+            FBox Assembly(ForceInit);
+            for(auto* Part:Parts)Assembly+=Part->GetStaticMesh()->GetBoundingBox().TransformBy(Part->GetComponentTransform());
+            const FBox Expected=Original->GetBoundingBox().TransformBy(Hull->GetComponentTransform());
+            bBounds=Assembly.Min.Equals(Expected.Min,1.f)&&Assembly.Max.Equals(Expected.Max,1.f)
+                &&Drum->GetAttachParent()==Arm&&Arm->GetAttachParent()==Hull;
+        }
+        Check(bBounds,*FString::Printf(TEXT("team %d source pose reproduces original harvester bounds and articulated parent chain"),Team));
+        if(Collector)
+        {
+            auto Step=[&](){for(int32 Index=0;Index<12;++Index)UPrototypeCollectorVisualComponent::TickVisual(Collector,.1f);};
+            auto LitGauges=[&](){int32 Num=0;for(int32 Index=0;Index<7;++Index)
+                if(auto* Gauge=FindPart(*FString::Printf(TEXT("Gauge%d"),Index));Gauge&&Gauge->IsVisible())++Num;return Num;};
+            Collector->Cargo=0.;Collector->CollectorState=EPrototypeCollectorState::SeekingField;Step();
+            const FRotator SeekingArm=Arm?Arm->GetRelativeRotation():FRotator::ZeroRotator;
+            const FRotator SeekingDrum=Drum?Drum->GetRelativeRotation():FRotator::ZeroRotator;
+            const bool bEmpty=LitGauges()==0;
+            Collector->Cargo=100.;Collector->CollectorState=EPrototypeCollectorState::Harvesting;
+            const FVector Destination=Collector->Destination,Location=Collector->GetActorLocation();
+            const double Wallet=Mode->Credits,EnemyWallet=Mode->EnemyCredits;
+            Step();
+            Check(Arm&&Drum&&!Arm->GetRelativeRotation().Equals(SeekingArm,1.f)&&!Drum->GetRelativeRotation().Equals(SeekingDrum,1.f),
+                *FString::Printf(TEXT("team %d harvesting moves the real arm and toothed drum"),Team));
+            Check(bEmpty&&LitGauges()==7,*FString::Printf(TEXT("team %d original tank segments show empty then full actual cargo"),Team));
+            Check(Collector->Cargo==100.&&Collector->CollectorState==EPrototypeCollectorState::Harvesting
+                &&Collector->Destination.Equals(Destination,0.f)&&Collector->GetActorLocation().Equals(Location,0.f)
+                &&Mode->Credits==Wallet&&Mode->EnemyCredits==EnemyWallet,
+                *FString::Printf(TEXT("team %d visual ticking preserves cargo state destination transform and both wallets"),Team));
+            Collector->CollectorState=EPrototypeCollectorState::MovingToRefinery;Step();
+            const FRotator MovingArm=Arm?Arm->GetRelativeRotation():FRotator::ZeroRotator;
+            const FVector Retracted=Coupler?Coupler->GetRelativeScale3D():FVector::ZeroVector;
+            const FRotator StoppedDrum=Drum?Drum->GetRelativeRotation():FRotator::ZeroRotator;
+            Collector->CollectorState=EPrototypeCollectorState::WaitingForDock;Step();
+            Check(Arm&&Drum&&!Arm->GetRelativeRotation().Equals(MovingArm,1.f)&&Drum->GetRelativeRotation().Equals(StoppedDrum,.001f),
+                *FString::Printf(TEXT("team %d dock waiting changes arm readiness while cutter stays stopped"),Team));
+            Collector->CollectorState=EPrototypeCollectorState::Unloading;Step();
+            Check(Coupler&&Coupler->GetRelativeScale3D().X>Retracted.X+.4f&&Collector->Cargo==100.
+                &&Collector->CollectorState==EPrototypeCollectorState::Unloading&&Mode->Credits==Wallet&&Mode->EnemyCredits==EnemyWallet,
+                *FString::Printf(TEXT("team %d unloading extends real coupler without performing a resource transfer"),Team));
+            TArray<TWeakObjectPtr<UStaticMeshComponent>> OldParts;
+            for(auto* Part:Parts)if(Part!=Hull)OldParts.Add(Part);
+            Collector->ConfigureRole(EPrototypeRole::Combat);
+            auto* CombatHull=Collector->FindComponentByClass<UStaticMeshComponent>();
+            const auto* CombatDefinition=Mode->GetRoleDefinition(EPrototypeRole::Combat,Team);
+            UStaticMesh* ExpectedCombat=CombatDefinition?CombatDefinition->StaticMesh.LoadSynchronous():nullptr;
+            bool bRemoved=GetParts(Collector).IsEmpty()&&!Collector->FindComponentByClass<UPrototypeCollectorVisualComponent>();
+            for(const auto& Old:OldParts)bRemoved &= !Old.IsValid()||!Old->IsRegistered();
+            Check(bRemoved&&CombatHull&&ExpectedCombat&&CombatHull->GetStaticMesh()==ExpectedCombat,
+                *FString::Printf(TEXT("team %d collector to combat removes parts and keeps the actual combat mesh"),Team));
+            Collector->ConfigureRole(EPrototypeRole::Collector);Parts=GetParts(Collector);
+            TArray<UPrototypeCollectorVisualComponent*> Visuals;Collector->GetComponents<UPrototypeCollectorVisualComponent>(Visuals);
+            Check(Parts.Num()==11&&Visuals.Num()==1&&Visuals[0]->HasArticulatedAssets(),
+                *FString::Printf(TEXT("team %d returning to collector installs one clean presentation without component leaks"),Team));
+            TArray<TWeakObjectPtr<UStaticMeshComponent>> DestroyedParts;for(auto* Part:Parts)DestroyedParts.Add(Part);
+            TWeakObjectPtr<UPrototypeCollectorVisualComponent> DestroyedVisual=Visuals.Num()?Visuals[0]:nullptr;
+            Collector->Destroy();
+            bool bDestroyed=!DestroyedVisual.IsValid()||!DestroyedVisual->IsRegistered();
+            for(const auto& Part:DestroyedParts)bDestroyed &= !Part.IsValid()||!Part->IsRegistered();
+            Check(bDestroyed,*FString::Printf(TEXT("team %d actor destruction unregisters all collector presentation components"),Team));
+        }
+        else Check(false,TEXT("collector visual fixture actor spawned for state and cleanup checks"));
+    }
     for(const TCHAR* Name:{TEXT("A_Impact"),TEXT("A_Rifle"),TEXT("A_Cannon")})
     {
         USoundWave* Sound=LoadObject<USoundWave>(nullptr,*FString::Printf(TEXT("/Game/HERO/EffectsV4/%s.%s"),Name,Name));

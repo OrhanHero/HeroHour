@@ -1,0 +1,49 @@
+{
+  "glb_sha256": "802747bb8124a02ad0c0f899f4a2dc5b9578f23bff12ea534c28d3b5cd201f03",
+  "triangles": 699820,
+  "uv_vertices": 495217,
+  "normal_attributes": true,
+  "textures": [
+    {
+      "semantic": "BaseColor",
+      "file": "BaseColor.png",
+      "size": [
+        2048,
+        2048
+      ],
+      "sha256": "23133406cc971ef8afb7b2ca83362625ab445121d4d86e34a99add8a8b2cc17e"
+    },
+    {
+      "semantic": "MetallicRoughness",
+      "file": "MetallicRoughness.png",
+      "size": [
+        2048,
+        2048
+      ],
+      "sha256": "be30f88edd1f24157799982956b61212dbf7deb529dbe4121fdbaeddc2e73faf"
+    }
+  ],
+  "pbr": {
+    "metallicFactor": 1.0,
+    "roughnessFactor": 1.0,
+    "baseColorFactor": [
+      1.0,
+      1.0,
+      1.0,
+      1.0
+    ],
+    "baseColorTexture": {
+      "index": 0,
+      "texCoord": 0
+    },
+    "metallicRoughnessTexture": {
+      "index": 1,
+      "texCoord": 0
+    }
+  },
+  "no_normalmap": true,
+  "no_emissivemap": true,
+  "source_unchanged": true,
+  "not_yet_unreal_imported": true,
+  "provenance": "Own project-derived generated input; original same-seed TRELLIS voxel texture sampled onto remeshed, freshly unwrapped surface; no Tempest game art"
+}

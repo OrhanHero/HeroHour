@@ -1,0 +1,31 @@
+{
+  "glb": "AegisFactory-Remeshed512-PBR2048_00001_.glb",
+  "glb_sha256": "d26273577175ed8a556de00d73fe7082dba07d695329f272e0bb6ad2e01151a9",
+  "triangles": 699468,
+  "uv_vertices": 485694,
+  "normal_attributes": true,
+  "textures": [
+    {
+      "semantic": "BaseColor",
+      "file": "BaseColor.png",
+      "size": [
+        2048,
+        2048
+      ],
+      "sha256": "296a8eeaa142afb8c26affcc14996858b3abcba39f84fcf9ebee3c77ed11810b"
+    },
+    {
+      "semantic": "MetallicRoughness",
+      "file": "MetallicRoughness.png",
+      "size": [
+        2048,
+        2048
+      ],
+      "sha256": "9c240c8b5887e50ae3dd9a8ad3a1dcffedcf78a7e270c1f3c068dc3dfb947a57"
+    }
+  ],
+  "no_normalmap": true,
+  "no_emissivemap": true,
+  "not_unreal_imported": true,
+  "provenance": "Original HeroHour concept-derived factory input; one repaired TRELLIS workflow, fresh voxel PBR bake"
+}

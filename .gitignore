@@ -218,3 +218,7 @@ ENV/
 /HeroHour-non-lfs/
 *.blend1
 *.blend2
+
+# Reproducible local mesh diagnostics; compact hashes and actual preview images
+# are versioned, while the accepted textured source is preserved separately.
+/Art/Models/TrellisV8-Diagnostic/*.glb

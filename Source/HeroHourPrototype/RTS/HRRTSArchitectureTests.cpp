@@ -39,7 +39,7 @@ bool RunHRRTSArchitectureSelfTests()
             TEXT("/Game/HERO/ConceptV2/Meshes/SM_HERO_Harvester.SM_HERO_Harvester"),
             TEXT("/Game/HERO/PresentationV5/Portraits/T_HR_Aegis_Collector.T_HR_Aegis_Collector")},
         {EPrototypeRole::Headquarters,TEXT("DA_HR_CommandHub"),TEXT("HQ"),HRRTSTags::Building_CommandHub,true,0,1.f,800.f,
-            TEXT("/Game/HERO/ReferenceV7/Meshes/SM_RV7_AegisHQ.SM_RV7_AegisHQ"),
+            TEXT("/Game/HERO/TrellisHQV9/Meshes/SM_HQ9_AegisHQ.SM_HQ9_AegisHQ"),
             TEXT("/Game/HERO/PresentationV5/Portraits/T_HR_Aegis_HQ.T_HR_Aegis_HQ")},
         {EPrototypeRole::Depot,TEXT("DA_HR_Refinery"),TEXT("Depot"),HRRTSTags::Building_Refinery,true,200,8.f,400.f,
             TEXT("/Game/HERO/MilitaryDetailV6/Meshes/SM_MDV6_Refinery.SM_MDV6_Refinery"),

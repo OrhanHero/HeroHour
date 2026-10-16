@@ -1,4 +1,5 @@
 #include "PrototypeGameMode.h"
+#include "PrototypeCollectorVisual.h"
 #include "BattlefieldLayout.h"
 #include "Camera/CameraComponent.h"
 #include "Components/StaticMeshComponent.h"
@@ -177,10 +178,11 @@ void APrototypeUnit::ConfigureRole(EPrototypeRole InRole)
         if (Index == INDEX_NONE) continue;
         UMaterialInterface* Authored=InfantryMesh->IsVisible()?InfantryMesh->GetMaterial(Index):Mesh->GetMaterial(Index);
         FLinearColor RestTint=FactionMarkingColor(Team,Slot==FName(TEXT("Neon")));
-        const bool bBaked=Authored && Authored->GetName().StartsWith(TEXT("M_RV7_Baked_"));
+        const bool bHQ9=Authored && Authored->GetName().StartsWith(TEXT("M_HQ9_Baked_"));
+        const bool bBaked=Authored && (Authored->GetName().StartsWith(TEXT("M_RV7_Baked_")) || bHQ9);
         // V7 concept surfaces author their faction colour in the instance or
         // atlas. Preserve that colour instead of applying a second team tint.
-        if(Authored && Authored->GetName().StartsWith(TEXT("M_RV7_")))
+        if(Authored && (Authored->GetName().StartsWith(TEXT("M_RV7_")) || bHQ9))
             Authored->GetVectorParameterValue(FHashedMaterialParameterInfo(TEXT("Tint")),RestTint);
         UMaterialInstanceDynamic* Material = InfantryMesh->IsVisible()?InfantryMesh->CreateDynamicMaterialInstance(Index):Mesh->CreateDynamicMaterialInstance(Index);
         if (Material) Material->SetVectorParameterValue(TEXT("Tint"),RestTint);
@@ -190,6 +192,7 @@ void APrototypeUnit::ConfigureRole(EPrototypeRole InRole)
             TeamMaterialFlashTint=bBaked?RestTint*2.f:FLinearColor::White;
         }
     }
+    UPrototypeCollectorVisualComponent::SyncRole(this,Mesh);
 }
 
 void APrototypeUnit::Select(bool bValue)
@@ -446,7 +449,11 @@ void APrototypeUnit::Tick(float DeltaSeconds)
         Mesh->SetRelativeLocation(FVector(0,0,(BaseVisualScale.Z*HeightFactor-1.f)*(bHQ?110.f:35.f)));
         if (Role != EPrototypeRole::Defense || !IsCompleted() || !Mode->IsUnitOperational(this)) return;
     }
-    if (Role == EPrototypeRole::Collector) Mode->TickCollector(this, DeltaSeconds);
+    if (Role == EPrototypeRole::Collector)
+    {
+        Mode->TickCollector(this, DeltaSeconds);
+        UPrototypeCollectorVisualComponent::TickVisual(this,DeltaSeconds);
+    }
     FireCooldown -= DeltaSeconds;
     ScanCooldown -= DeltaSeconds;
     if (!IsValid(AttackTarget) || AttackTarget->IsActorBeingDestroyed() || AttackTarget->Health <= 0) AttackTarget = nullptr;
@@ -1294,6 +1301,9 @@ void APrototypeGameMode::BeginPlay()
     }
     if (FParse::Param(FCommandLine::Get(),TEXT("PrototypeInterfaceCapture")) || FParse::Param(FCommandLine::Get(),TEXT("PrototypeCombatCapture")) || FParse::Param(FCommandLine::Get(), TEXT("PrototypeCapture")) || FParse::Param(FCommandLine::Get(),TEXT("PrototypeOverviewCapture")) || FParse::Param(FCommandLine::Get(),TEXT("PrototypeDistrictCapture")) || FParse::Param(FCommandLine::Get(),TEXT("PrototypeHarvesterCapture")))
     {
+        float CaptureDelay=8.f;
+        FParse::Value(FCommandLine::Get(),TEXT("PrototypeCaptureDelay="),CaptureDelay);
+        CaptureDelay=FMath::IsFinite(CaptureDelay)?FMath::Clamp(CaptureDelay,1.f,40.f):8.f;
         FTimerHandle CaptureTimer;
         GetWorldTimerManager().SetTimer(CaptureTimer, [this]()
         {
@@ -1336,7 +1346,7 @@ void APrototypeGameMode::BeginPlay()
                         {
                             Controller->Selected.Add(*It);It->Select(true);
                             if (APawn* Camera=Controller->GetPawn())
-                            { FVector Position=Camera->GetActorLocation();Position.Z=1800.f;Camera->SetActorLocation(Position); }
+                            { FVector Position=Camera->GetActorLocation();Position.Z=FParse::Param(FCommandLine::Get(),TEXT("PrototypeCaptureCloseUp"))?1000.f:1800.f;Camera->SetActorLocation(Position); }
                             Controller->PanToWorld(It->GetActorLocation());break;
                         }
                 }
@@ -1365,6 +1375,14 @@ void APrototypeGameMode::BeginPlay()
             FTimerHandle ShutterTimer;
             GetWorldTimerManager().SetTimer(ShutterTimer,[this,Name]()
             {
+                if(FParse::Param(FCommandLine::Get(),TEXT("PrototypeHarvesterCapture")))
+                    for(TActorIterator<APrototypeUnit> It(GetWorld());It;++It)
+                        if(It->Team==0 && It->Role==EPrototypeRole::Collector && It->bSelected)
+                        {
+                            if(auto* Controller=Cast<APrototypeController>(GetWorld()->GetFirstPlayerController()))
+                                Controller->PanToWorld(It->GetActorLocation());
+                            UE_LOG(LogTemp,Display,TEXT("HARVESTER_CAPTURE_STATE time=%.3f state=%d cargo=%.3f position=%s; natural simulation, camera only"),MatchTime,static_cast<int32>(It->CollectorState),It->Cargo,*It->GetActorLocation().ToString());
+                        }
                 FScreenshotRequest::RequestScreenshot(FPaths::ProjectSavedDir() / Name, true, false);
                 if(FParse::Param(FCommandLine::Get(),TEXT("PrototypeCaptureExit")))
                 {
@@ -1373,6 +1391,6 @@ void APrototypeGameMode::BeginPlay()
                     { GetWorld()->GetFirstPlayerController()->ConsoleCommand(TEXT("quit")); },2.f,false);
                 }
             },.8f,false);
-        }, 8.f, false);
+        }, CaptureDelay, false);
     }
 }

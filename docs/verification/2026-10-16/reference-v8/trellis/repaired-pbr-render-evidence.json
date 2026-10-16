@@ -1,0 +1,107 @@
+{
+  "pid": 15800,
+  "source": "Art\\Models\\TrellisV8-Repaired\\AegisHQ-Remeshed512-PBR2048_00001_.glb",
+  "source_sha256": "802747bb8124a02ad0c0f899f4a2dc5b9578f23bff12ea534c28d3b5cd201f03",
+  "source_unchanged": true,
+  "geometry_unchanged": true,
+  "dimensions_blender_units": [
+    1.0040078163146973,
+    0.7957226037979126,
+    0.5997809171676636
+  ],
+  "geometry": [
+    {
+      "object": "Mesh_0",
+      "vertices": 495217,
+      "triangles": 699814,
+      "uv_layers": [
+        "UVMap"
+      ],
+      "computed_face_normal_directions": 505079
+    }
+  ],
+  "imported_pbr_materials": [
+    {
+      "name": "Material_0",
+      "node_types": [
+        "ShaderNodeBsdfPrincipled",
+        "ShaderNodeOutputMaterial",
+        "ShaderNodeTexImage",
+        "ShaderNodeSeparateColor",
+        "ShaderNodeTexImage"
+      ],
+      "textures": [
+        {
+          "name": "Image_0",
+          "size": [
+            2048,
+            2048
+          ],
+          "colorspace": "sRGB"
+        },
+        {
+          "name": "Image_1",
+          "size": [
+            2048,
+            2048
+          ],
+          "colorspace": "Non-Color"
+        }
+      ]
+    }
+  ],
+  "backend": "OPTIX",
+  "views": [
+    {
+      "file": "Preview-PBR-A.png",
+      "camera_offset": [
+        1.7,
+        -2,
+        1.25
+      ],
+      "material_override": false,
+      "sha256": "3e60dbd6c1bfc94ded6794358b1c7ea0ee032edd34ee31b5179f7bc2f8f07bf0"
+    },
+    {
+      "file": "Preview-PBR-B.png",
+      "camera_offset": [
+        -1.7,
+        2,
+        1.25
+      ],
+      "material_override": false,
+      "sha256": "a883a3102b35d7cce8cb5fd8b6a534e245bcdda24d37a590756cb8170a4b9fa6"
+    },
+    {
+      "file": "Preview-PBR-C.png",
+      "camera_offset": [
+        -1.7,
+        -2,
+        1.25
+      ],
+      "material_override": false,
+      "sha256": "e257bf92a4d34fbced937211f1cd34fc2640f0c7e34a20940715d6951ecd1fa2"
+    },
+    {
+      "file": "Preview-Wire-A.png",
+      "camera_offset": [
+        1.7,
+        -2,
+        1.25
+      ],
+      "material_override": true,
+      "sha256": "074d5a6dd0aeb0ddf560069c4abc892f9182dde5ff1145cd404300937ca390f0"
+    },
+    {
+      "file": "Preview-Wire-B.png",
+      "camera_offset": [
+        -1.7,
+        2,
+        1.25
+      ],
+      "material_override": true,
+      "sha256": "bef998c07a2c42c9ea0844d65c9632e32f90c221602d9599595745d0bd044d48"
+    }
+  ],
+  "elapsed_seconds": 27.43
+}

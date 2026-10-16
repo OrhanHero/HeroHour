@@ -1,5 +1,13 @@
 # Aktuelle Übergabe – 16.10.2026
 
+## Neuester geprüfter Paketstand V9 – geprüft 16.10.2026, 19:12 Berlin
+
+**19 Paketläufe PASS, 829 Einzelprüfungen, 46 natürliche Match-/Logistikrunden.** Zwei zusätzliche 1280×720-UI-Läufe beider Fraktionen bestehen je 43 Prüfungen. Paket CreatedUtc `2026-10-16T13:01:35.2574332Z` (15:01 Berlin), Prüfung nach Fortsetzung ab 19:03 Berlin am unveränderten Paket. [Belege](verification/2026-10-16/reference-v9/Transformation-Checks.json), [Paketprüfsummen](verification/2026-10-16/reference-v9/Package-Integrity.json), [direkte Bildabnahme](research/ReferenceV9-PackageVisualQA.md).
+
+Neu im Spiel: repariertes originales TRELLIS-Aegis-HQ mit intakter Schüssel, gebrauchten 2048²-PBR-Oberflächen, korrektem Bodenpivot, Nanite und passendem tatsächlichem UI-Porträt; eigener Sammler in elf echten Teilmeshes mit beweglichem Arm/Trommel/Kupplung und sieben Ladungssegmenten; vier dekorative sichere Fels-/Ufergruppen. Präsentationsprüfungen zählen jetzt 168 je Fraktion. Neue Komponenten verändern keine Ernte-/Ablade-/Kreditwerte. Die erste kaputte TRELLIS-Vereinfachung wurde verworfen und durch belegtes Remeshing repariert. [HQ-Verfahren](research/TrellisHQV9-Authoring.md), [Sammler](research/HarvesterAnimationV9.md), [Terrain](research/ReferenceTerrainV9.md).
+
+**Aktive nächste Arbeit, nicht in V9 integriert:** neue Aegis-Fabrik als geprüftes eigenes 3D-Modell mit vorbereitetem Unreal-Importer und noch nicht aktiviertem Porträt; V10-Ressourcenfeld-Präsentation mit Wurzeln/Pods, Fog-Speicher und isolierten Tests; neue Wohnhaus-Referenz für weniger Wiederholung. Entwürfe/ungehookte V10-C++-Dateien sind keine fertige Laufzeitfunktion. Wesentliche Konzeptlücken bleiben, siehe [Konzeptabnahme](CONCEPT_ACCEPTANCE.md). Keine neue Leistungs-/Langzeitabnahme behaupten.
+
 ## Aktueller geprüfter Paketstand V8 – 16.10.2026, 14:03 Berlin
 
 V8 ist integriert und als Windows-Paket geprüft: zwei zusammengefasste Basisbodenmeshes mit Betonfugen, Drainagen, Wartungsmarkierungen und Staubrändern; größere HUD-Schrift bei 1280×720, kurze eindeutige Fähigkeitsbeschriftungen und hinterlegte Kamerahilfe. **19 Paketläufe PASS, 775 einzelne Prüfpunkte; 46 natürliche Match-/Logistikrunden.** Weitere zwei echte UI-Läufe bei 1280×720 bestehen mit jeweils 43 Prüfungen. Die Präsentationsprüfung enthält jetzt je 141 Punkte einschließlich tatsächlicher V8-Map-Actors, Materialbindungen und deaktivierter Kollision/Navigation/Schatten. [Paketbelege](verification/2026-10-16/reference-v8/Transformation-Checks.json), [Aufnahmen](verification/2026-10-16/reference-v8/Captures.json).

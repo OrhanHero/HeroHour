@@ -1,0 +1,166 @@
+{
+  "result": "PASS",
+  "actors": 4,
+  "shared_material_instances": 6,
+  "total_triangles": 45312,
+  "source_fbx_sha256": {
+    "SM_TRV9_RiverNorth": "3821471a2ee1fa851a490aadfb6b014ed09d2aa5ac5d8ec7a8df6c5b1388d4fd",
+    "SM_TRV9_RiverSouth": "616a4f1ad2f1b1df40e9b4a497d6c9ad059ff13051d1831fc084f6db0de3fcf9",
+    "SM_TRV9_WestTalus": "021cfd3f629c422ca1a37e07cd1917dfeec38f84c15eb1df1690e5242e9fdc94",
+    "SM_TRV9_EastTalus": "1429ae817731c1569168c252e67c2caf8cff87c6633015b1bed1bdc1fe53f9c1"
+  },
+  "labels": [
+    "TRV9 RiverNorth original stratified talus",
+    "TRV9 RiverSouth original stratified talus",
+    "TRV9 WestTalus original stratified talus",
+    "TRV9 EastTalus original stratified talus"
+  ],
+  "no_collision": true,
+  "casts_shadow": false,
+  "navigation_changed": false,
+  "existing_actor_snapshots_unchanged": true,
+  "preserved_actor_count": 1300,
+  "collision_validation": [
+    {
+      "mesh": "SM_TRV9_RiverNorth",
+      "api": "reflected UBodySetup.AggGeom",
+      "initial": {
+        "body_setup_present": true,
+        "shapes": {
+          "SphereElems": 0,
+          "BoxElems": 0,
+          "SphylElems": 0,
+          "ConvexElems": 0,
+          "TaperedCapsuleElems": 0,
+          "LevelSetElems": 0,
+          "SkinnedLevelSetElems": 0,
+          "MLLevelSetElems": 0,
+          "SkinnedTriangleMeshElems": 0
+        },
+        "total": 0
+      },
+      "final": {
+        "body_setup_present": true,
+        "shapes": {
+          "SphereElems": 0,
+          "BoxElems": 0,
+          "SphylElems": 0,
+          "ConvexElems": 0,
+          "TaperedCapsuleElems": 0,
+          "LevelSetElems": 0,
+          "SkinnedLevelSetElems": 0,
+          "MLLevelSetElems": 0,
+          "SkinnedTriangleMeshElems": 0
+        },
+        "total": 0
+      },
+      "editor_subsystem_cleanup_used": false
+    },
+    {
+      "mesh": "SM_TRV9_RiverSouth",
+      "api": "reflected UBodySetup.AggGeom",
+      "initial": {
+        "body_setup_present": true,
+        "shapes": {
+          "SphereElems": 0,
+          "BoxElems": 0,
+          "SphylElems": 0,
+          "ConvexElems": 0,
+          "TaperedCapsuleElems": 0,
+          "LevelSetElems": 0,
+          "SkinnedLevelSetElems": 0,
+          "MLLevelSetElems": 0,
+          "SkinnedTriangleMeshElems": 0
+        },
+        "total": 0
+      },
+      "final": {
+        "body_setup_present": true,
+        "shapes": {
+          "SphereElems": 0,
+          "BoxElems": 0,
+          "SphylElems": 0,
+          "ConvexElems": 0,
+          "TaperedCapsuleElems": 0,
+          "LevelSetElems": 0,
+          "SkinnedLevelSetElems": 0,
+          "MLLevelSetElems": 0,
+          "SkinnedTriangleMeshElems": 0
+        },
+        "total": 0
+      },
+      "editor_subsystem_cleanup_used": false
+    },
+    {
+      "mesh": "SM_TRV9_WestTalus",
+      "api": "reflected UBodySetup.AggGeom",
+      "initial": {
+        "body_setup_present": true,
+        "shapes": {
+          "SphereElems": 0,
+          "BoxElems": 0,
+          "SphylElems": 0,
+          "ConvexElems": 0,
+          "TaperedCapsuleElems": 0,
+          "LevelSetElems": 0,
+          "SkinnedLevelSetElems": 0,
+          "MLLevelSetElems": 0,
+          "SkinnedTriangleMeshElems": 0
+        },
+        "total": 0
+      },
+      "final": {
+        "body_setup_present": true,
+        "shapes": {
+          "SphereElems": 0,
+          "BoxElems": 0,
+          "SphylElems": 0,
+          "ConvexElems": 0,
+          "TaperedCapsuleElems": 0,
+          "LevelSetElems": 0,
+          "SkinnedLevelSetElems": 0,
+          "MLLevelSetElems": 0,
+          "SkinnedTriangleMeshElems": 0
+        },
+        "total": 0
+      },
+      "editor_subsystem_cleanup_used": false
+    },
+    {
+      "mesh": "SM_TRV9_EastTalus",
+      "api": "reflected UBodySetup.AggGeom",
+      "initial": {
+        "body_setup_present": true,
+        "shapes": {
+          "SphereElems": 0,
+          "BoxElems": 0,
+          "SphylElems": 0,
+          "ConvexElems": 0,
+          "TaperedCapsuleElems": 0,
+          "LevelSetElems": 0,
+          "SkinnedLevelSetElems": 0,
+          "MLLevelSetElems": 0,
+          "SkinnedTriangleMeshElems": 0
+        },
+        "total": 0
+      },
+      "final": {
+        "body_setup_present": true,
+        "shapes": {
+          "SphereElems": 0,
+          "BoxElems": 0,
+          "SphylElems": 0,
+          "ConvexElems": 0,
+          "TaperedCapsuleElems": 0,
+          "LevelSetElems": 0,
+          "SkinnedLevelSetElems": 0,
+          "MLLevelSetElems": 0,
+          "SkinnedTriangleMeshElems": 0
+        },
+        "total": 0
+      },
+      "editor_subsystem_cleanup_used": false
+    }
+  ],
+  "terrain_safety": "All significant geometry outside authoritative walkable land; actual terrain sampled; runtime contact review required"
+}

@@ -1,0 +1,67 @@
+{
+  "role": "Original Aegis vehicle factory reconstruction candidate",
+  "unreal_imported": false,
+  "runtime_asset_accepted": false,
+  "files": [
+    {
+      "name": "AegisFactory-Remeshed512-PBR2048_00001_.glb",
+      "bytes": 31110448,
+      "sha256": "d26273577175ed8a556de00d73fe7082dba07d695329f272e0bb6ad2e01151a9"
+    },
+    {
+      "name": "BaseColor.png",
+      "bytes": 3747768,
+      "sha256": "296a8eeaa142afb8c26affcc14996858b3abcba39f84fcf9ebee3c77ed11810b"
+    },
+    {
+      "name": "Conditioning512-Executed.png",
+      "bytes": 240847,
+      "sha256": "52977527999792d0afe740956b2d11076cc2b97a4475e8c627ed37fd5fec0ff6"
+    },
+    {
+      "name": "generation-workflow-api.json",
+      "bytes": 7168,
+      "sha256": "a29f9321383379bb3fa904befc0e96346ee4e07922f60bd64d3d58b3e018a215"
+    },
+    {
+      "name": "MetallicRoughness.png",
+      "bytes": 3420087,
+      "sha256": "9c240c8b5887e50ae3dd9a8ad3a1dcffedcf78a7e270c1f3c068dc3dfb947a57"
+    },
+    {
+      "name": "Preview-PBR-A.png",
+      "bytes": 1026553,
+      "sha256": "e92b78610c0d753f8adc051c6883e6ccf9f04ee78332b7727cfff05c19349a10"
+    },
+    {
+      "name": "Preview-PBR-B.png",
+      "bytes": 1013578,
+      "sha256": "95216a3a74c90594ffd683a7ffd4646df63d06279ed90cd6e3a4b19b99502392"
+    },
+    {
+      "name": "Preview-PBR-C.png",
+      "bytes": 1009761,
+      "sha256": "f232f40b79af918129082830e5492f2a79c4f82feca828d61684cdbd0c5b489c"
+    },
+    {
+      "name": "Preview-Wire-A.png",
+      "bytes": 1364854,
+      "sha256": "d92826586b39b99f8a984a04693418daf8907a53e62e9175985e1332943f8586"
+    },
+    {
+      "name": "Preview-Wire-B.png",
+      "bytes": 1361581,
+      "sha256": "e32a19eb2830402ea1d92abfad3aec440bbac9ec03c6da4c7c8494c2a271d337"
+    },
+    {
+      "name": "render-verification.json",
+      "bytes": 2538,
+      "sha256": "795cf0178b87626d4a39fad1571f60174afec9111495ce33d099a93a3a02a1f1"
+    },
+    {
+      "name": "verification.json",
+      "bytes": 906,
+      "sha256": "1664dfee40d53ae45a22f1fb23d474035c6a3b7c774751bf4bc0c88f8ba87697"
+    }
+  ]
+}

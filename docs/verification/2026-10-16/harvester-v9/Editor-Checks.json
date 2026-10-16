@@ -1,0 +1,125 @@
+{
+  "created_utc": "2026-10-16T12:28:24.204732+00:00",
+  "mode": "Editor",
+  "rendering": "NullRHI",
+  "packaged_acceptance": false,
+  "result": "PASS",
+  "runs": [
+    {
+      "suite": "Presentation",
+      "faction": "Aegis",
+      "result": "PASS",
+      "check_count": 165,
+      "source_log": "Saved\\Logs\\PresentationTest-Aegis-20261016-142559-864-cdf7adac.log",
+      "source_log_sha256": "ac0269486cf869475d4ec3cc0e0900a4996cd030b38bbc93c9d4a1303b7a80f2",
+      "compact_evidence": "Presentation-Aegis.log",
+      "compact_sha256": "2cc6fe3b470685d3913f181a39ce08baa970375ff0197815af9498fdc7708738"
+    },
+    {
+      "suite": "Presentation",
+      "faction": "Ember",
+      "result": "PASS",
+      "check_count": 165,
+      "source_log": "Saved\\Logs\\PresentationTest-Ember-20261016-142650-910-e9c934d9.log",
+      "source_log_sha256": "e3fa6ef93f31365d8540537b04fd0c05e083bb899cc0af84e7f74497859991c1",
+      "compact_evidence": "Presentation-Ember.log",
+      "compact_sha256": "f8a6f68978dd546e98ceef24408655f072b3c36c279534fe1a98e6480bc399d7"
+    },
+    {
+      "suite": "Resource",
+      "faction": "Aegis",
+      "result": "PASS",
+      "check_count": 18,
+      "source_log": "Saved\\Logs\\ResourceTest-Aegis-20261016-142658-017-82cce4ed.log",
+      "source_log_sha256": "4e8613d49a7425f53f92924a6d96dc87d442cc80229eee4eb254cab85d0e9923",
+      "compact_evidence": "Resource-Aegis.log",
+      "compact_sha256": "b901f5c7602cd7f05408da9730e1e150ab4dc5fcd9d701b1ec30eb8f9b3fce88"
+    },
+    {
+      "suite": "Resource",
+      "faction": "Ember",
+      "result": "PASS",
+      "check_count": 18,
+      "source_log": "Saved\\Logs\\ResourceTest-Ember-20261016-142704-288-e0ef0721.log",
+      "source_log_sha256": "6ed0d92955e241d7661fa2029808a9d0bb68a9116225b7d2c5a67a07022261f5",
+      "compact_evidence": "Resource-Ember.log",
+      "compact_sha256": "f3757f045b95f7dec2b3612f84eaa20e0b95e1ee92e3b783528cfc56546ba4ac"
+    },
+    {
+      "suite": "Docking",
+      "faction": "Aegis",
+      "result": "PASS",
+      "check_count": 28,
+      "source_log": "Saved\\Logs\\DockingTest-Aegis-20261016-142713-434-7562487b.log",
+      "source_log_sha256": "5c45f3bd28eb3d1f788a6d2ac9df13e03fc98c045445db4c27fb7c229112aea9",
+      "compact_evidence": "Docking-Aegis.log",
+      "compact_sha256": "65b1e9a707bddf0bcd018fa94cef1359f6d0197a3405079b5d7263d8b3861a65"
+    },
+    {
+      "suite": "Docking",
+      "faction": "Ember",
+      "result": "PASS",
+      "check_count": 28,
+      "source_log": "Saved\\Logs\\DockingTest-Ember-20261016-142722-808-17b78d6d.log",
+      "source_log_sha256": "580fa91a7a5a5c1dd9c011480ec517f912115592d22dbc0c170b374526c297e5",
+      "compact_evidence": "Docking-Ember.log",
+      "compact_sha256": "ea4f33f88c1360d266608ad58ee31b5ba55bd97b881bfb6c7b8e44ad43d5f696"
+    },
+    {
+      "suite": "Economy",
+      "faction": "Aegis",
+      "result": "PASS",
+      "check_count": null,
+      "source_log": "Saved\\Logs\\EconomyTest-Aegis-20261016-142730-582-1aea2a24.log",
+      "source_log_sha256": "a74cdb3c8d06300e2f52c911110318e6798884c1aa17385317fdc1a8a90855e3",
+      "compact_evidence": "Economy-Aegis.log",
+      "compact_sha256": "00f3093117b7b23f68b000bcafbe099f00ef8f1d77270920ff461b447e622a8c"
+    },
+    {
+      "suite": "Economy",
+      "faction": "Ember",
+      "result": "PASS",
+      "check_count": null,
+      "source_log": "Saved\\Logs\\EconomyTest-Ember-20261016-142741-351-b524a38a.log",
+      "source_log_sha256": "77845687012658d392d210cc2f312151c4ce1ea81d59c40a35b8a9962ac423a0",
+      "compact_evidence": "Economy-Ember.log",
+      "compact_sha256": "c55c4d13787283b420d2b065ef006f5235a410912fbe716a2e200a8002eace90"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "Source/HeroHourPrototype/PrototypeCollectorVisual.h",
+      "sha256": "f04abc4307b631cf0c1964d6e8302ffadcbc3bbcd6ecd189c6e5fc50eac2b331"
+    },
+    {
+      "path": "Source/HeroHourPrototype/PrototypeCollectorVisual.cpp",
+      "sha256": "3a320fe2b668bc23ddd2e85cdd608949af006b7207e5ec6dcaf26de170ee2ba5"
+    },
+    {
+      "path": "Source/HeroHourPrototype/RTS/HRPresentationTests.cpp",
+      "sha256": "253c7d8d1ee3d3483cd051ee965bf2366717b35ede521c2a817fde6ada8af4e0"
+    },
+    {
+      "path": "Scripts/art/build_harvester_animation_v9.py",
+      "sha256": "8f62e31d6518c7fab7a54bef0b8b0e0eb082a1f736ccc346721cabd58d1f3e28"
+    },
+    {
+      "path": "Scripts/art/import_harvester_animation_v9.py",
+      "sha256": "f6fa5f4379a38206cf29c7de7ef354db9f626cc1ead1f2c3eda285a8c668a768"
+    },
+    {
+      "path": "Art/Models/HarvesterAnimationV9/manifest.json",
+      "sha256": "e940eca8783813d1f8c531a7a4679cf92cf441d67f56bece79c97b4361e2e937"
+    },
+    {
+      "path": "Binaries/Win64/UnrealEditor-HeroHourPrototype.dll",
+      "sha256": "1ef3b837aed7b142c306e872ea6048f0d6dcf613efeb2515bc162f536fe40839"
+    }
+  ],
+  "limitations": [
+    "No rendered image acceptance",
+    "No packaged or cooked build acceptance",
+    "No complete natural field-refinery-field cycle recording",
+    "Visual tests set fixture states and do not run harvesting authority"
+  ]
+}

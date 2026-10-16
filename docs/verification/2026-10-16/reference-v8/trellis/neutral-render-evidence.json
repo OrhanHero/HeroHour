@@ -1,0 +1,151 @@
+{
+  "records": [
+    {
+      "branch": "RAW",
+      "view": "Front",
+      "sha256": "c7f92ed8ccba5f237ef0ce42d119f7b1ef8724f87301e8b5f0688e9c9d70d72e",
+      "source_sha256": "cc7309e87a424f63250a5b49cdf9336cc2739b0234986efb278701cb62cbabdc",
+      "camera_offset": [
+        1.7,
+        -2,
+        1.25
+      ],
+      "neutral_material": true
+    },
+    {
+      "branch": "RAW",
+      "view": "Back",
+      "sha256": "a0cd947826d9c15a242e76b84ac25d3d527dc50895a9a73dbc796ab17bfb5e7b",
+      "source_sha256": "cc7309e87a424f63250a5b49cdf9336cc2739b0234986efb278701cb62cbabdc",
+      "camera_offset": [
+        -1.7,
+        2,
+        1.25
+      ],
+      "neutral_material": true
+    },
+    {
+      "branch": "RAW",
+      "view": "Side",
+      "sha256": "430d29d834897a0c1c082dd5c9ae863c846e1c3c5df631b56138a4e811d06c9a",
+      "source_sha256": "cc7309e87a424f63250a5b49cdf9336cc2739b0234986efb278701cb62cbabdc",
+      "camera_offset": [
+        -1.7,
+        -2,
+        1.25
+      ],
+      "neutral_material": true
+    },
+    {
+      "branch": "DECIMATED",
+      "view": "Front",
+      "sha256": "95942ee19e9f5c649c2f01cafb9c038c26e9058fea6fcbaaf90b8e977f5ecf52",
+      "source_sha256": "2ed10f66959377238ac6c4e2938c8894fcc863d7f06d06b84a48add769c5cc19",
+      "camera_offset": [
+        1.7,
+        -2,
+        1.25
+      ],
+      "neutral_material": true
+    },
+    {
+      "branch": "DECIMATED",
+      "view": "Back",
+      "sha256": "4e23087ee977b64e707bb50bf95898fcbf2fc2de2f54f5ac85a8fffe3a1d0d0b",
+      "source_sha256": "2ed10f66959377238ac6c4e2938c8894fcc863d7f06d06b84a48add769c5cc19",
+      "camera_offset": [
+        -1.7,
+        2,
+        1.25
+      ],
+      "neutral_material": true
+    },
+    {
+      "branch": "DECIMATED",
+      "view": "Side",
+      "sha256": "18e1d3f6e039b287286a6b7cbc14945f72f19fa156078b2817faa5580200b72c",
+      "source_sha256": "2ed10f66959377238ac6c4e2938c8894fcc863d7f06d06b84a48add769c5cc19",
+      "camera_offset": [
+        -1.7,
+        -2,
+        1.25
+      ],
+      "neutral_material": true
+    },
+    {
+      "branch": "UNWRAPPED",
+      "view": "Front",
+      "sha256": "07ae721b3c8f5599ddde3e4da88c91284101e4623465ec117c9928f385f25740",
+      "source_sha256": "ef75d546654068da3d63bbb75fa3d41189e036c2a0498b5fef9fd18642a9aab2",
+      "camera_offset": [
+        1.7,
+        -2,
+        1.25
+      ],
+      "neutral_material": true
+    },
+    {
+      "branch": "UNWRAPPED",
+      "view": "Back",
+      "sha256": "88404043391e213259382c585f553b4bb192321a0656b9453b70f694267e36ca",
+      "source_sha256": "ef75d546654068da3d63bbb75fa3d41189e036c2a0498b5fef9fd18642a9aab2",
+      "camera_offset": [
+        -1.7,
+        2,
+        1.25
+      ],
+      "neutral_material": true
+    },
+    {
+      "branch": "UNWRAPPED",
+      "view": "Side",
+      "sha256": "29728d007cd8f354d395c9cd7abc4d6fbfaa3a47ef19ba667e191bdcf6564a56",
+      "source_sha256": "ef75d546654068da3d63bbb75fa3d41189e036c2a0498b5fef9fd18642a9aab2",
+      "camera_offset": [
+        -1.7,
+        -2,
+        1.25
+      ],
+      "neutral_material": true
+    },
+    {
+      "branch": "REMESHED",
+      "view": "Front",
+      "sha256": "7d064c9a48a46995a36f7b4d46e6d207f5f4cadfc576da9946b5a1680099c6ac",
+      "source_sha256": "a3b8ef64344ee0078cdd034fb7d26e51fff855625b958735496f7b1b423f5588",
+      "camera_offset": [
+        1.7,
+        -2,
+        1.25
+      ],
+      "neutral_material": true
+    },
+    {
+      "branch": "REMESHED",
+      "view": "Back",
+      "sha256": "38d77fdcd35ffdc66037e0bf784b3133752f115c525e139629ee884f7568acab",
+      "source_sha256": "a3b8ef64344ee0078cdd034fb7d26e51fff855625b958735496f7b1b423f5588",
+      "camera_offset": [
+        -1.7,
+        2,
+        1.25
+      ],
+      "neutral_material": true
+    },
+    {
+      "branch": "REMESHED",
+      "view": "Side",
+      "sha256": "ce72422f940836f7f90a61fb03fd6c25e98b1fbe2bc44e503013e67706a7da45",
+      "source_sha256": "a3b8ef64344ee0078cdd034fb7d26e51fff855625b958735496f7b1b423f5588",
+      "camera_offset": [
+        -1.7,
+        -2,
+        1.25
+      ],
+      "neutral_material": true
+    }
+  ],
+  "sources_and_imported_geometry_unchanged": true,
+  "same_cameras_from_RAW_bounds": true,
+  "elapsed_seconds": 28.67901300000085
+}

@@ -74,7 +74,7 @@ EPrototypeRole ProducerRole(EPrototypeRole Role)
 }
 bool SupportsAbility(const APrototypeUnit* Unit,EHRAbility Ability)
 {
-    if(!IsValid(Unit)||Unit->Health<=0.f||Unit->IsActorBeingDestroyed()||Unit->Team!=0)return false;
+    if(!IsValid(Unit)||Unit->Health<=0.f||Unit->IsActorBeingDestroyed()||Unit->Team!=0||!Unit->IsCombatant()||Unit->IsStructure())return false;
     return Ability==EHRAbility::Grenade ? Unit->Role==EPrototypeRole::Infantry:
         Ability==EHRAbility::Smoke ? APrototypeGameMode::GetFactionIndex(Unit->Team)==0&&Unit->IsCombatant()&&!Unit->IsStructure():
         Unit->Role==EPrototypeRole::Siege;
@@ -440,6 +440,14 @@ void APrototypeHUD::DrawHUD()
             }
         }
     }
+    else if(Chosen==1&&Single&&Single->Role==EPrototypeRole::Collector)
+    {
+        const auto First=L.Ability(0),Last=L.Ability(2);
+        const float Width=Last.X+Last.W-First.X;
+        Rect(Dark,First.X,First.Y,Width,First.H);
+        FitText(Single->bCollectorManualOrder?TEXT("MANUELLER FAHRBEFEHL"):TEXT("AUTOMATISCHER TEMPEST-KREISLAUF"),First.X+8,First.Y+3,Width-16,Cyan,.76f);
+        FitText(Single->bCollectorManualOrder?TEXT("Nach Ankunft automatisch sammeln."):TEXT("Feld abbauen / Raffinerie entladen."),First.X+8,First.Y+23,Width-16,Muted,.72f);
+    }
     else for(int32 AbilityIndex=0;AbilityIndex<3;++AbilityIndex)
     {
         const auto Button=L.Ability(AbilityIndex);const EHRAbility Ability=static_cast<EHRAbility>(AbilityIndex);
@@ -449,6 +457,7 @@ void APrototypeHUD::DrawHUD()
             Supported=true;Cooldown=FMath::Min(Cooldown,Unit->CombatState.GetCooldown(Ability));
             Enabled|=!GetWorld()->IsPaused()&&Mode->Outcome==0&&Unit->CombatState.CanActivate(Ability,true,Mode->IsUnitOperational(Unit),Ability!=EHRAbility::Grenade||HasGrenadeTarget(Unit,Mode));
         }
+        if(!Supported)continue;
         Rect(Enabled?FLinearColor(.055f,.14f,.18f):Dark,Button.X,Button.Y,Button.W,Button.H);NineSlice(InterfaceTexture(TEXT("T_UI_Frame_V3")),Button,8);
         const TCHAR* AbilityNames[]={TEXT("G / WURF"),TEXT("T / RAUCH"),TEXT("Y / MODUS")};
         Glyph(AbilityIndex==0?11:AbilityIndex==1?5:8,Button.X+6,Button.Y+7,23,Enabled?Cyan:Muted);
@@ -659,7 +668,11 @@ bool APrototypeHUD::HandleClick(const FVector2D& ScreenPosition)
         }
         else for(int32 AbilityIndex=0;AbilityIndex<3;++AbilityIndex)if(L.Ability(AbilityIndex).Contains(P))
         {
-            CancelPrototypeDoctrineTarget(this);const EHRAbility Ability=static_cast<EHRAbility>(AbilityIndex);bool Activated=false;
+            const EHRAbility Ability=static_cast<EHRAbility>(AbilityIndex);
+            bool Supported=false;
+            for(APrototypeUnit* Unit:Controller->Selected)Supported|=SupportsAbility(Unit,Ability);
+            if(!Supported)continue;
+            CancelPrototypeDoctrineTarget(this);bool Activated=false;
             const TArray<APrototypeUnit*> SelectionCopy=Controller->Selected;
             for(APrototypeUnit* Unit:SelectionCopy)if(SupportsAbility(Unit,Ability))Activated|=Unit->TryActivateAbility(Ability);
             if(!Activated)Mode->Feedback=TEXT("Fähigkeit nicht bereit: Einheitentyp, Cooldown und sichtbare Ziele prüfen.");

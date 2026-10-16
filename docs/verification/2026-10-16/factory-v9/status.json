@@ -1,0 +1,90 @@
+{
+  "status": "success",
+  "server_pid": 3612,
+  "limit_seconds": 600,
+  "gpu_peak_mib": 8866,
+  "samples": [
+    {
+      "seconds": 14.61,
+      "gpu_used_mib": 1414
+    },
+    {
+      "seconds": 17.69,
+      "gpu_used_mib": 2534
+    },
+    {
+      "seconds": 20.81,
+      "gpu_used_mib": 4216
+    },
+    {
+      "seconds": 23.88,
+      "gpu_used_mib": 6586
+    },
+    {
+      "seconds": 26.95,
+      "gpu_used_mib": 6176
+    },
+    {
+      "seconds": 30.08,
+      "gpu_used_mib": 7424
+    },
+    {
+      "seconds": 33.14,
+      "gpu_used_mib": 8866
+    },
+    {
+      "seconds": 36.2,
+      "gpu_used_mib": 4130
+    },
+    {
+      "seconds": 39.33,
+      "gpu_used_mib": 4610
+    },
+    {
+      "seconds": 42.47,
+      "gpu_used_mib": 4650
+    },
+    {
+      "seconds": 45.53,
+      "gpu_used_mib": 4650
+    },
+    {
+      "seconds": 48.59,
+      "gpu_used_mib": 4650
+    },
+    {
+      "seconds": 51.69,
+      "gpu_used_mib": 4650
+    },
+    {
+      "seconds": 54.77,
+      "gpu_used_mib": 4650
+    },
+    {
+      "seconds": 57.86,
+      "gpu_used_mib": 4650
+    },
+    {
+      "seconds": 60.94,
+      "gpu_used_mib": 4842
+    },
+    {
+      "seconds": 64.02,
+      "gpu_used_mib": 4138
+    },
+    {
+      "seconds": 67.08,
+      "gpu_used_mib": 4138
+    }
+  ],
+  "elapsed_seconds": 67.08,
+  "own_server_stopped": true,
+  "user_db_unchanged": true,
+  "outputs": [
+    {
+      "file": "Art\\Models\\TrellisFactoryV9-Candidate\\AegisFactory-Remeshed512-PBR2048_00001_.glb",
+      "bytes": 31110448,
+      "sha256": "d26273577175ed8a556de00d73fe7082dba07d695329f272e0bb6ad2e01151a9"
+    }
+  ]
+}

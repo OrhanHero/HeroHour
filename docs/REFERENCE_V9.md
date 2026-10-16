@@ -1,0 +1,11 @@
+# Referenzdurchlauf V9
+
+V9 bringt das erste reparierte originale TRELLIS-Gebäude tatsächlich ins Spiel. Der Aegis-Kommandobau besitzt kontrollierten Maßstab und Bodenpivot, intakte Satellitenschüssel, getrennten Serviceflügel und gebrauchte weiße/blaue 2048²-PBR-Oberflächen. Das zugehörige UI-Porträt zeigt dasselbe Modell. Der fehlerhafte erste Kandidat wurde ausdrücklich nicht übernommen. Rohmesh, Vereinfachung und Remesh wurden in tatsächlichen Mehransichten verglichen; die direkte Vereinfachung war sichtbar zerstörerisch. Der akzeptierte Aufbereitungsweg remesht vor Reduktion und backt neue UV-/PBR-Daten.
+
+Der eigene Sammler verwendet elf Teilmeshes aus dem bisherigen eigenen Originalmodell, ohne doppelte Trommel-/Armgeometrie. Harvesting bewegt den Arm und die Trommel, Unloading die Kupplung, sieben echte Anzeigesegmente folgen Cargo. Präsentation und Simulation sind getrennt; Prüfungen sichern unveränderte Cargo-, Zustands-, Bewegungs- und Geldwerte sowie Rollenwechsel und Komponentenbereinigung. Ein Still beweist keine Animation; diese Eigenschaft wird separat durch tatsächliche Komponentenbewegungen in Laufzeittests geprüft. Einzelradrotation und teleskopisch korrekte Hydraulik fehlen weiterhin.
+
+Vier eigene zusammengefasste Fels-/Ufergruppen ergänzen die Welt ausschließlich in bereits nicht begehbaren Bereichen. Die vier Meshes enthalten zusammen45.312 Dreiecke; vorhandene1.300 Map-Actors bleiben protokolliert unverändert. Sie ersetzen keine zusammenhängende Geländeüberarbeitung. Stadt, Wohnhäuser und Straßenflächen sind noch deutlich zu regelmäßig und leer.
+
+Das Windows-Paket CreatedUtc2026-10-16T13:01:35.2574332Z besteht **19 Testläufe mit829 Einzelprüfungen und46 natürlichen Match-/Logistikrunden**. Zusätzliche UI-Läufe bei1280×720 bestehen mit43 Prüfungen je Fraktion. [Paketbelege](verification/2026-10-16/reference-v9/Transformation-Checks.json), [Bildabnahme](research/ReferenceV9-PackageVisualQA.md). Keine neue Leistungs- oder Dauerabnahme ist damit verbunden.
+
+V10-Fabrik und neue zusammenhängende Ressourcenfelder sind Folgearbeit. Sie gehören noch nicht zu diesen Paketbehauptungen. Das Gesamtziel bleibt unerfüllt; [konkrete Abnahmekriterien](CONCEPT_ACCEPTANCE.md) führen die nächsten Schritte.

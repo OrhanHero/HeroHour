@@ -1,0 +1,42 @@
+{
+  "input_sha256": "323cc71aa80c1a8fa859ed7171db1df635e72ab24a9aad6c92b4402c6ae486c0",
+  "input_dimensions": [
+    1536,
+    1024
+  ],
+  "alpha_range": [
+    0,
+    254
+  ],
+  "alpha_raw_bbox": [
+    0,
+    23,
+    1515,
+    994
+  ],
+  "threshold": 0.5,
+  "threshold_core_bbox": [
+    49,
+    97,
+    1510,
+    934
+  ],
+  "raw_nonzero_pixels": 809901,
+  "core_pixels": 796495,
+  "workflow_sha256": "a29f9321383379bb3fa904befc0e96346ee4e07922f60bd64d3d58b3e018a215",
+  "inherited_repaired_workflow": "Scripts/research/prepare_trellis_repaired_texture_v8.py",
+  "seeds": [
+    56,
+    42,
+    43
+  ],
+  "remesh_resolution": 512,
+  "decimation_target": 700000,
+  "atlas_resolution": 2048,
+  "fresh_voxel_bake": true,
+  "normals_after_final_uv": true,
+  "no_weight_download": true,
+  "inference_queued": false,
+  "needs_live_schema_validation": true,
+  "output_directory": "Art/Models/TrellisFactoryV9-Candidate"
+}

@@ -1,0 +1,60 @@
+{
+  "status": "error",
+  "server_pid": 9056,
+  "limit_seconds": 600,
+  "gpu_peak_mib": 9256,
+  "samples": [
+    {
+      "seconds": 79.09,
+      "gpu_used_mib": 1382
+    },
+    {
+      "seconds": 82.17,
+      "gpu_used_mib": 2508
+    },
+    {
+      "seconds": 85.26,
+      "gpu_used_mib": 4222
+    },
+    {
+      "seconds": 88.33,
+      "gpu_used_mib": 6560
+    },
+    {
+      "seconds": 91.39,
+      "gpu_used_mib": 9256
+    },
+    {
+      "seconds": 94.45,
+      "gpu_used_mib": 6378
+    },
+    {
+      "seconds": 97.5,
+      "gpu_used_mib": 6378
+    },
+    {
+      "seconds": 100.56,
+      "gpu_used_mib": 6154
+    }
+  ],
+  "elapsed_seconds": 100.56,
+  "own_server_stopped": true,
+  "user_db_unchanged": true,
+  "outputs": [
+    {
+      "file": "Art\\Models\\TrellisV8-Diagnostic\\DECIMATED_00001_.glb",
+      "bytes": 441084,
+      "sha256": "2ed10f66959377238ac6c4e2938c8894fcc863d7f06d06b84a48add769c5cc19"
+    },
+    {
+      "file": "Art\\Models\\TrellisV8-Diagnostic\\RAW_00001_.glb",
+      "bytes": 52772820,
+      "sha256": "cc7309e87a424f63250a5b49cdf9336cc2739b0234986efb278701cb62cbabdc"
+    },
+    {
+      "file": "Art\\Models\\TrellisV8-Diagnostic\\UNWRAPPED_00001_.glb",
+      "bytes": 614556,
+      "sha256": "ef75d546654068da3d63bbb75fa3d41189e036c2a0498b5fef9fd18642a9aab2"
+    }
+  ]
+}

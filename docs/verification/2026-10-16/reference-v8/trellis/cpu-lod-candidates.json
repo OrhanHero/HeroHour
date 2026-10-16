@@ -1,0 +1,23 @@
+{
+  "source_sha256": "a3b8ef64344ee0078cdd034fb7d26e51fff855625b958735496f7b1b423f5588",
+  "source_unchanged": true,
+  "results": [
+    {
+      "file": "LOD-Blender-150000.glb",
+      "vertices": 74796,
+      "faces": 149996,
+      "sha256": "8425ee6ed38e5cb528ca1d905336ea2533f5c4353d025ebacfda4ab641c6e370",
+      "algorithm": "Blender Collapse Decimate on already remeshed input, not native Comfy QEM"
+    },
+    {
+      "file": "LOD-Blender-100000.glb",
+      "vertices": 49751,
+      "faces": 99994,
+      "sha256": "ce58b05d2d004b6d608ced6133df9816f783cd655c7ff04b0ded578d0480dc64",
+      "algorithm": "Blender Collapse Decimate on already remeshed input, not native Comfy QEM"
+    }
+  ],
+  "cpu_only_no_render": true,
+  "elapsed_seconds": 11.865661399999226,
+  "visual_acceptance": false
+}

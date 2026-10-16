@@ -4,7 +4,7 @@
     512
   ],
   "transparent": true,
-  "render": "Cycles 24 samples denoised: four ReferenceV7 UV0 atlas portraits, nine green Ember legacy portraits, nine preserved Aegis V5 portraits",
+  "render": "HQ9 Aegis HQ from actual TRELLIS mesh/PBR; other 21 existing portraits and metadata records preserved",
   "records": [
     {
       "role": "Combat",
@@ -82,19 +82,22 @@
       "role": "HQ",
       "faction": "Aegis",
       "file": "T_HR_Aegis_HQ.png",
-      "source": "Art\\Models\\ReferenceHQV7\\SM_RV7_AegisHQ.blend",
-      "source_sha256": "973f90ed737ef3867c535a47072b32be8648aece760651903505d8e246996195",
+      "source": "Art\\Models\\TrellisHQV9\\SM_HQ9_AegisHQ.blend",
+      "source_sha256": "e33f26a9f3f831510a1f3b5c003292ba56c6f2bee9395440086511edbb13ea6b",
       "original_geometry": true,
+      "ai_assisted_geometry": true,
+      "provenance": "Own concept-conditioned TRELLIS.2 geometry; actual HQ9 mesh and PBR atlases; no commercial game art",
       "source_unchanged": true,
       "alpha_bounds": [
-        39,
-        45,
-        472,
-        391
+        67,
+        113,
+        441,
+        374
       ],
-      "surface_key": "Aegis_HQ",
-      "albedo_sha256": "f0818aa8bfd8d28dca58ba9cc2de3e4e5345572d53d4357293eb60e0d79a5f00",
-      "file_sha256": "bd1f6fed58c3787f1e2395418db5da239147f7172ea2e72b8e28aa5856ed67dc"
+      "surface_key": "Aegis_HQ_TrellisV9",
+      "albedo_sha256": "23133406cc971ef8afb7b2ca83362625ab445121d4d86e34a99add8a8b2cc17e",
+      "file_sha256": "74624c777f531bba69837bb646127a36b4f785102bd97121089f34670f4e3553",
+      "metallic_roughness_sha256": "be30f88edd1f24157799982956b61212dbf7deb529dbe4121fdbaeddc2e73faf"
     },
     {
       "role": "HQ",
