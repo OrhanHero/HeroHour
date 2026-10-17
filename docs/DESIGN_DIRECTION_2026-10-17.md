@@ -1,5 +1,7 @@
 # Verbindliche Gestaltungsvorgabe – 17. Oktober 2026
 
+**Fortschritt nach dieser Entscheidung:** Die Zero-Hour-Anordnung wurde inzwischen im Canvas-HUD umgesetzt, paketiert und geprüft. Ein originaler Abschnitt mit 38 Actors/16 Mesh-Typen wurde in das separate UE5.8-Prüfprojekt importiert. Die vollständige Spielwelt, Originalshader und UMG-Migration sind nicht fertig. [Aktueller Plan](PROJECT_ROADMAP.md), [Übergabe](CURRENT_HANDOVER.md). Der Nutzer hat die Aufteilung Radar links, Befehle Mitte, Auswahl rechts, Ressourcen darüber bei der UMG-Folgeklärung erneut bestätigt. Die nachfolgende ursprüngliche Prüfreihenfolge beschreibt den Ausgangspunkt; aktuelle Erfolge und offene Arbeiten stehen im Plan.
+
 Der Nutzer hat die zuvor falsch interpretierte UI-Richtung ausdrücklich korrigiert:
 
 **C&C Generals / Zero Hour liefert die UI-Anordnung. Tempest Rising liefert die angestrebte Gestaltung und dient als konkrete Karten-/Umgebungsreferenz.**

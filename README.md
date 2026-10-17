@@ -2,9 +2,15 @@
 
 Ein spielbarer Offline-Prototyp mit C&C-Bedienung und Tempest-orientierter Wirtschaft, Basisbau und Gefechtsmechanik. Unreal Engine **5.8.3**, aktives C++-Modul **HeroHourPrototype**, Karte **CityHero**.
 
-**Aktuell: Tempest-orientierte UI umgesetzt und paketgeprüft.** Radar oben rechts, hohe dreispaltige Produktionssidebar, vertikale Kategorien, BAUEN-/DOKTRINEN-Reiter, klickbare Kontrollgruppen und Auswahlporträts sowie funktionale Pause-/Ergebnisfenster ersetzen das frühere fünfspaltige Konzeptlayout. **19 Paketläufe mit 911 Einzelprüfungen und 46 natürlichen Match-/Logistikrunden bestehen; beide Fraktionen bestehen bei 1600×900 und 1280×720 jeweils 73 UI-Prüfungen.** Die vollständige Konzeptumsetzung ist noch nicht erreicht. [Aktueller UI-Stand und Grenzen](docs/TEMPEST_UI.md), [REA-UI-Referenz](docs/research/Tempest-UI-REA-Implementation.md), [Paketnachweise](docs/verification/2026-10-16/tempest-ui-package/Transformation-Checks.json).
+**Aktuell – 17.10.2026: Zero-Hour-Anordnung umgesetzt und paketgeprüft.** Radar links unten, fünfspaltige Befehls-/Baukarten mittig, Auswahl rechts unten und Ressourcen darüber. Die Gestaltung soll Tempest Rising und den gelieferten Konzepten näherkommen; diese visuelle Gesamtqualität ist noch nicht erreicht. **19 Paketläufe mit 917 Einzelprüfungen und 46 natürlichen Match-/Logistikrunden bestehen.** Zusätzlich bestehen vier Editor-UI-Läufe beider Fraktionen bei 1600×900 und 1280×720 mit je 76 Prüfungen. Das HUD nutzt weiterhin C++-Canvas; die UMG-Migration ist dokumentiert, noch nicht eingebaut. [UI-Umsetzung](docs/research/ZeroHour-Tempest-HUD-Implementation.md), [Paketnachweise](docs/verification/2026-10-17/zero-hour-tempest-ui-package/Transformation-Checks.json).
 
-**Account-Übergabe:** [CURRENT_HANDOVER](docs/CURRENT_HANDOVER.md). [Geprüftes Windows-Paket](docs/VERIFIED_BUILD.md), [Transformationsplan M1–M4](docs/TEMPEST_TRANSFORMATION_PLAN.md), [Arbeitsprotokoll](docs/WORKLOG_2026-10-15.md).
+**Account-Übergabe:** [CURRENT_HANDOVER](docs/CURRENT_HANDOVER.md). [Dokumentationsindex](docs/README.md), [aktueller Entwicklungsplan M1–M4](docs/PROJECT_ROADMAP.md), [UMG-Anleitung mit C++-Vorlagen](docs/UI_REFACTOR_IMPLEMENTATION.md), [geprüftes Windows-Paket](docs/VERIFIED_BUILD.md). Frühere Gameplay-Arbeit: [Transformationsplan](docs/TEMPEST_TRANSFORMATION_PLAN.md), [Arbeitsprotokoll](docs/WORKLOG_2026-10-15.md).
+
+**Originaler Tempest-Kartenabschnitt:** 16 Mesh-Typen und 38 Actors erfolgreich in ein getrenntes UE5.8-Prüfprojekt importiert; Originaltransforms geprüft und Material-Parentketten aufgelöst. Der Abschnitt ist noch nicht in HeroHours Spielkarte integriert. Vollständige Shader und Landscape-Geometrie fehlen weiterhin. [Transfer und Grenzen](docs/research/Tempest-Sector-Selection.md), [Nachweise](docs/verification/2026-10-17/sector-transfer/Transfer-Checks.json). Originalexporte und Windows-Binärpakete liegen lokal, nicht im Git-Repository.
+
+Aktuelle Paketaufnahme, diagnostische Produktions-Fixture:
+
+![HeroHour – Zero-Hour-Anordnung](Art/Previews/ZeroHour-Production-1600.png)
 
 ## Spielen
 
@@ -17,7 +23,7 @@ Ein spielbarer Offline-Prototyp mit C&C-Bedienung und Tempest-orientierter Wirts
 - Zwei asymmetrische Fraktionen: robuste Aegis mit Rauch und Reparatur/Präzisionsschlag; schnelle Ember mit Tempest-Schaden, Scorch und Overdrive.
 - Sammler, Striker, Infanterie und Belagerungsfahrzeug; HQ, Kraftwerk, Raffinerie, Fahrzeugfabrik, Kaserne, Radar und Abwehr.
 - Drei Ressourcenfelder mit zusammen **48 räumlichen Zellen**, Nachwachsen, exklusiven Zell- und Dockreservierungen, tatsächlicher Anfahrt und zeitlicher Entladung.
-- Vier funktionale Sidebar-Kategorien und eine sichtbar gesperrte Luftwaffenkategorie, separate Doktrinenansicht, bezahlte Produzentenwarteschlangen, Bauplatzraster mit Rotation und verbundenem Bauradius, Strommangel, manuelle Abschaltung und Verkauf.
+- Vier funktionale Baukategorien und eine sichtbar gesperrte Luftwaffenkategorie im unteren Kommandopanel, separate Doktrinenansicht, bezahlte Produzentenwarteschlangen, Bauplatzraster mit Rotation und verbundenem Bauradius, Strommangel, manuelle Abschaltung und Verkauf.
 - Getrennte Sicht und Erkundung, Weltnebel und Radar-Minimap; Gegneranzeigen, Zielsuche und Befehle berücksichtigen die Sicht.
 - Drei Schadensarten, Rüstungsmatrix, Deckung, Unterdrückung, Veteranenstufen, Granaten, Rauch und Deployment; je zwei Commander-Fähigkeiten.
 - Eigene Blender-Modelle, Infanterie-Rig mit Idle/Walk/Fire, Porträts, Materialien und synthetisierte Effekte/Audiodateien. [Frontlines-V4-Quellen](docs/FRONTLINES_V4.md).

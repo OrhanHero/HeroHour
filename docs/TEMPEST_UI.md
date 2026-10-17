@@ -1,5 +1,7 @@
 # Tempest-orientierte HeroHour-UI
 
+> **Historischer Stand, abgelöst am 17.10.2026.** Die unten beschriebene hohe Rechtssidebar ist nicht das aktuelle Ziellayout. Verbindlich und inzwischen eingebaut: Radar links unten, Befehle mittig, Auswahl rechts, Ressourcen darüber. [Aktuelle Umsetzung](research/ZeroHour-Tempest-HUD-Implementation.md), [Gestaltungsvorgabe](DESIGN_DIRECTION_2026-10-17.md), [UMG-Folgeplan](UI_REFACTOR_IMPLEMENTATION.md). Die folgenden Zahlen gelten ausschließlich für das ältere Paket.
+
 Stand: 16. Oktober 2026. Die neue UI ist implementiert und im frischen Windows-Paket geprüft: **19 erforderliche Suiten, 911 Einzelprüfungen und 46 natürliche Match-/Logistikrunden PASS.** Die Oberfläche rekonstruiert die beobachtete Anordnung und Bedienhierarchie von Tempest Rising für HeroHours vorhandene Systeme. Originale Tempest-Texturen, Porträts oder andere Spielassets wurden dafür nicht übernommen; Pixelparität ist nicht erreicht oder behauptet.
 
 ## Layout und Bedienung

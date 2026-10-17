@@ -1,5 +1,7 @@
 # HeroHour: Umbau zu einem RTS nach Tempest-Rising-Vorbild
 
+> **Fortsetzung vom 17.10.2026:** Für die aktuelle Priorisierung gilt [PROJECT_ROADMAP.md](PROJECT_ROADMAP.md). Die UI-Anordnung ist ausdrücklich Zero Hour, nicht die rechte Tempest-Sidebar. [Aktueller Stand](CURRENT_HANDOVER.md), [UMG-Implementierungsvorlage](UI_REFACTOR_IMPLEMENTATION.md). Die folgenden Systemanalysen und früheren Meilensteine bleiben als technische Historie erhalten.
+
 Stand: **15.10.2026, technische Prototypabnahme abgeschlossen**. Der eigene kleine Offline-Umfang M1–M4 ist integriert und im Windows-Paket geprüft: 19 Läufe, 519 Assertion-Prüfungen, 46 natürliche Simulationspartien sowie zwei bestandene reale 20-Minuten-RHI-Läufe mit weiteren 15 Gefechten. Kurze native Bedienprüfung und betrachtete Paketaufnahmen ergänzen die automatisierten Nachweise. Dies bestätigt keine vollständige Tempest-Rekonstruktion oder grafische Gleichwertigkeit. [Verbindlicher Stand](CURRENT_HANDOVER.md), [Abnahme](VERIFIED_BUILD.md).
 
 Die früheren Aussagen „eine Zelle pro Feld“, „keine Strom-/Sichtsimulation“, „beide Teams teilen Aegis“ und „vier HUD-Aktionen“ beschreiben den historischen Stand vom 14.10. und gelten nicht für die neue Implementierung. Die acht bestandenen Paketsuiten des vorherigen Docking-Pakets ersetzen keine Prüfung des aktuellen Umbaus.

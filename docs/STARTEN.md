@@ -1,6 +1,6 @@
 # HeroHour starten
 
-Stand: 15.10.2026. Unreal Engine 5.8.3, aktives Modul HeroHourPrototype. 19 aktuelle Windows-Paketläufe sind bestanden: 14 Aegis-Suiten und fünf zusätzliche Ember-Läufe, 519 Assertion-Prüfungen und 46 natürliche Simulationspartien. Beide 20-Minuten-RHI-Dauerläufe bestanden mit sieben beziehungsweise acht vollständigen Gefechten. Belege: [VERIFIED_BUILD.md](VERIFIED_BUILD.md). Neuer Account: zuerst [CURRENT_HANDOVER.md](CURRENT_HANDOVER.md).
+Stand: 17.10.2026. Unreal Engine 5.8.3, aktives Modul HeroHourPrototype. Das aktuelle Zero-Hour-HUD-Paket besteht 19 Pflichtläufe mit 917 Einzelprüfungen und 46 natürlichen Match-/Logistikrunden. Ältere Dauerläufe gelten nicht als erneute Langzeitabnahme dieses Pakets. Belege: [VERIFIED_BUILD.md](VERIFIED_BUILD.md). Neuer Account: zuerst [CURRENT_HANDOVER.md](CURRENT_HANDOVER.md), [Dokumentationsindex](README.md) und [Entwicklungsplan](PROJECT_ROADMAP.md).
 
 HeroHour-Starten.cmd startet Aegis, HeroHour-Ember-Starten.cmd startet Ember. PowerShell im Projektordner:
 

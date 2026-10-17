@@ -1,6 +1,16 @@
 # Nachgewiesene Windows-Builds
 
-## Neuester geprüfter Stand: Tempest-UI-Paket, 16.10.2026, 21:36 Berlin
+## Neuester geprüfter Stand: Zero-Hour-HUD, 17.10.2026, 02:09 Berlin
+
+CreatedUtc `2026-10-17T00:09:58.9298367Z`, Windows Development, `/Game/Maps/CityHero`, `Packaging-20261017-020857-747.log`. **19 Pflichtläufe PASS, 917 Einzelprüfungen, 46 natürliche Match-/Logistikrunden.** [Nachweise](verification/2026-10-17/zero-hour-tempest-ui-package/Transformation-Checks.json), [EXE-/Paketintegrität](verification/2026-10-17/zero-hour-tempest-ui-package/Package-Integrity.json).
+
+Spiel-EXE SHA-256: `f88e26718cccbae83b6860e508073e41f1a1029a79b769c3517dfc27998d43cf`. Beide paketierten UI-Läufe bei 1600×900 bestehen je 76 Prüfungen. Vier zusätzliche Editor-UI-Läufe beider Fraktionen bei 1600×900 und 1280×720 bestehen ebenfalls je 76 Prüfungen; sie sind nicht in den 917 enthalten. [Editor-Belege](verification/2026-10-17/zero-hour-tempest-ui-package/Editor-UI-Checks.json).
+
+Neu: Radar links unten, Befehle mittig, Auswahl rechts, Ressourcen darüber. Geprüfte Paketbilder: `Art/Previews/ZeroHour-Production-1600.png` und `Art/Previews/ZeroHour-Radar-1280.png`; diagnostische Fixtures. Noch Canvas-HUD, keine UMG-Migration. Originalsektor nur im getrennten Prüfprojekt. Keine neue Leistungs-/Langzeitabnahme oder vollständige Konzeptparität. [UI-Abnahme](research/ZeroHour-Tempest-HUD-Implementation.md), [nächste Meilensteine](PROJECT_ROADMAP.md).
+
+Die folgenden Abschnitte dokumentieren ältere Pakete; deren Messungen bleiben historisch.
+
+## Historischer Stand: Tempest-UI-Paket, 16.10.2026, 21:36 Berlin
 
 CreatedUtc `2026-10-16T19:36:08.6233213Z`, Windows Development, `/Game/Maps/CityHero`, `Packaging-20261016-213531-028.log`. **19 Pflichtläufe PASS, 911 Einzelprüfungen, 46 natürliche Match-/Logistikrunden.** Rundenzahl: nur Match und LogisticsStress, keine künstlichen Combat-/FullMatch-Marker. [Nachweis](verification/2026-10-16/tempest-ui-package/Transformation-Checks.json).
 
