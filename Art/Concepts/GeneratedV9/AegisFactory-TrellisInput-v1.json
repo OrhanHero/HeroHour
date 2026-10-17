@@ -1,0 +1,57 @@
+{
+  "created_utc": "2026-10-16T12:45:47.078729+00:00",
+  "mode": "built-in image_gen",
+  "purpose": "Original HeroHour Aegis vehicle factory 3D conditioning image",
+  "game_asset": false,
+  "unreal_imported": false,
+  "trellis_run": false,
+  "output": "Art\\Concepts\\GeneratedV9\\AegisFactory-TrellisInput-v1.png",
+  "sha256": "323cc71aa80c1a8fa859ed7171db1df635e72ab24a9aad6c92b4402c6ae486c0",
+  "prompt_file": "AegisFactory-TrellisInput-v1.prompt.txt",
+  "prompt_sha256": "a2b80b3f06ac1220962dbd1cf0579fa2af234dc5ea71f74655b924c6af8189c6",
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "mode_image": "RGBA",
+  "alpha_extrema": [
+    0,
+    254
+  ],
+  "alpha_bbox": [
+    0,
+    23,
+    1515,
+    994
+  ],
+  "source_output": "C:/Users/Hero/.codex/generated_images/01a14493-f289-7b30-9a67-7e8d18acd8e1/exec-3911a19f-315a-451f-8fb5-d1e02f443b29.png",
+  "references": [
+    {
+      "path": "E:\\HeroHour\\Art\\Concepts\\HH Art\\Codex-Bild 1. Sept. 2026, 01_22_20.png",
+      "sha256": "6ba5782d17fd7274b7ac16cbf581357a830c1255db0c94faa8eb5e980a4f918e"
+    },
+    {
+      "path": "E:\\HeroHour\\Art\\Concepts\\HH Art\\Codex-Bild 1. Sept. 2026, 01_22_00.png",
+      "sha256": "b59e4fa54e20f252e9e864b8e5e04c90a4946e881504787e81af115b54e8efda"
+    },
+    {
+      "path": "C:\\Users\\Hero\\HeroHour\\Art\\Models\\MilitaryDetailV6\\SM_MDV6_VehiclePlant-Preview.png",
+      "sha256": "cb4730c16e61ca04699aabf10383817ba7f9a15e9a6d91a276ec0cb8b96e4dad"
+    }
+  ],
+  "inspection": {
+    "status": "VISUALLY_REVIEWED",
+    "strengths": [
+      "Distinct broad factory silhouette and large segmented vehicle gate",
+      "Low service wing and roof ventilation match function",
+      "Worn ivory and blue trims align supplied Aegis concept",
+      "No command tower dish vehicles people logos or detached props"
+    ],
+    "limitations": [
+      "This is a generated 2D input, not validated 3D geometry",
+      "Back and hidden side are unobserved",
+      "Soft partial-alpha halo exists outside silhouette; subsequent mask preprocessing must be inspected",
+      "No normal roughness or material maps derive from this single image"
+    ]
+  }
+}

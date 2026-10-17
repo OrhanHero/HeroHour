@@ -1,0 +1,93 @@
+{
+  "schema": "HeroHour.ReferenceV7Captures.v1",
+  "package": {
+    "CreatedUtc": "2026-10-15T22:34:24.1236961Z",
+    "Configuration": "Development",
+    "Platform": "Windows",
+    "PackagingLog": "C:\\Users\\Hero\\HeroHour\\Saved\\Logs\\Packaging-20261016-003345-296.log",
+    "Map": "/Game/Maps/CityHero",
+    "HeroAssetsExplicitlyCooked": true
+  },
+  "executable_sha256": "3e15769e38e921c7a8f12d37c5acac73d8e8b14ce356e7de620c2bc9987de7cb",
+  "captures": [
+    {
+      "file": "Art/Previews/ReferenceV7-Aegis.png",
+      "sha256": "fa7c6d62d792fa083b3c39734828cf82e5ad4c2dd366818128b216f85a336cb9",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "faction": "Aegis",
+      "view": "Battle",
+      "close_up": false,
+      "art_review": false,
+      "log": "Capture-Battle-20261016-003638-236.log"
+    },
+    {
+      "file": "Art/Previews/ReferenceV7-Ember.png",
+      "sha256": "eace29ecdaa87034bbb165f891334a6a644c2235f1a3bd6b03b1e5986aae5738",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "faction": "Ember",
+      "view": "Battle",
+      "close_up": false,
+      "art_review": false,
+      "log": "Capture-Battle-20261016-003652-033.log"
+    },
+    {
+      "file": "Art/Previews/ReferenceV7-Aegis-HQ-CloseUp.png",
+      "sha256": "26ed5a085ac0251b03b47ec2f57db5e319d7bc9a06e6c639ca3146a84e911689",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "faction": "Aegis",
+      "view": "Battle",
+      "close_up": true,
+      "art_review": false,
+      "log": "Capture-Battle-20261016-003733-352.log"
+    },
+    {
+      "file": "Art/Previews/ReferenceV7-Aegis-APC-CloseUp.png",
+      "sha256": "2a3bcf9489193e3eedf995bbf203b206937e4b9a33f6c7f64e17687a5093d828",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "faction": "Aegis",
+      "view": "Combat",
+      "close_up": true,
+      "art_review": false,
+      "log": "Capture-Combat-20261016-003705-763.log"
+    },
+    {
+      "file": "Art/Previews/ReferenceV7-Ember-APC-CloseUp.png",
+      "sha256": "753b4223b8c28f44323266d70ecc4c4628bbc599ea12b9891888fc332d93191e",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "faction": "Ember",
+      "view": "Combat",
+      "close_up": true,
+      "art_review": false,
+      "log": "Capture-Combat-20261016-003719-564.log"
+    },
+    {
+      "file": "Art/Previews/ReferenceV7-UI-1280.png",
+      "sha256": "56741624defbb7a2b381720475ee32f5d78d9c6917c355346952953775b70a3c",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "faction": "Aegis",
+      "view": "Battle",
+      "close_up": false,
+      "art_review": false,
+      "log": "Capture-Battle-20261016-003747-194.log"
+    }
+  ],
+  "limitation": "Real normal gameplay fog and HUD; close-up entries use a nearer camera, not different models. No full concept-parity claim."
+}

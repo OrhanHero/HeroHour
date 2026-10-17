@@ -1,0 +1,28 @@
+{
+  "name": "SM_PV5_CurbStrip",
+  "seed": 150151,
+  "triangles": 864,
+  "dimensions_m": [
+    2.9800000190734863,
+    0.25999999046325684,
+    0.2069999873638153
+  ],
+  "materials": [
+    "Concrete",
+    "Dust"
+  ],
+  "pivot": "ground origin z=0",
+  "collision": "none",
+  "navigation": "decoration only; does not affect navigation",
+  "non_manifold_edges": 0,
+  "uv_mapping": "dominant plane; 1 UV unit = 1 metre",
+  "fbx_roundtrip": {
+    "passed": true,
+    "dimensions_m": [
+      2.9800000190734863,
+      0.25999999046325684,
+      0.2069999873638153
+    ]
+  },
+  "validation": "PASS"
+}

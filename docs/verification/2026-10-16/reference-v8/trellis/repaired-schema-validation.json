@@ -1,0 +1,8 @@
+{
+  "errors": [],
+  "passed": true,
+  "http_methods": [
+    "GET"
+  ],
+  "inference_queued": false
+}

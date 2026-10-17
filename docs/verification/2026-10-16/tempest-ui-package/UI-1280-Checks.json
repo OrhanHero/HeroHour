@@ -1,0 +1,36 @@
+[
+  {
+    "suite": "UI",
+    "faction": "Aegis",
+    "result": "PASS",
+    "checks": 73,
+    "log": "UITest-Aegis-20261016-213947-723-495a0b7e.log",
+    "log_sha256": "c26eb64c5cf6d9813e1cf856150e66a49d072b7104806c4f622a329d069378ac",
+    "command_line": "/Game/Maps/CityHero -game -unattended -nosound -PrototypeUITest -abslog=C:\\Users\\Hero\\HeroHour\\Saved\\Logs\\UITest-Aegis-20261016-213947-723-495a0b7e.log -windowed -ForceRes -ResX=1280 -ResY=720",
+    "log_first_utc": "2026-10-16T19:39:48.018000+00:00",
+    "natural_rounds": [
+      "1"
+    ],
+    "viewport": [
+      1280,
+      720
+    ]
+  },
+  {
+    "suite": "UI",
+    "faction": "Ember",
+    "result": "PASS",
+    "checks": 73,
+    "log": "UITest-Ember-20261016-213952-621-77a0b6a6.log",
+    "log_sha256": "120b60924e127d5136ba0e9151a3ea63aedaf2d6e26fe41e2b3a688aee0a5515",
+    "command_line": "/Game/Maps/CityHero -game -unattended -nosound -PrototypeUITest -abslog=C:\\Users\\Hero\\HeroHour\\Saved\\Logs\\UITest-Ember-20261016-213952-621-77a0b6a6.log -FactionEmber -windowed -ForceRes -ResX=1280 -ResY=720",
+    "log_first_utc": "2026-10-16T19:39:52.911000+00:00",
+    "natural_rounds": [
+      "1"
+    ],
+    "viewport": [
+      1280,
+      720
+    ]
+  }
+]

@@ -1,0 +1,55 @@
+{
+  "schema": "HeroHour.Captures.v2",
+  "package": {
+    "CreatedUtc": "2026-10-15T17:35:27.7561703Z",
+    "Configuration": "Development",
+    "Platform": "Windows",
+    "PackagingLog": "C:\\Users\\Hero\\HeroHour\\Saved\\Logs\\Packaging-20261015-193450-794.log",
+    "Map": "/Game/Maps/CityHero",
+    "HeroAssetsExplicitlyCooked": true
+  },
+  "executable_sha256": "12abef1aa6adb800c52b43a30876b0a249780a61539f10b92091813c8896e945",
+  "captures": [
+    {
+      "artifact": "Art/Previews/ConceptV6-Aegis.png",
+      "kind": "gameplay",
+      "width": 1600,
+      "height": 900,
+      "sha256": "27ddd08657f71cdd268f80d8f2167d06db948d31c16a5061d90e6c65c7610417",
+      "visually_inspected": true
+    },
+    {
+      "artifact": "Art/Previews/ConceptV6-Ember.png",
+      "kind": "gameplay",
+      "width": 1600,
+      "height": 900,
+      "sha256": "2279d11fe42205a7aa11ad5e143dcf94935d75fd439475ab4d5154994763c0e1",
+      "visually_inspected": true
+    },
+    {
+      "artifact": "Art/Previews/ConceptV6-Combat.png",
+      "kind": "gameplay",
+      "width": 1600,
+      "height": 900,
+      "sha256": "3023eb79751357a702e75a77864d70be280c16c5637af1f5551f048398888dc3",
+      "visually_inspected": true
+    },
+    {
+      "artifact": "Art/Previews/ConceptV6-ArtReview-Overview.png",
+      "kind": "art-review",
+      "width": 1600,
+      "height": 900,
+      "sha256": "4ac8d911f1e6e5aa67e1c572425dd5c4e609f00fa941a8a768dd569cc638031a",
+      "visually_inspected": true
+    },
+    {
+      "artifact": "Art/Previews/ConceptV6-ArtReview-District.png",
+      "kind": "art-review",
+      "width": 1600,
+      "height": 900,
+      "sha256": "b4fc14595a9e0f433f785270b51e2320454e2f904f53377c0310a7717aa3d08c",
+      "visually_inspected": true
+    }
+  ],
+  "limits": "Gameplay captures retain fog and HUD. Art-review captures deliberately omit visible fog and HUD for geometry inspection; not manual-play or concept-parity proof."
+}

@@ -1,0 +1,295 @@
+{
+  "method": "read-only SHA-256, Pillow image header, complete selected UI directory inventory, bounded literal string search",
+  "screenshot": {
+    "path": "Saved/Research/TempestRising/reference-live-base.png",
+    "sha256": "5196dc1b861c5d387c363764e2ee0ce3fae0bbefc8e2deb64b8b5c38047b229e",
+    "bytes": 649410,
+    "width": 2560,
+    "height": 1440,
+    "actual_format": "JPEG",
+    "provenance": "Existing 2026-10-14 Veti runtime frame; docs/WORKLOG_2026-10-14.md and TempestRising-Systems-Evidence.md",
+    "limits": "One retained frame; timer 2:08; unlimited credits; no new runtime actions; not queue/tooltip animation proof"
+  },
+  "editor_ui_inventory": [
+    {
+      "path": "MapEditorProject/Content/Tempest/UI/Materials/Functions/MF_GetSelectionColor.uasset",
+      "bytes": 14174,
+      "sha256": "c3d11ee4461a80ea81c32c84dfbb2af84d8bcc84d905908e81e0180df93e1cd8"
+    },
+    {
+      "path": "MapEditorProject/Content/Tempest/UI/Materials/MPC_UI.uasset",
+      "bytes": 6281,
+      "sha256": "84392ebbca7751b72c7c8ac880d95faa82c8ea7f96c4e4b54d6c29a2f220a482"
+    },
+    {
+      "path": "MapEditorProject/Content/Tempest/UI/Materials/MPC_UI_Constant.uasset",
+      "bytes": 5913,
+      "sha256": "704324d8b6896144cd21693951dbcf194015e7d0d6f64b2231bfea8b38a987a2"
+    }
+  ],
+  "shipping": {
+    "sha256": "c81828f4749ae1bbac73106f905a81c3ea1bff9cee7300291c3c390def04be56",
+    "bytes": 166518344,
+    "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\Tempest\\Binaries\\Win64\\Tempest-Win64-Shipping.exe",
+    "matches": [
+      {
+        "term": "ProductionQueue",
+        "encoding": "ascii",
+        "file_offsets": [
+          134998974,
+          137431168,
+          137476608,
+          137570207,
+          137779759
+        ],
+        "limit": 16,
+        "saturated": false
+      },
+      {
+        "term": "ProductionQueue",
+        "encoding": "utf-16-le",
+        "file_offsets": [
+          134998588,
+          137476304,
+          137481024,
+          137486352
+        ],
+        "limit": 16,
+        "saturated": false
+      },
+      {
+        "term": "BuildMenu",
+        "encoding": "ascii",
+        "file_offsets": [],
+        "limit": 16,
+        "saturated": false
+      },
+      {
+        "term": "BuildMenu",
+        "encoding": "utf-16-le",
+        "file_offsets": [],
+        "limit": 16,
+        "saturated": false
+      },
+      {
+        "term": "Radar",
+        "encoding": "ascii",
+        "file_offsets": [
+          135734070,
+          135765522,
+          137983081,
+          137983385
+        ],
+        "limit": 16,
+        "saturated": false
+      },
+      {
+        "term": "Radar",
+        "encoding": "utf-16-le",
+        "file_offsets": [
+          137948690,
+          137948770,
+          137951738
+        ],
+        "limit": 16,
+        "saturated": false
+      },
+      {
+        "term": "Tooltip",
+        "encoding": "ascii",
+        "file_offsets": [
+          120838401,
+          126827688,
+          131322504,
+          134971305,
+          135119936,
+          135119960,
+          135376869,
+          135377346,
+          135377526,
+          135380864,
+          135381742,
+          135385947,
+          135385983,
+          135386002,
+          135495944,
+          135833796
+        ],
+        "limit": 16,
+        "saturated": true
+      },
+      {
+        "term": "Tooltip",
+        "encoding": "utf-16-le",
+        "file_offsets": [
+          120730528,
+          120743828,
+          120744020,
+          120754600,
+          120756374,
+          120756570,
+          120757166,
+          120760022,
+          120760384,
+          120845020,
+          120849864,
+          129745976,
+          134693636,
+          134973680,
+          134976296,
+          135298400
+        ],
+        "limit": 16,
+        "saturated": true
+      },
+      {
+        "term": "UITheme",
+        "encoding": "ascii",
+        "file_offsets": [
+          137533662,
+          137553771
+        ],
+        "limit": 16,
+        "saturated": false
+      },
+      {
+        "term": "UITheme",
+        "encoding": "utf-16-le",
+        "file_offsets": [],
+        "limit": 16,
+        "saturated": false
+      },
+      {
+        "term": "ThemeColor",
+        "encoding": "ascii",
+        "file_offsets": [
+          136078088,
+          136078104
+        ],
+        "limit": 16,
+        "saturated": false
+      },
+      {
+        "term": "ThemeColor",
+        "encoding": "utf-16-le",
+        "file_offsets": [],
+        "limit": 16,
+        "saturated": false
+      },
+      {
+        "term": "Hovered",
+        "encoding": "ascii",
+        "file_offsets": [
+          120619078,
+          120619272,
+          120619715,
+          120619745,
+          120619800,
+          120621152,
+          120621236,
+          120624224,
+          120632673,
+          120632767,
+          120632844,
+          120632930,
+          120632984,
+          120633063,
+          120633296,
+          120637104
+        ],
+        "limit": 16,
+        "saturated": true
+      },
+      {
+        "term": "Hovered",
+        "encoding": "utf-16-le",
+        "file_offsets": [
+          120757716,
+          126040926,
+          134219224,
+          137816854,
+          138229816,
+          138262544,
+          139539668
+        ],
+        "limit": 16,
+        "saturated": false
+      },
+      {
+        "term": "Disabled",
+        "encoding": "ascii",
+        "file_offsets": [
+          120160007,
+          120567678,
+          120637120,
+          120637160,
+          120650568,
+          120650592,
+          120689758,
+          120819436,
+          120827700,
+          120827748,
+          120970481,
+          120970869,
+          120972542,
+          120973688,
+          121098456,
+          121142230
+        ],
+        "limit": 16,
+        "saturated": true
+      },
+      {
+        "term": "Disabled",
+        "encoding": "utf-16-le",
+        "file_offsets": [
+          119901008,
+          119948968,
+          119969502,
+          119976888,
+          119978682,
+          119990728,
+          120160986,
+          120164526,
+          120365244,
+          120653254,
+          120965222,
+          121014618,
+          121067046,
+          121067182,
+          121067214,
+          122799796
+        ],
+        "limit": 16,
+        "saturated": true
+      },
+      {
+        "term": "SelectedUnit",
+        "encoding": "ascii",
+        "file_offsets": [
+          135037027,
+          135048765,
+          136716320,
+          136725467
+        ],
+        "limit": 16,
+        "saturated": false
+      },
+      {
+        "term": "SelectedUnit",
+        "encoding": "utf-16-le",
+        "file_offsets": [
+          135036630
+        ],
+        "limit": 16,
+        "saturated": false
+      }
+    ]
+  },
+  "limits": [
+    "No widget tree, font point size or UMG anchors decoded.",
+    "No asset pixels or game models extracted.",
+    "Approximate screen measurements are not original layout constants.",
+    "String presence proves only bytes, not behavior."
+  ]
+}

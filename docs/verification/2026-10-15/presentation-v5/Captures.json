@@ -1,0 +1,33 @@
+{
+  "schema": "HeroHour.Captures.v1",
+  "package": {
+    "CreatedUtc": "2026-10-15T16:09:49.5080994Z",
+    "Configuration": "Development",
+    "Platform": "Windows",
+    "PackagingLog": "C:\\Users\\Hero\\HeroHour\\Saved\\Logs\\Packaging-20261015-180917-692.log",
+    "Map": "/Game/Maps/CityHero",
+    "HeroAssetsExplicitlyCooked": true
+  },
+  "executable_sha256": "54292950892f8e02c55fc615356a9286e42eee52adbdfd3bffaa404c6f08ffc7",
+  "captures": [
+    {
+      "faction": "Aegis",
+      "artifact": "Art/Previews/PresentationV5-Aegis.png",
+      "capture_log": "Capture-Battle-20261015-181150-683.log",
+      "width": 1600,
+      "height": 900,
+      "sha256": "ef3ab16c8f96fda7ca7fa2cac8ac81454f3624b0d65f7bbbe9afca0497070a1f",
+      "visually_inspected": true
+    },
+    {
+      "faction": "Ember",
+      "artifact": "Art/Previews/PresentationV5-Ember.png",
+      "capture_log": "Capture-Battle-20261015-181205-095.log",
+      "width": 1600,
+      "height": 900,
+      "sha256": "d76fea52d179024f00cd3386ad4154df0c08fc5b6a961f7a222ee21a721f63f2",
+      "visually_inspected": true
+    }
+  ],
+  "limits": "Actual packaged offscreen captures. Shared faction geometry; no Tempest visual parity or manual-play claim."
+}

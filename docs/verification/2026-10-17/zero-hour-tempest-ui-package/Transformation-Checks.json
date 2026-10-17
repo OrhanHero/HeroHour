@@ -1,0 +1,302 @@
+{
+  "schema": "HeroHour.ZeroHourTempestUI.PackageChecks.v1",
+  "package": {
+    "CreatedUtc": "2026-10-17T00:09:58.9298367Z",
+    "Configuration": "Development",
+    "Platform": "Windows",
+    "PackagingLog": "C:\\Users\\Hero\\HeroHour\\Saved\\Logs\\Packaging-20261017-020857-747.log",
+    "Map": "/Game/Maps/CityHero",
+    "HeroAssetsExplicitlyCooked": true
+  },
+  "result": "PASS",
+  "required_suites": 19,
+  "tests": [
+    {
+      "suite": "Combat",
+      "faction": "Aegis",
+      "result": "PASS",
+      "checks": 17,
+      "log": "CombatTest-Aegis-20261017-021033-241-9f731b2b.log",
+      "log_sha256": "c1ac9b11e03b8373057d4214f1f109106484121976638e14ba44248c511ef59e",
+      "command_line": "/Game/Maps/CityHero -game -nullrhi -unattended -nosound -PrototypeCombatTest -abslog=C:\\Users\\Hero\\HeroHour\\Saved\\Logs\\CombatTest-Aegis-20261017-021033-241-9f731b2b.log",
+      "log_first_utc": "2026-10-17T00:10:34.201000+00:00",
+      "natural_rounds": [
+        "1",
+        "-1"
+      ]
+    },
+    {
+      "suite": "Economy",
+      "faction": "Aegis",
+      "result": "PASS",
+      "checks": 102,
+      "log": "EconomyTest-Aegis-20261017-021037-436-06bbdf1b.log",
+      "log_sha256": "ad7d72433d18e211421813f0c5985d0ff8e3a7a871b54a6285a0c1a64601f369",
+      "command_line": "/Game/Maps/CityHero -game -nullrhi -unattended -nosound -PrototypeEconomyTest -abslog=C:\\Users\\Hero\\HeroHour\\Saved\\Logs\\EconomyTest-Aegis-20261017-021037-436-06bbdf1b.log",
+      "log_first_utc": "2026-10-17T00:10:37.835000+00:00",
+      "natural_rounds": []
+    },
+    {
+      "suite": "Navigation",
+      "faction": "Aegis",
+      "result": "PASS",
+      "checks": 20,
+      "log": "NavigationTest-Aegis-20261017-021039-783-4b68d45b.log",
+      "log_sha256": "b5f06972acead7817f02be85fed9d70ff4c16dc34fca02d001cb183d0de20c4f",
+      "command_line": "/Game/Maps/CityHero -game -nullrhi -unattended -nosound -PrototypeNavigationTest -abslog=C:\\Users\\Hero\\HeroHour\\Saved\\Logs\\NavigationTest-Aegis-20261017-021039-783-4b68d45b.log",
+      "log_first_utc": "2026-10-17T00:10:40.134000+00:00",
+      "natural_rounds": []
+    },
+    {
+      "suite": "Match",
+      "faction": "Aegis",
+      "result": "PASS",
+      "checks": 0,
+      "log": "MatchTest-Aegis-20261017-021042-103-d557fc78.log",
+      "log_sha256": "b4cb13a0d5dc46e86a136420ce4bb2ee8e1405473be78c2978c6cd346a9c7e23",
+      "command_line": "/Game/Maps/CityHero -game -nullrhi -unattended -nosound -PrototypeMatchTest -abslog=C:\\Users\\Hero\\HeroHour\\Saved\\Logs\\MatchTest-Aegis-20261017-021042-103-d557fc78.log",
+      "log_first_utc": "2026-10-17T00:10:42.461000+00:00",
+      "natural_rounds": [
+        "1",
+        "1",
+        "1"
+      ]
+    },
+    {
+      "suite": "UI",
+      "faction": "Aegis",
+      "result": "PASS",
+      "checks": 76,
+      "log": "UITest-Aegis-20261017-021048-557-a245307a.log",
+      "log_sha256": "c3d35ed0d6e240d0d8cf06b753aa883a82e24a1581b483e612a1238e1a184ab4",
+      "command_line": "/Game/Maps/CityHero -game -unattended -nosound -PrototypeUITest -abslog=C:\\Users\\Hero\\HeroHour\\Saved\\Logs\\UITest-Aegis-20261017-021048-557-a245307a.log -windowed -ForceRes -ResX=1600 -ResY=900",
+      "log_first_utc": "2026-10-17T00:10:48.917000+00:00",
+      "natural_rounds": [
+        "1"
+      ],
+      "viewport": [
+        1600,
+        900
+      ]
+    },
+    {
+      "suite": "Architecture",
+      "faction": "Aegis",
+      "result": "PASS",
+      "checks": 63,
+      "log": "ArchitectureTest-Aegis-20261017-021053-922-82594fd9.log",
+      "log_sha256": "686ea2bf92c5b107ad1ea8390e68f5e3c79067afa80ec1adc4949a6d1074ea5c",
+      "command_line": "/Game/Maps/CityHero -game -nullrhi -unattended -nosound -PrototypeArchitectureTest -abslog=C:\\Users\\Hero\\HeroHour\\Saved\\Logs\\ArchitectureTest-Aegis-20261017-021053-922-82594fd9.log",
+      "log_first_utc": "2026-10-17T00:10:54.284000+00:00",
+      "natural_rounds": []
+    },
+    {
+      "suite": "Resource",
+      "faction": "Aegis",
+      "result": "PASS",
+      "checks": 18,
+      "log": "ResourceTest-Aegis-20261017-021056-317-a4f81594.log",
+      "log_sha256": "a5e9b54a6494bcee2d781e6c99e149f54f4d87cf5ee93f51ce0cd2198bc963fa",
+      "command_line": "/Game/Maps/CityHero -game -nullrhi -unattended -nosound -PrototypeResourceTest -abslog=C:\\Users\\Hero\\HeroHour\\Saved\\Logs\\ResourceTest-Aegis-20261017-021056-317-a4f81594.log",
+      "log_first_utc": "2026-10-17T00:10:56.657000+00:00",
+      "natural_rounds": []
+    },
+    {
+      "suite": "Docking",
+      "faction": "Aegis",
+      "result": "PASS",
+      "checks": 28,
+      "log": "DockingTest-Aegis-20261017-021058-650-75488e72.log",
+      "log_sha256": "a748c08c3d39c26e9e9ee2af6aa3ade0d083589d4edc07d0a509925afab486a2",
+      "command_line": "/Game/Maps/CityHero -game -nullrhi -unattended -nosound -PrototypeDockingTest -abslog=C:\\Users\\Hero\\HeroHour\\Saved\\Logs\\DockingTest-Aegis-20261017-021058-650-75488e72.log",
+      "log_first_utc": "2026-10-17T00:10:59.027000+00:00",
+      "natural_rounds": []
+    },
+    {
+      "suite": "Tactical",
+      "faction": "Aegis",
+      "result": "PASS",
+      "checks": 50,
+      "log": "TacticalTest-Aegis-20261017-021101-040-833b627d.log",
+      "log_sha256": "f64e9b468a93f7859167ee079bc3edcee7eb558d0eead96065030174c33fd3ad",
+      "command_line": "/Game/Maps/CityHero -game -nullrhi -unattended -nosound -PrototypeTacticalTest -abslog=C:\\Users\\Hero\\HeroHour\\Saved\\Logs\\TacticalTest-Aegis-20261017-021101-040-833b627d.log",
+      "log_first_utc": "2026-10-17T00:11:01.399000+00:00",
+      "natural_rounds": []
+    },
+    {
+      "suite": "Visibility",
+      "faction": "Aegis",
+      "result": "PASS",
+      "checks": 25,
+      "log": "VisibilityTest-Aegis-20261017-021103-302-741e2f9d.log",
+      "log_sha256": "c1fdd8c47ec3f8a05062d148b3c2c0860cb29d1b8f9f36dac13a3051b3c075a8",
+      "command_line": "/Game/Maps/CityHero -game -nullrhi -unattended -nosound -PrototypeVisibilityTest -abslog=C:\\Users\\Hero\\HeroHour\\Saved\\Logs\\VisibilityTest-Aegis-20261017-021103-302-741e2f9d.log",
+      "log_first_utc": "2026-10-17T00:11:03.651000+00:00",
+      "natural_rounds": []
+    },
+    {
+      "suite": "Systems",
+      "faction": "Aegis",
+      "result": "PASS",
+      "checks": 54,
+      "log": "SystemsTest-Aegis-20261017-021105-552-a246c1c7.log",
+      "log_sha256": "3f49e50bb0cd885608fbc2110c701d98f3d90cb4c3b45653c73834d766f89fe3",
+      "command_line": "/Game/Maps/CityHero -game -nullrhi -unattended -nosound -PrototypeSystemsTest -abslog=C:\\Users\\Hero\\HeroHour\\Saved\\Logs\\SystemsTest-Aegis-20261017-021105-552-a246c1c7.log",
+      "log_first_utc": "2026-10-17T00:11:05.907000+00:00",
+      "natural_rounds": []
+    },
+    {
+      "suite": "FullMatch",
+      "faction": "Aegis",
+      "result": "PASS",
+      "checks": 17,
+      "log": "FullMatchTest-Aegis-20261017-021107-816-575d390e.log",
+      "log_sha256": "36065a52a4932bd969b6f262c911a96d245314cb2de47f75775c95d61a55f05f",
+      "command_line": "/Game/Maps/CityHero -game -nullrhi -unattended -nosound -PrototypeFullMatchTest -abslog=C:\\Users\\Hero\\HeroHour\\Saved\\Logs\\FullMatchTest-Aegis-20261017-021107-816-575d390e.log",
+      "log_first_utc": "2026-10-17T00:11:08.182000+00:00",
+      "natural_rounds": [
+        "1",
+        "-1"
+      ]
+    },
+    {
+      "suite": "Presentation",
+      "faction": "Aegis",
+      "result": "PASS",
+      "checks": 177,
+      "log": "PresentationTest-Aegis-20261017-021111-131-269e4175.log",
+      "log_sha256": "ae6e6f8369949e8b547bf34848b0428163d885f2749bf8d62869aafcf24e4a24",
+      "command_line": "/Game/Maps/CityHero -game -nullrhi -unattended -nosound -PrototypePresentationTest -abslog=C:\\Users\\Hero\\HeroHour\\Saved\\Logs\\PresentationTest-Aegis-20261017-021111-131-269e4175.log",
+      "log_first_utc": "2026-10-17T00:11:11.472000+00:00",
+      "natural_rounds": []
+    },
+    {
+      "suite": "LogisticsStress",
+      "faction": "Aegis",
+      "result": "PASS",
+      "checks": 0,
+      "log": "LogisticsStressTest-Aegis-20261017-021113-338-677b9e77.log",
+      "log_sha256": "bd19c67907bc5dff528b304e27f661e72dfe246977408ad3c364f9fc58b8c13e",
+      "command_line": "/Game/Maps/CityHero -game -nullrhi -unattended -nosound -PrototypeLogisticsStressTest -abslog=C:\\Users\\Hero\\HeroHour\\Saved\\Logs\\LogisticsStressTest-Aegis-20261017-021113-338-677b9e77.log",
+      "log_first_utc": "2026-10-17T00:11:13.676000+00:00",
+      "natural_rounds": [
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1"
+      ]
+    },
+    {
+      "suite": "FullMatch",
+      "faction": "Ember",
+      "result": "PASS",
+      "checks": 17,
+      "log": "FullMatchTest-Ember-20261017-021256-904-c1d292e1.log",
+      "log_sha256": "07ceaac8a3a97b2ae96cf7fd672cfb43defbcb26b5ee8970727fceae794acfc5",
+      "command_line": "/Game/Maps/CityHero -game -nullrhi -unattended -nosound -PrototypeFullMatchTest -abslog=C:\\Users\\Hero\\HeroHour\\Saved\\Logs\\FullMatchTest-Ember-20261017-021256-904-c1d292e1.log -FactionEmber",
+      "log_first_utc": "2026-10-17T00:12:57.228000+00:00",
+      "natural_rounds": [
+        "1",
+        "-1"
+      ]
+    },
+    {
+      "suite": "Match",
+      "faction": "Ember",
+      "result": "PASS",
+      "checks": 0,
+      "log": "MatchTest-Ember-20261017-021259-337-c460e825.log",
+      "log_sha256": "29c67bbd989063b4fd5a5dae764d836e78d47e8b983505e342b38f699f31d0a3",
+      "command_line": "/Game/Maps/CityHero -game -nullrhi -unattended -nosound -PrototypeMatchTest -abslog=C:\\Users\\Hero\\HeroHour\\Saved\\Logs\\MatchTest-Ember-20261017-021259-337-c460e825.log -FactionEmber",
+      "log_first_utc": "2026-10-17T00:12:59.693000+00:00",
+      "natural_rounds": [
+        "1",
+        "1",
+        "1"
+      ]
+    },
+    {
+      "suite": "UI",
+      "faction": "Ember",
+      "result": "PASS",
+      "checks": 76,
+      "log": "UITest-Ember-20261017-021304-779-1cb0c497.log",
+      "log_sha256": "a2ca80bb3f7780d04b979ee0d1b5c117fd6349fa66cb953e232a8f008e5bf58b",
+      "command_line": "/Game/Maps/CityHero -game -unattended -nosound -PrototypeUITest -abslog=C:\\Users\\Hero\\HeroHour\\Saved\\Logs\\UITest-Ember-20261017-021304-779-1cb0c497.log -FactionEmber -windowed -ForceRes -ResX=1600 -ResY=900",
+      "log_first_utc": "2026-10-17T00:13:05.107000+00:00",
+      "natural_rounds": [
+        "1"
+      ],
+      "viewport": [
+        1600,
+        900
+      ]
+    },
+    {
+      "suite": "Presentation",
+      "faction": "Ember",
+      "result": "PASS",
+      "checks": 177,
+      "log": "PresentationTest-Ember-20261017-021309-963-a88e8097.log",
+      "log_sha256": "844a2cb872a38114bef88d16ac7c28c1d6d02584058fed4ab70c9b634fd65434",
+      "command_line": "/Game/Maps/CityHero -game -nullrhi -unattended -nosound -PrototypePresentationTest -abslog=C:\\Users\\Hero\\HeroHour\\Saved\\Logs\\PresentationTest-Ember-20261017-021309-963-a88e8097.log -FactionEmber",
+      "log_first_utc": "2026-10-17T00:13:10.301000+00:00",
+      "natural_rounds": []
+    },
+    {
+      "suite": "LogisticsStress",
+      "faction": "Ember",
+      "result": "PASS",
+      "checks": 0,
+      "log": "LogisticsStressTest-Ember-20261017-021312-146-de941ec0.log",
+      "log_sha256": "55f8fe2b7ce8a60338eaa0d6f6d931fedbf4bbef39651d26e690cc019a239af5",
+      "command_line": "/Game/Maps/CityHero -game -nullrhi -unattended -nosound -PrototypeLogisticsStressTest -abslog=C:\\Users\\Hero\\HeroHour\\Saved\\Logs\\LogisticsStressTest-Ember-20261017-021312-146-de941ec0.log -FactionEmber",
+      "log_first_utc": "2026-10-17T00:13:12.468000+00:00",
+      "natural_rounds": [
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1"
+      ]
+    }
+  ],
+  "assertion_checks": 917,
+  "natural_rounds": 46,
+  "executable_sha256": "f88e26718cccbae83b6860e508073e41f1a1029a79b769c3517dfc27998d43cf",
+  "build_info_sha256": "5292c2ea7355f183e465b36b5e6e22b7505110157da2320aa5531acd5c0d5a8a",
+  "packaging_log_sha256": "4823ff92803e1750285ea1d4fc9ef8844d3c7f1957fe2773656a273b5fada04d",
+  "scope": "19 required fresh packaged suites. UI uses 1600x900; additional 1280 runs and captures are separate evidence. PASS demonstrates functional regression checks, not perfect visual parity or whole-game completion.",
+  "rejected_earlier_editor_run": "UITest-Aegis-20261017-020306-783-a2afaa31.log failed six new geometry checks because the credits panel overlapped the command panel by six reference pixels. Resource Y was corrected from H-332 to H-344. Tests remained unchanged; that failed editor run is not relabelled PASS."
+}

@@ -1,0 +1,54 @@
+[
+  {
+    "log": "UITest-Aegis-20261017-020628-665-73a641eb.log",
+    "sha256": "1b9cde3a2f155ef695ac614b6372b2ce5467545dc7c7fdf3861cd894a7f765a6",
+    "checks": 76,
+    "command_line": "/Game/Maps/CityHero -game -unattended -nosound -PrototypeUITest -abslog=C:\\Users\\Hero\\HeroHour\\Saved\\Logs\\UITest-Aegis-20261017-020628-665-73a641eb.log -windowed -ForceRes -ResX=1600 -ResY=900",
+    "faction": "Aegis",
+    "viewport": [
+      1600,
+      900
+    ],
+    "result": "PASS",
+    "source": "Unreal editor game execution, not packaged executable"
+  },
+  {
+    "log": "UITest-Ember-20261017-020639-564-a9fd2515.log",
+    "sha256": "6d2ce1789ffd45f18258bed1d58230b758dd4eced8b10db7937c90261bd53310",
+    "checks": 76,
+    "command_line": "/Game/Maps/CityHero -game -unattended -nosound -PrototypeUITest -abslog=C:\\Users\\Hero\\HeroHour\\Saved\\Logs\\UITest-Ember-20261017-020639-564-a9fd2515.log -FactionEmber -windowed -ForceRes -ResX=1280 -ResY=720",
+    "faction": "Ember",
+    "viewport": [
+      1280,
+      720
+    ],
+    "result": "PASS",
+    "source": "Unreal editor game execution, not packaged executable"
+  },
+  {
+    "log": "UITest-Aegis-20261017-020836-242-de2a00d4.log",
+    "sha256": "3cfbfc4edcd5b56a041652093da957c8c96970ea7fa843e1fcf0b96aaf60612a",
+    "checks": 76,
+    "command_line": "/Game/Maps/CityHero -game -unattended -nosound -PrototypeUITest -abslog=C:\\Users\\Hero\\HeroHour\\Saved\\Logs\\UITest-Aegis-20261017-020836-242-de2a00d4.log -windowed -ForceRes -ResX=1280 -ResY=720",
+    "faction": "Aegis",
+    "viewport": [
+      1280,
+      720
+    ],
+    "result": "PASS",
+    "source": "Unreal editor game execution, not packaged executable"
+  },
+  {
+    "log": "UITest-Ember-20261017-020847-012-1f9985b9.log",
+    "sha256": "2f6c94e36130ac5fa501f99ba166aa066c7e3cf3da3b825f98ec4cab4c94033e",
+    "checks": 76,
+    "command_line": "/Game/Maps/CityHero -game -unattended -nosound -PrototypeUITest -abslog=C:\\Users\\Hero\\HeroHour\\Saved\\Logs\\UITest-Ember-20261017-020847-012-1f9985b9.log -FactionEmber -windowed -ForceRes -ResX=1600 -ResY=900",
+    "faction": "Ember",
+    "viewport": [
+      1600,
+      900
+    ],
+    "result": "PASS",
+    "source": "Unreal editor game execution, not packaged executable"
+  }
+]

@@ -1,0 +1,83 @@
+{
+  "name": "SM_HERO_Harvester",
+  "origin": "35 cm runtime unit anchor",
+  "zoffset_m": -0.35,
+  "forward_axis": "+X",
+  "provenance": "Original HeroHour procedural geometry",
+  "feature_summary": [
+    "six wheels with herringbone treads",
+    "armored forward cabin",
+    "resource pressure vessel",
+    "articulated rotary mining head",
+    "rear unloading coupler",
+    "team plates and fill gauge"
+  ],
+  "animation": "static mesh; moving parts require a later rig/component split",
+  "validation": "PASS",
+  "vertices": 19452,
+  "triangles": 36884,
+  "dimensions_m": [
+    3.8850055932998657,
+    2.0180001258850098,
+    2.0360282361507416
+  ],
+  "bounds_min_m": [
+    -1.9073922634124756,
+    -1.0090000629425049,
+    -0.3499999940395355
+  ],
+  "bounds_max_m": [
+    1.9776133298873901,
+    1.0090000629425049,
+    1.686028242111206
+  ],
+  "materials": [
+    "Dark",
+    "Armor",
+    "Rubber",
+    "Steel",
+    "Team",
+    "Glass",
+    "Lamp",
+    "Neon",
+    "Dust"
+  ],
+  "all_faces_triangles": true,
+  "nonmanifold_edges": 0,
+  "degenerate_faces": 0,
+  "uv_finite": true,
+  "fbx_roundtrip": {
+    "vertices": 19452,
+    "triangles": 36884,
+    "dimensions_m": [
+      3.8850055932998657,
+      2.0180004835128784,
+      2.0360282361507416
+    ],
+    "bounds_min_m": [
+      -1.9073922634124756,
+      -1.0090001821517944,
+      -0.3499999940395355
+    ],
+    "bounds_max_m": [
+      1.9776133298873901,
+      1.009000301361084,
+      1.686028242111206
+    ],
+    "materials": [
+      "Dark",
+      "Armor",
+      "Rubber",
+      "Steel",
+      "Team",
+      "Glass",
+      "Lamp",
+      "Neon",
+      "Dust"
+    ],
+    "all_faces_triangles": true,
+    "nonmanifold_edges": 0,
+    "degenerate_faces": 0,
+    "uv_finite": true
+  }
+}

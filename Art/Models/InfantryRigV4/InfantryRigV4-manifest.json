@@ -1,0 +1,92 @@
+{
+  "name": "SK_HR_Infantry",
+  "dimensions_m": [
+    0.9,
+    0.7,
+    1.8
+  ],
+  "min_z_m": -0.35,
+  "runtime_actor_z_cm": 35,
+  "runtime_scale": 1,
+  "fps": 30,
+  "bone_count": 14,
+  "triangles": 11076,
+  "material_slots": [
+    "Rubber",
+    "Dark",
+    "Armor",
+    "Steel",
+    "Neon",
+    "Team",
+    "Glass"
+  ],
+  "vertices_per_bone": {
+    "foot_l": 56,
+    "shin_l": 326,
+    "thigh_l": 120,
+    "hip": 530,
+    "foot_r": 56,
+    "shin_r": 326,
+    "thigh_r": 120,
+    "spine": 874,
+    "upperarm_l": 466,
+    "forearm_l": 412,
+    "upperarm_r": 466,
+    "forearm_r": 836,
+    "head": 1058
+  },
+  "original_geometry": true,
+  "original_keyframes": true,
+  "rigid_armour_weights": true,
+  "clips": {
+    "Idle": 2.0,
+    "Walk": 0.8,
+    "Fire": 0.3
+  },
+  "fbx_roundtrip": {
+    "passed": true,
+    "dimensions_m": [
+      0.9000000655651093,
+      0.7000001072883606,
+      1.7999998033046722
+    ],
+    "min_z_m": -0.34999987483024597,
+    "bones": [
+      "foot_l",
+      "foot_r",
+      "forearm_l",
+      "forearm_r",
+      "head",
+      "hip",
+      "root",
+      "shin_l",
+      "shin_r",
+      "spine",
+      "thigh_l",
+      "thigh_r",
+      "upperarm_l",
+      "upperarm_r"
+    ],
+    "weights_normalized": true,
+    "clips": [
+      {
+        "name": "AN_HR_Infantry_Idle",
+        "seconds": 2.0,
+        "animated_transform_delta": 0.011902451515197754,
+        "roundtrip_passed": true
+      },
+      {
+        "name": "AN_HR_Infantry_Walk",
+        "seconds": 0.8,
+        "animated_transform_delta": 0.3868090808391571,
+        "roundtrip_passed": true
+      },
+      {
+        "name": "AN_HR_Infantry_Fire",
+        "seconds": 0.3,
+        "animated_transform_delta": 0.02909288788214326,
+        "roundtrip_passed": true
+      }
+    ]
+  }
+}

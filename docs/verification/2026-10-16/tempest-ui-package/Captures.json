@@ -1,0 +1,160 @@
+{
+  "package": {
+    "CreatedUtc": "2026-10-16T19:36:08.6233213Z",
+    "Configuration": "Development",
+    "Platform": "Windows",
+    "PackagingLog": "C:\\Users\\Hero\\HeroHour\\Saved\\Logs\\Packaging-20261016-213531-028.log",
+    "Map": "/Game/Maps/CityHero",
+    "HeroAssetsExplicitlyCooked": true
+  },
+  "captures": [
+    {
+      "file": "Art/Previews/TempestUI-Package-Radar-Aegis-1600.png",
+      "sha256": "b825247b5a94c1fc08868898c049be3ccf6ce3bf6a37427393597f7f0af107ed",
+      "bytes": 1579758,
+      "dimensions": [
+        1600,
+        900
+      ],
+      "state": "Radar",
+      "faction": "Aegis",
+      "source": "packaged game",
+      "diagnostic_fixture": true,
+      "capture_log": "Capture-InterfaceFixture-20261016-213959-569.log",
+      "capture_log_sha256": "38d5b8931e3d078787769c7f58c2cd841ab2b2123c7224d925d7853c6fcc8a7d",
+      "command_line": "/Game/Maps/CityHero -game -RenderOffscreen -unattended -nosound -nosplash -windowed -ForceRes -ResX=1600 -ResY=900 -PrototypeCaptureExit -PrototypeInterfaceCapture -abslog=C:\\Users\\Hero\\HeroHour\\Saved\\Logs\\Capture-InterfaceFixture-20261016-213959-569.log -PrototypeCaptureDelay=8 -PrototypeUIState=Radar",
+      "fixture_markers": [
+        "[2026.10.16-19.40.09:133][328]LogTemp: Display: UI_CAPTURE_FIXTURE state=Radar unnatural_fixture=1 result=PASS radar=1 power_current=210 power_required=90 production_rate=1.00 selected=1 queue=0 credits=828 group1=0 paused=0 outcome=0"
+      ],
+      "screenshot_marker": "[2026.10.16-19.40.09:133][328]LogTemp: Display: UI_CAPTURE_FIXTURE state=Radar unnatural_fixture=1 result=PASS radar=1 power_current=210 power_required=90 production_rate=1.00 selected=1 queue=0 credits=828 group1=0 paused=0 outcome=0",
+      "limitation": "Deterministic diagnostic setup, not a naturally played match; a still does not prove interaction, timing or complete visual parity."
+    },
+    {
+      "file": "Art/Previews/TempestUI-Package-LowPower-Aegis-1280.png",
+      "sha256": "1544ef0d024a68a31f3031cd9d47b0e8490bdc02e247685f9661882638a9fc94",
+      "bytes": 1062880,
+      "dimensions": [
+        1280,
+        720
+      ],
+      "state": "LowPower",
+      "faction": "Aegis",
+      "source": "packaged game",
+      "diagnostic_fixture": true,
+      "capture_log": "Capture-InterfaceFixture-20261016-214013-358.log",
+      "capture_log_sha256": "437f7ade4f6e1756a57fe6783614ec3f3e3f25b6e0b2bccc8b0336b8e8621e74",
+      "command_line": "/Game/Maps/CityHero -game -RenderOffscreen -unattended -nosound -nosplash -windowed -ForceRes -ResX=1280 -ResY=720 -PrototypeCaptureExit -PrototypeInterfaceCapture -abslog=C:\\Users\\Hero\\HeroHour\\Saved\\Logs\\Capture-InterfaceFixture-20261016-214013-358.log -PrototypeCaptureDelay=8 -PrototypeUIState=LowPower",
+      "fixture_markers": [
+        "[2026.10.16-19.40.22:944][174]LogTemp: Display: UI_CAPTURE_FIXTURE state=LowPower unnatural_fixture=1 result=PASS radar=0 power_current=60 power_required=170 production_rate=0.50 selected=1 queue=0 credits=828 group1=0 paused=0 outcome=0"
+      ],
+      "screenshot_marker": "[2026.10.16-19.40.22:944][174]LogTemp: Display: UI_CAPTURE_FIXTURE state=LowPower unnatural_fixture=1 result=PASS radar=0 power_current=60 power_required=170 production_rate=0.50 selected=1 queue=0 credits=828 group1=0 paused=0 outcome=0",
+      "limitation": "Deterministic diagnostic setup, not a naturally played match; a still does not prove interaction, timing or complete visual parity."
+    },
+    {
+      "file": "Art/Previews/TempestUI-Package-Multi-Ember-1280.png",
+      "sha256": "50da29c0622aff1f44ef1cb1542ba81cfc74000a0c75ff014c1b847210730a2f",
+      "bytes": 1075230,
+      "dimensions": [
+        1280,
+        720
+      ],
+      "state": "Multi",
+      "faction": "Ember",
+      "source": "packaged game",
+      "diagnostic_fixture": true,
+      "capture_log": "Capture-InterfaceFixture-20261016-214027-178.log",
+      "capture_log_sha256": "9e1ef4a81757d70451c3708cc2054d29499a294173a0eaf6088fea0b61475b6d",
+      "command_line": "/Game/Maps/CityHero -game -RenderOffscreen -unattended -nosound -nosplash -windowed -ForceRes -ResX=1280 -ResY=720 -PrototypeCaptureExit -PrototypeInterfaceCapture -abslog=C:\\Users\\Hero\\HeroHour\\Saved\\Logs\\Capture-InterfaceFixture-20261016-214027-178.log -PrototypeCaptureDelay=8 -PrototypeUIState=Multi -FactionEmber",
+      "fixture_markers": [
+        "[2026.10.16-19.40.36:775][ 55]LogTemp: Display: UI_CAPTURE_FIXTURE state=Multi unnatural_fixture=1 result=PASS radar=1 power_current=210 power_required=90 production_rate=1.00 selected=4 queue=0 credits=848 group1=4 paused=0 outcome=0"
+      ],
+      "screenshot_marker": "[2026.10.16-19.40.36:775][ 55]LogTemp: Display: UI_CAPTURE_FIXTURE state=Multi unnatural_fixture=1 result=PASS radar=1 power_current=210 power_required=90 production_rate=1.00 selected=4 queue=0 credits=848 group1=4 paused=0 outcome=0",
+      "limitation": "Deterministic diagnostic setup, not a naturally played match; a still does not prove interaction, timing or complete visual parity."
+    },
+    {
+      "file": "Art/Previews/TempestUI-Package-Production-Aegis-1600.png",
+      "sha256": "996424ee0c4e8add290e1c10e8b2679eb395f6b0791ae7952a8b9b5caa35c7a7",
+      "bytes": 1586583,
+      "dimensions": [
+        1600,
+        900
+      ],
+      "state": "Production",
+      "faction": "Aegis",
+      "source": "packaged game",
+      "diagnostic_fixture": true,
+      "capture_log": "Capture-InterfaceFixture-20261016-214041-028.log",
+      "capture_log_sha256": "86b66d6fbb95fd43dea7447f6364b4cbd9c28ac247e6b176c179f045a5c98d01",
+      "command_line": "/Game/Maps/CityHero -game -RenderOffscreen -unattended -nosound -nosplash -windowed -ForceRes -ResX=1600 -ResY=900 -PrototypeCaptureExit -PrototypeInterfaceCapture -abslog=C:\\Users\\Hero\\HeroHour\\Saved\\Logs\\Capture-InterfaceFixture-20261016-214041-028.log -PrototypeCaptureDelay=8 -PrototypeUIState=Production",
+      "fixture_markers": [
+        "[2026.10.16-19.40.50:643][ 12]LogTemp: Display: UI_CAPTURE_FIXTURE state=Production unnatural_fixture=1 explicit_wallet_seed=1600 real_paid_orders=3 result=PASS",
+        "[2026.10.16-19.40.50:643][ 12]LogTemp: Display: UI_CAPTURE_FIXTURE state=Production unnatural_fixture=1 result=PASS radar=0 power_current=210 power_required=110 production_rate=1.00 selected=1 queue=3 credits=1300 group1=0 paused=0 outcome=0"
+      ],
+      "screenshot_marker": "[2026.10.16-19.40.50:643][ 12]LogTemp: Display: UI_CAPTURE_FIXTURE state=Production unnatural_fixture=1 result=PASS radar=0 power_current=210 power_required=110 production_rate=1.00 selected=1 queue=3 credits=1300 group1=0 paused=0 outcome=0",
+      "limitation": "Deterministic diagnostic setup, not a naturally played match; a still does not prove interaction, timing or complete visual parity."
+    },
+    {
+      "file": "Art/Previews/TempestUI-Package-Tooltip-Ember-1600.png",
+      "sha256": "cba80cecb12ddd07511ff7dd461818b0cd90569b7d7bb1a088a2045fade1e65d",
+      "bytes": 1534019,
+      "dimensions": [
+        1600,
+        900
+      ],
+      "state": "Tooltip",
+      "faction": "Ember",
+      "source": "packaged game",
+      "diagnostic_fixture": true,
+      "capture_log": "Capture-InterfaceFixture-20261016-214054-825.log",
+      "capture_log_sha256": "ef33ffc7d652e9a3ef968d7c9b7559194bf68e82075032f52c5c9ccd6a0717de",
+      "command_line": "/Game/Maps/CityHero -game -RenderOffscreen -unattended -nosound -nosplash -windowed -ForceRes -ResX=1600 -ResY=900 -PrototypeCaptureExit -PrototypeInterfaceCapture -abslog=C:\\Users\\Hero\\HeroHour\\Saved\\Logs\\Capture-InterfaceFixture-20261016-214054-825.log -PrototypeCaptureDelay=8 -PrototypeUIState=Tooltip -FactionEmber",
+      "fixture_markers": [
+        "[2026.10.16-19.41.04:387][972]LogTemp: Display: UI_CAPTURE_FIXTURE state=Tooltip unnatural_fixture=1 result=PASS radar=1 power_current=210 power_required=90 production_rate=1.00 selected=1 queue=0 credits=848 group1=0 paused=0 outcome=0"
+      ],
+      "screenshot_marker": "[2026.10.16-19.41.04:387][972]LogTemp: Display: UI_CAPTURE_FIXTURE state=Tooltip unnatural_fixture=1 result=PASS radar=1 power_current=210 power_required=90 production_rate=1.00 selected=1 queue=0 credits=848 group1=0 paused=0 outcome=0",
+      "limitation": "Deterministic diagnostic setup, not a naturally played match; a still does not prove interaction, timing or complete visual parity."
+    },
+    {
+      "file": "Art/Previews/TempestUI-Package-Pause-Aegis-1600.png",
+      "sha256": "db25f10e3eeae1c6d76324e9acf6cc6afe1fb460f8b967da3f778f048310c4cf",
+      "bytes": 950462,
+      "dimensions": [
+        1600,
+        900
+      ],
+      "state": "Pause",
+      "faction": "Aegis",
+      "source": "packaged game",
+      "diagnostic_fixture": true,
+      "capture_log": "Capture-InterfaceFixture-20261016-214108-616.log",
+      "capture_log_sha256": "978f28018b4bd6a2caeff0048f58b0cc54042453d326ba50b135f5e6ec3b4477",
+      "command_line": "/Game/Maps/CityHero -game -RenderOffscreen -unattended -nosound -nosplash -windowed -ForceRes -ResX=1600 -ResY=900 -PrototypeCaptureExit -PrototypeInterfaceCapture -abslog=C:\\Users\\Hero\\HeroHour\\Saved\\Logs\\Capture-InterfaceFixture-20261016-214108-616.log -PrototypeCaptureDelay=8 -PrototypeUIState=Pause",
+      "fixture_markers": [
+        "[2026.10.16-19.41.18:207][216]LogTemp: Display: UI_CAPTURE_FIXTURE state=Pause unnatural_fixture=1 result=PASS radar=1 power_current=210 power_required=90 production_rate=1.00 selected=1 queue=0 credits=828 group1=0 paused=1 outcome=0"
+      ],
+      "screenshot_marker": "[2026.10.16-19.41.18:207][216]LogTemp: Display: UI_CAPTURE_FIXTURE state=Pause unnatural_fixture=1 result=PASS radar=1 power_current=210 power_required=90 production_rate=1.00 selected=1 queue=0 credits=828 group1=0 paused=1 outcome=0",
+      "limitation": "Deterministic diagnostic setup, not a naturally played match; a still does not prove interaction, timing or complete visual parity."
+    },
+    {
+      "file": "Art/Previews/TempestUI-Package-Victory-Ember-1280.png",
+      "sha256": "b5313d6698aa65224f53392b79be1b42390e86fb7039d422a607e81c2e21630f",
+      "bytes": 655748,
+      "dimensions": [
+        1280,
+        720
+      ],
+      "state": "Victory",
+      "faction": "Ember",
+      "source": "packaged game",
+      "diagnostic_fixture": true,
+      "capture_log": "Capture-InterfaceFixture-20261016-214122-448.log",
+      "capture_log_sha256": "67dc2407bbaf3a9e4263b5de40905f4066d5fe9c739ab1c42637731ff048f031",
+      "command_line": "/Game/Maps/CityHero -game -RenderOffscreen -unattended -nosound -nosplash -windowed -ForceRes -ResX=1280 -ResY=720 -PrototypeCaptureExit -PrototypeInterfaceCapture -abslog=C:\\Users\\Hero\\HeroHour\\Saved\\Logs\\Capture-InterfaceFixture-20261016-214122-448.log -PrototypeCaptureDelay=8 -PrototypeUIState=Victory -FactionEmber",
+      "fixture_markers": [
+        "[2026.10.16-19.41.32:082][167]LogTemp: Display: UI_CAPTURE_FIXTURE state=Victory unnatural_fixture=1 result=PASS radar=1 power_current=210 power_required=90 production_rate=1.00 selected=1 queue=0 credits=848 group1=0 paused=0 outcome=1"
+      ],
+      "screenshot_marker": "[2026.10.16-19.41.32:082][167]LogTemp: Display: UI_CAPTURE_FIXTURE state=Victory unnatural_fixture=1 result=PASS radar=1 power_current=210 power_required=90 production_rate=1.00 selected=1 queue=0 credits=848 group1=0 paused=0 outcome=1",
+      "limitation": "Deterministic diagnostic setup, not a naturally played match; a still does not prove interaction, timing or complete visual parity."
+    }
+  ]
+}

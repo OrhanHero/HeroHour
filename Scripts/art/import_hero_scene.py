@@ -58,7 +58,7 @@ for actor in unreal.EditorLevelLibrary.get_all_level_actors():
  if actor.get_actor_label().startswith('HERO_ENV_'): unreal.EditorLevelLibrary.destroy_actor(actor)
 cube=unreal.load_asset('/Engine/BasicShapes/Cube')
 def prop(mesh,loc,label,rot=0,scale=None):
- a=unreal.EditorLevelLibrary.spawn_actor_from_class(unreal.StaticMeshActor,unreal.Vector(*loc),unreal.Rotator(0,rot,0))
+ a=unreal.EditorLevelLibrary.spawn_actor_from_class(unreal.StaticMeshActor,unreal.Vector(*loc),unreal.Rotator(pitch=0,yaw=rot,roll=0))
  a.set_actor_label('HERO_ENV_'+label); a.static_mesh_component.set_static_mesh(mesh)
  if scale: a.set_actor_scale3d(unreal.Vector(*scale))
  return a
@@ -68,7 +68,7 @@ for actor in unreal.EditorLevelLibrary.get_all_level_actors():
  if actor.get_actor_label()=='Prototype Ground':
   actor.set_actor_scale3d(unreal.Vector(100,100,1)); actor.static_mesh_component.set_material(0,materials['Asphalt'])
  if isinstance(actor,unreal.DirectionalLight):
-  actor.set_actor_rotation(unreal.Rotator(-48,-35,0),False)
+  actor.set_actor_rotation(unreal.Rotator(pitch=-48,yaw=-35,roll=0),False)
   actor.light_component.set_editor_property('intensity',9.0)
   actor.light_component.set_editor_property('light_color',unreal.Color(r=226,g=231,b=240,a=255))
  if isinstance(actor,unreal.SkyLight):
@@ -114,6 +114,6 @@ settings.set_editor_property('override_auto_exposure_bias',True); settings.set_e
 settings.set_editor_property('override_auto_exposure_apply_physical_camera_exposure',True)
 settings.set_editor_property('auto_exposure_apply_physical_camera_exposure',False)
 post.set_editor_property('settings',settings)
-unreal.EditorLevelLibrary.set_level_viewport_camera_info(unreal.Vector(-2700,-2700,3200),unreal.Rotator(-52,45,0))
+unreal.EditorLevelLibrary.set_level_viewport_camera_info(unreal.Vector(-2700,-2700,3200),unreal.Rotator(pitch=-52,yaw=45,roll=0))
 assert unreal.EditorLevelLibrary.save_current_level()
 unreal.log('HERO_ART_PASS_SAVED')

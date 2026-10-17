@@ -1,0 +1,27 @@
+{
+  "name": "SM_RF6_Dust",
+  "material": "Dust",
+  "pieces": 1711,
+  "triangles": 20532,
+  "dimensions_m": [
+    238.92999267578125,
+    168.92999267578125,
+    0.007999999448657036
+  ],
+  "expected_ue_bounds_cm": {
+    "min": [
+      -11486.5,
+      -8486.5,
+      0.1
+    ],
+    "max": [
+      12406.5,
+      8406.5,
+      0.9000000000000001
+    ]
+  },
+  "non_manifold_edges": 0,
+  "fbx_roundtrip": true,
+  "validation": "PASS",
+  "pivot": "world origin; source Y reflected to compensate FBX -> Unreal conversion"
+}

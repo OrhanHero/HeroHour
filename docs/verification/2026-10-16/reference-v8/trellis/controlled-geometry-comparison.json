@@ -1,0 +1,164 @@
+{
+  "results": [
+    {
+      "file": "DECIMATED_00001_.glb",
+      "sha256": "2ed10f66959377238ac6c4e2938c8894fcc863d7f06d06b84a48add769c5cc19",
+      "bytes": 441084,
+      "vertices": 18534,
+      "triangles": 17803,
+      "unique_positions": 8575,
+      "bounds_min": [
+        -0.5002541542053223,
+        -0.29682159423828125,
+        -0.3966541290283203
+      ],
+      "bounds_max": [
+        0.49951934814453125,
+        0.2966432571411133,
+        0.3948521614074707
+      ],
+      "zero_area": 4,
+      "duplicate_position_triangle_excess": 8,
+      "boundary_edges": 6448,
+      "nonmanifold_edges": 1311,
+      "area_percentiles": [
+        0.0,
+        9.354419580631657e-07,
+        3.1117317121243104e-05,
+        0.0024931524693965895,
+        0.03587612137198448
+      ],
+      "has_normals": false,
+      "has_uv": false
+    },
+    {
+      "file": "RAW_00001_.glb",
+      "sha256": "cc7309e87a424f63250a5b49cdf9336cc2739b0234986efb278701cb62cbabdc",
+      "bytes": 52772820,
+      "vertices": 1342444,
+      "triangles": 3054870,
+      "unique_positions": 1342444,
+      "bounds_min": [
+        -0.50030517578125,
+        -0.29920196533203125,
+        -0.39694690704345703
+      ],
+      "bounds_max": [
+        0.5001735687255859,
+        0.2970390319824219,
+        0.39513587951660156
+      ],
+      "zero_area": 0,
+      "duplicate_position_triangle_excess": 0,
+      "boundary_edges": 112268,
+      "nonmanifold_edges": 364031,
+      "area_percentiles": [
+        6.360414972483852e-10,
+        3.4820749988284666e-07,
+        1.8547963236414944e-06,
+        3.1790457751412767e-06,
+        8.472943591186777e-06
+      ],
+      "has_normals": false,
+      "has_uv": false
+    },
+    {
+      "file": "REMESHED512-RAW.glb",
+      "sha256": "de0e86bdacd6ce47f9ed7c15ceef9af0ba9c9f8795bd518f70218ab253e84222",
+      "bytes": 57647856,
+      "vertices": 1600462,
+      "triangles": 3203446,
+      "unique_positions": 1600462,
+      "bounds_min": [
+        -0.502163827419281,
+        -0.30101120471954346,
+        -0.39897415041923523
+      ],
+      "bounds_max": [
+        0.5020063519477844,
+        0.29899412393569946,
+        0.3970491886138916
+      ],
+      "zero_area": 0,
+      "duplicate_position_triangle_excess": 0,
+      "boundary_edges": 158,
+      "nonmanifold_edges": 668,
+      "area_percentiles": [
+        2.628786910374714e-10,
+        3.789502144968537e-07,
+        1.837798436099547e-06,
+        2.1258637616483605e-06,
+        3.0888268156559207e-06
+      ],
+      "has_normals": false,
+      "has_uv": false
+    },
+    {
+      "file": "REMESHED_00001_.glb",
+      "sha256": "a3b8ef64344ee0078cdd034fb7d26e51fff855625b958735496f7b1b423f5588",
+      "bytes": 16798760,
+      "vertices": 349991,
+      "triangles": 699820,
+      "unique_positions": 348812,
+      "bounds_min": [
+        -0.5020972490310669,
+        -0.3009175658226013,
+        -0.39893639087677
+      ],
+      "bounds_max": [
+        0.5019716024398804,
+        0.2989576458930969,
+        0.396925151348114
+      ],
+      "zero_area": 0,
+      "duplicate_position_triangle_excess": 1,
+      "boundary_edges": 158,
+      "nonmanifold_edges": 496,
+      "area_percentiles": [
+        4.292162003594058e-08,
+        7.575490900535442e-07,
+        5.487782800628338e-06,
+        2.4525615281163468e-05,
+        4.69701990368776e-05
+      ],
+      "has_normals": true,
+      "has_uv": false
+    },
+    {
+      "file": "UNWRAPPED_00001_.glb",
+      "sha256": "ef75d546654068da3d63bbb75fa3d41189e036c2a0498b5fef9fd18642a9aab2",
+      "bytes": 614556,
+      "vertices": 19789,
+      "triangles": 17796,
+      "unique_positions": 8572,
+      "bounds_min": [
+        -0.5002541542053223,
+        -0.29682159423828125,
+        -0.3966541290283203
+      ],
+      "bounds_max": [
+        0.49951934814453125,
+        0.2966432571411133,
+        0.3948521614074707
+      ],
+      "zero_area": 0,
+      "duplicate_position_triangle_excess": 9,
+      "boundary_edges": 6441,
+      "nonmanifold_edges": 1312,
+      "area_percentiles": [
+        3.012267413282643e-08,
+        9.603314993000823e-07,
+        3.1128494811127894e-05,
+        0.002493270812556147,
+        0.03587612137198448
+      ],
+      "has_normals": false,
+      "has_uv": true
+    }
+  ],
+  "limits": [
+    "Same seeds and inputs do not guarantee GPU bitwise determinism.",
+    "Position welding is exact; close positions may still appear separate.",
+    "No artistic acceptance without neutral three-dimensional view."
+  ]
+}

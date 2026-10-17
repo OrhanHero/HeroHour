@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <CUE4ParseSource Condition="'$(CUE4ParseSource)' == ''">$(MSBuildThisFileDirectory)..\..\..\Saved\Tools\CUE4Parse</CUE4ParseSource>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\TempestMappingsProbe\ReflectionJsonMappingsProvider.cs" Link="ReflectionJsonMappingsProvider.cs" />
+    <ProjectReference Include="$(CUE4ParseSource)\CUE4Parse\CUE4Parse.csproj" />
+    <ProjectReference Include="$(CUE4ParseSource)\CUE4Parse-Conversion\CUE4Parse-Conversion.csproj" />
+  </ItemGroup>
+</Project>

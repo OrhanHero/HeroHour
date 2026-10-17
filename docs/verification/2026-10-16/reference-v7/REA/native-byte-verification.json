@@ -1,0 +1,17 @@
+{
+  "target_path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Binaries\\Win64\\UnrealEditor-Tempest.dll",
+  "target_sha256": "2fff65ec4f3809e8f24010d5cbfa9ada2f2834b59c997569c219d6a494f0b4fa",
+  "body_evidence_id": "ev_6d3b6a254d08a1a880e2e4e97de0d12e23a4392cc2a5f979d2bef7c05e9d05c4",
+  "bytes_evidence_id": "ev_cb6c6b8b4e53fc5f4a15bcb14256a31cdbdf43f3dbd5c56a7cc6839dfa08c902",
+  "procedure": "ATempestFieldVolume::GenerateSplineMeshComps",
+  "image_base": "0x180000000",
+  "address": "0x1800dc950",
+  "rva": "0xdc950",
+  "file_offset": 900432,
+  "section": ".text",
+  "bytes": 1351,
+  "original_range_sha256": "87a879461f5c125bd3f6d322ee608d12083a00a076e368fdeabf98ab6b0bbe65",
+  "rea_loaded_bytes_sha256": "87a879461f5c125bd3f6d322ee608d12083a00a076e368fdeabf98ab6b0bbe65",
+  "equal": true,
+  "limit": "Static analyzed image byte anchoring only; not a recompilation oracle, decompiler correctness proof, or runtime observation."
+}

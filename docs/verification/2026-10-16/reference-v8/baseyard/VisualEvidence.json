@@ -1,0 +1,26 @@
+{
+  "date": "2026-10-16",
+  "capture_kind": "Unreal Editor runtime screenshots, not packaged-build acceptance",
+  "files": [
+    {
+      "path": "Art/Previews/ReferenceV8-Baseyard-Aegis-1600.png",
+      "bytes": 1448638,
+      "sha256": "7780fa7fc26bc8ae88eb6ae2bf9895aa6bcbaa28b9f4b634fca7aa3f756591d7"
+    },
+    {
+      "path": "Art/Previews/ReferenceV8-Baseyard-Ember-HQCloseUp.png",
+      "bytes": 1586336,
+      "sha256": "19fe40a83f7c67284752918041c35376468787d40159910b9b4eb65aa0a49051"
+    },
+    {
+      "path": "E:/HeroHour/Art/Concepts/HH Art/Codex-Bild 1. Sept. 2026, 01_22_20.png",
+      "bytes": 3302564,
+      "sha256": "6ba5782d17fd7274b7ac16cbf581357a830c1255db0c94faa8eb5e980a4f918e"
+    },
+    {
+      "path": "Saved/Logs/V8-BaseyardImport-Retry.log",
+      "bytes": 221334,
+      "sha256": "d52c3312fb584133920e3da35d11f7e47584d3dd2850a42521c4d22a0f702a45"
+    }
+  ]
+}

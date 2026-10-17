@@ -1,0 +1,565 @@
+{
+  "method": "bounded complete-type property frame decoder for two explicit editor MPC assets",
+  "results": [
+    {
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\UI\\Materials\\MPC_UI.uasset",
+      "sha256": "84392ebbca7751b72c7c8ac880d95faa82c8ea7f96c4e4b54d6c29a2f220a482",
+      "legacy_version": -8,
+      "ue4_version": 522,
+      "ue5_version": 1012,
+      "name_count": 42,
+      "name_map_offset": 351,
+      "total_header_size": 1941,
+      "vector_array_offset": 3692,
+      "declared_vector_count": 14,
+      "records": [
+        {
+          "name": "PlayerColor_0",
+          "name_map_value": "PlayerColor",
+          "fname_number": 1,
+          "linear_rgba": [
+            0.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          "property_tag_offset": 3757,
+          "value_offset": 3806,
+          "parameter_name_value_offset": 3847,
+          "frame_sha256": "cd93db64b2c3f01fa425c41929877c81970ebf1505d60bf2ba775ef944c3ec45"
+        },
+        {
+          "name": "PlayerColor_1",
+          "name_map_value": "PlayerColor",
+          "fname_number": 2,
+          "linear_rgba": [
+            1.0,
+            0.0,
+            0.0,
+            1.0
+          ],
+          "property_tag_offset": 3928,
+          "value_offset": 3977,
+          "parameter_name_value_offset": 4018,
+          "frame_sha256": "d010e7dcadae415eb58ef45364c8c50dfa8eba0ad3e967e3a66fcb0c1237a85f"
+        },
+        {
+          "name": "PlayerColor_2",
+          "name_map_value": "PlayerColor",
+          "fname_number": 3,
+          "linear_rgba": [
+            0.0,
+            1.0,
+            0.0,
+            1.0
+          ],
+          "property_tag_offset": 4099,
+          "value_offset": 4148,
+          "parameter_name_value_offset": 4189,
+          "frame_sha256": "57e3132b76f88c88106e3a2a2b32e4e99184662bcc03dce0a216cfb472677a11"
+        },
+        {
+          "name": "PlayerColor_3",
+          "name_map_value": "PlayerColor",
+          "fname_number": 4,
+          "linear_rgba": [
+            1.0,
+            1.0,
+            0.0,
+            1.0
+          ],
+          "property_tag_offset": 4270,
+          "value_offset": 4319,
+          "parameter_name_value_offset": 4360,
+          "frame_sha256": "022b0dea67b050c65ca80abf800bd8c69cbf1eb4ee593e7a77cb03d431ac7c22"
+        },
+        {
+          "name": "PlayerColor_4",
+          "name_map_value": "PlayerColor",
+          "fname_number": 5,
+          "linear_rgba": [
+            1.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          "property_tag_offset": 4441,
+          "value_offset": 4490,
+          "parameter_name_value_offset": 4531,
+          "frame_sha256": "5093f967d26d1199151003d3a90db302535188d5db5aa4a6d70525c0798d1089"
+        },
+        {
+          "name": "PlayerColor_5",
+          "name_map_value": "PlayerColor",
+          "fname_number": 6,
+          "linear_rgba": [
+            0.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "property_tag_offset": 4612,
+          "value_offset": 4661,
+          "parameter_name_value_offset": 4702,
+          "frame_sha256": "ba28f85518b764c498a9d8f6091e85a37da175c33d8c4e33880bf7838df52333"
+        },
+        {
+          "name": "PlayerColor_6",
+          "name_map_value": "PlayerColor",
+          "fname_number": 7,
+          "linear_rgba": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "property_tag_offset": 4783,
+          "value_offset": 4832,
+          "parameter_name_value_offset": 4873,
+          "frame_sha256": "b369d465c46fa76918a9ac40f713e3d1d8a860dedd7d863685564106784cb4bb"
+        },
+        {
+          "name": "PlayerColor_7",
+          "name_map_value": "PlayerColor",
+          "fname_number": 8,
+          "linear_rgba": [
+            1.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          "property_tag_offset": 4954,
+          "value_offset": 5003,
+          "parameter_name_value_offset": 5044,
+          "frame_sha256": "34c3a1a58fbf530bdc92d2bc0d529d7c831487c0301c04284a50a2631523d0f6"
+        },
+        {
+          "name": "PlayerColor_8",
+          "name_map_value": "PlayerColor",
+          "fname_number": 9,
+          "linear_rgba": [
+            1.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          "property_tag_offset": 5125,
+          "value_offset": 5174,
+          "parameter_name_value_offset": 5215,
+          "frame_sha256": "deb44e3f3d310ea31a15c51a64c433f8b555c0928f81d82a41c3083891b19cb0"
+        },
+        {
+          "name": "PlayerColor_9",
+          "name_map_value": "PlayerColor",
+          "fname_number": 10,
+          "linear_rgba": [
+            1.0,
+            0.0,
+            1.0,
+            1.0
+          ],
+          "property_tag_offset": 5296,
+          "value_offset": 5345,
+          "parameter_name_value_offset": 5386,
+          "frame_sha256": "4fb2685ea554fc5838c7e10050d68654270beccd3de85024f5c9b89fafc42761"
+        },
+        {
+          "name": "SelectionColor_Friendly",
+          "name_map_value": "SelectionColor_Friendly",
+          "fname_number": 0,
+          "linear_rgba": [
+            1.0,
+            0.8796229958534241,
+            0.0,
+            1.0
+          ],
+          "property_tag_offset": 5467,
+          "value_offset": 5516,
+          "parameter_name_value_offset": 5557,
+          "frame_sha256": "aff5b1c6a8e08b8d812390c44c021aac20c98285dbed65aa2871327177abf02e"
+        },
+        {
+          "name": "SelectionColor_Neutral",
+          "name_map_value": "SelectionColor_Neutral",
+          "fname_number": 0,
+          "linear_rgba": [
+            0.0,
+            0.6444799900054932,
+            0.015995999798178673,
+            1.0
+          ],
+          "property_tag_offset": 5638,
+          "value_offset": 5687,
+          "parameter_name_value_offset": 5728,
+          "frame_sha256": "78b511fa24a3f3412584c60ecbbe45e8ff5702536012096c059d94f4fb713408"
+        },
+        {
+          "name": "SelectionColor_Hostile",
+          "name_map_value": "SelectionColor_Hostile",
+          "fname_number": 0,
+          "linear_rgba": [
+            0.7011020183563232,
+            0.04970699921250343,
+            0.04970699921250343,
+            1.0
+          ],
+          "property_tag_offset": 5809,
+          "value_offset": 5858,
+          "parameter_name_value_offset": 5899,
+          "frame_sha256": "68c017483ab1d90db7d9b33c38f26830d1cdf40acdc978c00f58d5abce586114"
+        },
+        {
+          "name": "SelectionColor_Self",
+          "name_map_value": "SelectionColor_Self",
+          "fname_number": 0,
+          "linear_rgba": [
+            1.0,
+            1.0,
+            1.0,
+            1.0
+          ],
+          "property_tag_offset": 5980,
+          "value_offset": 6029,
+          "parameter_name_value_offset": 6070,
+          "frame_sha256": "acc37c470e64b66beeb1deaf96c6e4dbd3f54b59ad498b4adea2a8a5ae46ab01"
+        }
+      ],
+      "verification": "Every declared vector element has one checked LinearColor DefaultValue + NameProperty ParameterName frame; all names unique and expected semantic palette names present. FName number suffixes preserved. No nearest-string association."
+    },
+    {
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\UI\\Materials\\MPC_UI_Constant.uasset",
+      "sha256": "704324d8b6896144cd21693951dbcf194015e7d0d6f64b2231bfea8b38a987a2",
+      "legacy_version": -8,
+      "ue4_version": 522,
+      "ue5_version": 1012,
+      "name_count": 43,
+      "name_map_offset": 332,
+      "total_header_size": 2061,
+      "vector_array_offset": 2127,
+      "declared_vector_count": 21,
+      "records": [
+        {
+          "name": "ThemeColor_Default_GDF",
+          "name_map_value": "ThemeColor_Default_GDF",
+          "fname_number": 0,
+          "linear_rgba": [
+            0.09989900141954422,
+            0.37626200914382935,
+            0.9559739828109741,
+            1.0
+          ],
+          "property_tag_offset": 2192,
+          "value_offset": 2241,
+          "parameter_name_value_offset": 2282,
+          "frame_sha256": "85f9bfee0c46313795be63fe2ff64ca251841cccd666cc3deb383ad8ca3a7fb9"
+        },
+        {
+          "name": "ThemeColor_Hovered_GDF",
+          "name_map_value": "ThemeColor_Hovered_GDF",
+          "fname_number": 0,
+          "linear_rgba": [
+            0.09989900141954422,
+            0.37626200914382935,
+            0.9559739828109741,
+            1.0
+          ],
+          "property_tag_offset": 2363,
+          "value_offset": 2412,
+          "parameter_name_value_offset": 2453,
+          "frame_sha256": "3ae3f38de99c55d23ab5245f6bcce2f6b241e6215b398f456d8119ad874537a2"
+        },
+        {
+          "name": "ThemeColor_Pressed_GDF",
+          "name_map_value": "ThemeColor_Pressed_GDF",
+          "fname_number": 0,
+          "linear_rgba": [
+            0.09989900141954422,
+            0.37626200914382935,
+            0.9559739828109741,
+            1.0
+          ],
+          "property_tag_offset": 2534,
+          "value_offset": 2583,
+          "parameter_name_value_offset": 2624,
+          "frame_sha256": "915328ef4d3349b0f5d19f353f17a20095059d25af06c977fe495fbac2198426"
+        },
+        {
+          "name": "ThemeColor_Selected_GDF",
+          "name_map_value": "ThemeColor_Selected_GDF",
+          "fname_number": 0,
+          "linear_rgba": [
+            0.09989900141954422,
+            0.37626200914382935,
+            0.9559739828109741,
+            1.0
+          ],
+          "property_tag_offset": 2705,
+          "value_offset": 2754,
+          "parameter_name_value_offset": 2795,
+          "frame_sha256": "ac08a4a282590cdd8c8d3d5c7383360a2bf848213513f3fc5ee5a176b810ddee"
+        },
+        {
+          "name": "ThemeColor_Disabled_GDF",
+          "name_map_value": "ThemeColor_Disabled_GDF",
+          "fname_number": 0,
+          "linear_rgba": [
+            0.9559739828109741,
+            0.9559739828109741,
+            0.9559739828109741,
+            1.0
+          ],
+          "property_tag_offset": 2876,
+          "value_offset": 2925,
+          "parameter_name_value_offset": 2966,
+          "frame_sha256": "071db1ca058f79a44a353108095ea0551925e3f959d8cbae5347ea951597baa3"
+        },
+        {
+          "name": "ThemeColor_Empty_GDF",
+          "name_map_value": "ThemeColor_Empty_GDF",
+          "fname_number": 0,
+          "linear_rgba": [
+            0.9559739828109741,
+            0.9559739828109741,
+            0.9559739828109741,
+            1.0
+          ],
+          "property_tag_offset": 3047,
+          "value_offset": 3096,
+          "parameter_name_value_offset": 3137,
+          "frame_sha256": "ceb5b8ee82dc1c3ae1577c6bef1c66fd0d60853c1c54438bfe41ab9e30af4b39"
+        },
+        {
+          "name": "ThemeColor_Active_GDF",
+          "name_map_value": "ThemeColor_Active_GDF",
+          "fname_number": 0,
+          "linear_rgba": [
+            0.09989900141954422,
+            0.37626200914382935,
+            0.9559739828109741,
+            1.0
+          ],
+          "property_tag_offset": 3218,
+          "value_offset": 3267,
+          "parameter_name_value_offset": 3308,
+          "frame_sha256": "d1cd79d943472f94c57d94f8cb29318d639f6dfa2a9b83927f6a8a7540f6773a"
+        },
+        {
+          "name": "ThemeColor_Default_DYN",
+          "name_map_value": "ThemeColor_Default_DYN",
+          "fname_number": 0,
+          "linear_rgba": [
+            0.9046609997749329,
+            0.05286100134253502,
+            0.05448000133037567,
+            1.0
+          ],
+          "property_tag_offset": 3389,
+          "value_offset": 3438,
+          "parameter_name_value_offset": 3479,
+          "frame_sha256": "80f5856880da0e873f9ffbe2ee17369ec1a1e12e99aa08b2bb2213e90cb5585d"
+        },
+        {
+          "name": "ThemeColor_Hovered_DYN",
+          "name_map_value": "ThemeColor_Hovered_DYN",
+          "fname_number": 0,
+          "linear_rgba": [
+            0.9046609997749329,
+            0.05286100134253502,
+            0.05448000133037567,
+            1.0
+          ],
+          "property_tag_offset": 3560,
+          "value_offset": 3609,
+          "parameter_name_value_offset": 3650,
+          "frame_sha256": "9ad24c54cd84c171ec6099f723f4af3bb545e7b409b8a6e6726ba3ece5974013"
+        },
+        {
+          "name": "ThemeColor_Pressed_DYN",
+          "name_map_value": "ThemeColor_Pressed_DYN",
+          "fname_number": 0,
+          "linear_rgba": [
+            0.9046609997749329,
+            0.05286100134253502,
+            0.05448000133037567,
+            1.0
+          ],
+          "property_tag_offset": 3731,
+          "value_offset": 3780,
+          "parameter_name_value_offset": 3821,
+          "frame_sha256": "04508208a00c88f4449012b2b16e35b2d02d3dd0e172e9df31691966927940fd"
+        },
+        {
+          "name": "ThemeColor_Selected_DYN",
+          "name_map_value": "ThemeColor_Selected_DYN",
+          "fname_number": 0,
+          "linear_rgba": [
+            0.9046609997749329,
+            0.05286100134253502,
+            0.05448000133037567,
+            1.0
+          ],
+          "property_tag_offset": 3902,
+          "value_offset": 3951,
+          "parameter_name_value_offset": 3992,
+          "frame_sha256": "e5c5594617a9a3b26af912ab0c99c1b03816a9a53e28dc9e9a23d4563c23f68d"
+        },
+        {
+          "name": "ThemeColor_Disabled_DYN",
+          "name_map_value": "ThemeColor_Disabled_DYN",
+          "fname_number": 0,
+          "linear_rgba": [
+            0.9046609997749329,
+            0.9046609997749329,
+            0.9046609997749329,
+            1.0
+          ],
+          "property_tag_offset": 4073,
+          "value_offset": 4122,
+          "parameter_name_value_offset": 4163,
+          "frame_sha256": "b80c383523c061bc31de63b080187b42dbe3e7b5b31fcd399e79c17e6435bb4e"
+        },
+        {
+          "name": "ThemeColor_Empty_DYN",
+          "name_map_value": "ThemeColor_Empty_DYN",
+          "fname_number": 0,
+          "linear_rgba": [
+            0.9046609997749329,
+            0.9046609997749329,
+            0.9046609997749329,
+            1.0
+          ],
+          "property_tag_offset": 4244,
+          "value_offset": 4293,
+          "parameter_name_value_offset": 4334,
+          "frame_sha256": "3ec2184cbf3d8d57b494378289ad3ea72cd3b2f9223c45c7afece83e6e546aab"
+        },
+        {
+          "name": "ThemeColor_Active_DYN",
+          "name_map_value": "ThemeColor_Active_DYN",
+          "fname_number": 0,
+          "linear_rgba": [
+            0.9046609997749329,
+            0.05286100134253502,
+            0.05448000133037567,
+            1.0
+          ],
+          "property_tag_offset": 4415,
+          "value_offset": 4464,
+          "parameter_name_value_offset": 4505,
+          "frame_sha256": "c053457cacbe790014f1850b20147735223e8226bc80b9d2faa8f7fa9690a140"
+        },
+        {
+          "name": "ThemeColor_Default_VETI",
+          "name_map_value": "ThemeColor_Default_VETI",
+          "fname_number": 0,
+          "linear_rgba": [
+            0.9046609997749329,
+            0.6375970244407654,
+            0.05286100134253502,
+            1.0
+          ],
+          "property_tag_offset": 4586,
+          "value_offset": 4635,
+          "parameter_name_value_offset": 4676,
+          "frame_sha256": "4a7907a4232feb03d92d0ce506e8d870efd07e6b0c78cb40636d82f0e8e0a133"
+        },
+        {
+          "name": "ThemeColor_Hovered_VETI",
+          "name_map_value": "ThemeColor_Hovered_VETI",
+          "fname_number": 0,
+          "linear_rgba": [
+            0.9046609997749329,
+            0.6375970244407654,
+            0.05286100134253502,
+            1.0
+          ],
+          "property_tag_offset": 4757,
+          "value_offset": 4806,
+          "parameter_name_value_offset": 4847,
+          "frame_sha256": "13e3ee118a0311d60ec20ce84b9fe8ac697277f1093858559187a8566a10b807"
+        },
+        {
+          "name": "ThemeColor_Pressed_VETI",
+          "name_map_value": "ThemeColor_Pressed_VETI",
+          "fname_number": 0,
+          "linear_rgba": [
+            0.9046609997749329,
+            0.6375970244407654,
+            0.05286100134253502,
+            1.0
+          ],
+          "property_tag_offset": 4928,
+          "value_offset": 4977,
+          "parameter_name_value_offset": 5018,
+          "frame_sha256": "bb6aa5b5b62fc952fb574ef7ba6cd19d30144f387cf2fa0a1efde3bc1531882e"
+        },
+        {
+          "name": "ThemeColor_Selected_VETI",
+          "name_map_value": "ThemeColor_Selected_VETI",
+          "fname_number": 0,
+          "linear_rgba": [
+            0.9046609997749329,
+            0.6375970244407654,
+            0.05286100134253502,
+            1.0
+          ],
+          "property_tag_offset": 5099,
+          "value_offset": 5148,
+          "parameter_name_value_offset": 5189,
+          "frame_sha256": "9244849d2e60ffbb7d4f517a5d76adee1f7e8e62f3462d29de71c2b221501eb9"
+        },
+        {
+          "name": "ThemeColor_Disabled_VETI",
+          "name_map_value": "ThemeColor_Disabled_VETI",
+          "fname_number": 0,
+          "linear_rgba": [
+            0.9046609997749329,
+            0.9046609997749329,
+            0.9046609997749329,
+            1.0
+          ],
+          "property_tag_offset": 5270,
+          "value_offset": 5319,
+          "parameter_name_value_offset": 5360,
+          "frame_sha256": "f96ccb23918cf22d4e977e4e1e0fa290f7e0cf898bd7402656a293ef98e2775f"
+        },
+        {
+          "name": "ThemeColor_Empty_VETI",
+          "name_map_value": "ThemeColor_Empty_VETI",
+          "fname_number": 0,
+          "linear_rgba": [
+            0.9046609997749329,
+            0.9046609997749329,
+            0.9046609997749329,
+            1.0
+          ],
+          "property_tag_offset": 5441,
+          "value_offset": 5490,
+          "parameter_name_value_offset": 5531,
+          "frame_sha256": "e5283129d0b80f64ade622b0ceb7d169117ff1878d30d5a27c8e907ba6a97427"
+        },
+        {
+          "name": "ThemeColor_Active_VETI",
+          "name_map_value": "ThemeColor_Active_VETI",
+          "fname_number": 0,
+          "linear_rgba": [
+            0.9046609997749329,
+            0.6375970244407654,
+            0.05286100134253502,
+            1.0
+          ],
+          "property_tag_offset": 5612,
+          "value_offset": 5661,
+          "parameter_name_value_offset": 5702,
+          "frame_sha256": "39dd6cee23f15e5da801e9088958ad4925196a0da5edefdd7bf64562891797d0"
+        }
+      ],
+      "verification": "Every declared vector element has one checked LinearColor DefaultValue + NameProperty ParameterName frame; all names unique and expected semantic palette names present. FName number suffixes preserved. No nearest-string association."
+    }
+  ],
+  "limitations": [
+    "Stored editor defaults only; dynamic runtime overrides and actual Shipping HUD bindings unobserved.",
+    "No general package parsing, graph evaluation, texture decoding or original shader/code reuse.",
+    "Linear float values are not sRGB display pixels."
+  ]
+}

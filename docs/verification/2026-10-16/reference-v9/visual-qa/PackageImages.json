@@ -1,0 +1,32 @@
+{
+  "status": "PACKAGE_IMAGES_DIRECTLY_REVIEWED_CONCEPT_PARITY_NOT_MET",
+  "date": "2026-10-16",
+  "package_created_utc_reported_by_integrator": "2026-10-16T13:01:35Z",
+  "capture_date_is_not_build_date": true,
+  "images": [
+    {
+      "path": "C:\\Users\\Hero\\HeroHour\\Art\\Previews\\ReferenceV9-Package-Aegis-1600.png",
+      "bytes": 1431733,
+      "sha256": "e8c68426310a17c9086a7d5ff6a005c91ff227a2d955b166b02fc54ac551910f",
+      "source": "Packaged gameplay camera",
+      "directly_viewed": true,
+      "animation_proved_by_still": false
+    },
+    {
+      "path": "C:\\Users\\Hero\\HeroHour\\Art\\Previews\\ReferenceV9-Package-HQ-CloseUp-1280.png",
+      "bytes": 1087295,
+      "sha256": "f5102c57c68d7b8a224267d39d74afc8292a29136dee0fffb65d4eb4d44c2261",
+      "source": "Packaged gameplay camera",
+      "directly_viewed": true,
+      "animation_proved_by_still": false
+    },
+    {
+      "path": "C:\\Users\\Hero\\HeroHour\\Art\\Previews\\ReferenceV9-Package-Harvester-Ember-12.png",
+      "bytes": 1597612,
+      "sha256": "2293ad779e4f6d1d1e61b53de4b2675bb669398327a86e2954cd0a622f911e96",
+      "source": "Packaged gameplay camera",
+      "directly_viewed": true,
+      "animation_proved_by_still": false
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "source_sha256": "fb53b1c581598eb06507375ffdaa0424b00b0844597fb5ff2cb11237fcd44f28",
+  "cpu_only": true,
+  "source_modified": false,
+  "raw_glb_vertices": 20682,
+  "exact_unique_positions": 8600,
+  "triangles": 18456,
+  "position_welded_connected_components": 9,
+  "largest_components_faces": [
+    17953,
+    197,
+    86,
+    79,
+    55,
+    29,
+    27,
+    22,
+    8
+  ],
+  "isolated_single_triangle_components": 0,
+  "welded_boundary_edges": 6441,
+  "welded_nonmanifold_edges": 1548,
+  "exact_zero_area_triangles": 0,
+  "triangle_area_percentiles": [
+    4.053203639386993e-08,
+    1.1888468748111337e-06,
+    3.2506946809007786e-05,
+    0.002408872556407017,
+    0.03411239758133888
+  ],
+  "duplicate_position_triangle_excess": 14,
+  "limitations": [
+    "Exact Float32 position welding ignores near-coincident vertices; UV seams are removed from this connectivity metric.",
+    "Raw decoded and intermediate decimated meshes were not saved: this cannot localize the first failing pipeline stage.",
+    "Counts describe exported topology, not artistic acceptance or a runtime game test."
+  ],
+  "primary_source_files": [
+    {
+      "path": "E:\\Comfy-Desktop\\ComfyUI-Installs\\Hero\\ComfyUI\\comfy_extras\\nodes_trellis2.py",
+      "sha256": "5d99f8fd2d1a1cc252b860d941717fc4e53cfbc48b623730c9fdd9139dd7f98c"
+    },
+    {
+      "path": "E:\\Comfy-Desktop\\ComfyUI-Installs\\Hero\\ComfyUI\\comfy_extras\\nodes_mesh_postprocess.py",
+      "sha256": "215ed682a2a4554de99d6d676236723e9cfc7e037b0cde77747ca802f8ddd005"
+    },
+    {
+      "path": "E:\\Comfy-Desktop\\ComfyUI-Installs\\Hero\\ComfyUI\\comfy_extras\\nodes_save_3d.py",
+      "sha256": "b67519d34648d9d61f9663188b5b11d0727693c0e89e527724310b99de847d47"
+    },
+    {
+      "path": "C:\\Users\\Hero\\HeroHour\\Saved\\Research\\TrellisV8\\hq-trellis512-api.json",
+      "sha256": "b92c9e677e3c9226bc0db519e43c89945b49fb09c28eaefff68b73ebd3771225"
+    },
+    {
+      "path": "C:\\Users\\Hero\\HeroHour\\Saved\\Research\\TrellisV8\\comfy-installed-trellis-template.json",
+      "sha256": "594295ae20490b4ed990655686f2d0c15ba06732df5553bc22bda98966c40a97"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "name": "SM_HERO_Striker",
+  "vertices": 14832,
+  "polygons": 13950,
+  "triangles": 28716,
+  "dimensions_m": [
+    3.508500099182129,
+    1.8799999952316284,
+    2.256999969482422
+  ],
+  "materials": [
+    "Dark",
+    "Armor",
+    "Steel",
+    "Rubber",
+    "Neon",
+    "Glass",
+    "Lamp"
+  ],
+  "origin": "ground pivot with runtime Z compensation",
+  "zoffset_m": -0.35
+}

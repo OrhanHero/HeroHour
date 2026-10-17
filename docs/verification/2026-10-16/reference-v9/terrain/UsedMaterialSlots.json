@@ -1,0 +1,118 @@
+[
+  {
+    "name": "SM_TRV9_EastTalus",
+    "materials": [
+      {
+        "source_slot": "BY8_Concrete",
+        "polygons": 2368
+      },
+      {
+        "source_slot": "BY8_ConcreteDark",
+        "polygons": 779
+      },
+      {
+        "source_slot": "BY8_Metal",
+        "polygons": 749
+      },
+      {
+        "source_slot": "BY8_Dust",
+        "polygons": 0
+      },
+      {
+        "source_slot": "BY8_Track",
+        "polygons": 48
+      },
+      {
+        "source_slot": "BY8_Paint",
+        "polygons": 760
+      }
+    ]
+  },
+  {
+    "name": "SM_TRV9_RiverNorth",
+    "materials": [
+      {
+        "source_slot": "BY8_Concrete",
+        "polygons": 2373
+      },
+      {
+        "source_slot": "BY8_ConcreteDark",
+        "polygons": 797
+      },
+      {
+        "source_slot": "BY8_Metal",
+        "polygons": 732
+      },
+      {
+        "source_slot": "BY8_Dust",
+        "polygons": 0
+      },
+      {
+        "source_slot": "BY8_Track",
+        "polygons": 48
+      },
+      {
+        "source_slot": "BY8_Paint",
+        "polygons": 754
+      }
+    ]
+  },
+  {
+    "name": "SM_TRV9_RiverSouth",
+    "materials": [
+      {
+        "source_slot": "BY8_Concrete",
+        "polygons": 2273
+      },
+      {
+        "source_slot": "BY8_ConcreteDark",
+        "polygons": 824
+      },
+      {
+        "source_slot": "BY8_Metal",
+        "polygons": 758
+      },
+      {
+        "source_slot": "BY8_Dust",
+        "polygons": 0
+      },
+      {
+        "source_slot": "BY8_Track",
+        "polygons": 48
+      },
+      {
+        "source_slot": "BY8_Paint",
+        "polygons": 801
+      }
+    ]
+  },
+  {
+    "name": "SM_TRV9_WestTalus",
+    "materials": [
+      {
+        "source_slot": "BY8_Concrete",
+        "polygons": 2338
+      },
+      {
+        "source_slot": "BY8_ConcreteDark",
+        "polygons": 822
+      },
+      {
+        "source_slot": "BY8_Metal",
+        "polygons": 744
+      },
+      {
+        "source_slot": "BY8_Dust",
+        "polygons": 0
+      },
+      {
+        "source_slot": "BY8_Track",
+        "polygons": 48
+      },
+      {
+        "source_slot": "BY8_Paint",
+        "polygons": 752
+      }
+    ]
+  }
+]

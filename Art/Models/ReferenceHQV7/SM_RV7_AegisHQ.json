@@ -1,0 +1,87 @@
+{
+  "name": "SM_RV7_AegisHQ",
+  "vertices": 18704,
+  "polygons": 18552,
+  "triangles": 35568,
+  "dimensions_m": [
+    7.099999904632568,
+    6.800000190734863,
+    5.594972610473633
+  ],
+  "materials": [
+    "Concrete",
+    "Dark",
+    "Steel",
+    "Armor",
+    "Glass",
+    "Team",
+    "Neon",
+    "Dust"
+  ],
+  "origin": "ground pivot with runtime Z compensation",
+  "zoffset_m": -1.1,
+  "provenance": "Original HeroHour mesh; supplied concept reference only; no extracted game assets",
+  "reference": "Codex-Bild 1. Sept. 2026, 01_22_20.png, right white/blue command HQ",
+  "design_revision": "Faceted tower replaces rejected flat house and giant garage",
+  "bounds_m": [
+    [
+      -3.549999952316284,
+      3.549999952316284
+    ],
+    [
+      -3.4000000953674316,
+      3.4000000953674316
+    ],
+    [
+      -1.100000023841858,
+      4.4949727058410645
+    ]
+  ],
+  "fbx_roundtrip_bounds_m": [
+    [
+      -3.5500004291534424,
+      3.5500004291534424
+    ],
+    [
+      -3.40000057220459,
+      3.40000057220459
+    ],
+    [
+      -1.100000023841858,
+      4.4949727058410645
+    ]
+  ],
+  "fbx_roundtrip_pass": true,
+  "fbx_sha256": "178bd2b31d7a64bba77f6c7451ce592c5c4039174d85ec1a432e668facc8b115",
+  "unreal_expected_bounds_cm": [
+    [
+      -354.9999952316284,
+      354.9999952316284
+    ],
+    [
+      -340.00000953674316,
+      340.00000953674316
+    ],
+    [
+      -110.00000238418579,
+      449.49727058410645
+    ]
+  ],
+  "runtime_scale": 1.5,
+  "runtime_actor_z_cm": 110,
+  "runtime_relative_z_cm": 55,
+  "runtime_ground_z_cm": -3.5762786865234375e-06,
+  "baked_authoring_yaw_degrees": 0,
+  "blender_entrance_front_normal": [
+    0,
+    1,
+    0
+  ],
+  "unreal_entrance_front_normal": [
+    0,
+    -1,
+    0
+  ],
+  "design": "Faceted command tower; stepped octagonal dish roof; broad diagonal cheek armor; small doors; fitted armor panels; blue windows; low service wing; pipe bundles and roof rails",
+  "remaining_differences": "Cleaner procedural surfaces than reference; original approximation of panel/pipe layout; static dish; destruction and authored LODs absent; runtime capture required"
+}

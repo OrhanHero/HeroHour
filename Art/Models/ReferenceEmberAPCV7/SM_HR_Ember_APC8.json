@@ -1,0 +1,81 @@
+{
+  "name": "SM_HR_Ember_APC8",
+  "vertices": 10883,
+  "polygons": 9814,
+  "triangles": 20450,
+  "dimensions_m": [
+    3.4739999771118164,
+    1.878000020980835,
+    1.900999903678894
+  ],
+  "materials": [
+    "Armor",
+    "Rubber",
+    "Dark",
+    "Steel",
+    "Team",
+    "Lamp",
+    "Glass",
+    "Neon"
+  ],
+  "origin": "ground pivot with runtime Z compensation",
+  "zoffset_m": -0.35,
+  "wheel_count": 8,
+  "actual_boolean_arch_count": 8,
+  "authoring_direction": "front +X, wheel axles Y",
+  "reference": "Codex-Bild 1. Sept. 2026, 01_22_20.png, left graphite 8x8",
+  "provenance": "Original procedural geometry; no extracted or downloaded models",
+  "geometry_distinction": "Hexagonal stealth hull, clipped prow, wide remote turret, dual sensors, offset cannon",
+  "team_color_decision": "Concept graphite/green visual identity; enemy red health bars, selection rings and UI remain gameplay identification",
+  "concept_surface_tints": {
+    "Team": [
+      0.025,
+      0.32,
+      0.13
+    ],
+    "Neon": [
+      0.025,
+      0.7,
+      0.28
+    ]
+  },
+  "pivot": "Actual tire tread Z=-0.35m; runtime actor Z=+35cm and scale=1",
+  "ground_correction_m": 0.011000003665685654,
+  "bounds_m": [
+    [
+      -1.755000114440918,
+      1.718999981880188
+    ],
+    [
+      -0.9390000104904175,
+      0.9390000104904175
+    ],
+    [
+      -0.3499999940395355,
+      1.5509998798370361
+    ]
+  ],
+  "build_script_sha256": "1a7e6d5160ecd7ea8b7525315b7843ab5590dbcdf1838ad1b235708c9a69aaee",
+  "common_helpers_sha256": "74e44f73fabdad0d785569bd62a857d79d5bf1fc4b2aef584c49d66c8962a679",
+  "reference_sha256": "6ba5782d17fd7274b7ac16cbf581357a830c1255db0c94faa8eb5e980a4f918e",
+  "fbx_roundtrip": {
+    "passed": true,
+    "bounds_m": [
+      [
+        -1.7550002336502075,
+        1.7190001010894775
+      ],
+      [
+        -0.9390003085136414,
+        0.9390003085136414
+      ],
+      [
+        -0.3499999940395355,
+        1.5509998798370361
+      ]
+    ],
+    "mirror_y_checked": true
+  },
+  "fbx_sha256": "9bf58ba12c62d613d006bd679cdc5b04a67813e7660e1fa1a5efa8b331234d3b",
+  "validation": "PASS"
+}

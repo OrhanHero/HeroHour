@@ -1,0 +1,32 @@
+{
+  "name": "SM_DV3_PebbleCluster",
+  "seed": 43182,
+  "stone_count": 21,
+  "vertices": 1210,
+  "triangles": 2336,
+  "dimensions_m": [
+    1.3970545530319214,
+    0.9541751146316528,
+    0.07665104418992996
+  ],
+  "bounds_min_m": [
+    -0.6305661201477051,
+    -0.4698137640953064,
+    0.0
+  ],
+  "bounds_max_m": [
+    0.7664884328842163,
+    0.48436132073402405,
+    0.07665104418992996
+  ],
+  "materials": [
+    "Gravel",
+    "Sandstone"
+  ],
+  "pivot": "ground origin",
+  "collision": "none; decorative",
+  "uv_mapping": "dominant-plane physical metres; 1 UV unit equals 1 metre",
+  "uv_finite": true,
+  "degenerate_faces": 0,
+  "validation": "PASS"
+}

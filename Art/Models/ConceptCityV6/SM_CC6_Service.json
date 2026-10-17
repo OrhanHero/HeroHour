@@ -1,0 +1,24 @@
+{
+  "name": "SM_CC6_Service",
+  "triangles": 7704,
+  "dimensions_m": [
+    3.9000000953674316,
+    4.132499694824219,
+    12.8100004196167
+  ],
+  "non_manifold_edges": 0,
+  "materials": [
+    "Plaster",
+    "Concrete",
+    "Glass",
+    "Metal",
+    "Paint"
+  ],
+  "validation": "PASS",
+  "fbx_roundtrip": true,
+  "pivot": "ground origin",
+  "floors": 5,
+  "footprint_radius_at_map_scale_cm": 551.5433028124986,
+  "uv": "1 UV unit = 1 metre",
+  "source": "original authored geometry; concept images observed"
+}

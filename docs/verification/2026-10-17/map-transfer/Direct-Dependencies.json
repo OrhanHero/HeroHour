@@ -1,0 +1,3715 @@
+{
+  "schema": "HeroHour.TempestDirectDependencies.v1",
+  "references": 205,
+  "statuses": {
+    "engine_asset": 6,
+    "found": 188,
+    "native_module": 11
+  },
+  "dependencies": [
+    {
+      "package": "/Engine/BasicShapes/BasicShapeMaterial",
+      "mount": "Engine",
+      "status": "engine_asset"
+    },
+    {
+      "package": "/Engine/BasicShapes/Cube",
+      "mount": "Engine",
+      "status": "engine_asset"
+    },
+    {
+      "package": "/Engine/EngineFonts/RobotoDistanceField",
+      "mount": "Engine",
+      "status": "engine_asset"
+    },
+    {
+      "package": "/Engine/EngineMaterials/DefaultPhysicalMaterial",
+      "mount": "Engine",
+      "status": "engine_asset"
+    },
+    {
+      "package": "/Engine/EngineMaterials/WorldGridMaterial",
+      "mount": "Engine",
+      "status": "engine_asset"
+    },
+    {
+      "package": "/Engine/EngineSky/M_Sky_Panning_Clouds2",
+      "mount": "Engine",
+      "status": "engine_asset"
+    },
+    {
+      "package": "/Game/Tempest/Blueprints/DayAndNight/BP_DayAndNight",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Blueprints\\DayAndNight\\BP_DayAndNight.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "3648c02de8c6185b2199d451e47c7a6a7c01b786e853f9d4c9d9ed78c09803bf",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 88,
+      "package_name": "/Game/Tempest/Blueprints/DayAndNight/BP_DayAndNight",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Blueprints/TempestField/BP_TempestFieldProxy_MainPod",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Blueprints\\TempestField\\BP_TempestFieldProxy_MainPod.uasset",
+      "header_result": "parsed",
+      "sha256": "462cad1173b01020d70d173a7fd2809888959e0cd38a0bce438e3c1cffb7ce1b",
+      "cooked": false,
+      "filter_editor_only": false,
+      "version": {
+        "legacy": -8,
+        "ue4": 522,
+        "ue5": 1012
+      }
+    },
+    {
+      "package": "/Game/Tempest/Blueprints/TempestField/BP_TempestFieldProxy_PodClumps",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Blueprints\\TempestField\\BP_TempestFieldProxy_PodClumps.uasset",
+      "header_result": "parsed",
+      "sha256": "4c82b55ab7d51c5c6b7d67b63c70fab809a48e25c09dc0d1e98f93ce88104223",
+      "cooked": false,
+      "filter_editor_only": false,
+      "version": {
+        "legacy": -8,
+        "ue4": 522,
+        "ue5": 1012
+      }
+    },
+    {
+      "package": "/Game/Tempest/Blueprints/TempestField/BP_TempestFieldProxy_Vines",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Blueprints\\TempestField\\BP_TempestFieldProxy_Vines.uasset",
+      "header_result": "parsed",
+      "sha256": "c3f3aa99f2d59e40ad7d9fef2c045238f5e31994a4f9cb383f9ff439bd7d2dfa",
+      "cooked": false,
+      "filter_editor_only": false,
+      "version": {
+        "legacy": -8,
+        "ue4": 522,
+        "ue5": 1012
+      }
+    },
+    {
+      "package": "/Game/Tempest/Common/TempestResource/Materials/MI_TempestDecal_01",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Common\\TempestResource\\Materials\\MI_TempestDecal_01.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "7820926c6627559e2f97dbb16ac5f5a577d476b0ad30d7d34667de51093ba64f",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 102,
+      "package_name": "/Game/Tempest/Common/TempestResource/Materials/MI_TempestDecal_01",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Common/TempestResource/Meshes/SM_TempestPod_01_Large",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Common\\TempestResource\\Meshes\\SM_TempestPod_01_Large.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "6da059b1390ae8c66147fd152c767075a5c8bcdd0f95b98fd3763bbeeb222a65",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 103,
+      "package_name": "/Game/Tempest/Common/TempestResource/Meshes/SM_TempestPod_01_Large",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Common/TempestResource/Meshes/SM_TempestPod_01_Medium",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Common\\TempestResource\\Meshes\\SM_TempestPod_01_Medium.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "7b9b7a970f5628021b509724cf86f3a2e6654bc59ade2048dd8540bd8b9a44b5",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 104,
+      "package_name": "/Game/Tempest/Common/TempestResource/Meshes/SM_TempestPod_01_Medium",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Common/TempestResource/Meshes/SM_TempestPod_01_Small",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Common\\TempestResource\\Meshes\\SM_TempestPod_01_Small.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "fb9a2da1fafaa43ba44ea2fc8c122089dace98450b16109af74ed236a7420dba",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 103,
+      "package_name": "/Game/Tempest/Common/TempestResource/Meshes/SM_TempestPod_01_Small",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Common/TempestResource/Meshes/SM_TempestVine_01",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Common\\TempestResource\\Meshes\\SM_TempestVine_01.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "3950e0455fd217cbcb9407ef306114a5df942c74b1799a5302cdbc904549649b",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 98,
+      "package_name": "/Game/Tempest/Common/TempestResource/Meshes/SM_TempestVine_01",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/DataAssets/TempestFieldConfigs/TFC_Default_Build",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\DataAssets\\TempestFieldConfigs\\TFC_Default_Build.uasset",
+      "header_result": "parsed",
+      "sha256": "8a241f7cb999b0ed01c42802cbd71ff65568cbcbf3a29cd4ffc92776809ed2f3",
+      "cooked": false,
+      "filter_editor_only": false,
+      "version": {
+        "legacy": -8,
+        "ue4": 522,
+        "ue5": 1012
+      }
+    },
+    {
+      "package": "/Game/Tempest/Environments/Kyoto/Mesh/SM_CherryTree_01",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Environments\\Kyoto\\Mesh\\SM_CherryTree_01.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "c4301b7e5aa2ba3d5e3c9f0c843e1e7022c7f5ee33bedb955ae4944454f5f3ca",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 91,
+      "package_name": "/Game/Tempest/Environments/Kyoto/Mesh/SM_CherryTree_01",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Environments/Kyoto/Mesh/SM_CherryTree_02",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Environments\\Kyoto\\Mesh\\SM_CherryTree_02.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "65278d56afa1f8400a1879acf4a9d51655feb077b57a376360ee4d3f30a32985",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 91,
+      "package_name": "/Game/Tempest/Environments/Kyoto/Mesh/SM_CherryTree_02",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Environments/Kyoto/Mesh/SM_CherryTree_03",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Environments\\Kyoto\\Mesh\\SM_CherryTree_03.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "edc9b939da5e4af12c2c3cb11c09bdf02038f43c5eea04b2384fb4d681c97d68",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 91,
+      "package_name": "/Game/Tempest/Environments/Kyoto/Mesh/SM_CherryTree_03",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Environments/Kyoto/Textures/T_CherryLeaves_Decal_D",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Environments\\Kyoto\\Textures\\T_CherryLeaves_Decal_D.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "872296c570c4108f430ce9599a10d3287c7d47d7f3918615d2b8cdd658c5c25a",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 101,
+      "package_name": "/Game/Tempest/Environments/Kyoto/Textures/T_CherryLeaves_Decal_D",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Environments/Kyoto/Textures/T_CherryLeaves_Decal_M",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Environments\\Kyoto\\Textures\\T_CherryLeaves_Decal_M.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "deddf1a09240b4e5f5cc1c9e622aef3a29c4441629bd52b6fa1a3f1223e04365",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 101,
+      "package_name": "/Game/Tempest/Environments/Kyoto/Textures/T_CherryLeaves_Decal_M",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Environments/Kyoto/Textures/T_CherryLeaves_Decal_N",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Environments\\Kyoto\\Textures\\T_CherryLeaves_Decal_N.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "fc3bfba00ceab7af02b3046e60acf089ccc05237bc100759b807097ac01af07c",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 101,
+      "package_name": "/Game/Tempest/Environments/Kyoto/Textures/T_CherryLeaves_Decal_N",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Environments/Kyoto/Textures/T_CherryLeaves_Decal_RHO",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Environments\\Kyoto\\Textures\\T_CherryLeaves_Decal_RHO.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "4c548e412afb89739d087baddc1cfb5dcbc0a02c664c52ae3aaa54b78f090b99",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 103,
+      "package_name": "/Game/Tempest/Environments/Kyoto/Textures/T_CherryLeaves_Decal_RHO",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Environments/Kyoto/Textures/T_CherryTree_Branch_D",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Environments\\Kyoto\\Textures\\T_CherryTree_Branch_D.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "e73e68004a68804d935220af64113b106c44a3fc007c2bb85c4c3d491f4b4e58",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 100,
+      "package_name": "/Game/Tempest/Environments/Kyoto/Textures/T_CherryTree_Branch_D",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Environments/Kyoto/Textures/T_CherryTree_Branch_N",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Environments\\Kyoto\\Textures\\T_CherryTree_Branch_N.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "9f1870d94970355af91a69bb454882b4911ad3dbed858e2f731a25606080f4a5",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 100,
+      "package_name": "/Game/Tempest/Environments/Kyoto/Textures/T_CherryTree_Branch_N",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Environments/Kyoto/Textures/T_CherryTree_Branch_RSO",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Environments\\Kyoto\\Textures\\T_CherryTree_Branch_RSO.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "3f212732a215c6a5a1bb0fa5f0307a5dc963895367a84d1b0cbc77dd42bc95a2",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 102,
+      "package_name": "/Game/Tempest/Environments/Kyoto/Textures/T_CherryTree_Branch_RSO",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Environments/Temperate/Foliage/Textures/Heather/T_Heather_Atlas_D",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Environments\\Temperate\\Foliage\\Textures\\Heather\\T_Heather_Atlas_D.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "516c9f6386b7d228182d350155ee84ee2b20b2dc4c1b9e9f965efc459b98f5df",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 116,
+      "package_name": "/Game/Tempest/Environments/Temperate/Foliage/Textures/Heather/T_Heather_Atlas_D",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Environments/Temperate/Foliage/Textures/Heather/T_Heather_Atlas_N",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Environments\\Temperate\\Foliage\\Textures\\Heather\\T_Heather_Atlas_N.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "4e32e96ac5f7ce97759377d26dce030429c5c7a7a1ee7cfdf617dad5773c3b26",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 116,
+      "package_name": "/Game/Tempest/Environments/Temperate/Foliage/Textures/Heather/T_Heather_Atlas_N",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Environments/Temperate/Foliage/Textures/Heather/T_Heather_Atlas_RSO",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Environments\\Temperate\\Foliage\\Textures\\Heather\\T_Heather_Atlas_RSO.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "156863e94df318989cb06cb9769c9360c667134d705662623c9789e9d1153e71",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 118,
+      "package_name": "/Game/Tempest/Environments/Temperate/Foliage/Textures/Heather/T_Heather_Atlas_RSO",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Environments/Temperate/Foliage_New/Meshes/SM_Temperate_HeatherPlant_01",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Environments\\Temperate\\Foliage_New\\Meshes\\SM_Temperate_HeatherPlant_01.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "b2e6c4b54f93bfef999104adf1299ed8a234d57b5f8f15948b4a82bea79c60af",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 121,
+      "package_name": "/Game/Tempest/Environments/Temperate/Foliage_New/Meshes/SM_Temperate_HeatherPlant_01",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Environments/Temperate/Foliage_New/Meshes/SM_Temperate_HeatherPlant_01_FoliageType",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Environments\\Temperate\\Foliage_New\\Meshes\\SM_Temperate_HeatherPlant_01_FoliageType.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "5820c075386e9278ae74440a0a65fd2381264aa3148a81d8771d820f301d5fd3",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 133,
+      "package_name": "/Game/Tempest/Environments/Temperate/Foliage_New/Meshes/SM_Temperate_HeatherPlant_01_FoliageType",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Environments/Temperate/Foliage_New/Meshes/SM_Temperate_HeatherPlant_02",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Environments\\Temperate\\Foliage_New\\Meshes\\SM_Temperate_HeatherPlant_02.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "54eeeecc95e65a62dbe4d533f517002c05335f8972adca801e186e054e811c9b",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 121,
+      "package_name": "/Game/Tempest/Environments/Temperate/Foliage_New/Meshes/SM_Temperate_HeatherPlant_02",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Environments/Temperate/Foliage_New/Meshes/SM_Temperate_HeatherPlant_02_FoliageType",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Environments\\Temperate\\Foliage_New\\Meshes\\SM_Temperate_HeatherPlant_02_FoliageType.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "cba06d259a750bf8c3bad3e0171aecb726380fe61971f159ca55b215306be956",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 133,
+      "package_name": "/Game/Tempest/Environments/Temperate/Foliage_New/Meshes/SM_Temperate_HeatherPlant_02_FoliageType",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Environments/Temperate/Foliage_New/Meshes/SM_Temperate_HeatherPlant_03",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Environments\\Temperate\\Foliage_New\\Meshes\\SM_Temperate_HeatherPlant_03.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "2bb0a43820ef1c474aaf6a431a112ac32d9e8570688b432ecffd3aa6cc49ac44",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 121,
+      "package_name": "/Game/Tempest/Environments/Temperate/Foliage_New/Meshes/SM_Temperate_HeatherPlant_03",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Environments/Temperate/Foliage_New/Meshes/SM_Temperate_HeatherPlant_03_FoliageType",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Environments\\Temperate\\Foliage_New\\Meshes\\SM_Temperate_HeatherPlant_03_FoliageType.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "30d234ef5f19152ce7f0cc0f715f6a5877d372d3271a0f5999de45d747ff90b5",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 133,
+      "package_name": "/Game/Tempest/Environments/Temperate/Foliage_New/Meshes/SM_Temperate_HeatherPlant_03_FoliageType",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Environments/Temperate/Foliage_New/Meshes/SM_Temperate_HeatherPlant_04",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Environments\\Temperate\\Foliage_New\\Meshes\\SM_Temperate_HeatherPlant_04.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "96340442e8763f07e7f3340826417b3086d49af9a6cc85e102e48f0091d82126",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 121,
+      "package_name": "/Game/Tempest/Environments/Temperate/Foliage_New/Meshes/SM_Temperate_HeatherPlant_04",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Environments/Temperate/Foliage_New/Meshes/SM_Temperate_HeatherPlant_04_FoliageType",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Environments\\Temperate\\Foliage_New\\Meshes\\SM_Temperate_HeatherPlant_04_FoliageType.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "e74b1540ed0457fe547f29486ef8ecd4a1c8bdd5d50740120109f6343698542f",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 133,
+      "package_name": "/Game/Tempest/Environments/Temperate/Foliage_New/Meshes/SM_Temperate_HeatherPlant_04_FoliageType",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Environments/Tempest/SM_Large_Tempest_Tree_Crater",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Environments\\Tempest\\SM_Large_Tempest_Tree_Crater.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "c25897dc4b3e5dbc82d00206931f6f1ef886de54553aafffbdca168a1d3a759f",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 88,
+      "package_name": "/SetdressingExampleMap/SM_Large_Tempest_Tree_Crater",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Environments/Winter/Landscape/T_Winter_Snow_01_D",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Environments\\Winter\\Landscape\\T_Winter_Snow_01_D.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "77334644216b3f1c5bca529adafa107e28ca31e4becc09f157a0e4a61d17fff2",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 99,
+      "package_name": "/Game/Tempest/Environments/Winter/Landscape/T_Winter_Snow_01_D",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Environments/Winter/Landscape/T_Winter_Snow_01_N",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Environments\\Winter\\Landscape\\T_Winter_Snow_01_N.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "34e457f67a6d032396aef1f9dae9b1633a7b136f127e02a424035775ac61f0cb",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 99,
+      "package_name": "/Game/Tempest/Environments/Winter/Landscape/T_Winter_Snow_01_N",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Environments/Winter/Landscape/T_Winter_Snow_01_RHO",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Environments\\Winter\\Landscape\\T_Winter_Snow_01_RHO.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "8003d339a5fc48d67ff511b0e3a2512a5659cf39b157f79d4208799341c40d06",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 101,
+      "package_name": "/Game/Tempest/Environments/Winter/Landscape/T_Winter_Snow_01_RHO",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/GDF/GroundDecals/MI_GDF_Building2x3_Decal",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\GDF\\GroundDecals\\MI_GDF_Building2x3_Decal.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "612a0297479a0b20d0c03a2fe929ae8058fe090740de04885f93fd77788f8dbb",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 92,
+      "package_name": "/Game/Tempest/GDF/GroundDecals/MI_GDF_Building2x3_Decal",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/GDF/Structures/BD_GDF_AdvancedPowerPlant/Textures/T_GDF_Advanced_Powerplant_D",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\GDF\\Structures\\BD_GDF_AdvancedPowerPlant\\Textures\\T_GDF_Advanced_Powerplant_D.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "d6ccbc696e82fce50b57875609bc46fa397a7e2c9e5c6ed83486648a068dd7c9",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 128,
+      "package_name": "/Game/Tempest/GDF/Structures/BD_GDF_AdvancedPowerPlant/Textures/T_GDF_Advanced_Powerplant_D",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/GDF/Structures/BD_GDF_AdvancedPowerPlant/Textures/T_GDF_Advanced_Powerplant_N",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\GDF\\Structures\\BD_GDF_AdvancedPowerPlant\\Textures\\T_GDF_Advanced_Powerplant_N.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "ceca2090d50a0b5b01cef29e0ef288551a37869285d03a7e354cb5bf4a91b1a6",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 128,
+      "package_name": "/Game/Tempest/GDF/Structures/BD_GDF_AdvancedPowerPlant/Textures/T_GDF_Advanced_Powerplant_N",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/GDF/Structures/BD_GDF_AdvancedPowerPlant/Textures/T_GDF_Advanced_Powerplant_RMOE",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\GDF\\Structures\\BD_GDF_AdvancedPowerPlant\\Textures\\T_GDF_Advanced_Powerplant_RMOE.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "5c2e9a60599a1c186d82ec38a384595648b329b8da7332ce5b99458b9bd86e8c",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 131,
+      "package_name": "/Game/Tempest/GDF/Structures/BD_GDF_AdvancedPowerPlant/Textures/T_GDF_Advanced_Powerplant_RMOE",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/GDF/Structures/BD_GDF_AirControlTower/Textures/T_GDF_AirControlTower_C",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\GDF\\Structures\\BD_GDF_AirControlTower\\Textures\\T_GDF_AirControlTower_C.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "beaf041e00dcb0241dbab6c403e16f64d138a31513e793eb48dd34502c655070",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 121,
+      "package_name": "/Game/Tempest/GDF/Structures/BD_GDF_AirControlTower/Textures/T_GDF_AirControlTower_C",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/GDF/Structures/BD_GDF_AirControlTower/Textures/T_GDF_AirControlTower_D",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\GDF\\Structures\\BD_GDF_AirControlTower\\Textures\\T_GDF_AirControlTower_D.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "824099a97ddc2a4022d35f5d421be098ea35b9529432af84e2c68ca2df2c451e",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 121,
+      "package_name": "/Game/Tempest/GDF/Structures/BD_GDF_AirControlTower/Textures/T_GDF_AirControlTower_D",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/GDF/Structures/BD_GDF_AirControlTower/Textures/T_GDF_AirControlTower_N",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\GDF\\Structures\\BD_GDF_AirControlTower\\Textures\\T_GDF_AirControlTower_N.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "cc236cb16c6bcdbb06b28e2c6cc70eabdc759c8aead3ce2d99a6cc63737ba2e6",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 121,
+      "package_name": "/Game/Tempest/GDF/Structures/BD_GDF_AirControlTower/Textures/T_GDF_AirControlTower_N",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/GDF/Structures/BD_GDF_AirControlTower/Textures/T_GDF_AirControlTower_RMOE",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\GDF\\Structures\\BD_GDF_AirControlTower\\Textures\\T_GDF_AirControlTower_RMOE.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "0f3cee21c4159174bc63ede44d95ec7c840148c6883ad32363fd17cd06641b3d",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 124,
+      "package_name": "/Game/Tempest/GDF/Structures/BD_GDF_AirControlTower/Textures/T_GDF_AirControlTower_RMOE",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/GDF/Structures/BD_GDF_ConYard/Textures/T_GDF_Constructionyard_D",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\GDF\\Structures\\BD_GDF_ConYard\\Textures\\T_GDF_Constructionyard_D.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "0fb8fc44e94adcdc7eb5b7b87c11fed520f309b71ab3118199c3418046c5e103",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 114,
+      "package_name": "/Game/Tempest/GDF/Structures/BD_GDF_ConYard/Textures/T_GDF_Constructionyard_D",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/GDF/Structures/BD_GDF_ConYard/Textures/T_GDF_Constructionyard_N",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\GDF\\Structures\\BD_GDF_ConYard\\Textures\\T_GDF_Constructionyard_N.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "13a129e734be548bdaf0b2c8f03d4b8964a1613d83f77160331b7368f06d76ba",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 114,
+      "package_name": "/Game/Tempest/GDF/Structures/BD_GDF_ConYard/Textures/T_GDF_Constructionyard_N",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/GDF/Structures/BD_GDF_ConYard/Textures/T_GDF_Constructionyard_RMOE",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\GDF\\Structures\\BD_GDF_ConYard\\Textures\\T_GDF_Constructionyard_RMOE.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "28f86630096dc4ef3176150857c549c113ae1d302216bfcf54669a7cb02f2689",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 117,
+      "package_name": "/Game/Tempest/GDF/Structures/BD_GDF_ConYard/Textures/T_GDF_Constructionyard_RMOE",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/GDF/Structures/BD_GDF_RepairBay/Textures/T_GDF_Repair_Bay_N",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\GDF\\Structures\\BD_GDF_RepairBay\\Textures\\T_GDF_Repair_Bay_N.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "ce93e4466b8d0759161747d1710da121e00e3c28ed9cf6f10989255139a973f1",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 110,
+      "package_name": "/Game/Tempest/GDF/Structures/BD_GDF_RepairBay/Textures/T_GDF_Repair_Bay_N",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/GDF/Structures/BD_GDF_RepairBay/Textures/T_GDF_Repair_Bay_RMAO",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\GDF\\Structures\\BD_GDF_RepairBay\\Textures\\T_GDF_Repair_Bay_RMAO.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "eace70028f0016b0e40fc02890205f2aea91e03205e9379688f720189f1df5fb",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 113,
+      "package_name": "/Game/Tempest/GDF/Structures/BD_GDF_RepairBay/Textures/T_GDF_Repair_Bay_RMAO",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/GDF/Structures/BD_GDF_WarFactory/Textures/T_GDF_Warfactory_D",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\GDF\\Structures\\BD_GDF_WarFactory\\Textures\\T_GDF_Warfactory_D.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "7c9041504cea6e0e3351c68dab22ffedf9c4b5ff917c41baecec01faabbe4853",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 111,
+      "package_name": "/Game/Tempest/GDF/Structures/BD_GDF_WarFactory/Textures/T_GDF_Warfactory_D",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/GDF/Structures/BD_GDF_WarFactory/Textures/T_GDF_Warfactory_N",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\GDF\\Structures\\BD_GDF_WarFactory\\Textures\\T_GDF_Warfactory_N.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "4f037ede5767d2536b100c33c86510549d009792bc457c941439a064642f6c81",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 111,
+      "package_name": "/Game/Tempest/GDF/Structures/BD_GDF_WarFactory/Textures/T_GDF_Warfactory_N",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/GDF/Structures/BD_GDF_WarFactory/Textures/T_GDF_Warfactory_RMOE",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\GDF\\Structures\\BD_GDF_WarFactory\\Textures\\T_GDF_Warfactory_RMOE.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "d86ee5429c4f9c26f2ce1f0ca4eeeca39e7a1029529a8053ae35342f1746ae95",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 114,
+      "package_name": "/Game/Tempest/GDF/Structures/BD_GDF_WarFactory/Textures/T_GDF_Warfactory_RMOE",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/MaterialLibrary/Decals/M_MASTER_Decal",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\MaterialLibrary\\Decals\\M_MASTER_Decal.uasset",
+      "header_result": "parsed",
+      "sha256": "dd56202dca8fff3dd80a14efca15b577473e31f673a1fa6d1e8f8884ca317894",
+      "cooked": false,
+      "filter_editor_only": false,
+      "version": {
+        "legacy": -8,
+        "ue4": 522,
+        "ue5": 1012
+      }
+    },
+    {
+      "package": "/Game/Tempest/MaterialLibrary/Environment/M_MASTER_Landscape_RVT",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\MaterialLibrary\\Environment\\M_MASTER_Landscape_RVT.uasset",
+      "header_result": "parsed",
+      "sha256": "4912c3f097992e617e0e49817867a176b78b1cdd8418b0bdab10c522aa85d651",
+      "cooked": false,
+      "filter_editor_only": false,
+      "version": {
+        "legacy": -8,
+        "ue4": 522,
+        "ue5": 1012
+      }
+    },
+    {
+      "package": "/Game/Tempest/MaterialLibrary/Environment/M_Master_Environment",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\MaterialLibrary\\Environment\\M_Master_Environment.uasset",
+      "header_result": "parsed",
+      "sha256": "5b3285890ca5d05b8bd2637592f42070cc30ee1ad675812cb0740195f75eb716",
+      "cooked": false,
+      "filter_editor_only": false,
+      "version": {
+        "legacy": -8,
+        "ue4": 522,
+        "ue5": 1012
+      }
+    },
+    {
+      "package": "/Game/Tempest/MaterialLibrary/Environment/RVT_Landscape_Default",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\MaterialLibrary\\Environment\\RVT_Landscape_Default.uasset",
+      "header_result": "parsed",
+      "sha256": "83ba2aa0cd9d2ce74f428ce15d8c7972929bb685f247a2723308554c8212e83e",
+      "cooked": false,
+      "filter_editor_only": false,
+      "version": {
+        "legacy": -8,
+        "ue4": 522,
+        "ue5": 1008
+      }
+    },
+    {
+      "package": "/Game/Tempest/MaterialLibrary/Foliage/M_MASTER_Grass",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\MaterialLibrary\\Foliage\\M_MASTER_Grass.uasset",
+      "header_result": "parsed",
+      "sha256": "131258860f86098634e55fddc1f3d4811443eb99d0687f0f5a071c52a6b2d177",
+      "cooked": false,
+      "filter_editor_only": false,
+      "version": {
+        "legacy": -8,
+        "ue4": 522,
+        "ue5": 1012
+      }
+    },
+    {
+      "package": "/Game/Tempest/MaterialLibrary/Foliage/M_MASTER_Tree",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\MaterialLibrary\\Foliage\\M_MASTER_Tree.uasset",
+      "header_result": "parsed",
+      "sha256": "7d487826dc73689b5d7f29238e29b43cf7d9d2820da17da2db2768f3883a2e3f",
+      "cooked": false,
+      "filter_editor_only": false,
+      "version": {
+        "legacy": -8,
+        "ue4": 522,
+        "ue5": 1012
+      }
+    },
+    {
+      "package": "/Game/Tempest/MaterialLibrary/PostProcess/MI_PostProcess_Default_NoTint",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\MaterialLibrary\\PostProcess\\MI_PostProcess_Default_NoTint.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "ea439828d0b9adf6b6c281dd404cf826074d72a3c8f2a933fe63598f786e9619",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 108,
+      "package_name": "/Game/Tempest/MaterialLibrary/PostProcess/MI_PostProcess_Default_NoTint",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/MaterialLibrary/PostProcess/MI_PostProcess_Snow_NoTint",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\MaterialLibrary\\PostProcess\\MI_PostProcess_Snow_NoTint.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "34267c622619b691a9ace2d2f5e122bf88e37348f3bf61badcd5e78753f8983e",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 105,
+      "package_name": "/Game/Tempest/MaterialLibrary/PostProcess/MI_PostProcess_Snow_NoTint",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/MaterialLibrary/Props/M_MASTER_Props",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\MaterialLibrary\\Props\\M_MASTER_Props.uasset",
+      "header_result": "parsed",
+      "sha256": "7b6ae4ef1b13ffad4dce9f1035c6e09b3e459c025e277193c9c90b5816282e65",
+      "cooked": false,
+      "filter_editor_only": false,
+      "version": {
+        "legacy": -8,
+        "ue4": 522,
+        "ue5": 1012
+      }
+    },
+    {
+      "package": "/Game/Tempest/MaterialLibrary/Textures/T_BaseMask_RMO",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\MaterialLibrary\\Textures\\T_BaseMask_RMO.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "5b7019f28444a9fcf15fa01ca4dc1b1cf7a438bacbd34c7084848e0da16b2196",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 90,
+      "package_name": "/Game/Tempest/MaterialLibrary/Textures/T_BaseMask_RMO",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/MaterialLibrary/Textures/T_BaseNormal_N",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\MaterialLibrary\\Textures\\T_BaseNormal_N.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "fdadb6f4bab4e0c9c988e14b00eaac7037db825d8504123aa2a681a939ce1a40",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 90,
+      "package_name": "/Game/Tempest/MaterialLibrary/Textures/T_BaseNormal_N",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/MaterialLibrary/Textures/T_BaseWhite_D",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\MaterialLibrary\\Textures\\T_BaseWhite_D.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "aa7db71fd8c44344a5a78309fcddbdfdb917a186017f6f0f952558ae3383db46",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 89,
+      "package_name": "/Game/Tempest/MaterialLibrary/Textures/T_BaseWhite_D",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/MaterialLibrary/Textures/T_Grunge_01_M",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\MaterialLibrary\\Textures\\T_Grunge_01_M.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "ba728a2319e1018ad5a09786b7a824bdab05ff9e7cebb0b327c557af126196c8",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 89,
+      "package_name": "/Game/Tempest/MaterialLibrary/Textures/T_Grunge_01_M",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Props/BrokenBridge/Textures/T_Bridge_Support_D",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\BrokenBridge\\Textures\\T_Bridge_Support_D.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "e75b6b3dee2ef0ec48cfdf82450c27e490bd774eb51cc26b2d11ecdf3a4f6514",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 97,
+      "package_name": "/Game/Tempest/Props/BrokenBridge/Textures/T_Bridge_Support_D",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Props/BrokenBridge/Textures/T_Bridge_Support_N",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\BrokenBridge\\Textures\\T_Bridge_Support_N.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "520c92ed6ce50f9ba68d30e301c39aa99f4da6840589aeba9d8151a34658263f",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 97,
+      "package_name": "/Game/Tempest/Props/BrokenBridge/Textures/T_Bridge_Support_N",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Props/BrokenBridge/Textures/T_Bridge_Support_RMO",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\BrokenBridge\\Textures\\T_Bridge_Support_RMO.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "7ade7177c794ca26522541d2ec575d688bcd987b7e068f06625c5ce5b4d03ff8",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 99,
+      "package_name": "/Game/Tempest/Props/BrokenBridge/Textures/T_Bridge_Support_RMO",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Props/Construction_new/Textures/T_ConstPortapotty_01_D",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\Construction_new\\Textures\\T_ConstPortapotty_01_D.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "9b9ba4aac90ab50e55ef375e9bddebc51e1f78b527807787981c03d6c34bab4a",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 105,
+      "package_name": "/Game/Tempest/Props/Construction_new/Textures/T_ConstPortapotty_01_D",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Props/Construction_new/Textures/T_ConstPortapotty_01_N",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\Construction_new\\Textures\\T_ConstPortapotty_01_N.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "c9ff497cc40cbbc9cd977872e48f76705b311bdede635c881a6a9f089c304593",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 105,
+      "package_name": "/Game/Tempest/Props/Construction_new/Textures/T_ConstPortapotty_01_N",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Props/Construction_new/Textures/T_ConstPortapotty_01_RMO",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\Construction_new\\Textures\\T_ConstPortapotty_01_RMO.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "c03d21e0f8ae09c2513a737b53bbb08ba2167205b709b36dd689c20ce13a74d5",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 107,
+      "package_name": "/Game/Tempest/Props/Construction_new/Textures/T_ConstPortapotty_01_RMO",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Props/Construction_new/Textures/T_FreightContainer_D",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\Construction_new\\Textures\\T_FreightContainer_D.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "a353468f3f5ab332c47f2bfa69df31277fc57641b58e939e4aa90afc2c3686c0",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 103,
+      "package_name": "/Game/Tempest/Props/Construction_new/Textures/T_FreightContainer_D",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Props/Construction_new/Textures/T_FreightContainer_N",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\Construction_new\\Textures\\T_FreightContainer_N.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "49ce74027c1690000b0ddd791b056c00396f351a54e121bb2aeb405351d1830c",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 103,
+      "package_name": "/Game/Tempest/Props/Construction_new/Textures/T_FreightContainer_N",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Props/Construction_new/Textures/T_FreightContainer_RMOE",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\Construction_new\\Textures\\T_FreightContainer_RMOE.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "8fdc5dde88db06ed5c7c279c584fca8bd5252a12720925303d37d09127ae39b2",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 106,
+      "package_name": "/Game/Tempest/Props/Construction_new/Textures/T_FreightContainer_RMOE",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Props/Construction_new/Textures/T_PortableWaterTank_01_D",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\Construction_new\\Textures\\T_PortableWaterTank_01_D.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "a23741d1aa4501ff2e65c9f5b181d4e2c73201e1239028390c4f2137c6f9d1df",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 107,
+      "package_name": "/Game/Tempest/Props/Construction_new/Textures/T_PortableWaterTank_01_D",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Props/Construction_new/Textures/T_PortableWaterTank_01_N",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\Construction_new\\Textures\\T_PortableWaterTank_01_N.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "81a14d1dea83cd6ccd58788335571dfbb2dbea99b1fd074a6cf3a0d360da06cc",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 107,
+      "package_name": "/Game/Tempest/Props/Construction_new/Textures/T_PortableWaterTank_01_N",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Props/Construction_new/Textures/T_PortableWaterTank_01_RMO",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\Construction_new\\Textures\\T_PortableWaterTank_01_RMO.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "6bdb9eed6a18f8bbf15e8e3f08e5c75f0d1de34036fd8bf4220aea45324121dc",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 109,
+      "package_name": "/Game/Tempest/Props/Construction_new/Textures/T_PortableWaterTank_01_RMO",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Props/Faction_Containers/SM_GDF_Container",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\Faction_Containers\\SM_GDF_Container.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "0d6786a7f243874703e819bf774aa7bba419ffc313f77cb3ba1c3404b62fa774",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 92,
+      "package_name": "/Game/Tempest/Props/Faction_Containers/SM_GDF_Container",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Props/GDFCutoffs/Materials/MI_GDF_AdvancedPowerplant_Prop_Dark",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\GDFCutoffs\\Materials\\MI_GDF_AdvancedPowerplant_Prop_Dark.uasset",
+      "header_result": "parsed",
+      "sha256": "ccb9dfa2705aa83050b83a63b89a8e65d134f154ac431a067b91a890e224fd44",
+      "cooked": false,
+      "filter_editor_only": false,
+      "version": {
+        "legacy": -8,
+        "ue4": 522,
+        "ue5": 1012
+      }
+    },
+    {
+      "package": "/Game/Tempest/Props/GDFCutoffs/Materials/MI_GDF_AirControlTower_Prop_Dark",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\GDFCutoffs\\Materials\\MI_GDF_AirControlTower_Prop_Dark.uasset",
+      "header_result": "parsed",
+      "sha256": "da2f57681f299bf84ad26dd699f3755e021da674dd0946e2f3aded250fa0d0b7",
+      "cooked": false,
+      "filter_editor_only": false,
+      "version": {
+        "legacy": -8,
+        "ue4": 522,
+        "ue5": 1012
+      }
+    },
+    {
+      "package": "/Game/Tempest/Props/GDFCutoffs/Materials/MI_GDF_Barracks_Prop_Dark",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\GDFCutoffs\\Materials\\MI_GDF_Barracks_Prop_Dark.uasset",
+      "header_result": "parsed",
+      "sha256": "1cbbea53b863fe604a71475af6e4f1ef95132b72ba876412ea652496e5d3a003",
+      "cooked": false,
+      "filter_editor_only": false,
+      "version": {
+        "legacy": -8,
+        "ue4": 522,
+        "ue5": 1012
+      }
+    },
+    {
+      "package": "/Game/Tempest/Props/GDFCutoffs/Materials/MI_GDF_Conyard_Prop_Dark",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\GDFCutoffs\\Materials\\MI_GDF_Conyard_Prop_Dark.uasset",
+      "header_result": "parsed",
+      "sha256": "d618538e85a141f9028446ad16d3955b1e2e3ec89a1ea28997a7c872e9184b8a",
+      "cooked": false,
+      "filter_editor_only": false,
+      "version": {
+        "legacy": -8,
+        "ue4": 522,
+        "ue5": 1012
+      }
+    },
+    {
+      "package": "/Game/Tempest/Props/GDFCutoffs/Materials/MI_GDF_Refinery_Prop_Dark",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\GDFCutoffs\\Materials\\MI_GDF_Refinery_Prop_Dark.uasset",
+      "header_result": "parsed",
+      "sha256": "af36d11ac66f7a71aa9560b825050b31d99f3afeae02080c12711d7ae41ad294",
+      "cooked": false,
+      "filter_editor_only": false,
+      "version": {
+        "legacy": -8,
+        "ue4": 522,
+        "ue5": 1012
+      }
+    },
+    {
+      "package": "/Game/Tempest/Props/GDFCutoffs/Materials/MI_GDF_RepairBay_Prop_Dark",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\GDFCutoffs\\Materials\\MI_GDF_RepairBay_Prop_Dark.uasset",
+      "header_result": "parsed",
+      "sha256": "97a3d9be2f402803d96bb192f5067663123b220cea39c3fa0f7f96dfd16cf84f",
+      "cooked": false,
+      "filter_editor_only": false,
+      "version": {
+        "legacy": -8,
+        "ue4": 522,
+        "ue5": 1012
+      }
+    },
+    {
+      "package": "/Game/Tempest/Props/GDFCutoffs/Materials/MI_GDF_TechCenter_Dark",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\GDFCutoffs\\Materials\\MI_GDF_TechCenter_Dark.uasset",
+      "header_result": "parsed",
+      "sha256": "0b3149a7dd5431d868ef0e3b6ec29dcdfd65294d4a37bfdc3a19649b08de5a60",
+      "cooked": false,
+      "filter_editor_only": false,
+      "version": {
+        "legacy": -8,
+        "ue4": 522,
+        "ue5": 1012
+      }
+    },
+    {
+      "package": "/Game/Tempest/Props/GDFCutoffs/Materials/MI_GDF_TechCenter_Prop_Dark",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\GDFCutoffs\\Materials\\MI_GDF_TechCenter_Prop_Dark.uasset",
+      "header_result": "parsed",
+      "sha256": "6f3f8dc8900d213ea2f2aff802ca67d46ad7411b4fd029157e864b8bb56ec474",
+      "cooked": false,
+      "filter_editor_only": false,
+      "version": {
+        "legacy": -8,
+        "ue4": 522,
+        "ue5": 1012
+      }
+    },
+    {
+      "package": "/Game/Tempest/Props/GDFCutoffs/Materials/MI_GDF_WarFactory_Prop_Dark",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\GDFCutoffs\\Materials\\MI_GDF_WarFactory_Prop_Dark.uasset",
+      "header_result": "parsed",
+      "sha256": "1901f67c319c653cac05e83e04b61fd061bf7416495ba874fa91a701a0bcfa7f",
+      "cooked": false,
+      "filter_editor_only": false,
+      "version": {
+        "legacy": -8,
+        "ue4": 522,
+        "ue5": 1012
+      }
+    },
+    {
+      "package": "/Game/Tempest/Props/GDFCutoffs/SM_AirtowerDetail_01",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\GDFCutoffs\\SM_AirtowerDetail_01.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "e8cc89e192e630744b65ff44e9014fcb581e60d3070d56b02c2512a85843bf39",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 88,
+      "package_name": "/Game/Tempest/Props/GDFCutoffs/SM_AirtowerDetail_01",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Props/GDFCutoffs/SM_ConyardDetail_05",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\GDFCutoffs\\SM_ConyardDetail_05.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "e5bc13e2851cb41b215cea2965491a234d52106d29fdb05a922f25c0ad4c86ba",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 87,
+      "package_name": "/Game/Tempest/Props/GDFCutoffs/SM_ConyardDetail_05",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Props/GDFCutoffs/SM_FactoryDetail_02",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\GDFCutoffs\\SM_FactoryDetail_02.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "b177fdf09070e0e4ad4f3c47f7364c2a3b48ce2e691ea16daa9b4da1d7a554d6",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 87,
+      "package_name": "/Game/Tempest/Props/GDFCutoffs/SM_FactoryDetail_02",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Props/GDF_Cutoff/Materials/MI_GDFcutoff_GatlingTurret_Dark",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\GDF_Cutoff\\Materials\\MI_GDFcutoff_GatlingTurret_Dark.uasset",
+      "header_result": "parsed",
+      "sha256": "30855489f29a074932b2fa4bbffd1675287d7f6280b1ed2eccbb2fdb62411987",
+      "cooked": false,
+      "filter_editor_only": false,
+      "version": {
+        "legacy": -8,
+        "ue4": 522,
+        "ue5": 1012
+      }
+    },
+    {
+      "package": "/Game/Tempest/Props/GDF_Cutoff/Materials/MI_GDFcutoff_Guardtower_Dark",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\GDF_Cutoff\\Materials\\MI_GDFcutoff_Guardtower_Dark.uasset",
+      "header_result": "parsed",
+      "sha256": "4a570c395b6341f2f71b2812a295306104527f29f62af7e7b993c66732f961e1",
+      "cooked": false,
+      "filter_editor_only": false,
+      "version": {
+        "legacy": -8,
+        "ue4": 522,
+        "ue5": 1012
+      }
+    },
+    {
+      "package": "/Game/Tempest/Props/GDF_Cutoff/Materials/MI_GDFcutoff_HaywireTurret_Dark",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\GDF_Cutoff\\Materials\\MI_GDFcutoff_HaywireTurret_Dark.uasset",
+      "header_result": "parsed",
+      "sha256": "1d2e08850a3ce85708ba4156e5361534fc5a6854fd28918858f4d5536745df9e",
+      "cooked": false,
+      "filter_editor_only": false,
+      "version": {
+        "legacy": -8,
+        "ue4": 522,
+        "ue5": 1012
+      }
+    },
+    {
+      "package": "/Game/Tempest/Props/GDF_Cutoff/SM_GDF_AdvPowerplant_LargeProp_01",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\GDF_Cutoff\\SM_GDF_AdvPowerplant_LargeProp_01.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "38969e3f9e5917ebd37395e078b474e62fa8522072d66067fb244e63f75d19ee",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 101,
+      "package_name": "/Game/Tempest/Props/GDF_Cutoff/SM_GDF_AdvPowerplant_LargeProp_01",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Props/GDF_Cutoff/SM_GDF_AdvPowerplant_LargeProp_03",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\GDF_Cutoff\\SM_GDF_AdvPowerplant_LargeProp_03.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "0644a64136cdf29fa508a0bec2e8786525dec157094e79529f6d7bae9b5e4528",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 101,
+      "package_name": "/Game/Tempest/Props/GDF_Cutoff/SM_GDF_AdvPowerplant_LargeProp_03",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Props/GDF_Cutoff/SM_GDF_AirConTower_LargeProp_01",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\GDF_Cutoff\\SM_GDF_AirConTower_LargeProp_01.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "b36fe5da00320ff8bb0da94b4e519a9149bb0fb3f65f0ecabdd04942fb58582b",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 99,
+      "package_name": "/Game/Tempest/Props/GDF_Cutoff/SM_GDF_AirConTower_LargeProp_01",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Props/GDF_Cutoff/SM_GDF_AirConTower_Prop_02",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\GDF_Cutoff\\SM_GDF_AirConTower_Prop_02.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "14bf3b8c45a0ba317b7b612acb5ff0bc97f35e245fab6cc30b64cbbdc630fd5a",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 94,
+      "package_name": "/Game/Tempest/Props/GDF_Cutoff/SM_GDF_AirConTower_Prop_02",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Props/GDF_Cutoff/SM_GDF_AirConTower_Prop_07",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\GDF_Cutoff\\SM_GDF_AirConTower_Prop_07.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "7df3be4123583ec0881f9d5c7899701ee8d09bd8ece2b2e4467b0bf1763f433a",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 94,
+      "package_name": "/Game/Tempest/Props/GDF_Cutoff/SM_GDF_AirConTower_Prop_07",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Props/GDF_Cutoff/SM_GDF_Barracks_LargeProp_01",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\GDF_Cutoff\\SM_GDF_Barracks_LargeProp_01.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "3a27e6954d9a33f495c431e51f23ca8511fe90f64b21f37d537055b5bcd72b42",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 96,
+      "package_name": "/Game/Tempest/Props/GDF_Cutoff/SM_GDF_Barracks_LargeProp_01",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Props/GDF_Cutoff/SM_GDF_Barracks_Prop_01",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\GDF_Cutoff\\SM_GDF_Barracks_Prop_01.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "616ed5950461362dda7905950857e7212948a9b918dc59096a4789542ebe9a65",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 91,
+      "package_name": "/Game/Tempest/Props/GDF_Cutoff/SM_GDF_Barracks_Prop_01",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Props/GDF_Cutoff/SM_GDF_Barracks_Prop_03",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\GDF_Cutoff\\SM_GDF_Barracks_Prop_03.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "877057ad770c4f1a0560c3233d1fedbe934f70b1c3b315e347ce9213a4350ebc",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 91,
+      "package_name": "/Game/Tempest/Props/GDF_Cutoff/SM_GDF_Barracks_Prop_03",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Props/GDF_Cutoff/SM_GDF_Barracks_Prop_04",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\GDF_Cutoff\\SM_GDF_Barracks_Prop_04.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "29c666e6ad15bf0eeef514b691b69cb588fa67fe319fd50feea6febd5802db95",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 91,
+      "package_name": "/Game/Tempest/Props/GDF_Cutoff/SM_GDF_Barracks_Prop_04",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Props/GDF_Cutoff/SM_GDF_Barracks_Prop_05",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\GDF_Cutoff\\SM_GDF_Barracks_Prop_05.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "47dc72464726ed39c5a24cb731c0e70a8f5490216e247b92ea8240b4fe58e057",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 91,
+      "package_name": "/Game/Tempest/Props/GDF_Cutoff/SM_GDF_Barracks_Prop_05",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Props/GDF_Cutoff/SM_GDF_Barracks_Prop_06",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\GDF_Cutoff\\SM_GDF_Barracks_Prop_06.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "85c2b552e63dc0e43d9c0ec80111d58e525e42a04e9cbc5e06fe39e1d2f1f4dd",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 91,
+      "package_name": "/Game/Tempest/Props/GDF_Cutoff/SM_GDF_Barracks_Prop_06",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Props/GDF_Cutoff/SM_GDF_ConstructionYard_Prop_02",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\GDF_Cutoff\\SM_GDF_ConstructionYard_Prop_02.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "36f1fea1d3665fc77a477de69b662b6e532b19e639e6b1dd62ceec0b1e287555",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 99,
+      "package_name": "/Game/Tempest/Props/GDF_Cutoff/SM_GDF_ConstructionYard_Prop_02",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Props/GDF_Cutoff/SM_GDF_ConstructionYard_Prop_10",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\GDF_Cutoff\\SM_GDF_ConstructionYard_Prop_10.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "defd17d721ecaac3d2544e9ad784b8d24b181988a2c34660dbdcea9d269a190b",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 99,
+      "package_name": "/Game/Tempest/Props/GDF_Cutoff/SM_GDF_ConstructionYard_Prop_10",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Props/GDF_Cutoff/SM_GDF_DroneStrikeStation_LargeProp_02",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\GDF_Cutoff\\SM_GDF_DroneStrikeStation_LargeProp_02.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "1c9fd136844bf52182c917c8df9c126e1a5d721d76f150fd52c554e55ff3eb0b",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 106,
+      "package_name": "/Game/Tempest/Props/GDF_Cutoff/SM_GDF_DroneStrikeStation_LargeProp_02",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Props/GDF_Cutoff/SM_GDF_DroneStrikeStation_LargeProp_03",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\GDF_Cutoff\\SM_GDF_DroneStrikeStation_LargeProp_03.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "045563ec39884e76af0f398a9510165e6f896609e8e8419cadb98fe4b310d632",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 106,
+      "package_name": "/Game/Tempest/Props/GDF_Cutoff/SM_GDF_DroneStrikeStation_LargeProp_03",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Props/GDF_Cutoff/SM_GDF_DroneStrikeStation_Prop_01",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\GDF_Cutoff\\SM_GDF_DroneStrikeStation_Prop_01.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "e94a253a8573df222e817f955282f851e3b191da57bbc843a38c74f8852a5b5b",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 101,
+      "package_name": "/Game/Tempest/Props/GDF_Cutoff/SM_GDF_DroneStrikeStation_Prop_01",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Props/GDF_Cutoff/SM_GDF_GatlingTurret_Prop_01",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\GDF_Cutoff\\SM_GDF_GatlingTurret_Prop_01.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "1ff1b0b2df93d5c58df62bf325e98099ce563ae97c66b057003b80fa9739ebe6",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 96,
+      "package_name": "/Game/Tempest/Props/GDF_Cutoff/SM_GDF_GatlingTurret_Prop_01",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Props/GDF_Cutoff/SM_GDF_GuardTower_LargeProp_01",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\GDF_Cutoff\\SM_GDF_GuardTower_LargeProp_01.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "54154b13753948f5c657f94eed7d1765a93c16a149879f32340b8cbbd17c607e",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 98,
+      "package_name": "/Game/Tempest/Props/GDF_Cutoff/SM_GDF_GuardTower_LargeProp_01",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Props/GDF_Cutoff/SM_GDF_HaywireTurret_Prop_01",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\GDF_Cutoff\\SM_GDF_HaywireTurret_Prop_01.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "3457fb8e1d3da14bee876f1f8a1519df436046d63ed7831cc2872dd19cd1e65c",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 96,
+      "package_name": "/Game/Tempest/Props/GDF_Cutoff/SM_GDF_HaywireTurret_Prop_01",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Props/GDF_Cutoff/SM_GDF_Powerplant_Prop_01",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\GDF_Cutoff\\SM_GDF_Powerplant_Prop_01.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "726e44c60d8c12e764afcb9ef05ed1a5731eaf86ae7eb95df4e5568789204b87",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 93,
+      "package_name": "/Game/Tempest/Props/GDF_Cutoff/SM_GDF_Powerplant_Prop_01",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Props/GDF_Cutoff/SM_GDF_Powerplant_Prop_02",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\GDF_Cutoff\\SM_GDF_Powerplant_Prop_02.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "0b77a5f4002f866322ba490ca8a38163951e0ef2a6d688228da63645e627d467",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 93,
+      "package_name": "/Game/Tempest/Props/GDF_Cutoff/SM_GDF_Powerplant_Prop_02",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Props/GDF_Cutoff/SM_GDF_Powerplant_Prop_03",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\GDF_Cutoff\\SM_GDF_Powerplant_Prop_03.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "cfab202423e722f8028f409996b1a14de024783b01cb0f3039aa239a79fc505f",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 93,
+      "package_name": "/Game/Tempest/Props/GDF_Cutoff/SM_GDF_Powerplant_Prop_03",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Props/GDF_Cutoff/SM_GDF_Refinery_LargeProp_006",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\GDF_Cutoff\\SM_GDF_Refinery_LargeProp_006.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "e6b383771dbe76502fbb4133e1987b735abff941cb6760877a9b023b88d14940",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 97,
+      "package_name": "/Game/Tempest/Props/GDF_Cutoff/SM_GDF_Refinery_LargeProp_006",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Props/GDF_Cutoff/SM_GDF_Refinery_Prop_004",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\GDF_Cutoff\\SM_GDF_Refinery_Prop_004.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "9b49069dfd4ca9b1b9841c847e055f05607abbe05985118e2fb98144ca8a3059",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 92,
+      "package_name": "/Game/Tempest/Props/GDF_Cutoff/SM_GDF_Refinery_Prop_004",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Props/GDF_Cutoff/SM_GDF_RepairBay_LargeProp_02",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\GDF_Cutoff\\SM_GDF_RepairBay_LargeProp_02.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "3e0dacc3de3bec1f1f6f4dd2a85a013efcb63b3c1b6a0b7d3b0c0855f058f00e",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 97,
+      "package_name": "/Game/Tempest/Props/GDF_Cutoff/SM_GDF_RepairBay_LargeProp_02",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Props/GDF_Cutoff/SM_GDF_RepairBay_LargeProp_03",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\GDF_Cutoff\\SM_GDF_RepairBay_LargeProp_03.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "e30168402836c200755d62192562bb6eeb139802903d52d3dbab01065a160766",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 97,
+      "package_name": "/Game/Tempest/Props/GDF_Cutoff/SM_GDF_RepairBay_LargeProp_03",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Props/GDF_Cutoff/SM_GDF_RepairBay_LargeProp_04",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\GDF_Cutoff\\SM_GDF_RepairBay_LargeProp_04.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "d9e1920d0897c7c433061ac3e949bbf12f740b232b0ce61fdc2fb5afb1b91cd6",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 97,
+      "package_name": "/Game/Tempest/Props/GDF_Cutoff/SM_GDF_RepairBay_LargeProp_04",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Props/GDF_Cutoff/SM_GDF_RepairBay_LargeProp_05",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\GDF_Cutoff\\SM_GDF_RepairBay_LargeProp_05.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "8140b97798e78ada408be284f083bf9fe0e1958c41448904fa386c0f34047065",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 97,
+      "package_name": "/Game/Tempest/Props/GDF_Cutoff/SM_GDF_RepairBay_LargeProp_05",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Props/GDF_Cutoff/SM_GDF_RepairBay_LargeProp_06",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\GDF_Cutoff\\SM_GDF_RepairBay_LargeProp_06.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "3e61382d57a38802f60c73e52873f803f144e70c0802ae4f32e423b06673ee1f",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 97,
+      "package_name": "/Game/Tempest/Props/GDF_Cutoff/SM_GDF_RepairBay_LargeProp_06",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Props/GDF_Cutoff/SM_GDF_RepairBay_LargeProp_07",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\GDF_Cutoff\\SM_GDF_RepairBay_LargeProp_07.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "e1500eb8dddd9b677e588b70a092d7f16aed8a70eed9f4d86908e8350ff16a25",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 97,
+      "package_name": "/Game/Tempest/Props/GDF_Cutoff/SM_GDF_RepairBay_LargeProp_07",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Props/GDF_Cutoff/SM_GDF_TechCenter_LargeProp_01",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\GDF_Cutoff\\SM_GDF_TechCenter_LargeProp_01.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "93c99aa49fe9776e05e871ea0ace75babee397c75a205ba491304475ff8568f6",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 98,
+      "package_name": "/Game/Tempest/Props/GDF_Cutoff/SM_GDF_TechCenter_LargeProp_01",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Props/GDF_Cutoff/SM_GDF_TechCenter_LargeProp_02",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\GDF_Cutoff\\SM_GDF_TechCenter_LargeProp_02.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "e00f7495224818a58edd58e1f93e1d4ece39ff47280e26322101b5cbe3c95568",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 98,
+      "package_name": "/Game/Tempest/Props/GDF_Cutoff/SM_GDF_TechCenter_LargeProp_02",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Props/GDF_Cutoff/SM_GDF_TechCenter_Prop_01",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\GDF_Cutoff\\SM_GDF_TechCenter_Prop_01.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "a351e8485ae68896bd53d1c6500462443ba8e6068a092b82148d3201a7477953",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 93,
+      "package_name": "/Game/Tempest/Props/GDF_Cutoff/SM_GDF_TechCenter_Prop_01",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Props/GDF_Cutoff/SM_GDF_WarFactory_LargeProp_01",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\GDF_Cutoff\\SM_GDF_WarFactory_LargeProp_01.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "83818d0a1235d584ea09065fb2acc4186bdbaa7a29c37e1b8463ee98b3d6ec4b",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 98,
+      "package_name": "/Game/Tempest/Props/GDF_Cutoff/SM_GDF_WarFactory_LargeProp_01",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Props/GDF_Cutoff/SM_GDF_WarFactory_LargeProp_05_Cut",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\GDF_Cutoff\\SM_GDF_WarFactory_LargeProp_05_Cut.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "be2ef41a6fc875ca769b619e0947ec507af9952335c37e818e22d492c5d07358",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 102,
+      "package_name": "/Game/Tempest/Props/GDF_Cutoff/SM_GDF_WarFactory_LargeProp_05_Cut",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Props/GDF_Cutoff/SM_GDF_WarFactory_Prop_01",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\GDF_Cutoff\\SM_GDF_WarFactory_Prop_01.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "541475441f8a04fc1a07d98aad0735aeeca37df6ad3bfdc6d6fa8ee48a45762c",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 93,
+      "package_name": "/Game/Tempest/Props/GDF_Cutoff/SM_GDF_WarFactory_Prop_01",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Props/ResearchProps/Materials/MI_Research_Arrow_01_Decal",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\ResearchProps\\Materials\\MI_Research_Arrow_01_Decal.uasset",
+      "header_result": "parsed",
+      "sha256": "9ad145be7c340521e45520f6cbaf001a1d02d8c42398fe19421c212fbb4206c1",
+      "cooked": false,
+      "filter_editor_only": false,
+      "version": {
+        "legacy": -8,
+        "ue4": 522,
+        "ue5": 1012
+      }
+    },
+    {
+      "package": "/Game/Tempest/Props/ResearchProps/Materials/MI_Research_Arrow_02_Decal",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\ResearchProps\\Materials\\MI_Research_Arrow_02_Decal.uasset",
+      "header_result": "parsed",
+      "sha256": "4cf913f34ff673f8f0e0bbb63005d3274a0e994ce2e0239fd4e75bc0efab53c2",
+      "cooked": false,
+      "filter_editor_only": false,
+      "version": {
+        "legacy": -8,
+        "ue4": 522,
+        "ue5": 1012
+      }
+    },
+    {
+      "package": "/Game/Tempest/Props/ResearchProps/ResearchTasks_wallTrim_01",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\ResearchProps\\ResearchTasks_wallTrim_01.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "1d3fc40ddfcadea69212af2f46690a145151347ceef2a711bdf1c43fbcfbe8e1",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 96,
+      "package_name": "/Game/Tempest/Props/ResearchProps/ResearchTasks_wallTrim_01",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Props/ResearchProps/ResearchTasks_wallTrim_02",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\ResearchProps\\ResearchTasks_wallTrim_02.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "c99cc47ac17d94b41d467f70276cdd7b9cbc133c0544d0fdc43ae3b8d819ce2e",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 96,
+      "package_name": "/Game/Tempest/Props/ResearchProps/ResearchTasks_wallTrim_02",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Props/ResearchProps/ResearchTasks_wallTrim_03",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\ResearchProps\\ResearchTasks_wallTrim_03.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "301fb5defb93af5a1e73a46ad27e44210b823614b55e63fa2b2b7bf57051c981",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 96,
+      "package_name": "/Game/Tempest/Props/ResearchProps/ResearchTasks_wallTrim_03",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Props/ResearchProps/ResearchTasks_wallTrim_04",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\ResearchProps\\ResearchTasks_wallTrim_04.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "ef716eeebb468ba4ae9e493219a2cd75ffe06f41a2109f96b177970da1f8f306",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 96,
+      "package_name": "/Game/Tempest/Props/ResearchProps/ResearchTasks_wallTrim_04",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Props/ResearchProps/ResearchTasks_wallTrim_05",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\ResearchProps\\ResearchTasks_wallTrim_05.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "fa034260fb102ef43d07aba824727b6a4c2f4f187ce5e1ea132035027a3f9618",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 96,
+      "package_name": "/Game/Tempest/Props/ResearchProps/ResearchTasks_wallTrim_05",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Props/ResearchProps/ResearchTasks_wallTrim_07",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\ResearchProps\\ResearchTasks_wallTrim_07.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "953e68da8a08df57b9c4e80a1de3b08b3ca39dc0fcc6e4f2f43620972e2414d7",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 96,
+      "package_name": "/Game/Tempest/Props/ResearchProps/ResearchTasks_wallTrim_07",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Props/ResearchProps/ResearchTasks_wallTrim_08",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\ResearchProps\\ResearchTasks_wallTrim_08.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "18e622acf6344f08c5576de37792c4d23b20fb2bc5d74a7b21a8d95727ca010e",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 96,
+      "package_name": "/Game/Tempest/Props/ResearchProps/ResearchTasks_wallTrim_08",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Props/ResearchProps/SM_ResearchDoor_Edge",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\ResearchProps\\SM_ResearchDoor_Edge.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "8f5b89b9d7260b4d20ecbeff4429a54ca8333be90be59582cc85d66e6e936e3f",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 91,
+      "package_name": "/Game/Tempest/Props/ResearchProps/SM_ResearchDoor_Edge",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Props/ResearchProps/SM_ResearchDoor_Frame",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\ResearchProps\\SM_ResearchDoor_Frame.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "336f2cd54304e89d39497c474ad30630e454a9ae069dd89c5263b75e5fc6f693",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 92,
+      "package_name": "/Game/Tempest/Props/ResearchProps/SM_ResearchDoor_Frame",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Props/ResearchProps/SM_ResearchDoor_Mid_Detail",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\ResearchProps\\SM_ResearchDoor_Mid_Detail.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "1692344f506e8cf6f0301d02f436decbeaaf585e7c912f23631a4525b38de932",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 97,
+      "package_name": "/Game/Tempest/Props/ResearchProps/SM_ResearchDoor_Mid_Detail",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Props/ResearchProps/SM_ResearchDoor_Sides_01",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\ResearchProps\\SM_ResearchDoor_Sides_01.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "7ede75c0b533105ffd00c14b91cfc80ef5a062f858dfe6649e4c13ddd54ca2f2",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 95,
+      "package_name": "/Game/Tempest/Props/ResearchProps/SM_ResearchDoor_Sides_01",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Props/ResearchProps/SM_ResearchDoor_Trim",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\ResearchProps\\SM_ResearchDoor_Trim.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "107136f52b3a680e109834c7da6bd6f0c0e6972e8a4592ad816b30d8fc17c343",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 91,
+      "package_name": "/Game/Tempest/Props/ResearchProps/SM_ResearchDoor_Trim",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Props/ResearchProps/SM_Research_Column",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\ResearchProps\\SM_Research_Column.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "99b90fca9597aa882c2f844abb4e57f8f7579cb12d48991dbb3141627201b4f2",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 89,
+      "package_name": "/Game/Tempest/Props/ResearchProps/SM_Research_Column",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Props/ResearchProps/SM_Research_CornerPiece_Head",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\ResearchProps\\SM_Research_CornerPiece_Head.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "d514ac6d5d064262884323ade1508c36cfe57cc30e13f24393562e393ba0db4d",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 99,
+      "package_name": "/Game/Tempest/Props/ResearchProps/SM_Research_CornerPiece_Head",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Props/ResearchProps/SM_Research_GiantScreen",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\ResearchProps\\SM_Research_GiantScreen.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "4becc3dbf4dfea2f9813dddc09b2ab613e7c8fdc2dc2fc03f0f01676d75e1b38",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 94,
+      "package_name": "/Game/Tempest/Props/ResearchProps/SM_Research_GiantScreen",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Props/ResearchProps/SM_Research_TrimPieceBorder",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\ResearchProps\\SM_Research_TrimPieceBorder.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "839fc271c090a58a636d19a3a7d9c040fe6fa1d5ac72a11a72e74d9c4b100eb1",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 98,
+      "package_name": "/Game/Tempest/Props/ResearchProps/SM_Research_TrimPieceBorder",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Props/ResearchProps/SM_Research_WallPiece",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\ResearchProps\\SM_Research_WallPiece.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "28c426f5306353325a63c8bea245fa991e9530a3e26b7ca917af99dd50ec02a5",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 92,
+      "package_name": "/Game/Tempest/Props/ResearchProps/SM_Research_WallPiece",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Props/ResearchProps/SM_Research_WallPiece_x2",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\ResearchProps\\SM_Research_WallPiece_x2.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "28ce82954a9d2f64f6f16b02b0f33dde1c6d2e29a125e364f7285e0195f77aba",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 95,
+      "package_name": "/Game/Tempest/Props/ResearchProps/SM_Research_WallPiece_x2",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Props/ResearchProps/SM_Research_WallPiece_x4",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\ResearchProps\\SM_Research_WallPiece_x4.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "1eff0c159a07cfe5d2a5106b6d5269330b5ca18f662713802f129c4453f14a18",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 95,
+      "package_name": "/Game/Tempest/Props/ResearchProps/SM_Research_WallPiece_x4",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Props/ResearchProps/SM_Research_floorTileBorderMesh_01",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\ResearchProps\\SM_Research_floorTileBorderMesh_01.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "7a10673c12bfbe817224501248eeb177239fcedfb2537fe66eb5b5f0281234d1",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 105,
+      "package_name": "/Game/Tempest/Props/ResearchProps/SM_Research_floorTileBorderMesh_01",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Props/ResearchProps/SM_Research_floorTileBorderMesh_02",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\ResearchProps\\SM_Research_floorTileBorderMesh_02.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "49af7b56f13937d3cfc79cbd95b4475c8cc7bfa9ad8c371b75b06cfe906ed744",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 105,
+      "package_name": "/Game/Tempest/Props/ResearchProps/SM_Research_floorTileBorderMesh_02",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Props/ResearchProps/SM_Research_floorTileBorderMesh_03",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\ResearchProps\\SM_Research_floorTileBorderMesh_03.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "3052dddafb9f8393840e016ad2762989533f2c020e8412f4637e679e4c890425",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 105,
+      "package_name": "/Game/Tempest/Props/ResearchProps/SM_Research_floorTileBorderMesh_03",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Props/ResearchProps/SM_Research_floorTiles",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\ResearchProps\\SM_Research_floorTiles.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "fc19688c89e23a776d37e6e7fa1734a26473b701df4f7c7b6a3e62ddb137c48a",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 93,
+      "package_name": "/Game/Tempest/Props/ResearchProps/SM_Research_floorTiles",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Props/ResearchProps/SM_Research_slideDoor_02",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\ResearchProps\\SM_Research_slideDoor_02.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "60466a1f01f89198fe814865a25c0317260a18908c9c0a45c2814afe63d56a2e",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 95,
+      "package_name": "/Game/Tempest/Props/ResearchProps/SM_Research_slideDoor_02",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Props/ResearchProps/SM_Research_slideDoor_03",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\ResearchProps\\SM_Research_slideDoor_03.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "844e61a20d66e356b2d57e2e68f4800257b18f7ae1042638cac466a34dc37305",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 95,
+      "package_name": "/Game/Tempest/Props/ResearchProps/SM_Research_slideDoor_03",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Props/Trimsheets/Textures/GenericTrimsheets/T_TrimsCoarseMetal_D",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\Trimsheets\\Textures\\GenericTrimsheets\\T_TrimsCoarseMetal_D.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "cfc80cde659f716f8818a63a41ef57f7ac283448442e12cd3e6aa77473218e73",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 115,
+      "package_name": "/Game/Tempest/Props/Trimsheets/Textures/GenericTrimsheets/T_TrimsCoarseMetal_D",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Props/Trimsheets/Textures/GenericTrimsheets/T_TrimsCoarseMetal_N",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\Trimsheets\\Textures\\GenericTrimsheets\\T_TrimsCoarseMetal_N.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "2423fee2f9ca8c016ba18635834f00231757f7bf1cabc00688bf2da270050f4b",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 115,
+      "package_name": "/Game/Tempest/Props/Trimsheets/Textures/GenericTrimsheets/T_TrimsCoarseMetal_N",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Game/Tempest/Props/Trimsheets/Textures/GenericTrimsheets/T_TrimsCoarseMetal_RMO",
+      "mount": "Game",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Content\\Tempest\\Props\\Trimsheets\\Textures\\GenericTrimsheets\\T_TrimsCoarseMetal_RMO.uasset",
+      "header_result": "summary_only_unversioned",
+      "reason": "Unsupported package version: -8, 0, 0, 0",
+      "sha256": "6b65ff4fc4fb910f07edae7fdac0f0c67d30d9fe814b5987ca1acda9ed13d4b8",
+      "cooked": true,
+      "filter_editor_only": true,
+      "flags_hex": "0x80002200",
+      "flags_file_offset": 117,
+      "package_name": "/Game/Tempest/Props/Trimsheets/Textures/GenericTrimsheets/T_TrimsCoarseMetal_RMO",
+      "version": {
+        "legacy": -8,
+        "ue4": 0,
+        "ue5": 0,
+        "unversioned": true
+      },
+      "limitation": "Only legacy -8 summary prefix decoded; no inferred current UE version or import layout."
+    },
+    {
+      "package": "/Script/BlueprintGraph",
+      "mount": "Script",
+      "status": "native_module"
+    },
+    {
+      "package": "/Script/CoreUObject",
+      "mount": "Script",
+      "status": "native_module"
+    },
+    {
+      "package": "/Script/Engine",
+      "mount": "Script",
+      "status": "native_module"
+    },
+    {
+      "package": "/Script/Foliage",
+      "mount": "Script",
+      "status": "native_module"
+    },
+    {
+      "package": "/Script/Landscape",
+      "mount": "Script",
+      "status": "native_module"
+    },
+    {
+      "package": "/Script/LiveLinkComponents",
+      "mount": "Script",
+      "status": "native_module"
+    },
+    {
+      "package": "/Script/NavGrid",
+      "mount": "Script",
+      "status": "native_module"
+    },
+    {
+      "package": "/Script/NavigationSystem",
+      "mount": "Script",
+      "status": "native_module"
+    },
+    {
+      "package": "/Script/Niagara",
+      "mount": "Script",
+      "status": "native_module"
+    },
+    {
+      "package": "/Script/Tempest",
+      "mount": "Script",
+      "status": "native_module"
+    },
+    {
+      "package": "/Script/UnrealEd",
+      "mount": "Script",
+      "status": "native_module"
+    },
+    {
+      "package": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/Foliage/SM_CherryTree_01_Copied_FoliageType",
+      "mount": "SetdressingExampleMap",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Mods\\SetdressingExampleMap\\Content\\Maps\\Multiplayer\\4Player\\SEM\\Foliage\\SM_CherryTree_01_Copied_FoliageType.uasset",
+      "header_result": "parsed",
+      "sha256": "c0bcc451deefb74dea68391a04a58fe52a5ea5b6448d1be295ef81f785e40360",
+      "cooked": false,
+      "filter_editor_only": false,
+      "version": {
+        "legacy": -8,
+        "ue4": 522,
+        "ue5": 1012
+      }
+    },
+    {
+      "package": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/Foliage/SM_CherryTree_02_Copied_FoliageType",
+      "mount": "SetdressingExampleMap",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Mods\\SetdressingExampleMap\\Content\\Maps\\Multiplayer\\4Player\\SEM\\Foliage\\SM_CherryTree_02_Copied_FoliageType.uasset",
+      "header_result": "parsed",
+      "sha256": "9c2b9c64c03b519d5dfaf223f6fa642981257b8c4e09e9fcfcb25edfc5ee4658",
+      "cooked": false,
+      "filter_editor_only": false,
+      "version": {
+        "legacy": -8,
+        "ue4": 522,
+        "ue5": 1012
+      }
+    },
+    {
+      "package": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/Foliage/SM_CherryTree_03_Copied_FoliageType",
+      "mount": "SetdressingExampleMap",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Mods\\SetdressingExampleMap\\Content\\Maps\\Multiplayer\\4Player\\SEM\\Foliage\\SM_CherryTree_03_Copied_FoliageType.uasset",
+      "header_result": "parsed",
+      "sha256": "ccbc3ca4a332227f73738fb146521d58de5685d67b9d0cb25ebda812485f83ec",
+      "cooked": false,
+      "filter_editor_only": false,
+      "version": {
+        "legacy": -8,
+        "ue4": 522,
+        "ue5": 1012
+      }
+    },
+    {
+      "package": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/Foliage/SM_Temperate_HeatherPlant_01_FoliageType",
+      "mount": "SetdressingExampleMap",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Mods\\SetdressingExampleMap\\Content\\Maps\\Multiplayer\\4Player\\SEM\\Foliage\\SM_Temperate_HeatherPlant_01_FoliageType.uasset",
+      "header_result": "parsed",
+      "sha256": "3732020dff546b15f6a518e78c68fc005f61c7d02b12b99e2f65ac51a848ffd9",
+      "cooked": false,
+      "filter_editor_only": false,
+      "version": {
+        "legacy": -8,
+        "ue4": 522,
+        "ue5": 1012
+      }
+    },
+    {
+      "package": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/Foliage/SM_Temperate_HeatherPlant_02_FoliageType",
+      "mount": "SetdressingExampleMap",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Mods\\SetdressingExampleMap\\Content\\Maps\\Multiplayer\\4Player\\SEM\\Foliage\\SM_Temperate_HeatherPlant_02_FoliageType.uasset",
+      "header_result": "parsed",
+      "sha256": "f9baabcedff0601a1e2b63986e963bf5aff690e8f35927273eceb8f6c7f84900",
+      "cooked": false,
+      "filter_editor_only": false,
+      "version": {
+        "legacy": -8,
+        "ue4": 522,
+        "ue5": 1012
+      }
+    },
+    {
+      "package": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/Foliage/SM_Temperate_HeatherPlant_03_FoliageType",
+      "mount": "SetdressingExampleMap",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Mods\\SetdressingExampleMap\\Content\\Maps\\Multiplayer\\4Player\\SEM\\Foliage\\SM_Temperate_HeatherPlant_03_FoliageType.uasset",
+      "header_result": "parsed",
+      "sha256": "31e02578872fce8e95c323f52f412f5070818a42a1024f7ada670d86917dd966",
+      "cooked": false,
+      "filter_editor_only": false,
+      "version": {
+        "legacy": -8,
+        "ue4": 522,
+        "ue5": 1012
+      }
+    },
+    {
+      "package": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/Foliage/SM_Temperate_HeatherPlant_04_FoliageType",
+      "mount": "SetdressingExampleMap",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Mods\\SetdressingExampleMap\\Content\\Maps\\Multiplayer\\4Player\\SEM\\Foliage\\SM_Temperate_HeatherPlant_04_FoliageType.uasset",
+      "header_result": "parsed",
+      "sha256": "ef87cbc34e43c52a7f9112b4c8264f22fa68438e9124db28542af26558a08f7b",
+      "cooked": false,
+      "filter_editor_only": false,
+      "version": {
+        "legacy": -8,
+        "ue4": 522,
+        "ue5": 1012
+      }
+    },
+    {
+      "package": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/Landscape/MI_MP_SetdressingExampleMap_4P_Landscape",
+      "mount": "SetdressingExampleMap",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Mods\\SetdressingExampleMap\\Content\\Maps\\Multiplayer\\4Player\\SEM\\Landscape\\MI_MP_SetdressingExampleMap_4P_Landscape.uasset",
+      "header_result": "parsed",
+      "sha256": "16407bd077404be8487334d8a2e4a2a23d0809de7e30e1cdf3119dce6b4d9f2a",
+      "cooked": false,
+      "filter_editor_only": false,
+      "version": {
+        "legacy": -8,
+        "ue4": 522,
+        "ue5": 1012
+      }
+    },
+    {
+      "package": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P_MapInfo",
+      "mount": "SetdressingExampleMap",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Mods\\SetdressingExampleMap\\Content\\Maps\\Multiplayer\\4Player\\SEM\\MAP_MP_SetdressingExampleMap_4P_P_MapInfo.uasset",
+      "header_result": "parsed",
+      "sha256": "98eabd7d8771ed3dc2dd7b2e2b3c53b8b14e34695b0e517cbeb5e7c04618f661",
+      "cooked": false,
+      "filter_editor_only": false,
+      "version": {
+        "legacy": -8,
+        "ue4": 522,
+        "ue5": 1012
+      }
+    },
+    {
+      "package": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/Materials/DefaultTextMaterialOpaque",
+      "mount": "SetdressingExampleMap",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Mods\\SetdressingExampleMap\\Content\\Maps\\Multiplayer\\4Player\\SEM\\Materials\\DefaultTextMaterialOpaque.uasset",
+      "header_result": "parsed",
+      "sha256": "1ba60b2243ed2a307ed8a23014c543e2d1f99d945222705fcbd0dbc3f90295a7",
+      "cooked": false,
+      "filter_editor_only": false,
+      "version": {
+        "legacy": -8,
+        "ue4": 522,
+        "ue5": 1012
+      }
+    },
+    {
+      "package": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/Materials/DefaultTextMaterialOpaque_Inst",
+      "mount": "SetdressingExampleMap",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Mods\\SetdressingExampleMap\\Content\\Maps\\Multiplayer\\4Player\\SEM\\Materials\\DefaultTextMaterialOpaque_Inst.uasset",
+      "header_result": "parsed",
+      "sha256": "fab9825b2533082b3a9dba4a9795cda4855a81a49dcbc44b02e96be8074ab640",
+      "cooked": false,
+      "filter_editor_only": false,
+      "version": {
+        "legacy": -8,
+        "ue4": 522,
+        "ue5": 1012
+      }
+    },
+    {
+      "package": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/Materials/MI_GDF_AdvancedPowerplant_Prop",
+      "mount": "SetdressingExampleMap",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Mods\\SetdressingExampleMap\\Content\\Maps\\Multiplayer\\4Player\\SEM\\Materials\\MI_GDF_AdvancedPowerplant_Prop.uasset",
+      "header_result": "parsed",
+      "sha256": "a32613d3298b5b3d69652b43647eec3b86904699e2703545e17938b049578e4e",
+      "cooked": false,
+      "filter_editor_only": false,
+      "version": {
+        "legacy": -8,
+        "ue4": 522,
+        "ue5": 1012
+      }
+    },
+    {
+      "package": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/Materials/MI_GDF_Building2x3_Decal_Inst",
+      "mount": "SetdressingExampleMap",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Mods\\SetdressingExampleMap\\Content\\Maps\\Multiplayer\\4Player\\SEM\\Materials\\MI_GDF_Building2x3_Decal_Inst.uasset",
+      "header_result": "parsed",
+      "sha256": "9969c7a3b375f519fd76e630fc2ce7d67e8877413a737372661dbeb84b0d0f15",
+      "cooked": false,
+      "filter_editor_only": false,
+      "version": {
+        "legacy": -8,
+        "ue4": 522,
+        "ue5": 1012
+      }
+    },
+    {
+      "package": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/Materials/MI_GDF_Conyard_Prop",
+      "mount": "SetdressingExampleMap",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Mods\\SetdressingExampleMap\\Content\\Maps\\Multiplayer\\4Player\\SEM\\Materials\\MI_GDF_Conyard_Prop.uasset",
+      "header_result": "parsed",
+      "sha256": "2082a372e04f0ea78102035e0914587c8d795a0f6079a7066109aca593cfb443",
+      "cooked": false,
+      "filter_editor_only": false,
+      "version": {
+        "legacy": -8,
+        "ue4": 522,
+        "ue5": 1012
+      }
+    },
+    {
+      "package": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/Materials/MI_GDF_RepairBay_Prop_Dark",
+      "mount": "SetdressingExampleMap",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Mods\\SetdressingExampleMap\\Content\\Maps\\Multiplayer\\4Player\\SEM\\Materials\\MI_GDF_RepairBay_Prop_Dark.uasset",
+      "header_result": "parsed",
+      "sha256": "a00204615e9590f24c79920436b70c9f6ee107e7f3740e01cccefd6f3471afd1",
+      "cooked": false,
+      "filter_editor_only": false,
+      "version": {
+        "legacy": -8,
+        "ue4": 522,
+        "ue5": 1012
+      }
+    },
+    {
+      "package": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/Materials/MI_GDF_WarFactory_Prop",
+      "mount": "SetdressingExampleMap",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Mods\\SetdressingExampleMap\\Content\\Maps\\Multiplayer\\4Player\\SEM\\Materials\\MI_GDF_WarFactory_Prop.uasset",
+      "header_result": "parsed",
+      "sha256": "df153b1c218522cadf8c4dc779b2e96309b9b8081d86b15eccfcf4904cd9cb25",
+      "cooked": false,
+      "filter_editor_only": false,
+      "version": {
+        "legacy": -8,
+        "ue4": 522,
+        "ue5": 1012
+      }
+    },
+    {
+      "package": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/Materials/MI_Kyoto_CherryTree_Branch_01",
+      "mount": "SetdressingExampleMap",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Mods\\SetdressingExampleMap\\Content\\Maps\\Multiplayer\\4Player\\SEM\\Materials\\MI_Kyoto_CherryTree_Branch_01.uasset",
+      "header_result": "parsed",
+      "sha256": "7c992adde6aa0e7100044b670d762dd7f86c32084ee84d2bbf570e41bfd26cd1",
+      "cooked": false,
+      "filter_editor_only": false,
+      "version": {
+        "legacy": -8,
+        "ue4": 522,
+        "ue5": 1012
+      }
+    },
+    {
+      "package": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/Materials/MI_Temperate_Heather_01",
+      "mount": "SetdressingExampleMap",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Mods\\SetdressingExampleMap\\Content\\Maps\\Multiplayer\\4Player\\SEM\\Materials\\MI_Temperate_Heather_01.uasset",
+      "header_result": "parsed",
+      "sha256": "3d04c6d0b2c8ef8d4201032aff0eddc71e1ad13cce3972284821311adbe42406",
+      "cooked": false,
+      "filter_editor_only": false,
+      "version": {
+        "legacy": -8,
+        "ue4": 522,
+        "ue5": 1012
+      }
+    },
+    {
+      "package": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/Materials/MI_TrimsCoarseMetal_01",
+      "mount": "SetdressingExampleMap",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Mods\\SetdressingExampleMap\\Content\\Maps\\Multiplayer\\4Player\\SEM\\Materials\\MI_TrimsCoarseMetal_01.uasset",
+      "header_result": "parsed",
+      "sha256": "21a729248efcdee0d77182b79d7e848dea984b82d8665734aa84f7651d09e5dd",
+      "cooked": false,
+      "filter_editor_only": false,
+      "version": {
+        "legacy": -8,
+        "ue4": 522,
+        "ue5": 1012
+      }
+    },
+    {
+      "package": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/T_MAP_MP_SetdressingExampleMap_4P_P_MinimapTerrain",
+      "mount": "SetdressingExampleMap",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Mods\\SetdressingExampleMap\\Content\\Maps\\Multiplayer\\4Player\\SEM\\T_MAP_MP_SetdressingExampleMap_4P_P_MinimapTerrain.uasset",
+      "header_result": "parsed",
+      "sha256": "b17b0b5fddfccd55811008dcb524416ee835c6d5a90e0f515992d8b86090e08e",
+      "cooked": false,
+      "filter_editor_only": false,
+      "version": {
+        "legacy": -8,
+        "ue4": 522,
+        "ue5": 1012
+      }
+    },
+    {
+      "package": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/sharedassets/Layer_A_LayerInfo",
+      "mount": "SetdressingExampleMap",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Mods\\SetdressingExampleMap\\Content\\Maps\\Multiplayer\\4Player\\SEM\\sharedassets\\Layer_A_LayerInfo.uasset",
+      "header_result": "parsed",
+      "sha256": "92549a316b925da835969b4c98ca611f8d0de99cb2c2cbd38854516fb30da90a",
+      "cooked": false,
+      "filter_editor_only": false,
+      "version": {
+        "legacy": -8,
+        "ue4": 522,
+        "ue5": 1012
+      }
+    },
+    {
+      "package": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/sharedassets/Layer_B_LayerInfo",
+      "mount": "SetdressingExampleMap",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Mods\\SetdressingExampleMap\\Content\\Maps\\Multiplayer\\4Player\\SEM\\sharedassets\\Layer_B_LayerInfo.uasset",
+      "header_result": "parsed",
+      "sha256": "c98fdcd6b3b7063b4e8ededede2aeea3748a7bb6b07c4f2c7a2fece08442474d",
+      "cooked": false,
+      "filter_editor_only": false,
+      "version": {
+        "legacy": -8,
+        "ue4": 522,
+        "ue5": 1012
+      }
+    },
+    {
+      "package": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/sharedassets/Layer_C_LayerInfo",
+      "mount": "SetdressingExampleMap",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Mods\\SetdressingExampleMap\\Content\\Maps\\Multiplayer\\4Player\\SEM\\sharedassets\\Layer_C_LayerInfo.uasset",
+      "header_result": "parsed",
+      "sha256": "1918a85f7076db3180126af3dbbbbe16e66887bd9888b44a4b7a2ae308af9219",
+      "cooked": false,
+      "filter_editor_only": false,
+      "version": {
+        "legacy": -8,
+        "ue4": 522,
+        "ue5": 1012
+      }
+    },
+    {
+      "package": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/sharedassets/Layer_D_LayerInfo",
+      "mount": "SetdressingExampleMap",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Mods\\SetdressingExampleMap\\Content\\Maps\\Multiplayer\\4Player\\SEM\\sharedassets\\Layer_D_LayerInfo.uasset",
+      "header_result": "parsed",
+      "sha256": "042812e6ba509f539e92ef37e21b4706fb2ca6b9dc5e2323598205da5681ce88",
+      "cooked": false,
+      "filter_editor_only": false,
+      "version": {
+        "legacy": -8,
+        "ue4": 522,
+        "ue5": 1012
+      }
+    },
+    {
+      "package": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/sharedassets/Layer_E_LayerInfo",
+      "mount": "SetdressingExampleMap",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Mods\\SetdressingExampleMap\\Content\\Maps\\Multiplayer\\4Player\\SEM\\sharedassets\\Layer_E_LayerInfo.uasset",
+      "header_result": "parsed",
+      "sha256": "a1f1ccd76aafdf9d2556d50ace0d89f62659655373757c3de6b1a978ce994290",
+      "cooked": false,
+      "filter_editor_only": false,
+      "version": {
+        "legacy": -8,
+        "ue4": 522,
+        "ue5": 1012
+      }
+    },
+    {
+      "package": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/sharedassets/Layer_F_LayerInfo",
+      "mount": "SetdressingExampleMap",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Mods\\SetdressingExampleMap\\Content\\Maps\\Multiplayer\\4Player\\SEM\\sharedassets\\Layer_F_LayerInfo.uasset",
+      "header_result": "parsed",
+      "sha256": "2512ab8e4989d3b0da8650b77f19c7883dd204b0a1dbb4b453f83ebcd854f4f0",
+      "cooked": false,
+      "filter_editor_only": false,
+      "version": {
+        "legacy": -8,
+        "ue4": 522,
+        "ue5": 1012
+      }
+    },
+    {
+      "package": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/sharedassets/Layer_G_LayerInfo",
+      "mount": "SetdressingExampleMap",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Mods\\SetdressingExampleMap\\Content\\Maps\\Multiplayer\\4Player\\SEM\\sharedassets\\Layer_G_LayerInfo.uasset",
+      "header_result": "parsed",
+      "sha256": "1d60c508d77ee3243718102916a6fae3f63fcbb09ea8ba6c20d0cdb6e5a29a54",
+      "cooked": false,
+      "filter_editor_only": false,
+      "version": {
+        "legacy": -8,
+        "ue4": 522,
+        "ue5": 1012
+      }
+    },
+    {
+      "package": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/sharedassets/Layer_H_LayerInfo",
+      "mount": "SetdressingExampleMap",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Mods\\SetdressingExampleMap\\Content\\Maps\\Multiplayer\\4Player\\SEM\\sharedassets\\Layer_H_LayerInfo.uasset",
+      "header_result": "parsed",
+      "sha256": "1a25c8d9948f56c666ae2820d5c1c70d8f782e50a28bec151ee2fd6abf8740e8",
+      "cooked": false,
+      "filter_editor_only": false,
+      "version": {
+        "legacy": -8,
+        "ue4": 522,
+        "ue5": 1012
+      }
+    },
+    {
+      "package": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/sharedassets/Layer_I_LayerInfo",
+      "mount": "SetdressingExampleMap",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Mods\\SetdressingExampleMap\\Content\\Maps\\Multiplayer\\4Player\\SEM\\sharedassets\\Layer_I_LayerInfo.uasset",
+      "header_result": "parsed",
+      "sha256": "e2b1155fe3657eabb69aebe6928b69475630b7261a5273b37cfa86eb18902f8d",
+      "cooked": false,
+      "filter_editor_only": false,
+      "version": {
+        "legacy": -8,
+        "ue4": 522,
+        "ue5": 1012
+      }
+    },
+    {
+      "package": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/sharedassets/Layer_J_LayerInfo",
+      "mount": "SetdressingExampleMap",
+      "status": "found",
+      "path": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\MapEditorProject\\Mods\\SetdressingExampleMap\\Content\\Maps\\Multiplayer\\4Player\\SEM\\sharedassets\\Layer_J_LayerInfo.uasset",
+      "header_result": "parsed",
+      "sha256": "0aa5c18baa5122aae970e04806625e2138f0f9a340bdcc9182c774279db6d282",
+      "cooked": false,
+      "filter_editor_only": false,
+      "version": {
+        "legacy": -8,
+        "ue4": 522,
+        "ue5": 1012
+      }
+    }
+  ],
+  "limitation": "Direct package imports from the 43 selected files, not a complete transitive migration closure."
+}

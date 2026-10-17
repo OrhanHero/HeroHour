@@ -1,0 +1,35 @@
+{
+  "raw_sha256": "cc7309e87a424f63250a5b49cdf9336cc2739b0234986efb278701cb62cbabdc",
+  "function": "comfy_extras.mesh3d.postprocess.remesh.remesh_narrow_band_dc",
+  "parameters": {
+    "resolution": 512,
+    "band": 1.0,
+    "project_back": 0.0,
+    "qef": false,
+    "sign_mode": "udf",
+    "manifold": false,
+    "fix_poles": false,
+    "smooth_iters": 20,
+    "drop_small_components": 0.01,
+    "drop_inverted_components": false,
+    "drop_enclosed_components": false,
+    "scale": 1.005859375,
+    "center": [
+      0.0,
+      0.0,
+      0.0
+    ]
+  },
+  "target_faces": 700000,
+  "diffusion_ran": false,
+  "native_server_started": false,
+  "status": "success",
+  "remesh_vertices": 1600462,
+  "remesh_triangles": 3203446,
+  "final_vertices": 349991,
+  "final_triangles": 699820,
+  "source_unchanged": true,
+  "elapsed_seconds": 21.340016899997863,
+  "torch_peak_allocated_bytes": 3469046784,
+  "torch_peak_reserved_bytes": 5681184768
+}

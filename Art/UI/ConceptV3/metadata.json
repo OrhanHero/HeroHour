@@ -1,0 +1,301 @@
+{
+  "description": "Original deterministic military HUD artwork; HeroHour-owned graphics.",
+  "import_directory": "/Game/HERO/UI/ConceptV3",
+  "frame": {
+    "size": [
+      256,
+      256
+    ],
+    "corner_source_px": 32,
+    "uv_bands": [
+      0.0,
+      0.125,
+      0.875,
+      1.0
+    ],
+    "metal_visible_px": 20,
+    "minimap_metal_visible_px": 24,
+    "center_alpha": 0,
+    "recommended_destination_corner_px": {
+      "panel": 18,
+      "minimap": 25,
+      "card": 10
+    }
+  },
+  "glyph_atlas": {
+    "size": [
+      512,
+      512
+    ],
+    "cell_px": 128,
+    "columns": 4,
+    "rows": 4,
+    "glyphs": [
+      {
+        "name": "Base",
+        "index": 0,
+        "uv": [
+          0.0,
+          0.0,
+          0.25,
+          0.25
+        ]
+      },
+      {
+        "name": "Defense",
+        "index": 1,
+        "uv": [
+          0.25,
+          0.0,
+          0.25,
+          0.25
+        ]
+      },
+      {
+        "name": "Infantry",
+        "index": 2,
+        "uv": [
+          0.5,
+          0.0,
+          0.25,
+          0.25
+        ]
+      },
+      {
+        "name": "Vehicles",
+        "index": 3,
+        "uv": [
+          0.75,
+          0.0,
+          0.25,
+          0.25
+        ]
+      },
+      {
+        "name": "Special",
+        "index": 4,
+        "uv": [
+          0.0,
+          0.25,
+          0.25,
+          0.25
+        ]
+      },
+      {
+        "name": "Move",
+        "index": 5,
+        "uv": [
+          0.25,
+          0.25,
+          0.25,
+          0.25
+        ]
+      },
+      {
+        "name": "Attack",
+        "index": 6,
+        "uv": [
+          0.5,
+          0.25,
+          0.25,
+          0.25
+        ]
+      },
+      {
+        "name": "Stop",
+        "index": 7,
+        "uv": [
+          0.75,
+          0.25,
+          0.25,
+          0.25
+        ]
+      },
+      {
+        "name": "Hold",
+        "index": 8,
+        "uv": [
+          0.0,
+          0.5,
+          0.25,
+          0.25
+        ]
+      },
+      {
+        "name": "Rally",
+        "index": 9,
+        "uv": [
+          0.25,
+          0.5,
+          0.25,
+          0.25
+        ]
+      },
+      {
+        "name": "Cancel",
+        "index": 10,
+        "uv": [
+          0.5,
+          0.5,
+          0.25,
+          0.25
+        ]
+      },
+      {
+        "name": "Repair",
+        "index": 11,
+        "uv": [
+          0.75,
+          0.5,
+          0.25,
+          0.25
+        ]
+      },
+      {
+        "name": "Harvest",
+        "index": 12,
+        "uv": [
+          0.0,
+          0.75,
+          0.25,
+          0.25
+        ]
+      },
+      {
+        "name": "Power",
+        "index": 13,
+        "uv": [
+          0.25,
+          0.75,
+          0.25,
+          0.25
+        ]
+      },
+      {
+        "name": "Queue",
+        "index": 14,
+        "uv": [
+          0.5,
+          0.75,
+          0.25,
+          0.25
+        ]
+      },
+      {
+        "name": "Camera",
+        "index": 15,
+        "uv": [
+          0.75,
+          0.75,
+          0.25,
+          0.25
+        ]
+      }
+    ]
+  },
+  "texture_sizes": {
+    "T_UI_Frame_V3": [
+      256,
+      256
+    ],
+    "T_UI_MinimapFrame_V3": [
+      256,
+      256
+    ],
+    "T_UI_PanelGlass_V3": [
+      512,
+      512
+    ],
+    "T_UI_TitlePlate_V3": [
+      256,
+      64
+    ],
+    "T_UI_GlyphAtlas_V3": [
+      512,
+      512
+    ],
+    "T_UI_CityHeroMap_V3": [
+      1024,
+      768
+    ]
+  },
+  "tactical_map": {
+    "texture": "T_UI_CityHeroMap_V3",
+    "kind": "Authored tactical drawing from own level data; not an engine capture",
+    "world_extents_cm": [
+      12000,
+      9000
+    ],
+    "uv_world_corners_cm": [
+      [
+        -12000,
+        -9000
+      ],
+      [
+        12000,
+        9000
+      ]
+    ],
+    "orientation": "X increases right, Y increases down; identical to HeroHUD MapX/MapY",
+    "blocked_road_clipping": "Legacy east-road slabs are clipped to the blocked river band outside Y=+/-3200 bridge corridors; only traversable crossings are represented",
+    "height_model": "Authored interior Z=-0.05m, blocked river bed Z=-3.5m, evaluated bank equation; exterior ridges excluded by gameplay crop",
+    "source_scripts": [
+      "create_cityhero_map.py",
+      "import_district_v3.py",
+      "build_district_streets.py",
+      "build_terrain_slice_v3.py",
+      "build_environment_v2.py"
+    ],
+    "dynamic_layers_excluded": [
+      "units",
+      "runtime buildings",
+      "ownership",
+      "resource markers",
+      "camera",
+      "rally points",
+      "fog"
+    ],
+    "civic_count": 28,
+    "house_count": 64,
+    "environment_refinery_count": 3,
+    "qa": {
+      "dimensions": [
+        1024,
+        768
+      ],
+      "fully_opaque": true,
+      "coordinate_pixel_probes": {
+        "river_north": [
+          384,
+          43
+        ],
+        "river_centre": [
+          384,
+          384
+        ],
+        "river_south": [
+          384,
+          724
+        ],
+        "north_bridge": [
+          375,
+          247
+        ],
+        "south_bridge": [
+          375,
+          520
+        ],
+        "northwest_power_plant": [
+          128,
+          128
+        ],
+        "southeast_stadium": [
+          639,
+          682
+        ]
+      },
+      "river_and_bridge_pixel_checks": "PASS"
+    },
+    "sha256": "609ba785443382be7bc1c9df3456e53fef966a3a18aac0d0552992765c384ea1"
+  }
+}

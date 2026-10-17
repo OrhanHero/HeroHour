@@ -1,0 +1,3006 @@
+{
+  "schema": 1,
+  "provenance": "Original HeroHour geometry; no external game meshes",
+  "source": "Scripts\\art\\build_concept_harvester.py",
+  "source_sha256": "b2b8065ec4a7662bbc87cff20e75125424f775fff82e66f6687e85da12c6c0b7",
+  "material_source_sha256": "74e44f73fabdad0d785569bd62a857d79d5bf1fc4b2aef584c49d66c8962a679",
+  "full_original": {
+    "triangles": 36884,
+    "vertices": 19452,
+    "bounds_min_m": [
+      -1.9073922634124756,
+      -1.0090000629425049,
+      -0.3499999940395355
+    ],
+    "bounds_max_m": [
+      1.9776133298873901,
+      1.0090000629425049,
+      1.6860281229019165
+    ]
+  },
+  "assignments": [
+    {
+      "source_object": "Lower armored chassis",
+      "part": "Base",
+      "triangles": 76
+    },
+    {
+      "source_object": "Reinforced deck",
+      "part": "Base",
+      "triangles": 76
+    },
+    {
+      "source_object": "Deep offroad tire",
+      "part": "Base",
+      "triangles": 220
+    },
+    {
+      "source_object": "Rim protection",
+      "part": "Base",
+      "triangles": 156
+    },
+    {
+      "source_object": "Six-stud wheel hub",
+      "part": "Base",
+      "triangles": 124
+    },
+    {
+      "source_object": "Axle dust cap",
+      "part": "Base",
+      "triangles": 92
+    },
+    {
+      "source_object": "Wheel stud",
+      "part": "Base",
+      "triangles": 68
+    },
+    {
+      "source_object": "Wheel stud.001",
+      "part": "Base",
+      "triangles": 68
+    },
+    {
+      "source_object": "Wheel stud.002",
+      "part": "Base",
+      "triangles": 68
+    },
+    {
+      "source_object": "Wheel stud.003",
+      "part": "Base",
+      "triangles": 68
+    },
+    {
+      "source_object": "Wheel stud.004",
+      "part": "Base",
+      "triangles": 68
+    },
+    {
+      "source_object": "Wheel stud.005",
+      "part": "Base",
+      "triangles": 68
+    },
+    {
+      "source_object": "Herringbone tread",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.001",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.002",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.003",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.004",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.005",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.006",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.007",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.008",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.009",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.010",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.011",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.012",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.013",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.014",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.015",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.016",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.017",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.018",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.019",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.020",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.021",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.022",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.023",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.024",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.025",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.026",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.027",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.028",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.029",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.030",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.031",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.032",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.033",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.034",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.035",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Suspension trailing arm",
+      "part": "Base",
+      "triangles": 116
+    },
+    {
+      "source_object": "Suspension piston",
+      "part": "Base",
+      "triangles": 116
+    },
+    {
+      "source_object": "Deep offroad tire.001",
+      "part": "Base",
+      "triangles": 220
+    },
+    {
+      "source_object": "Rim protection.001",
+      "part": "Base",
+      "triangles": 156
+    },
+    {
+      "source_object": "Six-stud wheel hub.001",
+      "part": "Base",
+      "triangles": 124
+    },
+    {
+      "source_object": "Axle dust cap.001",
+      "part": "Base",
+      "triangles": 92
+    },
+    {
+      "source_object": "Wheel stud.006",
+      "part": "Base",
+      "triangles": 68
+    },
+    {
+      "source_object": "Wheel stud.007",
+      "part": "Base",
+      "triangles": 68
+    },
+    {
+      "source_object": "Wheel stud.008",
+      "part": "Base",
+      "triangles": 68
+    },
+    {
+      "source_object": "Wheel stud.009",
+      "part": "Base",
+      "triangles": 68
+    },
+    {
+      "source_object": "Wheel stud.010",
+      "part": "Base",
+      "triangles": 68
+    },
+    {
+      "source_object": "Wheel stud.011",
+      "part": "Base",
+      "triangles": 68
+    },
+    {
+      "source_object": "Herringbone tread.036",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.037",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.038",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.039",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.040",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.041",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.042",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.043",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.044",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.045",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.046",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.047",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.048",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.049",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.050",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.051",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.052",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.053",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.054",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.055",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.056",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.057",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.058",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.059",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.060",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.061",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.062",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.063",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.064",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.065",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.066",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.067",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.068",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.069",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.070",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.071",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Suspension trailing arm.001",
+      "part": "Base",
+      "triangles": 116
+    },
+    {
+      "source_object": "Suspension piston.001",
+      "part": "Base",
+      "triangles": 116
+    },
+    {
+      "source_object": "Deep offroad tire.002",
+      "part": "Base",
+      "triangles": 220
+    },
+    {
+      "source_object": "Rim protection.002",
+      "part": "Base",
+      "triangles": 156
+    },
+    {
+      "source_object": "Six-stud wheel hub.002",
+      "part": "Base",
+      "triangles": 124
+    },
+    {
+      "source_object": "Axle dust cap.002",
+      "part": "Base",
+      "triangles": 92
+    },
+    {
+      "source_object": "Wheel stud.012",
+      "part": "Base",
+      "triangles": 68
+    },
+    {
+      "source_object": "Wheel stud.013",
+      "part": "Base",
+      "triangles": 68
+    },
+    {
+      "source_object": "Wheel stud.014",
+      "part": "Base",
+      "triangles": 68
+    },
+    {
+      "source_object": "Wheel stud.015",
+      "part": "Base",
+      "triangles": 68
+    },
+    {
+      "source_object": "Wheel stud.016",
+      "part": "Base",
+      "triangles": 68
+    },
+    {
+      "source_object": "Wheel stud.017",
+      "part": "Base",
+      "triangles": 68
+    },
+    {
+      "source_object": "Herringbone tread.072",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.073",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.074",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.075",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.076",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.077",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.078",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.079",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.080",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.081",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.082",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.083",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.084",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.085",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.086",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.087",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.088",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.089",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.090",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.091",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.092",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.093",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.094",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.095",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.096",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.097",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.098",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.099",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.100",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.101",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.102",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.103",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.104",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.105",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.106",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.107",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Suspension trailing arm.002",
+      "part": "Base",
+      "triangles": 116
+    },
+    {
+      "source_object": "Suspension piston.002",
+      "part": "Base",
+      "triangles": 116
+    },
+    {
+      "source_object": "Continuous fender spine",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Tire armored mudguard",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Mudguard team inset",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Tire armored mudguard.001",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Mudguard team inset.001",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Tire armored mudguard.002",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Mudguard team inset.002",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Middle step tread",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Service access armor",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Service recessed panel",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Access latch",
+      "part": "Base",
+      "triangles": 116
+    },
+    {
+      "source_object": "Service access armor.001",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Service recessed panel.001",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Access latch.001",
+      "part": "Base",
+      "triangles": 116
+    },
+    {
+      "source_object": "Chassis identification line",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Roof grab rail",
+      "part": "Base",
+      "triangles": 116
+    },
+    {
+      "source_object": "Deep offroad tire.003",
+      "part": "Base",
+      "triangles": 220
+    },
+    {
+      "source_object": "Rim protection.003",
+      "part": "Base",
+      "triangles": 156
+    },
+    {
+      "source_object": "Six-stud wheel hub.003",
+      "part": "Base",
+      "triangles": 124
+    },
+    {
+      "source_object": "Axle dust cap.003",
+      "part": "Base",
+      "triangles": 92
+    },
+    {
+      "source_object": "Wheel stud.018",
+      "part": "Base",
+      "triangles": 68
+    },
+    {
+      "source_object": "Wheel stud.019",
+      "part": "Base",
+      "triangles": 68
+    },
+    {
+      "source_object": "Wheel stud.020",
+      "part": "Base",
+      "triangles": 68
+    },
+    {
+      "source_object": "Wheel stud.021",
+      "part": "Base",
+      "triangles": 68
+    },
+    {
+      "source_object": "Wheel stud.022",
+      "part": "Base",
+      "triangles": 68
+    },
+    {
+      "source_object": "Wheel stud.023",
+      "part": "Base",
+      "triangles": 68
+    },
+    {
+      "source_object": "Herringbone tread.108",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.109",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.110",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.111",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.112",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.113",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.114",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.115",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.116",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.117",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.118",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.119",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.120",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.121",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.122",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.123",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.124",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.125",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.126",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.127",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.128",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.129",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.130",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.131",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.132",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.133",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.134",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.135",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.136",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.137",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.138",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.139",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.140",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.141",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.142",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.143",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Suspension trailing arm.003",
+      "part": "Base",
+      "triangles": 116
+    },
+    {
+      "source_object": "Suspension piston.003",
+      "part": "Base",
+      "triangles": 116
+    },
+    {
+      "source_object": "Deep offroad tire.004",
+      "part": "Base",
+      "triangles": 220
+    },
+    {
+      "source_object": "Rim protection.004",
+      "part": "Base",
+      "triangles": 156
+    },
+    {
+      "source_object": "Six-stud wheel hub.004",
+      "part": "Base",
+      "triangles": 124
+    },
+    {
+      "source_object": "Axle dust cap.004",
+      "part": "Base",
+      "triangles": 92
+    },
+    {
+      "source_object": "Wheel stud.024",
+      "part": "Base",
+      "triangles": 68
+    },
+    {
+      "source_object": "Wheel stud.025",
+      "part": "Base",
+      "triangles": 68
+    },
+    {
+      "source_object": "Wheel stud.026",
+      "part": "Base",
+      "triangles": 68
+    },
+    {
+      "source_object": "Wheel stud.027",
+      "part": "Base",
+      "triangles": 68
+    },
+    {
+      "source_object": "Wheel stud.028",
+      "part": "Base",
+      "triangles": 68
+    },
+    {
+      "source_object": "Wheel stud.029",
+      "part": "Base",
+      "triangles": 68
+    },
+    {
+      "source_object": "Herringbone tread.144",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.145",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.146",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.147",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.148",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.149",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.150",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.151",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.152",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.153",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.154",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.155",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.156",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.157",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.158",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.159",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.160",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.161",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.162",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.163",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.164",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.165",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.166",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.167",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.168",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.169",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.170",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.171",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.172",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.173",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.174",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.175",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.176",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.177",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.178",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.179",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Suspension trailing arm.004",
+      "part": "Base",
+      "triangles": 116
+    },
+    {
+      "source_object": "Suspension piston.004",
+      "part": "Base",
+      "triangles": 116
+    },
+    {
+      "source_object": "Deep offroad tire.005",
+      "part": "Base",
+      "triangles": 220
+    },
+    {
+      "source_object": "Rim protection.005",
+      "part": "Base",
+      "triangles": 156
+    },
+    {
+      "source_object": "Six-stud wheel hub.005",
+      "part": "Base",
+      "triangles": 124
+    },
+    {
+      "source_object": "Axle dust cap.005",
+      "part": "Base",
+      "triangles": 92
+    },
+    {
+      "source_object": "Wheel stud.030",
+      "part": "Base",
+      "triangles": 68
+    },
+    {
+      "source_object": "Wheel stud.031",
+      "part": "Base",
+      "triangles": 68
+    },
+    {
+      "source_object": "Wheel stud.032",
+      "part": "Base",
+      "triangles": 68
+    },
+    {
+      "source_object": "Wheel stud.033",
+      "part": "Base",
+      "triangles": 68
+    },
+    {
+      "source_object": "Wheel stud.034",
+      "part": "Base",
+      "triangles": 68
+    },
+    {
+      "source_object": "Wheel stud.035",
+      "part": "Base",
+      "triangles": 68
+    },
+    {
+      "source_object": "Herringbone tread.180",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.181",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.182",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.183",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.184",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.185",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.186",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.187",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.188",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.189",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.190",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.191",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.192",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.193",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.194",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.195",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.196",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.197",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.198",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.199",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.200",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.201",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.202",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.203",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.204",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.205",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.206",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.207",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.208",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.209",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.210",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.211",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.212",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.213",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.214",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Herringbone tread.215",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Suspension trailing arm.005",
+      "part": "Base",
+      "triangles": 116
+    },
+    {
+      "source_object": "Suspension piston.005",
+      "part": "Base",
+      "triangles": 116
+    },
+    {
+      "source_object": "Continuous fender spine.001",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Tire armored mudguard.003",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Mudguard team inset.003",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Tire armored mudguard.004",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Mudguard team inset.004",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Tire armored mudguard.005",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Mudguard team inset.005",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Middle step tread.001",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Service access armor.002",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Service recessed panel.002",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Access latch.002",
+      "part": "Base",
+      "triangles": 116
+    },
+    {
+      "source_object": "Service access armor.003",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Service recessed panel.003",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Access latch.003",
+      "part": "Base",
+      "triangles": 116
+    },
+    {
+      "source_object": "Chassis identification line.001",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Roof grab rail.001",
+      "part": "Base",
+      "triangles": 116
+    },
+    {
+      "source_object": "Armored forward cabin",
+      "part": "Base",
+      "triangles": 76
+    },
+    {
+      "source_object": "Windshield steel surround",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Laminated front windshield",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Windshield central pillar",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Side window armored surround",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Side window glazing",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Side window dividing brace",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Driver door team plate",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Door handle",
+      "part": "Base",
+      "triangles": 116
+    },
+    {
+      "source_object": "Door hinge",
+      "part": "Base",
+      "triangles": 92
+    },
+    {
+      "source_object": "Door hinge.001",
+      "part": "Base",
+      "triangles": 92
+    },
+    {
+      "source_object": "Mirror stalk",
+      "part": "Base",
+      "triangles": 116
+    },
+    {
+      "source_object": "Mirror housing",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Forward headlamp mount",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Forward worklight",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Side window armored surround.001",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Side window glazing.001",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Side window dividing brace.001",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Driver door team plate.001",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Door handle.001",
+      "part": "Base",
+      "triangles": 116
+    },
+    {
+      "source_object": "Door hinge.002",
+      "part": "Base",
+      "triangles": 92
+    },
+    {
+      "source_object": "Door hinge.003",
+      "part": "Base",
+      "triangles": 92
+    },
+    {
+      "source_object": "Mirror stalk.001",
+      "part": "Base",
+      "triangles": 116
+    },
+    {
+      "source_object": "Mirror housing.001",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Forward headlamp mount.001",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Forward worklight.001",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Cab roof armored brow",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Driver rescue hatch",
+      "part": "Base",
+      "triangles": 124
+    },
+    {
+      "source_object": "Rescue hatch grip",
+      "part": "Base",
+      "triangles": 116
+    },
+    {
+      "source_object": "Roof sensor block",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Roof sensor glass",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Amber work beacon",
+      "part": "Base",
+      "triangles": 124
+    },
+    {
+      "source_object": "Beacon plinth",
+      "part": "Base",
+      "triangles": 92
+    },
+    {
+      "source_object": "Resource tank main shell",
+      "part": "Base",
+      "triangles": 252
+    },
+    {
+      "source_object": "Tank armored collar",
+      "part": "Base",
+      "triangles": 252
+    },
+    {
+      "source_object": "Tank collar inset",
+      "part": "Base",
+      "triangles": 288
+    },
+    {
+      "source_object": "Tank armored collar.001",
+      "part": "Base",
+      "triangles": 252
+    },
+    {
+      "source_object": "Tank collar inset.001",
+      "part": "Base",
+      "triangles": 288
+    },
+    {
+      "source_object": "Tank armored collar.002",
+      "part": "Base",
+      "triangles": 252
+    },
+    {
+      "source_object": "Tank collar inset.002",
+      "part": "Base",
+      "triangles": 288
+    },
+    {
+      "source_object": "Pressure vessel end cap",
+      "part": "Base",
+      "triangles": 188
+    },
+    {
+      "source_object": "Pressure vessel end cap.001",
+      "part": "Base",
+      "triangles": 188
+    },
+    {
+      "source_object": "Tank longitudinal applique",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Tank longitudinal applique.001",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Tank longitudinal applique.002",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Tank longitudinal applique.003",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Level gauge black surround",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Level gauge glass",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Resource fill gauge segment",
+      "part": "Gauge0",
+      "triangles": 44
+    },
+    {
+      "source_object": "Resource fill gauge segment.001",
+      "part": "Gauge1",
+      "triangles": 44
+    },
+    {
+      "source_object": "Resource fill gauge segment.002",
+      "part": "Gauge2",
+      "triangles": 44
+    },
+    {
+      "source_object": "Resource fill gauge segment.003",
+      "part": "Gauge3",
+      "triangles": 44
+    },
+    {
+      "source_object": "Resource fill gauge segment.004",
+      "part": "Gauge4",
+      "triangles": 44
+    },
+    {
+      "source_object": "Resource fill gauge segment.005",
+      "part": "Gauge5",
+      "triangles": 44
+    },
+    {
+      "source_object": "Resource fill gauge segment.006",
+      "part": "Gauge6",
+      "triangles": 44
+    },
+    {
+      "source_object": "Resource return pipe",
+      "part": "Base",
+      "triangles": 116
+    },
+    {
+      "source_object": "Return pipe retaining band",
+      "part": "Base",
+      "triangles": 288
+    },
+    {
+      "source_object": "Return pipe retaining band.001",
+      "part": "Base",
+      "triangles": 288
+    },
+    {
+      "source_object": "Return pipe retaining band.002",
+      "part": "Base",
+      "triangles": 288
+    },
+    {
+      "source_object": "Return pipe retaining band.003",
+      "part": "Base",
+      "triangles": 288
+    },
+    {
+      "source_object": "Tank longitudinal applique.004",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Tank longitudinal applique.005",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Tank longitudinal applique.006",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Tank longitudinal applique.007",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Level gauge black surround.001",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Level gauge glass.001",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Resource fill gauge segment.007",
+      "part": "Gauge0",
+      "triangles": 44
+    },
+    {
+      "source_object": "Resource fill gauge segment.008",
+      "part": "Gauge1",
+      "triangles": 44
+    },
+    {
+      "source_object": "Resource fill gauge segment.009",
+      "part": "Gauge2",
+      "triangles": 44
+    },
+    {
+      "source_object": "Resource fill gauge segment.010",
+      "part": "Gauge3",
+      "triangles": 44
+    },
+    {
+      "source_object": "Resource fill gauge segment.011",
+      "part": "Gauge4",
+      "triangles": 44
+    },
+    {
+      "source_object": "Resource fill gauge segment.012",
+      "part": "Gauge5",
+      "triangles": 44
+    },
+    {
+      "source_object": "Resource fill gauge segment.013",
+      "part": "Gauge6",
+      "triangles": 44
+    },
+    {
+      "source_object": "Resource return pipe.001",
+      "part": "Base",
+      "triangles": 116
+    },
+    {
+      "source_object": "Return pipe retaining band.004",
+      "part": "Base",
+      "triangles": 288
+    },
+    {
+      "source_object": "Return pipe retaining band.005",
+      "part": "Base",
+      "triangles": 288
+    },
+    {
+      "source_object": "Return pipe retaining band.006",
+      "part": "Base",
+      "triangles": 288
+    },
+    {
+      "source_object": "Return pipe retaining band.007",
+      "part": "Base",
+      "triangles": 288
+    },
+    {
+      "source_object": "Tank dorsal service rail",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Tank dorsal removable plate",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Dorsal captive bolt",
+      "part": "Base",
+      "triangles": 68
+    },
+    {
+      "source_object": "Dorsal captive bolt.001",
+      "part": "Base",
+      "triangles": 68
+    },
+    {
+      "source_object": "Tank dorsal removable plate.001",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Dorsal captive bolt.002",
+      "part": "Base",
+      "triangles": 68
+    },
+    {
+      "source_object": "Dorsal captive bolt.003",
+      "part": "Base",
+      "triangles": 68
+    },
+    {
+      "source_object": "Tank dorsal removable plate.002",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Dorsal captive bolt.004",
+      "part": "Base",
+      "triangles": 68
+    },
+    {
+      "source_object": "Dorsal captive bolt.005",
+      "part": "Base",
+      "triangles": 68
+    },
+    {
+      "source_object": "Resource tank top inlet",
+      "part": "Base",
+      "triangles": 124
+    },
+    {
+      "source_object": "Inlet closure",
+      "part": "Base",
+      "triangles": 124
+    },
+    {
+      "source_object": "Tank safety valve",
+      "part": "Base",
+      "triangles": 116
+    },
+    {
+      "source_object": "Safety valve rim",
+      "part": "Base",
+      "triangles": 288
+    },
+    {
+      "source_object": "Unload armored bulkhead",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Unload flange",
+      "part": "Base",
+      "triangles": 188
+    },
+    {
+      "source_object": "Unload sealing boot",
+      "part": "RearCoupler",
+      "triangles": 156
+    },
+    {
+      "source_object": "Unload port interior",
+      "part": "RearCoupler",
+      "triangles": 124
+    },
+    {
+      "source_object": "Unload indexing rim",
+      "part": "RearCoupler",
+      "triangles": 288
+    },
+    {
+      "source_object": "Flange captive stud",
+      "part": "Base",
+      "triangles": 68
+    },
+    {
+      "source_object": "Flange captive stud.001",
+      "part": "Base",
+      "triangles": 68
+    },
+    {
+      "source_object": "Flange captive stud.002",
+      "part": "Base",
+      "triangles": 68
+    },
+    {
+      "source_object": "Flange captive stud.003",
+      "part": "Base",
+      "triangles": 68
+    },
+    {
+      "source_object": "Flange captive stud.004",
+      "part": "Base",
+      "triangles": 68
+    },
+    {
+      "source_object": "Flange captive stud.005",
+      "part": "Base",
+      "triangles": 68
+    },
+    {
+      "source_object": "Flange captive stud.006",
+      "part": "Base",
+      "triangles": 68
+    },
+    {
+      "source_object": "Flange captive stud.007",
+      "part": "Base",
+      "triangles": 68
+    },
+    {
+      "source_object": "Rear taillight protected housing",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Rear taillight lens",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Rear dock guard",
+      "part": "Base",
+      "triangles": 116
+    },
+    {
+      "source_object": "Exhaust insulated stack",
+      "part": "Base",
+      "triangles": 124
+    },
+    {
+      "source_object": "Exhaust raised lip",
+      "part": "Base",
+      "triangles": 288
+    },
+    {
+      "source_object": "Rear reflector panel",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Rear taillight protected housing.001",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Rear taillight lens.001",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Rear dock guard.001",
+      "part": "Base",
+      "triangles": 116
+    },
+    {
+      "source_object": "Exhaust insulated stack.001",
+      "part": "Base",
+      "triangles": 124
+    },
+    {
+      "source_object": "Exhaust raised lip.001",
+      "part": "Base",
+      "triangles": 288
+    },
+    {
+      "source_object": "Rear reflector panel.001",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Rear tow crossbar",
+      "part": "Base",
+      "triangles": 44
+    },
+    {
+      "source_object": "Rear recovery eye",
+      "part": "Base",
+      "triangles": 288
+    },
+    {
+      "source_object": "Rear recovery eye.001",
+      "part": "Base",
+      "triangles": 288
+    },
+    {
+      "source_object": "Radio whip antenna",
+      "part": "Base",
+      "triangles": 116
+    },
+    {
+      "source_object": "Radio antenna boot",
+      "part": "Base",
+      "triangles": 92
+    },
+    {
+      "source_object": "Mining arm pivot",
+      "part": "Base",
+      "triangles": 124
+    },
+    {
+      "source_object": "Mining lift arm",
+      "part": "ArmAssembly",
+      "triangles": 116
+    },
+    {
+      "source_object": "Lift hydraulic cylinder",
+      "part": "ArmAssembly",
+      "triangles": 116
+    },
+    {
+      "source_object": "Lift hydraulic piston",
+      "part": "ArmAssembly",
+      "triangles": 116
+    },
+    {
+      "source_object": "Drum drive shroud",
+      "part": "ArmAssembly",
+      "triangles": 156
+    },
+    {
+      "source_object": "Cutter bearing hub",
+      "part": "ArmAssembly",
+      "triangles": 92
+    },
+    {
+      "source_object": "Mining arm pivot.001",
+      "part": "Base",
+      "triangles": 124
+    },
+    {
+      "source_object": "Mining lift arm.001",
+      "part": "ArmAssembly",
+      "triangles": 116
+    },
+    {
+      "source_object": "Lift hydraulic cylinder.001",
+      "part": "ArmAssembly",
+      "triangles": 116
+    },
+    {
+      "source_object": "Lift hydraulic piston.001",
+      "part": "ArmAssembly",
+      "triangles": 116
+    },
+    {
+      "source_object": "Drum drive shroud.001",
+      "part": "ArmAssembly",
+      "triangles": 156
+    },
+    {
+      "source_object": "Cutter bearing hub.001",
+      "part": "ArmAssembly",
+      "triangles": 92
+    },
+    {
+      "source_object": "Rotary harvesting drum",
+      "part": "CutterDrum",
+      "triangles": 220
+    },
+    {
+      "source_object": "Drum serrated collar",
+      "part": "CutterDrum",
+      "triangles": 108
+    },
+    {
+      "source_object": "Replaceable cutter tooth",
+      "part": "CutterDrum",
+      "triangles": 44
+    },
+    {
+      "source_object": "Replaceable cutter tooth.001",
+      "part": "CutterDrum",
+      "triangles": 44
+    },
+    {
+      "source_object": "Replaceable cutter tooth.002",
+      "part": "CutterDrum",
+      "triangles": 44
+    },
+    {
+      "source_object": "Replaceable cutter tooth.003",
+      "part": "CutterDrum",
+      "triangles": 44
+    },
+    {
+      "source_object": "Replaceable cutter tooth.004",
+      "part": "CutterDrum",
+      "triangles": 44
+    },
+    {
+      "source_object": "Replaceable cutter tooth.005",
+      "part": "CutterDrum",
+      "triangles": 44
+    },
+    {
+      "source_object": "Drum serrated collar.001",
+      "part": "CutterDrum",
+      "triangles": 108
+    },
+    {
+      "source_object": "Replaceable cutter tooth.006",
+      "part": "CutterDrum",
+      "triangles": 44
+    },
+    {
+      "source_object": "Replaceable cutter tooth.007",
+      "part": "CutterDrum",
+      "triangles": 44
+    },
+    {
+      "source_object": "Replaceable cutter tooth.008",
+      "part": "CutterDrum",
+      "triangles": 44
+    },
+    {
+      "source_object": "Replaceable cutter tooth.009",
+      "part": "CutterDrum",
+      "triangles": 44
+    },
+    {
+      "source_object": "Replaceable cutter tooth.010",
+      "part": "CutterDrum",
+      "triangles": 44
+    },
+    {
+      "source_object": "Replaceable cutter tooth.011",
+      "part": "CutterDrum",
+      "triangles": 44
+    },
+    {
+      "source_object": "Drum serrated collar.002",
+      "part": "CutterDrum",
+      "triangles": 108
+    },
+    {
+      "source_object": "Replaceable cutter tooth.012",
+      "part": "CutterDrum",
+      "triangles": 44
+    },
+    {
+      "source_object": "Replaceable cutter tooth.013",
+      "part": "CutterDrum",
+      "triangles": 44
+    },
+    {
+      "source_object": "Replaceable cutter tooth.014",
+      "part": "CutterDrum",
+      "triangles": 44
+    },
+    {
+      "source_object": "Replaceable cutter tooth.015",
+      "part": "CutterDrum",
+      "triangles": 44
+    },
+    {
+      "source_object": "Replaceable cutter tooth.016",
+      "part": "CutterDrum",
+      "triangles": 44
+    },
+    {
+      "source_object": "Replaceable cutter tooth.017",
+      "part": "CutterDrum",
+      "triangles": 44
+    },
+    {
+      "source_object": "Drum serrated collar.003",
+      "part": "CutterDrum",
+      "triangles": 108
+    },
+    {
+      "source_object": "Replaceable cutter tooth.018",
+      "part": "CutterDrum",
+      "triangles": 44
+    },
+    {
+      "source_object": "Replaceable cutter tooth.019",
+      "part": "CutterDrum",
+      "triangles": 44
+    },
+    {
+      "source_object": "Replaceable cutter tooth.020",
+      "part": "CutterDrum",
+      "triangles": 44
+    },
+    {
+      "source_object": "Replaceable cutter tooth.021",
+      "part": "CutterDrum",
+      "triangles": 44
+    },
+    {
+      "source_object": "Replaceable cutter tooth.022",
+      "part": "CutterDrum",
+      "triangles": 44
+    },
+    {
+      "source_object": "Replaceable cutter tooth.023",
+      "part": "CutterDrum",
+      "triangles": 44
+    },
+    {
+      "source_object": "Drum serrated collar.004",
+      "part": "CutterDrum",
+      "triangles": 108
+    },
+    {
+      "source_object": "Replaceable cutter tooth.024",
+      "part": "CutterDrum",
+      "triangles": 44
+    },
+    {
+      "source_object": "Replaceable cutter tooth.025",
+      "part": "CutterDrum",
+      "triangles": 44
+    },
+    {
+      "source_object": "Replaceable cutter tooth.026",
+      "part": "CutterDrum",
+      "triangles": 44
+    },
+    {
+      "source_object": "Replaceable cutter tooth.027",
+      "part": "CutterDrum",
+      "triangles": 44
+    },
+    {
+      "source_object": "Replaceable cutter tooth.028",
+      "part": "CutterDrum",
+      "triangles": 44
+    },
+    {
+      "source_object": "Replaceable cutter tooth.029",
+      "part": "CutterDrum",
+      "triangles": 44
+    },
+    {
+      "source_object": "Drum serrated collar.005",
+      "part": "CutterDrum",
+      "triangles": 108
+    },
+    {
+      "source_object": "Replaceable cutter tooth.030",
+      "part": "CutterDrum",
+      "triangles": 44
+    },
+    {
+      "source_object": "Replaceable cutter tooth.031",
+      "part": "CutterDrum",
+      "triangles": 44
+    },
+    {
+      "source_object": "Replaceable cutter tooth.032",
+      "part": "CutterDrum",
+      "triangles": 44
+    },
+    {
+      "source_object": "Replaceable cutter tooth.033",
+      "part": "CutterDrum",
+      "triangles": 44
+    },
+    {
+      "source_object": "Replaceable cutter tooth.034",
+      "part": "CutterDrum",
+      "triangles": 44
+    },
+    {
+      "source_object": "Replaceable cutter tooth.035",
+      "part": "CutterDrum",
+      "triangles": 44
+    },
+    {
+      "source_object": "Drum serrated collar.006",
+      "part": "CutterDrum",
+      "triangles": 108
+    },
+    {
+      "source_object": "Replaceable cutter tooth.036",
+      "part": "CutterDrum",
+      "triangles": 44
+    },
+    {
+      "source_object": "Replaceable cutter tooth.037",
+      "part": "CutterDrum",
+      "triangles": 44
+    },
+    {
+      "source_object": "Replaceable cutter tooth.038",
+      "part": "CutterDrum",
+      "triangles": 44
+    },
+    {
+      "source_object": "Replaceable cutter tooth.039",
+      "part": "CutterDrum",
+      "triangles": 44
+    },
+    {
+      "source_object": "Replaceable cutter tooth.040",
+      "part": "CutterDrum",
+      "triangles": 44
+    },
+    {
+      "source_object": "Replaceable cutter tooth.041",
+      "part": "CutterDrum",
+      "triangles": 44
+    },
+    {
+      "source_object": "Drum serrated collar.007",
+      "part": "CutterDrum",
+      "triangles": 108
+    },
+    {
+      "source_object": "Replaceable cutter tooth.042",
+      "part": "CutterDrum",
+      "triangles": 44
+    },
+    {
+      "source_object": "Replaceable cutter tooth.043",
+      "part": "CutterDrum",
+      "triangles": 44
+    },
+    {
+      "source_object": "Replaceable cutter tooth.044",
+      "part": "CutterDrum",
+      "triangles": 44
+    },
+    {
+      "source_object": "Replaceable cutter tooth.045",
+      "part": "CutterDrum",
+      "triangles": 44
+    },
+    {
+      "source_object": "Replaceable cutter tooth.046",
+      "part": "CutterDrum",
+      "triangles": 44
+    },
+    {
+      "source_object": "Replaceable cutter tooth.047",
+      "part": "CutterDrum",
+      "triangles": 44
+    },
+    {
+      "source_object": "Drum serrated collar.008",
+      "part": "CutterDrum",
+      "triangles": 108
+    },
+    {
+      "source_object": "Replaceable cutter tooth.048",
+      "part": "CutterDrum",
+      "triangles": 44
+    },
+    {
+      "source_object": "Replaceable cutter tooth.049",
+      "part": "CutterDrum",
+      "triangles": 44
+    },
+    {
+      "source_object": "Replaceable cutter tooth.050",
+      "part": "CutterDrum",
+      "triangles": 44
+    },
+    {
+      "source_object": "Replaceable cutter tooth.051",
+      "part": "CutterDrum",
+      "triangles": 44
+    },
+    {
+      "source_object": "Replaceable cutter tooth.052",
+      "part": "CutterDrum",
+      "triangles": 44
+    },
+    {
+      "source_object": "Replaceable cutter tooth.053",
+      "part": "CutterDrum",
+      "triangles": 44
+    },
+    {
+      "source_object": "Cutter armored debris visor",
+      "part": "ArmAssembly",
+      "triangles": 44
+    },
+    {
+      "source_object": "Debris visor identification stripe",
+      "part": "ArmAssembly",
+      "triangles": 44
+    }
+  ],
+  "parts": [
+    {
+      "name": "SM_HA9_Base",
+      "key": "Base",
+      "pivot_actor_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "parent": "Actor",
+      "pivot_parent_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "material_slots": [
+        "Dark",
+        "Armor",
+        "Rubber",
+        "Steel",
+        "Team",
+        "Glass",
+        "Lamp",
+        "Dust"
+      ],
+      "fbx_sha256": "6a243860b21c8f651bf48b57a86da7d03a7258dfb4d340d6ecf1ba2734761f7e",
+      "triangles": 30852,
+      "vertices": 16252,
+      "bounds_min_m": [
+        -1.8385000228881836,
+        -1.0090000629425049,
+        -0.3499999940395355
+      ],
+      "bounds_max_m": [
+        1.4500000476837158,
+        1.0090000629425049,
+        1.686028242111206
+      ],
+      "fbx_roundtrip": "PASS"
+    },
+    {
+      "name": "SM_HA9_ArmAssembly",
+      "key": "ArmAssembly",
+      "pivot_actor_m": [
+        1.149999976158142,
+        0.0,
+        0.5350000262260437
+      ],
+      "parent": "Actor",
+      "pivot_parent_m": [
+        1.149999976158142,
+        0.0,
+        0.5350000262260437
+      ],
+      "material_slots": [
+        "Armor",
+        "Dark",
+        "Steel",
+        "Team"
+      ],
+      "fbx_sha256": "099f0c3fad82a10928180576c6b78f583c5968af487b6480ab4aa01638a14c5c",
+      "triangles": 1280,
+      "vertices": 664,
+      "bounds_min_m": [
+        -0.047809451818466187,
+        -0.7435001134872437,
+        -0.5660000443458557
+      ],
+      "bounds_max_m": [
+        0.8010002374649048,
+        0.7434999942779541,
+        0.07122500240802765
+      ],
+      "fbx_roundtrip": "PASS"
+    },
+    {
+      "name": "SM_HA9_CutterDrum",
+      "key": "CutterDrum",
+      "pivot_actor_m": [
+        1.7699999809265137,
+        0.0,
+        0.15000000596046448
+      ],
+      "parent": "ArmAssembly",
+      "pivot_parent_m": [
+        0.6200000047683716,
+        0.0,
+        -0.3850000202655792
+      ],
+      "material_slots": [
+        "Dark",
+        "Steel"
+      ],
+      "fbx_sha256": "c82693e28a8560cbb07a19c346542ae1990621bc0565e39463fbe8e40054e12f",
+      "triangles": 3568,
+      "vertices": 1912,
+      "bounds_min_m": [
+        -0.20761334896087646,
+        -0.6449999809265137,
+        -0.2076745480298996
+      ],
+      "bounds_max_m": [
+        0.20761334896087646,
+        0.6449999809265137,
+        0.2076745480298996
+      ],
+      "fbx_roundtrip": "PASS"
+    },
+    {
+      "name": "SM_HA9_RearCoupler",
+      "key": "RearCoupler",
+      "pivot_actor_m": [
+        -1.8389999866485596,
+        0.0,
+        0.8349999785423279
+      ],
+      "parent": "Actor",
+      "pivot_parent_m": [
+        -1.8389999866485596,
+        0.0,
+        0.8349999785423279
+      ],
+      "material_slots": [
+        "Rubber",
+        "Dark",
+        "Team"
+      ],
+      "fbx_sha256": "c0bff25b94cdb84b0d27a437462eb800c6e91ad671394028e60b901d6f107a24",
+      "triangles": 568,
+      "vertices": 288,
+      "bounds_min_m": [
+        -0.06839228421449661,
+        -0.16899999976158142,
+        -0.16899999976158142
+      ],
+      "bounds_max_m": [
+        0.02900000661611557,
+        0.16899999976158142,
+        0.16899999976158142
+      ],
+      "fbx_roundtrip": "PASS"
+    },
+    {
+      "name": "SM_HA9_Gauge0",
+      "key": "Gauge0",
+      "pivot_actor_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "parent": "Actor",
+      "pivot_parent_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "material_slots": [
+        "Neon"
+      ],
+      "fbx_sha256": "20da71e18be5e5ae73b2244f7d5faca56555b50aa5dc996ddc925021fabf66e2",
+      "triangles": 88,
+      "vertices": 48,
+      "bounds_min_m": [
+        -0.9514999985694885,
+        -0.49399998784065247,
+        0.8995000123977661
+      ],
+      "bounds_max_m": [
+        -0.9185000061988831,
+        0.49399998784065247,
+        0.9565000534057617
+      ],
+      "fbx_roundtrip": "PASS"
+    },
+    {
+      "name": "SM_HA9_Gauge1",
+      "key": "Gauge1",
+      "pivot_actor_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "parent": "Actor",
+      "pivot_parent_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "material_slots": [
+        "Neon"
+      ],
+      "fbx_sha256": "2bc3991816409287b5ec0dcb2ea69f742c5dfd258ae6d338c9834fb2f4408f2f",
+      "triangles": 88,
+      "vertices": 48,
+      "bounds_min_m": [
+        -0.8834999799728394,
+        -0.49399998784065247,
+        0.8995000123977661
+      ],
+      "bounds_max_m": [
+        -0.8504999876022339,
+        0.49399998784065247,
+        0.9565000534057617
+      ],
+      "fbx_roundtrip": "PASS"
+    },
+    {
+      "name": "SM_HA9_Gauge2",
+      "key": "Gauge2",
+      "pivot_actor_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "parent": "Actor",
+      "pivot_parent_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "material_slots": [
+        "Neon"
+      ],
+      "fbx_sha256": "c0a1f0d8a36260665d1387440ec4c0c408e66f4785d76fed6882f36b223eedbb",
+      "triangles": 88,
+      "vertices": 48,
+      "bounds_min_m": [
+        -0.815500020980835,
+        -0.49399998784065247,
+        0.8995000123977661
+      ],
+      "bounds_max_m": [
+        -0.7825000286102295,
+        0.49399998784065247,
+        0.9565000534057617
+      ],
+      "fbx_roundtrip": "PASS"
+    },
+    {
+      "name": "SM_HA9_Gauge3",
+      "key": "Gauge3",
+      "pivot_actor_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "parent": "Actor",
+      "pivot_parent_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "material_slots": [
+        "Neon"
+      ],
+      "fbx_sha256": "169ba3fa81135dd0bd61fb47317efc445dd51d9fe29b4cc61ae991f389a5dc40",
+      "triangles": 88,
+      "vertices": 48,
+      "bounds_min_m": [
+        -0.7475000023841858,
+        -0.49399998784065247,
+        0.8995000123977661
+      ],
+      "bounds_max_m": [
+        -0.7145000100135803,
+        0.49399998784065247,
+        0.9565000534057617
+      ],
+      "fbx_roundtrip": "PASS"
+    },
+    {
+      "name": "SM_HA9_Gauge4",
+      "key": "Gauge4",
+      "pivot_actor_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "parent": "Actor",
+      "pivot_parent_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "material_slots": [
+        "Neon"
+      ],
+      "fbx_sha256": "c2510c01392222065722d3f929cee760854c7858659b9b4338d115da3678389f",
+      "triangles": 88,
+      "vertices": 48,
+      "bounds_min_m": [
+        -0.6794999837875366,
+        -0.49399998784065247,
+        0.8995000123977661
+      ],
+      "bounds_max_m": [
+        -0.6464999914169312,
+        0.49399998784065247,
+        0.9565000534057617
+      ],
+      "fbx_roundtrip": "PASS"
+    },
+    {
+      "name": "SM_HA9_Gauge5",
+      "key": "Gauge5",
+      "pivot_actor_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "parent": "Actor",
+      "pivot_parent_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "material_slots": [
+        "Neon"
+      ],
+      "fbx_sha256": "287592981a28992ad21a73bd0cb14c504a2a4b7efbf2d0726846ab3675eceb53",
+      "triangles": 88,
+      "vertices": 48,
+      "bounds_min_m": [
+        -0.6115000247955322,
+        -0.49399998784065247,
+        0.8995000123977661
+      ],
+      "bounds_max_m": [
+        -0.5785000324249268,
+        0.49399998784065247,
+        0.9565000534057617
+      ],
+      "fbx_roundtrip": "PASS"
+    },
+    {
+      "name": "SM_HA9_Gauge6",
+      "key": "Gauge6",
+      "pivot_actor_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "parent": "Actor",
+      "pivot_parent_m": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "material_slots": [
+        "Neon"
+      ],
+      "fbx_sha256": "464102a76c0e72140a5c1d1887f1bd6e865abb0128c93a247e1d600c47d235f8",
+      "triangles": 88,
+      "vertices": 48,
+      "bounds_min_m": [
+        -0.5435000061988831,
+        -0.49399998784065247,
+        0.8995000123977661
+      ],
+      "bounds_max_m": [
+        -0.5105000138282776,
+        0.49399998784065247,
+        0.9565000534057617
+      ],
+      "fbx_roundtrip": "PASS"
+    }
+  ],
+  "units": "metres in FBX; centimetres in Unreal",
+  "forward": "+X",
+  "unreal_y_reflection": true,
+  "original_anchor_offset_m": -0.35,
+  "animation": "Own presentation only; no Tempest timing claim",
+  "validation": "PASS: partition, triangle conservation, bounds, UV, FBX roundtrip"
+}

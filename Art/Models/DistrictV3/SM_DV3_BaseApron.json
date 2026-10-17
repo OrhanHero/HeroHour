@@ -1,0 +1,14 @@
+{
+  "dimensions_m": [
+    18.0,
+    18.0,
+    0.925000011920929
+  ],
+  "material_slots": [
+    "Asphalt",
+    "Concrete",
+    "Paint",
+    "Metal"
+  ],
+  "triangles": 1908
+}

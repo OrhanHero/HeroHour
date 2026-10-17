@@ -1,0 +1,262 @@
+[
+  {
+    "name": "SM_HR_PowerPlant",
+    "role": "PowerPlant",
+    "triangles": 20860,
+    "vertices": 10664,
+    "dimensions_m": [
+      4.8,
+      4.4,
+      5.0
+    ],
+    "min_z_m": -0.35,
+    "runtime_actor_z_cm": 35,
+    "runtime_scale": 1,
+    "materials": [
+      "Concrete",
+      "Dark",
+      "Steel",
+      "Lamp",
+      "Armor",
+      "Neon",
+      "Team"
+    ],
+    "original_geometry": true,
+    "fbx_roundtrip": {
+      "passed": true,
+      "dimensions_m": [
+        4.80000114440918,
+        4.400001049041748,
+        5.000000089406967
+      ],
+      "min_z_m": -0.3499999940395355,
+      "nonmanifold_edges": 0,
+      "materials": [
+        "Concrete",
+        "Dark",
+        "Steel",
+        "Lamp",
+        "Armor",
+        "Neon",
+        "Team"
+      ]
+    }
+  },
+  {
+    "name": "SM_HR_Barracks",
+    "role": "Barracks",
+    "triangles": 9836,
+    "vertices": 5104,
+    "dimensions_m": [
+      5.0,
+      4.0,
+      3.3
+    ],
+    "min_z_m": -0.35,
+    "runtime_actor_z_cm": 35,
+    "runtime_scale": 1,
+    "materials": [
+      "Concrete",
+      "Dark",
+      "Steel",
+      "Lamp",
+      "Armor",
+      "Neon",
+      "Team"
+    ],
+    "original_geometry": true,
+    "fbx_roundtrip": {
+      "passed": true,
+      "dimensions_m": [
+        5.000000476837158,
+        4.000000953674316,
+        3.3000000417232513
+      ],
+      "min_z_m": -0.3499999940395355,
+      "nonmanifold_edges": 0,
+      "materials": [
+        "Concrete",
+        "Dark",
+        "Steel",
+        "Lamp",
+        "Armor",
+        "Neon",
+        "Team"
+      ]
+    }
+  },
+  {
+    "name": "SM_HR_Radar",
+    "role": "Radar",
+    "triangles": 9224,
+    "vertices": 4752,
+    "dimensions_m": [
+      4.0,
+      4.0,
+      6.0
+    ],
+    "min_z_m": -0.35,
+    "runtime_actor_z_cm": 35,
+    "runtime_scale": 1,
+    "materials": [
+      "Concrete",
+      "Dark",
+      "Steel",
+      "Lamp",
+      "Armor",
+      "Glass",
+      "Neon",
+      "Team"
+    ],
+    "original_geometry": true,
+    "fbx_roundtrip": {
+      "passed": true,
+      "dimensions_m": [
+        4.000000476837158,
+        4.000000476837158,
+        6.000000089406967
+      ],
+      "min_z_m": -0.3499999940395355,
+      "nonmanifold_edges": 0,
+      "materials": [
+        "Concrete",
+        "Dark",
+        "Steel",
+        "Lamp",
+        "Armor",
+        "Glass",
+        "Neon",
+        "Team"
+      ]
+    }
+  },
+  {
+    "name": "SM_HR_Defense",
+    "role": "Defense",
+    "triangles": 6444,
+    "vertices": 3328,
+    "dimensions_m": [
+      3.0,
+      3.0,
+      2.5
+    ],
+    "min_z_m": -0.35,
+    "runtime_actor_z_cm": 35,
+    "runtime_scale": 1,
+    "materials": [
+      "Concrete",
+      "Dark",
+      "Steel",
+      "Lamp",
+      "Armor",
+      "Neon",
+      "Glass"
+    ],
+    "original_geometry": true,
+    "fbx_roundtrip": {
+      "passed": true,
+      "dimensions_m": [
+        3.000000476837158,
+        3.000000476837158,
+        2.500000089406967
+      ],
+      "min_z_m": -0.3499999940395355,
+      "nonmanifold_edges": 0,
+      "materials": [
+        "Concrete",
+        "Dark",
+        "Steel",
+        "Lamp",
+        "Armor",
+        "Neon",
+        "Glass"
+      ]
+    }
+  },
+  {
+    "name": "SM_HR_Infantry",
+    "role": "Infantry",
+    "triangles": 11076,
+    "vertices": 5646,
+    "dimensions_m": [
+      0.9,
+      0.7,
+      1.8
+    ],
+    "min_z_m": -0.35,
+    "runtime_actor_z_cm": 35,
+    "runtime_scale": 1,
+    "materials": [
+      "Rubber",
+      "Dark",
+      "Armor",
+      "Steel",
+      "Neon",
+      "Team",
+      "Glass"
+    ],
+    "original_geometry": true,
+    "fbx_roundtrip": {
+      "passed": true,
+      "dimensions_m": [
+        0.9000001549720764,
+        0.7000001072883606,
+        1.8000000417232513
+      ],
+      "min_z_m": -0.3499999940395355,
+      "nonmanifold_edges": 0,
+      "materials": [
+        "Rubber",
+        "Dark",
+        "Armor",
+        "Steel",
+        "Neon",
+        "Team",
+        "Glass"
+      ]
+    }
+  },
+  {
+    "name": "SM_HR_Siege",
+    "role": "Siege",
+    "triangles": 19160,
+    "vertices": 9904,
+    "dimensions_m": [
+      3.8,
+      2.2,
+      2.6
+    ],
+    "min_z_m": -0.35,
+    "runtime_actor_z_cm": 35,
+    "runtime_scale": 1,
+    "materials": [
+      "Dark",
+      "Armor",
+      "Rubber",
+      "Steel",
+      "Neon",
+      "Glass",
+      "Lamp"
+    ],
+    "original_geometry": true,
+    "fbx_roundtrip": {
+      "passed": true,
+      "dimensions_m": [
+        3.8000004291534424,
+        2.200000762939453,
+        2.5999999940395355
+      ],
+      "min_z_m": -0.3499999940395355,
+      "nonmanifold_edges": 0,
+      "materials": [
+        "Dark",
+        "Armor",
+        "Rubber",
+        "Steel",
+        "Neon",
+        "Glass",
+        "Lamp"
+      ]
+    }
+  }
+]

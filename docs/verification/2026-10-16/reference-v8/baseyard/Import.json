@@ -1,0 +1,92 @@
+{
+  "result": "PASS",
+  "actors": 2,
+  "shared_material_instances": 6,
+  "total_triangles": 25426,
+  "source_fbx_sha256": {
+    "SM_BY8_WestBaseyard": "154f01759956e7d145a3c0e6acb978d50c9e355d80208b077dc309bf7f8623a9",
+    "SM_BY8_EastBaseyard": "b957d80a1bf9a70eeea9b9389ead879b63eb41c3c8f8f9e7f834e3188eaec17a"
+  },
+  "labels": [
+    "BYV8 West flat industrial courtyard",
+    "BYV8 East flat industrial courtyard"
+  ],
+  "no_collision": true,
+  "casts_shadow": false,
+  "navigation_changed": false,
+  "existing_actor_snapshots_unchanged": true,
+  "preserved_actor_count": 1298,
+  "collision_validation": [
+    {
+      "mesh": "SM_BY8_WestBaseyard",
+      "api": "reflected UBodySetup.AggGeom",
+      "initial": {
+        "body_setup_present": true,
+        "shapes": {
+          "SphereElems": 0,
+          "BoxElems": 0,
+          "SphylElems": 0,
+          "ConvexElems": 0,
+          "TaperedCapsuleElems": 0,
+          "LevelSetElems": 0,
+          "SkinnedLevelSetElems": 0,
+          "MLLevelSetElems": 0,
+          "SkinnedTriangleMeshElems": 0
+        },
+        "total": 0
+      },
+      "final": {
+        "body_setup_present": true,
+        "shapes": {
+          "SphereElems": 0,
+          "BoxElems": 0,
+          "SphylElems": 0,
+          "ConvexElems": 0,
+          "TaperedCapsuleElems": 0,
+          "LevelSetElems": 0,
+          "SkinnedLevelSetElems": 0,
+          "MLLevelSetElems": 0,
+          "SkinnedTriangleMeshElems": 0
+        },
+        "total": 0
+      },
+      "editor_subsystem_cleanup_used": false
+    },
+    {
+      "mesh": "SM_BY8_EastBaseyard",
+      "api": "reflected UBodySetup.AggGeom",
+      "initial": {
+        "body_setup_present": true,
+        "shapes": {
+          "SphereElems": 0,
+          "BoxElems": 0,
+          "SphylElems": 0,
+          "ConvexElems": 0,
+          "TaperedCapsuleElems": 0,
+          "LevelSetElems": 0,
+          "SkinnedLevelSetElems": 0,
+          "MLLevelSetElems": 0,
+          "SkinnedTriangleMeshElems": 0
+        },
+        "total": 0
+      },
+      "final": {
+        "body_setup_present": true,
+        "shapes": {
+          "SphereElems": 0,
+          "BoxElems": 0,
+          "SphylElems": 0,
+          "ConvexElems": 0,
+          "TaperedCapsuleElems": 0,
+          "LevelSetElems": 0,
+          "SkinnedLevelSetElems": 0,
+          "MLLevelSetElems": 0,
+          "SkinnedTriangleMeshElems": 0
+        },
+        "total": 0
+      },
+      "editor_subsystem_cleanup_used": false
+    }
+  ],
+  "dust_edges": "Opaque world-space sand/dirt PBR blend from imported vertex alpha; runtime image review required"
+}

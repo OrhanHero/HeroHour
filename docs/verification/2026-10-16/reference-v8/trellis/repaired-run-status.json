@@ -1,0 +1,86 @@
+{
+  "status": "success",
+  "server_pid": 10960,
+  "limit_seconds": 600,
+  "gpu_peak_mib": 9489,
+  "samples": [
+    {
+      "seconds": 24.41,
+      "gpu_used_mib": 1602
+    },
+    {
+      "seconds": 27.49,
+      "gpu_used_mib": 4406
+    },
+    {
+      "seconds": 30.55,
+      "gpu_used_mib": 6127
+    },
+    {
+      "seconds": 33.62,
+      "gpu_used_mib": 6767
+    },
+    {
+      "seconds": 36.69,
+      "gpu_used_mib": 7157
+    },
+    {
+      "seconds": 39.77,
+      "gpu_used_mib": 6533
+    },
+    {
+      "seconds": 42.83,
+      "gpu_used_mib": 9489
+    },
+    {
+      "seconds": 45.92,
+      "gpu_used_mib": 4945
+    },
+    {
+      "seconds": 48.99,
+      "gpu_used_mib": 5267
+    },
+    {
+      "seconds": 52.05,
+      "gpu_used_mib": 4970
+    },
+    {
+      "seconds": 55.09,
+      "gpu_used_mib": 4879
+    },
+    {
+      "seconds": 58.16,
+      "gpu_used_mib": 4879
+    },
+    {
+      "seconds": 61.22,
+      "gpu_used_mib": 4879
+    },
+    {
+      "seconds": 64.28,
+      "gpu_used_mib": 4911
+    },
+    {
+      "seconds": 67.34,
+      "gpu_used_mib": 5327
+    },
+    {
+      "seconds": 70.42,
+      "gpu_used_mib": 4367
+    },
+    {
+      "seconds": 73.49,
+      "gpu_used_mib": 4300
+    }
+  ],
+  "elapsed_seconds": 73.49,
+  "own_server_stopped": true,
+  "user_db_unchanged": true,
+  "outputs": [
+    {
+      "file": "Art\\Models\\TrellisV8-Repaired\\AegisHQ-Remeshed512-PBR2048_00001_.glb",
+      "bytes": 31218732,
+      "sha256": "802747bb8124a02ad0c0f899f4a2dc5b9578f23bff12ea534c28d3b5cd201f03"
+    }
+  ]
+}

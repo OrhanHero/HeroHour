@@ -1,0 +1,762 @@
+[
+  {
+    "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_1405",
+    "class": "/Script/Engine.StaticMeshActor",
+    "label": "SM_GDF_Container24",
+    "location": {
+      "x": 14306.897261,
+      "y": 6533.27865,
+      "z": -158.965657
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "rotation": {
+      "pitch": 0.0,
+      "yaw": 0.0,
+      "roll": 0.0
+    },
+    "tags": [
+      "LAVolume",
+      "EmptyCamp",
+      "01",
+      "S",
+      "Area01"
+    ],
+    "components": [
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_1405.StaticMeshComponent0",
+        "class": "/Script/Engine.StaticMeshComponent",
+        "mesh": "/Game/Tempest/Props/Faction_Containers/SM_GDF_Container.SM_GDF_Container",
+        "materials": [
+          "/Game/Tempest/Props/Faction_Containers/Materials/MI_GDF_Container_01.MI_GDF_Container_01"
+        ]
+      }
+    ],
+    "level": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel"
+  },
+  {
+    "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_1406",
+    "class": "/Script/Engine.StaticMeshActor",
+    "label": "SM_GDF_Container25",
+    "location": {
+      "x": 14326.402067,
+      "y": 6187.058039,
+      "z": -158.965657
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "rotation": {
+      "pitch": 0.0,
+      "yaw": 0.0,
+      "roll": 0.0
+    },
+    "tags": [
+      "LAVolume",
+      "EmptyCamp",
+      "01",
+      "S",
+      "Area01"
+    ],
+    "components": [
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_1406.StaticMeshComponent0",
+        "class": "/Script/Engine.StaticMeshComponent",
+        "mesh": "/Game/Tempest/Props/Faction_Containers/SM_GDF_Container.SM_GDF_Container",
+        "materials": [
+          "/Game/Tempest/Props/Faction_Containers/Materials/MI_GDF_Container_01.MI_GDF_Container_01"
+        ]
+      }
+    ],
+    "level": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel"
+  },
+  {
+    "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_1407",
+    "class": "/Script/Engine.StaticMeshActor",
+    "label": "SM_GDF_Container26",
+    "location": {
+      "x": 14897.309564,
+      "y": 6392.896733,
+      "z": -158.965657
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "rotation": {
+      "pitch": 0.0,
+      "yaw": -83.87257199999999,
+      "roll": 0.0
+    },
+    "tags": [
+      "LAVolume",
+      "EmptyCamp",
+      "01",
+      "S",
+      "Area01"
+    ],
+    "components": [
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_1407.StaticMeshComponent0",
+        "class": "/Script/Engine.StaticMeshComponent",
+        "mesh": "/Game/Tempest/Props/Faction_Containers/SM_GDF_Container.SM_GDF_Container",
+        "materials": [
+          "/Game/Tempest/Props/Faction_Containers/Materials/MI_GDF_Container_01.MI_GDF_Container_01"
+        ]
+      }
+    ],
+    "level": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel"
+  },
+  {
+    "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_1408",
+    "class": "/Script/Engine.StaticMeshActor",
+    "label": "SM_GDF_Container27",
+    "location": {
+      "x": 14288.867315,
+      "y": 6319.178041,
+      "z": 158.965766
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "rotation": {
+      "pitch": 0.0,
+      "yaw": 0.0,
+      "roll": 0.0
+    },
+    "tags": [
+      "LAVolume",
+      "EmptyCamp",
+      "01",
+      "S",
+      "Area01"
+    ],
+    "components": [
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_1408.StaticMeshComponent0",
+        "class": "/Script/Engine.StaticMeshComponent",
+        "mesh": "/Game/Tempest/Props/Faction_Containers/SM_GDF_Container.SM_GDF_Container",
+        "materials": [
+          "/Game/Tempest/Props/Faction_Containers/Materials/MI_GDF_Container_01.MI_GDF_Container_01"
+        ]
+      }
+    ],
+    "level": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel"
+  },
+  {
+    "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_1445",
+    "class": "/Script/Engine.StaticMeshActor",
+    "label": "SM_GDF_Container7",
+    "location": {
+      "x": 11200.614878,
+      "y": 22762.829795,
+      "z": -42.433587
+    },
+    "scale": {
+      "x": 2.07419,
+      "y": 1.464045,
+      "z": 2.07419
+    },
+    "rotation": {
+      "pitch": 0.0,
+      "yaw": -179.999999,
+      "roll": 0.0
+    },
+    "tags": [
+      "LAVolume",
+      "EmptyCamp",
+      "01",
+      "S",
+      "Area01"
+    ],
+    "components": [
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_1445.StaticMeshComponent0",
+        "class": "/Script/Engine.StaticMeshComponent",
+        "mesh": "/Game/Tempest/Props/Faction_Containers/SM_GDF_Container.SM_GDF_Container",
+        "materials": [
+          "/Game/Tempest/Props/Faction_Containers/Materials/MI_GDF_Container_01.MI_GDF_Container_01"
+        ]
+      }
+    ],
+    "level": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel"
+  },
+  {
+    "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_3166",
+    "class": "/Script/Engine.StaticMeshActor",
+    "label": "SM_GDF_Container32",
+    "location": {
+      "x": -14306.896943,
+      "y": -6533.279512,
+      "z": -158.965657
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "rotation": {
+      "pitch": 0.0,
+      "yaw": -179.999999,
+      "roll": 0.0
+    },
+    "tags": [
+      "LAVolume",
+      "EmptyCamp",
+      "01",
+      "S",
+      "Area01"
+    ],
+    "components": [
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_3166.StaticMeshComponent0",
+        "class": "/Script/Engine.StaticMeshComponent",
+        "mesh": "/Game/Tempest/Props/Faction_Containers/SM_GDF_Container.SM_GDF_Container",
+        "materials": [
+          "/Game/Tempest/Props/Faction_Containers/Materials/MI_GDF_Container_01.MI_GDF_Container_01"
+        ]
+      }
+    ],
+    "level": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel"
+  },
+  {
+    "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_3167",
+    "class": "/Script/Engine.StaticMeshActor",
+    "label": "SM_GDF_Container33",
+    "location": {
+      "x": -14326.401766,
+      "y": -6187.058902,
+      "z": -158.965657
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "rotation": {
+      "pitch": 0.0,
+      "yaw": -179.999999,
+      "roll": 0.0
+    },
+    "tags": [
+      "LAVolume",
+      "EmptyCamp",
+      "01",
+      "S",
+      "Area01"
+    ],
+    "components": [
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_3167.StaticMeshComponent0",
+        "class": "/Script/Engine.StaticMeshComponent",
+        "mesh": "/Game/Tempest/Props/Faction_Containers/SM_GDF_Container.SM_GDF_Container",
+        "materials": [
+          "/Game/Tempest/Props/Faction_Containers/Materials/MI_GDF_Container_01.MI_GDF_Container_01"
+        ]
+      }
+    ],
+    "level": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel"
+  },
+  {
+    "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_3168",
+    "class": "/Script/Engine.StaticMeshActor",
+    "label": "SM_GDF_Container34",
+    "location": {
+      "x": -14897.309253,
+      "y": -6392.897624,
+      "z": -158.965657
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "rotation": {
+      "pitch": 0.0,
+      "yaw": 96.12742900000003,
+      "roll": 0.0
+    },
+    "tags": [
+      "LAVolume",
+      "EmptyCamp",
+      "01",
+      "S",
+      "Area01"
+    ],
+    "components": [
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_3168.StaticMeshComponent0",
+        "class": "/Script/Engine.StaticMeshComponent",
+        "mesh": "/Game/Tempest/Props/Faction_Containers/SM_GDF_Container.SM_GDF_Container",
+        "materials": [
+          "/Game/Tempest/Props/Faction_Containers/Materials/MI_GDF_Container_01.MI_GDF_Container_01"
+        ]
+      }
+    ],
+    "level": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel"
+  },
+  {
+    "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_3169",
+    "class": "/Script/Engine.StaticMeshActor",
+    "label": "SM_GDF_Container35",
+    "location": {
+      "x": -14288.867007,
+      "y": -6319.178902,
+      "z": 158.965766
+    },
+    "scale": {
+      "x": 1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "rotation": {
+      "pitch": 0.0,
+      "yaw": -179.999999,
+      "roll": 0.0
+    },
+    "tags": [
+      "LAVolume",
+      "EmptyCamp",
+      "01",
+      "S",
+      "Area01"
+    ],
+    "components": [
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_3169.StaticMeshComponent0",
+        "class": "/Script/Engine.StaticMeshComponent",
+        "mesh": "/Game/Tempest/Props/Faction_Containers/SM_GDF_Container.SM_GDF_Container",
+        "materials": [
+          "/Game/Tempest/Props/Faction_Containers/Materials/MI_GDF_Container_01.MI_GDF_Container_01"
+        ]
+      }
+    ],
+    "level": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel"
+  },
+  {
+    "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_3206",
+    "class": "/Script/Engine.StaticMeshActor",
+    "label": "SM_GDF_Container9",
+    "location": {
+      "x": -11200.61377,
+      "y": -22762.830506,
+      "z": -42.433587
+    },
+    "scale": {
+      "x": 2.07419,
+      "y": 1.464045,
+      "z": 2.07419
+    },
+    "rotation": {
+      "pitch": 0.0,
+      "yaw": 1.9999999949504854e-06,
+      "roll": 0.0
+    },
+    "tags": [
+      "LAVolume",
+      "EmptyCamp",
+      "01",
+      "S",
+      "Area01"
+    ],
+    "components": [
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_3206.StaticMeshComponent0",
+        "class": "/Script/Engine.StaticMeshComponent",
+        "mesh": "/Game/Tempest/Props/Faction_Containers/SM_GDF_Container.SM_GDF_Container",
+        "materials": [
+          "/Game/Tempest/Props/Faction_Containers/Materials/MI_GDF_Container_01.MI_GDF_Container_01"
+        ]
+      }
+    ],
+    "level": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel"
+  },
+  {
+    "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_4927",
+    "class": "/Script/Engine.StaticMeshActor",
+    "label": "SM_GDF_Container28",
+    "location": {
+      "x": -14306.897261,
+      "y": 6533.27865,
+      "z": -158.965657
+    },
+    "scale": {
+      "x": -1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "rotation": {
+      "pitch": 0.0,
+      "yaw": 0.0,
+      "roll": 0.0
+    },
+    "tags": [
+      "LAVolume",
+      "EmptyCamp",
+      "01",
+      "S",
+      "Area01"
+    ],
+    "components": [
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_4927.StaticMeshComponent0",
+        "class": "/Script/Engine.StaticMeshComponent",
+        "mesh": "/Game/Tempest/Props/Faction_Containers/SM_GDF_Container.SM_GDF_Container",
+        "materials": [
+          "/Game/Tempest/Props/Faction_Containers/Materials/MI_GDF_Container_01.MI_GDF_Container_01"
+        ]
+      }
+    ],
+    "level": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel"
+  },
+  {
+    "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_4928",
+    "class": "/Script/Engine.StaticMeshActor",
+    "label": "SM_GDF_Container29",
+    "location": {
+      "x": -14326.402067,
+      "y": 6187.058039,
+      "z": -158.965657
+    },
+    "scale": {
+      "x": -1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "rotation": {
+      "pitch": 0.0,
+      "yaw": 0.0,
+      "roll": 0.0
+    },
+    "tags": [
+      "LAVolume",
+      "EmptyCamp",
+      "01",
+      "S",
+      "Area01"
+    ],
+    "components": [
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_4928.StaticMeshComponent0",
+        "class": "/Script/Engine.StaticMeshComponent",
+        "mesh": "/Game/Tempest/Props/Faction_Containers/SM_GDF_Container.SM_GDF_Container",
+        "materials": [
+          "/Game/Tempest/Props/Faction_Containers/Materials/MI_GDF_Container_01.MI_GDF_Container_01"
+        ]
+      }
+    ],
+    "level": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel"
+  },
+  {
+    "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_4929",
+    "class": "/Script/Engine.StaticMeshActor",
+    "label": "SM_GDF_Container30",
+    "location": {
+      "x": -14897.309564,
+      "y": 6392.896733,
+      "z": -158.965657
+    },
+    "scale": {
+      "x": -1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "rotation": {
+      "pitch": 0.0,
+      "yaw": 83.872571,
+      "roll": 0.0
+    },
+    "tags": [
+      "LAVolume",
+      "EmptyCamp",
+      "01",
+      "S",
+      "Area01"
+    ],
+    "components": [
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_4929.StaticMeshComponent0",
+        "class": "/Script/Engine.StaticMeshComponent",
+        "mesh": "/Game/Tempest/Props/Faction_Containers/SM_GDF_Container.SM_GDF_Container",
+        "materials": [
+          "/Game/Tempest/Props/Faction_Containers/Materials/MI_GDF_Container_01.MI_GDF_Container_01"
+        ]
+      }
+    ],
+    "level": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel"
+  },
+  {
+    "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_4930",
+    "class": "/Script/Engine.StaticMeshActor",
+    "label": "SM_GDF_Container31",
+    "location": {
+      "x": -14288.867315,
+      "y": 6319.178041,
+      "z": 158.965766
+    },
+    "scale": {
+      "x": -1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "rotation": {
+      "pitch": 0.0,
+      "yaw": 0.0,
+      "roll": 0.0
+    },
+    "tags": [
+      "LAVolume",
+      "EmptyCamp",
+      "01",
+      "S",
+      "Area01"
+    ],
+    "components": [
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_4930.StaticMeshComponent0",
+        "class": "/Script/Engine.StaticMeshComponent",
+        "mesh": "/Game/Tempest/Props/Faction_Containers/SM_GDF_Container.SM_GDF_Container",
+        "materials": [
+          "/Game/Tempest/Props/Faction_Containers/Materials/MI_GDF_Container_01.MI_GDF_Container_01"
+        ]
+      }
+    ],
+    "level": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel"
+  },
+  {
+    "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_4967",
+    "class": "/Script/Engine.StaticMeshActor",
+    "label": "SM_GDF_Container8",
+    "location": {
+      "x": -11200.614878,
+      "y": 22762.829795,
+      "z": -42.433587
+    },
+    "scale": {
+      "x": -2.07419,
+      "y": 1.464045,
+      "z": 2.07419
+    },
+    "rotation": {
+      "pitch": 0.0,
+      "yaw": 179.999998,
+      "roll": 0.0
+    },
+    "tags": [
+      "LAVolume",
+      "EmptyCamp",
+      "01",
+      "S",
+      "Area01"
+    ],
+    "components": [
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_4967.StaticMeshComponent0",
+        "class": "/Script/Engine.StaticMeshComponent",
+        "mesh": "/Game/Tempest/Props/Faction_Containers/SM_GDF_Container.SM_GDF_Container",
+        "materials": [
+          "/Game/Tempest/Props/Faction_Containers/Materials/MI_GDF_Container_01.MI_GDF_Container_01"
+        ]
+      }
+    ],
+    "level": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel"
+  },
+  {
+    "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_6688",
+    "class": "/Script/Engine.StaticMeshActor",
+    "label": "SM_GDF_Container36",
+    "location": {
+      "x": 14306.896943,
+      "y": -6533.279512,
+      "z": -158.965657
+    },
+    "scale": {
+      "x": -1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "rotation": {
+      "pitch": 0.0,
+      "yaw": 179.999998,
+      "roll": 0.0
+    },
+    "tags": [
+      "LAVolume",
+      "EmptyCamp",
+      "01",
+      "S",
+      "Area01"
+    ],
+    "components": [
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_6688.StaticMeshComponent0",
+        "class": "/Script/Engine.StaticMeshComponent",
+        "mesh": "/Game/Tempest/Props/Faction_Containers/SM_GDF_Container.SM_GDF_Container",
+        "materials": [
+          "/Game/Tempest/Props/Faction_Containers/Materials/MI_GDF_Container_01.MI_GDF_Container_01"
+        ]
+      }
+    ],
+    "level": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel"
+  },
+  {
+    "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_6689",
+    "class": "/Script/Engine.StaticMeshActor",
+    "label": "SM_GDF_Container37",
+    "location": {
+      "x": 14326.401766,
+      "y": -6187.058902,
+      "z": -158.965657
+    },
+    "scale": {
+      "x": -1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "rotation": {
+      "pitch": 0.0,
+      "yaw": 179.999998,
+      "roll": 0.0
+    },
+    "tags": [
+      "LAVolume",
+      "EmptyCamp",
+      "01",
+      "S",
+      "Area01"
+    ],
+    "components": [
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_6689.StaticMeshComponent0",
+        "class": "/Script/Engine.StaticMeshComponent",
+        "mesh": "/Game/Tempest/Props/Faction_Containers/SM_GDF_Container.SM_GDF_Container",
+        "materials": [
+          "/Game/Tempest/Props/Faction_Containers/Materials/MI_GDF_Container_01.MI_GDF_Container_01"
+        ]
+      }
+    ],
+    "level": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel"
+  },
+  {
+    "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_6690",
+    "class": "/Script/Engine.StaticMeshActor",
+    "label": "SM_GDF_Container38",
+    "location": {
+      "x": 14897.309253,
+      "y": -6392.897624,
+      "z": -158.965657
+    },
+    "scale": {
+      "x": -1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "rotation": {
+      "pitch": 0.0,
+      "yaw": -96.12742800000004,
+      "roll": 0.0
+    },
+    "tags": [
+      "LAVolume",
+      "EmptyCamp",
+      "01",
+      "S",
+      "Area01"
+    ],
+    "components": [
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_6690.StaticMeshComponent0",
+        "class": "/Script/Engine.StaticMeshComponent",
+        "mesh": "/Game/Tempest/Props/Faction_Containers/SM_GDF_Container.SM_GDF_Container",
+        "materials": [
+          "/Game/Tempest/Props/Faction_Containers/Materials/MI_GDF_Container_01.MI_GDF_Container_01"
+        ]
+      }
+    ],
+    "level": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel"
+  },
+  {
+    "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_6691",
+    "class": "/Script/Engine.StaticMeshActor",
+    "label": "SM_GDF_Container39",
+    "location": {
+      "x": 14288.867007,
+      "y": -6319.178902,
+      "z": 158.965766
+    },
+    "scale": {
+      "x": -1.0,
+      "y": 1.0,
+      "z": 1.0
+    },
+    "rotation": {
+      "pitch": 0.0,
+      "yaw": 179.999998,
+      "roll": 0.0
+    },
+    "tags": [
+      "LAVolume",
+      "EmptyCamp",
+      "01",
+      "S",
+      "Area01"
+    ],
+    "components": [
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_6691.StaticMeshComponent0",
+        "class": "/Script/Engine.StaticMeshComponent",
+        "mesh": "/Game/Tempest/Props/Faction_Containers/SM_GDF_Container.SM_GDF_Container",
+        "materials": [
+          "/Game/Tempest/Props/Faction_Containers/Materials/MI_GDF_Container_01.MI_GDF_Container_01"
+        ]
+      }
+    ],
+    "level": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel"
+  },
+  {
+    "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_6728",
+    "class": "/Script/Engine.StaticMeshActor",
+    "label": "SM_GDF_Container10",
+    "location": {
+      "x": 11200.61377,
+      "y": -22762.830506,
+      "z": -42.433587
+    },
+    "scale": {
+      "x": -2.07419,
+      "y": 1.464045,
+      "z": 2.07419
+    },
+    "rotation": {
+      "pitch": 0.0,
+      "yaw": -1.9999999949504854e-06,
+      "roll": 0.0
+    },
+    "tags": [
+      "LAVolume",
+      "EmptyCamp",
+      "01",
+      "S",
+      "Area01"
+    ],
+    "components": [
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_6728.StaticMeshComponent0",
+        "class": "/Script/Engine.StaticMeshComponent",
+        "mesh": "/Game/Tempest/Props/Faction_Containers/SM_GDF_Container.SM_GDF_Container",
+        "materials": [
+          "/Game/Tempest/Props/Faction_Containers/Materials/MI_GDF_Container_01.MI_GDF_Container_01"
+        ]
+      }
+    ],
+    "level": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel"
+  }
+]

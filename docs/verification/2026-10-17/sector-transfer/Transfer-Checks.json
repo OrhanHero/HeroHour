@@ -1,0 +1,46 @@
+{
+  "result": "PASS_BOUNDED_SECTOR_TRANSFER",
+  "actor_count": 38,
+  "unique_meshes": 16,
+  "resolved_source_materials": 13,
+  "exported_textures": 31,
+  "imported_materials": 19,
+  "albedo_complete": true,
+  "source_components_verified": 38,
+  "landscape_bounds_only": 64,
+  "isolated_map": "/Game/TransferProbe/Maps/OriginalSector02",
+  "instantiated_triangles": 19788,
+  "limitations": [
+    "Not integrated in HeroHour main gameplay map.",
+    "Original albedo/normal baseline, not complete Tempest shader.",
+    "Landscape bounds inspected; landscape geometry not transferred.",
+    "UE5.4 metadata probe passed its checks but native commandlet reports TempestFieldVolume ensure and missing unrelated assets.",
+    "Blender image is independent visual QA, not an Unreal gameplay screenshot."
+  ],
+  "evidence": {
+    "selection": {
+      "path": "C:\\Users\\Hero\\HeroHour\\Saved\\Research\\TempestSectorTransfer\\FullSector.json",
+      "sha256": "f836b7504bfed49e8fe68faa6f4293d9847c23a39bc4760cbdc96b9d8e44f61d"
+    },
+    "export": {
+      "path": "C:\\Users\\Hero\\HeroHour\\Saved\\Research\\TempestSectorTransfer\\Export-01\\Probe.json",
+      "sha256": "9fbc778732a42edf2cc126d30420dfa87dd0de72a4a860a4382ef92a29ad2335"
+    },
+    "bindings": {
+      "path": "C:\\Users\\Hero\\HeroHour\\Saved\\Research\\TempestSectorTransfer\\MaterialBindings-06\\Bindings.json",
+      "sha256": "ca5628330d2b2acbde0986c0cce3f04900fe53b3cdfa2e1962becc0b1cc2c6e9"
+    },
+    "components": {
+      "path": "C:\\Users\\Hero\\HeroHour\\Saved\\Research\\TempestSectorTransfer\\ComponentVerification54.json",
+      "sha256": "6db98dc8e9dea8614d9f7cc5b6627cc621301e521f6b422e94a9f5beb6dd04eb"
+    },
+    "import": {
+      "path": "C:\\Users\\Hero\\HeroHour\\Saved\\Research\\TempestSectorTransfer\\Unreal58\\Sector-Import58.json",
+      "sha256": "621a415beb40061cf84e1f540df5fd1dce9f66e1da430036730680145a27835c"
+    },
+    "blender": {
+      "path": "C:\\Users\\Hero\\HeroHour\\Saved\\Research\\TempestSectorTransfer\\VisualQA\\OriginalSector-Verification.json",
+      "sha256": "dcbdddecd78837d9283613971d7c69f441d3ae589fc7fdbe8c861adf54e2b36a"
+    }
+  }
+}

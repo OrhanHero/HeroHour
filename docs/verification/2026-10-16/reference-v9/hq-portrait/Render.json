@@ -1,0 +1,26 @@
+{
+  "result": "PASS",
+  "target": {
+    "role": "HQ",
+    "faction": "Aegis",
+    "file": "T_HR_Aegis_HQ.png",
+    "source": "Art\\Models\\TrellisHQV9\\SM_HQ9_AegisHQ.blend",
+    "source_sha256": "e33f26a9f3f831510a1f3b5c003292ba56c6f2bee9395440086511edbb13ea6b",
+    "original_geometry": true,
+    "ai_assisted_geometry": true,
+    "provenance": "Own concept-conditioned TRELLIS.2 geometry; actual HQ9 mesh and PBR atlases; no commercial game art",
+    "source_unchanged": true,
+    "alpha_bounds": [
+      67,
+      113,
+      441,
+      374
+    ],
+    "surface_key": "Aegis_HQ_TrellisV9",
+    "albedo_sha256": "23133406cc971ef8afb7b2ca83362625ab445121d4d86e34a99add8a8b2cc17e",
+    "file_sha256": "74624c777f531bba69837bb646127a36b4f785102bd97121089f34670f4e3553",
+    "metallic_roughness_sha256": "be30f88edd1f24157799982956b61212dbf7deb529dbe4121fdbaeddc2e73faf"
+  },
+  "preserved_image_and_record_count": 21,
+  "source_blend_unchanged": true
+}

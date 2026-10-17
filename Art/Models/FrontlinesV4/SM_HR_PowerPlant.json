@@ -1,0 +1,43 @@
+{
+  "name": "SM_HR_PowerPlant",
+  "role": "PowerPlant",
+  "triangles": 20860,
+  "vertices": 10664,
+  "dimensions_m": [
+    4.8,
+    4.4,
+    5.0
+  ],
+  "min_z_m": -0.35,
+  "runtime_actor_z_cm": 35,
+  "runtime_scale": 1,
+  "materials": [
+    "Concrete",
+    "Dark",
+    "Steel",
+    "Lamp",
+    "Armor",
+    "Neon",
+    "Team"
+  ],
+  "original_geometry": true,
+  "fbx_roundtrip": {
+    "passed": true,
+    "dimensions_m": [
+      4.80000114440918,
+      4.400001049041748,
+      5.000000089406967
+    ],
+    "min_z_m": -0.3499999940395355,
+    "nonmanifold_edges": 0,
+    "materials": [
+      "Concrete",
+      "Dark",
+      "Steel",
+      "Lamp",
+      "Armor",
+      "Neon",
+      "Team"
+    ]
+  }
+}

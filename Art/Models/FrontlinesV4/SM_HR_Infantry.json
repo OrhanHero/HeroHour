@@ -1,0 +1,43 @@
+{
+  "name": "SM_HR_Infantry",
+  "role": "Infantry",
+  "triangles": 11076,
+  "vertices": 5646,
+  "dimensions_m": [
+    0.9,
+    0.7,
+    1.8
+  ],
+  "min_z_m": -0.35,
+  "runtime_actor_z_cm": 35,
+  "runtime_scale": 1,
+  "materials": [
+    "Rubber",
+    "Dark",
+    "Armor",
+    "Steel",
+    "Neon",
+    "Team",
+    "Glass"
+  ],
+  "original_geometry": true,
+  "fbx_roundtrip": {
+    "passed": true,
+    "dimensions_m": [
+      0.9000001549720764,
+      0.7000001072883606,
+      1.8000000417232513
+    ],
+    "min_z_m": -0.3499999940395355,
+    "nonmanifold_edges": 0,
+    "materials": [
+      "Rubber",
+      "Dark",
+      "Armor",
+      "Steel",
+      "Neon",
+      "Team",
+      "Glass"
+    ]
+  }
+}

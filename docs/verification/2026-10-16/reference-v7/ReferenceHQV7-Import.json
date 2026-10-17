@@ -1,0 +1,35 @@
+{
+  "mesh": "/Game/HERO/ReferenceV7/Meshes/SM_RV7_AegisHQ.SM_RV7_AegisHQ",
+  "definition": "/Game/HERO/DataV4/D_Aegis_HQ.D_Aegis_HQ",
+  "changed_property": "static_mesh",
+  "previous_mesh": "/Game/HERO/ReferenceV7/Meshes/SM_RV7_AegisHQ.SM_RV7_AegisHQ",
+  "stats_and_icon_unchanged": true,
+  "bounds_cm": [
+    [
+      -355.00006103515625,
+      355.00006103515625
+    ],
+    [
+      -340.00006103515625,
+      340.00006103515625
+    ],
+    [
+      -110.0,
+      449.4972839355469
+    ]
+  ],
+  "triangles": 35568,
+  "runtime_scale": 1.5,
+  "runtime_ground_z_cm": 0.0,
+  "material_slots": [
+    "Concrete",
+    "Dark",
+    "Armor",
+    "Steel",
+    "Neon",
+    "Team",
+    "Glass",
+    "Dust"
+  ],
+  "limits": "Static roof dish; local UV-baked materials and matching portrait are imported in separate final stages"
+}

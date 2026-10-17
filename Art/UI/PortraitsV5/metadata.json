@@ -1,0 +1,422 @@
+{
+  "resolution": [
+    512,
+    512
+  ],
+  "transparent": true,
+  "render": "HQ9 Aegis HQ from actual TRELLIS mesh/PBR; other 21 existing portraits and metadata records preserved",
+  "records": [
+    {
+      "role": "Combat",
+      "faction": "Aegis",
+      "file": "T_HR_Aegis_Combat.png",
+      "source": "Art\\Models\\ReferenceAPCV7\\SM_HR_Aegis_APC8.blend",
+      "source_sha256": "37cc497e5fb8ef421c2448d233f793840cd1c818771e8db3d9a5db5dfdc50ba9",
+      "original_geometry": true,
+      "source_unchanged": true,
+      "alpha_bounds": [
+        56,
+        73,
+        439,
+        379
+      ],
+      "surface_key": "Aegis_APC8",
+      "albedo_sha256": "0bc1b7773353768b466dcc8c9cfd125a7bdd2812713e06f85c2897913746abc2",
+      "file_sha256": "fc661fd6d356d72f2a6eff4495a944157d7f321b335ef1918eb664b3cd6b0c0d"
+    },
+    {
+      "role": "Combat",
+      "faction": "Ember",
+      "file": "T_HR_Ember_Combat.png",
+      "source": "Art\\Models\\ReferenceEmberAPCV7\\SM_HR_Ember_APC8.blend",
+      "source_sha256": "42184c2a716f9bd4ed870a99e611d3bcb5ae5a480e5e5676be425ed0b5d0a478",
+      "original_geometry": true,
+      "source_unchanged": true,
+      "alpha_bounds": [
+        57,
+        68,
+        455,
+        391
+      ],
+      "surface_key": "Ember_APC8",
+      "albedo_sha256": "5338208b30b5337028cb5543139b3d6ed0d3a81df0ea46aa006d417fdaaf7814",
+      "file_sha256": "ddaff00fb5a207e4d12c09c5457c25ab9a435e2dc9ea1906e54277f491fe16f1"
+    },
+    {
+      "role": "Collector",
+      "faction": "Aegis",
+      "file": "T_HR_Aegis_Collector.png",
+      "source": "Art\\Models\\ConceptV2\\SM_HERO_Harvester.blend",
+      "source_sha256": "e792ed08c1da0a8433802defd6051cf103ed2ce8ec26df19805fb135d29d1e52",
+      "original_geometry": true,
+      "source_unchanged": true
+    },
+    {
+      "role": "Collector",
+      "faction": "Ember",
+      "file": "T_HR_Ember_Collector.png",
+      "source": "Art\\Models\\ConceptV2\\SM_HERO_Harvester.blend",
+      "source_sha256": "e792ed08c1da0a8433802defd6051cf103ed2ce8ec26df19805fb135d29d1e52",
+      "original_geometry": true,
+      "source_unchanged": true,
+      "alpha_bounds": [
+        71,
+        102,
+        453,
+        378
+      ],
+      "palette_variant": "EmberGreenV7",
+      "team_tint_linear": [
+        0.025,
+        0.32,
+        0.13
+      ],
+      "neon_tint_linear": [
+        0.025,
+        0.7,
+        0.28
+      ],
+      "file_sha256": "72446c6619e4b3618eadc3e4f3bf033547254b50a287e6edab82274d005b7a0f"
+    },
+    {
+      "role": "HQ",
+      "faction": "Aegis",
+      "file": "T_HR_Aegis_HQ.png",
+      "source": "Art\\Models\\TrellisHQV9\\SM_HQ9_AegisHQ.blend",
+      "source_sha256": "e33f26a9f3f831510a1f3b5c003292ba56c6f2bee9395440086511edbb13ea6b",
+      "original_geometry": true,
+      "ai_assisted_geometry": true,
+      "provenance": "Own concept-conditioned TRELLIS.2 geometry; actual HQ9 mesh and PBR atlases; no commercial game art",
+      "source_unchanged": true,
+      "alpha_bounds": [
+        67,
+        113,
+        441,
+        374
+      ],
+      "surface_key": "Aegis_HQ_TrellisV9",
+      "albedo_sha256": "23133406cc971ef8afb7b2ca83362625ab445121d4d86e34a99add8a8b2cc17e",
+      "file_sha256": "74624c777f531bba69837bb646127a36b4f785102bd97121089f34670f4e3553",
+      "metallic_roughness_sha256": "be30f88edd1f24157799982956b61212dbf7deb529dbe4121fdbaeddc2e73faf"
+    },
+    {
+      "role": "HQ",
+      "faction": "Ember",
+      "file": "T_HR_Ember_HQ.png",
+      "source": "Art\\Models\\ReferenceEmberHQV7\\SM_RV7_EmberHQ.blend",
+      "source_sha256": "cebc1d11ca05814f5fcd1f3b2bde0573eb747a830efe07d98d5988c7ec6e4b7a",
+      "original_geometry": true,
+      "source_unchanged": true,
+      "alpha_bounds": [
+        47,
+        48,
+        464,
+        391
+      ],
+      "surface_key": "Ember_HQ",
+      "albedo_sha256": "9ee2805903ae428c4b7cf9ba8a9c2951b3bbcb39eaa8ec6c1d3386d2a9103716",
+      "file_sha256": "0c72a13a935b60d8bba210dc3a93d552f9ce49eec91f559f31f17b5beb745a65"
+    },
+    {
+      "role": "Depot",
+      "faction": "Aegis",
+      "file": "T_HR_Aegis_Depot.png",
+      "source": "Art\\Models\\MilitaryDetailV6\\SM_MDV6_Refinery.blend",
+      "source_sha256": "c6e889c2b50a8fe79e2d25d28b9f1d26deb43d6f3734f0d804ba48f5c7c2ceb0",
+      "original_geometry": true,
+      "source_unchanged": true,
+      "file_sha256": "65f740083ea29c46aad40975c5e49726c3c52b624afbf9de5fcf97b341a2dee3"
+    },
+    {
+      "role": "Depot",
+      "faction": "Ember",
+      "file": "T_HR_Ember_Depot.png",
+      "source": "Art\\Models\\MilitaryDetailV6\\SM_MDV6_Refinery.blend",
+      "source_sha256": "c6e889c2b50a8fe79e2d25d28b9f1d26deb43d6f3734f0d804ba48f5c7c2ceb0",
+      "original_geometry": true,
+      "source_unchanged": true,
+      "alpha_bounds": [
+        124,
+        72,
+        404,
+        405
+      ],
+      "palette_variant": "EmberGreenV7",
+      "team_tint_linear": [
+        0.025,
+        0.32,
+        0.13
+      ],
+      "neon_tint_linear": [
+        0.025,
+        0.7,
+        0.28
+      ],
+      "file_sha256": "5104acf2563396df9e42fa5c9e0363a22f7729188d092b492b3e5523a68571f2"
+    },
+    {
+      "role": "Factory",
+      "faction": "Aegis",
+      "file": "T_HR_Aegis_Factory.png",
+      "source": "Art\\Models\\TrellisFactoryV10\\SM_FV10_AegisFactory.blend",
+      "source_sha256": "ff5d5648eea541fd525f9ea116662ba9b6b51aedede0cc3c3eea186a47833793",
+      "original_geometry": true,
+      "ai_assisted_geometry": true,
+      "provenance": "Own concept-conditioned TRELLIS.2 geometry; actual FV10 mesh and PBR atlases; no commercial game art",
+      "source_unchanged": true,
+      "alpha_bounds": [
+        47,
+        134,
+        436,
+        348
+      ],
+      "surface_key": "Aegis_Factory_TrellisV10",
+      "albedo_sha256": "296a8eeaa142afb8c26affcc14996858b3abcba39f84fcf9ebee3c77ed11810b",
+      "file_sha256": "45f772dc793c6fd1402b53ad2a856fe92685f6038db3d21e0d67e8220a85677c",
+      "metallic_roughness_sha256": "9c240c8b5887e50ae3dd9a8ad3a1dcffedcf78a7e270c1f3c068dc3dfb947a57"
+    },
+    {
+      "role": "Factory",
+      "faction": "Ember",
+      "file": "T_HR_Ember_Factory.png",
+      "source": "Art\\Models\\MilitaryDetailV6\\SM_MDV6_VehiclePlant.blend",
+      "source_sha256": "d784723b81da34411b87dafb3510025e085a8e25ba95921ad4e6565b56b4e7ed",
+      "original_geometry": true,
+      "source_unchanged": true,
+      "alpha_bounds": [
+        43,
+        52,
+        470,
+        398
+      ],
+      "palette_variant": "EmberGreenV7",
+      "team_tint_linear": [
+        0.025,
+        0.32,
+        0.13
+      ],
+      "neon_tint_linear": [
+        0.025,
+        0.7,
+        0.28
+      ],
+      "file_sha256": "1d3ce2293261ac0a116a18469551e6fb5abf1499cf59da9bde9d546b3e0d5869"
+    },
+    {
+      "role": "PowerPlant",
+      "faction": "Aegis",
+      "file": "T_HR_Aegis_PowerPlant.png",
+      "source": "Art\\Models\\FrontlinesV4\\SM_HR_PowerPlant.blend",
+      "source_sha256": "018429d44fa1ca6693613dfd92ac9cc6f8aa5f6c38f54932b688d1f446fb0631",
+      "original_geometry": true,
+      "source_unchanged": true
+    },
+    {
+      "role": "PowerPlant",
+      "faction": "Ember",
+      "file": "T_HR_Ember_PowerPlant.png",
+      "source": "Art\\Models\\FrontlinesV4\\SM_HR_PowerPlant.blend",
+      "source_sha256": "018429d44fa1ca6693613dfd92ac9cc6f8aa5f6c38f54932b688d1f446fb0631",
+      "original_geometry": true,
+      "source_unchanged": true,
+      "alpha_bounds": [
+        68,
+        41,
+        443,
+        457
+      ],
+      "palette_variant": "EmberGreenV7",
+      "team_tint_linear": [
+        0.025,
+        0.32,
+        0.13
+      ],
+      "neon_tint_linear": [
+        0.025,
+        0.7,
+        0.28
+      ],
+      "file_sha256": "cc3788ce1a00e2d8affa8c98f85b5de287d656e5c0c0b8b044dc4e3be93f365f"
+    },
+    {
+      "role": "Barracks",
+      "faction": "Aegis",
+      "file": "T_HR_Aegis_Barracks.png",
+      "source": "Art\\Models\\FrontlinesV4\\SM_HR_Barracks.blend",
+      "source_sha256": "435f24a702ea49992db52107594776e78a8f3eea3cce7fdc7d2b7f483aac07ae",
+      "original_geometry": true,
+      "source_unchanged": true
+    },
+    {
+      "role": "Barracks",
+      "faction": "Ember",
+      "file": "T_HR_Ember_Barracks.png",
+      "source": "Art\\Models\\FrontlinesV4\\SM_HR_Barracks.blend",
+      "source_sha256": "435f24a702ea49992db52107594776e78a8f3eea3cce7fdc7d2b7f483aac07ae",
+      "original_geometry": true,
+      "source_unchanged": true,
+      "alpha_bounds": [
+        39,
+        60,
+        471,
+        398
+      ],
+      "palette_variant": "EmberGreenV7",
+      "team_tint_linear": [
+        0.025,
+        0.32,
+        0.13
+      ],
+      "neon_tint_linear": [
+        0.025,
+        0.7,
+        0.28
+      ],
+      "file_sha256": "12ba84b86f50f812f91301c62e067d1ae2d2098a890624575a1e1468856b9661"
+    },
+    {
+      "role": "Radar",
+      "faction": "Aegis",
+      "file": "T_HR_Aegis_Radar.png",
+      "source": "Art\\Models\\FrontlinesV4\\SM_HR_Radar.blend",
+      "source_sha256": "5a2886a8d96b283ce0e5f41ee05a62b54e6346fa117cfea7889daa7cf0284605",
+      "original_geometry": true,
+      "source_unchanged": true
+    },
+    {
+      "role": "Radar",
+      "faction": "Ember",
+      "file": "T_HR_Ember_Radar.png",
+      "source": "Art\\Models\\FrontlinesV4\\SM_HR_Radar.blend",
+      "source_sha256": "5a2886a8d96b283ce0e5f41ee05a62b54e6346fa117cfea7889daa7cf0284605",
+      "original_geometry": true,
+      "source_unchanged": true,
+      "alpha_bounds": [
+        104,
+        41,
+        408,
+        443
+      ],
+      "palette_variant": "EmberGreenV7",
+      "team_tint_linear": [
+        0.025,
+        0.32,
+        0.13
+      ],
+      "neon_tint_linear": [
+        0.025,
+        0.7,
+        0.28
+      ],
+      "file_sha256": "874101f290ee7e53ec97a7920822e08148b86345d1a45cefb34c7c3323ebd324"
+    },
+    {
+      "role": "Defense",
+      "faction": "Aegis",
+      "file": "T_HR_Aegis_Defense.png",
+      "source": "Art\\Models\\FrontlinesV4\\SM_HR_Defense.blend",
+      "source_sha256": "ba4cb61d7f64f4b41f74ea2a71197dbb29a240e214c2011060233154c384cfb6",
+      "original_geometry": true,
+      "source_unchanged": true
+    },
+    {
+      "role": "Defense",
+      "faction": "Ember",
+      "file": "T_HR_Ember_Defense.png",
+      "source": "Art\\Models\\FrontlinesV4\\SM_HR_Defense.blend",
+      "source_sha256": "ba4cb61d7f64f4b41f74ea2a71197dbb29a240e214c2011060233154c384cfb6",
+      "original_geometry": true,
+      "source_unchanged": true,
+      "alpha_bounds": [
+        40,
+        43,
+        469,
+        392
+      ],
+      "palette_variant": "EmberGreenV7",
+      "team_tint_linear": [
+        0.025,
+        0.32,
+        0.13
+      ],
+      "neon_tint_linear": [
+        0.025,
+        0.7,
+        0.28
+      ],
+      "file_sha256": "b4af2ab14f364fa3d5851385c335b444d92aefc1430f70f9ab3d589c4bc05cce"
+    },
+    {
+      "role": "Infantry",
+      "faction": "Aegis",
+      "file": "T_HR_Aegis_Infantry.png",
+      "source": "Art\\Models\\FrontlinesV4\\SM_HR_Infantry.blend",
+      "source_sha256": "c51ee3f0f272d2aaab36f8c3a9a02e2a1132e8effa9e696837a085e397de8c0d",
+      "original_geometry": true,
+      "source_unchanged": true
+    },
+    {
+      "role": "Infantry",
+      "faction": "Ember",
+      "file": "T_HR_Ember_Infantry.png",
+      "source": "Art\\Models\\FrontlinesV4\\SM_HR_Infantry.blend",
+      "source_sha256": "c51ee3f0f272d2aaab36f8c3a9a02e2a1132e8effa9e696837a085e397de8c0d",
+      "original_geometry": true,
+      "source_unchanged": true,
+      "alpha_bounds": [
+        166,
+        80,
+        333,
+        437
+      ],
+      "palette_variant": "EmberGreenV7",
+      "team_tint_linear": [
+        0.025,
+        0.32,
+        0.13
+      ],
+      "neon_tint_linear": [
+        0.025,
+        0.7,
+        0.28
+      ],
+      "file_sha256": "1e5afe835b468330bd280cc9ed6c4ade7e019a163e993d25771e02356db9d09f"
+    },
+    {
+      "role": "Siege",
+      "faction": "Aegis",
+      "file": "T_HR_Aegis_Siege.png",
+      "source": "Art\\Models\\FrontlinesV4\\SM_HR_Siege.blend",
+      "source_sha256": "956350edaaa9b7c9642a8d11577f727c2c29dac526aad759ca3e799de29a8a45",
+      "original_geometry": true,
+      "source_unchanged": true
+    },
+    {
+      "role": "Siege",
+      "faction": "Ember",
+      "file": "T_HR_Ember_Siege.png",
+      "source": "Art\\Models\\FrontlinesV4\\SM_HR_Siege.blend",
+      "source_sha256": "956350edaaa9b7c9642a8d11577f727c2c29dac526aad759ca3e799de29a8a45",
+      "original_geometry": true,
+      "source_unchanged": true,
+      "alpha_bounds": [
+        47,
+        77,
+        414,
+        414
+      ],
+      "palette_variant": "EmberGreenV7",
+      "team_tint_linear": [
+        0.025,
+        0.32,
+        0.13
+      ],
+      "neon_tint_linear": [
+        0.025,
+        0.7,
+        0.28
+      ],
+      "file_sha256": "782a9bfe2345f38e849f781f6e7a0c047d82c76eaea1a9c20400b33135bd3f08"
+    }
+  ]
+}

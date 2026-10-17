@@ -1,0 +1,17 @@
+{
+  "map": "/Game/Maps/CityHero",
+  "actors": 6,
+  "triangles": 44352,
+  "navigation_unchanged": true,
+  "river_and_bridges_unchanged": true,
+  "material": "/Game/HERO/DistrictV3/Materials/M_DV3_Sandstone.M_DV3_Sandstone",
+  "assets": [
+    "SM_CTV6_CanyonSouth",
+    "SM_CTV6_CanyonNorth",
+    "SM_CTV6_CanyonWest",
+    "SM_CTV6_CanyonEast",
+    "SM_CTV6_RiverMarginWest",
+    "SM_CTV6_RiverMarginEast"
+  ],
+  "source_manifest": "Art/Models/ConceptTerrainV6/manifest.json"
+}

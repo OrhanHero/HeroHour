@@ -1,0 +1,24 @@
+[
+  {
+    "faction": "Aegis",
+    "viewport": [
+      1280,
+      720
+    ],
+    "result": "PASS",
+    "log": "UITest-Aegis-20261016-140808-455-807a07de.log",
+    "checks": 43,
+    "log_sha256": "a475562ad95f41e90b5a9832bf79d37aeaba56c80cbb00d77a6800d326a6065b"
+  },
+  {
+    "faction": "Ember",
+    "viewport": [
+      1280,
+      720
+    ],
+    "result": "PASS",
+    "log": "UITest-Ember-20261016-140813-486-5f2f4c64.log",
+    "checks": 43,
+    "log_sha256": "c71ed4c8a067ceb01164be2905dd15814726229630c83f248b9e537d5e05b400"
+  }
+]

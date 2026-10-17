@@ -1,0 +1,8 @@
+{
+  "result": "PASS",
+  "actors": 3,
+  "pieces": 3679,
+  "triangles": 44148,
+  "source_audit_sha256": "01314a7cb3031764a9b5d560dd0da2365eaa30f27cede2cbaca8c1d24b9d6882",
+  "navigation_changed": false
+}

@@ -1,0 +1,48 @@
+{
+  "package": {
+    "CreatedUtc": "2026-10-16T13:01:35.2574332Z",
+    "Configuration": "Development",
+    "Platform": "Windows",
+    "PackagingLog": "C:\\Users\\Hero\\HeroHour\\Saved\\Logs\\Packaging-20261016-150113-085.log",
+    "Map": "/Game/Maps/CityHero",
+    "HeroAssetsExplicitlyCooked": true
+  },
+  "captures": [
+    {
+      "file": "Art/Previews/ReferenceV9-Package-Aegis-1600.png",
+      "sha256": "e8c68426310a17c9086a7d5ff6a005c91ff227a2d955b166b02fc54ac551910f",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "source": "packaged game",
+      "diagnostic_fixture": false,
+      "camera_close_up": false,
+      "limitation": "Natural simulation with normal fog/HUD; close-up changes camera only. A still does not prove animation or full concept parity."
+    },
+    {
+      "file": "Art/Previews/ReferenceV9-Package-HQ-CloseUp-1280.png",
+      "sha256": "f5102c57c68d7b8a224267d39d74afc8292a29136dee0fffb65d4eb4d44c2261",
+      "dimensions": [
+        1280,
+        720
+      ],
+      "source": "packaged game",
+      "diagnostic_fixture": false,
+      "camera_close_up": true,
+      "limitation": "Natural simulation with normal fog/HUD; close-up changes camera only. A still does not prove animation or full concept parity."
+    },
+    {
+      "file": "Art/Previews/ReferenceV9-Package-Harvester-Ember-12.png",
+      "sha256": "2293ad779e4f6d1d1e61b53de4b2675bb669398327a86e2954cd0a622f911e96",
+      "dimensions": [
+        1600,
+        900
+      ],
+      "source": "packaged game",
+      "diagnostic_fixture": false,
+      "camera_close_up": true,
+      "limitation": "Natural simulation with normal fog/HUD; close-up changes camera only. A still does not prove animation or full concept parity."
+    }
+  ]
+}

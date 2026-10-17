@@ -1,0 +1,219 @@
+{
+  "schema": "HeroHour.TransformationChecks.v1",
+  "package": {
+    "CreatedUtc": "2026-10-15T17:35:27.7561703Z",
+    "Configuration": "Development",
+    "Platform": "Windows",
+    "PackagingLog": "C:\\Users\\Hero\\HeroHour\\Saved\\Logs\\Packaging-20261015-193450-794.log",
+    "Map": "/Game/Maps/CityHero",
+    "HeroAssetsExplicitlyCooked": true
+  },
+  "executable_sha256": "12abef1aa6adb800c52b43a30876b0a249780a61539f10b92091813c8896e945",
+  "required_suites": 19,
+  "result": "PASS",
+  "aegis_assertion_checks": 512,
+  "tests": [
+    {
+      "suite": "Combat",
+      "faction": "Aegis",
+      "result": "PASS",
+      "checks": 17,
+      "log": "CombatTest-20261015-193632-510.log",
+      "natural_rounds": []
+    },
+    {
+      "suite": "Economy",
+      "faction": "Aegis",
+      "result": "PASS",
+      "checks": 102,
+      "log": "EconomyTest-20261015-193632-510.log",
+      "natural_rounds": []
+    },
+    {
+      "suite": "Navigation",
+      "faction": "Aegis",
+      "result": "PASS",
+      "checks": 20,
+      "log": "NavigationTest-20261015-193632-510.log",
+      "natural_rounds": []
+    },
+    {
+      "suite": "Match",
+      "faction": "Aegis",
+      "result": "PASS",
+      "checks": 0,
+      "log": "MatchTest-20261015-193635-199.log",
+      "natural_rounds": [
+        "1",
+        "1",
+        "1"
+      ]
+    },
+    {
+      "suite": "UI",
+      "faction": "Aegis",
+      "result": "PASS",
+      "checks": 22,
+      "log": "UITest-20261015-193635-201.log",
+      "natural_rounds": []
+    },
+    {
+      "suite": "Architecture",
+      "faction": "Aegis",
+      "result": "PASS",
+      "checks": 63,
+      "log": "ArchitectureTest-20261015-193636-173.log",
+      "natural_rounds": []
+    },
+    {
+      "suite": "Resource",
+      "faction": "Aegis",
+      "result": "PASS",
+      "checks": 18,
+      "log": "ResourceTest-20261015-193638-649.log",
+      "natural_rounds": []
+    },
+    {
+      "suite": "Docking",
+      "faction": "Aegis",
+      "result": "PASS",
+      "checks": 28,
+      "log": "DockingTest-20261015-193640-309.log",
+      "natural_rounds": []
+    },
+    {
+      "suite": "Tactical",
+      "faction": "Aegis",
+      "result": "PASS",
+      "checks": 46,
+      "log": "TacticalTest-20261015-193640-976.log",
+      "natural_rounds": []
+    },
+    {
+      "suite": "Visibility",
+      "faction": "Aegis",
+      "result": "PASS",
+      "checks": 25,
+      "log": "VisibilityTest-20261015-193641-483.log",
+      "natural_rounds": []
+    },
+    {
+      "suite": "Systems",
+      "faction": "Aegis",
+      "result": "PASS",
+      "checks": 54,
+      "log": "SystemsTest-20261015-193642-420.log",
+      "natural_rounds": []
+    },
+    {
+      "suite": "FullMatch",
+      "faction": "Aegis",
+      "result": "PASS",
+      "checks": 17,
+      "log": "FullMatchTest-20261015-193643-090.log",
+      "natural_rounds": []
+    },
+    {
+      "suite": "Presentation",
+      "faction": "Aegis",
+      "result": "PASS",
+      "checks": 100,
+      "log": "PresentationTest-20261015-193643-599.log",
+      "natural_rounds": []
+    },
+    {
+      "suite": "LogisticsStress",
+      "faction": "Aegis",
+      "result": "PASS",
+      "checks": 0,
+      "log": "LogisticsStressTest-20261015-193644-557.log",
+      "natural_rounds": [
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1"
+      ]
+    },
+    {
+      "suite": "FullMatch",
+      "faction": "Ember",
+      "result": "PASS",
+      "checks": 17,
+      "log": "FullMatchTest-20261015-193645-615.log",
+      "natural_rounds": []
+    },
+    {
+      "suite": "Match",
+      "faction": "Ember",
+      "result": "PASS",
+      "checks": 0,
+      "log": "MatchTest-20261015-193645-948.log",
+      "natural_rounds": [
+        "1",
+        "1",
+        "1"
+      ]
+    },
+    {
+      "suite": "UI",
+      "faction": "Ember",
+      "result": "PASS",
+      "checks": 22,
+      "log": "UITest-20261015-193648-617.log",
+      "natural_rounds": []
+    },
+    {
+      "suite": "Presentation",
+      "faction": "Ember",
+      "result": "PASS",
+      "checks": 100,
+      "log": "PresentationTest-20261015-193652-774.log",
+      "natural_rounds": []
+    },
+    {
+      "suite": "LogisticsStress",
+      "faction": "Ember",
+      "result": "PASS",
+      "checks": 0,
+      "log": "LogisticsStressTest-20261015-193653-975.log",
+      "natural_rounds": [
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1"
+      ]
+    }
+  ]
+}

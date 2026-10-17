@@ -1,0 +1,250 @@
+{
+  "schema": "HeroHour.TransformationChecks.v1",
+  "package": {
+    "CreatedUtc": "2026-10-16T12:03:42.0102076Z",
+    "Configuration": "Development",
+    "Platform": "Windows",
+    "PackagingLog": "C:\\Users\\Hero\\HeroHour\\Saved\\Logs\\Packaging-20261016-140244-724.log",
+    "Map": "/Game/Maps/CityHero",
+    "HeroAssetsExplicitlyCooked": true
+  },
+  "executable_sha256": "3d9d367166952a874b71ad11019f709c28517a311d959770c395f7f2558f834b",
+  "required_suites": 19,
+  "result": "PASS",
+  "tests": [
+    {
+      "suite": "Combat",
+      "faction": "Aegis",
+      "result": "PASS",
+      "checks": 17,
+      "log": "CombatTest-Aegis-20261016-140448-133-68b710d7.log",
+      "log_sha256": "c5f5ef95366268e617e3454332dd577e025ae9b9a43d882532925705c81eb592",
+      "natural_rounds": [
+        "1",
+        "-1"
+      ]
+    },
+    {
+      "suite": "Economy",
+      "faction": "Aegis",
+      "result": "PASS",
+      "checks": 102,
+      "log": "EconomyTest-Aegis-20261016-140451-544-3332cf04.log",
+      "log_sha256": "610863dd75ff79571d6afd9c69ab7c37349954c7d39ebe40310030ea854d5d1f",
+      "natural_rounds": []
+    },
+    {
+      "suite": "Navigation",
+      "faction": "Aegis",
+      "result": "PASS",
+      "checks": 20,
+      "log": "NavigationTest-Aegis-20261016-140453-702-c182855e.log",
+      "log_sha256": "5544bf08afbdf60a72df8e7dc572b4f31771e01e1d34d19f2e280ce5547fdeb6",
+      "natural_rounds": []
+    },
+    {
+      "suite": "Match",
+      "faction": "Aegis",
+      "result": "PASS",
+      "checks": 0,
+      "log": "MatchTest-Aegis-20261016-140455-814-e5ce6bb7.log",
+      "log_sha256": "efbaa545dacf63e52f3d07866ebd5d65278c30b7fb28a37d909f1378f3655622",
+      "natural_rounds": [
+        "1",
+        "1",
+        "1"
+      ]
+    },
+    {
+      "suite": "UI",
+      "faction": "Aegis",
+      "result": "PASS",
+      "checks": 43,
+      "log": "UITest-Aegis-20261016-140500-942-239b1bfe.log",
+      "log_sha256": "548aedbd4e3759ece114fd13d78e6a77df1f242d70b20276fe83fb30dcf09b73",
+      "natural_rounds": []
+    },
+    {
+      "suite": "Architecture",
+      "faction": "Aegis",
+      "result": "PASS",
+      "checks": 63,
+      "log": "ArchitectureTest-Aegis-20261016-140505-938-d5c47ae1.log",
+      "log_sha256": "c3159ed3cf480f9e328f8674218cad2c4e26109c6bfd65a1e6c9e70b83eb8f66",
+      "natural_rounds": []
+    },
+    {
+      "suite": "Resource",
+      "faction": "Aegis",
+      "result": "PASS",
+      "checks": 18,
+      "log": "ResourceTest-Aegis-20261016-140508-052-725b4bb2.log",
+      "log_sha256": "c9e2e5a39d8ad108b0f036d6eb3c6eba604878504986f3315aa1dbfc74818287",
+      "natural_rounds": []
+    },
+    {
+      "suite": "Docking",
+      "faction": "Aegis",
+      "result": "PASS",
+      "checks": 28,
+      "log": "DockingTest-Aegis-20261016-140510-161-32b90b83.log",
+      "log_sha256": "5990658e659781f7e4c6bce2449208ba0f2abb0428d43e81a342947be5aa16bb",
+      "natural_rounds": []
+    },
+    {
+      "suite": "Tactical",
+      "faction": "Aegis",
+      "result": "PASS",
+      "checks": 46,
+      "log": "TacticalTest-Aegis-20261016-140512-291-1d97f051.log",
+      "log_sha256": "2c64c7b28958424d49f14a2a3f2f125aeded365746fa5c3145472c8baa6c3d9d",
+      "natural_rounds": []
+    },
+    {
+      "suite": "Visibility",
+      "faction": "Aegis",
+      "result": "PASS",
+      "checks": 25,
+      "log": "VisibilityTest-Aegis-20261016-140514-418-db452f5a.log",
+      "log_sha256": "82efc72b54b1744382aa9f0e9529b35d9562dfd42b324ea87850f3f4388d3985",
+      "natural_rounds": []
+    },
+    {
+      "suite": "Systems",
+      "faction": "Aegis",
+      "result": "PASS",
+      "checks": 54,
+      "log": "SystemsTest-Aegis-20261016-140516-534-4b524d4e.log",
+      "log_sha256": "692543d85bbf97fca59f6c8f2bbf13d10bbf4aeb278af9ee6ae3740c728ec1ea",
+      "natural_rounds": []
+    },
+    {
+      "suite": "FullMatch",
+      "faction": "Aegis",
+      "result": "PASS",
+      "checks": 17,
+      "log": "FullMatchTest-Aegis-20261016-140518-651-b4694403.log",
+      "log_sha256": "aa6fe3d2a188e766b4644440b7d4e7a04788a62bc35b294c2598577eb761bec8",
+      "natural_rounds": [
+        "1",
+        "-1"
+      ]
+    },
+    {
+      "suite": "Presentation",
+      "faction": "Aegis",
+      "result": "PASS",
+      "checks": 141,
+      "log": "PresentationTest-Aegis-20261016-140520-771-990f7691.log",
+      "log_sha256": "946cbdfa6d44eaaeede3c24ee9c1a9788a21b2b5125ef0bc19981fb2af16021a",
+      "natural_rounds": []
+    },
+    {
+      "suite": "LogisticsStress",
+      "faction": "Aegis",
+      "result": "PASS",
+      "checks": 0,
+      "log": "LogisticsStressTest-Aegis-20261016-140522-978-5c45e8a3.log",
+      "log_sha256": "3c33f76a24b66013985cda04c6341e53d26dac13ff245b73cc10323cd607936d",
+      "natural_rounds": [
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1"
+      ]
+    },
+    {
+      "suite": "FullMatch",
+      "faction": "Ember",
+      "result": "PASS",
+      "checks": 17,
+      "log": "FullMatchTest-Ember-20261016-140655-830-9fcedeae.log",
+      "log_sha256": "e365c664f5cb39ddad2b44f8b570b76fcfd33cafdb695f44305128f06eee19f1",
+      "natural_rounds": [
+        "1",
+        "-1"
+      ]
+    },
+    {
+      "suite": "Match",
+      "faction": "Ember",
+      "result": "PASS",
+      "checks": 0,
+      "log": "MatchTest-Ember-20261016-140657-969-fa9e303a.log",
+      "log_sha256": "d3edc64a0725cabefe4089a13a36d427a2643d1c3d7786a33860d566464396e1",
+      "natural_rounds": [
+        "1",
+        "1",
+        "1"
+      ]
+    },
+    {
+      "suite": "UI",
+      "faction": "Ember",
+      "result": "PASS",
+      "checks": 43,
+      "log": "UITest-Ember-20261016-140703-127-ff994ce1.log",
+      "log_sha256": "17993ace785dbf38021cf68925cbf33e6c7d33492e495787398d2e588e46c109",
+      "natural_rounds": []
+    },
+    {
+      "suite": "Presentation",
+      "faction": "Ember",
+      "result": "PASS",
+      "checks": 141,
+      "log": "PresentationTest-Ember-20261016-140708-168-f5c72b3e.log",
+      "log_sha256": "99a8dc071f2f7f97efb41abcca5bf0ac851a98c6953dc6c98a6e776149b02ea3",
+      "natural_rounds": []
+    },
+    {
+      "suite": "LogisticsStress",
+      "faction": "Ember",
+      "result": "PASS",
+      "checks": 0,
+      "log": "LogisticsStressTest-Ember-20261016-140710-283-25fd5ccb.log",
+      "log_sha256": "9d91ba506886c318a2816c048683a99e917b854171cba0bcd90b4f5cfe24a64c",
+      "natural_rounds": [
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1"
+      ]
+    }
+  ],
+  "assertion_checks": 775,
+  "observed_match_result_markers": 52,
+  "natural_rounds": 46,
+  "round_count_scope": "Natural round count includes Match and LogisticsStress only; Combat/FullMatch fixture result markers are excluded."
+}

@@ -1,0 +1,19 @@
+{
+  "schema": "HeroHour.FrameProfile.v1",
+  "result": "CAPTURED",
+  "csv": "Profile(20261016_085633).csv",
+  "csv_sha256": "4080eca4c943081aeb17cb584bb56da4879b86327a3501c5c85ae0c5c21a3c71",
+  "executable_sha256": "3e15769e38e921c7a8f12d37c5acac73d8e8b14ce356e7de620c2bc9987de7cb",
+  "captured_frames": 1800,
+  "discarded_warmup_frames": 300,
+  "measured_frames": 1500,
+  "measured_seconds": 25.0001373,
+  "mean_frame_ms": 16.6667582,
+  "mean_fps": 59.999670481809716,
+  "median_frame_ms": 16.667099999999998,
+  "p95_frame_ms": 17.1311,
+  "worst_frame_ms": 23.3784,
+  "frames_over_33ms": 0,
+  "workload": "V7 package, Aegis starting camera,1600x900,NoBot,60FPS cap,vSync0,one graphics game instance; short capture,exit code777003 with normal Benchmarking shutdown in log",
+  "limits": "Short fixed-camera capped frame capture. No active combat, full-map stress, long soak, or visual-parity acceptance implied."
+}

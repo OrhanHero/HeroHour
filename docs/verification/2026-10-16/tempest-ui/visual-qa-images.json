@@ -1,0 +1,29 @@
+{
+  "images": [
+    {
+      "path": "Art/Previews/TempestUI-Editor-Aegis-1600.png",
+      "sha256": "9b5c4120ec91f09e4c07d9067c24c9a177067691499adc358c693cc997b69ffc",
+      "bytes": 1558901,
+      "width": 1600,
+      "height": 900,
+      "format": "PNG"
+    },
+    {
+      "path": "Art/Previews/TempestUI-Editor-Ember-1280.png",
+      "sha256": "cd856a89e72d0773968f5807cda2f825a9b7b366b5eccfa81938397185dc9ec3",
+      "bytes": 1041580,
+      "width": 1280,
+      "height": 720,
+      "format": "PNG"
+    },
+    {
+      "path": "Saved/Research/TempestRising/reference-live-base.png",
+      "sha256": "5196dc1b861c5d387c363764e2ee0ce3fae0bbefc8e2deb64b8b5c38047b229e",
+      "bytes": 649410,
+      "width": 2560,
+      "height": 1440,
+      "format": "JPEG"
+    }
+  ],
+  "inspection": "Full images visually inspected; no image manipulation; Aegis natural startup, Ember deterministic injected infantry/doctrine fixture; original Tempest historical Veti frame"
+}

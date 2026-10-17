@@ -1,0 +1,459 @@
+{
+  "meshes": [
+    {
+      "name": "SM_CC6_Courtyard",
+      "dimensions_cm": [
+        390.00006103515625,
+        413.2500305175781,
+        1106.0
+      ]
+    },
+    {
+      "name": "SM_CC6_Office",
+      "dimensions_cm": [
+        390.00006103515625,
+        393.00006103515625,
+        1456.0
+      ]
+    },
+    {
+      "name": "SM_CC6_Tower",
+      "dimensions_cm": [
+        390.00006103515625,
+        393.00006103515625,
+        2240.0
+      ]
+    },
+    {
+      "name": "SM_CC6_Service",
+      "dimensions_cm": [
+        390.00006103515625,
+        413.2500305175781,
+        1281.0
+      ]
+    }
+  ],
+  "replacements": [
+    {
+      "label": "DV3 SM_DV3_Civic_0",
+      "old": "SM_DV3_Civic_0",
+      "new": "SM_CC6_Courtyard",
+      "position": [
+        1500.0,
+        -4500.0,
+        12.0
+      ],
+      "scale": [
+        2.0,
+        2.0,
+        1.0
+      ]
+    },
+    {
+      "label": "DV3 SM_DV3_Civic_1",
+      "old": "SM_DV3_Civic_1",
+      "new": "SM_CC6_Office",
+      "position": [
+        1500.0,
+        -3000.0,
+        12.0
+      ],
+      "scale": [
+        2.0,
+        2.0,
+        1.0
+      ]
+    },
+    {
+      "label": "DV3 SM_DV3_Civic_0",
+      "old": "SM_DV3_Civic_0",
+      "new": "SM_CC6_Tower",
+      "position": [
+        1500.0,
+        -1500.0,
+        12.0
+      ],
+      "scale": [
+        2.0,
+        2.0,
+        1.0
+      ]
+    },
+    {
+      "label": "DV3 SM_DV3_Civic_1",
+      "old": "SM_DV3_Civic_1",
+      "new": "SM_CC6_Service",
+      "position": [
+        1500.0,
+        0.0,
+        12.0
+      ],
+      "scale": [
+        2.0,
+        2.0,
+        1.0
+      ]
+    },
+    {
+      "label": "DV3 SM_DV3_Civic_0",
+      "old": "SM_DV3_Civic_0",
+      "new": "SM_CC6_Courtyard",
+      "position": [
+        1500.0,
+        1500.0,
+        12.0
+      ],
+      "scale": [
+        2.0,
+        2.0,
+        1.0
+      ]
+    },
+    {
+      "label": "DV3 SM_DV3_Civic_1",
+      "old": "SM_DV3_Civic_1",
+      "new": "SM_CC6_Office",
+      "position": [
+        1500.0,
+        3000.0,
+        12.0
+      ],
+      "scale": [
+        2.0,
+        2.0,
+        1.0
+      ]
+    },
+    {
+      "label": "DV3 SM_DV3_Civic_0",
+      "old": "SM_DV3_Civic_0",
+      "new": "SM_CC6_Tower",
+      "position": [
+        1500.0,
+        4500.0,
+        12.0
+      ],
+      "scale": [
+        2.0,
+        2.0,
+        1.0
+      ]
+    },
+    {
+      "label": "DV3 SM_DV3_Civic_1",
+      "old": "SM_DV3_Civic_1",
+      "new": "SM_CC6_Office",
+      "position": [
+        3000.0,
+        -4500.0,
+        12.0
+      ],
+      "scale": [
+        2.0,
+        2.0,
+        1.0
+      ]
+    },
+    {
+      "label": "DV3 SM_DV3_Civic_0",
+      "old": "SM_DV3_Civic_0",
+      "new": "SM_CC6_Tower",
+      "position": [
+        3000.0,
+        -3000.0,
+        12.0
+      ],
+      "scale": [
+        2.0,
+        2.0,
+        1.0
+      ]
+    },
+    {
+      "label": "DV3 SM_DV3_Civic_2",
+      "old": "SM_DV3_Civic_2",
+      "new": "SM_CC6_Tower",
+      "position": [
+        3000.0,
+        -1500.0,
+        12.0
+      ],
+      "scale": [
+        2.0,
+        2.0,
+        1.0
+      ]
+    },
+    {
+      "label": "DV3 SM_DV3_Civic_2",
+      "old": "SM_DV3_Civic_2",
+      "new": "SM_CC6_Tower",
+      "position": [
+        3000.0,
+        0.0,
+        12.0
+      ],
+      "scale": [
+        2.0,
+        2.0,
+        1.0
+      ]
+    },
+    {
+      "label": "DV3 SM_DV3_Civic_2",
+      "old": "SM_DV3_Civic_2",
+      "new": "SM_CC6_Tower",
+      "position": [
+        3000.0,
+        1500.0,
+        12.0
+      ],
+      "scale": [
+        2.0,
+        2.0,
+        1.0
+      ]
+    },
+    {
+      "label": "DV3 SM_DV3_Civic_0",
+      "old": "SM_DV3_Civic_0",
+      "new": "SM_CC6_Tower",
+      "position": [
+        3000.0,
+        3000.0,
+        12.0
+      ],
+      "scale": [
+        2.0,
+        2.0,
+        1.0
+      ]
+    },
+    {
+      "label": "DV3 SM_DV3_Civic_1",
+      "old": "SM_DV3_Civic_1",
+      "new": "SM_CC6_Service",
+      "position": [
+        3000.0,
+        4500.0,
+        12.0
+      ],
+      "scale": [
+        2.0,
+        2.0,
+        1.0
+      ]
+    },
+    {
+      "label": "DV3 SM_DV3_Civic_0",
+      "old": "SM_DV3_Civic_0",
+      "new": "SM_CC6_Tower",
+      "position": [
+        4500.0,
+        -4500.0,
+        12.0
+      ],
+      "scale": [
+        2.0,
+        2.0,
+        1.0
+      ]
+    },
+    {
+      "label": "DV3 SM_DV3_Civic_1",
+      "old": "SM_DV3_Civic_1",
+      "new": "SM_CC6_Service",
+      "position": [
+        4500.0,
+        -3000.0,
+        12.0
+      ],
+      "scale": [
+        2.0,
+        2.0,
+        1.0
+      ]
+    },
+    {
+      "label": "DV3 SM_DV3_Civic_2",
+      "old": "SM_DV3_Civic_2",
+      "new": "SM_CC6_Tower",
+      "position": [
+        4500.0,
+        -1500.0,
+        12.0
+      ],
+      "scale": [
+        2.0,
+        2.0,
+        1.0
+      ]
+    },
+    {
+      "label": "DV3 SM_DV3_Civic_2",
+      "old": "SM_DV3_Civic_2",
+      "new": "SM_CC6_Tower",
+      "position": [
+        4500.0,
+        0.0,
+        12.0
+      ],
+      "scale": [
+        2.0,
+        2.0,
+        1.0
+      ]
+    },
+    {
+      "label": "DV3 SM_DV3_Civic_2",
+      "old": "SM_DV3_Civic_2",
+      "new": "SM_CC6_Tower",
+      "position": [
+        4500.0,
+        1500.0,
+        12.0
+      ],
+      "scale": [
+        2.0,
+        2.0,
+        1.0
+      ]
+    },
+    {
+      "label": "DV3 SM_DV3_Civic_1",
+      "old": "SM_DV3_Civic_1",
+      "new": "SM_CC6_Service",
+      "position": [
+        4500.0,
+        3000.0,
+        12.0
+      ],
+      "scale": [
+        2.0,
+        2.0,
+        1.0
+      ]
+    },
+    {
+      "label": "DV3 SM_DV3_Civic_0",
+      "old": "SM_DV3_Civic_0",
+      "new": "SM_CC6_Courtyard",
+      "position": [
+        4500.0,
+        4500.0,
+        12.0
+      ],
+      "scale": [
+        2.0,
+        2.0,
+        1.0
+      ]
+    },
+    {
+      "label": "DV3 SM_DV3_Civic_1",
+      "old": "SM_DV3_Civic_1",
+      "new": "SM_CC6_Service",
+      "position": [
+        6000.0,
+        -4500.0,
+        12.0
+      ],
+      "scale": [
+        2.0,
+        2.0,
+        1.0
+      ]
+    },
+    {
+      "label": "DV3 SM_DV3_Civic_0",
+      "old": "SM_DV3_Civic_0",
+      "new": "SM_CC6_Courtyard",
+      "position": [
+        6000.0,
+        -3000.0,
+        12.0
+      ],
+      "scale": [
+        2.0,
+        2.0,
+        1.0
+      ]
+    },
+    {
+      "label": "DV3 SM_DV3_Civic_1",
+      "old": "SM_DV3_Civic_1",
+      "new": "SM_CC6_Office",
+      "position": [
+        6000.0,
+        -1500.0,
+        12.0
+      ],
+      "scale": [
+        2.0,
+        2.0,
+        1.0
+      ]
+    },
+    {
+      "label": "DV3 SM_DV3_Civic_0",
+      "old": "SM_DV3_Civic_0",
+      "new": "SM_CC6_Tower",
+      "position": [
+        6000.0,
+        0.0,
+        12.0
+      ],
+      "scale": [
+        2.0,
+        2.0,
+        1.0
+      ]
+    },
+    {
+      "label": "DV3 SM_DV3_Civic_1",
+      "old": "SM_DV3_Civic_1",
+      "new": "SM_CC6_Service",
+      "position": [
+        6000.0,
+        1500.0,
+        12.0
+      ],
+      "scale": [
+        2.0,
+        2.0,
+        1.0
+      ]
+    },
+    {
+      "label": "DV3 SM_DV3_Civic_0",
+      "old": "SM_DV3_Civic_0",
+      "new": "SM_CC6_Courtyard",
+      "position": [
+        6000.0,
+        3000.0,
+        12.0
+      ],
+      "scale": [
+        2.0,
+        2.0,
+        1.0
+      ]
+    },
+    {
+      "label": "DV3 SM_DV3_Civic_1",
+      "old": "SM_DV3_Civic_1",
+      "new": "SM_CC6_Office",
+      "position": [
+        6000.0,
+        4500.0,
+        12.0
+      ],
+      "scale": [
+        2.0,
+        2.0,
+        1.0
+      ]
+    }
+  ],
+  "existing_navigation_blocker_radius_cm": 600
+}

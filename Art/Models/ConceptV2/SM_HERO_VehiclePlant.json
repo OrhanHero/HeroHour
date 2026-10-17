@@ -1,0 +1,23 @@
+{
+  "name": "SM_HERO_VehiclePlant",
+  "vertices": 14008,
+  "polygons": 13460,
+  "triangles": 27080,
+  "dimensions_m": [
+    4.400000095367432,
+    4.051415920257568,
+    3.3299999237060547
+  ],
+  "materials": [
+    "Concrete",
+    "Dark",
+    "Armor",
+    "Steel",
+    "Neon",
+    "Team",
+    "Lamp",
+    "Dust"
+  ],
+  "origin": "ground pivot with runtime Z compensation",
+  "zoffset_m": -0.35
+}

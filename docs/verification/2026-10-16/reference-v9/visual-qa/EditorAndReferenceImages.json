@@ -1,0 +1,41 @@
+{
+  "status": "EDITOR_REVIEW_ONLY_PACKAGE_PENDING",
+  "date": "2026-10-16",
+  "images": [
+    {
+      "path": "C:\\Users\\Hero\\HeroHour\\Art\\Previews\\TrellisHQV9-Editor-CloseUp.png",
+      "bytes": 1604859,
+      "sha256": "7bbae3cecc0194ec6a77656855dd34f6753352aecb290eb7c5cb54126df48147",
+      "source": "Editor",
+      "directly_viewed": true
+    },
+    {
+      "path": "C:\\Users\\Hero\\HeroHour\\Art\\Previews\\HarvesterV9-Ember-Natural-Follow-12.png",
+      "bytes": 1595750,
+      "sha256": "b3761ee30441bc183e2ef3755f391635e3402ed3cae547f931bce86ca6dfd952",
+      "source": "Editor",
+      "directly_viewed": true
+    },
+    {
+      "path": "C:\\Users\\Hero\\HeroHour\\Art\\Previews\\ReferenceTerrainV9-Editor-ArtReview-District.png",
+      "bytes": 2457003,
+      "sha256": "095e52bd5755f8657932a1a2ef238d26be20b323515327e3820fab72437f3adc",
+      "source": "Editor",
+      "directly_viewed": true
+    },
+    {
+      "path": "E:\\HeroHour\\Art\\Concepts\\HH Art\\Codex-Bild 1. Sept. 2026, 01_22_00.png",
+      "bytes": 2956493,
+      "sha256": "b59e4fa54e20f252e9e864b8e5e04c90a4946e881504787e81af115b54e8efda",
+      "source": "Original user concept",
+      "directly_viewed": true
+    },
+    {
+      "path": "E:\\HeroHour\\Art\\Concepts\\HH Art\\Codex-Bild 1. Sept. 2026, 01_22_20.png",
+      "bytes": 3302564,
+      "sha256": "6ba5782d17fd7274b7ac16cbf581357a830c1255db0c94faa8eb5e980a4f918e",
+      "source": "Original user concept",
+      "directly_viewed": true
+    }
+  ]
+}

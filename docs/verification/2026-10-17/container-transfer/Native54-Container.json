@@ -1,0 +1,222 @@
+{
+  "schema": "HeroHour.TempestContainerEngine54.v1",
+  "project": "C:\\Users\\Hero\\HeroHour\\Saved\\Tests\\TempestMapEditor54",
+  "output": "C:\\Users\\Hero\\HeroHour\\Saved\\Research\\TempestAssetTransfer\\Engine54-20261016T234043Z-1c4facce",
+  "source_mesh": "/Game/Tempest/Props/Faction_Containers/SM_GDF_Container",
+  "engine": "5.4.4-35576357+++UE5+Release-5.4",
+  "source_assets_saved": false,
+  "exports": [
+    {
+      "path": "C:\\Users\\Hero\\HeroHour\\Saved\\Research\\TempestAssetTransfer\\Engine54-20261016T234043Z-1c4facce\\SM_GDF_Container.fbx",
+      "exporter": "StaticMeshExporterFBX",
+      "success": true,
+      "exporter_return": true,
+      "task_errors": [],
+      "bytes": 71200
+    }
+  ],
+  "textures": [
+    {
+      "package": "/Game/Tempest/Props/Faction_Containers/Textures/GDF/T_GDF_Container_D",
+      "class_name": "Texture2D",
+      "srgb": true,
+      "compression_settings": "<TextureCompressionSettings.TC_DEFAULT: 0>",
+      "filter": "<TextureFilter.TF_DEFAULT: 3>",
+      "lod_group": "<TextureGroup.TEXTUREGROUP_WORLD: 0>",
+      "export": {
+        "status": "SKIPPED_COOKED_NATIVE_TEXTURE_EXPORT",
+        "reason": "Use CUE4Parse decoded PNGs; native ImageCore assertion recorded in first run."
+      }
+    },
+    {
+      "package": "/Game/Tempest/Props/Faction_Containers/Textures/GDF/T_GDF_Container_N",
+      "class_name": "Texture2D",
+      "srgb": false,
+      "compression_settings": "<TextureCompressionSettings.TC_NORMALMAP: 1>",
+      "filter": "<TextureFilter.TF_DEFAULT: 3>",
+      "lod_group": "<TextureGroup.TEXTUREGROUP_WORLD_NORMAL_MAP: 1>",
+      "export": {
+        "status": "SKIPPED_COOKED_NATIVE_TEXTURE_EXPORT",
+        "reason": "Use CUE4Parse decoded PNGs; native ImageCore assertion recorded in first run."
+      }
+    },
+    {
+      "package": "/Game/Tempest/Props/Faction_Containers/Textures/GDF/T_GDF_Container_RMO",
+      "class_name": "Texture2D",
+      "srgb": false,
+      "compression_settings": "<TextureCompressionSettings.TC_MASKS: 2>",
+      "filter": "<TextureFilter.TF_DEFAULT: 3>",
+      "lod_group": "<TextureGroup.TEXTUREGROUP_WORLD: 0>",
+      "export": {
+        "status": "SKIPPED_COOKED_NATIVE_TEXTURE_EXPORT",
+        "reason": "Use CUE4Parse decoded PNGs; native ImageCore assertion recorded in first run."
+      }
+    },
+    {
+      "package": "/Game/Tempest/Props/Faction_Containers/Textures/GDF/T_GDF_Container_C",
+      "class_name": "Texture2D",
+      "srgb": false,
+      "compression_settings": "<TextureCompressionSettings.TC_MASKS: 2>",
+      "filter": "<TextureFilter.TF_DEFAULT: 3>",
+      "lod_group": "<TextureGroup.TEXTUREGROUP_WORLD: 0>",
+      "export": {
+        "status": "SKIPPED_COOKED_NATIVE_TEXTURE_EXPORT",
+        "reason": "Use CUE4Parse decoded PNGs; native ImageCore assertion recorded in first run."
+      }
+    }
+  ],
+  "result": "PASS",
+  "mesh_class": "StaticMesh",
+  "bounds": {
+    "origin": {
+      "x": 0.0,
+      "y": -3.814697265625e-05,
+      "z": 148.02738857269287
+    },
+    "box_extent": {
+      "x": 350.6151123046875,
+      "y": 154.67790985107422,
+      "z": 149.57579135894775
+    },
+    "sphere_radius": 397.27806100208153,
+    "units": "Unreal centimeters"
+  },
+  "material_slots": [
+    {
+      "index": 0,
+      "slot_name": "WorldGridMaterial",
+      "imported_slot_name": "None",
+      "material": {
+        "path": "/Game/Tempest/Props/Faction_Containers/Materials/MI_GDF_Container_01.MI_GDF_Container_01",
+        "class_name": "MaterialInstanceConstant",
+        "parent": "/Game/Tempest/MaterialLibrary/Props/M_MASTER_Props.M_MASTER_Props",
+        "texture_parameter_values": [
+          {
+            "name": "Albedo",
+            "association": "<MaterialParameterAssociation.GLOBAL_PARAMETER: 2>",
+            "index": -1,
+            "value": "/Game/Tempest/Props/Faction_Containers/Textures/GDF/T_GDF_Container_D.T_GDF_Container_D"
+          },
+          {
+            "name": "RMO(E) Mask",
+            "association": "<MaterialParameterAssociation.GLOBAL_PARAMETER: 2>",
+            "index": -1,
+            "value": "/Game/Tempest/Props/Faction_Containers/Textures/GDF/T_GDF_Container_RMO.T_GDF_Container_RMO"
+          },
+          {
+            "name": "Normal Map",
+            "association": "<MaterialParameterAssociation.GLOBAL_PARAMETER: 2>",
+            "index": -1,
+            "value": "/Game/Tempest/Props/Faction_Containers/Textures/GDF/T_GDF_Container_N.T_GDF_Container_N"
+          },
+          {
+            "name": "Color Mask",
+            "association": "<MaterialParameterAssociation.GLOBAL_PARAMETER: 2>",
+            "index": -1,
+            "value": "/Game/Tempest/Props/Faction_Containers/Textures/GDF/T_GDF_Container_C.T_GDF_Container_C"
+          },
+          {
+            "name": "Grunge Mask",
+            "association": "<MaterialParameterAssociation.GLOBAL_PARAMETER: 2>",
+            "index": -1,
+            "value": "/Game/Tempest/MaterialLibrary/Textures/T_Grunge_01_M.T_Grunge_01_M"
+          }
+        ],
+        "scalar_parameter_values": [
+          {
+            "name": "Albedo Brightness",
+            "association": "<MaterialParameterAssociation.GLOBAL_PARAMETER: 2>",
+            "index": -1,
+            "value": 1.2000000476837158
+          },
+          {
+            "name": "Albedo AO",
+            "association": "<MaterialParameterAssociation.GLOBAL_PARAMETER: 2>",
+            "index": -1,
+            "value": 0.5
+          },
+          {
+            "name": "Emissive Power",
+            "association": "<MaterialParameterAssociation.GLOBAL_PARAMETER: 2>",
+            "index": -1,
+            "value": 100.0
+          },
+          {
+            "name": "Base Albedo Brightness for Color Mask",
+            "association": "<MaterialParameterAssociation.GLOBAL_PARAMETER: 2>",
+            "index": -1,
+            "value": 0.800000011920929
+          },
+          {
+            "name": "Grunge Tex Power",
+            "association": "<MaterialParameterAssociation.GLOBAL_PARAMETER: 2>",
+            "index": -1,
+            "value": 2.0
+          },
+          {
+            "name": "Grunge Tile",
+            "association": "<MaterialParameterAssociation.GLOBAL_PARAMETER: 2>",
+            "index": -1,
+            "value": 4.0
+          },
+          {
+            "name": "Grunge Amount",
+            "association": "<MaterialParameterAssociation.GLOBAL_PARAMETER: 2>",
+            "index": -1,
+            "value": 0.75
+          },
+          {
+            "name": "Snow Mask Power",
+            "association": "<MaterialParameterAssociation.GLOBAL_PARAMETER: 2>",
+            "index": -1,
+            "value": 4.0
+          },
+          {
+            "name": "Snow Mask Multiplier",
+            "association": "<MaterialParameterAssociation.GLOBAL_PARAMETER: 2>",
+            "index": -1,
+            "value": 0.75
+          },
+          {
+            "name": "Top Snow Mask Power",
+            "association": "<MaterialParameterAssociation.GLOBAL_PARAMETER: 2>",
+            "index": -1,
+            "value": 6.0
+          },
+          {
+            "name": "RefractionDepthBias",
+            "association": "<MaterialParameterAssociation.GLOBAL_PARAMETER: 2>",
+            "index": -1,
+            "value": 0.0
+          }
+        ],
+        "vector_parameter_values": [
+          {
+            "name": "Albedo Tint",
+            "association": "<MaterialParameterAssociation.GLOBAL_PARAMETER: 2>",
+            "index": -1,
+            "value": "<Struct 'LinearColor' (0x000006E04EAC1DE0) {r: 0.432292, g: 0.418660, b: 0.357937, a: 1.000000}>"
+          },
+          {
+            "name": "Emissive Color",
+            "association": "<MaterialParameterAssociation.GLOBAL_PARAMETER: 2>",
+            "index": -1,
+            "value": "<Struct 'LinearColor' (0x000006E04EAC3160) {r: 1.000000, g: 0.004591, b: 0.000000, a: 1.000000}>"
+          },
+          {
+            "name": "Color Mask R Color",
+            "association": "<MaterialParameterAssociation.GLOBAL_PARAMETER: 2>",
+            "index": -1,
+            "value": "<Struct 'LinearColor' (0x000006E04EAC3260) {r: 0.501562, g: 0.515334, b: 0.557292, a: 1.000000}>"
+          },
+          {
+            "name": "Color Mask G Color",
+            "association": "<MaterialParameterAssociation.GLOBAL_PARAMETER: 2>",
+            "index": -1,
+            "value": "<Struct 'LinearColor' (0x000006E04EAC34A0) {r: 0.421875, g: 0.229058, b: 0.084375, a: 1.000000}>"
+          }
+        ]
+      }
+    }
+  ]
+}

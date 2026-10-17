@@ -1,0 +1,43 @@
+{
+  "name": "SM_HR_Defense",
+  "role": "Defense",
+  "triangles": 6444,
+  "vertices": 3328,
+  "dimensions_m": [
+    3.0,
+    3.0,
+    2.5
+  ],
+  "min_z_m": -0.35,
+  "runtime_actor_z_cm": 35,
+  "runtime_scale": 1,
+  "materials": [
+    "Concrete",
+    "Dark",
+    "Steel",
+    "Lamp",
+    "Armor",
+    "Neon",
+    "Glass"
+  ],
+  "original_geometry": true,
+  "fbx_roundtrip": {
+    "passed": true,
+    "dimensions_m": [
+      3.000000476837158,
+      3.000000476837158,
+      2.500000089406967
+    ],
+    "min_z_m": -0.3499999940395355,
+    "nonmanifold_edges": 0,
+    "materials": [
+      "Concrete",
+      "Dark",
+      "Steel",
+      "Lamp",
+      "Armor",
+      "Neon",
+      "Glass"
+    ]
+  }
+}

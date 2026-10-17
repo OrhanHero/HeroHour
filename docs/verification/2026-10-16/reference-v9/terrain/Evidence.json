@@ -1,0 +1,38 @@
+{
+  "status": "UNREAL_IMPORT_PASS_EDITOR_ART_REVIEW_VIEWED_PACKAGE_PENDING",
+  "actors": 4,
+  "triangles": 45312,
+  "visual_status": "Actual district art-review viewed; subtle bank improvement, concept quality not met; border group contacts not established",
+  "files": [
+    {
+      "path": "Art/Models/ReferenceTerrainV9/manifest.json",
+      "bytes": 80036,
+      "sha256": "a91e0c596ec055275d896383eccd3c0a51c4c07c1958e4b7b2ac912b47b15fae"
+    },
+    {
+      "path": "Art/Models/ReferenceTerrainV9/SM_TRV9_RiverNorth-Preview.png",
+      "bytes": 1532280,
+      "sha256": "8e5ebc9fb93453c1300abeebb1137488c4975807677c0bda28c6d6d85c844b27"
+    },
+    {
+      "path": "Art/Models/ReferenceTerrainV9/SM_TRV9_WestTalus-Preview.png",
+      "bytes": 1541504,
+      "sha256": "23dca56645c3f5fa1d217870bfbd42513bed46bce5006f09a89508de8b5f906b"
+    },
+    {
+      "path": "Saved/Logs/ReferenceTerrainV9-Build.log",
+      "bytes": 1341,
+      "sha256": "34c21b6fb09fb276938af714516bf2d3c262c8c8804a3b1f1f4573781e4c4395"
+    },
+    {
+      "path": "Saved/Logs/ReferenceTerrainV9-Preview.log",
+      "bytes": 1562,
+      "sha256": "638e01b8757b88bb505ee5503567badb43065029fcb3d9afaecdceb98ddd71a9"
+    },
+    {
+      "path": "Art/Previews/ReferenceTerrainV9-Editor-ArtReview-District.png",
+      "bytes": 2457003,
+      "sha256": "095e52bd5755f8657932a1a2ef238d26be20b323515327e3820fab72437f3adc"
+    }
+  ]
+}

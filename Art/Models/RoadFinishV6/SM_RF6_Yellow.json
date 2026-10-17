@@ -1,0 +1,27 @@
+{
+  "name": "SM_RF6_Yellow",
+  "material": "Yellow",
+  "pieces": 257,
+  "triangles": 3084,
+  "dimensions_m": [
+    237.0,
+    169.5,
+    0.004000002518296242
+  ],
+  "expected_ue_bounds_cm": {
+    "min": [
+      -11515.0,
+      -8515.0,
+      3.0
+    ],
+    "max": [
+      12185.0,
+      8435.0,
+      3.4000000000000004
+    ]
+  },
+  "non_manifold_edges": 0,
+  "fbx_roundtrip": true,
+  "validation": "PASS",
+  "pivot": "world origin; source Y reflected to compensate FBX -> Unreal conversion"
+}

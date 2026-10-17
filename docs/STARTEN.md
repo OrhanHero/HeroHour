@@ -1,66 +1,54 @@
 # HeroHour starten
 
-Die Skripte verwenden standardmäßig Unreal Engine unter `F:\UE\UE_5.8`. Bei einer anderen Installation an jeden Aufruf `-EngineRoot 'D:\Pfad\UE_5.8'` anhängen. PowerShell im Projektordner öffnen.
+Stand: 17.10.2026. Unreal Engine 5.8.3, aktives Modul HeroHourPrototype. Das aktuelle Zero-Hour-HUD-Paket besteht 19 Pflichtläufe mit 917 Einzelprüfungen und 46 natürlichen Match-/Logistikrunden. Ältere Dauerläufe gelten nicht als erneute Langzeitabnahme dieses Pakets. Belege: [VERIFIED_BUILD.md](VERIFIED_BUILD.md). Neuer Account: zuerst [CURRENT_HANDOVER.md](CURRENT_HANDOVER.md), [Dokumentationsindex](README.md) und [Entwicklungsplan](PROJECT_ROADMAP.md).
 
-## Geprüfter CityHero-Build vom 12. Oktober 2026
-
-Das eigenständige Windows-Paket wurde um 23:38 Uhr (Berlin) erfolgreich erstellt. Start: `Builds\Windows\HeroHour.exe` oder Doppelklick auf `HeroHour-Starten.cmd` im Projektordner. Es enthält die aktuelle Karte `CityHero`, bereinigte texturierte ATV-Modelle und die übernommenen LocalAssets.
-
-Im tatsächlichen Paket bestanden anschließend 15 Kampf-, 23 Wirtschafts- und 10 Navigationsprüfungen sowie drei vollständige simulierte Partien mit 3/3 Siegen, Ressourcenlieferungen und sicheren Pfaden. Alle vier Suiten meldeten PASS und Exitcode 0. Ihre Laufprotokolle enthalten keine Warnungen, Fehler oder fehlenden Spielassets. Diese Prüfungen liefen ohne Grafik; Bildqualität und echte Maus-/Tastaturbedienung werden separat im sichtbaren Paket geprüft.
-
-Nachweise unter `Saved\Logs`:
-
-- `Packaging-20261012-233719-924.log`: UAT `BUILD SUCCESSFUL`.
-- `CombatTest-20261012-233808-738.log`: `COMBAT_TEST_RESULT=PASS`.
-- `EconomyTest-20261012-233808-750.log`: `ECONOMY_TEST_RESULT=PASS`.
-- `NavigationTest-20261012-233808-742.log`: `NAVIGATION_TEST_RESULT=PASS`.
-- `MatchTest-20261012-233808-740.log`: `MATCH_TEST_RESULT=PASS wins=3/3`.
-- `Builds\Windows\Build-Info.json`: Erstellungszeitpunkt und Paketierungslog.
-
-## Spiel und Editor
+HeroHour-Starten.cmd startet Aegis, HeroHour-Ember-Starten.cmd startet Ember. PowerShell im Projektordner:
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File .\Scripts\tools\Start-HeroHour.ps1
-powershell -ExecutionPolicy Bypass -File .\Scripts\tools\Start-HeroHour.ps1 -Mode Editor
+.\Scripts\tools\Start-HeroHour.ps1 -Mode Packaged -Faction Aegis
+.\Scripts\tools\Start-HeroHour.ps1 -Mode Packaged -Faction Ember
 ```
 
-Der erste Aufruf startet das Spiel sichtbar in einem separaten Fenster mit 1600 × 900 Pixeln. Der zweite öffnet das Projekt im Editor. Beide benötigen ein erfolgreich gebautes Editor-Modul und die Karte `Content\Maps\CityHero.umap`.
+Ziel: Tempest sammeln, an der Raffinerie entladen, Strom erzeugen, Basis und Armee ausbauen, aufklären und das gegnerische HQ zerstören. Das eigene HQ muss überleben. Der Gegner finanziert sich über dieselben Regeln und beginnt HQ-Angriffe frühestens nach 60 Sekunden.
 
-## Kompilieren und prüfen
+| Eingabe | Funktion |
+|---|---|
+| WASD / Mausrad | Kamera bewegen / zoomen |
+| Klick / Ziehrechteck / Shift | Eigene Einheiten wählen / Auswahl ergänzen |
+| Doppelklick / Leertaste | Gleichen Einheitentyp / eigene Kampfwagen wählen |
+| F / Strg+0…9 / 0…9 | Fokus / Gruppe speichern / abrufen; doppelter Abruf fokussiert |
+| Rechtsklick Boden / sichtbarer Gegner | Bewegung / Angriff; am Produzenten Rally setzen |
+| B / V / Q | Fabrik / Raffinerie platzieren; Bauvorschau um 90° drehen |
+| Linksklick / Escape oder Rechtsklick | Gültige Bauvorschau bestätigen / abbrechen |
+| P / C | Striker an Fabrik / Sammler am HQ bestellen; gewählter Produzent muss passen |
+| Rücktaste | Letzten Auftrag des ausgewählten Produzenten mit Erstattung stornieren |
+| G / T / Y | Infanteriegranate / Aegis-Rauch / Artillerie entfalten oder zusammenpacken |
+| Z / X | Fraktionsdoktrin zum Zielen wählen, danach gültiges Weltziel anklicken |
+| K / Delete | Gebäude ein-/ausschalten / verkaufen; HQ ist nicht verkäuflich |
+| F10 oder Pause / R | Pause / neue Partie |
 
-Editor und Spiel schließen, bevor neu kompiliert wird.
+Die Sidebar bietet BASIS, ABWEHR, INFANTERIE, FAHRZEUGE und SPEZIAL. Elf Rollen sind spielbar: HQ, Raffinerie, Fabrik, Kraftwerk, Kaserne, Radar, Abwehr, Sammler, Striker, Infanterie und Artillerie. Aegis-Doktrinen: Reparaturimpuls/Präzisionsschlag; Ember: Flammenzone/Übertaktung. Fähigkeiten sind auch über das HUD erreichbar.
+
+Baustellen benötigen Credits, freien Rasterplatz und Basisverbindung. HQ, Kaserne und Fabrik führen parallele bezahlte FIFOs mit höchstens fünf Aufträgen je Produzent. Blockierte Ausgänge halten fertige Aufträge fest. Unterversorgung halbiert normale Produktion/Bau, vollständiger Stromausfall stoppt sie; Kraftwerksbau stellt das Netz unabhängig wieder her. Radar und Abwehr benötigen volle Versorgung. Die Minimap wird durch ein betriebsbereites Radar aktiviert. Weltnebel verbirgt Gegner und unerlaubte Ziele.
+
+Drei Felder besitzen 48 Zellen und wachsen standardmäßig nach. Sammler tragen höchstens 100 und entladen zeitlich mit 40/s. Manuelle Bewegung unterbricht vorübergehend die Automatik. Für endliche Felder beim direkten EXE-Start -PrototypeFiniteFields verwenden; das frühere Regrowth-Flag entfällt.
+
+## Build, Tests und Bilder
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File .\Scripts\tools\Build-HeroHour.ps1
-powershell -ExecutionPolicy Bypass -File .\Scripts\tools\Test-HeroHour.ps1
-powershell -ExecutionPolicy Bypass -File .\Scripts\tools\Test-HeroHour.ps1 -Suite Economy
-powershell -ExecutionPolicy Bypass -File .\Scripts\tools\Test-HeroHour.ps1 -Suite Navigation
-powershell -ExecutionPolicy Bypass -File .\Scripts\tools\Test-HeroHour.ps1 -Suite Match
+.\Scripts\tools\Build-HeroHour.ps1 -Package
+.\Scripts\tools\Test-HeroHour.ps1 -Mode Packaged -Suite Systems
+.\Scripts\tools\Test-HeroHour.ps1 -Mode Packaged -Suite FullMatch -Faction Ember
+.\Scripts\tools\Capture-HeroHour.ps1 -Mode Packaged -View Harvester
+.\Scripts\tools\Capture-HeroHour.ps1 -Mode Packaged -View Battle -Width 2560 -Height 1440
 ```
 
-Der Kampftest startet Unreal ohne Grafik. Er prüft Schaden, Produktionskosten, Sieg/Niederlage und Neustart. Erfolg erfordert den Marker `COMBAT_TEST_RESULT=PASS` im neuen Log unter `Saved\Logs` sowie einen fehlerfreien Prozessabschluss. Ein solcher Test prüft weder Bildqualität noch Bedienbarkeit; diese müssen zusätzlich im sichtbaren Spiel geprüft werden.
+Weitere Suiten: Combat, Economy, Navigation, Match, UI, Architecture, Resource, Docking, Tactical, Visibility und Presentation. Captures bieten Battle, Harvester, District und Overview. Bildgröße und Aktualität werden geprüft; Bilder unter Art/Previews ersetzen keine Klickprüfung.
 
-Mit `-Suite Economy` wird die separate Wirtschaftssuite ausgeführt. Sie verlangt `ECONOMY_TEST_RESULT=PASS` und verwendet ein eigenes `EconomyTest-*.log`. Beide Suiten können mit `-Mode Packaged` dieselben Prüfungen im tatsächlich ausgelieferten Windows-Spiel ausführen.
+Engine: F:\UE\UE_5.8, alternativ -EngineRoot. Editor vor Modul-Build schließen, Spiel vor Paketüberschreiben beenden. Build-HeroHour verwendet bereits -gather für neue C++-Dateien. Ein Editor-Build aktualisiert das Windows-Paket nicht. Logs: Saved/Logs; Manifest: Builds/Windows/Build-Info.json; Paketstart: Builds/Windows/HeroHour.exe.
 
-`-Suite Navigation` verlangt `NAVIGATION_TEST_RESULT=PASS` und prüft Stadtgebäude, Wasser, Brückenrouten und alternative Wege. Die aktuellen Start-/Build-/Testskripte verwenden die Karte `CityHero`. Der oben dokumentierte Windows-Build enthält diese Karte.
+Git LFS ist für Unreal-Assets, Karten und Modelle erforderlich: nach Checkout git lfs install und git lfs pull. Das ignorierte Windows-Paket lokal neu bauen. Reimport-Reihenfolge: [NAECHSTE_ENTWICKLUNGSSCHRITTE.md](NAECHSTE_ENTWICKLUNGSSCHRITTE.md).
 
-`-Suite Match` startet den getrennten Partieablauftest mit `-PrototypeMatchTest` und verlangt `MATCH_TEST_RESULT=PASS`. Auch diese Suite hat im oben dokumentierten Paket bestanden.
+Art und Balance bleiben Prototypqualität; die Fraktionen teilen viele eigene Meshes. Tempest-Originalparität und grafische Gleichwertigkeit sind nicht belegt.
 
-Der Projektcache liegt unter `DerivedDataCache` im Projektordner. Die Projektkonfiguration verwendet hierfür einen lokalen Dateicache und den mitgelieferten Engine-Lesecache. Der fehlerhafte globale Cache-Verweis des Rechners wird dadurch für HeroHour umgangen, ohne ihn zu verändern. Cachedateien sind regenerierbar und werden nicht versioniert.
-
-## Eigenständiges Windows-Paket
-
-Nach erfolgreicher Paketierung kann `HeroHour-Starten.cmd` im Projektordner per Doppelklick gestartet werden.
-
-```powershell
-powershell -ExecutionPolicy Bypass -File .\Scripts\tools\Build-HeroHour.ps1 -Package
-powershell -ExecutionPolicy Bypass -File .\Scripts\tools\Test-HeroHour.ps1 -Mode Packaged
-powershell -ExecutionPolicy Bypass -File .\Scripts\tools\Test-HeroHour.ps1 -Mode Packaged -Suite Economy
-powershell -ExecutionPolicy Bypass -File .\Scripts\tools\Test-HeroHour.ps1 -Mode Packaged -Suite Navigation
-powershell -ExecutionPolicy Bypass -File .\Scripts\tools\Test-HeroHour.ps1 -Mode Packaged -Suite Match
-powershell -ExecutionPolicy Bypass -File .\Scripts\tools\Start-HeroHour.ps1 -Mode Packaged
-```
-
-Die Paketierung benötigt die von Unreal unterstützte Visual-Studio-C++-Toolchain und das Windows SDK. Sie baut den Game-Target, kocht die CityHero-Karte und alle HERO- und LocalAssets-Assets und schreibt nach `Builds\Windows`. Der Kochvorgang verwendet lokale Dateien statt des defekten globalen Zen-Speichers. Das erwartete Spiel ist `Builds\Windows\HeroHour.exe`. Die Existenz der Skripte bedeutet noch nicht, dass ein Paket erstellt oder getestet wurde. Ein fertiges Paket anschließend sichtbar starten und Gameplay, Materialien und Assets prüfen.
-
-Die vollständigen Build- und UAT-Protokolle werden als `EditorBuild-*.log` und `Packaging-*.log` in `Saved\Logs` gespeichert. Der Build verlangt neben Exitcode 0 ausdrücklich den UAT-Erfolgsmarker und prüft ausführbares Spiel sowie Paketcontainer. `Build-Info.json` im Paket hält den Erstellungszeitpunkt und das zugehörige Log fest. Der anschließende Pakettest meldet fehlende HERO-Assets ebenfalls als Fehler, auch wenn die Kampfprüfungen erfolgreich waren.
+Logistik-Stresstest: Scripts/tools/Test-HeroHour.ps1 -Mode Packaged -Suite LogisticsStress -Faction Aegis beziehungsweise Ember. Jeweils 20 natürliche Partien mit 1/60-Sekunden-Simulationsschritten, 120 Sekunden Stillstandsgrenze, maximal 600 Simulationssekunden je Partie. Der Wrapper erlaubt dafür standardmäßig 1.800 echte Sekunden; das ersetzt keinen RHI-Dauerlauf.

@@ -1,0 +1,53 @@
+{
+  "target": "F:\\Tempest-Rising-SteamRIP.com\\Tempest Rising\\Tempest\\Binaries\\Win64\\Tempest-Win64-Shipping.exe",
+  "target_sha256": "c81828f4749ae1bbac73106f905a81c3ea1bff9cee7300291c3c390def04be56",
+  "llvm_sha256": "7e726d87fe123f10653998a78dc6a15492fb931f1e6de7265df7d923fc81a210",
+  "result": "PASS",
+  "records": [
+    {
+      "label": "HarvestRateTarget",
+      "wrapper_call_rva": "0x4b965fe",
+      "wrapper_call_hex": "e8cdab6100",
+      "target_rva": "0x51b11d0",
+      "file_offset": 85657552,
+      "bytes": 7,
+      "code_hex": "899140210000c3",
+      "original_sha256": "7e207181987163be84965c78587c2b8c73be16ef113e54bee2c20780b460ba91",
+      "decoded_bytes_equal": true,
+      "instructions": [
+        "mov\tdword ptr [rcx + 0x2140], edx",
+        "ret"
+      ],
+      "write_width_bits": 32,
+      "destination_offset": "0x2140",
+      "source_register": "edx",
+      "object_register": "rcx",
+      "boundary": "Reviewed store/RET leaf followed by 9 INT3 alignment bytes"
+    },
+    {
+      "label": "DepositRateTarget",
+      "wrapper_call_rva": "0x4b9656e",
+      "wrapper_call_hex": "e84dac6100",
+      "target_rva": "0x51b11c0",
+      "file_offset": 85657536,
+      "bytes": 7,
+      "code_hex": "899144210000c3",
+      "original_sha256": "dab44b681f6f80ec0cf15b501c9c66df66c9f28170473c1c5c41823ed93c415e",
+      "decoded_bytes_equal": true,
+      "instructions": [
+        "mov\tdword ptr [rcx + 0x2144], edx",
+        "ret"
+      ],
+      "write_width_bits": 32,
+      "destination_offset": "0x2144",
+      "source_register": "edx",
+      "object_register": "rcx",
+      "boundary": "Reviewed store/RET leaf followed by 9 INT3 alignment bytes"
+    }
+  ],
+  "limits": [
+    "No target execution. No configured rates, durations, range checks or animation transitions established.",
+    "Function labels inherit separately recorded name/code candidates; the byte check proves call targets and stores.",
+    "Two object offsets do not prove the complete private class layout or public structure nesting."
+  ]
+}

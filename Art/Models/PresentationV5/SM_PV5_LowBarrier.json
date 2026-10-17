@@ -1,0 +1,29 @@
+{
+  "name": "SM_PV5_LowBarrier",
+  "seed": 150151,
+  "triangles": 864,
+  "dimensions_m": [
+    2.5,
+    0.6499999761581421,
+    0.6800000071525574
+  ],
+  "materials": [
+    "Concrete",
+    "Dust",
+    "Dark"
+  ],
+  "pivot": "ground origin z=0",
+  "collision": "none",
+  "navigation": "decoration only; does not affect navigation",
+  "non_manifold_edges": 0,
+  "uv_mapping": "dominant plane; 1 UV unit = 1 metre",
+  "fbx_roundtrip": {
+    "passed": true,
+    "dimensions_m": [
+      2.5,
+      0.6499999761581421,
+      0.6800000071525574
+    ]
+  },
+  "validation": "PASS"
+}

@@ -1,0 +1,93 @@
+{
+  "glb": {
+    "path": "C:\\Users\\Hero\\HeroHour\\Saved\\Research\\TempestAssetTransfer\\Container-Probe-02\\Exports\\Tempest\\Content\\Tempest\\Props\\Faction_Containers\\SM_GDF_Container.glb",
+    "minimum": [
+      -3.506150960922241,
+      -1.546778678894043,
+      -0.015484027564525604
+    ],
+    "maximum": [
+      3.506150960922241,
+      1.5467793941497803,
+      2.97603178024292
+    ],
+    "dimensions": [
+      7.012301921844482,
+      3.0935580730438232,
+      2.991515874862671
+    ],
+    "objects": [
+      {
+        "name": "SM_GDF_Container.002",
+        "vertices": 1579,
+        "triangles": 1463,
+        "polygons": 1463,
+        "uv_layers": [
+          "UVMap",
+          "UVMap.001",
+          "UVMap.002",
+          "UVMap.003",
+          "UVMap.004",
+          "UVMap.005",
+          "UVMap.006",
+          "UVMap.007"
+        ],
+        "material_slots": [
+          "MI_GDF_Container_01.002"
+        ],
+        "transform_scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      }
+    ],
+    "units": "Blender world units, glTF meters; FBX importer conversion measured by bounds"
+  },
+  "fbx": {
+    "path": "C:\\Users\\Hero\\HeroHour\\Saved\\Research\\TempestAssetTransfer\\Engine54-20261016T234043Z-1c4facce\\SM_GDF_Container.fbx",
+    "minimum": [
+      -3.506150960922241,
+      -1.546778678894043,
+      -0.015484027564525604
+    ],
+    "maximum": [
+      3.506150960922241,
+      1.5467793941497803,
+      2.97603178024292
+    ],
+    "dimensions": [
+      7.012301921844482,
+      3.0935580730438232,
+      2.991515874862671
+    ],
+    "objects": [
+      {
+        "name": "SM_GDF_Container",
+        "vertices": 930,
+        "triangles": 1463,
+        "polygons": 1463,
+        "uv_layers": [
+          "LightMapUV"
+        ],
+        "material_slots": [
+          "MI_GDF_Container_01.001"
+        ],
+        "transform_scale": [
+          0.009999999776482582,
+          0.009999999776482582,
+          0.009999999776482582
+        ]
+      }
+    ],
+    "units": "Blender world units, glTF meters; FBX importer conversion measured by bounds"
+  },
+  "bounds_dimension_ratio_glb_over_fbx": [
+    1.0,
+    1.0,
+    1.0
+  ],
+  "preview": "C:\\Users\\Hero\\HeroHour\\Saved\\Research\\TempestAssetTransfer\\VisualQA\\20261016T234157Z-78e2d938\\Container-OriginalAlbedo-Baseline.png",
+  "albedo": "C:\\Users\\Hero\\HeroHour\\Saved\\Research\\TempestAssetTransfer\\Container-Probe-02\\Exports\\Tempest\\Content\\Tempest\\Props\\Faction_Containers\\Textures\\GDF\\T_GDF_Container_D.png",
+  "limitation": "Original albedo only; no metallic/roughness/normal/teammask or original shader parity."
+}

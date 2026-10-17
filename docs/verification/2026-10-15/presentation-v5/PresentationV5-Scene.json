@@ -1,0 +1,3092 @@
+{
+  "seed": 150026,
+  "materials": [
+    "/Game/HERO/PresentationV5/Materials/M_PV5_DesertGround.M_PV5_DesertGround",
+    "/Game/HERO/PresentationV5/Materials/M_PV5_WeatheredAsphalt.M_PV5_WeatheredAsphalt"
+  ],
+  "placements": [
+    {
+      "mesh": "DryScrub",
+      "position": [
+        -7590.391134466647,
+        -2531.3429721147186,
+        -5
+      ],
+      "yaw": 272.66287563930706,
+      "scale": 0.7511719765624519,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        -7535.391134466647,
+        -2571.3429721147186,
+        -3
+      ],
+      "yaw": 45.528191587853726,
+      "scale": 0.10274099844582549,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        -9883.310806419378,
+        -2462.6428914745784,
+        -5
+      ],
+      "yaw": 179.8017804603843,
+      "scale": 0.682949409442517,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        -9518.600346906622,
+        1346.758490561495,
+        -5
+      ],
+      "yaw": 201.36162630130744,
+      "scale": 0.6139409894707578,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        -8883.615660726757,
+        1401.3984695628305,
+        -5
+      ],
+      "yaw": 76.73521660361519,
+      "scale": 0.9194470398964809,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        -5309.939234121,
+        2029.4053722986864,
+        -5
+      ],
+      "yaw": 184.44159394305746,
+      "scale": 0.6974189108567383,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        -5651.8566257765815,
+        2583.784844400736,
+        -5
+      ],
+      "yaw": 282.79100157843067,
+      "scale": 0.5504706974665755,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        -9479.417378618567,
+        2498.576014332075,
+        -5
+      ],
+      "yaw": 342.1991874079677,
+      "scale": 0.5707872600069624,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        -5315.785315298094,
+        940.558696058506,
+        -5
+      ],
+      "yaw": 209.76327853980183,
+      "scale": 0.7913997457476526,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        -5260.785315298094,
+        900.558696058506,
+        -3
+      ],
+      "yaw": 320.0750589128674,
+      "scale": 0.11425198286569069,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        -8236.37829734377,
+        -1571.5324490832702,
+        -5
+      ],
+      "yaw": 295.00913662788656,
+      "scale": 0.673822258882446,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        -9921.773533485952,
+        1563.2281799622333,
+        -5
+      ],
+      "yaw": 327.6817518856816,
+      "scale": 0.5716860512804327,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        -10610.765550914219,
+        2104.193301205991,
+        -5
+      ],
+      "yaw": 313.3856587618296,
+      "scale": 0.710288113126902,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        -10555.765550914219,
+        2064.193301205991,
+        -3
+      ],
+      "yaw": 61.32855255722103,
+      "scale": 0.11026177262177389,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        -6122.732726511037,
+        -828.0373705841193,
+        -5
+      ],
+      "yaw": 239.52353138790895,
+      "scale": 0.8165885281794418,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        -10051.389620712167,
+        -1225.6686054133124,
+        -5
+      ],
+      "yaw": 240.56890153005915,
+      "scale": 0.9437365068137608,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        -8256.02299739184,
+        1996.6473429431962,
+        -5
+      ],
+      "yaw": 265.28741363180876,
+      "scale": 0.5644654099998248,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        -8201.02299739184,
+        1956.6473429431962,
+        -3
+      ],
+      "yaw": 124.13964821561218,
+      "scale": 0.07523587101308019,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        -9012.293579336074,
+        2134.193880017795,
+        -5
+      ],
+      "yaw": 323.52464385538036,
+      "scale": 0.8705106036458982,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        -8957.293579336074,
+        2094.193880017795,
+        -3
+      ],
+      "yaw": 341.2325222411487,
+      "scale": 0.09412837325450804,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        -8458.114907628107,
+        -2121.041010655494,
+        -5
+      ],
+      "yaw": 196.69232114062433,
+      "scale": 0.6811632379046865,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        -7666.296908971419,
+        -1600.9174840264054,
+        -5
+      ],
+      "yaw": 322.93586200418065,
+      "scale": 0.6830516624609864,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        -7611.296908971419,
+        -1640.9174840264054,
+        -3
+      ],
+      "yaw": 280.33966869115477,
+      "scale": 0.0975247374514265,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        -10353.547299488971,
+        -1887.439699907837,
+        -5
+      ],
+      "yaw": 16.17043244598076,
+      "scale": 0.5537379930215752,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        -6735.172476055534,
+        -2081.046892090847,
+        -5
+      ],
+      "yaw": 206.04107048799102,
+      "scale": 0.8011530417960313,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        -10458.89714145344,
+        1619.6600172582475,
+        -5
+      ],
+      "yaw": 30.263561408658937,
+      "scale": 0.8454757116810319,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        -10403.89714145344,
+        1579.6600172582475,
+        -3
+      ],
+      "yaw": 30.3469908443857,
+      "scale": 0.08936239217767007,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        -6209.167911400147,
+        -655.3652314528615,
+        -5
+      ],
+      "yaw": 97.43532777170368,
+      "scale": 0.6219895627076009,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        -10373.209309613922,
+        1303.7389521818873,
+        -5
+      ],
+      "yaw": 9.793263819923395,
+      "scale": 0.7098724786034095,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        -5628.850040347019,
+        -1235.5723441066373,
+        -5
+      ],
+      "yaw": 230.9776303732827,
+      "scale": 0.8334810754453902,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        -5573.850040347019,
+        -1275.5723441066373,
+        -3
+      ],
+      "yaw": 206.8637445213801,
+      "scale": 0.07986999892116704,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        -8621.67935258133,
+        2127.02572143807,
+        -5
+      ],
+      "yaw": 283.4758679137131,
+      "scale": 0.7969348897310711,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        -9549.703873707558,
+        -2329.1704382709245,
+        -5
+      ],
+      "yaw": 59.618036375207765,
+      "scale": 0.9362868255847954,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        -9646.351763798973,
+        -1368.948328825394,
+        -5
+      ],
+      "yaw": 24.785404532155233,
+      "scale": 0.6918398648499462,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        -9131.703809857803,
+        1436.1420563339493,
+        -5
+      ],
+      "yaw": 278.6443668311018,
+      "scale": 0.5913917434348205,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        -9076.703809857803,
+        1396.1420563339493,
+        -3
+      ],
+      "yaw": 261.8149205856499,
+      "scale": 0.09638864956997795,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        -5960.86083050329,
+        -2019.4010097596492,
+        -5
+      ],
+      "yaw": 278.7775382161066,
+      "scale": 0.9059832680554336,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        -6298.819184946517,
+        -2458.2945634104717,
+        -5
+      ],
+      "yaw": 322.83963264710695,
+      "scale": 0.5537536843503714,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        -5346.135328887298,
+        -1243.308386429367,
+        -5
+      ],
+      "yaw": 220.8601021090739,
+      "scale": 0.7093885730263843,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        -5291.135328887298,
+        -1283.308386429367,
+        -3
+      ],
+      "yaw": 112.71893203972695,
+      "scale": 0.1129997544864944,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        -10695.654357562702,
+        2084.499652230281,
+        -5
+      ],
+      "yaw": 211.89682909239414,
+      "scale": 0.551355690625349,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        -5352.346772009179,
+        -2547.3061834429427,
+        -5
+      ],
+      "yaw": 193.3556376561992,
+      "scale": 0.8307634840991434,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        -5297.346772009179,
+        -2587.3061834429427,
+        -3
+      ],
+      "yaw": 216.06778354103278,
+      "scale": 0.09123258179055455,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        -9580.872779328121,
+        -2166.713895315264,
+        -5
+      ],
+      "yaw": 23.6913516715126,
+      "scale": 0.7879584705305994,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        -9633.715531807913,
+        1124.5577829187541,
+        -5
+      ],
+      "yaw": 37.209711353509135,
+      "scale": 0.5736444651230873,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        -5319.460340232901,
+        -1032.744777979017,
+        -5
+      ],
+      "yaw": 5.976130191603399,
+      "scale": 0.6467604765967232,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        -10017.294254230224,
+        -2431.758795253115,
+        -5
+      ],
+      "yaw": 283.36788581139604,
+      "scale": 0.9365630647013375,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        -10222.807008898984,
+        2212.889503437954,
+        -5
+      ],
+      "yaw": 320.2065999764169,
+      "scale": 0.7042031957680676,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        -10167.807008898984,
+        2172.889503437954,
+        -3
+      ],
+      "yaw": 152.6804842270691,
+      "scale": 0.0716380638153563,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        -7364.6066287355825,
+        2536.654722722533,
+        -5
+      ],
+      "yaw": 302.99693684038266,
+      "scale": 0.6878011876835027,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        -7239.618617921395,
+        -2000.756810244946,
+        -5
+      ],
+      "yaw": 228.91338611268966,
+      "scale": 0.5778052967274301,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        -10411.533498788644,
+        -1936.7693094589622,
+        -5
+      ],
+      "yaw": 77.72987748324584,
+      "scale": 0.6324148833692351,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        -10356.533498788644,
+        -1976.7693094589622,
+        -3
+      ],
+      "yaw": 336.64443451795694,
+      "scale": 0.07011117123931336,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        -10427.869166117078,
+        -1529.1402548470166,
+        -5
+      ],
+      "yaw": 38.181286953217196,
+      "scale": 0.6654014165961039,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        -9340.321800649399,
+        -2049.091207157302,
+        -5
+      ],
+      "yaw": 299.208750558417,
+      "scale": 0.5973981004816322,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        -9285.321800649399,
+        -2089.091207157302,
+        -3
+      ],
+      "yaw": 236.65375291286415,
+      "scale": 0.07679877618450383,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        -10044.575521483584,
+        1848.7231687925678,
+        -5
+      ],
+      "yaw": 198.1873880099142,
+      "scale": 0.9411182086862658,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        -9612.60659920401,
+        1150.4618084062508,
+        -5
+      ],
+      "yaw": 238.12797308023033,
+      "scale": 0.7845574477654808,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        -9557.60659920401,
+        1110.4618084062508,
+        -3
+      ],
+      "yaw": 259.7319949113332,
+      "scale": 0.0814243112924261,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        -7198.133152330553,
+        -2317.658044739589,
+        -5
+      ],
+      "yaw": 293.17070634817475,
+      "scale": 0.9272603362432137,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        -9899.797003661775,
+        2112.8011412052683,
+        -5
+      ],
+      "yaw": 274.98987578829224,
+      "scale": 0.697707198665491,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        -7704.439490064862,
+        2500.075318074494,
+        -5
+      ],
+      "yaw": 342.53074348870143,
+      "scale": 0.5839372615642112,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        -8914.386563834745,
+        -1811.3097415851075,
+        -5
+      ],
+      "yaw": 231.17593657047058,
+      "scale": 0.9016085881466124,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        -8859.386563834745,
+        -1851.3097415851075,
+        -3
+      ],
+      "yaw": 134.3113907205101,
+      "scale": 0.09109545345481386,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        -10000.210238524185,
+        -1770.7333915317358,
+        -5
+      ],
+      "yaw": 5.365986328177548,
+      "scale": 0.8513165921855707,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        -10317.734140779441,
+        1802.3429055371562,
+        -5
+      ],
+      "yaw": 252.82899673233138,
+      "scale": 0.8323063428428428,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        -5942.061677826566,
+        -955.5805220518032,
+        -5
+      ],
+      "yaw": 302.7898851276848,
+      "scale": 0.9305679708078628,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        -8053.754571012238,
+        -1831.3913831555747,
+        -5
+      ],
+      "yaw": 50.348338509099136,
+      "scale": 0.6448024342301525,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "SupplyCrates",
+      "position": [
+        -8420,
+        -420,
+        4
+      ],
+      "yaw": 90,
+      "scale": 0.8,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "PipeBundle",
+      "position": [
+        -7580,
+        -390,
+        4
+      ],
+      "yaw": 90,
+      "scale": 0.7,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        6278.132037667856,
+        2111.190265655049,
+        -5
+      ],
+      "yaw": 74.95127538764278,
+      "scale": 0.8817057373417605,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        6333.132037667856,
+        2071.190265655049,
+        -3
+      ],
+      "yaw": 329.98352630287104,
+      "scale": 0.12189372994970721,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        6654.734150745867,
+        -2531.2675914705364,
+        -5
+      ],
+      "yaw": 123.05319743112112,
+      "scale": 0.585180000775822,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        10148.83048949351,
+        -1497.5344782005106,
+        -5
+      ],
+      "yaw": 351.1517358446781,
+      "scale": 0.6333611467471523,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        10203.83048949351,
+        -1537.5344782005106,
+        -3
+      ],
+      "yaw": 328.15963292466506,
+      "scale": 0.08187111264006217,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        5869.657381770174,
+        2567.676453948102,
+        -5
+      ],
+      "yaw": 287.8396128986472,
+      "scale": 0.5795219699998447,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        5852.104444561495,
+        -1770.7264030604156,
+        -5
+      ],
+      "yaw": 23.043204194969412,
+      "scale": 0.6645531119348931,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        10382.163667025172,
+        2173.50871291316,
+        -5
+      ],
+      "yaw": 54.95311223611482,
+      "scale": 0.5957765821383382,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        10437.163667025172,
+        2133.50871291316,
+        -3
+      ],
+      "yaw": 198.5835888094416,
+      "scale": 0.08769049140736382,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        8192.971355270227,
+        -2409.1342482762507,
+        -5
+      ],
+      "yaw": 240.6056540059025,
+      "scale": 0.6368661994967183,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        9634.904766762065,
+        2116.453770466036,
+        -5
+      ],
+      "yaw": 204.02844524507935,
+      "scale": 0.6940978872815075,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        7647.327771549999,
+        -2142.555055523987,
+        -5
+      ],
+      "yaw": 268.15928847842537,
+      "scale": 0.8757231482492669,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        5599.188334792987,
+        2332.0672495273675,
+        -5
+      ],
+      "yaw": 123.94539042632775,
+      "scale": 0.7559447891805247,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        5654.188334792987,
+        2292.0672495273675,
+        -3
+      ],
+      "yaw": 273.9794496759073,
+      "scale": 0.10977416796337602,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        10410.318048568124,
+        931.9339885273112,
+        -5
+      ],
+      "yaw": 69.62973753072549,
+      "scale": 0.770042918791189,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        10259.93161972432,
+        2389.0322523458317,
+        -5
+      ],
+      "yaw": 281.7363506638306,
+      "scale": 0.6677466189190521,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        6701.93738377338,
+        2054.3224896357433,
+        -5
+      ],
+      "yaw": 327.241215306653,
+      "scale": 0.8248254155049288,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        6756.93738377338,
+        2014.3224896357433,
+        -3
+      ],
+      "yaw": 42.44535558377683,
+      "scale": 0.11510025196396997,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        9691.311462852986,
+        2376.36083235348,
+        -5
+      ],
+      "yaw": 212.06792843481352,
+      "scale": 0.8754858974855819,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        5953.571544001483,
+        -1119.833823156705,
+        -5
+      ],
+      "yaw": 165.39818771792787,
+      "scale": 0.8842129746272465,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        6008.571544001483,
+        -1159.833823156705,
+        -3
+      ],
+      "yaw": 306.21927333283855,
+      "scale": 0.10560510211722735,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        5647.936139037006,
+        1129.1754894109285,
+        -5
+      ],
+      "yaw": 217.1901876292262,
+      "scale": 0.9465891684739625,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        5966.423766393425,
+        1636.9532841970558,
+        -5
+      ],
+      "yaw": 227.61488499530373,
+      "scale": 0.5582494269632008,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        5474.333842959642,
+        1247.494722444751,
+        -5
+      ],
+      "yaw": 19.427218335612203,
+      "scale": 0.557243063112651,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        5529.333842959642,
+        1207.494722444751,
+        -3
+      ],
+      "yaw": 348.7772743516661,
+      "scale": 0.0888460343751923,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        8719.360034918815,
+        1892.431031556881,
+        -5
+      ],
+      "yaw": 273.69842248244174,
+      "scale": 0.6845434330873413,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        8774.360034918815,
+        1852.431031556881,
+        -3
+      ],
+      "yaw": 37.698939853303585,
+      "scale": 0.11473776573156153,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        6234.811133543274,
+        1861.8053859776337,
+        -5
+      ],
+      "yaw": 92.51804242461421,
+      "scale": 0.5735446350100314,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        10379.934351240961,
+        1044.1836295853386,
+        -5
+      ],
+      "yaw": 237.92012035768548,
+      "scale": 0.8103466837560398,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        10434.934351240961,
+        1004.1836295853386,
+        -3
+      ],
+      "yaw": 292.39894981470957,
+      "scale": 0.09764649499421535,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        10374.798821958757,
+        1678.9510102207269,
+        -5
+      ],
+      "yaw": 35.82923093602489,
+      "scale": 0.6699785887091131,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        10429.798821958757,
+        1638.9510102207269,
+        -3
+      ],
+      "yaw": 2.114686635670582,
+      "scale": 0.10282665477610382,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        5444.934348651579,
+        1224.9481603890517,
+        -5
+      ],
+      "yaw": 92.88655602206491,
+      "scale": 0.8431230963065519,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        10343.027095438581,
+        869.8873533647538,
+        -5
+      ],
+      "yaw": 166.49531867498146,
+      "scale": 0.6329538565022328,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        5314.263708918754,
+        723.5369416732483,
+        -5
+      ],
+      "yaw": 282.97494472933465,
+      "scale": 0.6279637747980995,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        5740.572244900273,
+        -494.74831011987453,
+        -5
+      ],
+      "yaw": 44.64614416133467,
+      "scale": 0.8093250336435825,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        5795.572244900273,
+        -534.7483101198745,
+        -3
+      ],
+      "yaw": 105.03899666431484,
+      "scale": 0.12502767632297695,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        5933.041495357287,
+        1328.4988606857073,
+        -5
+      ],
+      "yaw": 302.94909709503384,
+      "scale": 0.7789828909128551,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        10367.710112342631,
+        -1389.5288948922257,
+        -5
+      ],
+      "yaw": 158.00070790292156,
+      "scale": 0.8330685386065603,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        9750.907539287742,
+        952.9874686080948,
+        -5
+      ],
+      "yaw": 247.10415911239693,
+      "scale": 0.5625465472063516,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        7207.232476788151,
+        -1917.7011992826351,
+        -5
+      ],
+      "yaw": 29.30962772799223,
+      "scale": 0.6743331580960842,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        7262.232476788151,
+        -1957.7011992826351,
+        -3
+      ],
+      "yaw": 252.26506266866366,
+      "scale": 0.1347278247895924,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        5747.897211245169,
+        -1111.5228997762808,
+        -5
+      ],
+      "yaw": 13.24212069831872,
+      "scale": 0.5817102985634394,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        6296.7955198040145,
+        1605.9141422248276,
+        -5
+      ],
+      "yaw": 182.5339953774093,
+      "scale": 0.8099726689531968,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        8407.562859030495,
+        -2464.6339047467904,
+        -5
+      ],
+      "yaw": 310.9578333103303,
+      "scale": 0.8598266355971634,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        8462.562859030495,
+        -2504.6339047467904,
+        -3
+      ],
+      "yaw": 216.67990244880775,
+      "scale": 0.12099999288545563,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        10181.16561934912,
+        2355.0330610409183,
+        -5
+      ],
+      "yaw": 336.45896218355745,
+      "scale": 0.7664389363300932,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        9889.291076571744,
+        923.791187468752,
+        -5
+      ],
+      "yaw": 261.9894180618131,
+      "scale": 0.687636092403789,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        5831.440147021789,
+        -602.4774227362452,
+        -5
+      ],
+      "yaw": 346.07875342014404,
+      "scale": 0.6494185584747197,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        5886.440147021789,
+        -642.4774227362452,
+        -3
+      ],
+      "yaw": 119.06204645172697,
+      "scale": 0.08670665692431623,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        5619.542818664525,
+        2032.772223707586,
+        -5
+      ],
+      "yaw": 263.43074279416624,
+      "scale": 0.5842670750750367,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        9914.602252522187,
+        1850.6736073219845,
+        -5
+      ],
+      "yaw": 69.3839154917402,
+      "scale": 0.6627688660416128,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        9969.602252522187,
+        1810.6736073219845,
+        -3
+      ],
+      "yaw": 296.16429934887213,
+      "scale": 0.1132596340227227,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        6164.3061355124755,
+        1982.7101826705075,
+        -5
+      ],
+      "yaw": 91.3824080833746,
+      "scale": 0.9415146802830416,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        10642.598493891604,
+        1684.736252122083,
+        -5
+      ],
+      "yaw": 107.73558084409973,
+      "scale": 0.6741350531857752,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        10697.598493891604,
+        1644.736252122083,
+        -3
+      ],
+      "yaw": 212.92071969066023,
+      "scale": 0.0973409731100042,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        6370.819328159704,
+        -925.7835032952194,
+        -5
+      ],
+      "yaw": 253.99189604565683,
+      "scale": 0.5514760342437981,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        5921.100240688319,
+        -2540.377024575281,
+        -5
+      ],
+      "yaw": 78.6466993411886,
+      "scale": 0.786536450018011,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        5976.100240688319,
+        -2580.377024575281,
+        -3
+      ],
+      "yaw": 35.0763137851245,
+      "scale": 0.1342529468761052,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        7244.610956552636,
+        -2421.8407354374663,
+        -5
+      ],
+      "yaw": 15.929640678076469,
+      "scale": 0.9430533902963085,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        7299.610956552636,
+        -2461.8407354374663,
+        -3
+      ],
+      "yaw": 312.2992628373259,
+      "scale": 0.1043394378131118,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        8669.028651465344,
+        -2487.158836839776,
+        -5
+      ],
+      "yaw": 92.96437442816307,
+      "scale": 0.8042673318667775,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        6204.5679215539585,
+        1506.125370738414,
+        -5
+      ],
+      "yaw": 71.06571372545635,
+      "scale": 0.6849497253450091,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        10504.294327634596,
+        866.4506337189346,
+        -5
+      ],
+      "yaw": 315.0425638358319,
+      "scale": 0.7775973747919646,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        10559.294327634596,
+        826.4506337189346,
+        -3
+      ],
+      "yaw": 56.40679345068993,
+      "scale": 0.11779400202306906,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        5837.461418663316,
+        -1346.4274176188967,
+        -5
+      ],
+      "yaw": 20.11472790551054,
+      "scale": 0.8465112652363274,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        7119.179459618661,
+        -1987.150807894961,
+        -5
+      ],
+      "yaw": 293.9282252948219,
+      "scale": 0.6767066572969558,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        8267.534390685547,
+        -2409.670095157457,
+        -5
+      ],
+      "yaw": 198.744930615459,
+      "scale": 0.8787719590508533,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        10559.420631090643,
+        -1275.8954137092528,
+        -5
+      ],
+      "yaw": 6.57138292955143,
+      "scale": 0.9238777715066191,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "DryScrub",
+      "position": [
+        6635.221013411107,
+        -1630.9346375265904,
+        -5
+      ],
+      "yaw": 121.02915552648501,
+      "scale": 0.7301285928249244,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "SupplyCrates",
+      "position": [
+        7580,
+        -420,
+        4
+      ],
+      "yaw": 90,
+      "scale": 0.8,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "PipeBundle",
+      "position": [
+        8420,
+        -390,
+        4
+      ],
+      "yaw": 90,
+      "scale": 0.7,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "PipeBundle",
+      "position": [
+        -7270,
+        1360,
+        5
+      ],
+      "yaw": 90,
+      "scale": 0.65,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "SupplyCrates",
+      "position": [
+        -7720,
+        1820,
+        5
+      ],
+      "yaw": 0,
+      "scale": 0.6,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "PipeBundle",
+      "position": [
+        7730,
+        1360,
+        5
+      ],
+      "yaw": 90,
+      "scale": 0.65,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "SupplyCrates",
+      "position": [
+        7280,
+        1820,
+        5
+      ],
+      "yaw": 0,
+      "scale": 0.6,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "SupplyCrates",
+      "position": [
+        1200,
+        -4270,
+        8
+      ],
+      "yaw": 90,
+      "scale": 0.65,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "LowBarrier",
+      "position": [
+        1800,
+        -4770,
+        4
+      ],
+      "yaw": 90,
+      "scale": 0.65,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "SupplyCrates",
+      "position": [
+        1200,
+        -2770,
+        8
+      ],
+      "yaw": 90,
+      "scale": 0.65,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "LowBarrier",
+      "position": [
+        1800,
+        -3270,
+        4
+      ],
+      "yaw": 90,
+      "scale": 0.65,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "SupplyCrates",
+      "position": [
+        1200,
+        -1270,
+        8
+      ],
+      "yaw": 90,
+      "scale": 0.65,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "LowBarrier",
+      "position": [
+        1800,
+        -1770,
+        4
+      ],
+      "yaw": 90,
+      "scale": 0.65,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "SupplyCrates",
+      "position": [
+        1200,
+        230,
+        8
+      ],
+      "yaw": 90,
+      "scale": 0.65,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "LowBarrier",
+      "position": [
+        1800,
+        -270,
+        4
+      ],
+      "yaw": 90,
+      "scale": 0.65,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "SupplyCrates",
+      "position": [
+        1200,
+        1730,
+        8
+      ],
+      "yaw": 90,
+      "scale": 0.65,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "LowBarrier",
+      "position": [
+        1800,
+        1230,
+        4
+      ],
+      "yaw": 90,
+      "scale": 0.65,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "SupplyCrates",
+      "position": [
+        1200,
+        3230,
+        8
+      ],
+      "yaw": 90,
+      "scale": 0.65,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "LowBarrier",
+      "position": [
+        1800,
+        2730,
+        4
+      ],
+      "yaw": 90,
+      "scale": 0.65,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "SupplyCrates",
+      "position": [
+        1200,
+        4730,
+        8
+      ],
+      "yaw": 90,
+      "scale": 0.65,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "LowBarrier",
+      "position": [
+        1800,
+        4230,
+        4
+      ],
+      "yaw": 90,
+      "scale": 0.65,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "SupplyCrates",
+      "position": [
+        2700,
+        -4270,
+        8
+      ],
+      "yaw": 90,
+      "scale": 0.65,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "LowBarrier",
+      "position": [
+        3300,
+        -4770,
+        4
+      ],
+      "yaw": 90,
+      "scale": 0.65,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "SupplyCrates",
+      "position": [
+        2700,
+        -2770,
+        8
+      ],
+      "yaw": 90,
+      "scale": 0.65,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "LowBarrier",
+      "position": [
+        3300,
+        -3270,
+        4
+      ],
+      "yaw": 90,
+      "scale": 0.65,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "SupplyCrates",
+      "position": [
+        2700,
+        -1270,
+        8
+      ],
+      "yaw": 90,
+      "scale": 0.65,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "LowBarrier",
+      "position": [
+        3300,
+        -1770,
+        4
+      ],
+      "yaw": 90,
+      "scale": 0.65,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "SupplyCrates",
+      "position": [
+        2700,
+        230,
+        8
+      ],
+      "yaw": 90,
+      "scale": 0.65,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "LowBarrier",
+      "position": [
+        3300,
+        -270,
+        4
+      ],
+      "yaw": 90,
+      "scale": 0.65,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "SupplyCrates",
+      "position": [
+        2700,
+        1730,
+        8
+      ],
+      "yaw": 90,
+      "scale": 0.65,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "LowBarrier",
+      "position": [
+        3300,
+        1230,
+        4
+      ],
+      "yaw": 90,
+      "scale": 0.65,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "SupplyCrates",
+      "position": [
+        2700,
+        3230,
+        8
+      ],
+      "yaw": 90,
+      "scale": 0.65,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "LowBarrier",
+      "position": [
+        3300,
+        2730,
+        4
+      ],
+      "yaw": 90,
+      "scale": 0.65,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "SupplyCrates",
+      "position": [
+        2700,
+        4730,
+        8
+      ],
+      "yaw": 90,
+      "scale": 0.65,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "LowBarrier",
+      "position": [
+        3300,
+        4230,
+        4
+      ],
+      "yaw": 90,
+      "scale": 0.65,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "SupplyCrates",
+      "position": [
+        4200,
+        -4270,
+        8
+      ],
+      "yaw": 90,
+      "scale": 0.65,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "LowBarrier",
+      "position": [
+        4800,
+        -4770,
+        4
+      ],
+      "yaw": 90,
+      "scale": 0.65,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "SupplyCrates",
+      "position": [
+        4200,
+        -2770,
+        8
+      ],
+      "yaw": 90,
+      "scale": 0.65,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "LowBarrier",
+      "position": [
+        4800,
+        -3270,
+        4
+      ],
+      "yaw": 90,
+      "scale": 0.65,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "SupplyCrates",
+      "position": [
+        4200,
+        -1270,
+        8
+      ],
+      "yaw": 90,
+      "scale": 0.65,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "LowBarrier",
+      "position": [
+        4800,
+        -1770,
+        4
+      ],
+      "yaw": 90,
+      "scale": 0.65,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "SupplyCrates",
+      "position": [
+        4200,
+        230,
+        8
+      ],
+      "yaw": 90,
+      "scale": 0.65,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "LowBarrier",
+      "position": [
+        4800,
+        -270,
+        4
+      ],
+      "yaw": 90,
+      "scale": 0.65,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "SupplyCrates",
+      "position": [
+        4200,
+        1730,
+        8
+      ],
+      "yaw": 90,
+      "scale": 0.65,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "LowBarrier",
+      "position": [
+        4800,
+        1230,
+        4
+      ],
+      "yaw": 90,
+      "scale": 0.65,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "SupplyCrates",
+      "position": [
+        4200,
+        3230,
+        8
+      ],
+      "yaw": 90,
+      "scale": 0.65,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "LowBarrier",
+      "position": [
+        4800,
+        2730,
+        4
+      ],
+      "yaw": 90,
+      "scale": 0.65,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "SupplyCrates",
+      "position": [
+        4200,
+        4730,
+        8
+      ],
+      "yaw": 90,
+      "scale": 0.65,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "LowBarrier",
+      "position": [
+        4800,
+        4230,
+        4
+      ],
+      "yaw": 90,
+      "scale": 0.65,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "SupplyCrates",
+      "position": [
+        5700,
+        -4270,
+        8
+      ],
+      "yaw": 90,
+      "scale": 0.65,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "LowBarrier",
+      "position": [
+        6300,
+        -4770,
+        4
+      ],
+      "yaw": 90,
+      "scale": 0.65,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "SupplyCrates",
+      "position": [
+        5700,
+        -2770,
+        8
+      ],
+      "yaw": 90,
+      "scale": 0.65,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "LowBarrier",
+      "position": [
+        6300,
+        -3270,
+        4
+      ],
+      "yaw": 90,
+      "scale": 0.65,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "SupplyCrates",
+      "position": [
+        5700,
+        -1270,
+        8
+      ],
+      "yaw": 90,
+      "scale": 0.65,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "LowBarrier",
+      "position": [
+        6300,
+        -1770,
+        4
+      ],
+      "yaw": 90,
+      "scale": 0.65,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "SupplyCrates",
+      "position": [
+        5700,
+        230,
+        8
+      ],
+      "yaw": 90,
+      "scale": 0.65,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "LowBarrier",
+      "position": [
+        6300,
+        -270,
+        4
+      ],
+      "yaw": 90,
+      "scale": 0.65,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "SupplyCrates",
+      "position": [
+        5700,
+        1730,
+        8
+      ],
+      "yaw": 90,
+      "scale": 0.65,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "LowBarrier",
+      "position": [
+        6300,
+        1230,
+        4
+      ],
+      "yaw": 90,
+      "scale": 0.65,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "SupplyCrates",
+      "position": [
+        5700,
+        3230,
+        8
+      ],
+      "yaw": 90,
+      "scale": 0.65,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "LowBarrier",
+      "position": [
+        6300,
+        2730,
+        4
+      ],
+      "yaw": 90,
+      "scale": 0.65,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "SupplyCrates",
+      "position": [
+        5700,
+        4730,
+        8
+      ],
+      "yaw": 90,
+      "scale": 0.65,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "LowBarrier",
+      "position": [
+        6300,
+        4230,
+        4
+      ],
+      "yaw": 90,
+      "scale": 0.65,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        -12350,
+        -8200,
+        0
+      ],
+      "yaw": 247.61769681072494,
+      "scale": 1.4714823322964563,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        -12350,
+        -7550,
+        0
+      ],
+      "yaw": 41.71099970274393,
+      "scale": 1.5500053169515122,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        -12350,
+        -6900,
+        0
+      ],
+      "yaw": 121.14209695399285,
+      "scale": 1.2755367262350497,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        -12350,
+        -6250,
+        0
+      ],
+      "yaw": 324.6198939481294,
+      "scale": 1.3608639278246326,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        -12350,
+        -5600,
+        0
+      ],
+      "yaw": 136.7978580371907,
+      "scale": 1.285037783226433,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        -12350,
+        -4950,
+        0
+      ],
+      "yaw": 354.5944982546091,
+      "scale": 1.5793444411463753,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        -12350,
+        -4300,
+        0
+      ],
+      "yaw": 45.79779938727768,
+      "scale": 1.4173039101301148,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        -12350,
+        -3650,
+        0
+      ],
+      "yaw": 163.4747003202043,
+      "scale": 1.5067905293259034,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        -12350,
+        -3000,
+        0
+      ],
+      "yaw": 254.61865095466743,
+      "scale": 1.1793188260719258,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        -12350,
+        -2350,
+        0
+      ],
+      "yaw": 357.24881856038064,
+      "scale": 1.4893400898467868,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        -12350,
+        -1700,
+        0
+      ],
+      "yaw": 86.98385953076918,
+      "scale": 1.6092513357576559,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        -12350,
+        -1050,
+        0
+      ],
+      "yaw": 21.02447425139008,
+      "scale": 1.106208776926207,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        -12350,
+        -400,
+        0
+      ],
+      "yaw": 29.572108557672657,
+      "scale": 1.5851705572093528,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        -12350,
+        250,
+        0
+      ],
+      "yaw": 258.48496184106256,
+      "scale": 1.6808585072650803,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        -12350,
+        900,
+        0
+      ],
+      "yaw": 188.8994853769515,
+      "scale": 1.5539029511598748,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        -12350,
+        1550,
+        0
+      ],
+      "yaw": 355.66795182683563,
+      "scale": 1.3561959919014588,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        -12350,
+        2200,
+        0
+      ],
+      "yaw": 273.5147220739531,
+      "scale": 1.2881106779124825,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        -12350,
+        2850,
+        0
+      ],
+      "yaw": 108.1972291999954,
+      "scale": 1.4939544376527523,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        -12350,
+        3500,
+        0
+      ],
+      "yaw": 303.9209417337769,
+      "scale": 1.4055018545276055,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        -12350,
+        4150,
+        0
+      ],
+      "yaw": 124.50755216710373,
+      "scale": 1.7955485467502121,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        -12350,
+        4800,
+        0
+      ],
+      "yaw": 199.85024263966,
+      "scale": 1.441683587657046,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        -12350,
+        5450,
+        0
+      ],
+      "yaw": 311.3711655175707,
+      "scale": 1.1864439105507611,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        -12350,
+        6100,
+        0
+      ],
+      "yaw": 126.05962385354613,
+      "scale": 1.6855992678940066,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        -12350,
+        6750,
+        0
+      ],
+      "yaw": 251.91702487829718,
+      "scale": 1.3191152616239847,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        -12350,
+        7400,
+        0
+      ],
+      "yaw": 168.57926664661954,
+      "scale": 1.6765385624046092,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        -12350,
+        8050,
+        0
+      ],
+      "yaw": 4.276821005453337,
+      "scale": 1.3239653935689295,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        12350,
+        -8200,
+        0
+      ],
+      "yaw": 211.70410642791273,
+      "scale": 1.179712911589759,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        12350,
+        -7550,
+        0
+      ],
+      "yaw": 188.78969961216927,
+      "scale": 1.7394817113695256,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        12350,
+        -6900,
+        0
+      ],
+      "yaw": 224.8319622406367,
+      "scale": 1.504562470397544,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        12350,
+        -6250,
+        0
+      ],
+      "yaw": 47.16797688991885,
+      "scale": 1.552020016907688,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        12350,
+        -5600,
+        0
+      ],
+      "yaw": 300.81412045577866,
+      "scale": 1.302295053167059,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        12350,
+        -4950,
+        0
+      ],
+      "yaw": 62.45346341909816,
+      "scale": 1.3659631174438767,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        12350,
+        -4300,
+        0
+      ],
+      "yaw": 291.7136531769062,
+      "scale": 1.2065947873308989,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        12350,
+        -3650,
+        0
+      ],
+      "yaw": 32.809793191194835,
+      "scale": 1.7521991764454086,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        12350,
+        -3000,
+        0
+      ],
+      "yaw": 122.14647492398002,
+      "scale": 1.4402789406836147,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        12350,
+        -2350,
+        0
+      ],
+      "yaw": 191.3520137405946,
+      "scale": 1.4686508636521944,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        12350,
+        -1700,
+        0
+      ],
+      "yaw": 148.5461685236893,
+      "scale": 1.3705437242293785,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        12350,
+        -1050,
+        0
+      ],
+      "yaw": 52.022338248684584,
+      "scale": 1.4734312921799853,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        12350,
+        -400,
+        0
+      ],
+      "yaw": 120.6078553495262,
+      "scale": 1.5502183306606028,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        12350,
+        250,
+        0
+      ],
+      "yaw": 35.93716414991832,
+      "scale": 1.4255242621616124,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        12350,
+        900,
+        0
+      ],
+      "yaw": 125.41421387958047,
+      "scale": 1.5432772762384785,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        12350,
+        1550,
+        0
+      ],
+      "yaw": 225.0905154183724,
+      "scale": 1.730763335668907,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        12350,
+        2200,
+        0
+      ],
+      "yaw": 139.32304000320207,
+      "scale": 1.2432252731161224,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        12350,
+        2850,
+        0
+      ],
+      "yaw": 1.2890531671355054,
+      "scale": 1.7388270795397336,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        12350,
+        3500,
+        0
+      ],
+      "yaw": 238.91342384083174,
+      "scale": 1.7553185526251864,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        12350,
+        4150,
+        0
+      ],
+      "yaw": 223.93475376795536,
+      "scale": 1.7975592584523834,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        12350,
+        4800,
+        0
+      ],
+      "yaw": 178.17962656102753,
+      "scale": 1.3542742657736904,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        12350,
+        5450,
+        0
+      ],
+      "yaw": 239.84826743167568,
+      "scale": 1.1320756571364359,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        12350,
+        6100,
+        0
+      ],
+      "yaw": 351.52026682132026,
+      "scale": 1.1404363917862614,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        12350,
+        6750,
+        0
+      ],
+      "yaw": 292.20204462365365,
+      "scale": 1.27911641884996,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        12350,
+        7400,
+        0
+      ],
+      "yaw": 344.1337141662794,
+      "scale": 1.5217062331651994,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "RockCluster",
+      "position": [
+        12350,
+        8050,
+        0
+      ],
+      "yaw": 189.1573884107981,
+      "scale": 1.4984236790573455,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "CurbStrip",
+      "position": [
+        -10400,
+        -3820,
+        0
+      ],
+      "yaw": 0,
+      "scale": 0.85,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "CurbStrip",
+      "position": [
+        -9200,
+        -3820,
+        0
+      ],
+      "yaw": 0,
+      "scale": 0.85,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "CurbStrip",
+      "position": [
+        -8000,
+        -3820,
+        0
+      ],
+      "yaw": 0,
+      "scale": 0.85,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "CurbStrip",
+      "position": [
+        -6800,
+        -3820,
+        0
+      ],
+      "yaw": 0,
+      "scale": 0.85,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "CurbStrip",
+      "position": [
+        -5600,
+        -3820,
+        0
+      ],
+      "yaw": 0,
+      "scale": 0.85,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "CurbStrip",
+      "position": [
+        0,
+        -3820,
+        0
+      ],
+      "yaw": 0,
+      "scale": 0.85,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "CurbStrip",
+      "position": [
+        1200,
+        -3820,
+        0
+      ],
+      "yaw": 0,
+      "scale": 0.85,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "CurbStrip",
+      "position": [
+        2400,
+        -3820,
+        0
+      ],
+      "yaw": 0,
+      "scale": 0.85,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "CurbStrip",
+      "position": [
+        3600,
+        -3820,
+        0
+      ],
+      "yaw": 0,
+      "scale": 0.85,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "CurbStrip",
+      "position": [
+        4800,
+        -3820,
+        0
+      ],
+      "yaw": 0,
+      "scale": 0.85,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "CurbStrip",
+      "position": [
+        7200,
+        -3820,
+        0
+      ],
+      "yaw": 0,
+      "scale": 0.85,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "CurbStrip",
+      "position": [
+        8400,
+        -3820,
+        0
+      ],
+      "yaw": 0,
+      "scale": 0.85,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "CurbStrip",
+      "position": [
+        9600,
+        -3820,
+        0
+      ],
+      "yaw": 0,
+      "scale": 0.85,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "CurbStrip",
+      "position": [
+        -10400,
+        2580,
+        0
+      ],
+      "yaw": 0,
+      "scale": 0.85,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "CurbStrip",
+      "position": [
+        -9200,
+        2580,
+        0
+      ],
+      "yaw": 0,
+      "scale": 0.85,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "CurbStrip",
+      "position": [
+        -8000,
+        2580,
+        0
+      ],
+      "yaw": 0,
+      "scale": 0.85,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "CurbStrip",
+      "position": [
+        -6800,
+        2580,
+        0
+      ],
+      "yaw": 0,
+      "scale": 0.85,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "CurbStrip",
+      "position": [
+        -5600,
+        2580,
+        0
+      ],
+      "yaw": 0,
+      "scale": 0.85,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "CurbStrip",
+      "position": [
+        0,
+        2580,
+        0
+      ],
+      "yaw": 0,
+      "scale": 0.85,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "CurbStrip",
+      "position": [
+        1200,
+        2580,
+        0
+      ],
+      "yaw": 0,
+      "scale": 0.85,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "CurbStrip",
+      "position": [
+        2400,
+        2580,
+        0
+      ],
+      "yaw": 0,
+      "scale": 0.85,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "CurbStrip",
+      "position": [
+        3600,
+        2580,
+        0
+      ],
+      "yaw": 0,
+      "scale": 0.85,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "CurbStrip",
+      "position": [
+        4800,
+        2580,
+        0
+      ],
+      "yaw": 0,
+      "scale": 0.85,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "CurbStrip",
+      "position": [
+        7200,
+        2580,
+        0
+      ],
+      "yaw": 0,
+      "scale": 0.85,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "CurbStrip",
+      "position": [
+        8400,
+        2580,
+        0
+      ],
+      "yaw": 0,
+      "scale": 0.85,
+      "collision": "NoCollision"
+    },
+    {
+      "mesh": "CurbStrip",
+      "position": [
+        9600,
+        2580,
+        0
+      ],
+      "yaw": 0,
+      "scale": 0.85,
+      "collision": "NoCollision"
+    }
+  ],
+  "retained_original_actor_count": 1009,
+  "navigation": "No changes to gameplay layout, unit structures, water or blockers",
+  "result": "PASS"
+}

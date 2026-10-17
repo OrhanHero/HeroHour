@@ -1,0 +1,288 @@
+{
+  "generator": "build_district_textures.py",
+  "seed": 241014,
+  "resolution": 1024,
+  "source": "Original synthesized periodic fields; no source game art",
+  "normal_convention": "DirectX; +X right, +Y tangent down; green inverted relative to OpenGL",
+  "color_space": {
+    "Albedo": "sRGB",
+    "Normal": "linear",
+    "Roughness": "linear"
+  },
+  "metallic": "0 for all except exposed-metal wear; Metal is painted metal and uses 0",
+  "materials": {
+    "Sand": {
+      "tile_meters": 4.0,
+      "nominal_albedo_srgb_8bit": [
+        176,
+        145,
+        105
+      ],
+      "mean_albedo_srgb_8bit": [
+        175.02,
+        144.09,
+        104.18
+      ],
+      "albedo_channel_range": [
+        [
+          164,
+          186
+        ],
+        [
+          134,
+          155
+        ],
+        [
+          94,
+          114
+        ]
+      ],
+      "roughness_mean": 0.8683694914275525,
+      "normal_strength": 0.28,
+      "files": {
+        "Albedo": "Sand/T_Sand_Albedo.png",
+        "Normal": "Sand/T_Sand_Normal.png",
+        "Roughness": "Sand/T_Sand_Roughness.png"
+      },
+      "recommended_tint_srgb": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "Asphalt": {
+      "tile_meters": 3.0,
+      "nominal_albedo_srgb_8bit": [
+        57,
+        59,
+        60
+      ],
+      "mean_albedo_srgb_8bit": [
+        57.1,
+        59.1,
+        60.1
+      ],
+      "albedo_channel_range": [
+        [
+          52,
+          66
+        ],
+        [
+          54,
+          68
+        ],
+        [
+          55,
+          69
+        ]
+      ],
+      "roughness_mean": 0.8778566921458525,
+      "normal_strength": 0.27,
+      "files": {
+        "Albedo": "Asphalt/T_Asphalt_Albedo.png",
+        "Normal": "Asphalt/T_Asphalt_Normal.png",
+        "Roughness": "Asphalt/T_Asphalt_Roughness.png"
+      },
+      "recommended_tint_srgb": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "Concrete": {
+      "tile_meters": 4.0,
+      "nominal_albedo_srgb_8bit": [
+        143,
+        140,
+        128
+      ],
+      "mean_albedo_srgb_8bit": [
+        143.01,
+        139.9,
+        127.77
+      ],
+      "albedo_channel_range": [
+        [
+          131,
+          153
+        ],
+        [
+          129,
+          148
+        ],
+        [
+          118,
+          135
+        ]
+      ],
+      "roughness_mean": 0.7976163714539771,
+      "normal_strength": 0.23,
+      "files": {
+        "Albedo": "Concrete/T_Concrete_Albedo.png",
+        "Normal": "Concrete/T_Concrete_Normal.png",
+        "Roughness": "Concrete/T_Concrete_Roughness.png"
+      },
+      "recommended_tint_srgb": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "Plaster": {
+      "tile_meters": 3.0,
+      "nominal_albedo_srgb_8bit": [
+        161,
+        153,
+        134
+      ],
+      "mean_albedo_srgb_8bit": [
+        160.46,
+        152.46,
+        133.46
+      ],
+      "albedo_channel_range": [
+        [
+          154,
+          169
+        ],
+        [
+          146,
+          160
+        ],
+        [
+          128,
+          140
+        ]
+      ],
+      "roughness_mean": 0.8375928542193245,
+      "normal_strength": 0.16,
+      "files": {
+        "Albedo": "Plaster/T_Plaster_Albedo.png",
+        "Normal": "Plaster/T_Plaster_Normal.png",
+        "Roughness": "Plaster/T_Plaster_Roughness.png"
+      },
+      "recommended_tint_srgb": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "Metal": {
+      "tile_meters": 2.0,
+      "nominal_albedo_srgb_8bit": [
+        55,
+        60,
+        61
+      ],
+      "mean_albedo_srgb_8bit": [
+        54.29,
+        59.29,
+        60.29
+      ],
+      "albedo_channel_range": [
+        [
+          51,
+          58
+        ],
+        [
+          56,
+          63
+        ],
+        [
+          57,
+          64
+        ]
+      ],
+      "roughness_mean": 0.5872241786881989,
+      "normal_strength": 0.1,
+      "files": {
+        "Albedo": "Metal/T_Metal_Albedo.png",
+        "Normal": "Metal/T_Metal_Normal.png",
+        "Roughness": "Metal/T_Metal_Roughness.png"
+      },
+      "recommended_tint_srgb": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "Gravel": {
+      "tile_meters": 4.0,
+      "nominal_albedo_srgb_8bit": [
+        137,
+        116,
+        87
+      ],
+      "mean_albedo_srgb_8bit": [
+        138.55,
+        117.29,
+        87.59
+      ],
+      "albedo_channel_range": [
+        [
+          108,
+          192
+        ],
+        [
+          89,
+          166
+        ],
+        [
+          63,
+          125
+        ]
+      ],
+      "roughness_mean": 0.881521920596852,
+      "normal_strength": 1.7,
+      "files": {
+        "Albedo": "Gravel/T_Gravel_Albedo.png",
+        "Normal": "Gravel/T_Gravel_Normal.png",
+        "Roughness": "Gravel/T_Gravel_Roughness.png"
+      },
+      "recommended_tint_srgb": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "CompactedDirt": {
+      "tile_meters": 4.0,
+      "nominal_albedo_srgb_8bit": [
+        146,
+        121,
+        87
+      ],
+      "mean_albedo_srgb_8bit": [
+        144.79,
+        119.82,
+        85.82
+      ],
+      "albedo_channel_range": [
+        [
+          119,
+          201
+        ],
+        [
+          97,
+          172
+        ],
+        [
+          65,
+          125
+        ]
+      ],
+      "roughness_mean": 0.8398680780448166,
+      "normal_strength": 0.9,
+      "files": {
+        "Albedo": "CompactedDirt/T_CompactedDirt_Albedo.png",
+        "Normal": "CompactedDirt/T_CompactedDirt_Normal.png",
+        "Roughness": "CompactedDirt/T_CompactedDirt_Roughness.png"
+      },
+      "recommended_tint_srgb": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    }
+  }
+}

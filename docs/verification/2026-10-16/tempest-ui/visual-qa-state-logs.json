@@ -1,0 +1,43 @@
+[
+  {
+    "log": "Saved/Logs/Capture-InterfaceFixture-20261016-210233-396.log",
+    "sha256": "4a2eb5602672ab6ee9ba35c13f588250fb49182b1a37773105bdf91dfc9874d6",
+    "markers": [
+      "[2026.10.16-19.02.47:897][974]LogTemp: Display: UI_CAPTURE_FIXTURE state=Radar unnatural_fixture=1 result=PASS radar=1 power_current=210 power_required=90 production_rate=1.00 selected=1 queue=0 credits=828 group1=0",
+      "[2026.10.16-19.02.49:021][167]LogCore: Display: Tracing Screenshot \"InterfaceFixture\" taken with size: 1600 x 900"
+    ]
+  },
+  {
+    "log": "Saved/Logs/Capture-InterfaceFixture-20261016-210252-518.log",
+    "sha256": "47cb174585368edcbf28c2dcb9ca82dc6277a1be514720a27575d563628773a0",
+    "markers": [
+      "[2026.10.16-19.03.06:980][984]LogTemp: Display: UI_CAPTURE_FIXTURE state=LowPower unnatural_fixture=1 result=PASS radar=0 power_current=60 power_required=170 production_rate=0.50 selected=1 queue=0 credits=828 group1=0",
+      "[2026.10.16-19.03.08:089][163]LogCore: Display: Tracing Screenshot \"InterfaceFixture\" taken with size: 1280 x 720"
+    ]
+  },
+  {
+    "log": "Saved/Logs/Capture-InterfaceFixture-20261016-210311-517.log",
+    "sha256": "67e81ca6b3c15129809d61133a9fcab5d66c0dc659b3659651c6eeb6ace5a20e",
+    "markers": [
+      "[2026.10.16-19.03.26:014][957]LogTemp: Display: UI_CAPTURE_FIXTURE state=Multi unnatural_fixture=1 result=PASS radar=1 power_current=210 power_required=90 production_rate=1.00 selected=4 queue=0 credits=848 group1=4",
+      "[2026.10.16-19.03.27:131][134]LogCore: Display: Tracing Screenshot \"InterfaceFixture\" taken with size: 1280 x 720"
+    ]
+  },
+  {
+    "log": "Saved/Logs/Capture-InterfaceFixture-20261016-210330-681.log",
+    "sha256": "334d35a44ad02fd7578f666ddb45cdc3bdfa06afbb5eeffe7e0bf464f0bce73b",
+    "markers": [
+      "[2026.10.16-19.03.45:528][978]LogTemp: Display: UI_CAPTURE_FIXTURE state=Production unnatural_fixture=1 explicit_wallet_seed=1600 real_paid_orders=3 result=PASS",
+      "[2026.10.16-19.03.45:528][978]LogTemp: Display: UI_CAPTURE_FIXTURE state=Production unnatural_fixture=1 result=PASS radar=0 power_current=210 power_required=110 production_rate=1.00 selected=1 queue=3 credits=1300 group1=0",
+      "[2026.10.16-19.03.46:673][170]LogCore: Display: Tracing Screenshot \"InterfaceFixture\" taken with size: 1600 x 900"
+    ]
+  },
+  {
+    "log": "Saved/Logs/Capture-InterfaceFixture-20261016-210350-128.log",
+    "sha256": "c794ef313017e71f91fe1baa446baf6466908b9d4064a7a401f1e772f7ed71bd",
+    "markers": [
+      "[2026.10.16-19.04.04:615][900]LogTemp: Display: UI_CAPTURE_FIXTURE state=Tooltip unnatural_fixture=1 result=PASS radar=1 power_current=210 power_required=90 production_rate=1.00 selected=1 queue=0 credits=848 group1=0",
+      "[2026.10.16-19.04.05:742][ 83]LogCore: Display: Tracing Screenshot \"InterfaceFixture\" taken with size: 1600 x 900"
+    ]
+  }
+]

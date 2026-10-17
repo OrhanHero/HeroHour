@@ -1,0 +1,14 @@
+{
+  "purpose": "Single-object conditioning image for a local TRELLIS.2 test, not a mesh or gameplay screenshot",
+  "generator": "Built-in image_gen tool, no fallback CLI",
+  "reference": "E:/HeroHour/Art/Concepts/HH Art/Codex-Bild 1. Sept. 2026, 01_22_20.png",
+  "reference_subject": "Upper-right white/blue command HQ with satellite dish",
+  "prompt": "AegisHQ-TrellisInput-v1.prompt.txt",
+  "file": "AegisHQ-TrellisInput-v1.png",
+  "sha256": "c28f14775d447077c6a32b20bddc9a344cab4353b719966c190750f750ed020e",
+  "dimensions": [1536, 1024],
+  "mode": "RGBA",
+  "alpha_extrema": [0, 254],
+  "transparent_background_requested": true,
+  "limitations": "Generated reconstruction of an illustrated reference; does not prove hidden-side geometry or working game integration. The fitted foundation is intentionally part of the object."
+}

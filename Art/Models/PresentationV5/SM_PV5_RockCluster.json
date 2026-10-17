@@ -1,0 +1,27 @@
+{
+  "name": "SM_PV5_RockCluster",
+  "seed": 150151,
+  "triangles": 400,
+  "dimensions_m": [
+    2.281601905822754,
+    1.418348789215088,
+    0.7901592254638672
+  ],
+  "materials": [
+    "Dust"
+  ],
+  "pivot": "ground origin z=0",
+  "collision": "none",
+  "navigation": "decoration only; does not affect navigation",
+  "non_manifold_edges": 0,
+  "uv_mapping": "dominant plane; 1 UV unit = 1 metre",
+  "fbx_roundtrip": {
+    "passed": true,
+    "dimensions_m": [
+      2.281601905822754,
+      1.418348789215088,
+      0.7901592254638672
+    ]
+  },
+  "validation": "PASS"
+}
