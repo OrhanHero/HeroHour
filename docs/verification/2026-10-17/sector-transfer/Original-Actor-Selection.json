@@ -1,0 +1,2426 @@
+{
+  "schema": 1,
+  "status": "SELECTION_READY_NOT_IMPORTED",
+  "source_inventory": "C:\\Users\\Hero\\HeroHour\\Saved\\Research\\TempestMapTransfer\\Editor54\\tempest-editor-inventory-20261016T234355185979Z.json",
+  "source_inventory_sha256": "f89bd3a371620465fb1bc2ecbb0772a4d1cbcee13fa9b4dca04d3f7838e3a660",
+  "source_actor_count": 8279,
+  "anchor": {
+    "x": 14306.897261,
+    "y": 6533.27865,
+    "z": -158.965657
+  },
+  "bounds_xy_actor_origins": {
+    "min": {
+      "x": 13900,
+      "y": 5850
+    },
+    "max": {
+      "x": 15500,
+      "y": 7700
+    }
+  },
+  "mesh_paths": [
+    "/Game/Tempest/Props/Faction_Containers/SM_GDF_Container.SM_GDF_Container",
+    "/Game/Tempest/Props/GDFCutoffs/SM_AirtowerDetail_01.SM_AirtowerDetail_01",
+    "/Game/Tempest/Props/GDFCutoffs/SM_FactoryDetail_02.SM_FactoryDetail_02",
+    "/Game/Tempest/Props/GDF_Cutoff/SM_GDF_Powerplant_Prop_01.SM_GDF_Powerplant_Prop_01",
+    "/Game/Tempest/Props/ResearchProps/ResearchTasks_wallTrim_01.ResearchTasks_wallTrim_01",
+    "/Game/Tempest/Props/ResearchProps/ResearchTasks_wallTrim_02.ResearchTasks_wallTrim_02",
+    "/Game/Tempest/Props/ResearchProps/ResearchTasks_wallTrim_03.ResearchTasks_wallTrim_03",
+    "/Game/Tempest/Props/ResearchProps/ResearchTasks_wallTrim_04.ResearchTasks_wallTrim_04",
+    "/Game/Tempest/Props/ResearchProps/ResearchTasks_wallTrim_05.ResearchTasks_wallTrim_05",
+    "/Game/Tempest/Props/ResearchProps/ResearchTasks_wallTrim_07.ResearchTasks_wallTrim_07",
+    "/Game/Tempest/Props/ResearchProps/ResearchTasks_wallTrim_08.ResearchTasks_wallTrim_08",
+    "/Game/Tempest/Props/ResearchProps/SM_Research_WallPiece_x4.SM_Research_WallPiece_x4",
+    "/Game/Tempest/Props/ResearchProps/SM_Research_floorTileBorderMesh_01.SM_Research_floorTileBorderMesh_01",
+    "/Game/Tempest/Props/ResearchProps/SM_Research_floorTileBorderMesh_02.SM_Research_floorTileBorderMesh_02",
+    "/Game/Tempest/Props/ResearchProps/SM_Research_floorTileBorderMesh_03.SM_Research_floorTileBorderMesh_03",
+    "/Game/Tempest/Props/ResearchProps/SM_Research_floorTiles.SM_Research_floorTiles"
+  ],
+  "unique_mesh_paths_count": 16,
+  "actor_count": 38,
+  "actors": [
+    {
+      "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_149",
+      "class": "/Script/Engine.StaticMeshActor",
+      "label": "SM_Research_WallPiece_x79",
+      "location": {
+        "x": 14874.671703,
+        "y": 5895.404151,
+        "z": 0.000381
+      },
+      "scale": {
+        "x": 1.05,
+        "y": 1.0,
+        "z": 1.0
+      },
+      "rotation": {
+        "pitch": 0.0,
+        "yaw": 2e-06,
+        "roll": 0.0
+      },
+      "tags": [
+        "LAVolume",
+        "EmptyCamp",
+        "01",
+        "S",
+        "Area01"
+      ],
+      "components": [
+        {
+          "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_149.StaticMeshComponent0",
+          "class": "/Script/Engine.StaticMeshComponent",
+          "mesh": "/Game/Tempest/Props/ResearchProps/SM_Research_WallPiece_x4.SM_Research_WallPiece_x4",
+          "materials": [
+            "/Game/Tempest/Props/Trimsheets/Materials/ThematicTrimsheets/MI_TrimsHarbourCrane_light.MI_TrimsHarbourCrane_light",
+            "/Game/Tempest/Props/Trimsheets/Materials/GenericTrimsheets/Variations/MI_TrimsCoarseMetal_black.MI_TrimsCoarseMetal_black"
+          ]
+        }
+      ],
+      "level": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel",
+      "relative_location": {
+        "x": 567.7744419999999,
+        "y": -637.8744990000005,
+        "z": 158.966038
+      },
+      "mesh_source": "/Game/Tempest/Props/ResearchProps/SM_Research_WallPiece_x4.SM_Research_WallPiece_x4"
+    },
+    {
+      "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_513",
+      "class": "/Script/Engine.StaticMeshActor",
+      "label": "ResearchTasks_wallTrim_819",
+      "location": {
+        "x": 14519.544334,
+        "y": 5921.993656,
+        "z": 756.118161
+      },
+      "scale": {
+        "x": -2.5725,
+        "y": 2.5725,
+        "z": 2.5725
+      },
+      "rotation": {
+        "pitch": 0.0,
+        "yaw": -2.9999999924257273e-06,
+        "roll": 0.0
+      },
+      "tags": [
+        "LAVolume",
+        "EmptyCamp",
+        "01",
+        "S",
+        "Area01"
+      ],
+      "components": [
+        {
+          "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_513.StaticMeshComponent0",
+          "class": "/Script/Engine.StaticMeshComponent",
+          "mesh": "/Game/Tempest/Props/ResearchProps/ResearchTasks_wallTrim_01.ResearchTasks_wallTrim_01",
+          "materials": [
+            "/Game/Tempest/Props/Trimsheets/Materials/GenericTrimsheets/Variations/MI_TrimsCoarseMetal_01.MI_TrimsCoarseMetal_01",
+            "/Game/Tempest/Props/Trimsheets/Materials/ThematicTrimsheets/Variations/MI_TrimsHarbourCrane_grey.MI_TrimsHarbourCrane_grey"
+          ]
+        }
+      ],
+      "level": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel",
+      "relative_location": {
+        "x": 212.6470730000001,
+        "y": -611.2849940000006,
+        "z": 915.083818
+      },
+      "mesh_source": "/Game/Tempest/Props/ResearchProps/ResearchTasks_wallTrim_01.ResearchTasks_wallTrim_01"
+    },
+    {
+      "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_514",
+      "class": "/Script/Engine.StaticMeshActor",
+      "label": "ResearchTasks_wallTrim_820",
+      "location": {
+        "x": 14519.544334,
+        "y": 5921.993656,
+        "z": 756.118161
+      },
+      "scale": {
+        "x": -2.5725,
+        "y": 2.5725,
+        "z": 2.5725
+      },
+      "rotation": {
+        "pitch": 0.0,
+        "yaw": -2.9999999924257273e-06,
+        "roll": 0.0
+      },
+      "tags": [
+        "LAVolume",
+        "EmptyCamp",
+        "01",
+        "S",
+        "Area01"
+      ],
+      "components": [
+        {
+          "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_514.StaticMeshComponent0",
+          "class": "/Script/Engine.StaticMeshComponent",
+          "mesh": "/Game/Tempest/Props/ResearchProps/ResearchTasks_wallTrim_02.ResearchTasks_wallTrim_02",
+          "materials": [
+            "/Game/Tempest/Props/Trimsheets/Materials/GenericTrimsheets/Variations/MI_TrimsCoarseMetal_01.MI_TrimsCoarseMetal_01"
+          ]
+        }
+      ],
+      "level": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel",
+      "relative_location": {
+        "x": 212.6470730000001,
+        "y": -611.2849940000006,
+        "z": 915.083818
+      },
+      "mesh_source": "/Game/Tempest/Props/ResearchProps/ResearchTasks_wallTrim_02.ResearchTasks_wallTrim_02"
+    },
+    {
+      "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_515",
+      "class": "/Script/Engine.StaticMeshActor",
+      "label": "ResearchTasks_wallTrim_821",
+      "location": {
+        "x": 14519.544334,
+        "y": 5921.993656,
+        "z": 756.118161
+      },
+      "scale": {
+        "x": -2.5725,
+        "y": 2.5725,
+        "z": 2.5725
+      },
+      "rotation": {
+        "pitch": 0.0,
+        "yaw": -2.9999999924257273e-06,
+        "roll": 0.0
+      },
+      "tags": [
+        "LAVolume",
+        "EmptyCamp",
+        "01",
+        "S",
+        "Area01"
+      ],
+      "components": [
+        {
+          "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_515.StaticMeshComponent0",
+          "class": "/Script/Engine.StaticMeshComponent",
+          "mesh": "/Game/Tempest/Props/ResearchProps/ResearchTasks_wallTrim_03.ResearchTasks_wallTrim_03",
+          "materials": [
+            "/Game/Tempest/Props/Trimsheets/Materials/ThematicTrimsheets/Variations/MI_TrimsHarbourCrane_grey.MI_TrimsHarbourCrane_grey"
+          ]
+        }
+      ],
+      "level": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel",
+      "relative_location": {
+        "x": 212.6470730000001,
+        "y": -611.2849940000006,
+        "z": 915.083818
+      },
+      "mesh_source": "/Game/Tempest/Props/ResearchProps/ResearchTasks_wallTrim_03.ResearchTasks_wallTrim_03"
+    },
+    {
+      "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_516",
+      "class": "/Script/Engine.StaticMeshActor",
+      "label": "ResearchTasks_wallTrim_822",
+      "location": {
+        "x": 14519.544334,
+        "y": 5921.993656,
+        "z": 756.118161
+      },
+      "scale": {
+        "x": -2.5725,
+        "y": 2.5725,
+        "z": 2.5725
+      },
+      "rotation": {
+        "pitch": 0.0,
+        "yaw": -2.9999999924257273e-06,
+        "roll": 0.0
+      },
+      "tags": [
+        "LAVolume",
+        "EmptyCamp",
+        "01",
+        "S",
+        "Area01"
+      ],
+      "components": [
+        {
+          "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_516.StaticMeshComponent0",
+          "class": "/Script/Engine.StaticMeshComponent",
+          "mesh": "/Game/Tempest/Props/ResearchProps/ResearchTasks_wallTrim_04.ResearchTasks_wallTrim_04",
+          "materials": [
+            "/Game/Tempest/Props/Trimsheets/Materials/ThematicTrimsheets/Variations/MI_TrimsHarbourCrane_grey.MI_TrimsHarbourCrane_grey"
+          ]
+        }
+      ],
+      "level": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel",
+      "relative_location": {
+        "x": 212.6470730000001,
+        "y": -611.2849940000006,
+        "z": 915.083818
+      },
+      "mesh_source": "/Game/Tempest/Props/ResearchProps/ResearchTasks_wallTrim_04.ResearchTasks_wallTrim_04"
+    },
+    {
+      "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_517",
+      "class": "/Script/Engine.StaticMeshActor",
+      "label": "ResearchTasks_wallTrim_823",
+      "location": {
+        "x": 14519.544334,
+        "y": 5921.993656,
+        "z": 756.118161
+      },
+      "scale": {
+        "x": -2.5725,
+        "y": 2.5725,
+        "z": 2.5725
+      },
+      "rotation": {
+        "pitch": 0.0,
+        "yaw": -2.9999999924257273e-06,
+        "roll": 0.0
+      },
+      "tags": [
+        "LAVolume",
+        "EmptyCamp",
+        "01",
+        "S",
+        "Area01"
+      ],
+      "components": [
+        {
+          "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_517.StaticMeshComponent0",
+          "class": "/Script/Engine.StaticMeshComponent",
+          "mesh": "/Game/Tempest/Props/ResearchProps/ResearchTasks_wallTrim_05.ResearchTasks_wallTrim_05",
+          "materials": [
+            "/Game/Tempest/Props/Trimsheets/Materials/GenericTrimsheets/Variations/MI_TrimsCoarseMetal_black.MI_TrimsCoarseMetal_black"
+          ]
+        }
+      ],
+      "level": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel",
+      "relative_location": {
+        "x": 212.6470730000001,
+        "y": -611.2849940000006,
+        "z": 915.083818
+      },
+      "mesh_source": "/Game/Tempest/Props/ResearchProps/ResearchTasks_wallTrim_05.ResearchTasks_wallTrim_05"
+    },
+    {
+      "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_518",
+      "class": "/Script/Engine.StaticMeshActor",
+      "label": "ResearchTasks_wallTrim_824",
+      "location": {
+        "x": 14519.544334,
+        "y": 5921.993656,
+        "z": 756.118161
+      },
+      "scale": {
+        "x": -2.5725,
+        "y": 2.5725,
+        "z": 2.5725
+      },
+      "rotation": {
+        "pitch": 0.0,
+        "yaw": -2.9999999924257273e-06,
+        "roll": 0.0
+      },
+      "tags": [
+        "LAVolume",
+        "EmptyCamp",
+        "01",
+        "S",
+        "Area01"
+      ],
+      "components": [
+        {
+          "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_518.StaticMeshComponent0",
+          "class": "/Script/Engine.StaticMeshComponent",
+          "mesh": "/Game/Tempest/Props/ResearchProps/ResearchTasks_wallTrim_07.ResearchTasks_wallTrim_07",
+          "materials": [
+            "/Game/Tempest/Props/Trimsheets/Materials/ThematicTrimsheets/Variations/MI_TrimsHarbourCrane_grey.MI_TrimsHarbourCrane_grey"
+          ]
+        }
+      ],
+      "level": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel",
+      "relative_location": {
+        "x": 212.6470730000001,
+        "y": -611.2849940000006,
+        "z": 915.083818
+      },
+      "mesh_source": "/Game/Tempest/Props/ResearchProps/ResearchTasks_wallTrim_07.ResearchTasks_wallTrim_07"
+    },
+    {
+      "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_519",
+      "class": "/Script/Engine.StaticMeshActor",
+      "label": "ResearchTasks_wallTrim_825",
+      "location": {
+        "x": 14519.544334,
+        "y": 5921.993656,
+        "z": 756.118161
+      },
+      "scale": {
+        "x": -2.5725,
+        "y": 2.5725,
+        "z": 2.5725
+      },
+      "rotation": {
+        "pitch": 0.0,
+        "yaw": -2.9999999924257273e-06,
+        "roll": 0.0
+      },
+      "tags": [
+        "LAVolume",
+        "EmptyCamp",
+        "01",
+        "S",
+        "Area01"
+      ],
+      "components": [
+        {
+          "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_519.StaticMeshComponent0",
+          "class": "/Script/Engine.StaticMeshComponent",
+          "mesh": "/Game/Tempest/Props/ResearchProps/ResearchTasks_wallTrim_08.ResearchTasks_wallTrim_08",
+          "materials": [
+            "/Game/Tempest/Props/Trimsheets/Materials/ThematicTrimsheets/Variations/MI_TrimsHarbourCrane_grey.MI_TrimsHarbourCrane_grey"
+          ]
+        }
+      ],
+      "level": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel",
+      "relative_location": {
+        "x": 212.6470730000001,
+        "y": -611.2849940000006,
+        "z": 915.083818
+      },
+      "mesh_source": "/Game/Tempest/Props/ResearchProps/ResearchTasks_wallTrim_08.ResearchTasks_wallTrim_08"
+    },
+    {
+      "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_520",
+      "class": "/Script/Engine.StaticMeshActor",
+      "label": "ResearchTasks_wallTrim_826",
+      "location": {
+        "x": 14519.544334,
+        "y": 5921.993656,
+        "z": 756.118161
+      },
+      "scale": {
+        "x": 2.5725,
+        "y": 2.5725,
+        "z": 2.5725
+      },
+      "rotation": {
+        "pitch": 0.0,
+        "yaw": -2.9999999924257273e-06,
+        "roll": 0.0
+      },
+      "tags": [
+        "LAVolume",
+        "EmptyCamp",
+        "01",
+        "S",
+        "Area01"
+      ],
+      "components": [
+        {
+          "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_520.StaticMeshComponent0",
+          "class": "/Script/Engine.StaticMeshComponent",
+          "mesh": "/Game/Tempest/Props/ResearchProps/ResearchTasks_wallTrim_02.ResearchTasks_wallTrim_02",
+          "materials": [
+            "/Game/Tempest/Props/Trimsheets/Materials/GenericTrimsheets/Variations/MI_TrimsCoarseMetal_01.MI_TrimsCoarseMetal_01"
+          ]
+        }
+      ],
+      "level": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel",
+      "relative_location": {
+        "x": 212.6470730000001,
+        "y": -611.2849940000006,
+        "z": 915.083818
+      },
+      "mesh_source": "/Game/Tempest/Props/ResearchProps/ResearchTasks_wallTrim_02.ResearchTasks_wallTrim_02"
+    },
+    {
+      "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_521",
+      "class": "/Script/Engine.StaticMeshActor",
+      "label": "ResearchTasks_wallTrim_827",
+      "location": {
+        "x": 15226.870954,
+        "y": 5921.993639,
+        "z": 756.118163
+      },
+      "scale": {
+        "x": -2.5725,
+        "y": 2.5725,
+        "z": 2.5725
+      },
+      "rotation": {
+        "pitch": 0.0,
+        "yaw": -2.9999999924257273e-06,
+        "roll": 0.0
+      },
+      "tags": [
+        "LAVolume",
+        "EmptyCamp",
+        "01",
+        "S",
+        "Area01"
+      ],
+      "components": [
+        {
+          "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_521.StaticMeshComponent0",
+          "class": "/Script/Engine.StaticMeshComponent",
+          "mesh": "/Game/Tempest/Props/ResearchProps/ResearchTasks_wallTrim_01.ResearchTasks_wallTrim_01",
+          "materials": [
+            "/Game/Tempest/Props/Trimsheets/Materials/GenericTrimsheets/Variations/MI_TrimsCoarseMetal_01.MI_TrimsCoarseMetal_01",
+            "/Game/Tempest/Props/Trimsheets/Materials/ThematicTrimsheets/Variations/MI_TrimsHarbourCrane_grey.MI_TrimsHarbourCrane_grey"
+          ]
+        }
+      ],
+      "level": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel",
+      "relative_location": {
+        "x": 919.9736929999999,
+        "y": -611.2850109999999,
+        "z": 915.08382
+      },
+      "mesh_source": "/Game/Tempest/Props/ResearchProps/ResearchTasks_wallTrim_01.ResearchTasks_wallTrim_01"
+    },
+    {
+      "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_522",
+      "class": "/Script/Engine.StaticMeshActor",
+      "label": "ResearchTasks_wallTrim_828",
+      "location": {
+        "x": 15226.870954,
+        "y": 5921.993639,
+        "z": 756.118163
+      },
+      "scale": {
+        "x": -2.5725,
+        "y": 2.5725,
+        "z": 2.5725
+      },
+      "rotation": {
+        "pitch": 0.0,
+        "yaw": -2.9999999924257273e-06,
+        "roll": 0.0
+      },
+      "tags": [
+        "LAVolume",
+        "EmptyCamp",
+        "01",
+        "S",
+        "Area01"
+      ],
+      "components": [
+        {
+          "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_522.StaticMeshComponent0",
+          "class": "/Script/Engine.StaticMeshComponent",
+          "mesh": "/Game/Tempest/Props/ResearchProps/ResearchTasks_wallTrim_02.ResearchTasks_wallTrim_02",
+          "materials": [
+            "/Game/Tempest/Props/Trimsheets/Materials/GenericTrimsheets/Variations/MI_TrimsCoarseMetal_01.MI_TrimsCoarseMetal_01"
+          ]
+        }
+      ],
+      "level": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel",
+      "relative_location": {
+        "x": 919.9736929999999,
+        "y": -611.2850109999999,
+        "z": 915.08382
+      },
+      "mesh_source": "/Game/Tempest/Props/ResearchProps/ResearchTasks_wallTrim_02.ResearchTasks_wallTrim_02"
+    },
+    {
+      "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_523",
+      "class": "/Script/Engine.StaticMeshActor",
+      "label": "ResearchTasks_wallTrim_829",
+      "location": {
+        "x": 15226.870954,
+        "y": 5921.993639,
+        "z": 756.118163
+      },
+      "scale": {
+        "x": -2.5725,
+        "y": 2.5725,
+        "z": 2.5725
+      },
+      "rotation": {
+        "pitch": 0.0,
+        "yaw": -2.9999999924257273e-06,
+        "roll": 0.0
+      },
+      "tags": [
+        "LAVolume",
+        "EmptyCamp",
+        "01",
+        "S",
+        "Area01"
+      ],
+      "components": [
+        {
+          "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_523.StaticMeshComponent0",
+          "class": "/Script/Engine.StaticMeshComponent",
+          "mesh": "/Game/Tempest/Props/ResearchProps/ResearchTasks_wallTrim_03.ResearchTasks_wallTrim_03",
+          "materials": [
+            "/Game/Tempest/Props/Trimsheets/Materials/ThematicTrimsheets/Variations/MI_TrimsHarbourCrane_grey.MI_TrimsHarbourCrane_grey"
+          ]
+        }
+      ],
+      "level": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel",
+      "relative_location": {
+        "x": 919.9736929999999,
+        "y": -611.2850109999999,
+        "z": 915.08382
+      },
+      "mesh_source": "/Game/Tempest/Props/ResearchProps/ResearchTasks_wallTrim_03.ResearchTasks_wallTrim_03"
+    },
+    {
+      "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_524",
+      "class": "/Script/Engine.StaticMeshActor",
+      "label": "ResearchTasks_wallTrim_830",
+      "location": {
+        "x": 15226.870954,
+        "y": 5921.993639,
+        "z": 756.118163
+      },
+      "scale": {
+        "x": -2.5725,
+        "y": 2.5725,
+        "z": 2.5725
+      },
+      "rotation": {
+        "pitch": 0.0,
+        "yaw": -2.9999999924257273e-06,
+        "roll": 0.0
+      },
+      "tags": [
+        "LAVolume",
+        "EmptyCamp",
+        "01",
+        "S",
+        "Area01"
+      ],
+      "components": [
+        {
+          "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_524.StaticMeshComponent0",
+          "class": "/Script/Engine.StaticMeshComponent",
+          "mesh": "/Game/Tempest/Props/ResearchProps/ResearchTasks_wallTrim_04.ResearchTasks_wallTrim_04",
+          "materials": [
+            "/Game/Tempest/Props/Trimsheets/Materials/ThematicTrimsheets/Variations/MI_TrimsHarbourCrane_grey.MI_TrimsHarbourCrane_grey"
+          ]
+        }
+      ],
+      "level": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel",
+      "relative_location": {
+        "x": 919.9736929999999,
+        "y": -611.2850109999999,
+        "z": 915.08382
+      },
+      "mesh_source": "/Game/Tempest/Props/ResearchProps/ResearchTasks_wallTrim_04.ResearchTasks_wallTrim_04"
+    },
+    {
+      "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_525",
+      "class": "/Script/Engine.StaticMeshActor",
+      "label": "ResearchTasks_wallTrim_831",
+      "location": {
+        "x": 15226.870954,
+        "y": 5921.993639,
+        "z": 756.118163
+      },
+      "scale": {
+        "x": -2.5725,
+        "y": 2.5725,
+        "z": 2.5725
+      },
+      "rotation": {
+        "pitch": 0.0,
+        "yaw": -2.9999999924257273e-06,
+        "roll": 0.0
+      },
+      "tags": [
+        "LAVolume",
+        "EmptyCamp",
+        "01",
+        "S",
+        "Area01"
+      ],
+      "components": [
+        {
+          "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_525.StaticMeshComponent0",
+          "class": "/Script/Engine.StaticMeshComponent",
+          "mesh": "/Game/Tempest/Props/ResearchProps/ResearchTasks_wallTrim_05.ResearchTasks_wallTrim_05",
+          "materials": [
+            "/Game/Tempest/Props/Trimsheets/Materials/GenericTrimsheets/Variations/MI_TrimsCoarseMetal_black.MI_TrimsCoarseMetal_black"
+          ]
+        }
+      ],
+      "level": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel",
+      "relative_location": {
+        "x": 919.9736929999999,
+        "y": -611.2850109999999,
+        "z": 915.08382
+      },
+      "mesh_source": "/Game/Tempest/Props/ResearchProps/ResearchTasks_wallTrim_05.ResearchTasks_wallTrim_05"
+    },
+    {
+      "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_526",
+      "class": "/Script/Engine.StaticMeshActor",
+      "label": "ResearchTasks_wallTrim_832",
+      "location": {
+        "x": 15226.870954,
+        "y": 5921.993639,
+        "z": 756.118163
+      },
+      "scale": {
+        "x": -2.5725,
+        "y": 2.5725,
+        "z": 2.5725
+      },
+      "rotation": {
+        "pitch": 0.0,
+        "yaw": -2.9999999924257273e-06,
+        "roll": 0.0
+      },
+      "tags": [
+        "LAVolume",
+        "EmptyCamp",
+        "01",
+        "S",
+        "Area01"
+      ],
+      "components": [
+        {
+          "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_526.StaticMeshComponent0",
+          "class": "/Script/Engine.StaticMeshComponent",
+          "mesh": "/Game/Tempest/Props/ResearchProps/ResearchTasks_wallTrim_07.ResearchTasks_wallTrim_07",
+          "materials": [
+            "/Game/Tempest/Props/Trimsheets/Materials/ThematicTrimsheets/Variations/MI_TrimsHarbourCrane_grey.MI_TrimsHarbourCrane_grey"
+          ]
+        }
+      ],
+      "level": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel",
+      "relative_location": {
+        "x": 919.9736929999999,
+        "y": -611.2850109999999,
+        "z": 915.08382
+      },
+      "mesh_source": "/Game/Tempest/Props/ResearchProps/ResearchTasks_wallTrim_07.ResearchTasks_wallTrim_07"
+    },
+    {
+      "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_527",
+      "class": "/Script/Engine.StaticMeshActor",
+      "label": "ResearchTasks_wallTrim_833",
+      "location": {
+        "x": 15226.870954,
+        "y": 5921.993639,
+        "z": 756.118163
+      },
+      "scale": {
+        "x": -2.5725,
+        "y": 2.5725,
+        "z": 2.5725
+      },
+      "rotation": {
+        "pitch": 0.0,
+        "yaw": -2.9999999924257273e-06,
+        "roll": 0.0
+      },
+      "tags": [
+        "LAVolume",
+        "EmptyCamp",
+        "01",
+        "S",
+        "Area01"
+      ],
+      "components": [
+        {
+          "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_527.StaticMeshComponent0",
+          "class": "/Script/Engine.StaticMeshComponent",
+          "mesh": "/Game/Tempest/Props/ResearchProps/ResearchTasks_wallTrim_08.ResearchTasks_wallTrim_08",
+          "materials": [
+            "/Game/Tempest/Props/Trimsheets/Materials/ThematicTrimsheets/Variations/MI_TrimsHarbourCrane_grey.MI_TrimsHarbourCrane_grey"
+          ]
+        }
+      ],
+      "level": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel",
+      "relative_location": {
+        "x": 919.9736929999999,
+        "y": -611.2850109999999,
+        "z": 915.08382
+      },
+      "mesh_source": "/Game/Tempest/Props/ResearchProps/ResearchTasks_wallTrim_08.ResearchTasks_wallTrim_08"
+    },
+    {
+      "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_528",
+      "class": "/Script/Engine.StaticMeshActor",
+      "label": "ResearchTasks_wallTrim_834",
+      "location": {
+        "x": 15226.870954,
+        "y": 5921.993639,
+        "z": 756.118163
+      },
+      "scale": {
+        "x": 2.5725,
+        "y": 2.5725,
+        "z": 2.5725
+      },
+      "rotation": {
+        "pitch": 0.0,
+        "yaw": -2.9999999924257273e-06,
+        "roll": 0.0
+      },
+      "tags": [
+        "LAVolume",
+        "EmptyCamp",
+        "01",
+        "S",
+        "Area01"
+      ],
+      "components": [
+        {
+          "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_528.StaticMeshComponent0",
+          "class": "/Script/Engine.StaticMeshComponent",
+          "mesh": "/Game/Tempest/Props/ResearchProps/ResearchTasks_wallTrim_02.ResearchTasks_wallTrim_02",
+          "materials": [
+            "/Game/Tempest/Props/Trimsheets/Materials/GenericTrimsheets/Variations/MI_TrimsCoarseMetal_01.MI_TrimsCoarseMetal_01"
+          ]
+        }
+      ],
+      "level": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel",
+      "relative_location": {
+        "x": 919.9736929999999,
+        "y": -611.2850109999999,
+        "z": 915.08382
+      },
+      "mesh_source": "/Game/Tempest/Props/ResearchProps/ResearchTasks_wallTrim_02.ResearchTasks_wallTrim_02"
+    },
+    {
+      "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_1139",
+      "class": "/Script/Engine.StaticMeshActor",
+      "label": "SM_Research_floorTiles185",
+      "location": {
+        "x": 14212.066046,
+        "y": 5965.054857,
+        "z": -10.739914
+      },
+      "scale": {
+        "x": -1.467905,
+        "y": 1.467905,
+        "z": 1.0
+      },
+      "rotation": {
+        "pitch": 0.0,
+        "yaw": 180.0,
+        "roll": 0.0
+      },
+      "tags": [
+        "LAVolume",
+        "EmptyCamp",
+        "01",
+        "S",
+        "Area01"
+      ],
+      "components": [
+        {
+          "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_1139.StaticMeshComponent0",
+          "class": "/Script/Engine.StaticMeshComponent",
+          "mesh": "/Game/Tempest/Props/ResearchProps/SM_Research_floorTiles.SM_Research_floorTiles",
+          "materials": [
+            "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/Materials/MI_GDF_RepairBay_Prop_Dark.MI_GDF_RepairBay_Prop_Dark"
+          ]
+        }
+      ],
+      "level": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel",
+      "relative_location": {
+        "x": -94.83121500000016,
+        "y": -568.2237930000001,
+        "z": 148.225743
+      },
+      "mesh_source": "/Game/Tempest/Props/ResearchProps/SM_Research_floorTiles.SM_Research_floorTiles"
+    },
+    {
+      "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_1142",
+      "class": "/Script/Engine.StaticMeshActor",
+      "label": "SM_Research_floorTiles190",
+      "location": {
+        "x": 14212.066076,
+        "y": 7618.12697,
+        "z": -10.740098
+      },
+      "scale": {
+        "x": -1.467905,
+        "y": 1.467905,
+        "z": 1.0
+      },
+      "rotation": {
+        "pitch": 0.0,
+        "yaw": 180.0,
+        "roll": 0.0
+      },
+      "tags": [
+        "LAVolume",
+        "EmptyCamp",
+        "01",
+        "S",
+        "Area01"
+      ],
+      "components": [
+        {
+          "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_1142.StaticMeshComponent0",
+          "class": "/Script/Engine.StaticMeshComponent",
+          "mesh": "/Game/Tempest/Props/ResearchProps/SM_Research_floorTiles.SM_Research_floorTiles",
+          "materials": [
+            "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/Materials/MI_GDF_RepairBay_Prop_Dark.MI_GDF_RepairBay_Prop_Dark"
+          ]
+        }
+      ],
+      "level": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel",
+      "relative_location": {
+        "x": -94.83118500000091,
+        "y": 1084.84832,
+        "z": 148.225559
+      },
+      "mesh_source": "/Game/Tempest/Props/ResearchProps/SM_Research_floorTiles.SM_Research_floorTiles"
+    },
+    {
+      "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_1405",
+      "class": "/Script/Engine.StaticMeshActor",
+      "label": "SM_GDF_Container24",
+      "location": {
+        "x": 14306.897261,
+        "y": 6533.27865,
+        "z": -158.965657
+      },
+      "scale": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 1.0
+      },
+      "rotation": {
+        "pitch": 0.0,
+        "yaw": 0.0,
+        "roll": 0.0
+      },
+      "tags": [
+        "LAVolume",
+        "EmptyCamp",
+        "01",
+        "S",
+        "Area01"
+      ],
+      "components": [
+        {
+          "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_1405.StaticMeshComponent0",
+          "class": "/Script/Engine.StaticMeshComponent",
+          "mesh": "/Game/Tempest/Props/Faction_Containers/SM_GDF_Container.SM_GDF_Container",
+          "materials": [
+            "/Game/Tempest/Props/Faction_Containers/Materials/MI_GDF_Container_01.MI_GDF_Container_01"
+          ]
+        }
+      ],
+      "level": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel",
+      "relative_location": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "mesh_source": "/Game/Tempest/Props/Faction_Containers/SM_GDF_Container.SM_GDF_Container"
+    },
+    {
+      "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_1406",
+      "class": "/Script/Engine.StaticMeshActor",
+      "label": "SM_GDF_Container25",
+      "location": {
+        "x": 14326.402067,
+        "y": 6187.058039,
+        "z": -158.965657
+      },
+      "scale": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 1.0
+      },
+      "rotation": {
+        "pitch": 0.0,
+        "yaw": 0.0,
+        "roll": 0.0
+      },
+      "tags": [
+        "LAVolume",
+        "EmptyCamp",
+        "01",
+        "S",
+        "Area01"
+      ],
+      "components": [
+        {
+          "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_1406.StaticMeshComponent0",
+          "class": "/Script/Engine.StaticMeshComponent",
+          "mesh": "/Game/Tempest/Props/Faction_Containers/SM_GDF_Container.SM_GDF_Container",
+          "materials": [
+            "/Game/Tempest/Props/Faction_Containers/Materials/MI_GDF_Container_01.MI_GDF_Container_01"
+          ]
+        }
+      ],
+      "level": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel",
+      "relative_location": {
+        "x": 19.504806000000826,
+        "y": -346.22061100000064,
+        "z": 0.0
+      },
+      "mesh_source": "/Game/Tempest/Props/Faction_Containers/SM_GDF_Container.SM_GDF_Container"
+    },
+    {
+      "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_1407",
+      "class": "/Script/Engine.StaticMeshActor",
+      "label": "SM_GDF_Container26",
+      "location": {
+        "x": 14897.309564,
+        "y": 6392.896733,
+        "z": -158.965657
+      },
+      "scale": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 1.0
+      },
+      "rotation": {
+        "pitch": 0.0,
+        "yaw": -83.87257199999999,
+        "roll": 0.0
+      },
+      "tags": [
+        "LAVolume",
+        "EmptyCamp",
+        "01",
+        "S",
+        "Area01"
+      ],
+      "components": [
+        {
+          "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_1407.StaticMeshComponent0",
+          "class": "/Script/Engine.StaticMeshComponent",
+          "mesh": "/Game/Tempest/Props/Faction_Containers/SM_GDF_Container.SM_GDF_Container",
+          "materials": [
+            "/Game/Tempest/Props/Faction_Containers/Materials/MI_GDF_Container_01.MI_GDF_Container_01"
+          ]
+        }
+      ],
+      "level": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel",
+      "relative_location": {
+        "x": 590.4123029999992,
+        "y": -140.3819170000006,
+        "z": 0.0
+      },
+      "mesh_source": "/Game/Tempest/Props/Faction_Containers/SM_GDF_Container.SM_GDF_Container"
+    },
+    {
+      "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_1408",
+      "class": "/Script/Engine.StaticMeshActor",
+      "label": "SM_GDF_Container27",
+      "location": {
+        "x": 14288.867315,
+        "y": 6319.178041,
+        "z": 158.965766
+      },
+      "scale": {
+        "x": 1.0,
+        "y": 1.0,
+        "z": 1.0
+      },
+      "rotation": {
+        "pitch": 0.0,
+        "yaw": 0.0,
+        "roll": 0.0
+      },
+      "tags": [
+        "LAVolume",
+        "EmptyCamp",
+        "01",
+        "S",
+        "Area01"
+      ],
+      "components": [
+        {
+          "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_1408.StaticMeshComponent0",
+          "class": "/Script/Engine.StaticMeshComponent",
+          "mesh": "/Game/Tempest/Props/Faction_Containers/SM_GDF_Container.SM_GDF_Container",
+          "materials": [
+            "/Game/Tempest/Props/Faction_Containers/Materials/MI_GDF_Container_01.MI_GDF_Container_01"
+          ]
+        }
+      ],
+      "level": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel",
+      "relative_location": {
+        "x": -18.029946000000564,
+        "y": -214.10060900000008,
+        "z": 317.931423
+      },
+      "mesh_source": "/Game/Tempest/Props/Faction_Containers/SM_GDF_Container.SM_GDF_Container"
+    },
+    {
+      "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_1540",
+      "class": "/Script/Engine.StaticMeshActor",
+      "label": "SM_AirtowerDetail_270",
+      "location": {
+        "x": 14286.235061,
+        "y": 7114.968574,
+        "z": 1.475348
+      },
+      "scale": {
+        "x": 0.611847,
+        "y": 1.0,
+        "z": 0.83216
+      },
+      "rotation": {
+        "pitch": -90.0,
+        "yaw": 165.96375653207352,
+        "roll": -75.99314953207352
+      },
+      "tags": [
+        "LAVolume",
+        "EmptyCamp",
+        "01",
+        "NW",
+        "Area02"
+      ],
+      "components": [
+        {
+          "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_1540.StaticMeshComponent0",
+          "class": "/Script/Engine.StaticMeshComponent",
+          "mesh": "/Game/Tempest/Props/GDFCutoffs/SM_AirtowerDetail_01.SM_AirtowerDetail_01",
+          "materials": [
+            "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/Materials/MI_GDF_AdvancedPowerplant_Prop.MI_GDF_AdvancedPowerplant_Prop"
+          ]
+        }
+      ],
+      "level": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel",
+      "relative_location": {
+        "x": -20.662200000000666,
+        "y": 581.6899240000002,
+        "z": 160.441005
+      },
+      "mesh_source": "/Game/Tempest/Props/GDFCutoffs/SM_AirtowerDetail_01.SM_AirtowerDetail_01"
+    },
+    {
+      "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_1541",
+      "class": "/Script/Engine.StaticMeshActor",
+      "label": "SM_AirtowerDetail_271",
+      "location": {
+        "x": 14286.474769,
+        "y": 7581.840612,
+        "z": 1.474963
+      },
+      "scale": {
+        "x": 0.611847,
+        "y": 1.0,
+        "z": 0.83216
+      },
+      "rotation": {
+        "pitch": -90.0,
+        "yaw": 180.0,
+        "roll": 89.97060799999997
+      },
+      "tags": [
+        "LAVolume",
+        "EmptyCamp",
+        "01",
+        "NW",
+        "Area02"
+      ],
+      "components": [
+        {
+          "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_1541.StaticMeshComponent0",
+          "class": "/Script/Engine.StaticMeshComponent",
+          "mesh": "/Game/Tempest/Props/GDFCutoffs/SM_AirtowerDetail_01.SM_AirtowerDetail_01",
+          "materials": [
+            "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/Materials/MI_GDF_AdvancedPowerplant_Prop.MI_GDF_AdvancedPowerplant_Prop"
+          ]
+        }
+      ],
+      "level": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel",
+      "relative_location": {
+        "x": -20.422491999999693,
+        "y": 1048.5619619999998,
+        "z": 160.44062
+      },
+      "mesh_source": "/Game/Tempest/Props/GDFCutoffs/SM_AirtowerDetail_01.SM_AirtowerDetail_01"
+    },
+    {
+      "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_1542",
+      "class": "/Script/Engine.StaticMeshActor",
+      "label": "SM_AirtowerDetail_272",
+      "location": {
+        "x": 14286.474228,
+        "y": 7581.678299,
+        "z": 1.475348
+      },
+      "scale": {
+        "x": 0.611847,
+        "y": 1.0,
+        "z": 0.83216
+      },
+      "rotation": {
+        "pitch": -90.0,
+        "yaw": -165.96375653207352,
+        "roll": -104.06563646792645
+      },
+      "tags": [
+        "LAVolume",
+        "EmptyCamp",
+        "01",
+        "NW",
+        "Area02"
+      ],
+      "components": [
+        {
+          "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_1542.StaticMeshComponent0",
+          "class": "/Script/Engine.StaticMeshComponent",
+          "mesh": "/Game/Tempest/Props/GDFCutoffs/SM_AirtowerDetail_01.SM_AirtowerDetail_01",
+          "materials": [
+            "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/Materials/MI_GDF_AdvancedPowerplant_Prop.MI_GDF_AdvancedPowerplant_Prop"
+          ]
+        }
+      ],
+      "level": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel",
+      "relative_location": {
+        "x": -20.42303300000094,
+        "y": 1048.399649,
+        "z": 160.441005
+      },
+      "mesh_source": "/Game/Tempest/Props/GDFCutoffs/SM_AirtowerDetail_01.SM_AirtowerDetail_01"
+    },
+    {
+      "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_1548",
+      "class": "/Script/Engine.StaticMeshActor",
+      "label": "SM_AirtowerDetail_278",
+      "location": {
+        "x": 14360.772925,
+        "y": 7114.563779,
+        "z": 1.47534
+      },
+      "scale": {
+        "x": 0.611847,
+        "y": 1.0,
+        "z": 0.83216
+      },
+      "rotation": {
+        "pitch": -90.0,
+        "yaw": 165.96375653207352,
+        "roll": -75.99314953207352
+      },
+      "tags": [
+        "LAVolume",
+        "EmptyCamp",
+        "01",
+        "NW",
+        "Area02"
+      ],
+      "components": [
+        {
+          "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_1548.StaticMeshComponent0",
+          "class": "/Script/Engine.StaticMeshComponent",
+          "mesh": "/Game/Tempest/Props/GDFCutoffs/SM_AirtowerDetail_01.SM_AirtowerDetail_01",
+          "materials": [
+            "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/Materials/MI_GDF_AdvancedPowerplant_Prop.MI_GDF_AdvancedPowerplant_Prop"
+          ]
+        }
+      ],
+      "level": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel",
+      "relative_location": {
+        "x": 53.87566399999923,
+        "y": 581.2851289999999,
+        "z": 160.44099699999998
+      },
+      "mesh_source": "/Game/Tempest/Props/GDFCutoffs/SM_AirtowerDetail_01.SM_AirtowerDetail_01"
+    },
+    {
+      "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_1549",
+      "class": "/Script/Engine.StaticMeshActor",
+      "label": "SM_AirtowerDetail_279",
+      "location": {
+        "x": 14361.01263,
+        "y": 7581.435864,
+        "z": 1.475135
+      },
+      "scale": {
+        "x": 0.611847,
+        "y": 1.0,
+        "z": 0.83216
+      },
+      "rotation": {
+        "pitch": -90.0,
+        "yaw": 180.0,
+        "roll": 89.97060799999997
+      },
+      "tags": [
+        "LAVolume",
+        "EmptyCamp",
+        "01",
+        "NW",
+        "Area02"
+      ],
+      "components": [
+        {
+          "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_1549.StaticMeshComponent0",
+          "class": "/Script/Engine.StaticMeshComponent",
+          "mesh": "/Game/Tempest/Props/GDFCutoffs/SM_AirtowerDetail_01.SM_AirtowerDetail_01",
+          "materials": [
+            "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/Materials/MI_GDF_AdvancedPowerplant_Prop.MI_GDF_AdvancedPowerplant_Prop"
+          ]
+        }
+      ],
+      "level": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel",
+      "relative_location": {
+        "x": 54.11536899999919,
+        "y": 1048.1572139999998,
+        "z": 160.440792
+      },
+      "mesh_source": "/Game/Tempest/Props/GDFCutoffs/SM_AirtowerDetail_01.SM_AirtowerDetail_01"
+    },
+    {
+      "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_1550",
+      "class": "/Script/Engine.StaticMeshActor",
+      "label": "SM_AirtowerDetail_280",
+      "location": {
+        "x": 14361.01209,
+        "y": 7581.273503,
+        "z": 1.475339
+      },
+      "scale": {
+        "x": 0.611847,
+        "y": 1.0,
+        "z": 0.83216
+      },
+      "rotation": {
+        "pitch": -90.0,
+        "yaw": -165.96375653207352,
+        "roll": -104.06563646792645
+      },
+      "tags": [
+        "LAVolume",
+        "EmptyCamp",
+        "01",
+        "NW",
+        "Area02"
+      ],
+      "components": [
+        {
+          "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_1550.StaticMeshComponent0",
+          "class": "/Script/Engine.StaticMeshComponent",
+          "mesh": "/Game/Tempest/Props/GDFCutoffs/SM_AirtowerDetail_01.SM_AirtowerDetail_01",
+          "materials": [
+            "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/Materials/MI_GDF_AdvancedPowerplant_Prop.MI_GDF_AdvancedPowerplant_Prop"
+          ]
+        }
+      ],
+      "level": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel",
+      "relative_location": {
+        "x": 54.1148290000001,
+        "y": 1047.9948530000001,
+        "z": 160.44099599999998
+      },
+      "mesh_source": "/Game/Tempest/Props/GDFCutoffs/SM_AirtowerDetail_01.SM_AirtowerDetail_01"
+    },
+    {
+      "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_1556",
+      "class": "/Script/Engine.StaticMeshActor",
+      "label": "SM_AirtowerDetail_286",
+      "location": {
+        "x": 14429.439584,
+        "y": 7114.528532,
+        "z": 1.475333
+      },
+      "scale": {
+        "x": 0.611847,
+        "y": 1.0,
+        "z": 0.83216
+      },
+      "rotation": {
+        "pitch": -90.0,
+        "yaw": 165.96375653207352,
+        "roll": -75.99314953207352
+      },
+      "tags": [
+        "LAVolume",
+        "EmptyCamp",
+        "01",
+        "NW",
+        "Area02"
+      ],
+      "components": [
+        {
+          "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_1556.StaticMeshComponent0",
+          "class": "/Script/Engine.StaticMeshComponent",
+          "mesh": "/Game/Tempest/Props/GDFCutoffs/SM_AirtowerDetail_01.SM_AirtowerDetail_01",
+          "materials": [
+            "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/Materials/MI_GDF_AdvancedPowerplant_Prop.MI_GDF_AdvancedPowerplant_Prop"
+          ]
+        }
+      ],
+      "level": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel",
+      "relative_location": {
+        "x": 122.54232299999967,
+        "y": 581.2498820000001,
+        "z": 160.44099
+      },
+      "mesh_source": "/Game/Tempest/Props/GDFCutoffs/SM_AirtowerDetail_01.SM_AirtowerDetail_01"
+    },
+    {
+      "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_1557",
+      "class": "/Script/Engine.StaticMeshActor",
+      "label": "SM_AirtowerDetail_287",
+      "location": {
+        "x": 14429.67929,
+        "y": 7581.400654,
+        "z": 1.475182
+      },
+      "scale": {
+        "x": 0.611847,
+        "y": 1.0,
+        "z": 0.83216
+      },
+      "rotation": {
+        "pitch": -90.0,
+        "yaw": 180.0,
+        "roll": 89.97060799999997
+      },
+      "tags": [
+        "LAVolume",
+        "EmptyCamp",
+        "01",
+        "NW",
+        "Area02"
+      ],
+      "components": [
+        {
+          "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_1557.StaticMeshComponent0",
+          "class": "/Script/Engine.StaticMeshComponent",
+          "mesh": "/Game/Tempest/Props/GDFCutoffs/SM_AirtowerDetail_01.SM_AirtowerDetail_01",
+          "materials": [
+            "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/Materials/MI_GDF_AdvancedPowerplant_Prop.MI_GDF_AdvancedPowerplant_Prop"
+          ]
+        }
+      ],
+      "level": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel",
+      "relative_location": {
+        "x": 122.78202899999997,
+        "y": 1048.1220039999998,
+        "z": 160.44083899999998
+      },
+      "mesh_source": "/Game/Tempest/Props/GDFCutoffs/SM_AirtowerDetail_01.SM_AirtowerDetail_01"
+    },
+    {
+      "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_1558",
+      "class": "/Script/Engine.StaticMeshActor",
+      "label": "SM_AirtowerDetail_288",
+      "location": {
+        "x": 14429.678752,
+        "y": 7581.238257,
+        "z": 1.475331
+      },
+      "scale": {
+        "x": 0.611847,
+        "y": 1.0,
+        "z": 0.83216
+      },
+      "rotation": {
+        "pitch": -90.0,
+        "yaw": -165.96375653207352,
+        "roll": -104.06563646792645
+      },
+      "tags": [
+        "LAVolume",
+        "EmptyCamp",
+        "01",
+        "NW",
+        "Area02"
+      ],
+      "components": [
+        {
+          "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_1558.StaticMeshComponent0",
+          "class": "/Script/Engine.StaticMeshComponent",
+          "mesh": "/Game/Tempest/Props/GDFCutoffs/SM_AirtowerDetail_01.SM_AirtowerDetail_01",
+          "materials": [
+            "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/Materials/MI_GDF_AdvancedPowerplant_Prop.MI_GDF_AdvancedPowerplant_Prop"
+          ]
+        }
+      ],
+      "level": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel",
+      "relative_location": {
+        "x": 122.78149099999973,
+        "y": 1047.9596069999998,
+        "z": 160.440988
+      },
+      "mesh_source": "/Game/Tempest/Props/GDFCutoffs/SM_AirtowerDetail_01.SM_AirtowerDetail_01"
+    },
+    {
+      "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_1565",
+      "class": "/Script/Engine.StaticMeshActor",
+      "label": "SM_FactoryDetail_41",
+      "location": {
+        "x": 14357.716279,
+        "y": 7039.443948,
+        "z": -44.403548
+      },
+      "scale": {
+        "x": 1.854502,
+        "y": 1.854502,
+        "z": 1.0
+      },
+      "rotation": {
+        "pitch": 0.0,
+        "yaw": 89.97061,
+        "roll": 0.0
+      },
+      "tags": [
+        "LAVolume",
+        "EmptyCamp",
+        "01",
+        "NW",
+        "Area02"
+      ],
+      "components": [
+        {
+          "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_1565.StaticMeshComponent0",
+          "class": "/Script/Engine.StaticMeshComponent",
+          "mesh": "/Game/Tempest/Props/GDFCutoffs/SM_FactoryDetail_02.SM_FactoryDetail_02",
+          "materials": [
+            "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/Materials/MI_GDF_WarFactory_Prop.MI_GDF_WarFactory_Prop"
+          ]
+        }
+      ],
+      "level": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel",
+      "relative_location": {
+        "x": 50.81901800000014,
+        "y": 506.1652979999999,
+        "z": 114.56210899999999
+      },
+      "mesh_source": "/Game/Tempest/Props/GDFCutoffs/SM_FactoryDetail_02.SM_FactoryDetail_02"
+    },
+    {
+      "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_1603",
+      "class": "/Script/Engine.StaticMeshActor",
+      "label": "SM_Research_floorTileBorderMesh_74",
+      "location": {
+        "x": 14836.121886,
+        "y": 7625.397036,
+        "z": -19.901197
+      },
+      "scale": {
+        "x": 1.467905,
+        "y": 1.218403,
+        "z": 1.0
+      },
+      "rotation": {
+        "pitch": 0.0,
+        "yaw": 179.999999,
+        "roll": 0.0
+      },
+      "tags": [
+        "LAVolume",
+        "EmptyCamp",
+        "01",
+        "S",
+        "Area01"
+      ],
+      "components": [
+        {
+          "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_1603.StaticMeshComponent0",
+          "class": "/Script/Engine.StaticMeshComponent",
+          "mesh": "/Game/Tempest/Props/ResearchProps/SM_Research_floorTileBorderMesh_02.SM_Research_floorTileBorderMesh_02",
+          "materials": [
+            "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/Materials/MI_TrimsCoarseMetal_01.MI_TrimsCoarseMetal_01"
+          ]
+        }
+      ],
+      "level": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel",
+      "relative_location": {
+        "x": 529.2246250000007,
+        "y": 1092.118386,
+        "z": 139.06446
+      },
+      "mesh_source": "/Game/Tempest/Props/ResearchProps/SM_Research_floorTileBorderMesh_02.SM_Research_floorTileBorderMesh_02"
+    },
+    {
+      "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_1604",
+      "class": "/Script/Engine.StaticMeshActor",
+      "label": "SM_Research_floorTileBorderMesh_75",
+      "location": {
+        "x": 14827.283509,
+        "y": 7089.404423,
+        "z": -19.901197
+      },
+      "scale": {
+        "x": 1.467905,
+        "y": 1.04223,
+        "z": 1.0
+      },
+      "rotation": {
+        "pitch": 0.0,
+        "yaw": -1.9999999949504854e-06,
+        "roll": 0.0
+      },
+      "tags": [
+        "LAVolume",
+        "EmptyCamp",
+        "01",
+        "S",
+        "Area01"
+      ],
+      "components": [
+        {
+          "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_1604.StaticMeshComponent0",
+          "class": "/Script/Engine.StaticMeshComponent",
+          "mesh": "/Game/Tempest/Props/ResearchProps/SM_Research_floorTileBorderMesh_01.SM_Research_floorTileBorderMesh_01",
+          "materials": [
+            "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/Materials/MI_TrimsCoarseMetal_01.MI_TrimsCoarseMetal_01"
+          ]
+        }
+      ],
+      "level": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel",
+      "relative_location": {
+        "x": 520.3862480000007,
+        "y": 556.1257729999998,
+        "z": 139.06446
+      },
+      "mesh_source": "/Game/Tempest/Props/ResearchProps/SM_Research_floorTileBorderMesh_01.SM_Research_floorTileBorderMesh_01"
+    },
+    {
+      "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_1605",
+      "class": "/Script/Engine.StaticMeshActor",
+      "label": "SM_Research_floorTileBorderMesh_76",
+      "location": {
+        "x": 14828.731705,
+        "y": 7069.321444,
+        "z": -19.901197
+      },
+      "scale": {
+        "x": 1.467905,
+        "y": 1.467905,
+        "z": 1.0
+      },
+      "rotation": {
+        "pitch": 0.0,
+        "yaw": -1.9999999949504854e-06,
+        "roll": 0.0
+      },
+      "tags": [
+        "LAVolume",
+        "EmptyCamp",
+        "01",
+        "S",
+        "Area01"
+      ],
+      "components": [
+        {
+          "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_1605.StaticMeshComponent0",
+          "class": "/Script/Engine.StaticMeshComponent",
+          "mesh": "/Game/Tempest/Props/ResearchProps/SM_Research_floorTileBorderMesh_02.SM_Research_floorTileBorderMesh_02",
+          "materials": [
+            "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/Materials/MI_TrimsCoarseMetal_01.MI_TrimsCoarseMetal_01"
+          ]
+        }
+      ],
+      "level": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel",
+      "relative_location": {
+        "x": 521.8344440000001,
+        "y": 536.042794,
+        "z": 139.06446
+      },
+      "mesh_source": "/Game/Tempest/Props/ResearchProps/SM_Research_floorTileBorderMesh_02.SM_Research_floorTileBorderMesh_02"
+    },
+    {
+      "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_1610",
+      "class": "/Script/Engine.StaticMeshActor",
+      "label": "SM_Research_floorTileBorderMesh_70",
+      "location": {
+        "x": 14510.827762,
+        "y": 6282.630241,
+        "z": -19.901188
+      },
+      "scale": {
+        "x": 1.467905,
+        "y": 1.467905,
+        "z": 1.0
+      },
+      "rotation": {
+        "pitch": 0.0,
+        "yaw": 134.99999999999997,
+        "roll": 0.0
+      },
+      "tags": [
+        "LAVolume",
+        "EmptyCamp",
+        "01",
+        "S",
+        "Area01"
+      ],
+      "components": [
+        {
+          "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_1610.StaticMeshComponent0",
+          "class": "/Script/Engine.StaticMeshComponent",
+          "mesh": "/Game/Tempest/Props/ResearchProps/SM_Research_floorTileBorderMesh_03.SM_Research_floorTileBorderMesh_03",
+          "materials": [
+            "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/Materials/MI_TrimsCoarseMetal_01.MI_TrimsCoarseMetal_01"
+          ]
+        }
+      ],
+      "level": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel",
+      "relative_location": {
+        "x": 203.93050100000073,
+        "y": -250.64840900000036,
+        "z": 139.064469
+      },
+      "mesh_source": "/Game/Tempest/Props/ResearchProps/SM_Research_floorTileBorderMesh_03.SM_Research_floorTileBorderMesh_03"
+    },
+    {
+      "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_1686",
+      "class": "/Script/Engine.StaticMeshActor",
+      "label": "SM_GDF_Powerplant_Prop_01",
+      "location": {
+        "x": 15409.312182,
+        "y": 6351.668395,
+        "z": 3.2e-05
+      },
+      "scale": {
+        "x": 2.439639,
+        "y": 2.439639,
+        "z": 2.439639
+      },
+      "rotation": {
+        "pitch": 0.0,
+        "yaw": -22.500000000000004,
+        "roll": 0.0
+      },
+      "tags": [],
+      "components": [
+        {
+          "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_1686.StaticMeshComponent0",
+          "class": "/Script/Engine.StaticMeshComponent",
+          "mesh": "/Game/Tempest/Props/GDF_Cutoff/SM_GDF_Powerplant_Prop_01.SM_GDF_Powerplant_Prop_01",
+          "materials": [
+            "/Game/Tempest/Props/GDFCutoffs/Materials/MI_GDF_PowerPlant_Prop.MI_GDF_PowerPlant_Prop"
+          ]
+        }
+      ],
+      "level": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel",
+      "relative_location": {
+        "x": 1102.4149209999996,
+        "y": -181.6102550000005,
+        "z": 158.965689
+      },
+      "mesh_source": "/Game/Tempest/Props/GDF_Cutoff/SM_GDF_Powerplant_Prop_01.SM_GDF_Powerplant_Prop_01"
+    }
+  ],
+  "all_container_positions": [
+    {
+      "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_1405",
+      "location": {
+        "x": 14306.897261,
+        "y": 6533.27865,
+        "z": -158.965657
+      }
+    },
+    {
+      "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_1406",
+      "location": {
+        "x": 14326.402067,
+        "y": 6187.058039,
+        "z": -158.965657
+      }
+    },
+    {
+      "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_1407",
+      "location": {
+        "x": 14897.309564,
+        "y": 6392.896733,
+        "z": -158.965657
+      }
+    },
+    {
+      "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_1408",
+      "location": {
+        "x": 14288.867315,
+        "y": 6319.178041,
+        "z": 158.965766
+      }
+    },
+    {
+      "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_1445",
+      "location": {
+        "x": 11200.614878,
+        "y": 22762.829795,
+        "z": -42.433587
+      }
+    },
+    {
+      "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_3166",
+      "location": {
+        "x": -14306.896943,
+        "y": -6533.279512,
+        "z": -158.965657
+      }
+    },
+    {
+      "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_3167",
+      "location": {
+        "x": -14326.401766,
+        "y": -6187.058902,
+        "z": -158.965657
+      }
+    },
+    {
+      "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_3168",
+      "location": {
+        "x": -14897.309253,
+        "y": -6392.897624,
+        "z": -158.965657
+      }
+    },
+    {
+      "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_3169",
+      "location": {
+        "x": -14288.867007,
+        "y": -6319.178902,
+        "z": 158.965766
+      }
+    },
+    {
+      "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_3206",
+      "location": {
+        "x": -11200.61377,
+        "y": -22762.830506,
+        "z": -42.433587
+      }
+    },
+    {
+      "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_4927",
+      "location": {
+        "x": -14306.897261,
+        "y": 6533.27865,
+        "z": -158.965657
+      }
+    },
+    {
+      "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_4928",
+      "location": {
+        "x": -14326.402067,
+        "y": 6187.058039,
+        "z": -158.965657
+      }
+    },
+    {
+      "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_4929",
+      "location": {
+        "x": -14897.309564,
+        "y": 6392.896733,
+        "z": -158.965657
+      }
+    },
+    {
+      "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_4930",
+      "location": {
+        "x": -14288.867315,
+        "y": 6319.178041,
+        "z": 158.965766
+      }
+    },
+    {
+      "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_4967",
+      "location": {
+        "x": -11200.614878,
+        "y": 22762.829795,
+        "z": -42.433587
+      }
+    },
+    {
+      "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_6688",
+      "location": {
+        "x": 14306.896943,
+        "y": -6533.279512,
+        "z": -158.965657
+      }
+    },
+    {
+      "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_6689",
+      "location": {
+        "x": 14326.401766,
+        "y": -6187.058902,
+        "z": -158.965657
+      }
+    },
+    {
+      "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_6690",
+      "location": {
+        "x": 14897.309253,
+        "y": -6392.897624,
+        "z": -158.965657
+      }
+    },
+    {
+      "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_6691",
+      "location": {
+        "x": 14288.867007,
+        "y": -6319.178902,
+        "z": 158.965766
+      }
+    },
+    {
+      "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_Enviro.MAP_MP_SetdressingExampleMap_4P_Enviro:PersistentLevel.StaticMeshActor_6728",
+      "location": {
+        "x": 11200.61377,
+        "y": -22762.830506,
+        "z": -42.433587
+      }
+    }
+  ],
+  "landscape_source": {
+    "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0",
+    "class": "/Script/Landscape.Landscape",
+    "label": "Landscape",
+    "location": {
+      "x": -24800.0,
+      "y": -24800.0,
+      "z": 0.0
+    },
+    "scale": {
+      "x": 100.0,
+      "y": 100.0,
+      "z": 100.0
+    },
+    "rotation": {
+      "pitch": 0.0,
+      "yaw": 0.0,
+      "roll": 0.0
+    },
+    "tags": [],
+    "components": [
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.RootComponent0",
+        "class": "/Script/Engine.SceneComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeSplinesComponent_0",
+        "class": "/Script/Landscape.LandscapeSplinesComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeComponent_0",
+        "class": "/Script/Landscape.LandscapeComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeComponent_1",
+        "class": "/Script/Landscape.LandscapeComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeComponent_2",
+        "class": "/Script/Landscape.LandscapeComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeComponent_3",
+        "class": "/Script/Landscape.LandscapeComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeComponent_4",
+        "class": "/Script/Landscape.LandscapeComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeComponent_5",
+        "class": "/Script/Landscape.LandscapeComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeComponent_6",
+        "class": "/Script/Landscape.LandscapeComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeComponent_7",
+        "class": "/Script/Landscape.LandscapeComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeComponent_8",
+        "class": "/Script/Landscape.LandscapeComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeComponent_9",
+        "class": "/Script/Landscape.LandscapeComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeComponent_10",
+        "class": "/Script/Landscape.LandscapeComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeComponent_11",
+        "class": "/Script/Landscape.LandscapeComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeComponent_12",
+        "class": "/Script/Landscape.LandscapeComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeComponent_13",
+        "class": "/Script/Landscape.LandscapeComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeComponent_14",
+        "class": "/Script/Landscape.LandscapeComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeComponent_15",
+        "class": "/Script/Landscape.LandscapeComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeComponent_16",
+        "class": "/Script/Landscape.LandscapeComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeComponent_17",
+        "class": "/Script/Landscape.LandscapeComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeComponent_18",
+        "class": "/Script/Landscape.LandscapeComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeComponent_19",
+        "class": "/Script/Landscape.LandscapeComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeComponent_20",
+        "class": "/Script/Landscape.LandscapeComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeComponent_21",
+        "class": "/Script/Landscape.LandscapeComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeComponent_22",
+        "class": "/Script/Landscape.LandscapeComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeComponent_23",
+        "class": "/Script/Landscape.LandscapeComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeComponent_24",
+        "class": "/Script/Landscape.LandscapeComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeComponent_25",
+        "class": "/Script/Landscape.LandscapeComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeComponent_26",
+        "class": "/Script/Landscape.LandscapeComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeComponent_27",
+        "class": "/Script/Landscape.LandscapeComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeComponent_28",
+        "class": "/Script/Landscape.LandscapeComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeComponent_29",
+        "class": "/Script/Landscape.LandscapeComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeComponent_30",
+        "class": "/Script/Landscape.LandscapeComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeComponent_31",
+        "class": "/Script/Landscape.LandscapeComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeComponent_32",
+        "class": "/Script/Landscape.LandscapeComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeComponent_33",
+        "class": "/Script/Landscape.LandscapeComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeComponent_34",
+        "class": "/Script/Landscape.LandscapeComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeComponent_35",
+        "class": "/Script/Landscape.LandscapeComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeComponent_36",
+        "class": "/Script/Landscape.LandscapeComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeComponent_37",
+        "class": "/Script/Landscape.LandscapeComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeComponent_38",
+        "class": "/Script/Landscape.LandscapeComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeComponent_39",
+        "class": "/Script/Landscape.LandscapeComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeComponent_40",
+        "class": "/Script/Landscape.LandscapeComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeComponent_41",
+        "class": "/Script/Landscape.LandscapeComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeComponent_42",
+        "class": "/Script/Landscape.LandscapeComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeComponent_43",
+        "class": "/Script/Landscape.LandscapeComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeComponent_44",
+        "class": "/Script/Landscape.LandscapeComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeComponent_45",
+        "class": "/Script/Landscape.LandscapeComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeComponent_46",
+        "class": "/Script/Landscape.LandscapeComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeComponent_47",
+        "class": "/Script/Landscape.LandscapeComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeComponent_48",
+        "class": "/Script/Landscape.LandscapeComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeComponent_49",
+        "class": "/Script/Landscape.LandscapeComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeComponent_50",
+        "class": "/Script/Landscape.LandscapeComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeComponent_51",
+        "class": "/Script/Landscape.LandscapeComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeComponent_52",
+        "class": "/Script/Landscape.LandscapeComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeComponent_53",
+        "class": "/Script/Landscape.LandscapeComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeComponent_54",
+        "class": "/Script/Landscape.LandscapeComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeComponent_55",
+        "class": "/Script/Landscape.LandscapeComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeComponent_56",
+        "class": "/Script/Landscape.LandscapeComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeComponent_57",
+        "class": "/Script/Landscape.LandscapeComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeComponent_58",
+        "class": "/Script/Landscape.LandscapeComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeComponent_59",
+        "class": "/Script/Landscape.LandscapeComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeComponent_60",
+        "class": "/Script/Landscape.LandscapeComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeComponent_61",
+        "class": "/Script/Landscape.LandscapeComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeComponent_62",
+        "class": "/Script/Landscape.LandscapeComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeComponent_63",
+        "class": "/Script/Landscape.LandscapeComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeHeightfieldCollisionComponent_64",
+        "class": "/Script/Landscape.LandscapeHeightfieldCollisionComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeHeightfieldCollisionComponent_65",
+        "class": "/Script/Landscape.LandscapeHeightfieldCollisionComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeHeightfieldCollisionComponent_66",
+        "class": "/Script/Landscape.LandscapeHeightfieldCollisionComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeHeightfieldCollisionComponent_67",
+        "class": "/Script/Landscape.LandscapeHeightfieldCollisionComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeHeightfieldCollisionComponent_68",
+        "class": "/Script/Landscape.LandscapeHeightfieldCollisionComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeHeightfieldCollisionComponent_69",
+        "class": "/Script/Landscape.LandscapeHeightfieldCollisionComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeHeightfieldCollisionComponent_70",
+        "class": "/Script/Landscape.LandscapeHeightfieldCollisionComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeHeightfieldCollisionComponent_71",
+        "class": "/Script/Landscape.LandscapeHeightfieldCollisionComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeHeightfieldCollisionComponent_72",
+        "class": "/Script/Landscape.LandscapeHeightfieldCollisionComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeHeightfieldCollisionComponent_73",
+        "class": "/Script/Landscape.LandscapeHeightfieldCollisionComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeHeightfieldCollisionComponent_74",
+        "class": "/Script/Landscape.LandscapeHeightfieldCollisionComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeHeightfieldCollisionComponent_75",
+        "class": "/Script/Landscape.LandscapeHeightfieldCollisionComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeHeightfieldCollisionComponent_76",
+        "class": "/Script/Landscape.LandscapeHeightfieldCollisionComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeHeightfieldCollisionComponent_77",
+        "class": "/Script/Landscape.LandscapeHeightfieldCollisionComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeHeightfieldCollisionComponent_78",
+        "class": "/Script/Landscape.LandscapeHeightfieldCollisionComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeHeightfieldCollisionComponent_79",
+        "class": "/Script/Landscape.LandscapeHeightfieldCollisionComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeHeightfieldCollisionComponent_80",
+        "class": "/Script/Landscape.LandscapeHeightfieldCollisionComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeHeightfieldCollisionComponent_81",
+        "class": "/Script/Landscape.LandscapeHeightfieldCollisionComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeHeightfieldCollisionComponent_82",
+        "class": "/Script/Landscape.LandscapeHeightfieldCollisionComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeHeightfieldCollisionComponent_83",
+        "class": "/Script/Landscape.LandscapeHeightfieldCollisionComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeHeightfieldCollisionComponent_84",
+        "class": "/Script/Landscape.LandscapeHeightfieldCollisionComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeHeightfieldCollisionComponent_85",
+        "class": "/Script/Landscape.LandscapeHeightfieldCollisionComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeHeightfieldCollisionComponent_86",
+        "class": "/Script/Landscape.LandscapeHeightfieldCollisionComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeHeightfieldCollisionComponent_87",
+        "class": "/Script/Landscape.LandscapeHeightfieldCollisionComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeHeightfieldCollisionComponent_88",
+        "class": "/Script/Landscape.LandscapeHeightfieldCollisionComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeHeightfieldCollisionComponent_89",
+        "class": "/Script/Landscape.LandscapeHeightfieldCollisionComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeHeightfieldCollisionComponent_90",
+        "class": "/Script/Landscape.LandscapeHeightfieldCollisionComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeHeightfieldCollisionComponent_91",
+        "class": "/Script/Landscape.LandscapeHeightfieldCollisionComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeHeightfieldCollisionComponent_92",
+        "class": "/Script/Landscape.LandscapeHeightfieldCollisionComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeHeightfieldCollisionComponent_93",
+        "class": "/Script/Landscape.LandscapeHeightfieldCollisionComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeHeightfieldCollisionComponent_94",
+        "class": "/Script/Landscape.LandscapeHeightfieldCollisionComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeHeightfieldCollisionComponent_95",
+        "class": "/Script/Landscape.LandscapeHeightfieldCollisionComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeHeightfieldCollisionComponent_96",
+        "class": "/Script/Landscape.LandscapeHeightfieldCollisionComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeHeightfieldCollisionComponent_97",
+        "class": "/Script/Landscape.LandscapeHeightfieldCollisionComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeHeightfieldCollisionComponent_98",
+        "class": "/Script/Landscape.LandscapeHeightfieldCollisionComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeHeightfieldCollisionComponent_99",
+        "class": "/Script/Landscape.LandscapeHeightfieldCollisionComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeHeightfieldCollisionComponent_100",
+        "class": "/Script/Landscape.LandscapeHeightfieldCollisionComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeHeightfieldCollisionComponent_101",
+        "class": "/Script/Landscape.LandscapeHeightfieldCollisionComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeHeightfieldCollisionComponent_102",
+        "class": "/Script/Landscape.LandscapeHeightfieldCollisionComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeHeightfieldCollisionComponent_103",
+        "class": "/Script/Landscape.LandscapeHeightfieldCollisionComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeHeightfieldCollisionComponent_104",
+        "class": "/Script/Landscape.LandscapeHeightfieldCollisionComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeHeightfieldCollisionComponent_105",
+        "class": "/Script/Landscape.LandscapeHeightfieldCollisionComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeHeightfieldCollisionComponent_106",
+        "class": "/Script/Landscape.LandscapeHeightfieldCollisionComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeHeightfieldCollisionComponent_107",
+        "class": "/Script/Landscape.LandscapeHeightfieldCollisionComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeHeightfieldCollisionComponent_108",
+        "class": "/Script/Landscape.LandscapeHeightfieldCollisionComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeHeightfieldCollisionComponent_109",
+        "class": "/Script/Landscape.LandscapeHeightfieldCollisionComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeHeightfieldCollisionComponent_110",
+        "class": "/Script/Landscape.LandscapeHeightfieldCollisionComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeHeightfieldCollisionComponent_111",
+        "class": "/Script/Landscape.LandscapeHeightfieldCollisionComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeHeightfieldCollisionComponent_112",
+        "class": "/Script/Landscape.LandscapeHeightfieldCollisionComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeHeightfieldCollisionComponent_113",
+        "class": "/Script/Landscape.LandscapeHeightfieldCollisionComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeHeightfieldCollisionComponent_114",
+        "class": "/Script/Landscape.LandscapeHeightfieldCollisionComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeHeightfieldCollisionComponent_115",
+        "class": "/Script/Landscape.LandscapeHeightfieldCollisionComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeHeightfieldCollisionComponent_116",
+        "class": "/Script/Landscape.LandscapeHeightfieldCollisionComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeHeightfieldCollisionComponent_117",
+        "class": "/Script/Landscape.LandscapeHeightfieldCollisionComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeHeightfieldCollisionComponent_118",
+        "class": "/Script/Landscape.LandscapeHeightfieldCollisionComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeHeightfieldCollisionComponent_119",
+        "class": "/Script/Landscape.LandscapeHeightfieldCollisionComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeHeightfieldCollisionComponent_120",
+        "class": "/Script/Landscape.LandscapeHeightfieldCollisionComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeHeightfieldCollisionComponent_121",
+        "class": "/Script/Landscape.LandscapeHeightfieldCollisionComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeHeightfieldCollisionComponent_122",
+        "class": "/Script/Landscape.LandscapeHeightfieldCollisionComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeHeightfieldCollisionComponent_123",
+        "class": "/Script/Landscape.LandscapeHeightfieldCollisionComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeHeightfieldCollisionComponent_124",
+        "class": "/Script/Landscape.LandscapeHeightfieldCollisionComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeHeightfieldCollisionComponent_125",
+        "class": "/Script/Landscape.LandscapeHeightfieldCollisionComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeHeightfieldCollisionComponent_126",
+        "class": "/Script/Landscape.LandscapeHeightfieldCollisionComponent"
+      },
+      {
+        "path": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel.Landscape_0.LandscapeHeightfieldCollisionComponent_127",
+        "class": "/Script/Landscape.LandscapeHeightfieldCollisionComponent"
+      }
+    ],
+    "level": "/SetdressingExampleMap/Maps/Multiplayer/4Player/SEM/MAP_MP_SetdressingExampleMap_4P_P.MAP_MP_SetdressingExampleMap_4P_P:PersistentLevel"
+  },
+  "selection_reason": "Complete actor-origin rectangle X13900..15500 Y5850..7700: every StaticMeshActor with /Game mesh included, 38 actors /16 unique mesh paths. All original transforms preserved; no invented composition, no omitted static mesh actors within this selection predicate.",
+  "limitations": [
+    "Bounds are actor-origin selection, not mesh geometry bounds.",
+    "StaticMeshActor root transforms are inventoried; component relative transforms were not inventoried. Confirm root-relative identity before exact placement assertion.",
+    "Landscape component positions/bounds are absent. The single global landscape record is supplied for targeted follow-up; its 64 components must not all be blindly copied.",
+    "This is a selected transfer probe, not a complete map or confirmed material reconstruction."
+  ]
+}

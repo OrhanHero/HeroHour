@@ -13,8 +13,15 @@ dotnet build Scripts/research/TempestAssetProbe/TempestAssetProbe.csproj -c Rele
 
 The optional `CUE4ParseSource` MSBuild property overrides the default checkout path. Native ACL animation helpers are skipped for this bounded static-mesh/texture test; animation support is not established.
 
-Arguments: `projectRoot objectPath freshOutput [export|inspect] [reflectionMappingDirectory]`. The mapping directory comes from the matching UE5.4 `TempestMappingsProbe` commandlet and contains `structs.json` plus `enums-numeric.json`. It is not an invented or downloaded schema.
+Arguments: `projectRoot objectPath freshOutput [export|inspect|inspect-package] [reflectionMappingDirectory]`. The mapping directory comes from the matching UE5.4 `TempestMappingsProbe` commandlet and contains `structs.json` plus `enums-numeric.json`. It is not an invented or downloaded schema.
+
+`inspect-package` additionally writes `Package-00.json` containing all exports of
+the selected package, including editor-only material expressions and material
+instance static switches. It does not export meshes/textures or launch Unreal.
+Validated on `M_MASTER_Props` (506 exports) and `MI_GDF_Container_01` (4 exports).
 
 Successful tested object: `/Game/Tempest/Props/Faction_Containers/SM_GDF_Container.SM_GDF_Container`. The first unmapped run failed explicitly. The mapped run exported one GLB, one material description and five PNG textures. A separate UE5.8 test imported the GLB and four container textures, preserving dimensions and material-slot count.
 
 The GLB contains geometry/UVs and a named material slot, not an embedded reconstruction of the full Tempest shader. Full details and failure history: `docs/research/Tempest-Container-Transfer-2026-10-17.md`.
+
+Bounded batches accept `@absoluteManifest.json` with `mesh_paths` (1 to 16 actual object paths). Virtual mount points are read from existing descriptors with `LoadVirtualPaths()`, allowing actual SetdressingExampleMap overrides. Full asset paths must distinguish same-named material variants.
