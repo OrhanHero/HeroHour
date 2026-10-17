@@ -27,35 +27,35 @@ struct FPrototypeHUDLayout
     {
         return FMath::Max(ReferenceScale*S,MinimumTextLinePixels/FMath::Max(1.f,UnscaledFontHeight));
     }
-    static constexpr float SidebarWidth=264.f;
-    FPrototypeHUDRect Resource() const { return {W-SidebarWidth-454,12,430,46}; }
+    static constexpr float CommandHeight=280.f;
+    FPrototypeHUDRect Resource() const { const auto P=Production();return {P.X+P.W-430,H-344,430,46}; }
     FPrototypeHUDRect Army() const { return {12,12,260,46}; }
     FPrototypeHUDRect Mission() const { return {W*.5f-62,4,124,46}; }
-    FPrototypeHUDRect MiniMap() const { return {W-SidebarWidth-12,12,SidebarWidth,320}; }
-    FPrototypeHUDRect Selection() const { return {330,H-296,570,274}; }
-    FPrototypeHUDRect Production() const { return {W-SidebarWidth-12,344,SidebarWidth,H-366}; }
-    FPrototypeHUDRect Events() const { return {82,H-210,236,104}; }
+    FPrototypeHUDRect MiniMap() const { return {12,H-CommandHeight-12,300,CommandHeight}; }
+    FPrototypeHUDRect Selection() const { return {W-360,H-CommandHeight-12,348,CommandHeight}; }
+    FPrototypeHUDRect Production() const { return {324,H-CommandHeight-12,W-696,CommandHeight}; }
+    FPrototypeHUDRect Events() const { return {12,H-458,300,104}; }
     FPrototypeHUDRect Placement() const { return {W*.5f-260,118,520,58}; }
     FPrototypeHUDRect Menu() const { return {W*.5f-240,H*.5f-124,480,248}; }
     FPrototypeHUDRect MenuAction(int32 Index) const { const auto P=Menu();return {P.X+30,P.Y+128+Index*50,P.W-60,40}; }
     FPrototypeHUDRect ProductionTile(int32 Column, int32 Row) const
     {
-        const auto P=Production();return {P.X+12+Column*80,P.Y+202+Row*100,74,94};
+        const auto P=Production();const float Step=(P.W-286.f)/5.f;return {P.X+12+Column*Step,P.Y+96+Row*100,Step-6,94};
     }
-    static constexpr int32 ProductionColumns=3;
+    static constexpr int32 ProductionColumns=5;
     FPrototypeHUDRect ProductionCard(int32 Card) const { return ProductionTile(Card%ProductionColumns,Card/ProductionColumns); }
-    FPrototypeHUDRect DoctrineCard(int32 Card) const { return {8,H*.38f+Card*66.f,58,58}; }
-    FPrototypeHUDRect PrimaryTab(int32 Index) const { const auto P=Production();return {P.X+8+Index*124,P.Y+8,120,40}; }
+    FPrototypeHUDRect DoctrineCard(int32 Card) const { return {W-70,H-430+Card*66.f,58,58}; }
+    FPrototypeHUDRect PrimaryTab(int32 Index) const { const auto P=Production();return {P.X+12+Index*124,P.Y+8,120,32}; }
     FPrototypeHUDRect ProductionTab(int32 Category) const
     {
-        const auto P=Production();return {P.X+12+Category*48,P.Y+60,46,108};
+        const auto P=Production();const float Step=(P.W-24)/5.f;return {P.X+12+Category*Step,P.Y+48,Step-4,32};
     }
-    FPrototypeHUDRect QueueSlot(int32 Slot) const { const auto P=Production();return {P.X+12+Slot*48,P.Y+P.H-92,44,40}; }
-    FPrototypeHUDRect Cancel() const { const auto P=Production();return {P.X+12,P.Y+P.H-43,P.W-24,28}; }
-    FPrototypeHUDRect ControlGroup(int32 Slot) const { return {12+Slot*29.f,H-92,27,70}; }
-    FPrototypeHUDRect Focus() const { const auto P=Selection();return {P.X+429,P.Y+168,122,40}; }
-    FPrototypeHUDRect SelectionMember(int32 Index) const { const auto P=Selection();return {P.X+18+(Index%3)*50,P.Y+43+(Index/3)*50,48,48}; }
-    FPrototypeHUDRect Ability(int32 Index) const { const auto P=Selection();return {P.X+182+Index*123,P.Y+218,114,40}; }
+    FPrototypeHUDRect QueueSlot(int32 Slot) const { const auto P=Production();return {P.X+P.W-260+Slot*48,P.Y+122,44,40}; }
+    FPrototypeHUDRect Cancel() const { const auto P=Production();return {P.X+P.W-260,P.Y+181,236,32}; }
+    FPrototypeHUDRect ControlGroup(int32 Slot) const { return {324+Slot*29.f,H-328,27,30}; }
+    FPrototypeHUDRect Focus() const { const auto P=Selection();return {P.X+226,P.Y+175,108,26}; }
+    FPrototypeHUDRect SelectionMember(int32 Index) const { const auto P=Selection();return {P.X+18+(Index%3)*42,P.Y+43+(Index/3)*42,40,40}; }
+    FPrototypeHUDRect Ability(int32 Index) const { const auto P=Selection();return {P.X+12+Index*109,P.Y+224,103,40}; }
     FPrototypeHUDRect PowerToggle() const { return Ability(0); }
     FPrototypeHUDRect Sell() const { return Ability(1); }
     static int32 CategoryCardCount(int32 Category)
@@ -76,6 +76,6 @@ struct FPrototypeHUDLayout
         return Resource().Contains(P)||Army().Contains(P)||Mission().Contains(P)||MiniMap().Contains(P)
             ||Selection().Contains(P)||Production().Contains(P)||Events().Contains(P)
             ||DoctrineCard(0).Contains(P)||DoctrineCard(1).Contains(P)
-            ||FPrototypeHUDRect{12,H-92,290,70}.Contains(P);
+            ||FPrototypeHUDRect{324,H-328,290,30}.Contains(P);
     }
 };

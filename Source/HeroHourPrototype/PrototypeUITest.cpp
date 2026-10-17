@@ -94,7 +94,7 @@ void APrototypeGameMode::RunUITest()
                 TEXT("base category routes to construction cards"));
             Check(HUD->HandleClick(Center(L.ProductionTile(1,0)))&&Controller->bPlacing&&Controller->PlacementRole==EPrototypeRole::Factory&&Mode->Credits==Before,
                 TEXT("factory card starts real placement without paying before a valid site"));
-            // Every authored building card remains actionable in the three-column sidebar.
+            // Every authored building card remains actionable in the five-column lower command panel.
             const EPrototypeRole ExpectedBuildings[]={EPrototypeRole::Depot,EPrototypeRole::Factory,EPrototypeRole::PowerPlant,EPrototypeRole::Barracks,EPrototypeRole::Radar};
             for(int32 Card=0;Card<5;++Card)
             {
@@ -107,8 +107,15 @@ void APrototypeGameMode::RunUITest()
             for(const FIntPoint Resolution:{FIntPoint(1600,900),FIntPoint(1920,1080),FIntPoint(1280,720)})
             {
                 const FPrototypeHUDLayout Layout(Resolution.X,Resolution.Y);
-                bool GeometrySafe=!Overlaps(Layout.Resource(),Layout.Army())&&!Overlaps(Layout.Resource(),Layout.Mission())&&!Overlaps(Layout.Army(),Layout.Mission());
+                bool GeometrySafe=!Overlaps(Layout.MiniMap(),Layout.Production())&&!Overlaps(Layout.Production(),Layout.Selection())&&!Overlaps(Layout.MiniMap(),Layout.Selection())&&!Overlaps(Layout.Resource(),Layout.Production())&&!Overlaps(Layout.Resource(),Layout.Selection())&&!Overlaps(Layout.Resource(),Layout.Army())&&!Overlaps(Layout.Resource(),Layout.Mission())&&!Overlaps(Layout.Army(),Layout.Mission());
                 const auto Panel=Layout.Production();
+                Check(Layout.MiniMap().X<Panel.X&&Panel.X<Layout.Selection().X
+                    &&Layout.MiniMap().Y==Panel.Y&&Layout.Selection().Y==Panel.Y
+                    &&Panel.W>Layout.Selection().W&&Layout.Resource().Y+Layout.Resource().H<=Panel.Y,
+                    *FString::Printf(TEXT("Zero Hour ordering radar left commands middle selection right credits above at %dx%d"),Resolution.X,Resolution.Y));
+                for(int32 Index=0;Index<3;++Index){const auto Action=Layout.Ability(Index);const auto Selection=Layout.Selection();
+                    GeometrySafe&=Action.X>=Selection.X&&Action.X+Action.W<=Selection.X+Selection.W&&Action.Y>=Selection.Y&&Action.Y+Action.H<=Selection.Y+Selection.H;}
+                for(int32 Slot=0;Slot<10;++Slot)GeometrySafe&=!Overlaps(Layout.ControlGroup(Slot),Layout.Resource());
                 for(int32 Card=0;Card<5;++Card){const auto Tile=Layout.ProductionCard(Card);
                     GeometrySafe&=Tile.X>=Panel.X&&Tile.Y>=Panel.Y&&Tile.X+Tile.W<=Panel.X+Panel.W&&Tile.Y+Tile.H<=Panel.Y+Panel.H;
                     GeometrySafe&=!Overlaps(Tile,Layout.QueueSlot(0))&&!Overlaps(Tile,Layout.Cancel());
@@ -117,7 +124,7 @@ void APrototypeGameMode::RunUITest()
                     for(int32 Slot=0;Slot<5;++Slot)GeometrySafe&=!Overlaps(Tile,Layout.QueueSlot(Slot));
                     for(int32 Other=Card+1;Other<5;++Other)GeometrySafe&=!Overlaps(Tile,Layout.ProductionCard(Other));
                 }
-                Check(GeometrySafe,*FString::Printf(TEXT("sidebar cards and top panels do not overlap at %dx%d"),Resolution.X,Resolution.Y));
+                Check(GeometrySafe,*FString::Printf(TEXT("Zero Hour bottom panels and command cards do not overlap at %dx%d"),Resolution.X,Resolution.Y));
             }
             Controller->ClearSelection();
             Check(HUD->IsOverInterface(Center(L.Production()))&&HUD->IsOverInterface(Center(L.Selection()))
